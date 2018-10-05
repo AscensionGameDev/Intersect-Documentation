@@ -3,7 +3,7 @@ title: Welcome
 ---
 Welcome to our library of documentation for Intersect. This page provides a little information about our engine and will lead you straight into developing a 2D MMORPG in a matter of minutes. Feel free to use the navigation to the left (on desktop) or in the menu above (on mobile) to jump to different parts of our documentation. 
 
-[TOC]
+[[toc]]
 
 ## About
 Intersect is free and modern 2D MMORPG Maker. This engine was designed by developers active with similar engines of the past including Eclipse, Elysium, Mirage, and Xtremeworlds. Those engines have stopped receiving updates, their framework is nearly 2 decades old, and their support communities have died out. Intersect is our attempt to bring back the classic orpg elements from those engines with a modern code base and an extremely user friendly environment. More infomration about Intersect is listed below. If you're ready to give Intersect a try then [click here to get started!](05Getting_Started/00DownloadingandInstalling.md)
