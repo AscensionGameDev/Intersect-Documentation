@@ -1,0 +1,5 @@
+---
+title: Crafting
+---
+
+*Placeholder*

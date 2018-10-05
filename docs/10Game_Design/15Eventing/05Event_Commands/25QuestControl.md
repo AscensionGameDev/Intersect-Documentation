@@ -1,0 +1,5 @@
+---
+title: Quest Control
+---
+
+*Placeholder*
