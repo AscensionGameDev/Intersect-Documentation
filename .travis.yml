@@ -13,13 +13,13 @@ install:
     - npm install -g vuepress
 script:
     - npm run docs:build
-after_script:
-    - echo 'docs.freemmorpgmaker.com' > docs/.vuepress/dist/CNAME
 cache:
     directories:
         - "node_modules"
 notifications:
     email: false
+before_deploy:
+    - echo 'docs.freemmorpgmaker.com' > docs/.vuepress/dist/CNAME
 deploy:
     provider: pages
     skip-cleanup: true
