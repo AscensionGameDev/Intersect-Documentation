@@ -29,7 +29,7 @@ module.exports = {
                     title: 'Welcome',
                     collapsable: false,
                     children: [
-                        '/project/introduction.md',
+                        '/',
                     ]
                 },
             ],
