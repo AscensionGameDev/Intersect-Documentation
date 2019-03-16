@@ -23,8 +23,8 @@ deploy:
     skip-cleanup: true
     local_dir: docs/.vuepress/dist
     github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-    repo: AscensionGameDev/Intersect-Docs-Web
+    repo: AscensionGameDev/Intersect-Documentation
     keep-history: true
-    target-branch: master
+    target-branch: "gh-pages"
     on:
         branch: master
