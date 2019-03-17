@@ -1,5 +1,0 @@
----
-title: Npcs
----
-
-*Placeholder*

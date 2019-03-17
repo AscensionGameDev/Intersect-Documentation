@@ -1,5 +1,0 @@
----
-title: Licensing
----
-
-*Placeholder*

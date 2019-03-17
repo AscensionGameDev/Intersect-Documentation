@@ -1,5 +1,0 @@
----
-title: Bans & Mutes
----
-
-*Placeholder*

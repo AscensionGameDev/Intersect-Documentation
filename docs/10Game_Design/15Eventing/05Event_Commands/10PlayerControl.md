@@ -1,5 +1,0 @@
----
-title: Player Control
----
-
-*Placeholder*

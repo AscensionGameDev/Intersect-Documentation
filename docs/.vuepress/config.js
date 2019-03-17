@@ -15,6 +15,10 @@ module.exports = {
                 link: '/',
             },
             {
+                text: 'API Ref',
+                link: '/api',
+            },
+            {
                 text: 'Community Guides',
                 link: 'https://www.ascensiongamedev.com/forum/56-guides-and-tutorials/',
             },
@@ -26,10 +30,11 @@ module.exports = {
         sidebar: {
             '/': [
                 {
-                    title: 'Welcome',
+                    title: 'Project Information',
                     collapsable: false,
                     children: [
-                        '/',
+                        '/project/introduction.md',
+                        '/project/about.md',
                     ]
                 },
             ],

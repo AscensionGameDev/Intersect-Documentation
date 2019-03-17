@@ -1,5 +1,0 @@
----
-title: Special Effects
----
-
-*Placeholder*

@@ -1,5 +1,0 @@
----
-title: External Tools
----
-
-*Placeholder*

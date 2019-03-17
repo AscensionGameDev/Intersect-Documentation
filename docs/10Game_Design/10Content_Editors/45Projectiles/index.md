@@ -1,5 +1,0 @@
----
-title: Projectiles
----
-
-*Placeholder*
