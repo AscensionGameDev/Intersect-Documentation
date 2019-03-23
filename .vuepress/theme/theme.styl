@@ -1,8 +1,11 @@
 $vue-color = #1963a2
-$bg-color = #333
+$bg-color = #1b1f21
 $MQNarrow = 959px
 $MQMobile = 719px
 $MQMobileNarrow = 419px
+$nav-bg-color = #191D1F
+$border-color = #000
+$sidebar-bg-color = #1E2224
 
 body
   background-color $bg-color
@@ -10,7 +13,7 @@ body
 
 .search-box
   input
-    border-color desaturate(lighten($bg-color, 30%), 30%)
+    border-color $border-color
     background-color $bg-color
     color desaturate(lighten($bg-color, 80%), 50%)
   .suggestions
@@ -50,14 +53,14 @@ body
   border 0
 
 .navbar
-  border-bottom-color desaturate(lighten($bg-color, 10%), 10%)
-  background-color $bg-color
+  border-bottom-color $border-color
+  background-color $nav-bg-color
 
   .site-name
     color #fff
 
   .links
-    background-color $bg-color
+    background-color $nav-bg-color
 
 .page-edit
   .edit-link
@@ -86,8 +89,8 @@ hr
     border-top-color desaturate(lighten($bg-color, 10%), 10%)
 
 .sidebar
-  background-color $bg-color
-  border-right-color desaturate(lighten($bg-color, 10%), 10%)
+  background-color $sidebar-bg-color
+  border-right-color $border-color
 
   .nav-links
     border-bottom-color desaturate(lighten($bg-color, 10%), 10%)

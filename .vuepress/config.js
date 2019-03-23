@@ -1,6 +1,6 @@
 module.exports = {
     base: '/',
-    title: 'Intersect',
+    title: 'Intersect Engine',
     description: 'The free, open-source, modern 2d mmorpg maker.',
     ga: 'UA-87324178-1',
     themeConfig: {
@@ -11,19 +11,19 @@ module.exports = {
         editLinks: true,
         nav: [
             {
-                text: 'Get Started',
+                text: 'User Docs',
                 link: '/',
             },
             {
-                text: 'API Ref',
+                text: 'API Reference',
                 link: '/api',
             },
             {
-                text: 'Community Guides',
-                link: 'https://www.ascensiongamedev.com/forum/56-guides-and-tutorials/',
+                text: 'Developer Guides',
+                link: '/dev',
             },
             {
-                text: 'Get Help',
+                text: 'Support Community',
                 link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
             }
         ],
