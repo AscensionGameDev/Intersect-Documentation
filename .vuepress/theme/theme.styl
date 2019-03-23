@@ -9,19 +9,20 @@ $sidebar-bg-color = #1E2224
 
 body
   background-color $bg-color
-  color desaturate(lighten($bg-color, 80%), 50%)
+  color desaturate(lighten($bg-color, 90%), 50%)
 
 .search-box
   input
     border-color $border-color
+    border-radius 0px
     background-color $bg-color
-    color desaturate(lighten($bg-color, 80%), 50%)
+    color desaturate(lighten($bg-color, 90%), 50%)
   .suggestions
     background-color desaturate(lighten($bg-color, 15%), 10%)
     border 0
   .suggestion
     a
-      color desaturate(lighten($bg-color, 80%), 50%)
+      color desaturate(lighten($bg-color, 90%), 50%)
 
     &.focused
       background-color desaturate(lighten($bg-color, 30%), 30%)
@@ -96,7 +97,7 @@ hr
     border-bottom-color desaturate(lighten($bg-color, 10%), 10%)
 
   a.sidebar-link
-    color desaturate(lighten($bg-color, 80%), 50%)
+    color desaturate(lighten($bg-color, 90%), 50%)
 
     &:hover,
     &:focus,
@@ -104,7 +105,7 @@ hr
       color #fff
 
   .sidebar-heading
-    color desaturate(lighten($bg-color, 80%), 50%)
+    color desaturate(lighten($bg-color, 90%), 50%)
 
     &.open,
     &:hover
@@ -112,7 +113,7 @@ hr
 
 .nav-links
   a
-    color desaturate(lighten($bg-color, 80%), 50%)
+    color desaturate(lighten($bg-color, 90%), 50%)
 
     &:hover,
     &:focus,
