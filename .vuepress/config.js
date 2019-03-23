@@ -8,6 +8,7 @@ module.exports = {
         docsRepo: 'AscensionGameDev/Intersect-Documentation',
         editLinkText: 'Help us improve this page.',
         editLinks: true,
+        logo: 'https://www.ascensiongamedev.com/resources/filehost/86afbcd125ef7ffba4a3a5d380e25f6b.png',
         nav: [
             {
                 text: 'User Docs',
