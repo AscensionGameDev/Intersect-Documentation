@@ -6,7 +6,6 @@ module.exports = {
     themeConfig: {
         repo: 'jcsnider/Intersect-Engine',
         docsRepo: 'AscensionGameDev/Intersect-Documentation',
-        repoLabel: '',
         editLinkText: 'Help us improve this page.',
         editLinks: true,
         nav: [
