@@ -17,7 +17,7 @@ export function getHash (path) {
 }
 
 export function isExternal (path) {
-  return (!/^https:\/\/ascensiongamedev.com/.test(path)) && outboundRE.test(path)
+  return (!/^https:\/\/ascensiongamedev.com/.test(path) && !/^https:\/\/www.ascensiongamedev.com/.test(path) && !/^http:\/\/ascensiongamedev.com/.test(path) && !!/^http:\/\/www.ascensiongamedev.com/.test(path)) && outboundRE.test(path)
 }
 
 export function isMailto (path) {
