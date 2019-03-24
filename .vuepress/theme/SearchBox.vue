@@ -7,7 +7,7 @@
       :class="{ 'focused': focused }"
       autocomplete="off"
       spellcheck="false"
-      placeholder="search"
+      placeholder="Search"
       @focus="focused = true"
       @blur="focused = false"
       @keyup.enter="go(focusIndex)"
