@@ -17,7 +17,7 @@ export function getHash (path) {
 }
 
 export function isExternal (path) {
-  return outboundRE.test(path)
+  return (!/^https:\/\/ascensiongamedev.com/.test(path)) && outboundRE.test(path)
 }
 
 export function isMailto (path) {
