@@ -1,6 +1,6 @@
 module.exports = {
     base: '/',
-    title: 'Intersect Engine',
+    title: 'Intersect Documentation',
     description: 'The free, open-source, modern 2d mmorpg maker.',
     ga: 'UA-87324178-1',
     themeConfig: {
@@ -8,7 +8,7 @@ module.exports = {
         docsRepo: 'AscensionGameDev/Intersect-Documentation',
         editLinkText: 'Help us improve this page.',
         editLinks: true,
-        logo: 'https://www.ascensiongamedev.com/resources/filehost/86afbcd125ef7ffba4a3a5d380e25f6b.png',
+        logo: 'https://www.ascensiongamedev.com/resources/filehost/e37ded2fa492ae07375cd18bd1d8312c.png',
         nav: [
             {
                 text: 'User Docs',
