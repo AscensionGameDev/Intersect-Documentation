@@ -11,7 +11,7 @@ module.exports = {
         ['link', { rel: 'manifest', href: '/favicons/manifest.json' }],
         ['link', { rel: 'shortcut icon', href: '/favicons/favicon.ico' }],
         ['meta', { name: 'msapplication-config', content: '/favicons/browserconfig.xml' }],
-        ['meta', { name: 'theme-color', content: '#0e4688' }],
+        ['meta', { name: 'theme-color', content: '#ffffff' }],
     ],
     themeConfig: {
         repo: 'jcsnider/Intersect-Engine',
@@ -49,7 +49,7 @@ module.exports = {
                 },
                 {
                     title: 'Getting Started',
-                    collapsable: false,
+                    collapsable: true,
                     children: [
                         '/start/download.md',
                         '/start/setup.md',
