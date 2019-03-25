@@ -1,6 +1,6 @@
 <template>
   <router-link
-    class="nav-link"
+    :class="isActive ? 'nav-link router-link-active' : 'nav-link'"
     :to="link"
     v-if="!isExternal(link)"
     :exact="exact"
@@ -33,10 +33,18 @@ export default {
     },
 
     exact () {
+      console.log(this.$route);
       if (this.$site.locales) {
         return Object.keys(this.$site.locales).some(rootLink => rootLink === this.link)
       }
       return this.link === '/'
+    },
+
+    isActive() {
+      if ((this.link === '/api' && this.$route.path.startsWith('/api')) || (this.link === '/dev' && this.$route.path.startsWith('/dev')) || (this.link === '/' && !this.$route.path.startsWith('/api') && !this.$route.path.startsWith('/dev'))) {
+        return true
+      }
+      return false
     }
   },
 
