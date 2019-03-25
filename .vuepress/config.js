@@ -41,10 +41,19 @@ module.exports = {
             '/': [
                 {
                     title: 'Project Information',
-                    collapsable: false,
+                    collapsable: true,
                     children: [
                         '/project/introduction.md',
                         '/project/about.md',
+                    ]
+                },
+                {
+                    title: 'Getting Started',
+                    collapsable: true,
+                    children: [
+                        '/start/download.md',
+                        '/start/setup.md',
+                        '/start/editor.md',
                     ]
                 },
                 {
