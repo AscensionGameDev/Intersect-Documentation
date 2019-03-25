@@ -4,21 +4,21 @@ Intersect is an open source 2D MMORPG Game Engine developed in C# with MonoGame.
 
 ## Requirements
 ### Client
-* OS: Windows 7+ (.Net Framework 4.5), OSX 10.10+ (w/Mono), Various Linux Distros (w/Mono)
+* OS: Windows 7+ (.Net Framework 4.6.2), OSX 10.10+ (w/Mono), Various Linux Distros (w/Mono)
 * Processor: Intel i3 or Better
 * Memory: 1 GB RAM
-* Graphics: 1GB VRAM
+* Graphics: 1 GB VRAM
 * OpenGL: Version 2.1+ & ARB Extensions
 * Storage: 1 GB available space
 ### Editor
-* OS: Windows 7+ -- Windows Only
+* OS: Windows 7+ (.Net Framework 4.6.2) -- No Cross Platform Support
 * Processor: Intel i3 or Better
 * Memory: 1 GB RAM
-* Graphics: 1GB VRAM
+* Graphics: 1 GB VRAM
 * DirectX: 9.0c+ Shader Support
 * Storage: 1 GB available space
 ### Server
-* OS: Windows 7+ (.Net Framework 4.5), OSX 10.10+ (w/Mono), Various Linux Distros (w/Mono)
+* OS: Windows 7+ (.Net Framework 4.6.2), OSX 10.10+ (w/Mono), Various Linux Distros (w/Mono)
 * Processor: Intel i3 or Better
 * Memory: 2 GB RAM
 * Network: Broadband Internet connection

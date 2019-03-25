@@ -37,6 +37,15 @@ module.exports = {
                         '/project/about.md',
                     ]
                 },
+                {
+                    title: 'Getting Started',
+                    collapsable: false,
+                    children: [
+                        '/start/download.md',
+                        '/start/setup.md',
+                        '/start/editor.md',
+                    ]
+                },
             ],
         },
     },
