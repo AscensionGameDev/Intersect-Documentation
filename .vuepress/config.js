@@ -43,7 +43,7 @@ module.exports = {
                     title: 'Project Information',
                     collapsable: true,
                     children: [
-                        '/project/introduction.md',
+                        '/README.md',
                         '/project/about.md',
                     ]
                 },
