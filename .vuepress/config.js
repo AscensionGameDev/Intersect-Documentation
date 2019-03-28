@@ -26,11 +26,11 @@ module.exports = {
             },
             {
                 text: 'API Reference',
-                link: '/api',
+                link: '/api/',
             },
             {
                 text: 'Developer Guides',
-                link: '/dev',
+                link: '/dev/',
             },
             {
                 text: 'Support Community',
@@ -38,12 +38,84 @@ module.exports = {
             }
         ],
         sidebar: {
+            '/api/': [
+                {
+                    title: 'API Information',
+                    collapsable: true,
+                    children: [
+                        '/api/',
+                        '/api/introduction/about.md',
+                    ]
+                },
+                {
+                    title: 'Endpoints',
+                    collapsable: true,
+                    children: [
+                        '/api/endpoints/authentication.md',
+                        '/api/endpoints/info.md',
+                        '/api/endpoints/users.md',
+                        '/api/endpoints/players.md',
+                        '/api/endpoints/variables.md',
+                    ]
+                },
+                {
+                    title: 'Advanced',
+                    collapsable: true,
+                    children: [
+                        '/api/advanced/securing.md',
+                    ]
+                },
+            ],
+            '/dev/': [
+                {
+                    title: 'Developer Information',
+                    collapsable: true,
+                    children: [
+                        '/dev/',
+                        '/dev/introduction/repo.md',
+                    ]
+                },
+                {
+                    title: 'Getting Started',
+                    collapsable: true,
+                    children: [
+                        '/dev/start/vs.md',
+                        '/dev/start/github.md',
+                        '/dev/start/setup.md',
+                        '/dev/start/compiling.md',
+                    ]
+                },
+                {
+                    title: 'Modifications',
+                    collapsable: true,
+                    children: [
+                        '/dev/modify/branching.md',
+                        '/dev/modify/committing.md',
+                        '/dev/modify/pushing.md',
+                    ]
+                },
+                {
+                    title: 'Contributing',
+                    collapsable: true,
+                    children: [
+                        '/dev/contribute/style.md',
+                        '/dev/contribute/pullrequests.md',
+                    ]
+                },
+                {
+                    title: 'Advanced',
+                    collapsable: true,
+                    children: [
+                        '/dev/advanced/migrations.md',
+                    ]
+                },
+            ],
             '/': [
                 {
                     title: 'Project Information',
                     collapsable: true,
                     children: [
-                        '/README.md',
+                        '/',
                         '/project/about.md',
                     ]
                 },
@@ -53,7 +125,63 @@ module.exports = {
                     children: [
                         '/start/download.md',
                         '/start/setup.md',
-                        '/start/editor.md',
+                        '/start/login.md',
+                        '/start/overview.md',
+                    ]
+                },
+                {
+                    title: 'Intersect Editors',
+                    collapsable: true,
+                    children: [
+                        '/design/animations.md',
+                        '/design/classes.md',
+                        '/design/conditions.md',
+                        '/design/crafting.md',
+                        '/design/items.md',
+                        '/design/lighting.md',
+                        '/design/mapping.md',
+                        '/design/npcs.md',
+                        '/design/projectiles.md',
+                        '/design/quests.md',
+                        '/design/resources.md',
+                        '/design/shops.md',
+                        '/design/spells.md',
+                        '/design/resources.md',
+                        '/design/time.md',
+                        '/design/world.md',
+                    ]
+                },
+                {
+                    title: 'Events',
+                    collapsable: true,
+                    children: [
+                        '/events/introduction.md',
+                        '/events/commands.md',
+                        '/events/pages.md',
+                        '/events/common.md',
+                        '/events/examples.md',
+                    ]
+                },
+                {
+                    title: 'Advanced Configuration',
+                    collapsable: true,
+                    children: [
+                        '/advanced/assets.md',
+                        '/advanced/fonts.md',
+                        '/advanced/formulas.md',
+                        '/advanced/translations.md',
+                        '/advanced/interface.md',
+                        '/advanced/zdimensions.md',
+                        '/advanced/sizes.md',
+                    ]
+                },
+                {
+                    title: 'Deployment',
+                    collapsable: true,
+                    children: [
+                        '/deploy/forwarding.md',
+                        '/deploy/packing.md',
+                        '/deploy/distributing.md',
                     ]
                 },
             ],
