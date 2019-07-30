@@ -26,7 +26,7 @@ module.exports = {
             },
             {
                 text: 'API Reference',
-                link: '/api/',
+                link: '/api/v1/',
             },
             {
                 text: 'Developer Guides',
@@ -38,31 +38,31 @@ module.exports = {
             }
         ],
         sidebar: {
-            '/api/': [
+            '/api/v1/': [
                 {
                     title: 'API Information',
                     collapsable: true,
                     children: [
-                        '/api/',
-                        '/api/introduction/about.md',
+                        '/api/v1/',
+                        '/api/v1/introduction/about.md',
                     ]
                 },
                 {
                     title: 'Endpoints',
                     collapsable: true,
                     children: [
-                        '/api/endpoints/authentication.md',
-                        '/api/endpoints/info.md',
-                        '/api/endpoints/users.md',
-                        '/api/endpoints/players.md',
-                        '/api/endpoints/variables.md',
+                        '/api/v1/endpoints/authentication.md',
+                        '/api/v1/endpoints/info.md',
+                        '/api/v1/endpoints/users.md',
+                        '/api/v1/endpoints/players.md',
+                        '/api/v1/endpoints/variables.md',
                     ]
                 },
                 {
                     title: 'Advanced',
                     collapsable: true,
                     children: [
-                        '/api/advanced/securing.md',
+                        '/api/v1/advanced/securing.md',
                     ]
                 },
             ],
