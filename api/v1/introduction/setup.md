@@ -15,7 +15,9 @@ Optionally change the `Hosts` field to listen on your desired network port.
 Before you can authenticate with the API you must have created a user account within the game.
 
 After creating an account open the server console and issue the following command:
-`api [name] true`
+```
+api [name] true
+```
 
 That command will grant the specified account access to authtenticate with the API.
 
