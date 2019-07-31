@@ -19,4 +19,4 @@ After creating an account open the server console and issue the following comman
 
 That command will grant the specified account access to authtenticate with the API.
 
-You are now ready to request an authentication token from our API, click here to learn how.
+You are now ready to request an authentication token from our API, [click here](../endpoints/authentication.md) to learn how.

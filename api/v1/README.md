@@ -6,4 +6,4 @@ We provide the ability to view live server info such as online players, validate
 
 Communicating with the Intersect API is possible with any programming language that can send and receive HTTP requests.
 
-Click here to learn how to setup and enable the API on your server.
+[Click here](introduction/setup.md) to learn how to setup and enable the API on your server.
