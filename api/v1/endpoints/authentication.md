@@ -60,6 +60,7 @@ For all requests that require authentication you will need to supply the access 
 
 
 **Example** (truncated)
+
 `authorization: Bearer 4RoC_BqVns0p7guzWe-Ah4...`
 
 The refresh_token is the token's id, it is used to refresh or delete the token using the routes below.
