@@ -44,7 +44,8 @@ module.exports = {
                     collapsable: true,
                     children: [
                         '/api/v1/',
-                        '/api/v1/introduction/about.md',
+                        '/api/v1/introduction/setup.md',
+                        '/api/v1/introduction/config.md',
                     ]
                 },
                 {
