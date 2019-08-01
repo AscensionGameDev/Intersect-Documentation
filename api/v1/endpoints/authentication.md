@@ -26,8 +26,8 @@ Get an authorization token for api requests that require auth.
 
 **Notes**
 
-`Only available grant type right now is 'password'.`
-`Password must be a SHA256 hash of the user's password, with hyphens removed.`
+* The only available grant type right now is 'password'.`
+* Password must be a SHA256 hash of the user's password, with hyphens removed.`
 
 ---
 
@@ -56,7 +56,7 @@ Get an authorization token for api requests that require auth.
 ```
 
 
-**Usage**
+### Notes
 
 For all requests that require authentication you will need to supply the access token within the request header. The proper format can found below.
 
@@ -65,9 +65,11 @@ For all requests that require authentication you will need to supply the access 
 | authorization | String  | Bearer [access_token] |
 
 
-**Example** (truncated)
+**Example**
 
-`authorization: Bearer 4RoC_BqVns0p7guzWe-Ah4...`
+```
+authorization: Bearer 4RoC_BqVns0p7guzWe-Ah4C6SiVmNcBO0KnFNLtGCxuPZbfF9QJnGc5zbrhM-EQ8c_fajWk076pyI-bjaUPsfyd_c2u5XLCANc4khfpTmq87ksvjDpMI87NVIWOCy1QAUTQoszf-CSkweyw-At31UjBUBTQ6iuidQcG-eZqdnecjKDWQ5vOBZpjI-Xlz7m8UZBjuEWf4sFIqbAnIQl54F8VSIr26QtcUROkUWepLFPqSa8ZO110vg5xefTy-wJmEwbn1zOAuSMR6yKah39GBU_xtkuHw1WaiJ_iSQLRiF7z-v0Ct1DYbMrmqaVdFI1xUwsrFN3WWgwpxxsXEBajcFkL9Ou7MSQBwWlI5sU4WlYJbKAGlaMJU9sohK5I3Q3B34UTub0xNdiyhqzn9E0HIep_RUzzE1YZhGmV3bBoV-cYTxSTfpTXIFuH9f8tbv-FPhylWY__hqndUKVpq4ez2n9HqfCdDi6HdYd1mcTyDTABdy248VeMPqiwKUl-95w87
+```
 
 The refresh_token is the token's id, it is used to refresh or delete the token using the routes below.
 

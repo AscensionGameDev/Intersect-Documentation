@@ -6,9 +6,12 @@ For security purposes the API is disabled by default and must be enabled before 
 
 Open the API configuration (located at `server/resources/config/api.config.json`)
 
-Set the `Enabled` field to `true`.
+Set the `Enabled` field to `true` as shown below:
+```
+  "Enabled": true,
+```
 
-Optionally change the `Hosts` field to listen on your desired network port.
+Optionally change the `Hosts` field to listen on your desired network ports.
 
 
 ## Grant API Access
