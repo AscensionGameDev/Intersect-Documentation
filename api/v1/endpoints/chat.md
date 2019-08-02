@@ -28,7 +28,12 @@ Sends a chat message to everyone currently logged into your game.
 ```json
 {
 	"Message": null,
-	"Color": {"A":255,"R":0,"G":255,"B":255},
+	"Color":{
+		"A": 250,
+		"R": 0,
+		"G": 0,
+		"B": 0
+	}
 	"Target": null
 }
 ```
@@ -53,7 +58,12 @@ Sends a chat message to everyone currently logged into your game.
 	"success": true,
 	"chatMessage":{
 		"Message": "Hello World!",
-		"Color":{"A": 255, "R": 0, "G": 0, "B": 0},
+		"Color":{
+			"A": 250,
+			"R": 0,
+			"G": 0,
+			"B": 0
+		}
 		"Target": null
 	}
 }
@@ -87,7 +97,12 @@ Sends a chat message to everyone in the proximity of a given map.
 ```json
 {
 	"Message": null,
-	"Color": {"A":255,"R":0,"G":255,"B":255},
+	"Color":{
+		"A": 250,
+		"R": 0,
+		"G": 0,
+		"B": 0
+	}
 	"Target": null
 }
 ```
@@ -113,7 +128,12 @@ Sends a chat message to everyone in the proximity of a given map.
 	"mapId": "8102053e-28f9-4452-91d4-ee2a3ffb84cf",
 	"chatMessage":{
 		"Message": "Hello World!",
-		"Color":{"A": 255, "R": 0, "G": 0, "B": 0},
+		"Color":{
+			"A": 250,
+			"R": 0,
+			"G": 0,
+			"B": 0
+		}
 		"Target": null
 	}
 }
@@ -147,7 +167,12 @@ Sends a chat message to everyone in the proximity of a given map.
 ```json
 {
 	"Message": null,
-	"Color": {"A":255,"R":0,"G":255,"B":255},
+	"Color":{
+		"A": 250,
+		"R": 0,
+		"G": 0,
+		"B": 0
+	}
 	"Target": null
 }
 ```
@@ -173,7 +198,12 @@ Sends a chat message to everyone in the proximity of a given map.
 	"lookupKey": "jcsnider",
 	"chatMessage":{
 		"Message": "Hello World!",
-		"Color":{"A": 255, "R": 0, "G": 0, "B": 0},
+		"Color":{
+			"A": 250,
+			"R": 0,
+			"G": 0,
+			"B": 0
+		}
 		"Target": null
 	}
 }
