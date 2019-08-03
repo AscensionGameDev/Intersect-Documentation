@@ -27,7 +27,7 @@ Sends a chat message to everyone currently logged into your game.
 
 ```json
 {
-	"Message": null,
+	"Message": "Hello World!",
 	"Color":{
 		"A": 255,
 		"R": 255,
@@ -103,7 +103,7 @@ Sends a chat message to everyone in the proximity of a given map.
 		"G": 255,
 		"B": 255
 	},
-	Target: ""
+	"Target": ""
 }
 ```
 
@@ -203,7 +203,7 @@ Sends a chat message to everyone in the proximity of a given map.
 			"R": 255,
 			"G": 255,
 			"B": 255
-		}
+		},
 		"Target": ""
 	}
 }
