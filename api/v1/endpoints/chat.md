@@ -34,7 +34,7 @@ Sends a chat message to everyone currently logged into your game.
 		"G": 255,
 		"B": 255
 	},
-	"Target": null
+	"Target": ""
 }
 ```
 
@@ -64,7 +64,7 @@ Sends a chat message to everyone currently logged into your game.
 			"G": 255,
 			"B": 255
 		},
-		"Target": null
+		"Target": ""
 	}
 }
 ```
@@ -103,7 +103,7 @@ Sends a chat message to everyone in the proximity of a given map.
 		"G": 255,
 		"B": 255
 	},
-	Target: null
+	Target: ""
 }
 ```
 
@@ -134,7 +134,7 @@ Sends a chat message to everyone in the proximity of a given map.
 			"G": 255,
 			"B": 255
 		},
-		"Target": null
+		"Target": ""
 	}
 }
 ```
@@ -173,7 +173,7 @@ Sends a chat message to everyone in the proximity of a given map.
 		"G": 255,
 		"B": 255
 	},
-	"Target": null
+	"Target": ""
 }
 ```
 
@@ -204,7 +204,7 @@ Sends a chat message to everyone in the proximity of a given map.
 			"G": 255,
 			"B": 255
 		}
-		"Target": null
+		"Target": ""
 	}
 }
 ```
