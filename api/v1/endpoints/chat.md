@@ -29,11 +29,11 @@ Sends a chat message to everyone currently logged into your game.
 {
 	"Message": null,
 	"Color":{
-		"A": 250,
-		"R": 0,
-		"G": 0,
-		"B": 0
-	}
+		"A": 255,
+		"R": 255,
+		"G": 255,
+		"B": 255
+	},
 	"Target": null
 }
 ```
@@ -59,11 +59,11 @@ Sends a chat message to everyone currently logged into your game.
 	"chatMessage":{
 		"Message": "Hello World!",
 		"Color":{
-			"A": 250,
-			"R": 0,
-			"G": 0,
-			"B": 0
-		}
+			"A": 255,
+			"R": 255,
+			"G": 255,
+			"B": 255
+		},
 		"Target": null
 	}
 }
@@ -96,14 +96,14 @@ Sends a chat message to everyone in the proximity of a given map.
 
 ```json
 {
-	"Message": null,
+	"Message": "Hello World!",
 	"Color":{
-		"A": 250,
-		"R": 0,
-		"G": 0,
-		"B": 0
-	}
-	"Target": null
+		"A": 255,
+		"R": 255,
+		"G": 255,
+		"B": 255
+	},
+	Target: null
 }
 ```
 
@@ -129,11 +129,11 @@ Sends a chat message to everyone in the proximity of a given map.
 	"chatMessage":{
 		"Message": "Hello World!",
 		"Color":{
-			"A": 250,
-			"R": 0,
-			"G": 0,
-			"B": 0
-		}
+			"A": 255,
+			"R": 255,
+			"G": 255,
+			"B": 255
+		},
 		"Target": null
 	}
 }
@@ -166,13 +166,13 @@ Sends a chat message to everyone in the proximity of a given map.
 
 ```json
 {
-	"Message": null,
+	"Message": "Hello World!",
 	"Color":{
-		"A": 250,
-		"R": 0,
-		"G": 0,
-		"B": 0
-	}
+		"A": 255,
+		"R": 255,
+		"G": 255,
+		"B": 255
+	},
 	"Target": null
 }
 ```
@@ -199,10 +199,10 @@ Sends a chat message to everyone in the proximity of a given map.
 	"chatMessage":{
 		"Message": "Hello World!",
 		"Color":{
-			"A": 250,
-			"R": 0,
-			"G": 0,
-			"B": 0
+			"A": 255,
+			"R": 255,
+			"G": 255,
+			"B": 255
 		}
 		"Target": null
 	}
