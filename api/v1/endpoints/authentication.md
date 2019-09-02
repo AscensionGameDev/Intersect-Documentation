@@ -13,7 +13,7 @@ Get an authorization token for api requests that require auth.
 
 **Authorization Required** : `No`
 
-**Content Type** : `application/x-www-form-urlencoded`
+**Content Type** : `application/json`
 
 **Body**
 
@@ -23,10 +23,19 @@ Get an authorization token for api requests that require auth.
 | username | String  | Username of API Authorized Account | :heavy_check_mark: |
 | password | String  | SHA256 Hash of Account Password | :heavy_check_mark: |
 
+**Example**
+
+```json
+{
+	"grant_type": "password",
+	"username": "jcsnider",
+	"password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8",
+}
+```
 
 **Notes**
 
-* The only available grant type right now is 'password'.
+* The grant type to receive an auth token is 'password'.
 * Password must be a SHA256 hash of the user's password, with hyphens removed.
 
 ---
@@ -85,7 +94,7 @@ Refreshes an existing token delaying it's expiration.
 
 **Authorization Required** : `Yes`
 
-**Content Type** : `application/x-www-form-urlencoded`
+**Content Type** : `application/json`
 
 **Body**
 
@@ -93,6 +102,15 @@ Refreshes an existing token delaying it's expiration.
 | ----- | ---- |------------ | -------- |
 | grant_type | String  | Auth Type. | :heavy_check_mark: |
 | refresh_token | String  | Refresh Token Id | :heavy_check_mark: |
+
+**Example**
+
+```json
+{
+	"grant_type": "refresh_token",
+	"refresh_token": "efd947fe-a874-4259-9b06-41a8a9505e35",
+}
+```
 
 
 **Notes**
@@ -120,22 +138,18 @@ Refreshes an existing token delaying it's expiration.
 }
 ```
 
-
 ## Delete Token
-Deletes an authorization token preventing further use.
+Deletes the token associated with a given authorization header.
 
 ### Request
 
-**URL** : `/api/oauth/token/[tokenId]`
+**URL** : `/api/oauth/token/[username]`
 
 **Method** : `DELETE`
 
 **Authorization Required** : `Yes`
 
-**Content Type** : `application/x-www-form-urlencoded`
-
-**Body**
-Empty
+**Body** : `None`
 
 
 **Notes**
@@ -146,7 +160,7 @@ Empty
 
 ### Response
 
-**Condition** : Token Refreshed
+**Condition** : Token Deleted
 
 **Code** : `200 SUCCESS`
 
@@ -154,6 +168,40 @@ Empty
 
 ```json
 {
-	"revoked_refresh_token": "358dc42a-1ae1-47d2-ac60-18cd46e6b9be"
+	"username": "jcsnider"
+}
+```
+
+
+## Delete Token By Id
+Deletes an authorization token preventing further use.
+
+### Request
+
+**URL** : `/api/oauth/token/[username]/[tokenId]`
+
+**Method** : `DELETE`
+
+**Body** : `None`
+
+
+**Notes**
+
+* The tokenId within the request url is returned as the 'refresh_token' in the Get Token and Refresh Token responses.
+
+---
+
+### Response
+
+**Condition** : Token Deleted
+
+**Code** : `200 SUCCESS`
+
+**Example**
+
+```json
+{
+	"username": "jcsnider",
+	"tokenId": "c7edff1c-ef0a-47e5-ba5f-a08b169c411e"
 }
 ```

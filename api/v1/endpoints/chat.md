@@ -109,7 +109,6 @@ Sends a chat message to everyone in the proximity of a given map.
 
 
 **Notes**
-* The map id in the url is a guid. Right now there is no way to see this guid except finding it in the database until we add some developer options within the editor.
 * Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open, and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quickly banning, muting, warping, etc.  In most cases Target should be omitted or left as null.
 
 ---
@@ -148,6 +147,8 @@ Sends a chat message to everyone in the proximity of a given map.
 
 **URL** : `/api/v1/chat/direct/[lookupkey]`
 
+**Lookup Key** : `Username or character name`
+
 **Method** : `POST`
 
 **Authorization Required** : `Yes`
@@ -179,7 +180,6 @@ Sends a chat message to everyone in the proximity of a given map.
 
 
 **Notes**
-* The lookupKey in the url can be either the account's username or the player's character name.
 * Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open, and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quickly banning, muting, warping, etc.  In most cases Target should be omitted or left as null.
 
 ---
