@@ -1,5 +1,9 @@
-# Server Switches & Variables
+# Variables
 
-## Get Value
+## Get Variables
 
-## Set Value
+## Get Variable
+
+## Get Variable Value
+
+## Set Variable Value
