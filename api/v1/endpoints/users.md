@@ -504,6 +504,8 @@ Change a users password without their existing password. Requires the user manag
 ```
 
 
-## Preform Admin Action (by id) or username)
+## Preform Admin Action
+
+** Documentation for admin actions (kicking/banning/etc) coming soon! **
 
 
