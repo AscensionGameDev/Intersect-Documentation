@@ -8,7 +8,7 @@ Retrieves global variables from the server along with their ids and values.
 
 **URL** : `/api/v1/variables/global`
 
-**Method** : `GET`
+**Method** : `POST`
 
 **Authorization Required** : `Yes`
 
@@ -60,6 +60,7 @@ Retrieves global variables from the server along with their ids and values.
 ```
 
 ## Get Variable
+
 Retrieves a variable and it's value from the server by id.
 
 ### Request
@@ -97,6 +98,7 @@ Retrieves a variable and it's value from the server by id.
 ```
 
 ## Get Variable Value
+
 Retrieves the stored value of a variable from the server by id.
 
 ### Request
@@ -128,3 +130,51 @@ Retrieves the stored value of a variable from the server by id.
 
 
 ## Set Variable Value
+
+Sets a specified variable's value given it's id.
+
+### Request
+
+**URL** : `/api/v1/variables/global/[variableId]`
+
+**Method** : `POST`
+
+**Authorization Required** : `Yes`
+
+**Content Type** : `application/json`
+
+**Body**
+
+| Name  | Type | Description | Required |
+| ----- | ---- |------------ | -------- |
+| value | int or boolean | Variable's desired value. | :heavy_check_mark: |
+
+**Example**
+
+```json
+{
+  "value": 10
+}
+```
+
+---
+
+### Response
+
+**Condition** : NA
+
+**Code** : `200 OK`
+
+**Example**
+
+```json
+{
+    "Name": "New Global Variable",
+    "TextId": "",
+    "Type": 2,
+    "Folder": "Globals 1",
+    "Value": 10,
+    "Id": "ed82a700-6ce7-4136-93c3-aeb4acea43fc",
+    "TimeCreated": -8586599203473051578
+}
+```
