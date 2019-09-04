@@ -24,6 +24,15 @@
 
 * Time is a singular object, and has its own retrieval endpoint below.
 
+## Obtaining Ids
+
+Right click on a map in the map list and select 'copy id' to copy the maps id to your clipboard.
+
+For tilesets, select the tileset in the editor and then right click on the dropdown and the id will be copied to your clipboard automatically.
+
+In all other editors right clicking on an object will copy the id to your clipboard automatically.
+
+
 ## Get List
 
 Grabs a list of game objects and their stored information from the server given it's type and paging information.

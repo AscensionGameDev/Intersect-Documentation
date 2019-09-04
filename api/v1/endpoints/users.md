@@ -1,5 +1,7 @@
 # Users
 
+**These endpoints require the Users.Query role!**
+
 ## Get Users
 
 Retrieves users from the server along with their ids and stored information.
@@ -448,9 +450,9 @@ Returns one of this users characters
 
 Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/4abdebecac07d35de4a66ef4dbbe4124.json).
 
-## Change Email (w/ User Management Permission)
+## Change Email (w/ Users.Manage Role)
 
-Change a users email address without their password. Requires the user management permission.
+Change a users email address without their password. **Requires the Users.Manage role.**
 
 ### Request
 
@@ -508,9 +510,9 @@ Change a users email address without their password. Requires the user managemen
 }
 ```
 
-## Change Password (w/ User Management Permission)
+## Change Password (w/ Users.Manage Role)
 
-Change a users password without their existing password. Requires the user management permission.
+Change a users password without their existing password. **Requires the Users.Manage role.**
 
 ### Request
 
