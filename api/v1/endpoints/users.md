@@ -129,6 +129,55 @@ Retrieves a user from the server by looking up their username or id.
 }
 ```
 
+## Register User
+
+Creates an account on the server for a user given a username, password, and email address.
+
+### Request
+
+**URL** : `/api/v1/users/register`
+
+**Method** : `POST`
+
+**Authorization Required** : `Yes`
+
+**Content Type** : `application/json`
+
+**Body**
+
+| Name  | Type | Description | Required |
+| ----- | ---- |------------ | -------- |
+| username | string  | Username for the new user. | :heavy_check_mark: |
+| password | string  | Sha256 hash of the new user's password. | :heavy_check_mark: |
+| email | string  | Email address for the new user. | :heavy_check_mark: |
+
+**Example**
+
+```json
+{
+  "username": "jcsnider",
+  "password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8",
+  "email": "jcsnider@ascensiongamedev.com"
+}
+```
+
+---
+
+### Response
+
+**Condition** : User created successfully.
+
+**Code** : `200 OK`
+
+**Example**
+
+```json
+{
+    "Username": "jcsnider",
+    "Email": "jcsnider@ascensiongamedev.com"
+}
+```
+
 ## Validate Password
 
 Checks whether a user provided password is valid.
@@ -502,10 +551,5 @@ Change a users password without their existing password. Requires the user manag
 ```json
 "Password updated."
 ```
-
-
-## Preform Admin Action
-
-**Documentation for admin actions (kicking/banning/etc) coming soon!**
 
 

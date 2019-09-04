@@ -775,7 +775,3 @@ Makes a player forget a spell.
     "SpellId": "c54378ba-5632-4ad9-a7cf-6ec0b0264b4e"
 }
 ```
-
-## Preform Admin Action
-
-**Documentation for admin actions (kicking/banning/etc) coming soon!**

@@ -53,8 +53,10 @@ module.exports = {
                     collapsable: true,
                     children: [
                         '/api/v1/endpoints/authentication.md',
+                        '/api/v1/endpoints/admin.md',
 						'/api/v1/endpoints/chat.md',
                         '/api/v1/endpoints/info.md',
+                        '/api/v1/endpoints/gameobjects.md',
                         '/api/v1/endpoints/users.md',
                         '/api/v1/endpoints/players.md',
                         '/api/v1/endpoints/variables.md',
