@@ -170,7 +170,7 @@ Checks whether a user provided password is valid.
 **Example**
 
 ```json
-true
+Correct password.
 ```
 
 ## Change Email
@@ -506,6 +506,6 @@ Change a users password without their existing password. Requires the user manag
 
 ## Preform Admin Action
 
-** Documentation for admin actions (kicking/banning/etc) coming soon! **
+**Documentation for admin actions (kicking/banning/etc) coming soon!**
 
 
