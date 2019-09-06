@@ -12,7 +12,7 @@
 | Quests | quest  |
 | Resources | resource  |
 | Shops | shop  |
-| Spells | spells  |
+| Spells | spell  |
 | Crafting Tables | crafttables  |
 | Crafts | crafts  |
 | Maps | map  |

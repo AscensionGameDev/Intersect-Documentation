@@ -37,6 +37,7 @@ Get an authorization token for api requests that require auth.
 
 * The grant type to receive an auth token is 'password'.
 * Password must be a SHA256 hash of the user's password, with hyphens removed.
+* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ---
 
@@ -181,6 +182,8 @@ Deletes an authorization token preventing further use.
 **URL** : `/api/oauth/token/[username]/[tokenId]`
 
 **Method** : `DELETE`
+
+**Authorization Required** : `No`
 
 **Body** : `None`
 

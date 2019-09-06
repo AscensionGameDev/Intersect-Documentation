@@ -162,6 +162,10 @@ Creates an account on the server for a user given a username, password, and emai
   "email": "jcsnider@ascensiongamedev.com"
 }
 ```
+**Notes**
+
+* Password must be a SHA256 hash of the plaintext password, with hyphens removed.
+* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ---
 
@@ -332,6 +336,11 @@ Change the password associated with a user given the users' current password.
 ```json
 "Password updated."
 ```
+
+**Notes**
+
+* Password must be a SHA256 hash of the plaintext password, with hyphens removed.
+* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ## Request Password Reset Email
 
@@ -540,6 +549,11 @@ Change a users password without their existing password. **Requires the Users.Ma
 }
 ```
 
+**Notes**
+
+* Password must be a SHA256 hash of the plaintext password, with hyphens removed.
+* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
+
 ---
 
 ### Response
@@ -553,5 +567,10 @@ Change a users password without their existing password. **Requires the Users.Ma
 ```json
 "Password updated."
 ```
+
+**Notes**
+
+* Password must be a SHA256 hash of the plaintext password, with hyphens removed.
+* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
 
 
