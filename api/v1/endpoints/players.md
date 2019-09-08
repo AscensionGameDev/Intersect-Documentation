@@ -137,7 +137,9 @@ Retrieves the number of online players.
 **Example**
 
 ```json
-1
+{
+    "onlineCount": 1
+}
 ```
 
 ## Lookup
@@ -288,7 +290,9 @@ Retrieves player variable value for a given player variable id.
 **Example**
 
 ```json
-true
+{
+    "value": true
+}
 ```
 
 ## Set Variable Value

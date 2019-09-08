@@ -124,7 +124,9 @@ Retrieves the stored value of a variable from the server by id.
 **Example**
 
 ```json
-0
+{
+    "value": 0
+}
 ```
 
 

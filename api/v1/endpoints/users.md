@@ -225,7 +225,9 @@ Checks whether a user provided password is valid.
 **Example**
 
 ```json
-Correct password.
+{
+    "Message": "Password Correct"
+}
 ```
 
 ## Change Email
@@ -334,7 +336,9 @@ Change the password associated with a user given the users' current password.
 **Example**
 
 ```json
-"Password updated."
+{
+    "Message": "Password Updated"
+}
 ```
 
 **Notes**
@@ -371,7 +375,9 @@ Sends the user an email with a password reset code. This requires your server SM
 **Example**
 
 ```json
-"Password reset email sent."
+{
+    "Message": "Password reset email sent."
+}
 ```
 
 
@@ -565,7 +571,9 @@ Change a users password without their existing password. **Requires the Users.Ma
 **Example**
 
 ```json
-"Password updated."
+{
+    "Message": "Password Correct"
+}
 ```
 
 **Notes**
