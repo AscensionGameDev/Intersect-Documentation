@@ -76,31 +76,36 @@ Grabs a list of game objects and their stored information from the server given 
 **Example**
 
 ```json
-[
-    {
-        "Key": "bf34b04c-17e1-4633-ba1e-d5df11f2c30d",
-        "Value":{"Name": "Cheese", "UsageRequirements":{"Lists": "[]" }, "AnimationId": "00000000-0000-0000-0000-000000000000",…}
-    },
-    {
-        "Key": "886f5278-3a03-4d05-ae67-8545922363db",
-        "Value":{"Name": "Life potion", "UsageRequirements":{"Lists": "[]" }, "AnimationId": "b0d85352-5b80-4917-9ac0-c853b67e9a8c",…}
-    },
-    {
-        "Key": "ffda773e-9451-48b2-aab6-db1b8066f487",
-        "Value":{"Name": "Big life potion", "UsageRequirements":{"Lists": "[]" }, "AnimationId": "b0d85352-5b80-4917-9ac0-c853b67e9a8c",…}
-    },
-    {
-        "Key": "1e5451c7-e02d-429e-9533-46a6fe9502fd",
-        "Value":{"Name": "Level up", "UsageRequirements":{"Lists": "[]" }, "AnimationId": "00000000-0000-0000-0000-000000000000",…}
-    },
-    {
-        "Key": "0f15d461-3e55-4413-9988-8ce06824e20a",
-        "Value":{"Name": "Mana potion", "UsageRequirements":{"Lists": "[]" }, "AnimationId": "00000000-0000-0000-0000-000000000000",…}
-    }
-]
+{
+    "total": 27,
+    "Page": 0,
+    "count": 5,
+    "entries":[
+        {
+            "Key": "bf34b04c-17e1-4633-ba1e-d5df11f2c30d",
+            "Value":{"Name": "Cheese", "UsageRequirements":{"Lists": "[]" }, "AnimationId": "00000000-0000-0000-0000-000000000000",…}
+        },
+        {
+            "Key": "886f5278-3a03-4d05-ae67-8545922363db",
+            "Value":{"Name": "Life potion", "UsageRequirements":{"Lists": "[]" }, "AnimationId": "b0d85352-5b80-4917-9ac0-c853b67e9a8c",…}
+        },
+        {
+            "Key": "ffda773e-9451-48b2-aab6-db1b8066f487",
+            "Value":{"Name": "Big life potion", "UsageRequirements":{"Lists": "[]" }, "AnimationId": "b0d85352-5b80-4917-9ac0-c853b67e9a8c",…}
+        },
+        {
+            "Key": "1e5451c7-e02d-429e-9533-46a6fe9502fd",
+            "Value":{"Name": "Level up", "UsageRequirements":{"Lists": "[]" }, "AnimationId": "00000000-0000-0000-0000-000000000000",…}
+        },
+        {
+            "Key": "0f15d461-3e55-4413-9988-8ce06824e20a",
+            "Value":{"Name": "Mana potion", "UsageRequirements":{"Lists": "[]" }, "AnimationId": "00000000-0000-0000-0000-000000000000",…}
+        }
+    ]
+}
 ```
 
-Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/bcd9e08a636671fccf0dcafca3d3bf71.json).
+Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/22f4c4e10e9955aeb606715ae77e5976.json).
 
 
 ## Get Object
