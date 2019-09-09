@@ -178,6 +178,7 @@ module.exports = {
                         '/advanced/interface.md',
                         '/advanced/zdimensions.md',
                         '/advanced/sizes.md',
+                        '/advanced/passwords.md',
                     ]
                 },
                 {
