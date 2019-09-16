@@ -1,7 +1,7 @@
 # Download Intersect
-Intersect can be downloaded from Ascension Game Dev's download hub. [Download the latest version of Intersect from AGD.](https://www.ascensiongamedev.com/community/forum/62-download/)
+Intersect can be downloaded from Ascension Game Dev's download hub. [Download the latest version of Intersect from our site.](https://www.freemmorpgmaker.com/downloads/)
  
-Save this file somewhere you can find it.
+If you're just now getting started with Intersect you will want to download the Full archive. Save this file somewhere you can find it.
 
 ## Extracting Intersect
 Intersect is contained within a zip archive. Any version of Windows can extract Intersect so you can begin using it. Navigate to the Intersect archive, right click on it, and select the Extract All option.

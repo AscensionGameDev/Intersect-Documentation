@@ -190,6 +190,13 @@ module.exports = {
                         '/deploy/distributing.md',
                     ]
                 },
+                {
+                    title: 'Upgrading',
+                    collapsable: true,
+                    children: [
+                        '/upgrade/upgrading.md',
+                    ]
+                },
             ],
         },
     },
