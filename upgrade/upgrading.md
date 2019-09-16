@@ -25,15 +25,13 @@ Minor: 6
 Build: 2
 Revision: 205
 
-
 ## Finding Your Version
 
 Launch your server and the version will appear at the top of the console window.
-!(Server Version)[https://www.ascensiongamedev.com/resources/filehost/37ca2f5c3182bfeabed6ed29f9d79eab.png]
+![Server Version](https://www.ascensiongamedev.com/resources/filehost/37ca2f5c3182bfeabed6ed29f9d79eab.png)
 
 Opening the file properties of the Client or Editor and browsing the details tab will also show their version numbers.
-!(Client Version)[https://www.ascensiongamedev.com/resources/filehost/4639404bb8324f51d0e44617861460fa.png]
-
+![Client Version](https://www.ascensiongamedev.com/resources/filehost/4639404bb8324f51d0e44617861460fa.png)
 
 ## When to Patch
 
