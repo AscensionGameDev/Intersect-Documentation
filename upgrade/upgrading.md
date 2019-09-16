@@ -2,6 +2,10 @@
 
 Upgrading Intersect is generally as easy as overwriting a few files and calling it a day, but that isn't always the case. This page will talk about a few upgrading scenarios and how to handle them.
 
+## What to Download
+
+If you're just getting started with Intersect, or want to setup a clean project choose Full. If you've already got an existing project read the rest of this page for information on how to determine your verison and whether to choose the upgrade or patch packages based on the new version.
+
 ## Backups!
 
 Always make a backup of everything before attempting an upgrade! That includes your client, editor, all of your resources, and most importantly your server databases!
@@ -28,9 +32,11 @@ Revision: 205
 ## Finding Your Version
 
 Launch your server and the version will appear at the top of the console window.
+
 ![Server Version](https://www.ascensiongamedev.com/resources/filehost/37ca2f5c3182bfeabed6ed29f9d79eab.png)
 
 Opening the file properties of the Client or Editor and browsing the details tab will also show their version numbers.
+
 ![Client Version](https://www.ascensiongamedev.com/resources/filehost/4639404bb8324f51d0e44617861460fa.png)
 
 ## When to Patch
