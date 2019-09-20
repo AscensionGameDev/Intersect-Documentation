@@ -12,7 +12,7 @@ Open your Server/resources/config.json and enter your SMTP information. Example 
     "FromAddress": "ascensiongamedev@gmail.com",
     "FromName": "Ascension Admin",
     "Host": "smtp.gmail.com",
-    "Port": 465,
+    "Port": 587,
     "UseSsl": true,
     "Username": "ascensiongamedev@gmail.com",
     "Password": "password"
