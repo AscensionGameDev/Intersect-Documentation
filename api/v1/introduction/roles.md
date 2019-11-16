@@ -1,6 +1,6 @@
-# Api Roles
+# API Roles
 
-Api roles are special api permissions that you can assign to an account. Having basic api access does not allow you to work with user information or manage user emails/passwords, for example.
+API roles are special API permissions that you can assign to an account. Having basic API access does not allow you to work with user information or manage user emails/passwords, for example.
 
 There are three server commands for dealing with api roles.
 
