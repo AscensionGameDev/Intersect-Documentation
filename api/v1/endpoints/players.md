@@ -8,6 +8,56 @@ Retrieves characters from the server along with their ids and stored information
 
 **URL** : `/api/v1/players`
 
+**Method** : `GET`
+
+**Authorization Required** : `Yes`
+
+**Query Parameters**
+
+| Name  | Type | Description | Required | Default |
+| ----- | ---- |------------ | -------- | ------- |
+| page | int  | Offset of players as a page number | :heavy_minus_sign: | 0 |
+| pageSize | int  | Number of players per page | :heavy_minus_sign: | 5 |
+| limit | int  | Limit of how many players are returned | :heavy_minus_sign: | `pageSize` |
+
+**Example**
+
+```http
+GET /api/v1/players?page=1&pageSize=5
+```
+---
+
+### Response
+
+```http
+Status Code: 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+    "Total": 151,
+    "Page": 1,
+    "PageSize": 5,
+    "Count": 5,
+    "Values": [
+        {"Name": "Kassie", "InBank": false, "UserId": "08d655ec-fbdf-aac6-0d22-408e20479301", "MaxVitals":[500,…},
+        {"Name": "Euzinho", "InBank": false, "UserId": "08d6c8b4-e33f-feb8-67eb-197306686578", "MaxVitals":[500,…},
+        {"Name": "bob", "InBank": false, "UserId": "2662c500-0f7f-479c-b6b0-c51042258d87", "MaxVitals":[500,…},
+        {"Name": "Beatz", "InBank": false, "UserId": "08d65649-b98e-9d0a-e0f1-8ba43edb34e2", "MaxVitals":[500,…},
+        {"Name": "test1658", "InBank": false, "UserId": "08d64d4a-e86e-d4f8-0c0a-3c6759c5a3f6", "MaxVitals":[500,…}
+    ]
+}
+```
+
+## List Players
+
+Retrieves characters from the server along with their ids and stored information.
+
+### Request
+
+**URL** : `/api/v1/players`
+
 **Method** : `POST`
 
 **Authorization Required** : `Yes`
@@ -56,6 +106,57 @@ Retrieves characters from the server along with their ids and stored information
 ```
 
 Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/42c3988911273609ceeeb424f13f7ac2.json).
+
+## Rank Players
+
+Retrieves characters from the server along with their ids and stored information, ranked by their `Level` and `Exp`.
+
+### Request
+
+**URL** : `/api/v1/players/rank`
+
+**Method** : `GET`
+
+**Authorization Required** : `Yes`
+
+**Query Parameters**
+
+| Name  | Type | Description | Required | Default |
+| ----- | ---- |------------ | -------- | ------- |
+| page | int  | Offset of players as a page number | :heavy_minus_sign: | 0 |
+| pageSize | int  | Number of players per page | :heavy_minus_sign: | 5 |
+| limit | int  | Limit of how many players are returned | :heavy_minus_sign: | `pageSize` |
+| sortDirection | `Ascending`/`Descending`  | direction to sort in | :heavy_minus_sign: | `Descending` |
+
+**Example**
+
+```http
+GET /api/v1/players/rank?page=1&pageSize=5&sortDirection=Descending
+```
+---
+
+### Response
+
+```http
+Status Code: 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+    "Total": 151,
+    "Page": 1,
+    "PageSize": 5,
+    "Count": 5,
+    "Values": [
+        {"Name": "Kassie", "InBank": false, "UserId": "08d655ec-fbdf-aac6-0d22-408e20479301", "MaxVitals":[500,…},
+        {"Name": "Beatz", "InBank": false, "UserId": "08d65649-b98e-9d0a-e0f1-8ba43edb34e2", "MaxVitals":[500,…},
+        {"Name": "bob", "InBank": false, "UserId": "2662c500-0f7f-479c-b6b0-c51042258d87", "MaxVitals":[500,…},
+        {"Name": "Euzinho", "InBank": false, "UserId": "08d6c8b4-e33f-feb8-67eb-197306686578", "MaxVitals":[500,…},
+        {"Name": "test1658", "InBank": false, "UserId": "08d64d4a-e86e-d4f8-0c0a-3c6759c5a3f6", "MaxVitals":[500,…}
+    ]
+}
+```
 
 ## List Online Players
 
