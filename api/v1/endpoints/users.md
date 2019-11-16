@@ -1,8 +1,8 @@
 # Users
 
-**These endpoints require the Users.Query role!**
+**These endpoints require the [users.query API Role](https://docs.freemmorpgmaker.com/api/v1/introduction/roles.html#users-query)!**
 
-## Get Users
+## List Users
 
 Retrieves users from the server along with their ids and stored information.
 
@@ -10,44 +10,40 @@ Retrieves users from the server along with their ids and stored information.
 
 **URL** : `/api/v1/users`
 
-**Method** : `POST`
+**Method** : `GET`
 
 **Authorization Required** : `Yes`
 
-**Content Type** : `application/json`
+**Query Parameters**
 
-**Body**
-
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| page | int  | Page of users to retrieve. | :heavy_minus_sign: |
-| count | int  | Number of users to retrieve. | :heavy_minus_sign: |
+| Name  | Type | Description | Required | Default |
+| ----- | ---- |------------ | -------- | ------- |
+| page | int  | Offset of users as a page number | :heavy_minus_sign: | 0 |
+| pageSize | int  | Number of users per page | :heavy_minus_sign: | 5 |
+| limit | int  | Limit of how many users are returned | :heavy_minus_sign: | `pageSize` |
 
 **Example**
 
-```json
-{
-  "page": 32,
-  "count": 5
-}
+```http
+GET /api/v1/users?page=32&pageSize=5
 ```
 
 ---
 
 ### Response
 
-**Condition** : NA
-
-**Code** : `200 OK`
-
-**Example**
+```http
+Status Code: 200 OK
+Content-Type: application/json; charset=utf-8
+```
 
 ```json
 {
-    "total": 162,
+    "Total": 162,
     "Page": 32,
-    "count": 2,
-    "entries":[
+    "PageSize": 5,
+    "Count": 2,
+    "Values": [
         {
             "Id": "f71a2f48-ce7b-4420-ae37-8802b8c4fb60",
             "Name": "tester",
@@ -581,4 +577,85 @@ Change a users password without their existing password. **Requires the Users.Ma
 * Password must be a SHA256 hash of the plaintext password, with hyphens removed.
 * You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
 
+## List Users (`POST`) (_Deprecated_)
+
+Retrieves users from the server along with their ids and stored information.
+
+### Request
+
+**URL** : `/api/v1/users`
+
+**Method** : `POST`
+
+**Authorization Required** : `Yes`
+
+**Content Type** : `application/json`
+
+**Body**
+
+| Name  | Type | Description | Required |
+| ----- | ---- |------------ | -------- |
+| page | int  | Page of users to retrieve. | :heavy_minus_sign: |
+| count | int  | Number of users to retrieve. | :heavy_minus_sign: |
+
+**Example**
+
+```json
+{
+  "page": 32,
+  "count": 5
+}
+```
+
+---
+
+### Response
+
+**Condition** : NA
+
+**Code** : `200 OK`
+
+**Example**
+
+```json
+{
+    "total": 162,
+    "Page": 32,
+    "count": 2,
+    "entries":[
+        {
+            "Id": "f71a2f48-ce7b-4420-ae37-8802b8c4fb60",
+            "Name": "tester",
+            "Email": "testr@testr.com",
+            "Power":{
+                "Editor": false,
+                "Ban": false,
+                "Kick": false,
+                "Mute": false,
+                "Api": false,
+                "PersonalInformation": false
+            },
+            "PasswordResetCode": null,
+            "IsMuted": false,
+            "MuteReason": null
+        },
+        {
+            "Id": "fb19a81b-000f-4679-b30d-778dc8895594",
+            "Name": "jcsnider",
+            "Email": "test@test.com",
+            "Power":{
+                "Editor": false,
+                "Ban": false,
+                "Kick": false,
+                "Mute": false,
+                "Api": false,
+                "PersonalInformation": false
+            },
+            "PasswordResetCode": null,
+            "IsMuted": false,
+            "MuteReason": null
+        }
+    ]
+}
+```
 
