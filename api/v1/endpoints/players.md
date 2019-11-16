@@ -25,6 +25,7 @@ Retrieves characters from the server along with their ids and stored information
 ```http
 GET /api/v1/players?page=1&pageSize=5
 ```
+
 ---
 
 ### Response
