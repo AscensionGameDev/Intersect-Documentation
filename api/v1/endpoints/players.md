@@ -50,63 +50,6 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-## List Players
-
-Retrieves characters from the server along with their ids and stored information.
-
-### Request
-
-**URL** : `/api/v1/players`
-
-**Method** : `POST`
-
-**Authorization Required** : `Yes`
-
-**Content Type** : `application/json`
-
-**Body**
-
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| page | int  | Page of characters to retrieve. | :heavy_minus_sign: |
-| count | int  | Number of characters to retrieve. | :heavy_minus_sign: |
-
-**Example**
-
-```json
-{
-  "page": 0,
-  "count": 5
-}
-```
-
----
-
-### Response
-
-**Condition** : NA
-
-**Code** : `200 OK`
-
-**Example**
-
-```json
-{
-    "total": 151,
-    "Page": 0,
-    "count": 5,
-    "entries":[
-        {"Name": "Kassie", "InBank": false, "UserId": "08d655ec-fbdf-aac6-0d22-408e20479301", "MaxVitals":[500,…},
-        {"Name": "Euzinho", "InBank": false, "UserId": "08d6c8b4-e33f-feb8-67eb-197306686578", "MaxVitals":[500,…},
-        {"Name": "bob", "InBank": false, "UserId": "2662c500-0f7f-479c-b6b0-c51042258d87", "MaxVitals":[500,…},
-        {"Name": "Beatz", "InBank": false, "UserId": "08d65649-b98e-9d0a-e0f1-8ba43edb34e2", "MaxVitals":[500,…},
-        {"Name": "test1658", "InBank": false, "UserId": "08d64d4a-e86e-d4f8-0c0a-3c6759c5a3f6", "MaxVitals":[500,…}
-    ]
-}
-```
-
-Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/42c3988911273609ceeeb424f13f7ac2.json).
-
 ## Rank Players
 
 Retrieves characters from the server along with their ids and stored information, ranked by their `Level` and `Exp`.
@@ -880,3 +823,60 @@ Makes a player forget a spell.
     "SpellId": "c54378ba-5632-4ad9-a7cf-6ec0b0264b4e"
 }
 ```
+
+## List Players (`POST`) (_Deprecated_)
+
+Retrieves characters from the server along with their ids and stored information.
+
+### Request
+
+**URL** : `/api/v1/players`
+
+**Method** : `POST`
+
+**Authorization Required** : `Yes`
+
+**Content Type** : `application/json`
+
+**Body**
+
+| Name  | Type | Description | Required |
+| ----- | ---- |------------ | -------- |
+| page | int  | Page of characters to retrieve. | :heavy_minus_sign: |
+| count | int  | Number of characters to retrieve. | :heavy_minus_sign: |
+
+**Example**
+
+```json
+{
+  "page": 0,
+  "count": 5
+}
+```
+
+---
+
+### Response
+
+**Condition** : NA
+
+**Code** : `200 OK`
+
+**Example**
+
+```json
+{
+    "total": 151,
+    "Page": 0,
+    "count": 5,
+    "entries":[
+        {"Name": "Kassie", "InBank": false, "UserId": "08d655ec-fbdf-aac6-0d22-408e20479301", "MaxVitals":[500,…},
+        {"Name": "Euzinho", "InBank": false, "UserId": "08d6c8b4-e33f-feb8-67eb-197306686578", "MaxVitals":[500,…},
+        {"Name": "bob", "InBank": false, "UserId": "2662c500-0f7f-479c-b6b0-c51042258d87", "MaxVitals":[500,…},
+        {"Name": "Beatz", "InBank": false, "UserId": "08d65649-b98e-9d0a-e0f1-8ba43edb34e2", "MaxVitals":[500,…},
+        {"Name": "test1658", "InBank": false, "UserId": "08d64d4a-e86e-d4f8-0c0a-3c6759c5a3f6", "MaxVitals":[500,…}
+    ]
+}
+```
+
+Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/42c3988911273609ceeeb424f13f7ac2.json).
