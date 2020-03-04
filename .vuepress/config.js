@@ -85,7 +85,6 @@ module.exports = {
                     children: [
                         '/dev/start/vs.md',
                         '/dev/start/github.md',
-                        '/dev/start/setup.md',
                         '/dev/start/compiling.md',
                     ]
                 },
