@@ -77,7 +77,6 @@ module.exports = {
                     collapsable: true,
                     children: [
                         '/dev/',
-                        '/dev/introduction/repo.md',
                     ]
                 },
                 {
