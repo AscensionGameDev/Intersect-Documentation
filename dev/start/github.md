@@ -17,7 +17,7 @@ To create your fork browse to our [Github repo](https://github.com/AscensionGame
 
 ![forking](https://www.ascensiongamedev.com/resources/filehost/209a31015a60ae45664c25e82d17b688.png)
 
-When done you will have your own copy of the Intersect repo that remains linked to the offical repo. Later you can pull official updates into your code base or even submit a reset to contribute your code back to the base engine.
+When done you will have your own copy of the Intersect repo that remains linked to the offical repo. Later you can pull official updates into your code base or even submit a pull request to contribute your code back to the base engine.
 
 ## Cloning Intersect
 The last step is to clone your Intersect code repository onto your computer. Now that you've installed Github desktop and forked the Intersect repo this is really easy.

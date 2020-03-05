@@ -86,6 +86,7 @@ module.exports = {
                         '/dev/start/vs.md',
                         '/dev/start/github.md',
                         '/dev/start/compiling.md',
+                        '/dev/start/layout.md',
                     ]
                 },
                 {

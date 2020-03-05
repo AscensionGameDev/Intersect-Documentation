@@ -23,7 +23,7 @@ Visual Studio will notify you of a successful build in the bottom left corner of
 
 The compiled version of Intersect can be found in your Intersect-Engine/build directory. There will be a lot of xml files along side the executables but you should only really care about the .exe and .pdb files for the Client, Editor, and Server for now.
 
-![builds](https://www.ascensiongamedev.com/resources/filehost/5c0070679608ae4d663de3bc34c4527b.png)
+![output](https://www.ascensiongamedev.com/resources/filehost/5c0070679608ae4d663de3bc34c4527b.png)
 
 
 **Are you having trouble building a clean version of Intersect? Check out our troubleshooting tips here.**
