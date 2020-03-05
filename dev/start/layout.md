@@ -10,7 +10,7 @@ It is considered best practice to always branch off of Master or Development whe
 One major benefit of branching is the ability to avoid duplicate work. As an example, since our Development branch is based on and is a a continuation of Master we can often fix bugs in Master and automatically pull those fixes into Development without coding the same fix twice.
 
 
-## Projects
+## Directories
 The actual Intersect directory layout is fairly simple.
 
 | File/Directory | Description |
