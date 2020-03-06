@@ -1,1 +1,0 @@
-# Code and Style Guidelines

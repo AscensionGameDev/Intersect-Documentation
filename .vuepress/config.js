@@ -99,11 +99,20 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'Contributing',
+                    title: 'Staying up to Date',
                     collapsable: true,
                     children: [
-                        '/dev/contribute/style.md',
-                        '/dev/contribute/pullrequests.md',
+                        '/dev/pullrequests/pulling.md',
+                        '/dev/pullrequests/submitting.md',
+                    ]
+                },
+                {
+                    title: 'Sharing & Contributions',
+                    collapsable: true,
+                    children: [
+                        '/dev/sharing/creating.md',
+                        '/dev/sharing/applying.md',
+                        '/dev/sharing/contributing.md',
                     ]
                 },
                 {
@@ -111,6 +120,8 @@ module.exports = {
                     collapsable: true,
                     children: [
                         '/dev/advanced/migrations.md',
+                        '/dev/advanced/packets.md',
+                        '/dev/advanced/eventcommands.md',
                     ]
                 },
             ],
