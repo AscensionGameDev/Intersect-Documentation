@@ -90,12 +90,12 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'Modifications',
+                    title: 'Making Changes',
                     collapsable: true,
                     children: [
-                        '/dev/modify/branching.md',
-                        '/dev/modify/committing.md',
-                        '/dev/modify/pushing.md',
+                        '/dev/modify/proceedure.md',
+                        '/dev/modify/merging.md',
+                        '/dev/modify/conflicts.md',
                     ]
                 },
                 {
