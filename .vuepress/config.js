@@ -93,7 +93,7 @@ module.exports = {
                     title: 'Making Changes',
                     collapsable: true,
                     children: [
-                        '/dev/modify/proceedure.md',
+                        '/dev/modify/procedure.md',
                         '/dev/modify/merging.md',
                         '/dev/modify/conflicts.md',
                     ]

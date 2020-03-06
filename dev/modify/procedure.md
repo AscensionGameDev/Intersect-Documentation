@@ -1,4 +1,4 @@
-# Basic Proceedure
+# Basic Procedure
 
 ## Pull First
 Get into the habit of fetching and pulling first! Fetching and pulling is the process of grabbing any code changes that exist on Github that are not currently in your local repository. If you continue to branch and make changes to outdated or potentially modified code you may end up finding yourself in a world where you are dealing with unneccessary code conflcits down the line. You can fetch and pull by clicking the fetch button in the Github desktop app.
