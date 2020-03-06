@@ -21,8 +21,11 @@ Go ahead and try to merge the pull request by clicking the merge button.
 
 ![merge](https://www.ascensiongamedev.com/resources/filehost/5133efdbc9b8ae2ef1b44c29e40b49e3.png)
 
-
 Depending on what changes you've made to your branches you might run into merge conflicts. Click [here](/dev/modify/conflicts.md) for more information about merge conflicts and how to solve them.
+
+After merging be sure to pull the changes in your Github Desktop app. (You might have to fetch first!)
+
+![pull](https://www.ascensiongamedev.com/resources/filehost/cfb1dc1b3d9c6cb5aef42d20eff0a3ed.png)
 
 
 
