@@ -103,7 +103,6 @@ module.exports = {
                     collapsable: true,
                     children: [
                         '/dev/pullrequests/pulling.md',
-                        '/dev/pullrequests/submitting.md',
                     ]
                 },
                 {
