@@ -13,7 +13,7 @@ Your first build will probably fail with errors seen below. This is due to the p
 
 ![errors](https://www.ascensiongamedev.com/resources/filehost/3ddd530d599409f7a8a69a510fa3ab70.png)
 
-If you experience the errors above just click Build > Clean Solution and then Build -> Build Solution again.
+If you experience the errors above just click Build > Clean Solution and then Build -> Build Solution again. If that doesn't work try restarting visual studio.
 
 ![clean](https://www.ascensiongamedev.com/resources/filehost/068c7b0d67e8fa94d998f8b2151f98a1.png)
 
@@ -26,4 +26,4 @@ The compiled version of Intersect can be found in your Intersect-Engine/build di
 ![output](https://www.ascensiongamedev.com/resources/filehost/5c0070679608ae4d663de3bc34c4527b.png)
 
 
-**Are you having trouble building a clean version of Intersect? Check out our troubleshooting tips here.**
+** Please note, if you want to run your client or editor using the debugger you will need to download and place the appropriate assets in the /build/debug/client and /build/debug/editor directories. **
