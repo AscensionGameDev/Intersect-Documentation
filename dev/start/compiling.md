@@ -26,4 +26,4 @@ The compiled version of Intersect can be found in your Intersect-Engine/build di
 ![output](https://www.ascensiongamedev.com/resources/filehost/5c0070679608ae4d663de3bc34c4527b.png)
 
 
-** Please note, if you want to run your client or editor using the debugger you will need to download and place the appropriate assets in the /build/debug/client and /build/debug/editor directories. **
+** Please note, if you want to run your client or editor using the debugger you will need to [download and place the appropriate assets](https://github.com/AscensionGameDev/Intersect-Assets) in the /build/debug/client and /build/debug/editor directories. **
