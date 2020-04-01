@@ -1,4 +1,4 @@
-# Database Notes
+# Database
 
 Intersect has two databases, one that stores game data such as items, maps, resources, events, etc and another that stores all data related to player accounts.
 
