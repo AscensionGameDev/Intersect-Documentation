@@ -118,7 +118,7 @@ module.exports = {
                     title: 'Advanced',
                     collapsable: true,
                     children: [
-                        '/dev/advanced/migrations.md',
+                        '/dev/advanced/database.md',
                         '/dev/advanced/packets.md',
                         '/dev/advanced/eventcommands.md',
                     ]
