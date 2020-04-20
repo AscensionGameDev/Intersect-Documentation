@@ -197,6 +197,7 @@ module.exports = {
                         '/deploy/forwarding.md',
                         '/deploy/packing.md',
                         '/deploy/distributing.md',
+                        '/deploy/autoupdater.md'
                     ]
                 },
                 {
