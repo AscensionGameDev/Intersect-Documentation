@@ -38,7 +38,7 @@ To package updates going forward use the `Tools > Package Update` button within 
 The following advanced configuration options are completely optional. If you don't know exactly why you'd want to use these then ignore them! Both of these options requires that your webhost can serve php pages and execute php scripts.
 
 
-### Dynamically Generate Metadata
+### Dynamically Generate Metadata  (Optional, Beta)
 
 Instead of using the `Editor -> Tools -> Package Update` function to generate your update.json metadata for you, you can instead use this `update.php` script. The script will scan your webhost for files and automatically generate the update configuration on the fly. This is useful if you want to allow others on your team to drag -> drop assets or updates onto your webserver without needing to use the editor to package a massive update for each small change.
 
@@ -46,10 +46,10 @@ The downside to this script is that checking for updates will take a bit longer,
 
 After placing your script into your update folder on your webhost modify your `UpdateUrl` in the `Client and Editor/Resources/Config.json` file to point to `update.php`.
 
-[Download Here]()
+[Download Here](https://www.ascensiongamedev.com/resources/filehost/1c6fa0679887918ed6d54b6609afd1ca.zip)
 
 
-### Streaming Downloads
+### Streaming Downloads  (Optional, Beta)
 
 Instead of having the client open up hundreds or thousands of HTTP file downloads from your web server you can have your client request a list of files all at once and then have them send back in a single connection through a continuous stream. If you are using the `update.php` script above simply place this `stream.php` script into your update folder as well and you'll be good to go.
 
@@ -57,4 +57,4 @@ If you want to use this script with static update.json files you will need to mo
 
 `'StreamingUrl': 'https://<path to stream.php>',`
 
-[Download Here]()
+[Download Here](https://www.ascensiongamedev.com/resources/filehost/972d4c5a35cc8a7c4930029b41b30360.zip)
