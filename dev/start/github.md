@@ -39,3 +39,7 @@ If you navigate to the folder you cloned to, you will see Intersect's source rea
 ![source](https://www.ascensiongamedev.com/resources/filehost/34775c4d0e6b0359eb1aa908eb4a228d.png)
 
 All the setup is now done! The next step is opening the code in visual studio and compiling it for the first time!
+
+## Public vs Private Repos
+
+Github does not allow making forked repositories private at this time. That means if you commit custom code and then Push (Upload) those code changes to Github your modifications will be public! Creating private clones are possible but they lose the ability to easily pull code changes in order to stay up to date with the base engine, that route is more advanced than what these docs are meant for, so we recommend researching that if interested.  
