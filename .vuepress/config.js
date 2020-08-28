@@ -13,12 +13,24 @@ module.exports = {
         ['meta', { name: 'msapplication-config', content: '/favicons/browserconfig.xml' }],
         ['meta', { name: 'theme-color', content: '#ffffff' }],
     ],
+    postcss: {
+        plugins: [
+            require('css-prefers-color-scheme/postcss'),
+            require('autoprefixer')
+        ]
+    },
+    theme: 'default-prefers-color-scheme',
     themeConfig: {
-        repo: 'jcsnider/Intersect-Engine',
+        defaultTheme: 'dark',
+        repo: 'AscensionGameDev/Intersect-Engine',
         docsRepo: 'AscensionGameDev/Intersect-Documentation',
-        editLinkText: 'Help us improve this page.',
+        docsDir: '',
+        docsBranch: 'master',
         editLinks: true,
         logo: 'https://www.ascensiongamedev.com/resources/filehost/e37ded2fa492ae07375cd18bd1d8312c.png',
+        smoothScroll: true,
+
+        editLinkText: 'Help us improve this page.',
         nav: [
             {
                 text: 'User Docs',
@@ -55,7 +67,7 @@ module.exports = {
                     children: [
                         '/api/v1/endpoints/authentication.md',
                         '/api/v1/endpoints/admin.md',
-						'/api/v1/endpoints/chat.md',
+                        '/api/v1/endpoints/chat.md',
                         '/api/v1/endpoints/info.md',
                         '/api/v1/endpoints/gameobjects.md',
                         '/api/v1/endpoints/users.md',
