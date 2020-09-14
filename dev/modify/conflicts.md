@@ -1,5 +1,5 @@
 # Dealing with Conflicts
-A merge conflict occurs when you try to merge branches where the same lines or sections of code have been modified. Unfortunately in these insances Git requires a little help to sort things out.
+A merge conflict occurs when you try to merge branches where the same lines or sections of code have been modified. Unfortunately in these instances Git requires a little help to sort things out.
 
 Whether you're working with pull requests or trying to merge branches locally you're eventually going to have to deal with a merge conflict.
 
@@ -11,7 +11,7 @@ Here is a conflict I dealt with recently.
 
 The original code looked like the following:
 
-```
+```cs
 //Player Out of Range Or Offline
 PacketSender.SendChatMsg(
     client, Strings.Trading.outofrange.ToString(),
@@ -23,7 +23,7 @@ We were working on refactoring our code in two different branches at the same ti
 
 Upon merging the second branch I was left to solve the following conflict:
 
-```
+```cs
 //Player Out of Range Or Offline
 PacketSender.SendChatMsg(
 <<<<<<< HEAD
@@ -38,9 +38,9 @@ PacketSender.SendChatMsg(
 
 The ======= separates the code from both branches. In the top half we changed client to player. In the bottom half we changed CustomColors.NoTarget to CustomColors.Combat.NoTarget.
 
-In some instances you will decide to keep the code above the divider in others you will keep the code below the divider. In this case we want to keep code from both so I manaully updated the file to end up with the resulting code.
+In some instances you will decide to keep the code above the divider in others you will keep the code below the divider. In this case we want to keep code from both so I manually updated the file to end up with the resulting code.
 
-```
+```cs
 //Player Out of Range Or Offline
 PacketSender.SendChatMsg(
     player, Strings.Trading.outofrange.ToString(),
