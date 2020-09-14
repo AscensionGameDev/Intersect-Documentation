@@ -18,4 +18,4 @@ git format-patch master --stdout > patchName.patch
 
 The patch file you've created can be found in the directory of your local repository.
 
-You can upload your patch to [Diffy](https://diffy.org) in order to view it's contents.
+You can upload your patch to [Diffy](https://diffy.org) in order to view its contents.
