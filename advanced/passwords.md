@@ -7,7 +7,7 @@ Setup a email account somewhere that allows sending emails via SMTP. Gmail is an
 
 Open your Server/resources/config.json and enter your SMTP information. Example below.
 
-``` json
+```json
   "SmtpSettings": {
     "FromAddress": "ascensiongamedev@gmail.com",
     "FromName": "Ascension Admin",
@@ -32,7 +32,7 @@ To check if a plaintext password is correct do the following:
 * Concatinate the salt to the password and use a SHA256 hash on the result removing any dashes in the resulting output again.
 
 C# Code Reference
-```
+```cs
 var sha = new SHA256Managed();
 string pass = BitConverter.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes("plaintext_password"))).Replace("-", "");
 string salt = "AD07665AE12767B2B712752595D0E4C16479B01D07E66AF9F9E6081C811C4C21";  //Salt pulled from the database
