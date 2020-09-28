@@ -156,7 +156,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'Intersect Editors',
+                    title: 'Editors',
                     collapsable: true,
                     children: [
                         '/design/animations.md',
@@ -189,17 +189,28 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'Advanced Configuration',
+                    title: 'Configuration',
                     collapsable: true,
                     children: [
-                        '/advanced/assets.md',
-                        '/advanced/fonts.md',
-                        '/advanced/formulas.md',
-                        '/advanced/translations.md',
-                        '/advanced/interface.md',
-                        '/advanced/zdimensions.md',
-                        '/advanced/sizes.md',
-                        '/advanced/passwords.md',
+                        '/configuration/client-editor.md',
+                        '/configuration/server.md',
+                        '/configuration/server-database.md',
+                        '/configuration/server-security.md',
+                        '/configuration/equipment.md',
+                        {
+                            title: 'Advanced',
+                            collapsable: true,
+                            children: [
+                                '/advanced/assets.md',
+                                '/advanced/fonts.md',
+                                '/advanced/formulas.md',
+                                '/advanced/translations.md',
+                                '/advanced/interface.md',
+                                '/advanced/zdimensions.md',
+                                '/advanced/sizes.md',
+                                '/advanced/passwords.md',
+                            ]
+                        }
                     ]
                 },
                 {
