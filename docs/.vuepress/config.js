@@ -38,7 +38,7 @@ module.exports = {
         defaultTheme: 'dark',
         repo: 'AscensionGameDev/Intersect-Engine',
         docsRepo: 'AscensionGameDev/Intersect-Documentation',
-        docsDir: '',
+        docsDir: 'docs',
         docsBranch: 'master',
         editLinks: true,
         logo: 'https://www.ascensiongamedev.com/resources/filehost/e37ded2fa492ae07375cd18bd1d8312c.png',
