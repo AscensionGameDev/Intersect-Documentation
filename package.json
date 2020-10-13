@@ -1,10 +1,12 @@
 {
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.6.0",
+    "@vuepress/plugin-nprogress": "^1.6.0",
     "vuepress": "^1.5.4",
     "vuepress-theme-default-prefers-color-scheme": "^1.1.0"
   },
   "scripts": {
-    "dev": "vuepress dev",
-    "docs:build": "vuepress build"
+    "dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   }
 }
