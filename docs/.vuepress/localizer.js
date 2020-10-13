@@ -72,7 +72,8 @@ module.exports = {
     locales: Object.assign({}, ...availableLocales.map(mapLocaleToVuepressLocales)),
     themeConfig: {
         locales: Object.assign({}, ...availableLocales.map(mapLocaleToVuepressThemeConfigLocales))
-    }
+    },
+    availableLocaleCodes: availableLocales.map(({ code }) => code)
 };
 
 if (process.env.DEBUG) {

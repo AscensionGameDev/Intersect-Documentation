@@ -1,4 +1,5 @@
-const { locales, themeConfig } = require('./localizer');
+const path = require('path');
+const { locales, themeConfig, availableLocaleCodes } = require('./localizer');
 
 module.exports = {
     base: '/',
@@ -20,7 +21,7 @@ module.exports = {
         '@vuepress/back-to-top',
         '@vuepress/nprogress',
         [
-            'vuepress-plugin-redirect',
+            require('./plugins/locale-redirect'),
             {
                 locales: true
             }
