@@ -2,7 +2,7 @@
 
 File storage and bandwidth costs! We do not have the capacity or funding to host your game data and updates for you. You will need to purchase a web hosting plan of your choice in order to distribute your game updates to your players.
 
-Static site hosts like Amazon S3 and Github pages will work well, but a webhost with the ability to run php is preferred for [faster updates and other benefits](#advancedconfiguration) that you might want to learn about later on.
+Static site hosts like Amazon S3 and GitHub pages will work well, but a webhost with the ability to run php is preferred for [faster updates and other benefits](#advancedconfiguration) that you might want to learn about later on.
 
 
 ## Creating
@@ -53,7 +53,7 @@ After placing your script into your update folder on your webhost modify your `U
 
 Instead of having the client open up hundreds or thousands of HTTP file downloads from your web server you can have your client request a list of files all at once and then have them send back in a single connection through a continuous stream. If you are using the `update.php` script above simply place this `stream.php` script into your update folder as well and you'll be good to go.
 
-If you want to use this script with static update.json files you will need to modify your `update.json` file to include the following line below the `TrustCache` line. 
+If you want to use this script with static update.json files you will need to modify your `update.json` file to include the following line below the `TrustCache` line.
 
 `'StreamingUrl': 'https://<path to stream.php>',`
 

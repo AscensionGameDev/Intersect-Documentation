@@ -21,7 +21,7 @@ module.exports = {
             },
             {
                 text: 'Guias do desenvolvedor',
-                link: '/dev/',
+                link: '/developer/',
             },
             {
                 text: 'Comunidade de Apoio',
@@ -62,56 +62,56 @@ module.exports = {
                     ]
                 },
             ],
-            '/dev/': [
+            '/developer/': [
                 {
-                    title: 'Informação do desenvolvedor',
+                    title: '<<todo:pt-BR>>Introduction',
                     collapsable: true,
                     children: [
-                        '/dev/',
+                        '/developer/',
                     ]
                 },
                 {
                     title: 'Começando',
                     collapsable: true,
                     children: [
-                        '/dev/start/vs.md',
-                        '/dev/start/github.md',
-                        '/dev/start/compiling.md',
-                        '/dev/start/layout.md',
+                        '/developer/start/vs.md',
+                        '/developer/start/github.md',
+                        '/developer/start/compiling.md',
+                        '/developer/start/layout.md',
                     ]
                 },
                 {
                     title: 'Fazendo mudanças',
                     collapsable: true,
                     children: [
-                        '/dev/modify/procedure.md',
-                        '/dev/modify/merging.md',
-                        '/dev/modify/conflicts.md',
+                        '/developer/modify/procedure.md',
+                        '/developer/modify/merging.md',
+                        '/developer/modify/conflicts.md',
                     ]
                 },
                 {
                     title: 'Mantendo-se atualizado',
                     collapsable: true,
                     children: [
-                        '/dev/pullrequests/pulling.md',
+                        '/developer/pullrequests/pulling.md',
                     ]
                 },
                 {
                     title: 'Compartilhamento e contribuições',
                     collapsable: true,
                     children: [
-                        '/dev/sharing/creating.md',
-                        '/dev/sharing/applying.md',
-                        '/dev/sharing/contributing.md',
+                        '/developer/sharing/creating.md',
+                        '/developer/sharing/applying.md',
+                        '/developer/sharing/contributing.md',
                     ]
                 },
                 {
                     title: 'Avançado',
                     collapsable: true,
                     children: [
-                        '/dev/advanced/database.md',
-                        '/dev/advanced/packets.md',
-                        '/dev/advanced/eventcommands.md',
+                        '/developer/advanced/database.md',
+                        '/developer/advanced/packets.md',
+                        '/developer/advanced/eventcommands.md',
                     ]
                 },
             ],
