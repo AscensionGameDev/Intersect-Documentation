@@ -24,7 +24,7 @@ module.exports = {
                 link: '/developer/',
             },
             {
-                text: 'Comunidade de Apoio',
+                text: 'Comunidade de Apoio (Inglês)',
                 link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
             }
         ],
