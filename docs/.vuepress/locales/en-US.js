@@ -76,8 +76,7 @@ module.exports = {
                     children: [
                         '/developer/start/vs.md',
                         '/developer/start/github.md',
-                        '/developer/start/compiling.md',
-                        '/developer/start/layout.md',
+                        '/developer/start/compiling.md'
                     ]
                 },
                 {
