@@ -2,36 +2,36 @@ module.exports = {
     code: 'pt-BR',
     locale: {
         lang: 'pt-BR',
-        title: '<<todo:pt-BR>>Intersect Documentation',
-        description: '<<todo:pt-BR>>The free, open-source, modern 2d mmorpg maker.'
+        title: 'Intersect',
+        description: 'O criador de mmorpg 2d moderno, open-source, gratuito'
     },
     themeConfig: {
-        selectText: '<<todo:pt-BR>>Languages',
+        selectText: 'Linguagens',
         label: 'Portugûes (BR)',
-        ariaLabel: '<<todo:pt-BR>>Languages',
-        editLinkText: '<<todo:pt-BR>>Help us improve this page.',
+        ariaLabel: 'Linguagens',
+        editLinkText: 'Nos ajude a melhorar essa página.',
         nav: [
             {
-                text: '<<todo:pt-BR>>User Docs',
+                text: 'Documentos do usuário',
                 link: '/',
             },
             {
-                text: '<<todo:pt-BR>>API Reference',
+                text: 'Referência API',
                 link: '/api/v1/',
             },
             {
-                text: '<<todo:pt-BR>>Developer Guides',
+                text: 'Guias do desenvolvedor',
                 link: '/dev/',
             },
             {
-                text: '<<todo:pt-BR>>Support Community',
+                text: 'Comunidade de Apoio',
                 link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
             }
         ],
         sidebar: {
             '/api/v1/': [
                 {
-                    title: '<<todo:pt-BR>>API Information',
+                    title: 'Informação API',
                     collapsable: true,
                     children: [
                         '/api/v1/',
@@ -41,7 +41,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Endpoints',
+                    title: 'Endpoints',
                     collapsable: true,
                     children: [
                         '/api/v1/endpoints/authentication.md',
@@ -55,7 +55,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Advanced',
+                    title: 'Avançado',
                     collapsable: true,
                     children: [
                         '/api/v1/advanced/securing.md',
@@ -64,14 +64,14 @@ module.exports = {
             ],
             '/dev/': [
                 {
-                    title: '<<todo:pt-BR>>Developer Information',
+                    title: 'Informação do desenvolvedor',
                     collapsable: true,
                     children: [
                         '/dev/',
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Getting Started',
+                    title: 'Começando',
                     collapsable: true,
                     children: [
                         '/dev/start/vs.md',
@@ -81,7 +81,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Making Changes',
+                    title: 'Fazendo mudanças',
                     collapsable: true,
                     children: [
                         '/dev/modify/procedure.md',
@@ -90,14 +90,14 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Staying up to Date',
+                    title: 'Mantendo-se atualizado',
                     collapsable: true,
                     children: [
                         '/dev/pullrequests/pulling.md',
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Sharing & Contributions',
+                    title: 'Compartilhamento e contribuições',
                     collapsable: true,
                     children: [
                         '/dev/sharing/creating.md',
@@ -106,7 +106,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Advanced',
+                    title: 'Avançado',
                     collapsable: true,
                     children: [
                         '/dev/advanced/database.md',
@@ -117,7 +117,7 @@ module.exports = {
             ],
             '/': [
                 {
-                    title: '<<todo:pt-BR>>Project Information',
+                    title: 'Informações do Projeto',
                     collapsable: true,
                     children: [
                         '/',
@@ -125,7 +125,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Getting Started',
+                    title: 'Começando',
                     collapsable: true,
                     children: [
                         '/start/download.md',
@@ -135,7 +135,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Editors',
+                    title: 'Editores',
                     collapsable: true,
                     children: [
                         '/design/animations.md',
@@ -157,7 +157,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Events',
+                    title: 'Eventos',
                     collapsable: true,
                     children: [
                         '/events/introduction.md',
@@ -168,7 +168,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Configuration',
+                    title: 'Configuração',
                     collapsable: true,
                     children: [
                         '/configuration/client-editor.md',
@@ -177,7 +177,7 @@ module.exports = {
                         '/configuration/server-security.md',
                         '/configuration/equipment.md',
                         {
-                            title: '<<todo:pt-BR>>Advanced',
+                            title: 'Avançado',
                             collapsable: true,
                             children: [
                                 '/advanced/assets.md',
@@ -193,7 +193,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Deployment',
+                    title: 'Distribuição',
                     collapsable: true,
                     children: [
                         '/deploy/forwarding.md',
@@ -203,7 +203,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:pt-BR>>Upgrading',
+                    title: 'Atualizando',
                     collapsable: true,
                     children: [
                         '/upgrade/upgrading.md',
