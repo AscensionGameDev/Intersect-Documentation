@@ -80,7 +80,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'Repository',
+                    title: '<<todo:pt-BR>>Repository',
                     collapsable: true,
                     children: [
                         '/developer/repository/',
