@@ -21,7 +21,7 @@ module.exports = {
             },
             {
                 text: 'Developer Guides',
-                link: '/dev/',
+                link: '/developer/',
             },
             {
                 text: 'Support Community',
@@ -62,56 +62,66 @@ module.exports = {
                     ]
                 },
             ],
-            '/dev/': [
+            '/developer/': [
                 {
-                    title: 'Developer Information',
+                    title: 'Introduction',
                     collapsable: true,
                     children: [
-                        '/dev/',
+                        '/developer/',
                     ]
                 },
                 {
                     title: 'Getting Started',
                     collapsable: true,
                     children: [
-                        '/dev/start/vs.md',
-                        '/dev/start/github.md',
-                        '/dev/start/compiling.md',
-                        '/dev/start/layout.md',
+                        '/developer/start/vs.md',
+                        '/developer/start/github.md',
+                        '/developer/start/compiling.md',
+                        '/developer/start/layout.md',
+                    ]
+                },
+                {
+                    title: 'Repository',
+                    collapsable: true,
+                    children: [
+                        '/developer/repository/',
+                        '/developer/repository/branches.md',
+                        '/developer/repository/file-structure.md',
+                        '/developer/repository/forking.md'
                     ]
                 },
                 {
                     title: 'Making Changes',
                     collapsable: true,
                     children: [
-                        '/dev/modify/procedure.md',
-                        '/dev/modify/merging.md',
-                        '/dev/modify/conflicts.md',
+                        '/developer/modify/procedure.md',
+                        '/developer/modify/merging.md',
+                        '/developer/modify/conflicts.md',
                     ]
                 },
                 {
                     title: 'Staying up to Date',
                     collapsable: true,
                     children: [
-                        '/dev/pullrequests/pulling.md',
+                        '/developer/pullrequests/pulling.md',
                     ]
                 },
                 {
                     title: 'Sharing & Contributions',
                     collapsable: true,
                     children: [
-                        '/dev/sharing/creating.md',
-                        '/dev/sharing/applying.md',
-                        '/dev/sharing/contributing.md',
+                        '/developer/sharing/creating.md',
+                        '/developer/sharing/applying.md',
+                        '/developer/sharing/contributing.md',
                     ]
                 },
                 {
                     title: 'Advanced',
                     collapsable: true,
                     children: [
-                        '/dev/advanced/database.md',
-                        '/dev/advanced/packets.md',
-                        '/dev/advanced/eventcommands.md',
+                        '/developer/advanced/database.md',
+                        '/developer/advanced/packets.md',
+                        '/developer/advanced/eventcommands.md',
                     ]
                 },
             ],
