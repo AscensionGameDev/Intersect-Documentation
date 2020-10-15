@@ -7,7 +7,7 @@ module.exports = {
     },
     themeConfig: {
         selectText: '<<todo:nl>>Languages',
-        label: '<<todo:nl>Dutch',
+        label: 'Nederlands',
         ariaLabel: '<<todo:nl>>Languages',
         editLinkText: '<<todo:nl>>Help us improve this page.',
         nav: [
