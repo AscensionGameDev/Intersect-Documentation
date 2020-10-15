@@ -76,8 +76,17 @@ module.exports = {
                     children: [
                         '/developer/start/vs.md',
                         '/developer/start/github.md',
-                        '/developer/start/compiling.md',
-                        '/developer/start/layout.md',
+                        '/developer/start/compiling.md'
+                    ]
+                },
+                {
+                    title: 'Repository',
+                    collapsable: true,
+                    children: [
+                        '/developer/repository/',
+                        '/developer/repository/branches.md',
+                        '/developer/repository/file-structure.md',
+                        '/developer/repository/forking.md'
                     ]
                 },
                 {
