@@ -1,30 +1,30 @@
 module.exports = {
     code: 'es',
     locale: {
-        lang: '<<todo:es>>es',
-        title: '<<todo:es>>Intersect Documentation',
+        lang: 'es',
+        title: 'Documentación de Intersect',
         description: '<<todo:es>>The free, open-source, modern 2d mmorpg maker.'
     },
     themeConfig: {
         selectText: 'Idiomas',
         label: 'Español',
         ariaLabel: 'Idiomas',
-        editLinkText: '<<todo:es>>Help us improve this page.',
+        editLinkText: 'Ayúdenos a mejorar esta página.',
         nav: [
             {
-                text: '<<todo:es>>User Docs',
+                text: 'Documentación de usuario',
                 link: '/',
             },
             {
-                text: '<<todo:es>>API Reference',
+                text: 'Referencia para API Web',
                 link: '/api/v1/',
             },
             {
-                text: '<<todo:es>>Developer Guides',
+                text: 'Guías de Desarrollador',
                 link: '/developer/',
             },
             {
-                text: '<<todo:es>>Support Community',
+                text: 'Comunidad de soporte (Inglés)',
                 link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
             }
         ],
