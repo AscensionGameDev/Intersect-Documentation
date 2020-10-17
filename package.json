@@ -1,6 +1,11 @@
 {
+  "name": "intersect-documentation",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AscensionGameDev/Intersect-Documentation.git"
+  },
   "devDependencies": {
-
     "@shigma/stringify-object": "^3.3.0",
     "@vuepress/plugin-back-to-top": "^1.6.0",
     "@vuepress/plugin-nprogress": "^1.6.0",
