@@ -24,12 +24,12 @@ Intersect est un moteur de jeu pour MMORPG 2D développé en C# avec MonoGame.
 
 
 
-## Cross Platform Compatibility
-* Windows (100% Compatible)
+## Compatibilité Entre Plateforme
+* Windows (Compatible à 100%)
 * Linux   (Serveur & Client Compatible)
 * OSX	  (Serveur & Client Compatible)
 
-Intersects editor uses various 3rd party libraries including DockPanelSuite with dozens of Win32 API calls which does not allow it to be ran on other operating systems. These libraries play a key role in making Intersect user friendly which is why we are not and likely never will pursue cross platform compatability with the editor program.
+L'éditeur d'Intersect utilise plusieurs librairies tier incluant DockPanelSuite avec une douzaine d'appels qui ne le permettent d'être utilisé sur d'autres systèmes d'exploitations. Ces lirairies jouent un role clé afin de rendre Intersect facile à utilisater These libraries play a key role in making Intersect user friendly which is why we are not and likely never will pursue cross platform compatability with the editor program.
 
 
 
