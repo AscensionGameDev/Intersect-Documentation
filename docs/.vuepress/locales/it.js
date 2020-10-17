@@ -2,7 +2,7 @@ module.exports = {
     code: 'it',
     locale: {
         lang: 'it',
-        title: 'Documentazione di .NET',
+        title: 'Documentazione di Intersect',
         description: '<<todo:it>>The free, open-source, modern 2d mmorpg maker.'
     },
     themeConfig: {
