@@ -6,7 +6,6 @@
 
 [Robbie Lodico](https://github.com/lodicolo)
 
-
 # Intersect Documentation Contributors
 
 [Damian666](https://github.com/Damian666)
