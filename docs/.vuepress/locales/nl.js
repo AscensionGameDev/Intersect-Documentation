@@ -16,7 +16,7 @@ module.exports = {
                 link: '/',
             },
             {
-                text: '<<todo:nl>>API Referentie',
+                text: 'API Referentie',
                 link: '/api/v1/',
             },
             {
