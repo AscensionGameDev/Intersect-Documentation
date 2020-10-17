@@ -9,6 +9,8 @@
 
 # Intersect Documentation Contributors
 
+[Damian666](https://github.com/Damian666)
+
 [Erik](https://github.com/erjdev)
 
 [Jocelyn Cobb](https://github.com/Azurebeats)
