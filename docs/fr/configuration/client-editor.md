@@ -1,14 +1,14 @@
 # Client and Editor `config.json`
 
-| Name           | Type     | Example                           | Description                                                                                                    |
+| Nom           | Type     | Example                           | Description                                                                                                    |
 |----------------|----------|-----------------------------------|----------------------------------------------------------------------------------------------------------------|
-| Host           | string   | localhost                         | The IP address or host name of the server.                                                                     |
-| Port           | integer  | 5400                              | The port on the server.                                                                                        |
-| GameFont       | string   | sourcesansproblack                | The name of the font to use for non-UI rendering.                                                              |
-| EntityNameFont | string   | sourcesansproblack                | The name of the font to use for entity names.                                                                  |
-| ChatBubbleFont | string   | sourcesansproblack                | The name of the font to use for chat bubble text.                                                              |
-| ActionMsgFont  | string   | sourcesansproblack                | The name of the font to use for action messages.                                                               |
-| UIFont         | string   | sourcesansproblack,8              | The name and size of the font to use for unstyled windows (such as debug/admin) comma-delimited (`name,size`). |
+| Host           | string   | localhost                         | L'adresse IP ou le nom de hôte du serveur.                                                                     |
+| Port           | integer  | 5400                              | Le port du serveur.                                                                                            |
+| GameFont       | string   | sourcesansproblack                | Le nom de la police de caractère à utiliser pour les rendus hors UI.                                              |
+| EntityNameFont | string   | sourcesansproblack                | Le nom de la police de caractère à utiliser pour les noms d'entitées.                                             |
+| ChatBubbleFont | string   | sourcesansproblack                | Le nom de la police de caractère à utiliser pour les bulles de textes.                                            |
+| ActionMsgFont  | string   | sourcesansproblack                | Le nom de la police de caractère à utiliser pour les messages d'action.                                           |
+| UIFont         | string   | sourcesansproblack,8              | Le nom et taille de la police de caractère à utiliser pour les fenêtres non personnalisées (debogue/admin) comma-delimited (`nom,taille`). |
 | ChatLines      | integer  | 100                               | The number of lines to save for chat scroll-back.                                                              |
 | MenuMusic      | string   | Game-Menu_Looping.ogg             | The name of the music file to play on the main menu (file must be in `resources/music`).                       |
 | MenuBackground | string   | background.png                    | The name of the image file to display on the main menu (file must be in `resources/gui`).                      |
