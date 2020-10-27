@@ -1,16 +1,18 @@
-# Upgrading
+# Mettre à jour
 
-Upgrading Intersect is generally as easy as overwriting a few files and calling it a day, but that isn't always the case. This page will talk about a few upgrading scenarios and how to handle them.
+Mettre Intersect à jour est généralement aussi simple que d'écraser quelques fichiers et d'en rester là, mais ce n'est pas toujours le cas. Cette page mentionnera quelques scénarios de mise à jour et comment s'en occuper.
 
-## What to Download
+## Quoi télécharger
 
-If you're just getting started with Intersect, or want to setup a clean project choose Full. If you've already got an existing project read the rest of this page for information on how to determine your verison and whether to choose the upgrade or patch packages based on the new version.
+Si vous débutez avec Intersect, ou voulez faire un projet vierge, choisissez 'Full'. Si vous avez déjà un projet, lirez le reste de cette page pour des informations afin de vérifier votre version et quoi choisir entre mise à jour et paquet de patches basé sur la nouvelle version.
 
-## Backups!
+## Sauvegardes!
 
 Always make a backup of everything before attempting an upgrade! That includes your client, editor, all of your resources, and most importantly your server databases!
 
-## Patches vs Upgrades
+Toujours faire une sauvegarde complète avant de tenter une mise à jour! Ceci inclut votre client, éditeur, et toutes vos ressources, et le plus important vos bases de données! 
+
+## Patches vs Mises à jour
 
 Patches are small updates that provide hot fixes and performance boosts to your existing Intersect version.
 
