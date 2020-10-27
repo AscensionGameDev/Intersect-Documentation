@@ -8,8 +8,6 @@ Si vous débutez avec Intersect, ou voulez faire un projet vierge, choisissez 'F
 
 ## Sauvegardes!
 
-Always make a backup of everything before attempting an upgrade! That includes your client, editor, all of your resources, and most importantly your server databases!
-
 Toujours faire une sauvegarde complète avant de tenter une mise à jour! Ceci inclut votre client, éditeur, et toutes vos ressources, et le plus important vos bases de données! 
 
 ## Patches vs Mises à jour
