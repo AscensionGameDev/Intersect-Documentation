@@ -1,6 +1,6 @@
 # Mettre à jour
 
-Mettre Intersect à jour est généralement aussi simple que d'écraser quelques fichiers et d'en rester là, mais ce n'est pas toujours le cas. Cette page mentionnera quelques scénarios de mise à jour et comment s'en occuper.
+Mettre Intersect à jour est généralement aussi simple que d'écraser quelques fichiers mais ce n'est pas toujours le cas. Cette page mentionnera quelques scénarios de mise à jour et comment s'en occuper.
 
 ## Quoi télécharger
 
