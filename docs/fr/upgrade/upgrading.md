@@ -12,22 +12,22 @@ Toujours faire une sauvegarde complète avant de tenter une mise à jour! Ceci i
 
 ## Patches vs Mises à jour
 
-Patches are small updates that provide hot fixes and performance boosts to your existing Intersect version.
+Les patches sont des petites mises à jour fournissant des hotfix et des gains de performance à votre projet existant.
 
-Upgrades are much larger and often provide new features and resources required for them to function.
+Les mises à jour sont beaucoup plus grosses et ajoutent souvent de nouvelles fonctionnalités et ressources requises à leur fonctionnement.
 
-## Understanding Versions
+## Comprendre les Versions
 
-Intersect versions follow the Major.Minor.Build.Revision format.
+Les versions d'Intersect suivent le format Majeur.Mineur.Version.Révision.
 
-For example, a future version of Intersect could be is 0.6.1.205.
+Par exemple, une future version d'Intersect pourrait être 0.6.1.205.
 
-The Major, Minor, Build, and Revision values are as follows:
+La valeur du Majeur, Mineur, Version, et Révision sont comme suivis:
 
-Major: 0
-Minor: 6
-Build: 2
-Revision: 205
+Majeur: 0
+Mineur: 6
+Version: 2
+Révision: 205
 
 ## Finding Your Version
 
