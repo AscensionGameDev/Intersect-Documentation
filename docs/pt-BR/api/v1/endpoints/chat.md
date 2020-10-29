@@ -1,29 +1,29 @@
 # Chat
 
 
-## Global Message
+## Mensagem Global
 
-Sends a chat message to everyone currently logged into your game.
+Envia uma mensagem de bate-papo para todos os que estão conectados no jogo.
 
-### Request
+### Solicitação
 
 **URL** : `/api/v1/chat/global`
 
-**Method** : `POST`
+**Método** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorização Necessária** : `Yes`
 
-**Content Type** : `application/json`
+**Tipo de conteúdo** : `application/json`
 
-**Body**
+**Corpo**
 
-| Name  | Type | Description | Required |
+| Nome  | Tipo | Descrição | Requerido |
 | ----- | ---- |------------ | -------- |
-| Message | String  | The chat message to send. | :heavy_check_mark: |
-| Color | Object  | Json object with RGBA values of the chat message. | :heavy_minus_sign: |
-| Target | String  | Player name associated with the message, if any. | :heavy_minus_sign: |
+| Message | String  | A mensagem de bate-papo a ser enviada. | :heavy_check_mark: |
+| Color | Object  | Objeto Json com valores RGBA da mensagem de bate-papo. | :heavy_minus_sign: |
+| Target | String  | Nome do jogador associado à mensagem, se houver. | :heavy_minus_sign: |
 
-**Example**
+**Exemplo**
 
 ```json
 {
@@ -39,19 +39,19 @@ Sends a chat message to everyone currently logged into your game.
 ```
 
 
-**Notes**
+**Notas**
 
-* Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open, and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quickly banning, muting, warping, etc.  In most cases Target should be omitted or left as null.
+* O destino é usado para adicionar amigos rapidamente ou emitir ações administrativas. Por exemplo, se o painel de administração estiver aberto e uma mensagem de bate-papo for clicada, o destino (se fornecido) será preenchido automaticamente na caixa de destino do painel de administração para banir, silenciar, teleportar rapidamente, etc. Na maioria dos casos, o destino deve ser omitido ou deixado como nulo.
 
 ---
 
-### Response
+### Resposta
 
-**Condition** : The message was sent successfully.
+**Condition** : A mensagem foi enviada com sucesso.
 
-**Code** : `200 SUCCESS`
+**Código** : `200 SUCCESS`
 
-**Example**
+**Exemplo**
 
 ```json
 {
@@ -70,29 +70,29 @@ Sends a chat message to everyone currently logged into your game.
 ```
 
 
-## Proximity Message
+## Mensagem de proximidade
 
-Sends a chat message to everyone in the proximity of a given map.
+Envia uma mensagem de bate-papo para todos nas proximidades de um determinado mapa.
 
-### Request
+### Solicitação
 
 **URL** : `/api/v1/chat/proximity/[mapId]`
 
-**Method** : `POST`
+**Método** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorização Necessária** : `Yes`
 
-**Content Type** : `application/json`
+**Tipo de conteúdo** : `application/json`
 
-**Body**
+**Corpo**
 
-| Name  | Type | Description | Required |
+| Nome  | Tipo | Descrição | Requerido |
 | ----- | ---- |------------ | -------- |
-| Message | String  | The chat message to send. | :heavy_check_mark: |
-| Color | Object  | Json object with RGBA values of the chat message. | :heavy_minus_sign: |
-| Target | String  | Player name associated with the message, if any. | :heavy_minus_sign: |
+| Message | String  | A mensagem de bate-papo a ser enviada. | :heavy_check_mark: |
+| Color | Object  | Objeto Json com valores RGBA da mensagem de bate-papo. | :heavy_minus_sign: |
+| Target | String  | Nome do jogador associado à mensagem, se houver. | :heavy_minus_sign: |
 
-**Example**
+**Exemplo**
 
 ```json
 {
@@ -108,18 +108,18 @@ Sends a chat message to everyone in the proximity of a given map.
 ```
 
 
-**Notes**
-* Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open, and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quickly banning, muting, warping, etc.  In most cases Target should be omitted or left as null.
+**Notas**
+* O destino é usado para adicionar amigos rapidamente ou emitir ações administrativas. Por exemplo, se o painel de administração estiver aberto e uma mensagem de bate-papo for clicada, o destino (se fornecido) será preenchido automaticamente na caixa de destino do painel de administração para banir, silenciar, teleportar rapidamente, etc. Na maioria dos casos, o destino deve ser omitido ou deixado como nulo.
 
 ---
 
-### Response
+### Resposta
 
-**Condition** : The message was sent successfully.
+**Condition** : A mensagem foi enviada com sucesso.
 
-**Code** : `200 SUCCESS`
+**Código** : `200 SUCCESS`
 
-**Example**
+**Exemplo**
 
 ```json
 {
@@ -139,31 +139,31 @@ Sends a chat message to everyone in the proximity of a given map.
 ```
 
 
-## Direct Message
+## Mensagem direta
 
-Sends a chat message to everyone in the proximity of a given map.
+Envia uma mensagem de bate-papo para um jogador específico.
 
-### Request
+### Solicitação
 
 **URL** : `/api/v1/chat/direct/[lookupkey]`
 
 **Lookup Key** : `Username or character name`
 
-**Method** : `POST`
+**Método** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorização Necessária** : `Yes`
 
-**Content Type** : `application/json`
+**Tipo de conteúdo** : `application/json`
 
-**Body**
+**Corpo**
 
-| Name  | Type | Description | Required |
+| Nome  | Tipo | Descrição | Requerido |
 | ----- | ---- |------------ | -------- |
-| Message | String  | The chat message to send. | :heavy_check_mark: |
-| Color | Object  | Json object with RGBA values of the chat message. | :heavy_minus_sign: |
-| Target | String  | Player name associated with the message, if any. | :heavy_minus_sign: |
+| Message | String  | A mensagem de bate-papo a ser enviada. | :heavy_check_mark: |
+| Color | Object  | Objeto Json com valores RGBA da mensagem de bate-papo. | :heavy_minus_sign: |
+| Target | String  | Nome do jogador associado à mensagem, se houver. | :heavy_minus_sign: |
 
-**Example**
+**Exemplo**
 
 ```json
 {
@@ -179,18 +179,18 @@ Sends a chat message to everyone in the proximity of a given map.
 ```
 
 
-**Notes**
-* Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open, and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quickly banning, muting, warping, etc.  In most cases Target should be omitted or left as null.
+**Notas**
+* O destino é usado para adicionar amigos rapidamente ou emitir ações administrativas. Por exemplo, se o painel de administração estiver aberto e uma mensagem de bate-papo for clicada, o destino (se fornecido) será preenchido automaticamente na caixa de destino do painel de administração para banir, silenciar, teleportar rapidamente, etc. Na maioria dos casos, o destino deve ser omitido ou deixado como nulo.
 
 ---
 
-### Response
+### Resposta
 
-**Condition** : The message was sent successfully.
+**Condição** : A mensagem foi enviada com sucesso.
 
-**Code** : `200 SUCCESS`
+**Código** : `200 SUCCESS`
 
-**Example**
+**Exemplo**
 
 ```json
 {
