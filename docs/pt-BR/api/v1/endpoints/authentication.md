@@ -5,7 +5,7 @@
 
 Obtenha um token de autorização para solicitações de API que requerem autenticação.
 
-### Request
+### Solicitação
 
 **URL** : `/api/oauth/token`
 
@@ -19,9 +19,9 @@ Obtenha um token de autorização para solicitações de API que requerem autent
 
 | Nome  | Tipo | Descrição | Requerido |
 | ----- | ---- |------------ | -------- |
-| grant_type | String  | Auth Type. | :heavy_check_mark: |
-| username | String  | Username of API Authorized Account | :heavy_check_mark: |
-| password | String  | SHA256 Hash of Account Password | :heavy_check_mark: |
+| grant_type | String  | Tipo de autenticação. | :heavy_check_mark: |
+| username | String  | Nome de usuário da conta autorizada de API | :heavy_check_mark: |
+| password | String  | SHA256 Hash da senha da conta | :heavy_check_mark: |
 
 **Exemplo**
 
@@ -43,7 +43,7 @@ Obtenha um token de autorização para solicitações de API que requerem autent
 
 ### Resposta
 
-**Condição** : If authentication was successful and token was generated.
+**Condição** : Se a autenticação foi bem-sucedida e o token foi gerado.
 
 **Código** : `200 SUCCESS`
 
@@ -101,8 +101,8 @@ Atualiza um token existente atrasando sua expiração.
 
 | Nome  | Tipo | Descrição | Requerido |
 | ----- | ---- |------------ | -------- |
-| grant_type | String  | Auth Type. | :heavy_check_mark: |
-| refresh_token | String  | Refresh Token Id | :heavy_check_mark: |
+| grant_type | String  | Tipo de autenticação. | :heavy_check_mark: |
+| refresh_token | String  | Atualizar Id do Token | :heavy_check_mark: |
 
 **Exemplo**
 
@@ -122,7 +122,7 @@ Atualiza um token existente atrasando sua expiração.
 
 ### Resposta
 
-**Condição** : Token Refreshed
+**Condição** : Token atualizado
 
 **Código** : `200 SUCCESS`
 
@@ -161,7 +161,7 @@ Exclui o token associado a um determinado cabeçalho de autorização.
 
 ### Resposta
 
-**Condição** : Token Deleted
+**Condição** : Token Deletado
 
 **Código** : `200 SUCCESS`
 
@@ -196,7 +196,7 @@ Exclui um token de autorização evitando uso posterior.
 
 ### Resposta
 
-**Condição** : Token Deleted
+**Condição** : Token Deletado
 
 **Código** : `200 SUCCESS`
 
