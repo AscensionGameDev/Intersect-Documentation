@@ -1,11 +1,11 @@
-# Passwords
+# Senhas
 
-## Password Reset
-Password resets is a new feature offered in Beta 6. For password resetting to work the server must be able to send emails.
+## Redefinição de senha
+Redefinições de senha é um novo recurso oferecido no Beta 6. Para que a redefinição de senha funcione, o servidor deve ser capaz de enviar emails.
 
-Setup a email account somewhere that allows sending emails via SMTP. Gmail is an obvious choice for this.
+Configure uma conta de email em algum lugar que permita o envio de emails via SMTP. O Gmail é uma escolha óbvia para isso.
 
-Open your Server/resources/config.json and enter your SMTP information. Example below.
+Abra seu Server/resources/config.json e insira suas informações SMTP. Exemplo abaixo.
 
 ```json
   "SmtpSettings": {
@@ -19,19 +19,19 @@ Open your Server/resources/config.json and enter your SMTP information. Example 
   },
 ```
 
-Restart your server. If the SMTP settings are present a 'Forgot Password?' button will appear on your client's login screen:
+Reinicie seu servidor. Se as configurações de SMTP estiverem presentes, a mensagem 'Esqueceu a senha?' O botão aparecerá na tela de login do seu cliente:
 
-![Password Reset](https://www.ascensiongamedev.com/resources/filehost/c7e2072b2697c3462423bf1b7903a295.png)
+![Redefinição de senha](https://www.ascensiongamedev.com/resources/filehost/c7e2072b2697c3462423bf1b7903a295.png)
 
 
-## Password Hashing
-Passwords are hashed before being stored in the database. Each account has a SALT which is randomly generated.
+## Hashing de senha
+As senhas são hashed antes de serem armazenadas no banco de dados. Cada conta possui um SALT gerado aleatoriamente.
 
-To check if a plaintext password is correct do the following:
-* Hash the plaintext password with SHA256 and remove any resulting dashes in the output.
-* Concatinate the salt to the password and use a SHA256 hash on the result removing any dashes in the resulting output again.
+Para verificar se uma senha de texto simples está correta, faça o seguinte:
+* aça hash da senha de texto simples com SHA256 e remova quaisquer traços resultantes na saída.
+* Concatine o salt com a senha e use um hash SHA256 no resultado, removendo quaisquer travessões na saída resultante novamente.
 
-C# Code Reference
+C# Referência de Código
 ```cs
 var sha = new SHA256Managed();
 string pass = BitConverter.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes("plaintext_password"))).Replace("-", "");
