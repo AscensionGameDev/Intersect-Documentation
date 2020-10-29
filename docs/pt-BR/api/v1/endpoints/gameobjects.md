@@ -1,62 +1,62 @@
-# Game Objects
+# Objetos de Jogo
 
-## Object Types
+## Tipos de Objeto
 
-| Type  | Key | 
+| Tipo  | Chave | 
 | ----- | ---------- |
-| Animations | animation  |
+| Animações | animation  |
 | Classes | class  |
-| Items | item  |
+| Itens | item  |
 | Npcs | npc  |
-| Projectiles | projectile  |
+| Projéteis | projectile  |
 | Quests | quest  |
-| Resources | resource  |
+| Recursos | resource  |
 | Shops | shop  |
-| Spells | spell  |
+| Feitiços | spell  |
 | Crafting Tables | crafttables  |
 | Crafts | crafts  |
 | Maps | map  |
-| Events | event  |
-| Player Variables | playervariable  |
-| Server Variables | servervariable  |
+| Eventos | event  |
+| Variáveis do jogador | playervariable  |
+| Variáveis do servidor | servervariable  |
 | Tilesets | tileset  |
-| Time | * |
+| Tempo | * |
 
-* Time is a singular object, and has its own retrieval endpoint below.
+* O tempo é um objeto singular e tem seu próprio ponto final de recuperação abaixo.
 
-## Obtaining Ids
+## Obtendo Ids
 
-Right click on a map in the map list and select 'copy id' to copy the maps id to your clipboard.
+Clique com o botão direito em um mapa na lista de mapas e selecione 'copiar id' para copiar a id dos mapas para sua área de transferência.
 
-For tilesets, select the tileset in the editor and then right click on the dropdown and the id will be copied to your clipboard automatically.
+Para tilesets, selecione o tileset no editor e então clique com o botão direito no menu suspenso e o id será copiado para sua área de transferência automaticamente.
 
-In all other editors right clicking on an object will copy the id to your clipboard automatically.
+Em todos os outros editores, clicar com o botão direito do mouse em um objeto irá copiar o id para a sua área de transferência automaticamente.
 
 
-## Get List
+## Obter lista
 
-Grabs a list of game objects and their stored information from the server given it's type and paging information.
+Pega uma lista de objetos do jogo e suas informações armazenadas do servidor, de acordo com seu tipo e informações de paginação.
 
 ### Request
 
 **URL** : `/api/v1/gameobjects/[typeKey]`
 
-**Type Key** : `One of the keys in the table above.`
+**Tipo de chave** : `One of the keys in the table above.`
 
-**Method** : `POST`
+**Método** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorização Necessária** : `Yes`
 
-**Content Type** : `application/json`
+**Tipo de conteúdo** : `application/json`
 
-**Body**
+**Corpo**
 
-| Name  | Type | Description | Required |
+| Nome  | Tipo | Descrição | Requerido |
 | ----- | ---- |------------ | -------- |
-| page | int  | Page of users to retrieve. | :heavy_minus_sign: |
-| count | int  | Number of users to retrieve. | :heavy_minus_sign: |
+| page | int  | Página de usuários para recuperar. | :heavy_minus_sign: |
+| count | int  | Número de usuários para recuperar. | :heavy_minus_sign: |
 
-**Example**
+**Exemplo**
 
 ```json
 {
@@ -67,13 +67,13 @@ Grabs a list of game objects and their stored information from the server given 
 
 ---
 
-### Response
+### Resposta
 
-**Condition** : NA
+**Condição** : NA
 
-**Code** : `200 OK`
+**Código** : `200 OK`
 
-**Example**
+**Exemplo**
 
 ```json
 {
@@ -105,36 +105,36 @@ Grabs a list of game objects and their stored information from the server given 
 }
 ```
 
-Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/22f4c4e10e9955aeb606715ae77e5976.json).
+O exemplo está truncado, para resposta completa [clique aqui](https://www.ascensiongamedev.com/resources/filehost/22f4c4e10e9955aeb606715ae77e5976.json).
 
 
-## Get Object
+## Obter objeto
 
-Retrieves the config for a singular game object from the server given it's type and id.
+Recupera a configuração de um único objeto de jogo do servidor, dado seu tipo e id.
 
 ### Request
 
 **URL** : `/api/v1/gameobjects/[typeKey]/[id]`
 
-**Type Key** : `One of the keys in the table above.`
+**Tipo de chave** : `One of the keys in the table above.`
 
-**Method** : `GET`
+**Método** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorização Necessária** : `Yes`
 
-**Content Type** : `NA`
+**Tipo de conteúdo** : `NA`
 
-**Body** : `NA`
+**Corpo** : `NA`
 
 ---
 
-### Response
+### Resposta
 
-**Condition** : NA
+**Condição** : NA
 
-**Code** : `200 OK`
+**Código** : `200 OK`
 
-**Map Example**
+**Exemplo de Mapa**
 
 ```json
 {
@@ -197,31 +197,31 @@ Retrieves the config for a singular game object from the server given it's type 
 ```
 
 
-## Get Time
+## Obter Tempo
 
-Retrieves the servers timing configuration and color hues for each time of day.
+Recupera a configuração de tempo dos servidores e matizes de cores para cada hora do dia.
 
 ### Request
 
 **URL** : `/api/v1/gameobjects/time`
 
-**Method** : `GET`
+**Método** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorização Necessária** : `Yes`
 
-**Content Type** : `NA`
+**Tipo de conteúdo** : `NA`
 
-**Body** : `NA`
+**Corpo** : `NA`
 
 ---
 
-### Response
+### Resposta
 
-**Condition** : NA
+**Condição** : NA
 
-**Code** : `200 OK`
+**Código** : `200 OK`
 
-**Example**
+**Exemplo**
 
 ```json
 {
