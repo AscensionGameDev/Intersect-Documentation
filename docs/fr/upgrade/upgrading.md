@@ -29,20 +29,20 @@ Mineur: 6
 Version: 2
 Révision: 205
 
-## Finding Your Version
+## Chercher votre version
 
-Launch your server and the version will appear at the top of the console window.
+Exécutez votre serveur et la version apparaîtra sur le haut de la fenêtre de console.
 
 ![Server Version](https://www.ascensiongamedev.com/resources/filehost/37ca2f5c3182bfeabed6ed29f9d79eab.png)
 
-Opening the file properties of the Client or Editor and browsing the details tab will also show their version numbers.
+Ouvrez la fenêtre de propriété du client ou de l'éditeur et chercher dans la fenêtre de détail affichera également le numéro de version.
 
 ![Client Version](https://www.ascensiongamedev.com/resources/filehost/4639404bb8324f51d0e44617861460fa.png)
 
-## When to Patch
+## Quand il faut patch
 
-When the only difference between your existing version and the most up to date version is the revision number you can download a patch build to bring yourself up to date.
+Quand la seule différence entre votre version existante et la dernière version est le numéro de révision vous pouvez télécharger la version patch afin de mettre à jour.
 
-## When to Upgrade
+## Quand il faut mettre à jour
 
-Upgrading is neccessary when the major, minor, or build numbers are different. For example going from 0.6.0.X to 0.6.1.X you will need to choose the upgrade package.
+Mettre à jour est nécessaire lorsque majeur, mineur, ou le numéro de version sont différents. Par exemple, aller de la 0.6.0.X à 0.6.1.X il vous faudra choisir le pack de mise à jour.
