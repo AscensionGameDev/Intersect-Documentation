@@ -1,11 +1,11 @@
-# Editor Overview
+# Survol de l'éditeur
 ![Game Editor](http://www.ascensiongamedev.com/resources/filehost/c399bc35aad37d828ddda1986538e7bd.png)
 
-Our editor is very advanced and can be fairly daunting at first.  This page will quickly give name to each of the panels/areas and provide an overview for what they're for.
+Notre éditeur est très avancé et peut être, au commencement, assez intimidant. Cette page fournira rapidement tous les noms de chacun des panneaux/zones et procurera un survol sur leur utilité.
 
 &nbsp;
 
-Map Editor
+L'éditeur de carte
 ---------------------------
 Let's start with the big area in the middle. This is the map editor. Unlike the image above, your map is probably empty.
 
