@@ -7,9 +7,10 @@ Notre éditeur est très avancé et peut être, au commencement, assez intimidan
 
 L'éditeur de carte
 ---------------------------
-Let's start with the big area in the middle. This is the map editor. Unlike the image above, your map is probably empty.
+Commençons par la grande section au centre. C'est l'éditeur de carte, contrairement à l'image haut dessus, votre carte est probablement vide.
 
 Working with the Map Layers panel on the left you can place tiles from tilesets on your map to start designing your game world.
+En travaillant avec le panneau des couches de carte à gauche 
 
 **Start Mapping:**
 >- Click on the **Pen Tool** ![Pen Tool](http://www.ascensiongamedev.com/resources/filehost/a20847da4a43f52234ccda97b1125a88.png) in the menubar above your map.
