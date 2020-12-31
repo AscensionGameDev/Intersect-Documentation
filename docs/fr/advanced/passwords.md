@@ -1,11 +1,11 @@
-# Passwords
+# Mot de passe
 
-## Password Reset
-Password resets is a new feature offered in Beta 6. For password resetting to work the server must be able to send emails.
+## Réinitialisation des mots de passe
+La réinitialisation des mots de passe est une nouvelle fonctionnalité offerte dans la Beta 6. Afin que le réinitialisateur fonctionne le serveur doit être capable d'envoyer des e-mails.
 
-Setup a email account somewhere that allows sending emails via SMTP. Gmail is an obvious choice for this.
+Configurer un compte e-mail à un endroit autorisant d'envoyer des mails via SMTP. Gmail est un choix évidant pour cette fonction.
 
-Open your Server/resources/config.json and enter your SMTP information. Example below.
+Ouvrez votre Server/resources/config.json et écrivez vos informations SMTP. Exemple ci-dessous.
 
 ```json
   "SmtpSettings": {
@@ -19,19 +19,19 @@ Open your Server/resources/config.json and enter your SMTP information. Example 
   },
 ```
 
-Restart your server. If the SMTP settings are present a 'Forgot Password?' button will appear on your client's login screen:
+Redémarrez votre serveur. Si les paramètres SMTP sont présent un bouton 'Forgot Password?' sera affiché sur le menu de connexion.
 
 ![Password Reset](https://www.ascensiongamedev.com/resources/filehost/c7e2072b2697c3462423bf1b7903a295.png)
 
 
-## Password Hashing
+## Hashing des mots de passe
 Passwords are hashed before being stored in the database. Each account has a SALT which is randomly generated.
 
 To check if a plaintext password is correct do the following:
 * Hash the plaintext password with SHA256 and remove any resulting dashes in the output.
 * Concatinate the salt to the password and use a SHA256 hash on the result removing any dashes in the resulting output again.
 
-C# Code Reference
+La référence du code C# 
 ```cs
 var sha = new SHA256Managed();
 string pass = BitConverter.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes("plaintext_password"))).Replace("-", "");
