@@ -1,8 +1,8 @@
-# Server Database
+# Base de donné du serveur
 
-| Name                          | Type    | Example     | Description |
+| Nom                          | Type    | Example     | Description |
 |-------------------------------|---------|-------------|-------------|
-| Type                          | string  | sqlite      | Configures the type of database the server will connect to. Currently supports **sqlite** and **mysql**.|
+| Type                          | string  | sqlite      | Configure le type de BDD que le serveur se connectera dessus. Supporte actuellement **sqlite** et **mysql**.|
 | Server                        | string  | localhost   | Configures the database server the server will connect to. (if applicable) |
 | Port                          | number  | 3306        | Configures the database port the server will connect to. (if applicable) |
 | Database                      | string  |             | Configures the database name the server will connect to. (if applicable) |

@@ -1,48 +1,48 @@
-# Upgrading
+# Mettre à jour
 
-Upgrading Intersect is generally as easy as overwriting a few files and calling it a day, but that isn't always the case. This page will talk about a few upgrading scenarios and how to handle them.
+Mettre Intersect à jour est généralement aussi simple que d'écraser quelques fichiers mais ce n'est pas toujours le cas. Cette page mentionnera quelques scénarios de mise à jour et comment s'en occuper.
 
-## What to Download
+## Quoi télécharger
 
-If you're just getting started with Intersect, or want to setup a clean project choose Full. If you've already got an existing project read the rest of this page for information on how to determine your verison and whether to choose the upgrade or patch packages based on the new version.
+Si vous débutez avec Intersect, ou voulez faire un projet vierge, choisissez 'Full'. Si vous avez déjà un projet, lirez le reste de cette page pour des informations afin de vérifier votre version et quoi choisir entre mise à jour et paquet de patches basé sur la nouvelle version.
 
-## Backups!
+## Sauvegardes!
 
-Always make a backup of everything before attempting an upgrade! That includes your client, editor, all of your resources, and most importantly your server databases!
+Toujours faire une sauvegarde complète avant de tenter une mise à jour! Ceci inclut votre client, éditeur, et toutes vos ressources, et le plus important vos bases de données! 
 
-## Patches vs Upgrades
+## Patches vs Mises à jour
 
-Patches are small updates that provide hot fixes and performance boosts to your existing Intersect version.
+Les patches sont des petites mises à jour fournissant des hotfix et des gains de performance à votre projet existant.
 
-Upgrades are much larger and often provide new features and resources required for them to function.
+Les mises à jour sont beaucoup plus grosses et ajoutent souvent de nouvelles fonctionnalités et ressources requises à leur fonctionnement.
 
-## Understanding Versions
+## Comprendre les Versions
 
-Intersect versions follow the Major.Minor.Build.Revision format.
+Les versions d'Intersect suivent le format Majeur.Mineur.Version.Révision.
 
-For example, a future version of Intersect could be is 0.6.1.205.
+Par exemple, une future version d'Intersect pourrait être 0.6.1.205.
 
-The Major, Minor, Build, and Revision values are as follows:
+La valeur du Majeur, Mineur, Version, et Révision sont comme suivis:
 
-Major: 0
-Minor: 6
-Build: 2
-Revision: 205
+Majeur: 0
+Mineur: 6
+Version: 2
+Révision: 205
 
-## Finding Your Version
+## Chercher votre version
 
-Launch your server and the version will appear at the top of the console window.
+Exécutez votre serveur et la version apparaîtra sur le haut de la fenêtre de console.
 
 ![Server Version](https://www.ascensiongamedev.com/resources/filehost/37ca2f5c3182bfeabed6ed29f9d79eab.png)
 
-Opening the file properties of the Client or Editor and browsing the details tab will also show their version numbers.
+Ouvrez la fenêtre de propriété du client ou de l'éditeur et chercher dans la fenêtre de détail affichera également le numéro de version.
 
 ![Client Version](https://www.ascensiongamedev.com/resources/filehost/4639404bb8324f51d0e44617861460fa.png)
 
-## When to Patch
+## Quand il faut patch
 
-When the only difference between your existing version and the most up to date version is the revision number you can download a patch build to bring yourself up to date.
+Quand la seule différence entre votre version existante et la dernière version est le numéro de révision vous pouvez télécharger la version patch afin de mettre à jour.
 
-## When to Upgrade
+## Quand il faut mettre à jour
 
-Upgrading is neccessary when the major, minor, or build numbers are different. For example going from 0.6.0.X to 0.6.1.X you will need to choose the upgrade package.
+Mettre à jour est nécessaire lorsque majeur, mineur, ou le numéro de version sont différents. Par exemple, aller de la 0.6.0.X à 0.6.1.X il vous faudra choisir le pack de mise à jour.
