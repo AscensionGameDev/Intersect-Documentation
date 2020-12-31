@@ -1,29 +1,29 @@
-# Authentication
+# Autenticação
 
 
-## Get Token
+## Obter Token
 
-Get an authorization token for api requests that require auth.
+Obtenha um token de autorização para solicitações de API que requerem autenticação.
 
-### Request
+### Solicitação
 
 **URL** : `/api/oauth/token`
 
-**Method** : `POST`
+**Método** : `POST`
 
-**Authorization Required** : `No`
+**Autorização Necessária** : `No`
 
-**Content Type** : `application/json`
+**Tipo de conteúdo** : `application/json`
 
-**Body**
+**Corpo**
 
-| Name  | Type | Description | Required |
+| Nome  | Tipo | Descrição | Requerido |
 | ----- | ---- |------------ | -------- |
-| grant_type | String  | Auth Type. | :heavy_check_mark: |
-| username | String  | Username of API Authorized Account | :heavy_check_mark: |
-| password | String  | SHA256 Hash of Account Password | :heavy_check_mark: |
+| grant_type | String  | Tipo de autenticação. | :heavy_check_mark: |
+| username | String  | Nome de usuário da conta autorizada de API | :heavy_check_mark: |
+| password | String  | SHA256 Hash da senha da conta | :heavy_check_mark: |
 
-**Example**
+**Exemplo**
 
 ```json
 {
@@ -33,21 +33,21 @@ Get an authorization token for api requests that require auth.
 }
 ```
 
-**Notes**
+**Notas**
 
-* The grant type to receive an auth token is 'password'.
-* Password must be a SHA256 hash of the user's password, with hyphens removed.
-* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
+* O tipo de concessão para receber um token de autenticação é 'senha'.
+* A senha deve ser um hash SHA256 da senha do usuário, com os hifens removidos.
+* Você pode gerar um hash SHA256 de uma senha em texto simples [aqui](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ---
 
-### Response
+### Resposta
 
-**Condition** : If authentication was successful and token was generated.
+**Condição** : Se a autenticação foi bem-sucedida e o token foi gerado.
 
-**Code** : `200 SUCCESS`
+**Código** : `200 SUCCESS`
 
-**Example**
+**Exemplo**
 
 ```json
 {
@@ -66,17 +66,17 @@ Get an authorization token for api requests that require auth.
 ```
 
 
-### Notes
+### Notas
 
-* The refresh_token is the token's id, it is used to refresh or delete the token using the routes below.
-* For all requests that require authentication you will need to supply the access token within the request header. The proper format can found below.
+* O refresh_token é o id do token, ele é usado para atualizar ou excluir o token usando as rotas abaixo.
+* Para todas as solicitações que requerem autenticação, você precisará fornecer o token de acesso no header da solicitação. O formato adequado pode ser encontrado abaixo.
 
-| Header | Type | Value | 
+| Header | Tipo | Valor | 
 | ----- | ---- |------------ |
 | authorization | String  | Bearer [access_token] |
 
 
-**Example**
+**Exemplo**
 
 ```
 authorization: Bearer 4RoC_BqVns0p7guzWe-Ah4C6SiVmNcBO0KnFNLtGCxuPZbfF9QJnGc5zbrhM-EQ8c_fajWk076pyI-bjaUPsfyd_c2u5XLCANc4khfpTmq87ksvjDpMI87NVIWOCy1QAUTQoszf-CSkweyw-At31UjBUBTQ6iuidQcG-eZqdnecjKDWQ5vOBZpjI-Xlz7m8UZBjuEWf4sFIqbAnIQl54F8VSIr26QtcUROkUWepLFPqSa8ZO110vg5xefTy-wJmEwbn1zOAuSMR6yKah39GBU_xtkuHw1WaiJ_iSQLRiF7z-v0Ct1DYbMrmqaVdFI1xUwsrFN3WWgwpxxsXEBajcFkL9Ou7MSQBwWlI5sU4WlYJbKAGlaMJU9sohK5I3Q3B34UTub0xNdiyhqzn9E0HIep_RUzzE1YZhGmV3bBoV-cYTxSTfpTXIFuH9f8tbv-FPhylWY__hqndUKVpq4ez2n9HqfCdDi6HdYd1mcTyDTABdy248VeMPqiwKUl-95w87
@@ -84,27 +84,27 @@ authorization: Bearer 4RoC_BqVns0p7guzWe-Ah4C6SiVmNcBO0KnFNLtGCxuPZbfF9QJnGc5zbr
 
 
 
-## Refresh Token
-Refreshes an existing token delaying it's expiration.
+## Atualizar token
+Atualiza um token existente atrasando sua expiração.
 
-### Request
+### Solicitação
 
 **URL** : `/api/oauth/token`
 
-**Method** : `POST`
+**Método** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorização Necessária** : `Yes`
 
-**Content Type** : `application/json`
+**Tipo de conteúdo** : `application/json`
 
-**Body**
+**Corpo**
 
-| Name  | Type | Description | Required |
+| Nome  | Tipo | Descrição | Requerido |
 | ----- | ---- |------------ | -------- |
-| grant_type | String  | Auth Type. | :heavy_check_mark: |
-| refresh_token | String  | Refresh Token Id | :heavy_check_mark: |
+| grant_type | String  | Tipo de autenticação. | :heavy_check_mark: |
+| refresh_token | String  | Atualizar Id do Token | :heavy_check_mark: |
 
-**Example**
+**Exemplo**
 
 ```json
 {
@@ -114,19 +114,19 @@ Refreshes an existing token delaying it's expiration.
 ```
 
 
-**Notes**
+**Notas**
 
-* The grant type should be 'refresh_token'.
+* O tipo de concessão deve ser 'refresh_token'.
 
 ---
 
-### Response
+### Resposta
 
-**Condition** : Token Refreshed
+**Condição** : Token atualizado
 
-**Code** : `200 SUCCESS`
+**Código** : `200 SUCCESS`
 
-**Example**
+**Exemplo**
 
 ```json
 {
@@ -139,33 +139,33 @@ Refreshes an existing token delaying it's expiration.
 }
 ```
 
-## Delete Token
-Deletes the token associated with a given authorization header.
+## Apagar Token
+Exclui o token associado a um determinado cabeçalho de autorização.
 
-### Request
+### Solicitação
 
 **URL** : `/api/oauth/token/[username]`
 
-**Method** : `DELETE`
+**Método** : `DELETE`
 
-**Authorization Required** : `Yes`
+**Autorização Necessária** : `Yes`
 
-**Body** : `None`
+**Corpo** : `None`
 
 
-**Notes**
+**Notas**
 
-* The tokenId within the request url is returned as the 'refresh_token' in the Get Token and Refresh Token responses.
+* O tokenId no url da solicitação é retornado como 'refresh_token' nas respostas Obter Token e Atualizar Token.
 
 ---
 
-### Response
+### Resposta
 
-**Condition** : Token Deleted
+**Condição** : Token Deletado
 
-**Code** : `200 SUCCESS`
+**Código** : `200 SUCCESS`
 
-**Example**
+**Exemplo**
 
 ```json
 {
@@ -174,33 +174,33 @@ Deletes the token associated with a given authorization header.
 ```
 
 
-## Delete Token By Id
-Deletes an authorization token preventing further use.
+## Excluir token por id
+Exclui um token de autorização evitando uso posterior.
 
-### Request
+### Solicitação
 
 **URL** : `/api/oauth/token/[username]/[tokenId]`
 
-**Method** : `DELETE`
+**Método** : `DELETE`
 
-**Authorization Required** : `No`
+**Autorização Necessária** : `No`
 
-**Body** : `None`
+**Corpo** : `None`
 
 
-**Notes**
+**Notas**
 
-* The tokenId within the request url is returned as the 'refresh_token' in the Get Token and Refresh Token responses.
+* O tokenId no url da solicitação é retornado como 'refresh_token' nas respostas Obter Token e Atualizar Token.
 
 ---
 
-### Response
+### Resposta
 
-**Condition** : Token Deleted
+**Condição** : Token Deletado
 
-**Code** : `200 SUCCESS`
+**Código** : `200 SUCCESS`
 
-**Example**
+**Exemplo**
 
 ```json
 {

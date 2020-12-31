@@ -141,7 +141,7 @@ Sends a chat message to everyone in the proximity of a given map.
 
 ## Direct Message
 
-Sends a chat message to everyone in the proximity of a given map.
+Sends a chat message to a specific player.
 
 ### Request
 

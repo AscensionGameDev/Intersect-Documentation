@@ -3,7 +3,7 @@
 ## Connecting Maps
 So let's assume that you've made it this far and have started to put together a decent map. Have you thought about how you'd like to expand your world?
 
-![Connecting Maps](http://www.ascensiongamedev.com/resources/filehost/aee57f600d5c0dd5042bf3025cefd904.png)
+![Connecting Maps](https://www.ascensiongamedev.com/resources/filehost/aee57f600d5c0dd5042bf3025cefd904.png)
 
 Simply *double click* on any adjacent edge of your map (in red above) to expand your world outward. <a href="http://www.ascensiongamedev.com/resources/filehost/478961f66760c103ee02761fd8de9ac3.gif" data-lity><i class="fa fa-play-circle"></i></a>
 
@@ -13,13 +13,13 @@ When on a connected map you will see maps that you've previously designed, you c
 
 
 ## Unconnected Maps
-Let's assume you want to create the interior of a house, maybe a cave, or maybe a whole new region of your game world that you don't want to connect to your existing maps. This is possible by clicking the **New Map** icon in the top left corner of your editor window. ![New Map](http://www.ascensiongamedev.com/resources/filehost/d01941dfd69bdff6add5e41863390be0.png)
+Let's assume you want to create the interior of a house, maybe a cave, or maybe a whole new region of your game world that you don't want to connect to your existing maps. This is possible by clicking the **New Map** icon in the top left corner of your editor window. ![New Map](https://www.ascensiongamedev.com/resources/filehost/d01941dfd69bdff6add5e41863390be0.png)
 
 Your new map will be completely unconnected to your existing maps. You can use the **Map List** to navigate back to other maps at any time.
 
 A good use for unconnected maps is to make caves and dungeons. You can use **Warp** attributes in order to for players to enter and leave the cave. <a href="http://www.ascensiongamedev.com/resources/filehost/e52c6a2233c8717d426f1d04125300b6.png" data-lity><i class="fa fa-play-circle"></i></a>
 
-![House](http://www.ascensiongamedev.com/resources/filehost/94d22810779f3ab67fe800db7cfbf626.png)
+![House](https://www.ascensiongamedev.com/resources/filehost/94d22810779f3ab67fe800db7cfbf626.png)
 
 
 ## Map List
@@ -35,7 +35,7 @@ The **Map Grid** gives you an overview of all the maps connected to the one that
 
 There are a few other tricks here too, while navigating the map grid you can double click on an exisiting map to begin editting it.
 
-There is a screenshot button in the top left ![Screenshot](http://www.ascensiongamedev.com/resources/filehost/93dff71784b1de7a15f9fb548c692259.png), that button will allow you to take a high resolution snap shot of your whole world. Fair warning, this could take awhile on larger worlds!
+There is a screenshot button in the top left ![Screenshot](https://www.ascensiongamedev.com/resources/filehost/93dff71784b1de7a15f9fb548c692259.png), that button will allow you to take a high resolution snap shot of your whole world. Fair warning, this could take awhile on larger worlds!
 
 If your map grid has maps that won't render OR your map grid/screenshots contain visual artifacts (lights, fogs, etc) that you don't want:
 - Adjust your visual settings using the **View** menu in the top left of your editor.

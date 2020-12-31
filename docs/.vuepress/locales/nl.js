@@ -2,36 +2,36 @@ module.exports = {
     code: 'nl',
     locale: {
         lang: 'nl',
-        title: '<<todo:nl>>Intersect Documentation',
-        description: '<<todo:nl>>The free, open-source, modern 2d mmorpg maker.'
+        title: 'Intersect Documentatie',
+        description: 'De gratis, open-source, moderne 2d mmorpg maker.'
     },
     themeConfig: {
-        selectText: '<<todo:nl>>Languages',
+        selectText: 'Talen',
         label: 'Nederlands',
-        ariaLabel: '<<todo:nl>>Languages',
-        editLinkText: '<<todo:nl>>Help us improve this page.',
+        ariaLabel: 'Talen',
+        editLinkText: 'Help us improve this page.',
         nav: [
             {
-                text: '<<todo:nl>>User Docs',
+                text: 'Gebruikers Documenten',
                 link: '/',
             },
             {
-                text: '<<todo:nl>>API Reference',
+                text: 'API Referentie',
                 link: '/api/v1/',
             },
             {
-                text: '<<todo:nl>>Developer Guides',
+                text: 'Gidsen voor ontwikkelaars',
                 link: '/developer/',
             },
             {
-                text: '<<todo:nl>>Support Community',
+                text: 'Support Community',
                 link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
             }
         ],
         sidebar: {
             '/api/v1/': [
                 {
-                    title: '<<todo:nl>>API Information',
+                    title: 'API Informatie',
                     collapsable: true,
                     children: [
                         '/api/v1/',
@@ -41,7 +41,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Endpoints',
+                    title: 'Eindpunten',
                     collapsable: true,
                     children: [
                         '/api/v1/endpoints/authentication.md',
@@ -55,7 +55,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Advanced',
+                    title: 'Geavanceerd',
                     collapsable: true,
                     children: [
                         '/api/v1/advanced/securing.md',
@@ -64,14 +64,14 @@ module.exports = {
             ],
             '/developer/': [
                 {
-                    title: '<<todo:nl>>Introduction',
+                    title: 'Introductie',
                     collapsable: true,
                     children: [
                         '/developer/',
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Getting Started',
+                    title: 'Aan de slag',
                     collapsable: true,
                     children: [
                         '/developer/start/vs.md',
@@ -80,7 +80,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Repository',
+                    title: 'Repository',
                     collapsable: true,
                     children: [
                         '/developer/repository/',
@@ -90,7 +90,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Making Changes',
+                    title: 'Veranderingen maken',
                     collapsable: true,
                     children: [
                         '/developer/modify/procedure.md',
@@ -99,14 +99,14 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Staying up to Date',
+                    title: 'Bijgewerkt blijven',
                     collapsable: true,
                     children: [
                         '/developer/pullrequests/pulling.md',
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Sharing & Contributions',
+                    title: 'Delen en bijdragen',
                     collapsable: true,
                     children: [
                         '/developer/sharing/creating.md',
@@ -115,7 +115,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Advanced',
+                    title: 'Geavanceerd',
                     collapsable: true,
                     children: [
                         '/developer/advanced/database.md',
@@ -126,7 +126,7 @@ module.exports = {
             ],
             '/': [
                 {
-                    title: '<<todo:nl>>Project Information',
+                    title: 'Project Informatie',
                     collapsable: true,
                     children: [
                         '/',
@@ -134,7 +134,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Getting Started',
+                    title: 'Aan de slag',
                     collapsable: true,
                     children: [
                         '/start/download.md',
@@ -144,7 +144,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Editors',
+                    title: 'Editors',
                     collapsable: true,
                     children: [
                         '/design/animations.md',
@@ -166,7 +166,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Events',
+                    title: 'Events',
                     collapsable: true,
                     children: [
                         '/events/introduction.md',
@@ -177,7 +177,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Configuration',
+                    title: 'Configuratie',
                     collapsable: true,
                     children: [
                         '/configuration/client-editor.md',
@@ -186,7 +186,7 @@ module.exports = {
                         '/configuration/server-security.md',
                         '/configuration/equipment.md',
                         {
-                            title: '<<todo:nl>>Advanced',
+                            title: 'Geavanceerd',
                             collapsable: true,
                             children: [
                                 '/advanced/assets.md',
@@ -202,7 +202,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Deployment',
+                    title: 'Deployment',
                     collapsable: true,
                     children: [
                         '/deploy/forwarding.md',
@@ -212,7 +212,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:nl>>Upgrading',
+                    title: 'Upgraden',
                     collapsable: true,
                     children: [
                         '/upgrade/upgrading.md',

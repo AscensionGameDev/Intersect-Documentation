@@ -1,3 +1,4 @@
+
 # Télécharger Intersect
 Intersect peut être téléchargé depuis la page de téléchargement d'Ascension Game Dev. [Télécharger la dernière version d'Intersect depuis notre site.](https://www.freemmorpgmaker.com/downloads/)
 
@@ -7,7 +8,7 @@ Si vous venez tout juste de débuter avec Intersect, il vous faudra télécharge
 Intersect est contenu dans une archive zip. Toute version de Windows peut extraire Intersect afin que vous puissiez commencer à l'utiliser. Naviguez dans l'archive d'Intersect, cliquez droit dessus et sélectionnez l'option tout extraire.
 **Nous vous recommandons d'extraire sur votre bureau ou dans votre dossier Documents.**
 
-![ExtractIntersect](http://www.ascensiongamedev.com/resources/filehost/db59c62b62d5d1611fce19338f4c40b9.gif)
+![ExtractIntersect](https://www.ascensiongamedev.com/resources/filehost/db59c62b62d5d1611fce19338f4c40b9.gif)
 
 
 ## Survol de la structure du fichier

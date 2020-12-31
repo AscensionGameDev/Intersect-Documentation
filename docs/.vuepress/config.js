@@ -1,5 +1,4 @@
-const path = require('path');
-const { locales, themeConfig, availableLocaleCodes } = require('./localizer');
+const { locales, themeConfig } = require('./localizer');
 
 module.exports = {
     base: '/',
