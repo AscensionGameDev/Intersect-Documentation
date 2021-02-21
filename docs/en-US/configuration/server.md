@@ -104,9 +104,10 @@
 | Name                              | Type    | Example     | Description |
 |-----------------------------------|---------|-------------|-------------|
 | AllowResetRadius                  | boolean | false       | Configures whether NPCs will reset after being moved away from the initial point they were first attacked on or started attacking. |
+| ResetRadius                       | number  | 8           | Configures the range (in tiles) in which an NPC is allowed to move from the initial point they were first attacked on or started attacking before resetting.  |
 | AllowNewResetLocationBeforeFinish | boolean | false       | Configures whether NPCs are allowed to obtain a new center point from which they have been pulled before having fully reset to the last. |
 | ResetVitalsAndStatusses           | boolean | false       | Configures whether NPCs will fully reset their vitals and statuses when resetting. |
-| ResetRadius                       | number  | 8           | Configures the range (in tiles) in which an NPC is allowed to move from the initial point they were first attacked on or started attacking before resetting.  |
+| ShowLevelByName                   | boolean | false       | Configures whether NPCs' level will be displayed in their overworld name label or not. |
 
 ## SMTP
 ### See [Passwords](./advanced/passwords)
