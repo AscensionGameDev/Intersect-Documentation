@@ -8,7 +8,9 @@
 | BlockClientRegistrations      | boolean | false       | Configures whether this server will block new user registrations or not. |
 | AnimatedSprites               | array   | ["bat.png", "beholder.png"] | Configures which sprites should always be animating, even when standing still. |
 | ValidPasswordResetTimeMinutes | number  | 30          | Configures the time (in minutes) a password reset link is valid for. |
-| UPnP                          | boolean | true        |                               |
+| MaxClientConnections          | number  | 100         | Configures the amount of clients, logged in or not, which can establish connection to the server at the same time. |
+| MaximumLoggedinUsers          | number  | 50          | Configures the amount of clients which can be logged in at the same time. |
+| UPnP                          | boolean | true        | Configures whether this server will use the UPnP protocol or not. |
 | EventWatchdogKillThreshold    | number  | 5000        | Configures the amount of commands an event may execute within a single server tick before the server considers it to be looping infinitely and kills it off. |
 | OpenPortChecker               | boolean | true        | Configures whether the server will check if it can be reached from the internet each time it starts. |
 | Chat                          | See [Chat](#chat)                                     |
