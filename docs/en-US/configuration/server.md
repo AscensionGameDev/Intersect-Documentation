@@ -68,6 +68,8 @@
 | MaxStat                           | number  | 255         | Configures the maximum amount of stat points any given stat can have. |
 | RequestTimeout                    | number  | 300000      | Configures the maximum amount of time (in milliseconds) a trade request can be left pending before cancelling it automatically. |
 | TradeRange                        | number  | 6           | Configures the range (in tiles) in which the player and the player they are attempting to trade with must reside within. |
+| AllowCombatMovement               | boolean | true        | Configures whether entities can move or not while their attack timer goes to 0.  |
+| ShowLevelByName                   | boolean | false       | Configures whether players' level will be displayed in their overworld name label or not. |
 
 ## Party
 | Name                              | Type    | Example     | Description |
