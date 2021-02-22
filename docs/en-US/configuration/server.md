@@ -95,7 +95,10 @@
 | ItemDespawnTime                   | number  | 15000       | Configures the time (in milliseconds) which it takes for loot and dropped items to despawn from the map. |
 | ItemOwnershipTime                 | number  | 5000        | Configures the time (in milliseconds) which it takes for a dropped item to no longer be owned by the player that caused it to drop through either killing NPCs and Players or dropping it on the map. |
 | ShowUnownedItems                  | boolean | false       | Configures whether everyone on the map can see items that they are not currently the owner of and not eligible to pick up. |
-| ConsolidateMapDrops               | boolean | true        | Configures whether dropping multiple of an item to the map at once consolidates the drops into a single object on the map, or whether it drops multiple on the map at once. |
+| ConsolidateMapDrops               | boolean | true        | Configures whether dropping multiple of an item to the map at once consolidates the drops into a single object on the map if true, or if it drops multiple on the map at once if false. |
+| EnableLootWindow                  | boolean | true        | Configures whether the loot window feature of the client is allowed to be active or not. |
+| MaximumLootWindowItems            | number  | 10          | Configures the maximum amount of items to be displayed on the client's Loot Window. Only used if EnableLootWindow is enabled. |
+| MaximumLootWindowDistance         | number  | 3           | Configures the maximum amount of tiles around the player to search for loot with the Loot Window. Only used if EnableLootWindow is enabled. |
 
 ## Sprites
 | Name                              | Type    | Example     | Description |
