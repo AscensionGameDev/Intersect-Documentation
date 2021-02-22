@@ -46,6 +46,14 @@
 | MaxDashSpeed                      | number  | 200         | Configures the maximum speed at which a player can dash. |
 | MinAttackRate                     | number  | 500         | Configures the minimum rate at which an entity could potentially attack. |
 | RegenTime                         | number  | 3000        | Configures the time (in milliseconds) between each Vital regeneration tick. |
+| EnableCombatChatMessages          | boolean | false       | Configures whether combat chat messages are enabled or not. |
+| MovementCancelsCast               | boolean | false       | Configures whether the player can move around to cancel spell's casting or not. |
+| MatchGroupCooldowns               | boolean | true        | Configures whether cooldowns within cooldown groups should match or not. |
+| MatchGroupCooldownHighest         | boolean | true        | Configures whether cooldowns are being matched to the highest cooldown within a cooldown group when true, or are matched to the current item or spell being used when false. Only used if MatchGroupCooldowns is enabled. |
+| LinkSpellAndItemCooldowns         | boolean | true        | Configures whether cooldown groups between items and spells are shared. Only used if MatchGroupCooldowns is enabled. |
+| EnableGlobalCooldowns             | boolean | false       | Configures whether or not using a spell or item should trigger a global cooldown. |
+| GlobalCooldownDuration            | number  | 1500        | Configures the duration (in milliseconds) which the global cooldown lasts. Only used if EnableGlobalCooldowns is enabled. |
+| MaxPlayerAutoTargetRadius         | number  | 15          | Configures the maximum distance a target is allowed to be from the player when auto targetting. |
 
 ## Map
 | Name                              | Type    | Example     | Description |
