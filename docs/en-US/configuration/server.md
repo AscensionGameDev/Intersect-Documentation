@@ -34,8 +34,8 @@
 |-----------------------------------|---------|-------------|-------------|
 | MaxChatLength                     | number  | 120         | Configures the maximum allowed length of each chat message. |
 | MinIntervalBetweenChats           | number  | 400         | Configures the minimum interval (in milliseconds) required between each chat message. |
-| ShowAnnouncementBanners           | boolean | true        | Configures whether to display announces in the game screen or not. |
-| AnnouncementDisplayDuration       | number  | 15000       | Configures the time (in milliseconds) to show the announcements in the game screen. |
+| ShowAnnouncementBanners           | boolean | true        | Configures whether to display announcement banners in the game screen or not. |
+| AnnouncementDisplayDuration       | number  | 15000       | Configures the time (in milliseconds) to show the announcement banners in the game screen if enabled. |
 
 ## Combat
 | Name                              | Type    | Example     | Description |
