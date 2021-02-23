@@ -1,30 +1,32 @@
 # Server `config.json`
 
-| Name                          | Type    | Example     | Description                   |
-|-------------------------------|---------|-------------|-------------------------------|
-| GameName                      | string  | Intersect   | Configures the name of the game this server hosts. |
-| ServerPort                    | number  | 5400        | Configures the port this server will listen on. |
-| AdminOnly                     | boolean | false       | Configures whether this server will only allow staff members (Access 1 or above) to log in. |
-| BlockClientRegistrations      | boolean | false       | Configures whether this server will block new user registrations or not. |
-| AnimatedSprites               | array   | ["bat.png", "beholder.png"] | Configures which sprites should always be animating, even when standing still. |
-| EventWatchdogKillThreshold    | number  | 5000        | Configures the amount of commands an event may execute within a single server tick before the server considers it to be looping infinitely and kills it off. |
-| OpenPortChecker               | boolean | true        | Configures whether the server will check if it can be reached from the internet each time it starts. |
-| ValidPasswordResetTimeMinutes | number  | 30          | Configures the time (in minutes) a password reset link is valid for. |
-| UPnP                          | boolean | true        |                               |
-| Chat                          | See [Chat](#chat)                                     |
-| Combat                        | See [Combat](#combat)                                 |
-| Equipment                     | See [Equipment](./configuration/equipment)             |
-| GameDatabase                  | See [Server Database](./configuration/server-database) |
-| PlayerDatabase                | See [Server Database](./configuration/server-database) |
-| Map                           | See [Map](#map)                                       |
-| NPC                           | See [NPC](#npc)                                       |
-| Loot                          | see [Loot](#loot)                                     |
-| Player                        | See [Player](#player)                                 |
-| Party                         | See [Party](#party)                                   |
-| Security                      | See [Server Security](./configuration/server-security) |
-| SmtpSettings                  | See [SMTP](#smtp)                                     |
-| Sprites                       | See [Sprites](#sprites)                               |
-| Passability                   | See [Passability](#passability)                       |
+| Nombre                        | Tipo     | Ejemplo     | Descripción                   |
+|-------------------------------|----------|-------------|-------------------------------|
+| GameName                      | texto    | Intersect   | Configura el nombre del juego que hostea este servidor. |
+| ServerPort                    | número   | 5400        | Configura el puerto al que escuchará el servidor. |
+| AdminOnly                     | booleano | false       | Configura si este servidor solo permitirá conectarse a miembros del staff (Access 1 i superior). |
+| BlockClientRegistrations      | booleano | false       | Configura si el servidor impedirá que se registren nuevos usuarios o no. |
+| AnimatedSprites               | array    | ["bat.png", "beholder.png"] | Configura qué sprites estarán en constante animación, incluso cuando no estén en movimiento. |
+| ValidPasswordResetTimeMinutes | número   | 30          | Configura el tiempo(en minutos) durante el cual un link de restablecimiento de contraseña será válido. |
+| MaxClientConnections          | número   | 100         | Configura la cantidad de clientes, hayan iniciado sesión o no, que pueden establecer conexión con el servidor simultaneamente. |
+| MaximumLoggedinUsers          | número   | 50          | Configura la cantidad de clientes que pueden iniciar sesión al mismo tiempo. |
+| UPnP                          | booleano | true        | Configura si el servidor usará el protocolo UPnP o no. |
+| EventWatchdogKillThreshold    | número   | 5000        | Configura la cantidad que comandos que un evento puede ejecutar en un solo tick del servidor antes de que sea considerado un bucle infinito y sea finalizado. |
+| OpenPortChecker               | booleano | true        | Configura si el servidor comprobará si es accesible a través de internet cada vez que sea iniciado. |
+| Chat                          | Ver [Chat](#chat)                                     |
+| Combat                        | Ver [Combat](#combat)                                 |
+| Equipment                     | Ver [Equipment](./configuration/equipment)             |
+| GameDatabase                  | Ver [Server Database](./configuration/server-database) |
+| PlayerDatabase                | Ver [Server Database](./configuration/server-database) |
+| Map                           | Ver [Map](#map)                                       |
+| NPC                           | Ver [NPC](#npc)                                       |
+| Loot                          | Ver [Loot](#loot)                                     |
+| Player                        | Ver [Player](#player)                                 |
+| Party                         | Ver [Party](#party)                                   |
+| Security                      | Ver [Server Security](./configuration/server-security) |
+| SmtpSettings                  | Ver [SMTP](#smtp)                                     |
+| Sprites                       | Ver [Sprites](#sprites)                               |
+| Passability                   | Ver [Passability](#passability)                       |
 
 
 ## Chat
