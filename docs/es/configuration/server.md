@@ -30,10 +30,12 @@
 
 
 ## Chat
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| MaxChatLength                     | number  | 120         | Configures the maximum allowed length of each chat message. |
-| MinIntervalBetweenChats           | number  | 400         | Configures the minimum interval (in milliseconds) required between each chat message. |
+| Nombre                            | Tipo     | Ejemplo     | Descripción                   |
+|-----------------------------------|----------|-------------|-------------------------------|
+| MaxChatLength                     | número   | 120         | Configura la cantidad máxima de caracteres permitida en los mensajes del chat. |
+| MinIntervalBetweenChats           | número   | 400         | Configura el intervalo de tiempo mínimo(en milisegundos) requerido entre cada mensaje del chat. |
+| ShowAnnouncementBanners           | booleano | true        | Configura si mostrar o no banners de los anuncios en la pantalla de juego o no. |
+| AnnouncementDisplayDuration       | número   | 15000       | Configura el tiempo(en milisegundos) que serán mostrados los banners de los anuncios en la pantalla de juego si éstos han sido habilitados. |
 
 ## Combat
 | Name                              | Type    | Example     | Description |
