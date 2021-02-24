@@ -126,15 +126,15 @@
 
 ## SMTP
 ### See [Passwords](./advanced/passwords)
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| FromAddress                       | string  | noreply@ascenciongamedev.com | Configures the address from which the server will send e-mails. |
-| FromName                          | string  | Ascencion Game Development | Configures the name the server will use to identify itself as within e-mails. |
-| Host                              | string  | smtp.myprovider.com | Configures the SMTP server the server will use to send out e-mails. |
-| Port                              | number  | 587         | Configures the port number used to communicate with the SMTP server. |
-| UseSsl                            | boolean | true        | Configures whether the SMTP server uses SSL. |
-| Username                          | string  | myusername@myprovider.com | Configures the username used to authenticate with the SMTP server. |
-| Password                          | string  | mypassword | Configures the password used to authenticate with the SMTP server. |
+| Nombre                            | Tipo     | Ejemplo     | Descripción                   |
+|-----------------------------------|----------|-------------|-------------------------------|
+| FromAddress                       | texto    | noreply@ascenciongamedev.com | Configura la dirección desde la que el servidor enviará e-mails. |
+| FromName                          | texto    | Ascencion Game Development | Configura el nombre que el servidor utilizará para identificarse a sí mismo en los e-mails. |
+| Host                              | texto    | smtp.myprovider.com | Configura el servidor SMTP que el servidor de Intersect Engine utilizará para enviar e-mails. |
+| Port                              | número   | 587         | Configura el puerto usado para comunicarse con el servidor SMTP. |
+| UseSsl                            | booleano | true        | Configura si el servidor SMTP utiliza SSL. |
+| Username                          | texto    | myusername@myprovider.com | Configura el usuario utilizado para autentificarse con el servidor SMTP. |
+| Password                          | texto    | mypassword | Configura la contraseña utilizada para autentificarse con el servidor SMTP. |
 
 ## Passability
 | Name                              | Type    | Example     | Description |
