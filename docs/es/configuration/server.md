@@ -89,6 +89,17 @@
 | SharedXpRange                     | número   | 40          | Configura la distancia(en tiles) a la que deben estar los integrantes de la party para compartir experiencia al matar. |
 | NpcDeathCommonEventStartRange     | número   | 0           | Configura la distancia(en tiles) a la que deben estar los integrantes de la party para activar Common Events por las muertes causadas por los otros integrantes. |
 
+## Loot
+| Nombre                            | Tipo     | Ejemplo     | Descripción                   |
+|-----------------------------------|----------|-------------|-------------------------------|
+| ItemDespawnTime                   | número   | 15000       | Configura el tiempo(en milisegundos) que tardan los botines y los objetos tirados en el suelo en desaparecer. |
+| ItemOwnershipTime                 | número   | 5000        | Configura el tiempo(en milisegundos) que tardan los objetos tirados en el suelo por matar NPCs o jugadores en perder la protección anti robo. |
+| ShowUnownedItems                  | booleano | false       | Configura si todos los jugadores pueden ver objetos en el suelo que no les pertenecen y que no pueden recoger. |
+| ConsolidateMapDrops               | booleano | true        | Configura si cuando caen varios objetos iguales al suelo deberían caer todos juntos y recogerse todos a la vez en caso de que el valor sea true, o si deben caer por separado y recogerse uno por uno en caso de que el valor sea false. |
+| EnableLootWindow                  | booleano | true        | Configura si la ventana de loot estará habilitada o no en los clientes. |
+| MaximumLootWindowItems            | número   | 10          | Configura la cantidad máxima de objetos mostrados en la ventana de loot. Solamente se tiene en cuenta si **EnableLootWindow** está habilitado. |
+| MaximumLootWindowDistance         | número   | 3           | Configura la cantidad de tiles alrededor del jugador en la que la ventana de loot buscará el botín. Solamente se tiene en cuenta si **EnableLootWindow** está habilitado. |
+
 ## NPC
 | Name                              | Type    | Example     | Description |
 |-----------------------------------|---------|-------------|-------------|
@@ -96,14 +107,6 @@
 | AllowNewResetLocationBeforeFinish | boolean | false       | Configures whether NPCs are allowed to obtain a new center point from which they have been pulled before having fully reset to the last. |
 | ResetVitalsAndStatusses           | boolean | false       | Configures whether NPCs will fully reset their vitals and statuses when resetting. |
 | ResetRadius                       | number  | 8           | Configures the range (in tiles) in which an NPC is allowed to move from the initial point they were first attacked on or started attacking before resetting.  |
-
-## Loot
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| ItemDespawnTime                   | number  | 15000       | Configures the time (in milliseconds) which it takes for loot and dropped items to despawn from the map. |
-| ItemOwnershipTime                 | number  | 5000        | Configures the time (in milliseconds) which it takes for a dropped item to no longer be owned by the player that caused it to drop through either killing NPCs and Players or dropping it on the map. |
-| ShowUnownedItems                  | boolean | false       | Configures whether everyone on the map can see items that they are not currently the owner of and not eligible to pick up. |
-| ConsolidateMapDrops               | boolean | true        | Configures whether dropping multiple of an item to the map at once consolidates the drops into a single object on the map, or whether it drops multiple on the map at once. |
 
 ## SMTP
 ### See [Passwords](./advanced/passwords)
