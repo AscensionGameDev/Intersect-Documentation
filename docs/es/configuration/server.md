@@ -38,14 +38,22 @@
 | AnnouncementDisplayDuration       | número   | 15000       | Configura el tiempo(en milisegundos) que serán mostrados los banners de los anuncios en la pantalla de juego si éstos han sido habilitados. |
 
 ## Combat
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| BlockingSlow                      | number  | 30          | Configures the percentage by which to slow a player down while they are blocking. |
-| CombatTime                        | number  | 10000       | Configures the amount of time it takes for a player to no longer be considered in combat after their last attack or the last time they took damage. |
-| MaxAttackRate                     | number  | 200         | Configures the maximum rate at which an entity could potentially attack. |
-| MaxDashSpeed                      | number  | 200         | Configures the maximum speed at which a player can dash. |
-| MinAttackRate                     | number  | 500         | Configures the minimum rate at which an entity could potentially attack. |
-| RegenTime                         | number  | 3000        | Configures the time (in milliseconds) between each Vital regeneration tick. |
+| Nombre                            | Tipo     | Ejemplo     | Descripción                   |
+|-----------------------------------|----------|-------------|-------------------------------|
+| BlockingSlow                      | número   | 30          | Configura el porcentaje por el cual los jugadores serán ralentizados mientras bloqueen. |
+| CombatTime                        | número   | 10000       | Configura la cantidad de tiempo(en milisegundos) tras el último ataque de un jugador o tras la última vez que un jugador recibe daño para que deje de considerarse que está en combate. |
+| MaxAttackRate                     | número   | 200         | Configura el ritmo máximo al que una entidad puede atacar. |
+| MaxDashSpeed                      | número   | 200         | Configura la velocidad máxima a la cual un jugador puede realizar un dash. |
+| MinAttackRate                     | número   | 500         | Configura el ritmo mínimo al que una entidad puede atacar. |
+| RegenTime                         | número   | 3000        | Configura el tiempo(en milisegundos) entre cada tick de regeneración de salud. |
+| EnableCombatChatMessages          | booleano | false       | Configura si los mensajes de chat de combate están habilitados o no. |
+| MovementCancelsCast               | booleano | false       | Configura si el jugador puede desplazarse para cancelar los lanzamientos de hechizos o no. |
+| MatchGroupCooldowns               | booleano | true        | Configura si los cooldowns del mismo grupo de cooldowns deben coincidir o no. |
+| MatchGroupCooldownHighest         | booleano | true        | Configura si los cooldowns del mismo grupo coincidirán con el cooldown más elevado de entre todos ellos si está habilitado, o si coincidirán con el cooldown del objeto o hechizo utilizado en ese momento si no está habilitado. Solamente se tiene en cuenta si MatchGroupCooldowns está habilitado. |
+| LinkSpellAndItemCooldowns         | booleano | true        | Configura si objetos y hechizos pueden estar juntos en el mismo grupo de cooldowns o no. Solamente se tiene en cuenta si MatchGroupCooldowns está habilitado. |
+| EnableGlobalCooldowns             | booleano | false       | Configura si utilizar un objeto o un hechizo debería activar un cooldown global o no. |
+| GlobalCooldownDuration            | número   | 1500        | Configura la duración(en milisegundos) de los cooldown globales. Solamente se tiene en cuenta si EnableGlobalCooldowns está habilitado. |
+| MaxPlayerAutoTargetRadius         | número   | 15          | Configura la distancia máxima permitida a la que se puede autoapuntar a un objetivo. |
 
 ## Map
 | Name                              | Type    | Example     | Description |
