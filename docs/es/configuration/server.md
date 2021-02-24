@@ -100,6 +100,21 @@
 | MaximumLootWindowItems            | número   | 10          | Configura la cantidad máxima de objetos mostrados en la ventana de loot. Solamente se tiene en cuenta si **EnableLootWindow** está habilitado. |
 | MaximumLootWindowDistance         | número   | 3           | Configura la cantidad de tiles alrededor del jugador en la que la ventana de loot buscará el botín. Solamente se tiene en cuenta si **EnableLootWindow** está habilitado. |
 
+## Sprites
+| Nombre                            | Tipo     | Ejemplo     | Descripción                   |
+|-----------------------------------|----------|-------------|-------------------------------|
+| IdleFrames                        | número   | 4           | Configura la cantidad de frames que contiene la animación de inactividad. |
+| NormalFrames                      | número   | 4           | Configura la cantidad de frames que contiene la animación estándar(usada principalmente para el movimiento). |
+| CastFrames                        | número   | 4           | Configura la cantidad de frames que contiene la animación de lanzamiento de hechizos. |
+| AttackFrames                      | número   | 4           | Configura la cantidad de frames que contiene la animación de ataque. |
+| ShootFrames                       | número   | 4           | Configura la cantidad de frames que contiene la animación de disparo. |
+| WeaponFrames                      | número   | 4           | Configura la cantidad de frames que contiene la animación de ataque con arma. |
+| NormalSheetAttackFrame            | número   | 3           | Configura el frame de la animación estándar que se usará al atacar si no hay otras animaciones disponibles. |
+| NormalSheetDashFrame              | número   | 1           | Configura el frame de la animación estándar que se usará al realizar un dash si no hay otras animaciones disponibles. |
+| MovingFrameDuration               | número   | 200         | Configura el tiempo(en milisegundos) que se muestra cada frame de movimiento antes de pasar al siguiente. |
+| IdleFrameDuration                 | número   | 200         | Configura el tiempo(en milisegundos) que se muestra cada frame de la animación de inactividad antes de pasar a la siguiente. |
+| TimeBeforeIdle                    | número   | 4000        | Configura el tiempo(en milisegundos) que tiene que pasar desde la última acción del jugador para que empiece a mostrarse la animación de inactividad, si está disponible. |
+
 ## NPC
 | Name                              | Type    | Example     | Description |
 |-----------------------------------|---------|-------------|-------------|
@@ -119,21 +134,6 @@
 | UseSsl                            | boolean | true        | Configures whether the SMTP server uses SSL. |
 | Username                          | string  | myusername@myprovider.com | Configures the username used to authenticate with the SMTP server. |
 | Password                          | string  | mypassword | Configures the password used to authenticate with the SMTP server. |
-
-## Sprites
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| IdleFrames                        | number  | 4           | Configures the amount of frames the idle animation sprite contains. |
-| NormalFrames                      | number  | 4           | Configures the amount of frames the normal animation sprite contains. |
-| CastFrames                        | number  | 4           | Configures the amount of frames the cast animation sprite contains. |
-| AttackFrames                      | number  | 4           | Configures the amount of frames the attack animation sprite contains. |
-| ShootFrames                       | number  | 4           | Configures the amount of frames the shoot attack animation sprite contains. |
-| WeaponFrames                      | number  | 4           | Configures the amount of frames the weapon attack animation sprite contains. |
-| NormalSheetAttackFrame            | number  | 3           | Configures the animation from from the normal sheet to use for attacking when no animation sprites are available. |
-| NormalSheetDashFrame              | number  | 1           | Configures the animation from from the normal sheet to use for dashing when no animation sprites are available. |
-| MovingFrameDuration               | number  | 200         | Configures the time (in milliseconds) each movement frame is displayed before moving on to the next. |
-| IdleFrameDuration                 | number  | 200         | Configures the time (in milliseconds) each idle frame is displayed before moving on to the next. |
-| TimeBeforeIdle                    | number  | 4000        | Configures the time (in milliseconds) it takes after a player's last action before the idle animation starts playing when available. |
 
 ## Passability
 | Name                              | Type    | Example     | Description |
