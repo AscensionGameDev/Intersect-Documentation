@@ -116,12 +116,13 @@
 | TimeBeforeIdle                    | número   | 4000        | Configura el tiempo(en milisegundos) que tiene que pasar desde la última acción del jugador para que empiece a mostrarse la animación de inactividad, si está disponible. |
 
 ## NPC
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| AllowResetRadius                  | boolean | false       | Configures whether NPCs will reset after being moved away from the initial point they were first attacked on or started attacking. |
-| AllowNewResetLocationBeforeFinish | boolean | false       | Configures whether NPCs are allowed to obtain a new center point from which they have been pulled before having fully reset to the last. |
-| ResetVitalsAndStatusses           | boolean | false       | Configures whether NPCs will fully reset their vitals and statuses when resetting. |
-| ResetRadius                       | number  | 8           | Configures the range (in tiles) in which an NPC is allowed to move from the initial point they were first attacked on or started attacking before resetting.  |
+| Nombre                            | Tipo     | Ejemplo     | Descripción                   |
+|-----------------------------------|----------|-------------|-------------------------------|
+| AllowResetRadius                  | booleano | false       | Configura si los NPCs se resetearán tras haberse alejado del punto inicial en el que entraron en combate. |
+| ResetRadius                       | número   | 8           | Configura el rango(en tiles) en el que los NPCs tienen permitido moverse desde el punto inicial en el que entraron en combate antes de resetearse. Solamente se tiene en cuenta si **AllowResetRadius** está habilitado. |
+| AllowNewResetLocationBeforeFinish | booleano | false       | Configura si los NPCs pueden obtener un nuevo punto de reseteo antes de haberse reseteado completamente hasta el punto inicial en el que entraron en combate.
+| ResetVitalsAndStatusses           | booleano | false       | Configura si los NPCs resetearán también su salud y sus estados cuando se reseteen. |
+| ShowLevelByName                   | booleano | false       | Configura si el nivel del npc será mostrado junto a su nombre o no.  |
 
 ## SMTP
 ### See [Passwords](./advanced/passwords)
