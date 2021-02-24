@@ -17,15 +17,15 @@
 | Combat                        | Ver [Combat](#combat)                                 |
 | Equipment                     | Ver [Equipment](./configuration/equipment)             |
 | GameDatabase                  | Ver [Server Database](./configuration/server-database) |
-| PlayerDatabase                | Ver [Server Database](./configuration/server-database) |
 | Map                           | Ver [Map](#map)                                       |
-| NPC                           | Ver [NPC](#npc)                                       |
-| Loot                          | Ver [Loot](#loot)                                     |
+| PlayerDatabase                | Ver [Server Database](./configuration/server-database) |
 | Player                        | Ver [Player](#player)                                 |
 | Party                         | Ver [Party](#party)                                   |
 | Security                      | Ver [Server Security](./configuration/server-security) |
-| SmtpSettings                  | Ver [SMTP](#smtp)                                     |
+| Loot                          | Ver [Loot](#loot)                                     |
 | Sprites                       | Ver [Sprites](#sprites)                               |
+| NPC                           | Ver [NPC](#npc)                                       |
+| SmtpSettings                  | Ver [SMTP](#smtp)                                     |
 | Passability                   | Ver [Passability](#passability)                       |
 
 
