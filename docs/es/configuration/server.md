@@ -66,6 +66,21 @@
 | Width                             | número   | 32          | Configura la cantidad de tiles disponibles en el eje X(horizontal) en cada mapa. **ADVERTENCIA:** ¡Este valor no puede ser modificado sobre la marcha y modificarlo requerirá que todos los mapas existentes sean eliminados! |
 | ZDimensionVisible                 | booleano | false       | Configura si la Dimensión Z está habilitada. Ver [Dimensión Z](./advanced/zdimensions) |
 
+## Player
+| Nombre                            | Tipo     | Ejemplo     | Descripción                   |
+|-----------------------------------|----------|-------------|-------------------------------|
+| ItemDropChance                    | número   | 0           | Configura la posibilidad(porcentaje) de que un jugador suelte objetos al morir. |
+| MaxBank                           | número   | 100         | Configura la cantidad máxima de ranuras que cada jugador tiene en el banco de almacenamiento. |
+| MaxCharacters                     | número   | 1           | Configura la cantidad máxima de personajes que puede tener un jugador en su cuenta. |
+| MaxInventory                      | número   | 35          | Configura la cantidad máxima de ranuras que cada jugador tiene en su inventario. |
+| MaxLevel                          | número   | 100         | Configura el nivel máximo que puede alcanzar un personaje. |
+| MaxSpells                         | número   | 35          | Configura la cantidad máxima de ranuras de hechizo que tiene cada jugador. |
+| MaxStat                           | número   | 255         | Configura la cantidad máxima de puntos de estadísticas que cada estadística puede tener. |
+| RequestTimeout                    | número   | 300000      | Configura la cantidad de tiempo(en milisegundos) que una petición de comercio puede estar pendiente de respuesta antes de que se cancele automaticamente. |
+| TradeRange                        | número   | 6           | Configura la distancia(en tiles) a la que deben estar 2 jugadores para que puedan enviarse peticiones de comercio. |
+| AllowCombatMovement               | booleano | true        | Configura si las entidades pueden moverse o no mientras el contador de tiempo de sus ataques llega a 0. |
+| ShowLevelByName                   | booleano | false       | Configura si el nivel del jugador será mostrado junto a su nombre o no. |
+
 ## NPC
 | Name                              | Type    | Example     | Description |
 |-----------------------------------|---------|-------------|-------------|
@@ -81,19 +96,6 @@
 | ItemOwnershipTime                 | number  | 5000        | Configures the time (in milliseconds) which it takes for a dropped item to no longer be owned by the player that caused it to drop through either killing NPCs and Players or dropping it on the map. |
 | ShowUnownedItems                  | boolean | false       | Configures whether everyone on the map can see items that they are not currently the owner of and not eligible to pick up. |
 | ConsolidateMapDrops               | boolean | true        | Configures whether dropping multiple of an item to the map at once consolidates the drops into a single object on the map, or whether it drops multiple on the map at once. |
-
-## Player
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| ItemDropChance                    | number  | 0           | Configures the chance (percentage) of when a player will drop items upon death. |
-| MaxBank                           | number  | 100         | Configures the maximum amount of bank slots each player has. |
-| MaxCharacters                     | number  | 1           | Configures the maximum amount of characters each user account can have. |
-| MaxInventory                      | number  | 35          | Configures the maximum amount of inventory slots each player has. |
-| MaxLevel                          | number  | 100         | Configures the maximum level a player character can reach. |
-| MaxSpells                         | number  | 35          | Configures the maximum amount of spell slots each player has. |
-| MaxStat                           | number  | 255         | Configures the maximum amount of stat points any given stat can have. |
-| RequestTimeout                    | number  | 300000      | Configures the maximum amount of time (in milliseconds) a trade request can be left pending before cancelling it automatically. |
-| TradeRange                        | number  | 6           | Configures the range (in tiles) in which the player and the player they are attempting to trade with must reside within. |
 
 ## Party
 | Name                              | Type    | Example     | Description |
