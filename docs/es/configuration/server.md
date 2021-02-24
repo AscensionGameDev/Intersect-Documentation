@@ -137,8 +137,8 @@
 | Password                          | texto    | mypassword | Configura la contraseña utilizada para autentificarse con el servidor SMTP. |
 
 ## Passability
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| Arena                             | boolean | false       | Configures whether players can walk through eachother in Arena map types. |
-| Normal                            | boolean | false       | Configures whether players can walk through eachother in Normal map types. |
-| Safe                              | boolean | true        | Configures whether players can walk through eachother in Safe map types. |
+| Nombre                            | Tipo     | Ejemplo     | Descripción                   |
+|-----------------------------------|----------|-------------|-------------------------------|
+| Arena                             | booleano | false       | Configura si los jugadores pueden pasar a través de otros jugadores en los mapas de tipo Arena. |
+| Normal                            | booleano | false       | Configura si los jugadores pueden pasar a través de otros jugadores en los mapas de tipo Normal. |
+| Safe                              | booleano | true        | Configura si los jugadores pueden pasar a través de otros jugadores en los mapas de tipo Safe. |
