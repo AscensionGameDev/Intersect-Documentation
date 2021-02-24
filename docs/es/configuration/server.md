@@ -49,22 +49,22 @@
 | EnableCombatChatMessages          | booleano | false       | Configura si los mensajes de chat de combate están habilitados o no. |
 | MovementCancelsCast               | booleano | false       | Configura si el jugador puede desplazarse para cancelar los lanzamientos de hechizos o no. |
 | MatchGroupCooldowns               | booleano | true        | Configura si los cooldowns del mismo grupo de cooldowns deben coincidir o no. |
-| MatchGroupCooldownHighest         | booleano | true        | Configura si los cooldowns del mismo grupo coincidirán con el cooldown más elevado de entre todos ellos si está habilitado, o si coincidirán con el cooldown del objeto o hechizo utilizado en ese momento si no está habilitado. Solamente se tiene en cuenta si MatchGroupCooldowns está habilitado. |
-| LinkSpellAndItemCooldowns         | booleano | true        | Configura si objetos y hechizos pueden estar juntos en el mismo grupo de cooldowns o no. Solamente se tiene en cuenta si MatchGroupCooldowns está habilitado. |
+| MatchGroupCooldownHighest         | booleano | true        | Configura si los cooldowns del mismo grupo coincidirán con el cooldown más elevado de entre todos ellos si está habilitado, o si coincidirán con el cooldown del objeto o hechizo utilizado en ese momento si no está habilitado. Solamente se tiene en cuenta si **MatchGroupCooldowns** está habilitado. |
+| LinkSpellAndItemCooldowns         | booleano | true        | Configura si objetos y hechizos pueden estar juntos en el mismo grupo de cooldowns o no. Solamente se tiene en cuenta si **MatchGroupCooldowns** está habilitado. |
 | EnableGlobalCooldowns             | booleano | false       | Configura si utilizar un objeto o un hechizo debería activar un cooldown global o no. |
-| GlobalCooldownDuration            | número   | 1500        | Configura la duración(en milisegundos) de los cooldown globales. Solamente se tiene en cuenta si EnableGlobalCooldowns está habilitado. |
+| GlobalCooldownDuration            | número   | 1500        | Configura la duración(en milisegundos) de los cooldown globales. Solamente se tiene en cuenta si **EnableGlobalCooldowns** está habilitado. |
 | MaxPlayerAutoTargetRadius         | número   | 15          | Configura la distancia máxima permitida a la que se puede autoapuntar a un objetivo. |
 
 ## Map
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| GameBorderStyle                   | number  | 0           | Configures the method in which the camera is handled by the engine. **0** will use a seamless world and try to avoid showing areas with no maps in them. **1** will use a seamless world and not constrain the camera to the map view, centering the camera on the player at all times. **2** will not use a seamless world and show each map on its own as you traverse the world. |
-| Height                            | number  | 26          | Configures the amount of tiles available on the Y (vertical) axis on each map. **WARNING:** This value can not be changed on the fly and will require you to delete your existing maps when changed! |
-| ItemAttributeRespawnTime          | number  | 15000       | Configures the amount of time (in milliseconds) it takes for items spawned through the Item Map Attribute to respawn. |
-| TileHeight                        | number  | 32          | Configures the amount of pixels each map tile is on the Y (vertical) axis. |
-| TileWidth                         | number  | 32          | Configures the amount of pixels each map tile is on the X (horizontal) axis. |
-| Width                             | number  | 32          | Configures the amount of tiles available on the X (horizontal) axis on each map. **WARNING:** This value can not be changed on the fly and will require you to delete your existing maps when changed! |
-| ZDimensionVisible                 | boolean | false       | Configures whether the Z-Dimension is enabled. See [Z-Dimensions](./advanced/zdimensions) |
+| Nombre                            | Tipo     | Ejemplo     | Descripción                   |
+|-----------------------------------|----------|-------------|-------------------------------|
+| GameBorderStyle                   | número   | 0           | Configura la manera en la que la cámara es manejada por el sistema. **0** indicará un mundo sin junturas y evitará mostrar áreas sin mapas. **1** indicará un mundo sin junturas y no limitará la cámara a la vista de los mapas, centrando la cámara en el jugador en todo momento. **2** indicará un mundo con junturas y mostrará cada mapa por sí solo mientras el jugador recorre el mundo. |
+| Height                            | número   | 26          | Configura la cantidad de tiles disponibles en el eje Y(vertical) en cada mapa. **ADVERTENCIA:** ¡Este valor no puede ser modificado sobre la marcha y modificarlo requerirá que todos los mapas existentes sean eliminados! |
+| ItemAttributeRespawnTime          | número   | 15000       | Configura la cantidad de tiempo(en milisegundos) requerido para que los objetos generados por el Atributo Objeto del Mapa reaparezcan. |
+| TileHeight                        | número   | 32          | Configura la cantidad de píxeles que cada tile del mapa tiene en el eje Y(vertical). |
+| TileWidth                         | número   | 32          | Configura la cantidad de píxeles que cada tile del mapa tiene en el eje X(horizontal). |
+| Width                             | número   | 32          | Configura la cantidad de tiles disponibles en el eje X(horizontal) en cada mapa. **ADVERTENCIA:** ¡Este valor no puede ser modificado sobre la marcha y modificarlo requerirá que todos los mapas existentes sean eliminados! |
+| ZDimensionVisible                 | booleano | false       | Configura si la Dimensión Z está habilitada. Ver [Dimensión Z](./advanced/zdimensions) |
 
 ## NPC
 | Name                              | Type    | Example     | Description |
