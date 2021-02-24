@@ -81,6 +81,14 @@
 | AllowCombatMovement               | booleano | true        | Configura si las entidades pueden moverse o no mientras el contador de tiempo de sus ataques llega a 0. |
 | ShowLevelByName                   | booleano | false       | Configura si el nivel del jugador será mostrado junto a su nombre o no. |
 
+## Party
+| Nombre                            | Tipo     | Ejemplo     | Descripción                   |
+|-----------------------------------|----------|-------------|-------------------------------|
+| MaximumMembers                    | número   | 4           | Configura la cantidad máxima permitida de integrantes en party. |
+| InviteRange                       | número   | 40          | Configura la distancia(en tiles) a la que deben estar 2 jugadores para que puedan enviarse invitaciones de party. |
+| SharedXpRange                     | número   | 40          | Configura la distancia(en tiles) a la que deben estar los integrantes de la party para compartir experiencia al matar. |
+| NpcDeathCommonEventStartRange     | número   | 0           | Configura la distancia(en tiles) a la que deben estar los integrantes de la party para activar Common Events por las muertes causadas por los otros integrantes. |
+
 ## NPC
 | Name                              | Type    | Example     | Description |
 |-----------------------------------|---------|-------------|-------------|
@@ -96,14 +104,6 @@
 | ItemOwnershipTime                 | number  | 5000        | Configures the time (in milliseconds) which it takes for a dropped item to no longer be owned by the player that caused it to drop through either killing NPCs and Players or dropping it on the map. |
 | ShowUnownedItems                  | boolean | false       | Configures whether everyone on the map can see items that they are not currently the owner of and not eligible to pick up. |
 | ConsolidateMapDrops               | boolean | true        | Configures whether dropping multiple of an item to the map at once consolidates the drops into a single object on the map, or whether it drops multiple on the map at once. |
-
-## Party
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| MaximumMembers                    | number  | 4           | Configures the maximum amount of party members allowed. |
-| InviteRange                       | number  | 40          | Configures the range (in tiles) in which the player and the player they are attempting to invite to a party must reside within. |
-| SharedXpRange                     | number  | 40          | Configures the range (in tiles) in which party members have to be for them to share experience on kills. |
-| NpcDeathCommonEventStartRange     | number  | 0           | Configures the range (in tiles) in which party members have to be for them to trigger Common Events from deaths caused by other party members. |
 
 ## SMTP
 ### See [Passwords](./advanced/passwords)
