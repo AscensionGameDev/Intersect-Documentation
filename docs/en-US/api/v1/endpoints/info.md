@@ -141,3 +141,37 @@ Empty
 	...
 }
 ```
+## Metrics
+
+Retrieves the metrics of your server
+
+### Request
+
+**URL** : `/api/v1/info/metrics`
+
+**Method** : `GET`
+
+**Authorization Required** : `Yes`
+
+**Content Type** : `NA`
+
+**Body**
+Empty
+
+---
+
+### Response
+
+**Condition** : NA
+
+**Code** : `200 SUCCESS`
+
+**Example**
+
+```json
+{
+  "uptime" => 2156968
+  "datetime" => "2021-06-13T16:27:02.5046138Z"
+  ...
+}
+```
