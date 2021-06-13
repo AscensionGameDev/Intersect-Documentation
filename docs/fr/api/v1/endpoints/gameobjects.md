@@ -1,6 +1,6 @@
-# Game Objects
+# Objets du jeu
 
-## Object Types
+## Types d'objets
 
 | Type  | Key | 
 | ----- | ---------- |
@@ -37,15 +37,15 @@ Dans tous les autres éditeurs, un clic droit sur un objet copiera automatiqueme
 
 Récupère une liste d'objets de jeu et leurs informations stockées sur le serveur en fonction de son type et des informations de pagination.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/gameobjects/[typeKey]`
 
 **Type Key** : `Une des clés du tableau ci-dessus.`
 
-**Method** : `POST`
+**Methode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `application/json`
 
@@ -56,7 +56,7 @@ Récupère une liste d'objets de jeu et leurs informations stockées sur le serv
 | page | int  | Page des utilisateurs à récupérer. | :heavy_minus_sign: |
 | count | int  | Nombre d'utilisateurs à récupérer. | :heavy_minus_sign: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -67,7 +67,7 @@ Récupère une liste d'objets de jeu et leurs informations stockées sur le serv
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
@@ -112,15 +112,15 @@ L'exemple est tronqué, pour une réponse complète [Cliquez ici](https://www.as
 
 Récupère la configuration d'un objet de jeu singulier du serveur en fonction de son type et de son identifiant (id). 
 
-### Request
+### Requête
 
 **URL** : `/api/v1/gameobjects/[typeKey]/[id]`
 
 **Type Key** : `Une des clés du tableau ci-dessus.`
 
-**Method** : `GET`
+**Methode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `NA`
 
@@ -128,13 +128,13 @@ Récupère la configuration d'un objet de jeu singulier du serveur en fonction d
 
 ---
 
-### Response
+### Requête
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Map Example**
+**Exemple d'une map**
 
 ```json
 {
@@ -201,13 +201,13 @@ Récupère la configuration d'un objet de jeu singulier du serveur en fonction d
 
 Récupère la configuration de synchronisation des serveurs et les teintes de couleur pour chaque heure de la journée.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/gameobjects/time`
 
-**Method** : `GET`
+**Methode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `NA`
 
@@ -215,7 +215,7 @@ Récupère la configuration de synchronisation des serveurs et les teintes de co
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
