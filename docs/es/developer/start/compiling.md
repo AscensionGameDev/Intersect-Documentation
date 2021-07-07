@@ -9,7 +9,7 @@ En la mayoría de los casos, todo lo que debe hacer es presionar Build (Generar)
 
 ![building](https://www.ascensiongamedev.com/resources/filehost/c1c27a3366987a9279610e40667eecf0.png)
 
-Tu primera compilación probablemente fallará con errores similares a los que se ven a continuación. Esto se debe a que el proyecto descarga las dependencias durante la compilación misma, dependencias que son necesarias para compilación exitosa.
+Tu primera compilación probablemente fallará con errores similares a los que se ven a continuación. Esto se debe a que el proyecto descarga las dependencias durante la compilación misma, dependencias que son necesarias para una compilación exitosa.
 
 ![errors](https://www.ascensiongamedev.com/resources/filehost/3ddd530d599409f7a8a69a510fa3ab70.png)
 
