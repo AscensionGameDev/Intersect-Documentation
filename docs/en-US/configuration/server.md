@@ -7,27 +7,26 @@
 | AdminOnly                     | boolean | false       | Configures whether this server will only allow staff members (Access 1 or above) to log in. |
 | BlockClientRegistrations      | boolean | false       | Configures whether this server will block new user registrations or not. |
 | AnimatedSprites               | array   | ["bat.png", "beholder.png"] | Configures which sprites should always be animating, even when standing still. |
-| ValidPasswordResetTimeMinutes | number  | 30          | Configures the time (in minutes) a password reset link is valid for. |
-| MaxClientConnections          | number  | 100         | Configures the amount of clients, logged in or not, which can establish connection to the server at the same time. |
-| MaximumLoggedinUsers          | number  | 50          | Configures the amount of clients which can be logged in at the same time. |
-| UPnP                          | boolean | true        | Configures whether this server will use the UPnP protocol or not. |
-| EventWatchdogKillThreshold    | number  | 5000        | Configures the amount of commands an event may execute within a single server tick before the server considers it to be looping infinitely and kills it off. |
-| OpenPortChecker               | boolean | true        | Configures whether the server will check if it can be reached from the internet each time it starts. |
 | Chat                          | See [Chat](#chat)                                     |
 | Combat                        | See [Combat](#combat)                                 |
 | Equipment                     | See [Equipment](./configuration/equipment)             |
+| EventWatchdogKillThreshold    | number  | 5000        | Configures the amount of commands an event may execute within a single server tick before the server considers it to be looping infinitely and kills it off. |
 | GameDatabase                  | See [Server Database](./configuration/server-database) |
+| Loot                          | see [Loot](#loot)                                     |
 | Map                           | See [Map](#map)                                       |
+| MaxClientConnections          | number  | 100         | Configures the amount of clients, logged in or not, which can establish connection to the server at the same time. |
+| MaximumLoggedinUsers          | number  | 50          | Configures the amount of clients which can be logged in at the same time. |
+| NPC                           | See [NPC](#npc)                                       |
+| OpenPortChecker               | boolean | true        | Configures whether the server will check if it can be reached from the internet each time it starts. |
+| Passability                   | See [Passability](#passability)                       |
 | PlayerDatabase                | See [Server Database](./configuration/server-database) |
 | Player                        | See [Player](#player)                                 |
 | Party                         | See [Party](#party)                                   |
 | Security                      | See [Server Security](./configuration/server-security) |
-| Loot                          | see [Loot](#loot)                                     |
-| Sprites                       | See [Sprites](#sprites)                               |
-| NPC                           | See [NPC](#npc)                                       |
 | SmtpSettings                  | See [SMTP](#smtp)                                     |
-| Passability                   | See [Passability](#passability)                       |
-
+| Sprites                       | See [Sprites](#sprites)                               |
+| UPnP                          | boolean | true        | Configures whether this server will use the UPnP protocol or not. |
+| ValidPasswordResetTimeMinutes | number  | 30          | Configures the time (in minutes) a password reset link is valid for. |
 
 ## Chat
 | Name                              | Type    | Example     | Description |
@@ -55,6 +54,17 @@
 | GlobalCooldownDuration            | number  | 1500        | Configures the duration (in milliseconds) which the global cooldown lasts. Only used if EnableGlobalCooldowns is enabled. |
 | MaxPlayerAutoTargetRadius         | number  | 15          | Configures the maximum distance a target is allowed to be from the player when auto targetting. |
 
+## Loot
+| Name                              | Type    | Example     | Description |
+|-----------------------------------|---------|-------------|-------------|
+| ItemDespawnTime                   | number  | 15000       | Configures the time (in milliseconds) which it takes for loot and dropped items to despawn from the map. |
+| ItemOwnershipTime                 | number  | 5000        | Configures the time (in milliseconds) which it takes for a dropped item to no longer be owned by the player that caused it to drop through either killing NPCs and Players or dropping it on the map. |
+| ShowUnownedItems                  | boolean | false       | Configures whether everyone on the map can see items that they are not currently the owner of and not eligible to pick up. |
+| ConsolidateMapDrops               | boolean | true        | Configures whether dropping multiple of an item to the map at once consolidates the drops into a single object on the map if true, or if it drops multiple on the map at once if false. |
+| EnableLootWindow                  | boolean | true        | Configures whether the loot window feature of the client is allowed to be active or not. |
+| MaximumLootWindowItems            | number  | 10          | Configures the maximum amount of items to be displayed on the client's Loot Window. Only used if EnableLootWindow is enabled. |
+| MaximumLootWindowDistance         | number  | 3           | Configures the maximum amount of tiles around the player to search for loot with the Loot Window. Only used if EnableLootWindow is enabled. |
+
 ## Map
 | Name                              | Type    | Example     | Description |
 |-----------------------------------|---------|-------------|-------------|
@@ -65,6 +75,30 @@
 | TileWidth                         | number  | 32          | Configures the amount of pixels each map tile is on the X (horizontal) axis. |
 | Width                             | number  | 32          | Configures the amount of tiles available on the X (horizontal) axis on each map. **WARNING:** This value can not be changed on the fly and will require you to delete your existing maps when changed! |
 | ZDimensionVisible                 | boolean | false       | Configures whether the Z-Dimension is enabled. See [Z-Dimensions](./advanced/zdimensions) |
+
+## NPC
+| Name                              | Type    | Example     | Description |
+|-----------------------------------|---------|-------------|-------------|
+| AllowResetRadius                  | boolean | false       | Configures whether NPCs will reset after being moved away from the initial point they were first attacked on or started attacking. |
+| ResetRadius                       | number  | 8           | Configures the range (in tiles) in which an NPC is allowed to move from the initial point they were first attacked on or started attacking before resetting.  |
+| AllowNewResetLocationBeforeFinish | boolean | false       | Configures whether NPCs are allowed to obtain a new center point from which they have been pulled before having fully reset to the last. |
+| ResetVitalsAndStatusses           | boolean | false       | Configures whether NPCs will fully reset their vitals and statuses when resetting. |
+| ShowLevelByName                   | boolean | false       | Configures whether NPCs' level will be displayed in their overworld name label or not. |
+
+## Party
+| Name                              | Type    | Example     | Description |
+|-----------------------------------|---------|-------------|-------------|
+| MaximumMembers                    | number  | 4           | Configures the maximum amount of party members allowed. |
+| InviteRange                       | number  | 40          | Configures the range (in tiles) in which the player and the player they are attempting to invite to a party must reside within. |
+| SharedXpRange                     | number  | 40          | Configures the range (in tiles) in which party members have to be for them to share experience on kills. |
+| NpcDeathCommonEventStartRange     | number  | 0           | Configures the range (in tiles) in which party members have to be for them to trigger Common Events from deaths caused by other party members. |
+
+## Passability
+| Name                              | Type    | Example     | Description |
+|-----------------------------------|---------|-------------|-------------|
+| Arena                             | boolean | false       | Configures whether players can walk through eachother in Arena map types. |
+| Normal                            | boolean | false       | Configures whether players can walk through eachother in Normal map types. |
+| Safe                              | boolean | true        | Configures whether players can walk through eachother in Safe map types. |
 
 ## Player
 | Name                              | Type    | Example     | Description |
@@ -81,24 +115,17 @@
 | AllowCombatMovement               | boolean | true        | Configures whether entities can move or not while their attack timer goes to 0.  |
 | ShowLevelByName                   | boolean | false       | Configures whether players' level will be displayed in their overworld name label or not. |
 
-## Party
+## SMTP
+### See [Passwords](./advanced/passwords)
 | Name                              | Type    | Example     | Description |
 |-----------------------------------|---------|-------------|-------------|
-| MaximumMembers                    | number  | 4           | Configures the maximum amount of party members allowed. |
-| InviteRange                       | number  | 40          | Configures the range (in tiles) in which the player and the player they are attempting to invite to a party must reside within. |
-| SharedXpRange                     | number  | 40          | Configures the range (in tiles) in which party members have to be for them to share experience on kills. |
-| NpcDeathCommonEventStartRange     | number  | 0           | Configures the range (in tiles) in which party members have to be for them to trigger Common Events from deaths caused by other party members. |
-
-## Loot
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| ItemDespawnTime                   | number  | 15000       | Configures the time (in milliseconds) which it takes for loot and dropped items to despawn from the map. |
-| ItemOwnershipTime                 | number  | 5000        | Configures the time (in milliseconds) which it takes for a dropped item to no longer be owned by the player that caused it to drop through either killing NPCs and Players or dropping it on the map. |
-| ShowUnownedItems                  | boolean | false       | Configures whether everyone on the map can see items that they are not currently the owner of and not eligible to pick up. |
-| ConsolidateMapDrops               | boolean | true        | Configures whether dropping multiple of an item to the map at once consolidates the drops into a single object on the map if true, or if it drops multiple on the map at once if false. |
-| EnableLootWindow                  | boolean | true        | Configures whether the loot window feature of the client is allowed to be active or not. |
-| MaximumLootWindowItems            | number  | 10          | Configures the maximum amount of items to be displayed on the client's Loot Window. Only used if EnableLootWindow is enabled. |
-| MaximumLootWindowDistance         | number  | 3           | Configures the maximum amount of tiles around the player to search for loot with the Loot Window. Only used if EnableLootWindow is enabled. |
+| FromAddress                       | string  | noreply@ascenciongamedev.com | Configures the address from which the server will send e-mails. |
+| FromName                          | string  | Ascencion Game Development | Configures the name the server will use to identify itself as within e-mails. |
+| Host                              | string  | smtp.myprovider.com | Configures the SMTP server the server will use to send out e-mails. |
+| Port                              | number  | 587         | Configures the port number used to communicate with the SMTP server. |
+| UseSsl                            | boolean | true        | Configures whether the SMTP server uses SSL. |
+| Username                          | string  | myusername@myprovider.com | Configures the username used to authenticate with the SMTP server. |
+| Password                          | string  | mypassword | Configures the password used to authenticate with the SMTP server. |
 
 ## Sprites
 | Name                              | Type    | Example     | Description |
@@ -114,31 +141,3 @@
 | MovingFrameDuration               | number  | 200         | Configures the time (in milliseconds) each movement frame is displayed before moving on to the next. |
 | IdleFrameDuration                 | number  | 200         | Configures the time (in milliseconds) each idle frame is displayed before moving on to the next. |
 | TimeBeforeIdle                    | number  | 4000        | Configures the time (in milliseconds) it takes after a player's last action before the idle animation starts playing when available. |
-
-## NPC
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| AllowResetRadius                  | boolean | false       | Configures whether NPCs will reset after being moved away from the initial point they were first attacked on or started attacking. |
-| ResetRadius                       | number  | 8           | Configures the range (in tiles) in which an NPC is allowed to move from the initial point they were first attacked on or started attacking before resetting.  |
-| AllowNewResetLocationBeforeFinish | boolean | false       | Configures whether NPCs are allowed to obtain a new center point from which they have been pulled before having fully reset to the last. |
-| ResetVitalsAndStatusses           | boolean | false       | Configures whether NPCs will fully reset their vitals and statuses when resetting. |
-| ShowLevelByName                   | boolean | false       | Configures whether NPCs' level will be displayed in their overworld name label or not. |
-
-## SMTP
-### See [Passwords](./advanced/passwords)
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| FromAddress                       | string  | noreply@ascenciongamedev.com | Configures the address from which the server will send e-mails. |
-| FromName                          | string  | Ascencion Game Development | Configures the name the server will use to identify itself as within e-mails. |
-| Host                              | string  | smtp.myprovider.com | Configures the SMTP server the server will use to send out e-mails. |
-| Port                              | number  | 587         | Configures the port number used to communicate with the SMTP server. |
-| UseSsl                            | boolean | true        | Configures whether the SMTP server uses SSL. |
-| Username                          | string  | myusername@myprovider.com | Configures the username used to authenticate with the SMTP server. |
-| Password                          | string  | mypassword | Configures the password used to authenticate with the SMTP server. |
-
-## Passability
-| Name                              | Type    | Example     | Description |
-|-----------------------------------|---------|-------------|-------------|
-| Arena                             | boolean | false       | Configures whether players can walk through eachother in Arena map types. |
-| Normal                            | boolean | false       | Configures whether players can walk through eachother in Normal map types. |
-| Safe                              | boolean | true        | Configures whether players can walk through eachother in Safe map types. |
