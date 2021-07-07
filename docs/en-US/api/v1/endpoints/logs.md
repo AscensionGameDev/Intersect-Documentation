@@ -1,7 +1,6 @@
-# Player Activity
+# Logs
 
-
-## Authorized
+## Player Activity
 
 Retrieve player activity
 
@@ -54,10 +53,7 @@ Empty
 }
 ```
 
-# User Activity
-
-
-## Authorized
+## User Activity
 
 Retrieve user activity
 
@@ -110,10 +106,7 @@ Empty
 }
 ```
 
-# User activity by ip
-
-
-## Authorized
+## User Activity by IP
 
 Retrieve user activity by ip
 
