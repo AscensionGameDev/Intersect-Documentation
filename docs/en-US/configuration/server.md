@@ -6,6 +6,8 @@
 | ServerPort                    | number  | 5400        | Configures the port this server will listen on. |
 | AdminOnly                     | boolean | false       | Configures whether this server will only allow staff members (Access 1 or above) to log in. |
 | BlockClientRegistrations      | boolean | false       | Configures whether this server will block new user registrations or not. |
+| UPnP                          | boolean | true        | Configures whether this server will use the UPnP protocol or not. |
+| OpenPortChecker               | boolean | true        | Configures whether the server will check if it can be reached from the internet each time it starts. |
 | AnimatedSprites               | array   | ["bat.png", "beholder.png"] | Configures which sprites should always be animating, even when standing still. |
 | Chat                          | See [Chat](#chat)                                     |
 | Combat                        | See [Combat](#combat)                                 |
@@ -17,7 +19,6 @@
 | MaxClientConnections          | number  | 100         | Configures the amount of clients, logged in or not, which can establish connection to the server at the same time. |
 | MaximumLoggedinUsers          | number  | 50          | Configures the amount of clients which can be logged in at the same time. |
 | NPC                           | See [NPC](#npc)                                       |
-| OpenPortChecker               | boolean | true        | Configures whether the server will check if it can be reached from the internet each time it starts. |
 | Passability                   | See [Passability](#passability)                       |
 | PlayerDatabase                | See [Server Database](./configuration/server-database) |
 | Player                        | See [Player](#player)                                 |
@@ -25,7 +26,6 @@
 | Security                      | See [Server Security](./configuration/server-security) |
 | SmtpSettings                  | See [SMTP](#smtp)                                     |
 | Sprites                       | See [Sprites](#sprites)                               |
-| UPnP                          | boolean | true        | Configures whether this server will use the UPnP protocol or not. |
 | ValidPasswordResetTimeMinutes | number  | 30          | Configures the time (in minutes) a password reset link is valid for. |
 
 ## Chat
