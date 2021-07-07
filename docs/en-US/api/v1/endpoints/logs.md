@@ -1,5 +1,6 @@
 # Player Activity
 
+
 ## Authorized
 
 Retrieve player activity
@@ -55,6 +56,7 @@ Empty
 
 # User Activity
 
+
 ## Authorized
 
 Retrieve user activity
@@ -109,6 +111,7 @@ Empty
 ```
 
 # User activity by ip
+
 
 ## Authorized
 
