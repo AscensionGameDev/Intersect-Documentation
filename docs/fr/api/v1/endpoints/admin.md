@@ -1,33 +1,33 @@
-# Admin Actions
+# Actions administrateurs
 
-**All commands below using the /users/ endpoint requires the Users.Query role.**
+**Toutes les commandes ci-dessous utilisant l'endpoint /users/ nécessitent le rôle Users.Query.**
 
-## Ban
+## Bannir
 
-Ban an account.
+Bannir un compte.
 
 ### Request
 
 **URL** : `/api/v1/users/[userLookup]/admin/ban` OR `/api/v1/players/[playerLookup]/admin/ban`
 
-**User Lookup** : `Username or user id.`
+**User Lookup** : `Nom d'utilisateur ou id du compte.`
 
-**Player Lookup** : `Player name or player id.`
+**Player Lookup** : `Nom ou id du du personnage.`
 
-**Method** : `POST`
+**Methode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `application/json`
 
 **Body**
 
-| Name  | Type | Description | Required |
+| Nom  | Type | Description | Obligatoire |
 | ----- | ---- |------------ | -------- |
-| duration | int  | Number of days for the ban to last. | :heavy_check_mark: |
-| reason | string  | Reason for the ban. | :heavy_minus_sign: |
-| moderator | string  | Name of the banner. | :heavy_minus_sign: |
-| ip | boolean  | Whether or not to ban the users most recent ip address. | :heavy_minus_sign: |
+| duration | int  | Nombre de jours pour le ban | :heavy_check_mark: |
+| reason | string  | La raison du ban. | :heavy_minus_sign: |
+| moderator | string  | Le nom du modérateur qui a banni. | :heavy_minus_sign: |
+| ip | boolean  | Interdire ou non l'adresse IP la plus récente des utilisateurs. | :heavy_minus_sign: |
 
 **Example**
 
@@ -44,11 +44,11 @@ Ban an account.
 
 ### Response
 
-**Condition** : Ban was successful.
+**Condition** : L'opération "bannir" a été un succès.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -58,32 +58,32 @@ Ban an account.
 
 ## Mute
 
-Mutes an account.
+Mutes un compte.
 
 ### Request
 
 **URL** : `/api/v1/users/[userLookup]/admin/mute` OR `/api/v1/players/[playerLookup]/admin/mute`
 
-**User Lookup** : `Username or user id.`
+**User Lookup** : `Nom d'utilisateur ou id du compte.`
 
-**Player Lookup** : `Player name or player id.`
+**Player Lookup** : `Nom ou id du du personnage.`
 
-**Method** : `POST`
+**Methode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `application/json`
 
 **Body**
 
-| Name  | Type | Description | Required |
+| Nom  | Type | Description | Obligatoire |
 | ----- | ---- |------------ | -------- |
-| duration | int  | Number of days for the mute to last. | :heavy_check_mark: |
-| reason | string  | Reason for the mute. | :heavy_minus_sign: |
-| moderator | string  | Name of the muter. | :heavy_minus_sign: |
-| ip | boolean  | Whether or not to mute the users most recent ip address. | :heavy_minus_sign: |
+| duration | int  | Nombre de jours pour mute. | :heavy_check_mark: |
+| reason | string  | Raison du mute. | :heavy_minus_sign: |
+| moderator | string  | Le nom du modérateur qui a mute. | :heavy_minus_sign: |
+| ip | boolean  | Interdire ou non l'adresse IP la plus récente des utilisateurs. | :heavy_minus_sign: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -98,11 +98,11 @@ Mutes an account.
 
 ### Response
 
-**Condition** : Mute was successful.
+**Condition** : L'opération "mute" a été un succès..
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -110,21 +110,21 @@ Mutes an account.
 }
 ```
 
-## Unban
+## Débannir
 
-Unbans an account.
+Débannir un compte.
 
 ### Request
 
 **URL** : `/api/v1/users/[userLookup]/admin/unban` OR `/api/v1/players/[playerLookup]/admin/unban`
 
-**User Lookup** : `Username or user id.`
+**User Lookup** : `Nom d'utilisateur ou id du compte.`
 
-**Player Lookup** : `Player name or player id.`
+**Player Lookup** : `Nom ou id du du personnage.`
 
-**Method** : `POST`
+**Methode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `application/json`
 
@@ -134,7 +134,7 @@ Unbans an account.
 
 ### Response
 
-**Condition** : Unban was successful.
+**Condition** : L'opération "débannir" a été un succès.
 
 **Code** : `200 OK`
 
@@ -146,21 +146,21 @@ Unbans an account.
 }
 ```
 
-## Unmute
+## Démute
 
-Unmutes an account.
+Démute un compte.
 
 ### Request
 
 **URL** : `/api/v1/users/[userLookup]/admin/unmute` OR `/api/v1/players/[playerLookup]/admin/unmute`
 
-**User Lookup** : `Username or user id.`
+**User Lookup** : `Nom d'utilisateur ou id du compte.`
 
-**Player Lookup** : `Player name or player id.`
+**Player Lookup** : `Nom ou id du du personnage.`
 
-**Method** : `POST`
+**Methode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `application/json`
 
@@ -170,11 +170,11 @@ Unmutes an account.
 
 ### Response
 
-**Condition** : Unmute was successful.
+**Condition** : L'opération "démute" a été un succès.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -182,31 +182,31 @@ Unmutes an account.
 }
 ```
 
-## Warp To
+## Téléporter vers
 
-Warps a player to a specified map while retaining their current coordinates.
+Téléporter un joueur sur une carte spécifiée tout en conservant ses coordonnées actuelles.
 
 ### Request
 
 **URL** : `/api/v1/users/[userLookup]/admin/warpto` OR `/api/v1/players/[playerLookup]/admin/warpto`
 
-**User Lookup** : `Username or user id.`
+**User Lookup** : `Nom d'utilisateur ou id du compte.`
 
-**Player Lookup** : `Player name or player id.`
+**Player Lookup** : `Nom ou id du du personnage.`
 
-**Method** : `POST`
+**Methode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `application/json`
 
 **Body**
 
-| Name  | Type | Description | Required |
+| Nom  | Type | Description | Obligatoire |
 | ----- | ---- |------------ | -------- |
-| mapid | guid  | Id of the map to warp the player to. | :heavy_check_mark: |
+| mapid | guid  | Id de la carte vers laquelle téléporter le joueur. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -218,11 +218,11 @@ Warps a player to a specified map while retaining their current coordinates.
 
 ### Response
 
-**Condition** : Warp was successful.
+**Condition** : L'opération "téléporter vers" a été un succès.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -230,33 +230,33 @@ Warps a player to a specified map while retaining their current coordinates.
 }
 ```
 
-## Warp To Location
+## Téléporter jusqu'à l'emplacement
 
-Warps a player to specified coordinates on a specified map.
+Téléporter un joueur à des coordonnées spécifiées sur une carte spécifiée.
 
 ### Request
 
 **URL** : `/api/v1/users/[userLookup]/admin/warptoloc` OR `/api/v1/players/[playerLookup]/admin/warptoloc`
 
-**User Lookup** : `Username or user id.`
+**User Lookup** : `Nom d'utilisateur ou id du compte.`
 
-**Player Lookup** : `Player name or player id.`
+**Player Lookup** : `Nom ou id du du personnage.`
 
-**Method** : `POST`
+**Methode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `application/json`
 
 **Body**
 
-| Name  | Type | Description | Required |
+| Nom  | Type | Description | Obligatoire |
 | ----- | ---- |------------ | -------- |
-| mapid | guid  | Id of the map to warp the player to. | :heavy_check_mark: |
-| x | int  | X coordinate on the map to warp the player to. | :heavy_check_mark: |
-| y | int  | Y coordinate on the map to warp the player to. | :heavy_check_mark: |
+| mapid | guid  |Id de la carte vers laquelle téléporter le joueur. | :heavy_check_mark: |
+| x | int  | Coordonnée X sur la carte pour téléporter le joueur. | :heavy_check_mark: |
+| y | int  | Coordonnée Y sur la carte pour téléporter le joueur vers. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -270,11 +270,11 @@ Warps a player to specified coordinates on a specified map.
 
 ### Response
 
-**Condition** : Warp was successful.
+**Condition** : L'opération "téléporter jusqu'à l'emplacement" a été un succès.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -284,19 +284,19 @@ Warps a player to specified coordinates on a specified map.
 
 ## Kick
 
-Kicks a player from the game.
+Expulse un joueur du jeu.
 
 ### Request
 
 **URL** : `/api/v1/users/[userLookup]/admin/kick` OR `/api/v1/players/[playerLookup]/admin/kick`
 
-**User Lookup** : `Username or user id.`
+**User Lookup** : `Nom d'utilisateur ou id du compte.`
 
-**Player Lookup** : `Player name or player id.`
+**Player Lookup** : `Nom ou id du du personnage.`
 
-**Method** : `POST`
+**Methode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `application/json`
 
@@ -306,11 +306,11 @@ Kicks a player from the game.
 
 ### Response
 
-**Condition** : Kick was successful.
+**Condition** : l'opération "expulser" a été un succès.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -320,19 +320,19 @@ Kicks a player from the game.
 
 ## Kill
 
-Kills a player in the game.
+Tuer un joueur dans le jeu.
 
 ### Request
 
 **URL** : `/api/v1/users/[userLookup]/admin/kill` OR `/api/v1/players/[playerLookup]/admin/kill`
 
-**User Lookup** : `Username or user id.`
+**User Lookup** : `Nom d'utilisateur ou id du compte.`
 
-**Player Lookup** : `Player name or player id.`
+**Player Lookup** : `Nom ou id du du personnage.`
 
-**Method** : `POST`
+**Methode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `application/json`
 
@@ -342,11 +342,11 @@ Kills a player in the game.
 
 ### Response
 
-**Condition** : Kill was successful.
+**Condition** : l'opération "kill" a été un succès.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {

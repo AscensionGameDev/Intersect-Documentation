@@ -1,6 +1,6 @@
-# Game Objects
+# Objets du jeu
 
-## Object Types
+## Types d'objets
 
 | Type  | Key | 
 | ----- | ---------- |
@@ -22,30 +22,30 @@
 | Tilesets | tileset  |
 | Time | * |
 
-* Time is a singular object, and has its own retrieval endpoint below.
+* Le "time" est un objet singulier, et a son propre endpoint de récupération ci-dessous. 
 
-## Obtaining Ids
+## Obtention des identifiants (aussi appelé "ID")
 
-Right click on a map in the map list and select 'copy id' to copy the maps id to your clipboard.
+Faites un clic droit sur une carte dans la liste des cartes et sélectionnez « copier l'identifiant » pour copier l'identifiant de la carte dans votre presse-papiers.
 
-For tilesets, select the tileset in the editor and then right click on the dropdown and the id will be copied to your clipboard automatically.
+Pour les ensembles de tiles, sélectionnez le tileset dans l'éditeur, puis faites un clic droit sur la liste déroulante et l'identifiant sera automatiquement copié dans votre presse-papiers.
 
-In all other editors right clicking on an object will copy the id to your clipboard automatically.
+Dans tous les autres éditeurs, un clic droit sur un objet copiera automatiquement l'identifiant dans votre presse-papiers. 
 
 
-## Get List
+## Obtenir la liste 
 
-Grabs a list of game objects and their stored information from the server given it's type and paging information.
+Récupère une liste d'objets de jeu et leurs informations stockées sur le serveur en fonction de son type et des informations de pagination.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/gameobjects/[typeKey]`
 
-**Type Key** : `One of the keys in the table above.`
+**Type Key** : `Une des clés du tableau ci-dessus.`
 
-**Method** : `POST`
+**Methode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `application/json`
 
@@ -53,10 +53,10 @@ Grabs a list of game objects and their stored information from the server given 
 
 | Name  | Type | Description | Required |
 | ----- | ---- |------------ | -------- |
-| page | int  | Page of users to retrieve. | :heavy_minus_sign: |
-| count | int  | Number of users to retrieve. | :heavy_minus_sign: |
+| page | int  | Page des utilisateurs à récupérer. | :heavy_minus_sign: |
+| count | int  | Nombre d'utilisateurs à récupérer. | :heavy_minus_sign: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -67,7 +67,7 @@ Grabs a list of game objects and their stored information from the server given 
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
@@ -105,22 +105,22 @@ Grabs a list of game objects and their stored information from the server given 
 }
 ```
 
-Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/22f4c4e10e9955aeb606715ae77e5976.json).
+L'exemple est tronqué, pour une réponse complète [Cliquez ici](https://www.ascensiongamedev.com/resources/filehost/22f4c4e10e9955aeb606715ae77e5976.json).
 
 
-## Get Object
+## Obtenir l'objet
 
-Retrieves the config for a singular game object from the server given it's type and id.
+Récupère la configuration d'un objet de jeu singulier du serveur en fonction de son type et de son identifiant (id). 
 
-### Request
+### Requête
 
 **URL** : `/api/v1/gameobjects/[typeKey]/[id]`
 
-**Type Key** : `One of the keys in the table above.`
+**Type Key** : `Une des clés du tableau ci-dessus.`
 
-**Method** : `GET`
+**Methode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `NA`
 
@@ -128,13 +128,13 @@ Retrieves the config for a singular game object from the server given it's type 
 
 ---
 
-### Response
+### Requête
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Map Example**
+**Exemple d'une map**
 
 ```json
 {
@@ -197,17 +197,17 @@ Retrieves the config for a singular game object from the server given it's type 
 ```
 
 
-## Get Time
+## Obtenir le temps
 
-Retrieves the servers timing configuration and color hues for each time of day.
+Récupère la configuration de synchronisation des serveurs et les teintes de couleur pour chaque heure de la journée.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/gameobjects/time`
 
-**Method** : `GET`
+**Methode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation requise** : `Yes`
 
 **Content Type** : `NA`
 
@@ -215,7 +215,7 @@ Retrieves the servers timing configuration and color hues for each time of day.
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 

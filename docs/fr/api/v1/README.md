@@ -1,9 +1,9 @@
 # Introduction
 
-Intersect's server provides an optional REST API.   Our API allows third party environments such as websites, forums, and custom user applications to communicate with your game server. 
+Le serveur d'Intersect fournit une API REST facultative. Notre API permet à des environnements tiers tels que des sites Web, des forums et des applications utilisateur personnalisées de communiquer avec votre serveur de jeu.
 
-We provide the ability to view live server info such as online players, validate passwords (for external login forms), send items to players, edit event variables, and more!
+Nous offrons la possibilité d'afficher les informations du serveur en direct telles que les joueurs en ligne, de valider les mots de passe (pour les formulaires de connexion externes), d'envoyer des objets aux joueurs, de modifier les variables d'événement, et bien plus encore !
 
-Communicating with the Intersect API is possible with any programming language that can send and receive HTTP requests.
+La communication avec l'API Intersect est possible avec n'importe quel langage de programmation pouvant envoyer et recevoir des requêtes HTTP.
 
-[Click here](introduction/setup.md) to learn how to setup and enable the API on your server.
+[Cliquez ici](introduction/setup.md) pour savoir comment configurer et activer l'API sur votre serveur.

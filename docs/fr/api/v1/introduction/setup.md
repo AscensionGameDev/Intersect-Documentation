@@ -1,27 +1,28 @@
-# Getting Started
+# Bien commencer
 
 
-## Enable the API
-For security purposes the API is disabled by default and must be enabled before you can start issuing commands.
+## Activer l'API
+Pour des raisons de sécurité, l'API est désactivée par défaut et doit être activée avant de pouvoir commencer à émettre des commandes.
 
-Open the API configuration (located at `server/resources/config/api.config.json`)
+Ouvrir le fichier de configuration de l'API (located at `server/resources/config/api.config.json`)
 
-Set the `Enabled` field to `true` as shown below:
+Définissez le champ `Enabled` sur `true` comme indiqué ci-dessous :
+
 ```
   "Enabled": true,
 ```
 
-Optionally change the `Hosts` field to listen on your desired network ports.
+Modifiez éventuellement le champ `Host` pour écouter sur les ports réseau de votre choix.
 
+## Accorder l'accès à l'API
+Avant de pouvoir vous authentifier avec l'API, vous devez avoir créé un compte utilisateur dans le jeu.
 
-## Grant API Access
-Before you can authenticate with the API you must have created a user account within the game.
+Après avoir créé un compte, ouvrez la console du serveur et exécutez la commande suivante :
 
-After creating an account open the server console and issue the following command:
 ```
 api [name] true
 ```
 
-That command will grant the specified account access to authtenticate with the API.
+Cette commande accordera au compte spécifié l'accès pour s'authentifier avec l'API.
 
-You are now ready to request an authentication token from our API, [click here](../endpoints/authentication.md) to learn how.
+Vous êtes maintenant prêt à demander un jeton d'authentification à notre API, [cliquez ici](../endpoints/authentication.md) pour apprendre comment faire.
