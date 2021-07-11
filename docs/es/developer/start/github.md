@@ -1,45 +1,45 @@
-# Forking & Cloning Intersect
+# Bifurcar y Clonar Intersect
 
-## Downloading GitHub Desktop
-GitHub stores code repositories, keeps track of code changes, allows code history to be viewed, facilitates collaboration and more. It is a developers best friend and even if you're not familiar with git already we highly recommend diving in and learning what it's all about.
+## Descargar GitHub Desktop
+GitHub almacena repositorios de código, realiza un seguimiento de los cambios de código, permite ver el historial del código, facilita la colaboración y más. Es el mejor amigo de los desarrolladores e incluso si no estás familiarizado con git, te recomendamos sumergirte y aprender de qué se trata el asunto.
 
-To get started, [create a GitHub account](https://github.com/join).
+Para empezar, [crea una cuenta de GitHub](https://github.com/join).
 
-Then download the [GitHub Desktop](https://desktop.github.com/) application.
+Luego descarga la aplicación [GitHub Desktop](https://desktop.github.com/).
 
-Once installed, the GitHub Desktop application will have you sign into your GitHub account, you should go ahead and do that now.
+Una vez instalada la aplicación, GitHub Desktop te solicitará iniciar sesión en tu cuenta de GitHub, lo cual harás para poder así poder continuar.
 
 
-## Forking Intersect
-Forking is a term that basically means to copy a code repository. When you fork Intersect you will have a complete copy of the entire Intersect repo on your own GitHub account.
+## Bifurcando Intersect
+Bifurcación (_"Fork"_ en inglés), en el ámbito del desarrollo de software es un término que básicamente significa copiar un repositorio de código. Cuando bifurques Intersect, tendrás una copia completa de todo el repositorio de Intersect en tu propia cuenta de GitHub.
 
-To create your fork browse to our [GitHub repo](https://github.com/AscensionGameDev/Intersect-Engine) and hit the fork button.
+Para crear tu bifurcación, visita nuestro [repositorio en GitHub](https://github.com/AscensionGameDev/Intersect-Engine) haz click en el botón "Fork".
 
 ![forking](https://www.ascensiongamedev.com/resources/filehost/209a31015a60ae45664c25e82d17b688.png)
 
-When done you will have your own copy of the Intersect repo that remains linked to the offical repo. Later you can pull official updates into your code base or even submit a pull request to contribute your code back to the base engine.
+Cuando termines, tendrás tu propia copia del repositorio de Intersect que permanecerá vinculada al repositorio oficial. Más tarde, puedes obtener actualizaciones oficiales hacia tu código base o incluso realizar una solicitud de extracción (_"Pull Request"_ en inglés) que te permitirá contribuir al código del motor base.
 
-## Cloning Intersect
-The last step is to clone your Intersect code repository onto your computer. Now that you've installed GitHub desktop and forked the Intersect repo this is really easy.
+## Clonando Intersect
+El último paso es clonar tu repositorio de código Intersect en tu computador. Ahora que tienes Github Desktop instalado y lograste bifurcar el repositorio de Intersect, lo que se presenta a continuación será realmente fácil.
 
-In GitHub desktop hit File -> Clone Respoitory
+En GitHub desktop, haz click en: Archivo (_"File"_) -> Clonar Repositorio (_"Clone Repository..."_)
 
 ![clone](https://www.ascensiongamedev.com/resources/filehost/0af5968fd1c76523d47008fad2995e03.png)
 
-Then select your Intersect-Engine repository and browse to where you'd like GitHub to place the source, then finally hit clone.
+Luego, selecciona tu repositorio Intersect-Engine, navega hasta la ubicación donde gustarías que GitHub coloque la fuente clonada y finalmente haz click en clonar (_"Clone"_).
 
 ![clonewindow](https://www.ascensiongamedev.com/resources/filehost/995b88e52387640a3737a6ac8038234a.png)
 
-Once the respository has cloned you can click the history tab to see the most recent code changes. The entire Intersect development history is available to browse.
+Una vez que el repositorio se haya clonado, puedes hacer click en la pestaña del historial para ver los cambios de código más recientes. Aquí estará disponible para navegar, todo el historial de desarrollo de Intersect.
 
 ![history](https://www.ascensiongamedev.com/resources/filehost/7016abaea36e72a6bcf00a6b6a3b9b3e.png)
 
-If you navigate to the folder you cloned to, you will see Intersect's source ready for you to dive into.
+Si navegas a la carpeta en la que clonaste el repositorio, verás la fuente de Intersect lista para que poder sumergirte en ella.
 
 ![source](https://www.ascensiongamedev.com/resources/filehost/34775c4d0e6b0359eb1aa908eb4a228d.png)
 
-All the setup is now done! The next step is opening the code in visual studio and compiling it for the first time!
+¡Toda la configuración está lista! El siguiente paso es abrir el código en Visual Studio y compilarlo por primera vez.
 
-## Public vs Private Repos
+## Repositorios Públicos vs Privados
 
-GitHub does not allow making forked repositories private at this time. That means if you commit custom code and then Push (Upload) those code changes to GitHub your modifications will be public! Creating private clones are possible but they lose the ability to easily pull code changes in order to stay up to date with the base engine, that route is more advanced than what these docs are meant for, so we recommend researching that if interested.
+Actualmente GitHub no permite que los repositorios bifurcados sean privados. Eso significa que si creas un código personalizado y luego envías (subir) esos cambios de código a GitHub, ¡tus modificaciones entonces serán públicas! Sin embargo, es posible crear clones privados, pero estos pierden la capacidad de extraer fácilmente cambios de código para mantenerse al día con el motor base, esa ruta es muy avanzada en contraste con el objetivo de la presente documentación, por lo que, si estás interesado en ello te recomendamos investigar a fondo por tu cuenta.
