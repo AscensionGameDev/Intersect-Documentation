@@ -1,12 +1,12 @@
-# Introduction
-Intersect Engine is Free Open Source Software (FOSS) written in C# using MonoGame. Our source code is available on [GitHub](https://github.com/AscensionGameDev/Intersect-Engine).
+# Introducción
+Intersect Engine es un software gratuito de código abierto (FOSS) escrito en C# utilizando MonoGame. Nuestro código fuente está disponible en [GitHub](https://github.com/AscensionGameDev/Intersect-Engine).
 
-The goal of Intersect is to provide a stable and powerful base to create 2d mmorpgs.
+El objetivo de Intersect es proporcionar una base estable y poderosa para crear MMORPGs 2D.
 
-As an open source application users can create custom features and modifications to provide unique gameplay experiences. Similarly we expect to see developers creating custom forks of our engine with new and exciting features that don't neccessarily fit into the base engine.
+Al ser una aplicación de código abierto, los usuarios pueden crear funciones personalizadas y modificaciones para proporcionar experiencias de juego únicas. De manera similar, esperamos ver a los desarrolladores crear bifurcaciones personalizadas de nuestro motor con características nuevas y emocionantes que no necesariamente encajan en el motor base.
 
-As we continue to fix bugs and make improvements to the base engine, everyone can use Git to pull those changes into their games or custom versions. As developers encounter and fix bugs within their custom versions they can push those changes back into the base engine.
+A medida que continuamos solucionando errores y realizando mejoras en el motor base, todos pueden usar Git para incorporar esos cambios en sus juegos o versiones personalizadas. A medida que los desarrolladores encuentran y corrigen errores dentro de sus versiones personalizadas, pueden volver a introducir esos cambios en el motor base a modo de contribución a la comunidad.
 
-While confusing for non-developers this essentially creates a cycle where everyone can go their own way while continuing to help each other. The result being that all versions/flavors of Intersect are more performant and stable long-term.
+Si bien puede resultar confuso para los no-desarrolladores, esto esencialmente crea un ciclo en el que todos pueden seguir su propio camino mientras continúan ayudándose unos a otros. El resultado es que todas las versiones y sabores derivados de Intersect son más eficaces y estables a largo plazo.
 
-The rest of these docs will be more tailored towards younger developers with guides on how to install the ide, clone the repo, and build the engine. Then we will touch up on some of the more advanced topics such as contributing code to the base engine, pulling the latest official updates into custom builds, and discussing how to share features/mods with the community in the form of Git patches.
+El resto de estos documentos se encuentran adaptados para los desarrolladores más jóvenes, con guías sobre cómo instalar el IDE, clonar el repositorio y compilar el motor. Luego, abordaremos algunos temas más avanzados, como el contribuir al código del motor base, incorporar las últimas actualizaciones oficiales en compilaciones personalizadas y discutir cómo compartir carácteristicas o "mods" con la comunidad en forma de parches de Git.
