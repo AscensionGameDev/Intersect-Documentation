@@ -13,7 +13,7 @@ Una vez instalada la aplicación, GitHub Desktop te solicitará iniciar sesión 
 ## Bifurcando Intersect
 Bifurcación (_"Fork"_ en inglés), en el ámbito del desarrollo de software es un término que básicamente significa copiar un repositorio de código. Cuando bifurques Intersect, tendrás una copia completa de todo el repositorio de Intersect en tu propia cuenta de GitHub.
 
-Para crear tu bifurcación, visita nuestro [repositorio en GitHub](https://github.com/AscensionGameDev/Intersect-Engine) haz click en el botón "Fork".
+Para crear tu bifurcación, visita nuestro [repositorio en GitHub](https://github.com/AscensionGameDev/Intersect-Engine) y presiona el botón "Fork".
 
 ![forking](https://www.ascensiongamedev.com/resources/filehost/209a31015a60ae45664c25e82d17b688.png)
 

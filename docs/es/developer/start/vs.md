@@ -15,10 +15,10 @@ Sea paciente mientras se instala Visual Studio.
 
 ![installing](https://www.ascensiongamedev.com/resources/filehost/0be60717366bb02e418a807b7c60e1e6.png)
 
-Una vez completa la instalación, Visual Studio iniciará automáticamente. Puedes seleccionar "Ahora no, tal vez más tarde" cuando te soliciten conectar una cuenta.
+Una vez finalizada la instalación, Visual Studio iniciará automáticamente. Puedes seleccionar "Ahora no, tal vez más tarde" cuando te soliciten conectar una cuenta.
 
 ![launch](https://www.ascensiongamedev.com/resources/filehost/ef484164a37ce09d4bda7ad53071c0bc.png)
 
-Finalmente, se te solicitara elegir un esquema de color. La elección no importa realmente y queda en tus manos, ¡posterior a esto Visual Studio iniciará!
+Finalmente, se te solicitara elegir un esquema de colores, cuya elección no importa realmente y queda en tus manos, ¡posterior a esto Visual Studio iniciará!
 
 ![done](https://www.ascensiongamedev.com/resources/filehost/4368d4cf1fb180310599251345e6b68c.png)

@@ -1,11 +1,11 @@
 # Compilando
-El primer paso antes de realizar cambios en el proyecto original es compilar la solución. Intersect se basa en docenas de bibliotecas y herramientas externas (por ejemplo, MonoGame, Newtonsoft Json.Net, etc.) y nuestro proyecto está diseñado para buscar dichas dependencias automáticamente mediante Nuget.
+El primer paso antes de realizar cambios en el proyecto original es compilar la solución. Intersect se basa en docenas de bibliotecas y herramientas externas (por ejemplo, MonoGame, Newtonsoft Json.Net, etc). Nuestro proyecto está diseñado para buscar las anteriormente mencionadas dependencias de forma automática mediante Nuget.
 
-Para comenzar, abra el archivo Intersect.sln en la carpeta Intersect-Engine. La solución debería abrirse en Visual Studio 2019.
+Para comenzar, abre el archivo Intersect.sln ubicado en la carpeta Intersect-Engine. La solución debería abrirse en Visual Studio 2019.
 
 ![solution](https://www.ascensiongamedev.com/resources/filehost/bb694eabb570f22d541f87d1db2fc68f.png)
 
-En la mayoría de los casos, todo lo que debe hacer es presionar Build (Generar) -> Build Solution (Generar solución) en la parte superior de la ventana de Visual Studio y así obtendrá todas las dependencias automáticamente.
+En la mayoría de los casos, todo lo que debes hacer es presionar Build (Generar) -> Build Solution (Generar solución) en la parte superior de la ventana de Visual Studio y así obtendrás todas las dependencias necesarias automáticamente.
 
 ![building](https://www.ascensiongamedev.com/resources/filehost/c1c27a3366987a9279610e40667eecf0.png)
 
