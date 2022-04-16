@@ -2,7 +2,7 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/favicons/mstile-150x150.png"/>
+            <square128x128logo src="/assets/intersect-logo@128.png"/>
             <TileColor>#2b5797</TileColor>
         </tile>
     </msapplication>
