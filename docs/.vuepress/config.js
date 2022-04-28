@@ -44,7 +44,7 @@ module.exports = {
         repo: 'AscensionGameDev/Intersect-Engine',
         docsRepo: 'AscensionGameDev/Intersect-Documentation',
         docsDir: 'docs',
-        docsBranch: 'master',
+        docsBranch: 'main',
         editLinks: true,
         logo: '/assets/intersect-logo.svg',
         smoothScroll: true,
