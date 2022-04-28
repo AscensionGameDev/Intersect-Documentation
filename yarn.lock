@@ -1366,7 +1366,7 @@
     "@vuepress/types" "1.9.7"
     lodash.debounce "^4.0.8"
 
-"@vuepress/plugin-back-to-top@^1.6.0":
+"@vuepress/plugin-back-to-top@^1.9.7":
   version "1.9.7"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-back-to-top/-/plugin-back-to-top-1.9.7.tgz#249a76d79f1e0c8c71a2804485ad0245837e6bfd"
   integrity sha512-DM1S+Q8Xn/i+zhe4zThekxb1M2abfKLklg/NKtQloklHKdNdVfk+EcxWYNmNfSii+ymDWaaG8lmH0xjVhy0iXw==
@@ -1382,7 +1382,7 @@
     "@vuepress/types" "1.9.7"
     cross-spawn "^6.0.5"
 
-"@vuepress/plugin-nprogress@1.9.7", "@vuepress/plugin-nprogress@^1.6.0":
+"@vuepress/plugin-nprogress@1.9.7", "@vuepress/plugin-nprogress@^1.9.7":
   version "1.9.7"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-nprogress/-/plugin-nprogress-1.9.7.tgz#76d8368fa26c190ee23c399401a71ec78ffb9744"
   integrity sha512-sI148igbdRfLgyzB8PdhbF51hNyCDYXsBn8bBWiHdzcHBx974sVNFKtfwdIZcSFsNrEcg6zo8YIrQ+CO5vlUhQ==
@@ -2840,13 +2840,6 @@ css-parse@~2.0.0:
   integrity sha1-pGjuZnwW2BzPBcWMONKpfHgNv9Q=
   dependencies:
     css "^2.0.0"
-
-css-prefers-color-scheme@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/css-prefers-color-scheme/-/css-prefers-color-scheme-3.1.1.tgz#6f830a2714199d4f0d0d0bb8a27916ed65cff1f4"
-  integrity sha512-MTu6+tMs9S3EUqzmqLXEcgNRbNkkD/TGFvowpeoWJn5Vfq7FMgsmRQs9X5NXAURiOBmOxm/lLjsDNXDE6k9bhg==
-  dependencies:
-    postcss "^7.0.5"
 
 css-select-base-adapter@^0.1.1:
   version "0.1.1"
@@ -8128,7 +8121,7 @@ vuepress-plugin-container@^2.0.2:
     "@vuepress/shared-utils" "^1.2.0"
     markdown-it-container "^2.0.0"
 
-vuepress-plugin-dehydrate@1.1.5:
+vuepress-plugin-dehydrate@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-dehydrate/-/vuepress-plugin-dehydrate-1.1.5.tgz#c29f08b85f337d3bc7c0ba09fe58cd9ed2f6e6c1"
   integrity sha512-9F2x1vLCK4poPUMkLupD4HsgWdbZ68Escvma+DE1Dk6aAJdH5FGwmfOMxj4sMCBwz7S4s6bTMna+QQgD3+bzBA==
@@ -8142,14 +8135,12 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   dependencies:
     smoothscroll-polyfill "^0.4.3"
 
-vuepress-theme-default-prefers-color-scheme@^1.1.0:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-default-prefers-color-scheme/-/vuepress-theme-default-prefers-color-scheme-1.1.2.tgz#7a38948727fc63e5e74bcb5328ac59dc34d37b54"
-  integrity sha512-R06i/0iosHJF/OBpwYMEbVVvoSFSO9M237np9+zd7z910y1gkZ9yq7qeXZmWjUoqYQG92BNyBZCyqcuAYZUE1A==
-  dependencies:
-    css-prefers-color-scheme "^3.1.1"
+vuepress-theme-default-prefers-color-scheme@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-default-prefers-color-scheme/-/vuepress-theme-default-prefers-color-scheme-2.0.0.tgz#c5d305b1b4d10d0915b4bb413e554966d5171b25"
+  integrity sha512-4sA3DCiaIIHVjcIC5+mF00mf29IU27KSH97Ga4xb4nUwwlC6eYHg2qchEVOgV25XogCtGgpZ/DCrTkywxvuBcg==
 
-vuepress@^1.5.4:
+vuepress@^1.9.7:
   version "1.9.7"
   resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.9.7.tgz#2cd6709a2228f5cef588115aaeabf820ab9ed7cc"
   integrity sha512-aSXpoJBGhgjaWUsT1Zs/ZO8JdDWWsxZRlVme/E7QYpn+ZB9iunSgPMozJQNFaHzcRq4kPx5A4k9UhzLRcvtdMg==
