@@ -3,7 +3,7 @@ module.exports = {
     locale: {
         lang: 'fr',
         title: 'Documentation Intersect',
-        description: '<<todo:fr>>Le moteur moderne de création de mmorpg 2d, open source et gratuit.'
+        description: 'Le moteur moderne de création de mmorpg 2d, open source et gratuit.'
     },
     themeConfig: {
         selectText: 'Langues',
@@ -31,7 +31,7 @@ module.exports = {
         sidebar: {
             '/api/v1/': [
                 {
-                    title: '<<todo:fr>>Information API',
+                    title: 'Information API',
                     collapsable: true,
                     children: [
                         '/api/v1/',
@@ -41,7 +41,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Points de terminaison',
+                    title: 'Points de terminaison',
                     collapsable: true,
                     children: [
                         '/api/v1/endpoints/authentication.md',
@@ -56,7 +56,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Avancé',
+                    title: 'Avancé',
                     collapsable: true,
                     children: [
                         '/api/v1/advanced/securing.md',
@@ -65,14 +65,14 @@ module.exports = {
             ],
             '/developer/': [
                 {
-                    title: '<<todo:fr>>Introduction',
+                    title: 'Introduction',
                     collapsable: true,
                     children: [
                         '/developer/',
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Commencer',
+                    title: 'Commencer',
                     collapsable: true,
                     children: [
                         '/developer/start/vs.md',
@@ -81,7 +81,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Dépots',
+                    title: 'Dépots',
                     collapsable: true,
                     children: [
                         '/developer/repository/',
@@ -91,7 +91,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Faire des Changements',
+                    title: 'Faire des Changements',
                     collapsable: true,
                     children: [
                         '/developer/modify/procedure.md',
@@ -100,14 +100,14 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Rester à Jour',
+                    title: 'Rester à Jour',
                     collapsable: true,
                     children: [
                         '/developer/pullrequests/pulling.md',
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Partager & Contribuer',
+                    title: 'Partager & Contribuer',
                     collapsable: true,
                     children: [
                         '/developer/sharing/creating.md',
@@ -116,7 +116,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Avancé',
+                    title: 'Avancé',
                     collapsable: true,
                     children: [
                         '/developer/advanced/database.md',
@@ -127,7 +127,7 @@ module.exports = {
             ],
             '/': [
                 {
-                    title: '<<todo:fr>>Informations Projet',
+                    title: 'Informations Projet',
                     collapsable: true,
                     children: [
                         '/',
@@ -135,7 +135,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Commencer',
+                    title: 'Commencer',
                     collapsable: true,
                     children: [
                         '/start/download.md',
@@ -145,7 +145,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Editeurs',
+                    title: 'Editeurs',
                     collapsable: true,
                     children: [
                         '/design/animations.md',
@@ -167,7 +167,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Evènement',
+                    title: 'Evènement',
                     collapsable: true,
                     children: [
                         '/events/introduction.md',
@@ -178,7 +178,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Configuration',
+                    title: 'Configuration',
                     collapsable: true,
                     children: [
                         '/configuration/client-editor.md',
@@ -187,7 +187,7 @@ module.exports = {
                         '/configuration/server-security.md',
                         '/configuration/equipment.md',
                         {
-                            title: '<<todo:fr>>Avancé',
+                            title: 'Avancé',
                             collapsable: true,
                             children: [
                                 '/advanced/assets.md',
@@ -203,7 +203,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Déploiement du Jeu',
+                    title: 'Déploiement du Jeu',
                     collapsable: true,
                     children: [
                         '/deploy/forwarding.md',
@@ -213,7 +213,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:fr>>Mise à jour',
+                    title: 'Mise à jour',
                     collapsable: true,
                     children: [
                         '/upgrade/upgrading.md',
