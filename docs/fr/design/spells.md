@@ -1,6 +1,6 @@
-# Spells
+# Sorts
 
 ## Configuration
-* Editor Fields & What they do
+* Champs d'éditeur et ce qu'ils font
 
-## Spell Types
+## Types de Sorts
