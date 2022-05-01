@@ -1,39 +1,39 @@
 # Distribution
 
-Once you have a game in the works the you're going to want to share with friends. This will give you an overview of how to prepare your game for distribution and tell you which files you should send to your players.
+Une fois que vous avez un jeu fonctionnel vous voudrez le partager avec vos amis. Ceci vous donnera une vue d'ensemble de comment préparer votre jeu pour la distribution et vous expliquera quels fichiers envoyer à vos joueurs.
 
 
-## Preparing
+## Préparation
 
-Before sending your game to someone you need to fill in your host ip address or domain and port in the `Client and Editor/Resources/Config.json` file.
+Avant d'envoyer votre jeu à quelqu'un vous devez remplir votre adresse ip d'hébergeur ou de domaine et la reporter dans le fichier `Client and Editor/Resources/Config.json`.
 
-The host and port can generally be found on your server console.
+L'hôte et le port peuvent généralement être trouvés sur votre console serveur.
 
-![ConnectionInfo](https://www.ascensiongamedev.com/resources/filehost/70a5bade6f21a447be2fc5cd67f595e2.png)
+![InfoConnection](https://www.ascensiongamedev.com/resources/filehost/70a5bade6f21a447be2fc5cd67f595e2.png)
 
-Enter the host and port in your clients configuration like so:
+Entrez l'hôte et le port dans vos configuration clients comme suit:
 
-![Config](https://www.ascensiongamedev.com/resources/filehost/92bf25d1b796322e3b44538ae614b33f.png)
+![Configuration](https://www.ascensiongamedev.com/resources/filehost/92bf25d1b796322e3b44538ae614b33f.png)
 
-If players are unable to connect to your server please [read this topic regarding firewalls and port fowarding](https://www.ascensiongamedev.com/topic/3432-read-first-getting-your-game-online/), it contains extra information on how to get help if necessary.
+Si il est impossible au joueur de se connecter à votre serveur veuillez s'il vous plaît [lire ce topic traitant des firewalls et du transfert de port](https://www.ascensiongamedev.com/topic/3432-read-first-getting-your-game-online/), il contient des informations supplémentaires sur comment recevoir de l'aide si nécessaire.
 
 
-## Standalone
+## Autonomie
 
-If you are wanting to distrbute your game without any sort of updating capabilities you need to send all of the resources up front. Create a zip archive or installer with the following files:
+Si vous voulez distribuer votre jeu sans aucune sorte de possibilité de mise à jour vous devrez envoyer toutes les ressources d'avance. Créer un zip archive ou installateur avec les fichiers suivants:
 
 - Intersect Client.exe
 - Intersect Client.pdb
 - Resources/*.*
 
-**Note:** Resources/mapcache.db is for editors, and can grow to be fairly big in size. It's safe to delete, and you should remove this file instead of sending it to your players.
+**Note:** Resources/mapcache.db est pour les éditeurs, et peut devenir relativement lourde en poids de données. Il est préférable de l'effacer, et vous devriez supprimer ce fichier plutôt que de l'envoyer à vos joueurs.
 
 
-## Auto Updater
+## Outil de Mise à Jour Automatique 
 
-If you want to distrbute your game using Intersect's embedded updater then the files you can include far fewer files in your installer/zip archive. Click here for instructions on how to [setup and configure your updater](autoupdater.md).
+Si vous voulez distribuer votre jeu en utilisant l'outil de mise à jour Intersect alors les fichiers à inclure dans votre archive installateur/zip sont un peu plus nombreux. Cliquez ici pour les instructions sur comment [régler et configurer votre outil de mise à jour](autoupdater.md).
 
-The files you will want to include are below:
+Les fichiers que vous devrez inclure sont les suivants:
 - Intersect Client.exe
 - Intersect Client.pdb
 - Resources/Config.json
@@ -41,6 +41,6 @@ The files you will want to include are below:
 - Resources/Updater/*.*
 
 
-## Important Notes
+## Notes Importantes
 
-If you're distributing your game with an installer, set the default installation target to the `C:\Users\<Username>\AppData\Local\<GameName>` directory instead of the Program Files or Program Files (x86) folders so that your users won't need admin rights to run or update your game!
+Si vous distribuez votre jeu avec un installateur, définissez la cible d'installation par défaut dans l'annuaire `C:\Users\<Username>\AppData\Local\<GameName>` à la place des dossiers Program Files or Program Files (x86) ainsi vos utilisateurs n'auront pas besoin de droits admin exécuter ou mettre à jour votre jeu!
