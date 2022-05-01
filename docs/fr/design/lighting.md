@@ -1,16 +1,16 @@
-# Lighting
+# Effets de Lumière
 
-## Setup
-* Time of Day
-* Or Map Set to Indoor + Brightness < 100%
+## Réglages
+* Moment de la journée
+* Ou carte définie en intérieur + Luminosité < 100%
 
 
-## Map Lights
+## Lumières Carte
 
 
 ## Animations
-* Weather
+* Météo
 * Projectiles
-* Equipment
-* Map Anims
+* Equipement
+* Animations carte
 * etc
