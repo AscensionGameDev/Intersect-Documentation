@@ -1,6 +1,6 @@
-# Items
+# Objets
 
 ## Configuration
-* Editor Fields & What they do
+* Champs d'éditeur et ce qu'ils font
 
-## Item Types
+## Types d'objets
