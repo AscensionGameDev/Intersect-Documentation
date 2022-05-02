@@ -1,33 +1,33 @@
 # Logs
 
-## Player Activity
+## Activité Joueur
 
-Retrieve player activity
+Renvoie les informations d'activité d'un joueur
 
-### Request
+### Requête
 
 **URL** : `/api/v1/logs/player/[lookupKey]/activity`
 
-**Method** : `Character's id.`
+**Méthode** : `Character's id.`
 
-**Lookup Key:** : `GET`
+**Clé de Recherche:** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body**
-Empty
+**Corps**
+Vide
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 SUCCESS`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -53,34 +53,34 @@ Empty
 }
 ```
 
-## User Activity
+## Activity Utilisateur
 
-Retrieve user activity
+Renvoie les informations d'activité utilisateur
 
-### Request
+### Requête
 
 **URL** : `/api/v1/logs/user/[lookupKey]/activity`
 
-**Method** : `User's id.`
+**Méthode** : `User's id.`
 
-**Lookup Key:** : `GET`
+**Clé de Recherche:** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body**
-Empty
+**Corps**
+Vide
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 SUCCESS`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -106,34 +106,34 @@ Empty
 }
 ```
 
-## User Activity by IP
+## Activité Utilisateur par IP
 
-Retrieve user activity by ip
+Renvoie les informations d'activité utilisateur par ip
 
-### Request
+### Requête
 
 **URL** : `/api/v1/logs/user/[lookupKey]/ip`
 
-**Method** : `User's id.`
+**Méthode** : `User's id.`
 
-**Lookup Key:** : `GET`
+**Clé de Recherche:** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body**
-Empty
+**Corps**
+Vide
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 SUCCESS`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -155,4 +155,3 @@ Empty
   "Extra": null
 }
 ```
-
