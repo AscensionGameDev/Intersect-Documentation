@@ -1,11 +1,11 @@
-# Passwords
+# Mots de Passe
 
-## Password Reset
-Password resets is a new feature offered in Beta 6. For password resetting to work the server must be able to send emails.
+## Réinitialisation Mot de Passe
+La réinitialisation de mot de passe est une nouvelle fonctionnalité offerte par la Beta 6. pour que la réinitialisation du mot de passe fonctionne le serveur doit être capable d'envoyer des emails.
 
-Setup a email account somewhere that allows sending emails via SMTP. Gmail is an obvious choice for this.
+Mettre en place un compte email sur une plateforme qui permet d'envoyer des email via SMTP. Gmail est un choix évident pour ça.
 
-Open your Server/resources/config.json and enter your SMTP information. Example below.
+Ouvrez votre fichier Server/resources/config.json et entrez vos informations SMTP. Exemple ci-dessous.
 
 ```json
   "SmtpSettings": {
@@ -19,19 +19,19 @@ Open your Server/resources/config.json and enter your SMTP information. Example 
   },
 ```
 
-Restart your server. If the SMTP settings are present a 'Forgot Password?' button will appear on your client's login screen:
+Redémarrez votre serveur. Si les réglages SMTP sont effectués un bouton 'Mot de passe oublié?' apparaîtra sur l'écran de connexion de votre client:
 
-![Password Reset](https://www.ascensiongamedev.com/resources/filehost/c7e2072b2697c3462423bf1b7903a295.png)
+![Réinitialisation mot de passe](https://www.ascensiongamedev.com/resources/filehost/c7e2072b2697c3462423bf1b7903a295.png)
 
 
-## Password Hashing
-Passwords are hashed before being stored in the database. Each account has a SALT which is randomly generated.
+## Hash du Mot de Passe
+Les mots de passe sont hashé avant d'être stockés dans la base de données. Chaque compte possède un SALT généré aléatoirement.
 
-To check if a plaintext password is correct do the following:
-* Hash the plaintext password with SHA256 and remove any resulting dashes in the output.
-* Concatinate the salt to the password and use a SHA256 hash on the result removing any dashes in the resulting output again.
+Pour vérifier qu'un mot de passe en texte clair est correct, suivez ces étapes:
+* Hashez le mot de passe en clair avec SHA256 et enlevez tous les tirets résultant de cette production.
+* Enchaînez le salt au mot de passe et utilisez un hash SHA256 sur le résultat en retirant tous les tirets résultant de cette production à nouveau.
 
-C# Code Reference
+C# Référence Code
 ```cs
 var sha = new SHA256Managed();
 string pass = BitConverter.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes("plaintext_password"))).Replace("-", "");
