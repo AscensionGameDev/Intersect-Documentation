@@ -1,19 +1,19 @@
-# File Structure
+# Structure de Fichier
 
-The top-level file structure of the repository is as follows for the current version:
+La structure de fichiers de niveau supérieur du dépôt est définie comme suit pour la version actuelle:
 
-|             File/Directory | Description                                                                                                                                       |
+|             Fichier/Annuaire | Description                                                                                                                                       |
 |---------------------------:|---------------------------------------------------------------------------------------------------------------------------------------------------|
-|              Documentation | Licensing for each individual project and shortcuts to these docs.                                                                                |
-|           Intersect (Core) | Shared assembly between the Client, Editor, and Server. Contains class definitions for game objects, configurations, and more.                    |
-| Intersect.Client.Framework | Abstracted client code for audio playback, file management, graphic output and more. This also contains our heavily modified Gwen UI library.     |
-|           Intersect.Client | The actual Intersect Client code. MonoGame inherits the Client Framework to power the engine using MonoGame DesktopGl for cross platform support. |
-|           Intersect.Editor | Intersect Game Editor which is also powered by MonoGame DirectX. DirectX is required due our use of SwapChainRenderTargets.                       |
-|           Intersect.Server | Intersect Server which runs as a console application. This authoritative server controls every action taken within Intersect games.               |
-|           Intersect.Shared | Shared helper functions and information for all the projects above.                                                                               |
-|          Intersect.Tests.* | Unit testing for all of the projects listed above.                                                                                                |
-|                 AUTHORS.md | List of Intersect Authors and Contributors.                                                                                                       |
-|         CODE_OF_CONDUCT.md | Documentation of the Intersect repository code of conduct guidelines.                                                                             |
-|            CONTRIBUTING.md | Documentation for contributing to the Intersect codebase.                                                                                         |
-|              Intersect.sln | Visual Studio Solution file that loads all of the aforementioned projects in Visual Studio.                                                       |
-|                  README.md | Readme file for GitHub that describes the Intersect engine, libraries we use, and more.                                                           |
+|              Documentation | License pour chaque programme individuel et les raccourcis vers ces documents.                                                                                |
+|           Intersect (Core) | Ensemble partagé entre le Client, l'Editeur et le Serveur. Contient les définitions de classes pour les objets de jeu, les configurations et d'autres.                    |
+| Intersect.Client.Framework | Code client abstrait pour la relecture audio, la gestion de fichier, la sortie graphique et plus. Contient aussi notre librairie Gwen UI lourdement modifiée.     |
+|           Intersect.Client | Le code Client Intersect actuel. MonoGame hérite de la Mise en Réseau Client pour alimenter le moteur en utilisant MonoGame DesktopGl pour l'accompagnement inter-plateforme. |
+|           Intersect.Editor | L'Editeur de Jeu Intersect qui est lui aussi alimenté par MonoGame DirectX. DirectX est requis dû à notre utilisation de SwapChainRenderTargets.                       |
+|           Intersect.Server | Le Serveur Intersect qui fonctionne comme une application de console. Ce serveur faisant autorité contrôle chaque action entreprise dans les jeux Intersect.               |
+|           Intersect.Shared | Fonctions d'assistant partagé et d'informations pour tous les programmes ci dessous.                                                                               |
+|          Intersect.Tests.* | Unité de test pour tous les programmes listés ci dessous.                                                                                                |
+|                 AUTHORS.md | Liste des Auteurs et Contributeurs d'Intersect.                                                                                                       |
+|         CODE_OF_CONDUCT.md | Documentation sur le dépôt de code Intersect et ses lignes de guide de conduite.                                                                             |
+|            CONTRIBUTING.md | Documentation pour contribuer à la base de code Intersect.                                                                                         |
+|              Intersect.sln | Fichier Visual Studio Solution qui charge tous les programmes mentionnés précédemment dans Visual Studio.                                                       |
+|                  README.md | Fichier Readme pour GitHub qui décrit le moteur Intersect, les librairies que nous utilisons et plus.                                                           |
