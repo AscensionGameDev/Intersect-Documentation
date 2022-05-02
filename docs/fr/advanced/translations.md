@@ -1,1 +1,1 @@
-# Translations
+# Traductions

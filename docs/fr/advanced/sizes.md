@@ -1,1 +1,1 @@
-# Map & Tile Sizes
+# Taille des Cartes et des Cases

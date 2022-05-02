@@ -1,28 +1,28 @@
-# Users
+# Utilisateurs
 
-**These endpoints require the [users.query API Role](https://docs.freemmorpgmaker.com/api/v1/introduction/roles.html#users-query)!**
+**Ces points de terminaison requièrent [users.query API Role](https://docs.freemmorpgmaker.com/api/v1/introduction/roles.html#users-query)!**
 
-## List Users
+## Liste Utilisateurs
 
-Retrieves users from the server along with their ids and stored information.
+Récupère les utilisateurs du serveur avec leur id et les informations stockées.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/users`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Query Parameters**
+**Paramêtres Requête**
 
-| Name  | Type | Description | Required | Default |
+| Nom   | Type | Description | Requis | Par Défaut |
 | ----- | ---- |------------ | -------- | ------- |
-| page | int  | Offset of users as a page number | :heavy_minus_sign: | 0 |
-| pageSize | int  | Number of users per page | :heavy_minus_sign: | 5 |
-| limit | int  | Limit of how many users are returned | :heavy_minus_sign: | `pageSize` |
+| page | int  | Décalage des utilisateurs en numéro de page | :heavy_minus_sign: | 0 |
+| pageSize | int  | Nombre d'utilisateurs par page | :heavy_minus_sign: | 5 |
+| limit | int  | Limite du nombre d'utilisateurs retournés | :heavy_minus_sign: | `pageSize` |
 
-**Example**
+**Exemple**
 
 ```http
 GET /api/v1/users?page=32&pageSize=5
@@ -30,7 +30,7 @@ GET /api/v1/users?page=32&pageSize=5
 
 ---
 
-### Response
+### Réponse
 
 ```http
 Status Code: 200 OK
@@ -80,33 +80,33 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-## Lookup User
+## Recherche Utilisateur
 
-Retrieves a user from the server by looking up their username or id.
+Récupère un utilisateur du serveur par recherche avec leur nom d'utilisateur ou leur id.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/users/[lookupKey]`
 
-**Lookup Key** : `Username or user id.`
+**Clé de Recherche** : `Username or user id.`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -127,29 +127,29 @@ Retrieves a user from the server by looking up their username or id.
 }
 ```
 
-## Register User
+## Enregistrer Utilisateur
 
-Creates an account on the server for a user given a username, password, and email address.
+Créé un compte sur le serveur pour un joueur qui a donné son nom d'utilisateur, son mot de passe et son adresse email.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/users/register`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| username | string  | Username for the new user. | :heavy_check_mark: |
-| password | string  | Sha256 hash of the new user's password. | :heavy_check_mark: |
-| email | string  | Email address for the new user. | :heavy_check_mark: |
+| username | string  | Nom d'utilisateur pour le nouvel utilisateur. | :heavy_check_mark: |
+| password | string  | Hash sha256 du mot de passe du nouvel utilisateur. | :heavy_check_mark: |
+| email | string  | Adresse Email pour le nouvel utilisateur. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -160,18 +160,18 @@ Creates an account on the server for a user given a username, password, and emai
 ```
 **Notes**
 
-* Password must be a SHA256 hash of the plaintext password, with hyphens removed.
-* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
+* Le mot de passe doit être un hash SHA256 du texte en clair du mot de passe, avec les traits d'union retirés.
+* Vous pouvez générer un hash SHA256 du texte en clair du mot de passe [ici](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ---
 
-### Response
+### Réponse
 
-**Condition** : User created successfully.
+**Condition** : Utilisateur créé avec succès.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -180,29 +180,29 @@ Creates an account on the server for a user given a username, password, and emai
 }
 ```
 
-## Validate Password
+## Valider Mot de Passe
 
-Checks whether a user provided password is valid.
+Vérifie si un mot de passe utilisateur est valide.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/users/[lookupKey]/password/validate`
 
-**Lookup Key** : `Username or user id.`
+**Clé de Recherche** : `Username or user id.`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| password | string  | SHA256 hash of password to validate. | :heavy_check_mark: |
+| password | string  | Hash SHA256 du mot de passe pour valider. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -212,13 +212,13 @@ Checks whether a user provided password is valid.
 
 ---
 
-### Response
+### Réponse
 
-**Condition** : Password is valid.
+**Condition** : Le mot de passe est valide.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -226,30 +226,30 @@ Checks whether a user provided password is valid.
 }
 ```
 
-## Change Email
+## Changer Email
 
-Change the email address associated with a user given the users' password.
+Change l'adresse email associée à un utilisateur ayant donné le mot de passe utilisateur.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/users/[lookupKey]/email/change`
 
-**Lookup Key** : `Username or user id.`
+**Clé de Recherche** : `Username or user id.`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| new | string  | The new email address. | :heavy_check_mark: |
-| authorization | string  | The sha256 hash of the users' current password. | :heavy_check_mark: |
+| new | string  | L'adresse email. | :heavy_check_mark: |
+| authorization | string  | Le hash sha256 du mot de passe actuel de l'utilisateur. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -260,13 +260,13 @@ Change the email address associated with a user given the users' password.
 
 ---
 
-### Response
+### Réponse
 
-**Condition** : Email was changed.
+**Condition** : L' email a été changé.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -289,30 +289,30 @@ Change the email address associated with a user given the users' password.
 ```
 
 
-## Change Password
+## Changer Mot de Passe
 
-Change the password associated with a user given the users' current password.
+Change le mot de passe associé d'un utilisateur ayant donné le mot de passe actuel.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/users/[lookupKey]/password/change`
 
-**Lookup Key** : `Username or user id.`
+**Clé de Recherche** : `Username or user id.`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| new | string  | The sha256 hash of the users' new password. | :heavy_check_mark: |
-| authorization | string  | The sha256 hash of the users' current password. | :heavy_check_mark: |
+| new | string  | Le hash sha256 du nouveau mot de passe de l'utilisateur. | :heavy_check_mark: |
+| authorization | string  | Le hash sha256 du mot de passe actuel de l'utilisateur. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -323,13 +323,13 @@ Change the password associated with a user given the users' current password.
 
 ---
 
-### Response
+### Réponse
 
-**Condition** : Password was changed.
+**Condition** : Le mot de passe a été changé.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -339,36 +339,36 @@ Change the password associated with a user given the users' current password.
 
 **Notes**
 
-* Password must be a SHA256 hash of the plaintext password, with hyphens removed.
-* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
+* Le mot de passe doit être un hash SHA256 du texte en clair du mot de passe, avec les traits d'union retirés.
+* Vous pouvez générer un hash SHA256 du texte en clair du mot de passe [ici](https://passwordsgenerator.net/sha256-hash-generator/).
 
-## Request Password Reset Email
+## Requête Email Réinitialisation Mot de Passe
 
-Sends the user an email with a password reset code. This requires your server SMTP settings to be configured.
+Envoie à l'utilisateur un code de réinitialisation de mot de passe. Cela requiert que les réglages SMTP du serveur soient configurés.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/users/[lookupKey]/password/reset`
 
-**Lookup Key** : `Username or user id.`
+**Clé de Recherche** : `Username or user id.`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
-**Condition** : Email was sent.
+**Condition** : L' email a été envoyé.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -377,33 +377,33 @@ Sends the user an email with a password reset code. This requires your server SM
 ```
 
 
-## Get Characters
+## Obtenir Personnages
 
-Returns an array of a users characters.
+Retourne un tableau des personnages d'un utilisateur.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/users/[lookupKey]/players`
 
-**Lookup Key** : `Username or user id.`
+**Clé de Recherche** : `Username or user id.`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
-**Condition** : Characters found.
+**Condition** : Personnages trouvés.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 [
@@ -413,34 +413,34 @@ Returns an array of a users characters.
 ]
 ```
 
-Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/dd42d59003bcc6c387452f40832fb97f.json).
+L'exemple est tronqué, pour une réponse complète [cliquez ici](https://www.ascensiongamedev.com/resources/filehost/dd42d59003bcc6c387452f40832fb97f.json).
 
 
-## Get Character
+## Obtenir Personnage
 
-Returns one of this users characters
+Retourne un des personnages de cet utilisateur
 
-### Request
+### Requête
 
 **URL** : `/api/v1/users/[lookupKey1]/players/[lookupKey2]`
 
-**Lookup Key 1** : `Username or user id.`
+**Clé de Recherche 1** : `Username or user id.`
 
-**Lookup Key 2** : `Character name, character id, or integer index of character in characters list.`
+**Clé de Recherche 2** : `Character name, character id, or integer index of character in characters list.`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
-**Condition** : Character found.
+**Condition** : Personnage trouvé.
 
 **Code** : `200 OK`
 
@@ -459,31 +459,31 @@ Returns one of this users characters
 }
 ```
 
-Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/4abdebecac07d35de4a66ef4dbbe4124.json).
+L'exemple est tronqué, pour une réponse complète [cliquez ici](https://www.ascensiongamedev.com/resources/filehost/4abdebecac07d35de4a66ef4dbbe4124.json).
 
-## Change Email (w/ Users.Manage Role)
+## Changer l'Email (w/ Rôle Users.Manage)
 
-Change a users email address without their password. **Requires the Users.Manage role.**
+Change l'adresse email d'un utilisateur sans son mot de passe. **Requiert le rôle Users.Manage .**
 
-### Request
+### Requête
 
 **URL** : `/api/v1/users/[lookupKey]/manage/email/change`
 
-**Lookup Key** : `Username or user id.`
+**Clé de Recherche** : `Username or user id.`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| new | string  | The new email address. | :heavy_check_mark: |
+| new | string  | La nouvelle adresse email. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -493,13 +493,13 @@ Change a users email address without their password. **Requires the Users.Manage
 
 ---
 
-### Response
+### Réponse
 
-**Condition** : Email was changed.
+**Condition** : L'email a été changé.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -521,29 +521,29 @@ Change a users email address without their password. **Requires the Users.Manage
 }
 ```
 
-## Change Password (w/ Users.Manage Role)
+## Changer Mot de Passe (w/ Rôle Users.Manage)
 
-Change a users password without their existing password. **Requires the Users.Manage role.**
+Change le mot de passe d'un utilisateur sans son mot de passe existant. **Requiert le rôle the Users.Manage .**
 
-### Request
+### Requête
 
 **URL** : `/api/v1/users/[lookupKey]/manage/password/change`
 
-**Lookup Key** : `Username or user id.`
+**Clé de Recherche** : `Username or user id.`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| new | string  | The sha256 hash of the users' new password. | :heavy_check_mark: |
+| new | string  | Le hash sha256 du nouveau mot de passe de l'utilisateur. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -553,18 +553,18 @@ Change a users password without their existing password. **Requires the Users.Ma
 
 **Notes**
 
-* Password must be a SHA256 hash of the plaintext password, with hyphens removed.
-* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
+* Le mot de passe doit être un hash SHA256 du texte en clair du mot de passe, avec les traits d'union retirés.
+* Vous pouvez générer un hash SHA256 du texte en clair du mot de passe [ici](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ---
 
-### Response
+### Réponse
 
-**Condition** : Password was changed.
+**Condition** : Le mot de passe a été changé.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -574,31 +574,31 @@ Change a users password without their existing password. **Requires the Users.Ma
 
 **Notes**
 
-* Password must be a SHA256 hash of the plaintext password, with hyphens removed.
-* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
+* Le mot de passe doit être un hash SHA256 du texte en clair du mot de passe, avec les traits d'union retirés.
+* Vous pouvez générer un hash SHA256 du texte en clair du mot de passe [ici](https://passwordsgenerator.net/sha256-hash-generator/).
 
-## List Users (`POST`) (_Deprecated_)
+## Liste Utilisateurs (`POST`) (_Obsolète_)
 
-Retrieves users from the server along with their ids and stored information.
+Récupère des utilisateurs du serveur avec leur id et les informations stockées.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/users`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| page | int  | Page of users to retrieve. | :heavy_minus_sign: |
-| count | int  | Number of users to retrieve. | :heavy_minus_sign: |
+| page | int  | Page d'utilisateurs à récupérer. | :heavy_minus_sign: |
+| count | int  | Nombre d'utilisateurs à récupérer. | :heavy_minus_sign: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -609,13 +609,13 @@ Retrieves users from the server along with their ids and stored information.
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -658,4 +658,3 @@ Retrieves users from the server along with their ids and stored information.
     ]
 }
 ```
-

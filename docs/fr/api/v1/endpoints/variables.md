@@ -1,27 +1,27 @@
 # Variables
 
-## Get Variables
+## Obtenir Variables
 
-Retrieves global variables from the server along with their ids and values.
+Récupère les variables globales du serveur avec leur id et leur valeur.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/variables/global`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| page | int  | Page of variables to retrieve. | :heavy_minus_sign: |
-| count | int  | Number of variables to retrieve. | :heavy_minus_sign: |
+| page | int  | Page de variable à récupérer. | :heavy_minus_sign: |
+| count | int  | Nombre de variables à récupérer. | :heavy_minus_sign: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -32,13 +32,13 @@ Retrieves global variables from the server along with their ids and values.
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -59,31 +59,31 @@ Retrieves global variables from the server along with their ids and values.
 }
 ```
 
-## Get Variable
+## Obtenir Variable
 
-Retrieves a variable and it's value from the server by id.
+Récupère une variable et sa valeur du serveur par id.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/variables/global/[variableId]`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**: `NA`
+**Corps**: `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -97,31 +97,31 @@ Retrieves a variable and it's value from the server by id.
 }
 ```
 
-## Get Variable Value
+## Obtenir Valeur Variable
 
-Retrieves the stored value of a variable from the server by id.
+Récupère la valeur stockée d'une variable du serveur par id.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/variables/global/[variableId]/value`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**: `NA`
+**Corps**: `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -131,27 +131,27 @@ Retrieves the stored value of a variable from the server by id.
 
 
 
-## Set Variable Value
+## Définir Valeur Variable
 
-Sets a specified variable's value given it's id.
+Défini la valeur d'une variable spécifiée en donnant son id.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/variables/global/[variableId]`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| value | int or boolean | Variable's desired value. | :heavy_check_mark: |
+| value | int or boolean | Valeur de variable désirée. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -161,13 +161,13 @@ Sets a specified variable's value given it's id.
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {

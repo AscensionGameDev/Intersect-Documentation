@@ -1,31 +1,31 @@
-# Server Info
+# Informations Serveur
 
-## Authorized
+## Autorisé
 
-Checks token and returns whether or not you're authorized to access protected api endpoints.
+Vérifie les token et retourne si oui ou non vous êtes autorisé à accéder à des points de terminaison api protégés.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/info/authorized`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body**
-Empty
+**Corps**
+Vide
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 SUCCESS`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -33,32 +33,32 @@ Empty
 }
 ```
 
-## Game Name & Port
+## Nom de Jeu & Port
 
-Retrieves the game name and port number from your server.
+Renvoie le nom du jeu et le numéro de port de votre serveur.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/info`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body**
-Empty
+**Corps**
+Vide
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 SUCCESS`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -67,32 +67,32 @@ Empty
 }
 ```
 
-## Stats
+## Statistiquess
 
-Retrieves active server stats such as online player count, uptime, cps, etc.
+Renvoie les statistiques du serveur actif comme le compte de joueurs en ligne, les disponibilités, les cps, etc.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/info/stats`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body**
-Empty
+**Corps**
+Vide
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 SUCCESS`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -104,32 +104,32 @@ Empty
 ```
 
 
-## Config
+## Configuration
 
-Retrieves the active server configuration.
+Renvoie la configuration du serveur actif.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/info/config`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body**
-Empty
+**Corps**
+Vide
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 SUCCESS`
 
-**Example**
+**Exemple**
 
 ```json
 {
