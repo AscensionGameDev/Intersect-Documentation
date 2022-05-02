@@ -1,17 +1,17 @@
-# Equipment
+# Equipement
 
-| Name                          | Type      | Example                                | Description |
+| Nom                           | Type      | Exemple                                | Description |
 |-------------------------------|-----------|----------------------------------------|-------------|
-| Paperdoll                     | See [Paperdoll](#paperdoll)                                      |
-| ShieldSlot                    | number    | 3                                      | Configures the equipment slot (counting from 0) which is used for shields. |
-| Slots                         | string[]  | `Helmet, Armor, Weapon, Shield, Boots` | Configures the available equipment slots. |
-| ToolTypes                     | string[]  | `Axe, Pickaxe, Shovel, Fishing Rod`    | Configures the available tool types for use with Resources. |
-| WeaponSlot                    | number    | 2                                      | Configures the equipment slot (counting from 0) which is used for weapons. |
+| Paperdoll                     | Voir [Paperdoll](#paperdoll)                                      |
+| ShieldSlot                    | number    | 3                                      | Configure le slot d'équipement (en comptantà partir de 0) qui est utilisé pour les protections. |
+| Slots                         | string[]  | `Helmet, Armor, Weapon, Shield, Boots` | Configure les slots d'équipement disponibles. |
+| ToolTypes                     | string[]  | `Axe, Pickaxe, Shovel, Fishing Rod`    | Configure les types d'outils disponibles à utiliser avec des ressources. |
+| WeaponSlot                    | number    | 2                                      | le slot d'équipement (en comptantà partir de 0) qui est utilisé pour les armes. |
 
 ## Paperdoll
-| Name                          | Type      | Example                                        | Description |
+| Nom                           | Type      | Exemple                                        | Description |
 |-------------------------------|-----------|------------------------------------------------|-------------|
-| Down                          | string[]  | `Player, Armor, Helmet, Weapon, Shield, Boots` | Configures the order in which paperdoll sprites are rendered for the Down direction. |
-| Left                          | string[]  | `Player, Armor, Helmet, Weapon, Shield, Boots` | Configures the order in which paperdoll sprites are rendered for the Left direction. |
-| Right                         | string[]  | `Player, Armor, Helmet, Weapon, Shield, Boots` | Configures the order in which paperdoll sprites are rendered for the Right direction. |
-| Up                            | string[]  | `Player, Armor, Helmet, Weapon, Shield, Boots` | Configures the order in which paperdoll sprites are rendered for the Up direction. |
+| Down                          | string[]  | `Player, Armor, Helmet, Weapon, Shield, Boots` | Configure l'ordre dans lequel les sprites du paperdoll sont rendus pour la direction bas. |
+| Left                          | string[]  | `Player, Armor, Helmet, Weapon, Shield, Boots` | Configure l'ordre dans lequel les sprites du paperdoll sont rendus pour la direction gauche. |
+| Right                         | string[]  | `Player, Armor, Helmet, Weapon, Shield, Boots` | Configure l'ordre dans lequel les sprites du paperdoll sont rendus pour la direction droite. |
+| Up                            | string[]  | `Player, Armor, Helmet, Weapon, Shield, Boots` | Configure l'ordre dans lequel les sprites du paperdoll sont rendus pour la direction haut. |
