@@ -1,2 +1,2 @@
 # Introduction
-What events are, what they do, and why they should be used.
+Ce que sont les évènements, ce qu'ils font et comment ils devraient être utilisés.
