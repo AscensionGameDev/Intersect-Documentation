@@ -1,16 +1,16 @@
 # Animations
-* Enhancing Maps via Attributes
-* Attacks/Spells
+* Améliorer les Cartes Maps via les Attributs
+* Attaques/Sorts
 * Projectiles
-* Weather
-* More?
+* Météo
+* Plus?
 
 
 ## Configuration
-* Editor Fields & What they do
+* Champs de l'Editeur et ce qu'il font
 
 
-## Graphic Layout
-* Columns and Rows
-* Frame Count
-* Center of Animation frame will be centered on a player.
+## Mise en Page Graphique
+* Colonnes et rangées
+* Compte de Frame
+* Le centre de la frame d'animation sera centrée sur un joueur.

@@ -1,24 +1,24 @@
-# Installing Visual Studio
-Visual Studio is required to compile Intersect's source code. This page will walk you through the steps of installing Visual Studio 2019.
+# Installer Visual Studio
+Visual Studio est requis pour compiler le code source d'Intersect. Cette page vous guidera au travers des étapes pour installer Visual Studio 2019.
 
-Click [here](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16) to download the Visual Studio 2019 community installer.
+Cliquez [ici](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16) pour télécharger l'installateur communautaire Visual Studio 2019.
 
-Run the installer, and hit continue on the first screen you see.
+Démarrez l'installateur, et pressez continuer sur le premier écran que vous voyez.
 
-![continue](https://www.ascensiongamedev.com/resources/filehost/8dc7ac1502a38a3ab5617ce6db07e9d3.png)
+![continuer](https://www.ascensiongamedev.com/resources/filehost/8dc7ac1502a38a3ab5617ce6db07e9d3.png)
 
-On the second screen you will need to select the .Net desktop development workload, and then hit install.
+Sur le second écran vous devrez sélectionner la charge de travail du bureau de développement .Net, et presser installer.
 
-![workloads](https://www.ascensiongamedev.com/resources/filehost/464204709f9d6c54efcf9d4714619ff1.png)
+![chargestravail](https://www.ascensiongamedev.com/resources/filehost/464204709f9d6c54efcf9d4714619ff1.png)
 
-Be patient while Visual Studio installs.
+Soyez patient le temps que Visual Studio les installe.
 
-![installing](https://www.ascensiongamedev.com/resources/filehost/0be60717366bb02e418a807b7c60e1e6.png)
+![installation](https://www.ascensiongamedev.com/resources/filehost/0be60717366bb02e418a807b7c60e1e6.png)
 
-When done, visual studio will automatically launch. You can select 'Not now, maybe later.' when it asks you to connect accounts.
+Une fois fait, visual studio se lancera automatiquement. Vous pouvez sélectionner 'Not now, maybe later.' (pas tout de suite,peut être plus tard) quand il vous demande de vous connecter à votre compte.
 
-![launch](https://www.ascensiongamedev.com/resources/filehost/ef484164a37ce09d4bda7ad53071c0bc.png)
+![lancement](https://www.ascensiongamedev.com/resources/filehost/ef484164a37ce09d4bda7ad53071c0bc.png)
 
-Finally you will be asked to chose a color scheme. The choice does not matter, and then visual studio will launch!
+Finalement il vous sera demander de choisir un schéma de couleur. Le choix importe peu et ensuite visual studio se lancera!
 
-![done](https://www.ascensiongamedev.com/resources/filehost/4368d4cf1fb180310599251345e6b68c.png)
+![fait](https://www.ascensiongamedev.com/resources/filehost/4368d4cf1fb180310599251345e6b68c.png)

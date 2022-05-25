@@ -1,17 +1,17 @@
-# Download Intersect
-Intersect can be downloaded from Ascension Game Dev's download hub. [Download the latest version of Intersect from our site.](https://www.freemmorpgmaker.com/downloads/)
+# Télécharger Intersect
+Intersect peut être télécharger depuis le hub de téléchargement d'Ascension Game Dev's. [Téléchargez la dernière version d'Intersect depuis notre site.](https://www.freemmorpgmaker.com/downloads/)
 
-If you're just now getting started with Intersect you will want to download the Full archive. Save this file somewhere you can find it.
+Si vous débutez juste avec Intersect vous veuillez télécharger l'archive complète (Full archive). Sauvegardez ce fichier à un endroit où vous pourrez le retrouver.
 
-## Extracting Intersect
-Intersect is contained within a zip archive. Any version of Windows can extract Intersect so you can begin using it. Navigate to the Intersect archive, right click on it, and select the Extract All option.
-**We recommend you extract onto your Desktop or within your Documents folder.**
+## Extraire Intersect
+Intersect est contenu dans une archive zip. Toutes les versions de Windows peuvent extraire Intersect ainsi vous pourrez commencer à l'utiliser. Naviguez jusqu'à l'archive Intersect, cliquez-droit dessus, et sélectionnez l'option Tout Extraire (Extract All).
+**Nous vous recommendons d'extraire sur votre Bureau ou dans votre dossier Documents.**
 
-![ExtractIntersect](https://www.ascensiongamedev.com/resources/filehost/db59c62b62d5d1611fce19338f4c40b9.gif)
+![ExtraireIntersect](https://www.ascensiongamedev.com/resources/filehost/db59c62b62d5d1611fce19338f4c40b9.gif)
 
 
-## File Structure Overview
-Once you extract your files, you can you’re your file and should see three folders:
-- Client and Editor: The client-side of the engine, which is the “game” component you and others will use to play your MMO.
-- Documentation: Various documents and ReadMe files. We encourage you browse these before starting.
-- Server: The server-side of the engine which you alone will run on a host machine, allowing others to connect via the client.
+## Aperçu de Structure de Fichier
+Une fois que vous aurez extrait vos fichiers, vous pourrez vérifier vos fichiers et devriez voir trois dossiers:
+- Client et Editeur: La partie client du moteur, qui est le composant “jeu” que vous et les autres utiliserez pour jouer à votre MMO.
+- Documentation: Nombre de documents et de fichiers ReadMe. Nous vous encourageons vivement à les étudier avant de commencer.
+- Serveur: La partie serveur du moteur que vous seulement pourrez exécuter sur un système d'hébergement, autorisera les autres à se connecter via le client.

@@ -1,38 +1,38 @@
 # Branches
 
-The repository has multiple branches in order to separate multiple versions, and allow fixing bugs in both the older releases and the current release, rather than only putting bug fixes in the new release and telling people to "wait" until it reaches its release date.
+Le dépôt possède de multiples branches pour pouvoir séparer les versions multiples et permet de réparer les bugs à la fois sur les anciennes parutions et les actuelles, plutôt que de seulement inclure les réparations de bug dans la nouvelle parution et de dire aux personnes d' "attendre" jusqu'à ce qu'elle atteigne sa date de parution.
 
-Currently, Intersect has 3 separate branches for different versions.
+Actuellement, Intersect possède 3 branches séparées pour différentes versions.
 
-|        Name | Current Version | Notes                                                                         |
+|        Nom  | Version Actuelle | Notes                                                                         |
 |------------:|-----------------|-------------------------------------------------------------------------------|
-|      master | 0.6.1           | Receives only critical bug fixes, intended to not change often.               |
-|  prerelease | 0.6.2           | Receives all bug fixes with relatively minor solutions, as well as features with minor impact to the code. <br/><br/> **Only critical database schema changes are made in this branch.** |
-| development | 0.7.0           | Volatile. Can have major changes to both the codebase and database structure. |
+|      master | 0.6.1           | Reçois seulement les réparations de bug critiques, il est attendu qu'il ne soit pas souvent modifié.               |
+|  prerelease | 0.6.2           | Reçois toutes les réparations de bug avec des alternatives relativement mineures, comme des fonctionnalités ayant un impact mineur sur le code. <br/><br/> **Seuls les changements de schéma de base de données critiques sont faits dans cette branche.** |
+| development | 0.7.0           | Volatile. Peut inclure des changements majeurs à la fois sur la structure codebase et la structure database. |
 
-When new versions are released, the **prerelease** branch replaces the **master** branch.
+Quand de nouvelles versions sont parues, la branche **prerelease** remplace la branche **master**.
 
-Milestone releases (Beta 6, Beta 7, Beta 8, 1.0) will remain in **development** until they are ready for the general public to begin user testing them.
+Les parutions d'étape importantes (Beta 6, Beta 7, Beta 8, 1.0) resteront en **development** jusqu'à ce qu'elle soient prêtes pour que le public commence à l'utiliser et à la tester.
 
-When milestone releases reach **prerelease**, **development** will become the next milestone release. **prerelease** is essentially an active "release candidate" branch.
+Quand des parutions d'étape importantes atteignent la **prerelease**, la **development** deviendra la parutions d'étape importante suivante. la branche **prerelease** est essentiellement une branche "parution candidature".
 
-When milestone releases reach **master**, **prerelease** will be the next patch version, and **development** will be the next milestone release.
+Quand des parutions d'étape importantes atteignent la **master**, la **prerelease** deviendra le patch de version suivant, et la **development** sera la parution d'étape importante suivante.
 
-For betas, milestone release versions will follow this pattern: `0.<beta number>.<patch number>`.
-For releases post-1.0, milestone version numbers will fit this pattern: `<major>.<minor>.<patch/hotfix>`.
+Pour les betas, les versions de parution d'étape importantes suivront ce modèle: `0.<beta number>.<patch number>`.
+Pour les parutions post-1.0, le chiffrage de parution d'étape importante suivra ce modèle: `<major>.<minor>.<patch/hotfix>`.
 
-You can create and switch branches using the GitHub desktop app by clicking the branch dropdown:
+Vous pouvez créer une branche et changer de branche en utilisant l'application de bureau GitHub en cliquant sur le menu déroulant de la branche:
 
 ![GitHub desktop app branch dropdown](https://www.ascensiongamedev.com/resources/filehost/7cb30357ee4dd2a55bc24b20eeb63d78.png)
 
-When branching off you should always fetch the latest changes for that branch. When fixing a bug, you create a new branch based on the lowest version number branch that is affected by the bug.
+Quand vous créez une bifurcation vous devriez toujours aller chercher les derniers changements pour cette branche. Lors de la réparation d'un bug, une nouvelle branche basée sur la branche avec le numéro de version le plus bas affectée par le bug.
 
-One benefit to the commit and branching system is that we can merge changes into master, and then merge master's changes into prerelease, and then prerelease into development. That way we are not independently fixing the bug on each branch from scratch, and instead we only have to resolve conflicts due to changes between the versions if there are any.
+Un bénéfice du système d'engagement et de bifurcation est que nous pouvons fusionner les changements dans la master et ensuite fusionner les changements de la master dans la prerealease pendant le développement. De cette façon nous ne réparons pas les bugs indépendamment sur chaque branche à partir de rien et à la place nous avons seulement à résoudre les conflits dûs aux changements entre versions s'il y en a.
 
-Branches to fix bugs are usually named with the following convention:
+Les branches pour réparer des bugs sont habituellement nommées selon la convention suivante:
 
 `fix-<issue number>-<bug name>`
 
-Branches to implement new features are usually named with the following convention:
+Les branches pour implémenter de nouvelles fonctionnalités sont habituellement nommées selon la convention suivante:
 
 `feature-<issue number>-<feature name>`

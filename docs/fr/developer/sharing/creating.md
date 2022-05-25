@@ -1,21 +1,21 @@
-# Creating Patches
+# Créer des Patchs
 
-A Git patch is a text file that contains one or more Git commits. Using GitHub you can very easily export your work into patches in order to distrbute outside of typical merging and pull requests. Using patches is the defacto method for sharing source edits on Ascension Game Dev.
+Un patch Git est un fichier texte qui contient une ou plusieurs engagements Git. En utilisant GitHub vous pouvez très facilement exporter votre travail dans des patchs pour pouvoir le distribuer extérieurement par fusion caractérisée et des requêtes d'extraction. Utiliser des patchs est la méthode defacto pour partager des éditions de code sur Ascension Game Dev.
 
-The best practice is to branch off master or development, make your changes, commit, and then create the patch based off your branch.
+La meilleure méthode est de créer une bifurcation de la branche master ou development, faire vos changements, les engager puis de créer un patch basé sur votre branche.
 
-Open command prompt in your local repository directory. This can be done easily by clicking Repository -> Open In Command Prompt within GitHub Desktop.
+Ouvrez l'invite de commande dans votre annuaire de dépôt local. Ceci peut être fait simplement en  cliquant Dépôt -> Ouvrir Dans Invite Commande dans le Bureau GitHub.
 
-![commandprompt](https://www.ascensiongamedev.com/resources/filehost/62ed0b264c03f8d3b61c17195771c044.png)
+![invitecommande](https://www.ascensiongamedev.com/resources/filehost/62ed0b264c03f8d3b61c17195771c044.png)
 
-Next type in the following command. Make sure you are still on the branch where you made your modifications. In the command replace master if you originally branched off of development.
+Ensuite tapez la commande suivante.Assurez vous d'être toujours sur la branche où vous avez effectués vos modifications. Dans la commande remplacez master si vous avez bifurqué originellement depuis development.
 
 ```
 git format-patch master --stdout > patchName.patch
 ```
 
-![createpatch](https://www.ascensiongamedev.com/resources/filehost/ad6434b2e74bb658b8565b6dd227d961.png)
+![créerpatch](https://www.ascensiongamedev.com/resources/filehost/ad6434b2e74bb658b8565b6dd227d961.png)
 
-The patch file you've created can be found in the directory of your local repository.
+Le fichier patch que vous avez créé peut être trouvé dans l'annuaire de votre dépôt local.
 
-You can upload your patch to [Diffy](https://diffy.org) in order to view its contents.
+Vous pouvez uploader votre patch sur [Diffy](https://diffy.org) pour voir ses contenus.

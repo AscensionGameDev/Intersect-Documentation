@@ -1,12 +1,12 @@
 # Conditions
 
-## Usage
-* Items equippable?
-* Spells can be used?
-* Npcs should attack/defend player?
-* Dynamic Dialogues, Puzzles, and More!
+## Utilisation
+* Les Objets sont équipables?
+* Les Sorts peuvent être utilisés?
+* Les Pnjs doivent attaquer/défendre le joueur ?
+* Dialogues dynamiques, Puzzles et plus!
 
-## Lists
+## Listes
 
 
 ## Types

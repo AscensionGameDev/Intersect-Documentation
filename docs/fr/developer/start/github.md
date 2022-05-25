@@ -1,45 +1,45 @@
-# Forking & Cloning Intersect
+# Bifurquer & Cloner Intersect
 
-## Downloading GitHub Desktop
-GitHub stores code repositories, keeps track of code changes, allows code history to be viewed, facilitates collaboration and more. It is a developers best friend and even if you're not familiar with git already we highly recommend diving in and learning what it's all about.
+## Téléchargement Bureau GitHub
+GitHub stocke des dépôts de code, garde des pistes de changement de code, permet de voir l'historique du code, facilite la collaboration et plus. C'est l'un des meilleurs amis des développeurs et même si git ne vous est pas encore familier, nous recommandons vivement de vous y plonger et d'apprendre en quoi il consiste.
 
-To get started, [create a GitHub account](https://github.com/join).
+Pour commencer, [créez un compte GitHub](https://github.com/join).
 
-Then download the [GitHub Desktop](https://desktop.github.com/) application.
+Puis téléchargez l'application [Bureau GitHub](https://desktop.github.com/).
 
-Once installed, the GitHub Desktop application will have you sign into your GitHub account, you should go ahead and do that now.
+Une fois installée, l'application de Bureau GitHub vous demandera de vous connecter à votre compte GitHub, vous pouvez faire cela et continuer.
 
 
-## Forking Intersect
-Forking is a term that basically means to copy a code repository. When you fork Intersect you will have a complete copy of the entire Intersect repo on your own GitHub account.
+## Créer une Bifurcation d'Intersect
+Bifurquer est un terme qui désigne l'action de copier un dépôt de code. Quand vous créez une bifurcation d'Intersect vous obtindrez une copie complète du repo Intersect entier sur votre propre compte GitHub.
 
-To create your fork browse to our [GitHub repo](https://github.com/AscensionGameDev/Intersect-Engine) and hit the fork button.
+Pour créer votre bifurcation naviguez jusqu'à notre [repo GitHub](https://github.com/AscensionGameDev/Intersect-Engine) et pressez le bouton de bifurcation.
 
-![forking](https://www.ascensiongamedev.com/resources/filehost/209a31015a60ae45664c25e82d17b688.png)
+![bifurcation](https://www.ascensiongamedev.com/resources/filehost/209a31015a60ae45664c25e82d17b688.png)
 
-When done you will have your own copy of the Intersect repo that remains linked to the offical repo. Later you can pull official updates into your code base or even submit a pull request to contribute your code back to the base engine.
+Une fois ceci fait vous aurez votre propre copie du repo Intersect qui restera liée au repo officiel. Plus tard vous pourrez récupérer des mises à jour officielles dans votre base de code ou même soumettre une requête d'extraction pour contribuer avec votre code au moteur de base.
 
-## Cloning Intersect
-The last step is to clone your Intersect code repository onto your computer. Now that you've installed GitHub desktop and forked the Intersect repo this is really easy.
+## Cloner Intersect
+la dernière étape est de cloner votre dépôt de code Intersect sur votre ordinateur. Maintenant que vous avez installé le bureau GitHub et que vous avez bifurqué le repo Intersect repo c'est très facile.
 
-In GitHub desktop hit File -> Clone Respoitory
+dans le bureau GitHub tapez File -> Clone Repository
 
-![clone](https://www.ascensiongamedev.com/resources/filehost/0af5968fd1c76523d47008fad2995e03.png)
+![clonage](https://www.ascensiongamedev.com/resources/filehost/0af5968fd1c76523d47008fad2995e03.png)
 
-Then select your Intersect-Engine repository and browse to where you'd like GitHub to place the source, then finally hit clone.
+Puis sélectionnez votre dépôt Intersect-Engine et naviguez jusqu'à l'endroit où vous voulez que GitHub place la source, pressez finalement cloner.
 
-![clonewindow](https://www.ascensiongamedev.com/resources/filehost/995b88e52387640a3737a6ac8038234a.png)
+![clonerfenêtre](https://www.ascensiongamedev.com/resources/filehost/995b88e52387640a3737a6ac8038234a.png)
 
-Once the respository has cloned you can click the history tab to see the most recent code changes. The entire Intersect development history is available to browse.
+Une fois que le dépôt à été cloné vous pouvez cliquer sur l'étiquette historique pour voir les changements de code les plus récents. L'historique de développement entier d'Intersect est disponible à la navigation.
 
-![history](https://www.ascensiongamedev.com/resources/filehost/7016abaea36e72a6bcf00a6b6a3b9b3e.png)
+![historique](https://www.ascensiongamedev.com/resources/filehost/7016abaea36e72a6bcf00a6b6a3b9b3e.png)
 
-If you navigate to the folder you cloned to, you will see Intersect's source ready for you to dive into.
+Si vous naviguez jusqu'au  dépôt que vous avez cloné, vous verrez la source Intersect prête pour que vous vous y plongiez.
 
 ![source](https://www.ascensiongamedev.com/resources/filehost/34775c4d0e6b0359eb1aa908eb4a228d.png)
 
-All the setup is now done! The next step is opening the code in visual studio and compiling it for the first time!
+Tous les réglages sont faits! La prochaine étape est d'ouvrir le code dans visual studio et de le compiler pour la première fois!
 
-## Public vs Private Repos
+## Dépôts Publiques vs Privés
 
-GitHub does not allow making forked repositories private at this time. That means if you commit custom code and then Push (Upload) those code changes to GitHub your modifications will be public! Creating private clones are possible but they lose the ability to easily pull code changes in order to stay up to date with the base engine, that route is more advanced than what these docs are meant for, so we recommend researching that if interested.
+GitHub ne permet pas de créer une bifurcation de dépôt privée pour le moment. Ce qui veut dire que si vous engagez du code modifié et que vous le Mettez en Avant (vous le mettez en ligne) ces changements de code apportés à GitHub vos modifications deviendront publiques! Créer des clones privés est possible mais ils perdent cette habilité à simplement récupérer des changements de code pour rester à jour avec le moteur de base, ce cheminement est beaucoup plus avancé que ce à quoi sont destinés ces documents, nous vous recommandons de faire des recherches si cela vous intéresse.

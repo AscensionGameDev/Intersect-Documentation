@@ -1,7 +1,7 @@
-# Crafting
+# Craft
 
-## Crafts Editor
-* Editor Fields & What they do
+## Editeur de Crafts
+* Champs d'éditeur et ce qu'ils font
 
-## Table Editor
-* Editor Fields & What they do
+## Editeur d'Atelier
+* Champs d'éditeur et ce qu'ils font

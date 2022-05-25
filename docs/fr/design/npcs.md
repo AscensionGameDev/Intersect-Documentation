@@ -1,4 +1,4 @@
-# Npcs
+# Pnjs
 
 ## Configuration
-* Editor Fields & What they do
+* Champs d'éditeur et ce qu'ils font
