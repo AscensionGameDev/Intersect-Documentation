@@ -1,18 +1,18 @@
-# Editor Login
+# Connexion Editeur
 
-## Launching the Editor
- Minimize or close the client. Go to your Client and Editor folder and open Intersect Editor.exe. Sign in using the account you just made.
+## Lancer l'Editeur
+ Réduisez ou fermez le client. Allez à votre dossier Client et Editeur et ouvrez Intersect Editor.exe. Inscrivez vous en utilisant le compte que vous venez de créer.
 
- ![LaunchEditor](https://www.ascensiongamedev.com/resources/filehost/fc6381fd6502a540dbdb4791893920c4.png)
+ ![LancerEditeur](https://www.ascensiongamedev.com/resources/filehost/fc6381fd6502a540dbdb4791893920c4.png)
 
 
- ## Start Creating!
- Welcome to Intersect! You now have the power in your hands to begin sculpting a world every bit as wild as your imagination.
+ ## Commencer la Création!
+ Bienvenue sur Intersect! Vous avez maintenant dans vos mains le pouvoir de commencer à façonner un monde pièce par pièce aussi sauvage que vous pourrez l'imaginer.
 
- You are looking at our map editor now, you can place the tiles from tilesets on the left onto the map. Clicking the save button will make those changes appear in your game.
+ Ce que vous voyez maintenant est notre éditeur de cartes, Vous pouvez placer les cases à partir des tilesets sur la gauche de la carte. Cliquez sur le bouton sauvegarder apportera ces changements dans votre jeu.
 
- Double clicking the bordering area surrounding your map will allow you to expand your world and create more maps that appear seamless in-game.
+ Double-cliquer la zone de bordure entourant votre carte vous autorisera à étendre votre monde et créer plus de cartes qui paraîtront homogènes en jeu.
 
- ![EditorOpen](https://www.ascensiongamedev.com/resources/filehost/c399bc35aad37d828ddda1986538e7bd.png)
+ ![EditeurOuverture](https://www.ascensiongamedev.com/resources/filehost/c399bc35aad37d828ddda1986538e7bd.png)
 
- Clicking next below will go over the various windows and components in our editor. We encourage you mess around with the editor on your own and then come back and refer to the documentation whenever you come across something that isn't intuitive or clear. Learning to use new software and creating a game takes time and can be very challenging. Don't forget to have some fun!
+ Cliquer sur les catégories suivantes qui vont détailleront les diveres fenêtres et les divers composants de notre éditeur. Nous vous encourageons à faire des essais vous même avec l'editeur puis de revenir et de vous référer à la documentation lorsque vous trouvez quelque chose qui ne soit pas intuitif ou pas clair. Apprendre à utiliser un nouveau software et créer un jeu prend du temps et peut représenter un véritable défi. N'oubliez pas de vous amuser!
