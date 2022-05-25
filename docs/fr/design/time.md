@@ -1,7 +1,7 @@
-# Time (Day & Night)
-Enhance your game with lighting and hue shifts over time.
+# Temps (Jour & Nuit)
+Améliore votre jeu avec des effets de lumières et des glissements de teinte a travers le temps.
 
 ## Configuration
 
 
-## Editor Preview
+## Aperçu de l'Editeur
