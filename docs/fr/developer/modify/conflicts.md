@@ -1,15 +1,15 @@
-# Dealing with Conflicts
-A merge conflict occurs when you try to merge branches where the same lines or sections of code have been modified. Unfortunately in these instances Git requires a little help to sort things out.
+# Gérer les Conflits
+Un conflit de fusion se produit quand vous essayez de fusionner des branches où les mêmes lignes ou sections de code on été modifiées. Malheureusement dans ces cas là, Git requiert un peu d'aide pour arranger les choses.
 
-Whether you're working with pull requests or trying to merge branches locally you're eventually going to have to deal with a merge conflict.
+Que vous travailliez avec des requêtes d'extraction ou que vous essayez de fusionner localement des branches vous aurez éventuellement affaire à un conflit de fusion.
 
-In the event of a merge conflict Git will alert you of the files needing attention. Within each file you will find conflict blocks.
+Dans le cas d'un conflit de fusion Git vous alertera sur les fichiers qui ont besoin d'attention. A l'intérieur de chaque fichier vous trouverez des blocage de conflit.
 
-![conflictalert](https://www.ascensiongamedev.com/resources/filehost/46efc74d34c68ffe9a424b898f365cb8.png)
+![alerteconflit](https://www.ascensiongamedev.com/resources/filehost/46efc74d34c68ffe9a424b898f365cb8.png)
 
-Here is a conflict I dealt with recently.
+Voici un conflit auquel j'ai eu affaire récemment.
 
-The original code looked like the following:
+Le code original était le suivant:
 
 ```cs
 //Player Out of Range Or Offline
@@ -19,9 +19,9 @@ PacketSender.SendChatMsg(
 );
 ```
 
-We were working on refactoring our code in two different branches at the same time. In one branch we were replacing usages of client with player. In another branch we were refactoring colors.
+Nous travaillions sur la refactorisation de notre code en deux branches différentes en même temps. Dans une branche nous remplacions les utilisations du client avec ceux du joueur. Dans l'autre branche nous refactorions les couleurs.
 
-Upon merging the second branch I was left to solve the following conflict:
+Au moment de fusionner la seconde branche je devais résoudre le conflit suivant:
 
 ```cs
 //Player Out of Range Or Offline
@@ -36,9 +36,9 @@ PacketSender.SendChatMsg(
 );
 ```
 
-The ======= separates the code from both branches. In the top half we changed client to player. In the bottom half we changed CustomColors.NoTarget to CustomColors.Combat.NoTarget.
+Les ======= séparent le code des deux branches. Dans la moitié supérieure nous avons changé client à player. Dans la moitié inférieure nous avons changé CustomColors.NoTarget par CustomColors.Combat.NoTarget.
 
-In some instances you will decide to keep the code above the divider in others you will keep the code below the divider. In this case we want to keep code from both so I manually updated the file to end up with the resulting code.
+Dans certains cas vous déciderez de grader le code du dessus dans d'autres vous déciderez de garder le code du dessous. Dans ce cas nous voulons conserver le code des deux donc j'ai mis à jour le fichier manuellement pour finir avec le code.
 
 ```cs
 //Player Out of Range Or Offline
@@ -48,8 +48,8 @@ PacketSender.SendChatMsg(
 );
 ```
 
-After resolving the conflcit, removing the conflict markers, and saving the file GitHub allowed the merge to proceed as planned.
+Après avoir résolu le conflit, retirez les marqueurs de conflit et sauvegardez le fichier GitHub autorisant la fusion pour procéder comme prévu.
 
-![mergeable](https://www.ascensiongamedev.com/resources/filehost/98036a1ec4daea465a9526987444d8c7.png)
+![fusionnable](https://www.ascensiongamedev.com/resources/filehost/98036a1ec4daea465a9526987444d8c7.png)
 
-In your programming endeavors you will eventually come across merge conflicts. Although annoying they are generally easy to work out. Hopefully this example and explaination helps in dealing with that process.
+Dans vos efforts de programmation vous serez amené à rencontrer des conflits de fusions. Aussi ennuyeux soit-ils ils sont généralement assez simple à régler. Heureusement cet exemple est utile pour gérer ce processus.
