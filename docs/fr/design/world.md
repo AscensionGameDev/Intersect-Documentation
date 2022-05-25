@@ -1,45 +1,45 @@
-# World Design
+# Design du monde
 
-## Connecting Maps
-So let's assume that you've made it this far and have started to put together a decent map. Have you thought about how you'd like to expand your world?
+## Connection Cartes
+Partons du principe que vous êtes parvenu aussi loin et avez commencé  à assembler une carte décente. Avez vous pensé à la manière dont vous voulez étendre votre monde?
 
-![Connecting Maps](https://www.ascensiongamedev.com/resources/filehost/aee57f600d5c0dd5042bf3025cefd904.png)
+![Connection Cartes](https://www.ascensiongamedev.com/resources/filehost/aee57f600d5c0dd5042bf3025cefd904.png)
 
-Simply *double click* on any adjacent edge of your map (in red above) to expand your world outward. <a href="http://www.ascensiongamedev.com/resources/filehost/478961f66760c103ee02761fd8de9ac3.gif" data-lity><i class="fa fa-play-circle"></i></a>
+*double cliquez* simplement sur n'importe quel bord de votre carte (en rouge ci-dessus) pour étendre les frontières de votre monde. <a href="http://www.ascensiongamedev.com/resources/filehost/478961f66760c103ee02761fd8de9ac3.gif" data-lity><i class="fa fa-play-circle"></i></a>
 
-By continously creating connected maps you can create massive worlds. There are no limitations and having hundreds or thousands of maps is on par with some of our bigger games.
+En créant continuellement des cartes connectées vous pouvez créer des mondes gigantesques. Il n'y a aucune limitation et avoir des centaines voir des milliers de cartes égalisant les plus gros de nos jeux.
 
-When on a connected map you will see maps that you've previously designed, you can always double click on them to go back and make alterations!
-
-
-## Unconnected Maps
-Let's assume you want to create the interior of a house, maybe a cave, or maybe a whole new region of your game world that you don't want to connect to your existing maps. This is possible by clicking the **New Map** icon in the top left corner of your editor window. ![New Map](https://www.ascensiongamedev.com/resources/filehost/d01941dfd69bdff6add5e41863390be0.png)
-
-Your new map will be completely unconnected to your existing maps. You can use the **Map List** to navigate back to other maps at any time.
-
-A good use for unconnected maps is to make caves and dungeons. You can use **Warp** attributes in order to for players to enter and leave the cave. <a href="http://www.ascensiongamedev.com/resources/filehost/e52c6a2233c8717d426f1d04125300b6.png" data-lity><i class="fa fa-play-circle"></i></a>
-
-![House](https://www.ascensiongamedev.com/resources/filehost/94d22810779f3ab67fe800db7cfbf626.png)
+Quand vous êtes sur une carte connectée vous verrez les cartes que vous avez précédemment conçues, vous pouvez toujours double-cliquer dessus pour y retourner et faire des changements!
 
 
-## Map List
-TODO
+## Cartes Non Connectées
+Partons du principe que vous voulez créer l'intérieur d'une maison, peut être une caverne, ou peut être une nouvelle région complète de votre jeu que vous ne voulez pas connecter aux cartes existantes. C'est possible en cliquant sur l'icône **Nouvelle Carte** dans le coin supérieur gauche de votre éditeur. ![Nouvelle Carte](https://www.ascensiongamedev.com/resources/filehost/d01941dfd69bdff6add5e41863390be0.png)
+
+Votre nouvelle carte sera complètement indépendante de vos précédentes cartes. Vous pouvez utiliser la **Liste de Carte** pour naviguer vers d'autres cartes à tout moment.
+
+Une bonne utilisation des cartes non-connectées est de créer des cavernes et des donjons. Vous pouvez utiliser l'attribut **Téléporteur** pour ainsi permetre aux joueurs d'entrer et de sortir de la caverne. <a href="http://www.ascensiongamedev.com/resources/filehost/e52c6a2233c8717d426f1d04125300b6.png" data-lity><i class="fa fa-play-circle"></i></a>
+
+![Maison](https://www.ascensiongamedev.com/resources/filehost/94d22810779f3ab67fe800db7cfbf626.png)
 
 
-## Map Grid
-Have you noticed the **Map Grid** tab above your map editor? Go ahead and click it!
+## Liste Carte
+A FAIRE
 
-The **Map Grid** gives you an overview of all the maps connected to the one that you're currently editing. When browsing the **Map Grid** you can click and drag to see different parts of your world and zoom in and out using your mouse wheel or the + and - keys on your keyboard.
 
-<a href="https://youtu.be/FqSK-QV2jRU" data-lity>Click here to see the map grid in action! <i class="fa fa-play-circle"></i></a>
+## Grille de Cartes
+Avez vous remarqué l'étiquette **Grille de Cartes** au dessus de votre éditeur de carte? Cliquez dessus!
 
-There are a few other tricks here too, while navigating the map grid you can double click on an exisiting map to begin editting it.
+La **Grille de Cartes** vous donne un aperçu de toutes les cartes connectées à celle que vous éditez actuellement. Quand vous naviguez sur la **Grille de Cartes** vous pouvez cliquer-glisser pour voir différentes parties de votre monde et zoomer et dézoomer en utilisant la molette de votre souris ou les touches + et - de votre clavier.
 
-There is a screenshot button in the top left ![Screenshot](https://www.ascensiongamedev.com/resources/filehost/93dff71784b1de7a15f9fb548c692259.png), that button will allow you to take a high resolution snap shot of your whole world. Fair warning, this could take awhile on larger worlds!
+<a href="https://youtu.be/FqSK-QV2jRU" data-lity>Cliquez ici pour voir la grille de cartes en action! <i class="fa fa-play-circle"></i></a>
 
-If your map grid has maps that won't render OR your map grid/screenshots contain visual artifacts (lights, fogs, etc) that you don't want:
-- Adjust your visual settings using the **View** menu in the top left of your editor.
-- Then click the Refresh button on the top right of the map grid.
-- Finally select "Re-Download All Previews"
+Voici quelques astuces, lors de la navigation sur la grille de cartes vous pouvez double-cliquer sur une carte existante pour commencer à l'éditer.
 
-If you've made it this far then you should now have a basic understanding of mapping and world design in Intersect! Moving forward we will cover more advanced mapping concepts and start talking about the other game editors. If you're looking for specific information use the navigation on the left to skip to different sections!
+Il y a un bouton capture d'écran en haut à gauche![Capture Ecran](https://www.ascensiongamedev.com/resources/filehost/93dff71784b1de7a15f9fb548c692259.png), ce bouton vous permettra de prendre une capture haute résolution de votre monde entier. avertissement, cela peut prendre du temps pour les mondes les plus grand!
+
+Si votre grille de carte montre des cartes sans rendu OU que votre grille de cartes/capture d'écran contient des éléments visuels (effet de lumière, brouillards, etc) que vous ne voulez pas:
+- Ajustez vos réglages visuels en utilisant le menu **Vue** en haut à gauche de votre éditeur.
+- Puis cliquez sur le bouton de rafrâchissement en haut à droite de votre grille de cartes.
+- Finalement sélectionnez "Re-Télécharger Tous les Aperçus"
+
+Si vous êtes arrivés aussi loin vous devriez avoir une compréhension basique du mapping et de la conception d'un monde dans Intersect! En continuant plus loin nous couvrirons des concepts avancés de mapping et nous commencerons à parler des autres éditeurs de jeu. Si vous cherchez une information spécifique utilisez la navigation à droite pour vous rendre dans différentes sections!
