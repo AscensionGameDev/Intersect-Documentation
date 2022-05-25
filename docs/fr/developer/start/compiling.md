@@ -1,29 +1,29 @@
-# Compiling
-The first step before making changes to the source code is getting it to compile. Intersect relies on dozens of external libraries and tools (ie MonoGame, Newtonsoft Json.Net, etc) and our project is designed to fetch those dependencies automatically from Nuget.
+# Compilation
+La première étape avant de faire des changements du code source est de le compiler. Intersect est relié à des dizaines de librairies externes et d'outils (ie MonoGame, Newtonsoft Json.Net, etc) et notre projet est construit pour aller chercher automatiquement ces dépendances à partir de Nuget.
 
-In order to get started open the Intersect.sln file in the Intersect-Engine folder. The solution should open in Visual Studio 2019.
+Pour commencer ouvrez le fichier Intersect.sln dans le dossier Intersect-Engine. La réponse devrait être ouverte dans Visual Studio 2019.
 
-![solution](https://www.ascensiongamedev.com/resources/filehost/bb694eabb570f22d541f87d1db2fc68f.png)
+![réponse](https://www.ascensiongamedev.com/resources/filehost/bb694eabb570f22d541f87d1db2fc68f.png)
 
-In most cases all you should have to do is hit Build -> Build Solution at the top of your Visual Studio window and it will fetch all the dependencies for you automatically.
+Dans la plupart des cas tout ce que vous aurez à faire c'est de taper Build -> Build Solution en haut de votre fenêtre Visual Studio et il ira chercher toutes les dépendances automatiquement pour vous.
 
-![building](https://www.ascensiongamedev.com/resources/filehost/c1c27a3366987a9279610e40667eecf0.png)
+![construction](https://www.ascensiongamedev.com/resources/filehost/c1c27a3366987a9279610e40667eecf0.png)
 
-Your first build will probably fail with errors seen below. This is due to the project downloading the dependencies during a build that a successful build depends on.
+Votre première construction se finira sûrement avec des erreurs vues ci-dessous. Ceci est dû au programme qui télécharge les dépendances pendant une construction dont dépend une construction réussie.
 
-![errors](https://www.ascensiongamedev.com/resources/filehost/3ddd530d599409f7a8a69a510fa3ab70.png)
+![erreurs](https://www.ascensiongamedev.com/resources/filehost/3ddd530d599409f7a8a69a510fa3ab70.png)
 
-If you experience the errors above just click Build > Clean Solution and then Build -> Build Solution again. If that doesn't work try restarting visual studio.
+Si vous rencontrez une des erreurs ci-dessus cliquez juste sur Build > Clean Solution and then Build -> Build Solution again. Si ça ne fonctionne pas essayez de redémarrer visual studio.
 
-![clean](https://www.ascensiongamedev.com/resources/filehost/068c7b0d67e8fa94d998f8b2151f98a1.png)
+![nettoyer](https://www.ascensiongamedev.com/resources/filehost/068c7b0d67e8fa94d998f8b2151f98a1.png)
 
-Visual Studio will notify you of a successful build in the bottom left corner of your ide.
+Visual Studio vous notifiera de la réussite d'une construction dans le coin inférieur gauche de votre ide.
 
-![success](https://www.ascensiongamedev.com/resources/filehost/cfbb467b54914238dcadcde9383f342f.png)
+![réussite](https://www.ascensiongamedev.com/resources/filehost/cfbb467b54914238dcadcde9383f342f.png)
 
-The compiled version of Intersect can be found in your Intersect-Engine/build directory. There will be a lot of xml files along side the executables but you should only really care about the .exe and .pdb files for the Client, Editor, and Server for now.
+La version compilée d'Intersect peut être trouvée dans votre annuaire Intersect-Engine/build. Il ya aura beaucoup de fichiers xml à côté des exécutables mais vous devriez seulement vous préoccuper des fichiers .exe et .pdb pour le Client, l'Editeur et le Serveur pour l'instant.
 
-![output](https://www.ascensiongamedev.com/resources/filehost/5c0070679608ae4d663de3bc34c4527b.png)
+![production](https://www.ascensiongamedev.com/resources/filehost/5c0070679608ae4d663de3bc34c4527b.png)
 
 
-** Please note, if you want to run your client or editor using the debugger you will need to [download and place the appropriate assets](https://github.com/AscensionGameDev/Intersect-Assets) in the /build/debug/client and /build/debug/editor directories. **
+** Veuillez noter que si vous voulez faire fonctionner votre client ou votre éditeur en utilisant le debugger vous devrez [télécharger et inclure les actifs appropriés](https://github.com/AscensionGameDev/Intersect-Assets) dans les annuaires /build/debug/client and /build/debug/editor. **
