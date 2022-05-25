@@ -1,29 +1,29 @@
-# Pulling Updates from the Official Repo
-Once you have your own GitHub repo you will have to manually pull updates at your discretion.
+# Extraction de Mise à Jour depuis le Repo Officiel
+Une fois que vous avez votre propre repo GitHub vous devrez extraire manuellement les mises à jour à votre convenance.
 
-Start by going to GitHub.com and browsing to your personal Intersect repo. Click on the Pull Requests tab and then the New Pull Request button.
+Commencez par vous rendre sur GitHub.com et naviguez jusqu'à votre repo Intersect personnel. Cliquez sur l'étiquette Requête d'Extraction et ensuite pressez le bouton de Nouvelle Requête d'Extraction.
 
 ![repo](https://www.ascensiongamedev.com/resources/filehost/c2325ab7d146e6c14c8ee0b8fd55126e.png)
 
-When configuring a pull request notice the direction of the arrow. This time we want to pull from the official Ascension Game Dev repo into your personal repo.
+Quand vous configurez une requête d'extraction prenez garde à la direction de la flêche. Cette fois nous voulons extraire du repo officiel Ascension Game Dev dans votre repo personnel.
 
 ![compare](https://www.ascensiongamedev.com/resources/filehost/dc60b081a0dd64cecca6039487ca959b.png)
 
-Select which branch you'd like to update (Master or Development) and then click Create Pull Request.
+Sélectionnez quelle branche vous désirez mettre à jour (Master ou Development) et cliquez sur Créer Requête d'Extraction.
 
 ![branches](https://www.ascensiongamedev.com/resources/filehost/2d8a6049391654cbcc1053a70b70fbdb.png)
 
-You'll be given the option to give the pull request a title and description, since we're only updating your branches it doesn't matter too much. Once ready click Create Pull Request again.
+Il vous sera proposé l'option de donner à la requête d'extraction un titre et une description, étant donné que nous mettons à jour uniquement vos branches cela importe peu. Une fois prêt cliquez sur Créer Requête d'Extraction à nouveau.
 
 ![openpr](https://www.ascensiongamedev.com/resources/filehost/18224901e5a893e5ba501e823b005efb.png)
 
-Go ahead and try to merge the pull request by clicking the merge button.
+Essayez de fusionner la requête d'extraction en cliquant sur le bouton d'extraction.
 
 ![merge](https://www.ascensiongamedev.com/resources/filehost/5133efdbc9b8ae2ef1b44c29e40b49e3.png)
 
-Depending on what changes you've made to your branches you might run into merge conflicts. Click [here](./developer/modify/conflicts.md) for more information about merge conflicts and how to solve them.
+En fonction des changements que vous avez effectués sur votre branche vous rencontrerez sûrement des conflits de fusion. Cliquez [ici](./developer/modify/conflicts.md) pour plus d'informations sur les conflits de fusion et comment les résoudre.
 
-After merging be sure to pull the changes in your GitHub Desktop app. (You might have to fetch first!)
+Après la fusion, assurez vous d'extraire les changements dans votre application Bureau GitHub. (Vous aurez besoin d'aller les chercher d'abord!)
 
 ![pull](https://www.ascensiongamedev.com/resources/filehost/cfb1dc1b3d9c6cb5aef42d20eff0a3ed.png)
 
