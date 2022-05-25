@@ -1,26 +1,26 @@
-# Players
+# Joueurs
 
-## List Players
+## Liste Joueurs
 
-Retrieves characters from the server along with their ids and stored information.
+Renvoie les personnages du serveur avec leur id et les informations stockées.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Query Parameters**
+**Paramêtres de Requête**
 
-| Name  | Type | Description | Required | Default |
+| Nom   | Type | Description | Requis | Par Défaut |
 | ----- | ---- |------------ | -------- | ------- |
-| page | int  | Offset of players as a page number | :heavy_minus_sign: | 0 |
-| pageSize | int  | Number of players per page | :heavy_minus_sign: | 5 |
-| limit | int  | Limit of how many players are returned | :heavy_minus_sign: | `pageSize` |
+| page | int  | Décalage des joueurs en numéro de page | :heavy_minus_sign: | 0 |
+| pageSize | int  | Nombre de joueurs par page | :heavy_minus_sign: | 5 |
+| limit | int  | Limite du nombre de joueurs renvoyés | :heavy_minus_sign: | `pageSize` |
 
-**Example**
+**Exemple**
 
 ```http
 GET /api/v1/players?page=1&pageSize=5
@@ -28,7 +28,7 @@ GET /api/v1/players?page=1&pageSize=5
 
 ---
 
-### Response
+### Réponse
 
 ```http
 Status Code: 200 OK
@@ -51,35 +51,35 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-## Rank Players
+## Rang Joueurs
 
-Retrieves characters from the server along with their ids and stored information, ranked by their `Level` and `Exp`.
+Renvoie les personnages du serveur avec leur id et les informations stockées, classés par leur `Niveau` et leur `Expérience`.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/rank`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Query Parameters**
+**Paramêtres de Requête**
 
-| Name  | Type | Description | Required | Default |
+| Nom   | Type | Description | Requis | Par Défaut |
 | ----- | ---- |------------ | -------- | ------- |
-| page | int  | Offset of players as a page number | :heavy_minus_sign: | 0 |
-| pageSize | int  | Number of players per page | :heavy_minus_sign: | 5 |
-| limit | int  | Limit of how many players are returned | :heavy_minus_sign: | `pageSize` |
-| sortDirection | `Ascending`/`Descending`  | direction to sort in | :heavy_minus_sign: | `Descending` |
+| page | int  | Décalage des joueurs en numéro de page | :heavy_minus_sign: | 0 |
+| pageSize | int  | Nombre de joueurs par page | :heavy_minus_sign: | 5 |
+| limit | int  | Limite du nombre de joueurs renvoyés | :heavy_minus_sign: | `pageSize` |
+| sortDirection | `Ascending`/`Descending`  | direction de classement | :heavy_minus_sign: | `Descending` |
 
-**Example**
+**Exemple**
 
 ```http
 GET /api/v1/players/rank?page=1&pageSize=5&sortDirection=Descending
 ```
 ---
 
-### Response
+### Réponse
 
 ```http
 Status Code: 200 OK
@@ -102,28 +102,28 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-## List Online Players
+## Liste Joueurs En Ligne
 
-Retrieves online characters from the server along with their ids and stored information.
+Renvoie les personnages en ligne du serveur avec leur id et les informations stockées.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/online`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| page | int  | Page of characters to retrieve. | :heavy_minus_sign: |
-| count | int  | Number of characters to retrieve. | :heavy_minus_sign: |
+| page | int  | Page de personnages à récupérer. | :heavy_minus_sign: |
+| count | int  | Nombre de personnages à récupérer. | :heavy_minus_sign: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -134,13 +134,13 @@ Retrieves online characters from the server along with their ids and stored info
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -153,33 +153,33 @@ Retrieves online characters from the server along with their ids and stored info
 }
 ```
 
-Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/dad4454a2bcf16e95bd579906ce9ea92.json).
+L'exemple est tronqué, pour une réponse complète [cliquez ici](https://www.ascensiongamedev.com/resources/filehost/dad4454a2bcf16e95bd579906ce9ea92.json).
 
-## Online Count
+## Comptes En Ligne
 
-Retrieves the number of online players.
+Renvoie le nombre de joueurs en ligne.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/online/count`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -187,33 +187,33 @@ Retrieves the number of online players.
 }
 ```
 
-## Lookup
+## Recherche
 
-Retrieves online characters from the server along with their ids and stored information.
+Renvoie les personnages en ligne du serveur avec leur id et les informations stockées.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -228,35 +228,35 @@ Retrieves online characters from the server along with their ids and stored info
 }
 ```
 
-Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/f9cbcdebafc4acff54318cb314871fba.json).
+L'exemple est tronqué, pour une réponse complète [cliquez ici](https://www.ascensiongamedev.com/resources/filehost/f9cbcdebafc4acff54318cb314871fba.json).
 
-## Get Variables
+## Obtention Variables
 
-Retrieves player variables and values for a character.
+Renvoie les variables joueurs et leur valeur pour un personnage.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]/variables`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 [
@@ -271,33 +271,33 @@ Retrieves player variables and values for a character.
 ]
 ```
 
-## Get Variable
+## Obtention Variable
 
-Retrieves player variable and value for a given player variable id.
+Renvoie une variable joueur et sa valeur pour l'id d'une variable joueur donnée.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]/variables/[variableId]`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -306,33 +306,33 @@ Retrieves player variable and value for a given player variable id.
 }
 ```
 
-## Get Variable Value
+## Obtention Valeur Variable
 
 Retrieves player variable value for a given player variable id.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]/variables/[variableId]/value`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -340,29 +340,29 @@ Retrieves player variable value for a given player variable id.
 }
 ```
 
-## Set Variable Value
+## Définir Valeur Variable
 
-Sets the value of a player's variable.
+Défini la valeur d'une variable joueur.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]/variables/[variableId]`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| value | int or boolean | Variable's desired value. | :heavy_check_mark: |
+| value | int or boolean | Valeur désirée de la variable. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -370,13 +370,13 @@ Sets the value of a player's variable.
 }
 ```
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -385,33 +385,33 @@ Sets the value of a player's variable.
 }
 ```
 
-## Get Items
+## Obtention Objets
 
-Retrieves inventory and bank items for a player.
+Renvoie les objets d'inventaire et de banque pour un joueur.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]/items`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -450,33 +450,33 @@ Retrieves inventory and bank items for a player.
 }
 ```
 
-## Get Inventory Items
+## Obtenir Objets Inventaire
 
-Retrieves inventory items for a player.
+Renvoie les objets de l'inventaire pour un joueur.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]/items/inventory`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 [
@@ -497,33 +497,33 @@ Retrieves inventory items for a player.
 ]
 ```
 
-## Get Bank Items
+## Obtenir Objets Banque
 
-Retrieves bank items for a player.
+Renvoie les objets en banque pour un joueur.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]/items/bank`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 [
@@ -544,31 +544,31 @@ Retrieves bank items for a player.
 ]
 ```
 
-## Get Bag
+## Obtenir Informations Sac
 
-Retrieves stored items and metadata of a bag.
+Renvoie objets stockées et données meta d'un sac.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/bag/[bagId]`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -600,31 +600,31 @@ Retrieves stored items and metadata of a bag.
 }
 ```
 
-## Give Item
+## Donner Objet
 
-Gives a player an item with the option to overflow to the players bank if their inventory is full.
+Donne un objet à un joueur avec l'option de transposer à la banque de joueur si leur inventaire est plein.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]/items/give`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| itemid | guid | Id of the item to give. | :heavy_check_mark: |
-| quantity | int | Quantity of the item to give. | :heavy_check_mark: |
-| bankoverflow | boolean | Whether or not to try to overflow to bank if the inventory is too full. | :heavy_minus_sign: |
+| itemid | guid | Id de l'objet à donner. | :heavy_check_mark: |
+| quantity | int | Quantité de l'objet à donner. | :heavy_check_mark: |
+| bankoverflow | boolean | si il faut tenter ou non de transposer à la banque si l'inventaire est plein. | :heavy_minus_sign: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -634,13 +634,13 @@ Gives a player an item with the option to overflow to the players bank if their 
 }
 ```
 
-### Response
+### Réponse
 
-**Condition** : When item(s) given successfully, returns player count of the items in both inventory and bank.
+**Condition** : Quand l'(les) objet(s) sont donnés avec succès, retourne le compte des objets de l'inventaire et de la banque du joueur.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -653,30 +653,30 @@ Gives a player an item with the option to overflow to the players bank if their 
 }
 ```
 
-## Take Item
+## Prendre Objet
 
-Takes an item from the players inventory.
+Prend un objet de l'inventaire d'un joueur.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]/items/take`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| itemid | guid | Id of the item to take. | :heavy_check_mark: |
-| quantity | int | Quantity of the item to take. | :heavy_check_mark: |
+| itemid | guid | Id de l'objet à prendre. | :heavy_check_mark: |
+| quantity | int | Quantité de l'objet à prendre. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -685,13 +685,13 @@ Takes an item from the players inventory.
 }
 ```
 
-### Response
+### Réponse
 
-**Condition** : Item(s) taken successfully, returns the item id and quantity taken.
+**Condition** : Quand l'(les) objet(s) est(sont) pris avec succès, retourne l'id de l'objet et la quantité prise.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -700,33 +700,33 @@ Takes an item from the players inventory.
 }
 ```
 
-## Get Spells
+## Obtenir Sorts
 
-Retrieves a player's known spells.
+Renvoie les sorts connus d'un joueur.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]/spells`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `GET`
+**Méthode** : `GET`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `NA`
+**Type Contenus** : `NA`
 
-**Body** : `NA`
+**Corps** : `NA`
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 [
@@ -737,29 +737,29 @@ Retrieves a player's known spells.
 ]
 ```
 
-## Teach Spell
+## Enseigner Sort
 
-Teaches a player a spell.
+Enseigne un sort à un joueur.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]/spells/teach`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Oui`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| spellid | guid | Id of the spell to teach. | :heavy_check_mark: |
+| spellid | guid | Id du sort à enseigner. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -767,13 +767,13 @@ Teaches a player a spell.
 }
 ```
 
-### Response
+### Réponse
 
-**Condition** : Spell was taught successfully.
+**Condition** : Le sort a été enseigné avec succès.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -781,29 +781,29 @@ Teaches a player a spell.
 }
 ```
 
-## Forget Spell
+## Oublier sort
 
-Makes a player forget a spell.
+Fait oublier un sort à un joueur.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players/[lookupKey]/spells/forget`
 
-**Lookup Key:** `Character's name or id.`
+**Clé de Recherche:** `Character's name or id.`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `application/json`
+**Type Contenu** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| spellid | guid | Id of the spell to forget. | :heavy_check_mark: |
+| spellid | guid | Id du sort à oublier. | :heavy_check_mark: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -811,13 +811,13 @@ Makes a player forget a spell.
 }
 ```
 
-### Response
+### Réponse
 
-**Condition** : Spell was forgotten successfully.
+**Condition** : Le sort a été oublié avec succès.
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -825,28 +825,28 @@ Makes a player forget a spell.
 }
 ```
 
-## List Players (`POST`) (_Deprecated_)
+## Liste Joueurs (`POST`) (_Obsolète_)
 
-Retrieves characters from the server along with their ids and stored information.
+Renvoie les personnages du serveur avec leur id et les informations stockées.
 
-### Request
+### Requête
 
 **URL** : `/api/v1/players`
 
-**Method** : `POST`
+**Méthode** : `POST`
 
-**Authorization Required** : `Yes`
+**Autorisation Requise** : `Yes`
 
-**Content Type** : `application/json`
+**Type Contenus** : `application/json`
 
-**Body**
+**Corps**
 
-| Name  | Type | Description | Required |
+| Nom   | Type | Description | Requis |
 | ----- | ---- |------------ | -------- |
-| page | int  | Page of characters to retrieve. | :heavy_minus_sign: |
-| count | int  | Number of characters to retrieve. | :heavy_minus_sign: |
+| page | int  | Page de personnages à récupérer. | :heavy_minus_sign: |
+| count | int  | Nombre de personnages à récupérer. | :heavy_minus_sign: |
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -857,13 +857,13 @@ Retrieves characters from the server along with their ids and stored information
 
 ---
 
-### Response
+### Réponse
 
 **Condition** : NA
 
 **Code** : `200 OK`
 
-**Example**
+**Exemple**
 
 ```json
 {
@@ -880,4 +880,4 @@ Retrieves characters from the server along with their ids and stored information
 }
 ```
 
-Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/42c3988911273609ceeeb424f13f7ac2.json).
+L'exemple est tronqué, pour une réponse complète [cliquez ici](https://www.ascensiongamedev.com/resources/filehost/42c3988911273609ceeeb424f13f7ac2.json).

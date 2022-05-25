@@ -1,126 +1,126 @@
-# Server `config.json`
+# Serveur `config.json`
 
-| Name                          | Type    | Example     | Description                   |
+| Nom                           | Type    | Exemple     | Description                   |
 |-------------------------------|---------|-------------|-------------------------------|
-| GameName                      | string  | Intersect   | Configures the name of the game this server hosts. |
-| ServerPort                    | number  | 5400        | Configures the port this server will listen on. |
-| AdminOnly                     | boolean | false       | Configures whether this server will only allow staff members (Access 1 or above) to log in. |
-| BlockClientRegistrations      | boolean | false       | Configures whether this server will block new user registrations or not. |
-| AnimatedSprites               | array   | ["bat.png", "beholder.png"] | Configures which sprites should always be animating, even when standing still. |
-| EventWatchdogKillThreshold    | number  | 5000        | Configures the amount of commands an event may execute within a single server tick before the server considers it to be looping infinitely and kills it off. |
-| OpenPortChecker               | boolean | true        | Configures whether the server will check if it can be reached from the internet each time it starts. |
-| ValidPasswordResetTimeMinutes | number  | 30          | Configures the time (in minutes) a password reset link is valid for. |
+| GameName                      | string  | Intersect   | Configure le nom du jeu que ce serveur héberge. |
+| ServerPort                    | number  | 5400        | Configure le port sur lequel ce serveur sera en écoute. |
+| AdminOnly                     | boolean | false       | Configure si ce serveur autorisera seulement les membres du staff (Accès 1 ou plus) à se connecter. |
+| BlockClientRegistrations      | boolean | false       | Configure si ce serveur bloquera l'enregistrement de nouveaux utilisateurs ou non. |
+| AnimatedSprites               | array   | ["bat.png", "beholder.png"] | Configure quels sprites devraient toujours être animés, même s'ils restent sur place. |
+| EventWatchdogKillThreshold    | number  | 5000        | Configure le nombre de commandes qu'un évènement peut exécuter en un seul tick serveur avant que le serveur considère qu'il boucle à l'infini et l'arrête. |
+| OpenPortChecker               | boolean | true        | Configure si le serveur vérifie si il est bien connecté à internet chaque fois qu'il démarre. |
+| ValidPasswordResetTimeMinutes | number  | 30          | Configure le temps (en minutes) qu'un lien de réinitialisation du mot de passe est valide. |
 | UPnP                          | boolean | true        |                               |
-| Chat                          | See [Chat](#chat)                                     |
-| Combat                        | See [Combat](#combat)                                 |
-| Equipment                     | See [Equipment](./configuration/equipment)             |
-| GameDatabase                  | See [Server Database](./configuration/server-database) |
-| PlayerDatabase                | See [Server Database](./configuration/server-database) |
-| Map                           | See [Map](#map)                                       |
-| NPC                           | See [NPC](#npc)                                       |
-| Loot                          | see [Loot](#loot)                                     |
-| Player                        | See [Player](#player)                                 |
-| Party                         | See [Party](#party)                                   |
-| Security                      | See [Server Security](./configuration/server-security) |
-| SmtpSettings                  | See [SMTP](#smtp)                                     |
-| Sprites                       | See [Sprites](#sprites)                               |
-| Passability                   | See [Passability](#passability)                       |
+| Chat                          | Voir [Chat](#chat)                                     |
+| Combat                        | Voir [Combat](#combat)                                 |
+| Equipment                     | Voir [Equipement](./configuration/equipment)             |
+| GameDatabase                  | Voir [Base de Données Serveur](./configuration/server-database) |
+| PlayerDatabase                | Voir [Base de Données Serveur](./configuration/server-database) |
+| Map                           | Voir [Carte](#map)                                       |
+| NPC                           | Voir [PNJ](#npc)                                       |
+| Loot                          | Voir [Loot](#loot)                                     |
+| Player                        | Voir [Joueur](#player)                                 |
+| Party                         | Voir [Equipe](#party)                                   |
+| Security                      | Voir [Sécurité Serveur](./configuration/server-security) |
+| SmtpSettings                  | Voir [SMTP](#smtp)                                     |
+| Sprites                       | Voir [Sprites](#sprites)                               |
+| Passability                   | Voir [Passabilité](#passability)                       |
 
 
 ## Chat
-| Name                              | Type    | Example     | Description |
+| Nom                               | Type    | Exemple     | Description |
 |-----------------------------------|---------|-------------|-------------|
-| MaxChatLength                     | number  | 120         | Configures the maximum allowed length of each chat message. |
-| MinIntervalBetweenChats           | number  | 400         | Configures the minimum interval (in milliseconds) required between each chat message. |
+| MaxChatLength                     | number  | 120         | Configure la longueur maximum autorisée pour chaque message chat. |
+| MinIntervalBetweenChats           | number  | 400         | Configure l'intervale minimum (en millisecondes) requis entre chaque message chat. |
 
 ## Combat
-| Name                              | Type    | Example     | Description |
+| Nom                               | Type    | Exemple     | Description |
 |-----------------------------------|---------|-------------|-------------|
-| BlockingSlow                      | number  | 30          | Configures the percentage by which to slow a player down while they are blocking. |
-| CombatTime                        | number  | 10000       | Configures the amount of time it takes for a player to no longer be considered in combat after their last attack or the last time they took damage. |
-| MaxAttackRate                     | number  | 200         | Configures the maximum rate at which an entity could potentially attack. |
-| MaxDashSpeed                      | number  | 200         | Configures the maximum speed at which a player can dash. |
-| MinAttackRate                     | number  | 500         | Configures the minimum rate at which an entity could potentially attack. |
-| RegenTime                         | number  | 3000        | Configures the time (in milliseconds) between each Vital regeneration tick. |
+| BlockingSlow                      | number  | 30          | Configure le pourcentage auquel ralentir un joueur lorsqu'il sont bloqués. |
+| CombatTime                        | number  | 10000       | Configure combien de temps cela prend à un joueur pour ne plus être considéré en combat après leur dernière attaque ou la dernière fois qu'ils ont reçu des dégâts. |
+| MaxAttackRate                     | number  | 200         | Configure le taux maximum auquel une entité peut potentiellement attaquer. |
+| MaxDashSpeed                      | number  | 200         | Configure la vitesse maximum à laquelle un personnage peut charger. |
+| MinAttackRate                     | number  | 500         | Configure le taux minimum auquel une entité peut potentiellement attaquer. |
+| RegenTime                         | number  | 3000        | Configure le temps (en millisecondes) entre chaque tick de régénération vitale. |
 
-## Map
-| Name                              | Type    | Example     | Description |
+## Carte
+| Nom                               | Type    | Exemple     | Description |
 |-----------------------------------|---------|-------------|-------------|
-| GameBorderStyle                   | number  | 0           | Configures the method in which the camera is handled by the engine. **0** will use a seamless world and try to avoid showing areas with no maps in them. **1** will use a seamless world and not constrain the camera to the map view, centering the camera on the player at all times. **2** will not use a seamless world and show each map on its own as you traverse the world. |
-| Height                            | number  | 26          | Configures the amount of tiles available on the Y (vertical) axis on each map. **WARNING:** This value can not be changed on the fly and will require you to delete your existing maps when changed! |
-| ItemAttributeRespawnTime          | number  | 15000       | Configures the amount of time (in milliseconds) it takes for items spawned through the Item Map Attribute to respawn. |
-| TileHeight                        | number  | 32          | Configures the amount of pixels each map tile is on the Y (vertical) axis. |
-| TileWidth                         | number  | 32          | Configures the amount of pixels each map tile is on the X (horizontal) axis. |
-| Width                             | number  | 32          | Configures the amount of tiles available on the X (horizontal) axis on each map. **WARNING:** This value can not be changed on the fly and will require you to delete your existing maps when changed! |
-| ZDimensionVisible                 | boolean | false       | Configures whether the Z-Dimension is enabled. See [Z-Dimensions](./advanced/zdimensions) |
+| GameBorderStyle                   | number  | 0           | Configure la méthode avec laquelle la caméra est gérée par le moteur. **0** utilisera un monde transparent et tentera d'éviter de montrer des zones sans carte à l'intérieur. **1** utilisera un monde transparent et ne contraindra pas la caméra à une vue de la carte, la caméra est centrée en permanence sur le joueur. **2** n'utilisera pas un monde transparent et montrera chaque carte de lui-même quand vous traverserez le monde. |
+| Height                            | number  | 26          | Configure le nombre de cases disponibles sur l'axe Y (vertical) sur chaque carte. **AVERTISSEMENT:** Cette valeur ne peut pas être changée à la volée et requerra que vous effaciez toutes vos cartes une fois le changement effectué! |
+| ItemAttributeRespawnTime          | number  | 15000       | Configure le temps (en millisecondes) que ça prend à un objet engendré par l'attribut de l'objet carte pour réapparaître. |
+| TileHeight                        | number  | 32          | Configure le nombre de pixels que chaque case de carte fait sur l'axe Y (vertical). |
+| TileWidth                         | number  | 32          | Configure tle nombre de pixels que chaque case de carte fait sur l'axe X (horizontal). |
+| Width                             | number  | 32          | Configure le nombre de cases disponibles sur l'axe X (horizontal) sur chaque carte. **AVERTISSEMENT:** Cette valeur ne peut pas être changée à la volée et requerra que vous effaciez toutes vos cartes une fois le changement effectué! |
+| ZDimensionVisible                 | boolean | false       | Configure si la Dimension-Z est active. Voir [Dimensions-Z](./advanced/zdimensions) |
 
-## NPC
-| Name                              | Type    | Example     | Description |
+## PNJ
+| Nom                               | Type    | Exemple     | Description |
 |-----------------------------------|---------|-------------|-------------|
-| AllowResetRadius                  | boolean | false       | Configures whether NPCs will reset after being moved away from the initial point they were first attacked on or started attacking. |
-| AllowNewResetLocationBeforeFinish | boolean | false       | Configures whether NPCs are allowed to obtain a new center point from which they have been pulled before having fully reset to the last. |
-| ResetVitalsAndStatusses           | boolean | false       | Configures whether NPCs will fully reset their vitals and statuses when resetting. |
-| ResetRadius                       | number  | 8           | Configures the range (in tiles) in which an NPC is allowed to move from the initial point they were first attacked on or started attacking before resetting.  |
+| AllowResetRadius                  | boolean | false       | Configure si les PNJs se réinitialiseront si ils ont bougés du point initial où ils ont attaqué ou ont été attaqués. |
+| AllowNewResetLocationBeforeFinish | boolean | false       | Configure si les PNJs sont autorisés à obtenir un nouveau point de centrage à partir de celui d'où il a été tiré avant d'être complètement réinitialisé au précédent. |
+| ResetVitalsAndStatusses           | boolean | false       | Configure si les PNJs réinitialiseront leur état et leur statut à la réinitialisation. |
+| ResetRadius                       | number  | 8           | Configure la portée (en cases) à laquelle un PNJ est autorisé à bouger à partir du point initial où ils ont attaqués ou ont été attaqués avant la réinitialisation.  |
 
 ## Loot
-| Name                              | Type    | Example     | Description |
+| Nom                               | Type    | Exemple     | Description |
 |-----------------------------------|---------|-------------|-------------|
-| ItemDespawnTime                   | number  | 15000       | Configures the time (in milliseconds) which it takes for loot and dropped items to despawn from the map. |
-| ItemOwnershipTime                 | number  | 5000        | Configures the time (in milliseconds) which it takes for a dropped item to no longer be owned by the player that caused it to drop through either killing NPCs and Players or dropping it on the map. |
-| ShowUnownedItems                  | boolean | false       | Configures whether everyone on the map can see items that they are not currently the owner of and not eligible to pick up. |
-| ConsolidateMapDrops               | boolean | true        | Configures whether dropping multiple of an item to the map at once consolidates the drops into a single object on the map, or whether it drops multiple on the map at once. |
+| ItemDespawnTime                   | number  | 15000       | Configure le temps (en millisecondes) que ça prend au loot ou aux objets abandonnés au sol pour disparaître de la carte. |
+| ItemOwnershipTime                 | number  | 5000        | Configure le temps (en millisecondes) que ça prend à un objet abndonné au sol pour ne plus être lié au propriétaire qui à causé son apparition en tuant des PNJs ou des joueurs ou en l'abandonnant au sol sur la carte. |
+| ShowUnownedItems                  | boolean | false       | Configure si tout le monde sur la carte peut voir les objets dont ils ne sont pas propriétaires actuellement et ne sont pas éligibles pour le rammasser. |
+| ConsolidateMapDrops               | boolean | true        | Configure si obtenir plusieurs exemplaires d'un objet sur la map à la fois consolide les exemplaires en un seul objet sur la carte ou si les exemplaires sont droppés individuellement sur la carte. |
 
-## Player
-| Name                              | Type    | Example     | Description |
+## Joueur
+| Nom                               | Type    | Exemple     | Description |
 |-----------------------------------|---------|-------------|-------------|
-| ItemDropChance                    | number  | 0           | Configures the chance (percentage) of when a player will drop items upon death. |
-| MaxBank                           | number  | 100         | Configures the maximum amount of bank slots each player has. |
-| MaxCharacters                     | number  | 1           | Configures the maximum amount of characters each user account can have. |
-| MaxInventory                      | number  | 35          | Configures the maximum amount of inventory slots each player has. |
-| MaxLevel                          | number  | 100         | Configures the maximum level a player character can reach. |
-| MaxSpells                         | number  | 35          | Configures the maximum amount of spell slots each player has. |
-| MaxStat                           | number  | 255         | Configures the maximum amount of stat points any given stat can have. |
-| RequestTimeout                    | number  | 300000      | Configures the maximum amount of time (in milliseconds) a trade request can be left pending before cancelling it automatically. |
-| TradeRange                        | number  | 6           | Configures the range (in tiles) in which the player and the player they are attempting to trade with must reside within. |
+| ItemDropChance                    | number  | 0           | Configure les chances (pourcentage) qu'un joueur à de dropper des objets lors d'une élimination. |
+| MaxBank                           | number  | 100         | Configure le nombre maximum d'emplacements de banque que chaque joueur possède. |
+| MaxCharacters                     | number  | 1           | Configure le nombre maximum de personnages chaque compte utilisateur peut posséder. |
+| MaxInventory                      | number  | 35          | Configure le nombre maximum d'emplacements d'inventaire chaque joueur possède. |
+| MaxLevel                          | number  | 100         | Configure le niveau maximum qu'un joueur peut atteindre. |
+| MaxSpells                         | number  | 35          | Configure le nombre maximum d'emplacements de sorts que chaque joueur possède. |
+| MaxStat                           | number  | 255         | Configure le nombre maximum de points de statistique que l'on peut attribuer à chaque statistique. |
+| RequestTimeout                    | number  | 300000      | Configure le maximum de temps (en millisecondes) une requête d'échange peut être laissée en attente avant d'être annulée automatiquement. |
+| TradeRange                        | number  | 6           | Configure la portée maximum (en cases) a laquelle un joueur et le joueur avec lequel il essaie d'échanger doivent être. |
 
-## Party
-| Name                              | Type    | Example     | Description |
+## Equipe
+| Nom                               | Type    | Exemple     | Description |
 |-----------------------------------|---------|-------------|-------------|
-| MaximumMembers                    | number  | 4           | Configures the maximum amount of party members allowed. |
-| InviteRange                       | number  | 40          | Configures the range (in tiles) in which the player and the player they are attempting to invite to a party must reside within. |
-| SharedXpRange                     | number  | 40          | Configures the range (in tiles) in which party members have to be for them to share experience on kills. |
-| NpcDeathCommonEventStartRange     | number  | 0           | Configures the range (in tiles) in which party members have to be for them to trigger Common Events from deaths caused by other party members. |
+| MaximumMembers                    | number  | 4           | Configure le nombre maximum de membres autorisés dans une équipe. |
+| InviteRange                       | number  | 40          | Configure la portée maximum (en cases) a laquelle un joueur et le joueur qu'il essaie d'inviter dans l'équipe doivent être. |
+| SharedXpRange                     | number  | 40          | Configure la portée maximum (en cases) a laquelle les membres d'équipe doivent être pour partager l'expérience ou les éliminations. |
+| NpcDeathCommonEventStartRange     | number  | 0           | Configure la portée maximum (en cases) a laquelle les membres d'équipe doivent être pour déclencher un évènement commun d'élimination causé par un autre membre de l'équipe. |
 
 ## SMTP
-### See [Passwords](./advanced/passwords)
-| Name                              | Type    | Example     | Description |
+### Voir [Mots de passe](./advanced/passwords)
+| Nom                               | Type    | Exemple     | Description |
 |-----------------------------------|---------|-------------|-------------|
-| FromAddress                       | string  | noreply@ascenciongamedev.com | Configures the address from which the server will send e-mails. |
-| FromName                          | string  | Ascencion Game Development | Configures the name the server will use to identify itself as within e-mails. |
-| Host                              | string  | smtp.myprovider.com | Configures the SMTP server the server will use to send out e-mails. |
-| Port                              | number  | 587         | Configures the port number used to communicate with the SMTP server. |
-| UseSsl                            | boolean | true        | Configures whether the SMTP server uses SSL. |
-| Username                          | string  | myusername@myprovider.com | Configures the username used to authenticate with the SMTP server. |
-| Password                          | string  | mypassword | Configures the password used to authenticate with the SMTP server. |
+| FromAddress                       | string  | noreply@ascenciongamedev.com | Configure l'addresse de laquelle le serveur enverra des emails. |
+| FromName                          | string  | Ascencion Game Development | Configure le nom que le serveur utilisera pour s'identifier dans les emails. |
+| Host                              | string  | smtp.myprovider.com | Configure le serveur SMTP que le serveur utilisera pour envoyer des emails. |
+| Port                              | number  | 587         | Configure le numéro de port utilisé pour communiquer avec le serveur SMTP. |
+| UseSsl                            | boolean | true        | Configure si le serveur SMTP utilise le SSL. |
+| Username                          | string  | myusername@myprovider.com | Configure le nom d'utilisateur utiliser pour authentification avec le serveur SMTP. |
+| Password                          | string  | mypassword | Configure le mot de passe utilisé pour authentification avec le serveur SMTP. |
 
 ## Sprites
-| Name                              | Type    | Example     | Description |
+| Nom                               | Type    | Exemple     | Description |
 |-----------------------------------|---------|-------------|-------------|
-| IdleFrames                        | number  | 4           | Configures the amount of frames the idle animation sprite contains. |
-| NormalFrames                      | number  | 4           | Configures the amount of frames the normal animation sprite contains. |
-| CastFrames                        | number  | 4           | Configures the amount of frames the cast animation sprite contains. |
-| AttackFrames                      | number  | 4           | Configures the amount of frames the attack animation sprite contains. |
-| ShootFrames                       | number  | 4           | Configures the amount of frames the shoot attack animation sprite contains. |
-| WeaponFrames                      | number  | 4           | Configures the amount of frames the weapon attack animation sprite contains. |
-| NormalSheetAttackFrame            | number  | 3           | Configures the animation from from the normal sheet to use for attacking when no animation sprites are available. |
-| NormalSheetDashFrame              | number  | 1           | Configures the animation from from the normal sheet to use for dashing when no animation sprites are available. |
-| MovingFrameDuration               | number  | 200         | Configures the time (in milliseconds) each movement frame is displayed before moving on to the next. |
-| IdleFrameDuration                 | number  | 200         | Configures the time (in milliseconds) each idle frame is displayed before moving on to the next. |
-| TimeBeforeIdle                    | number  | 4000        | Configures the time (in milliseconds) it takes after a player's last action before the idle animation starts playing when available. |
+| IdleFrames                        | number  | 4           | Configure le nombre de frames que le sprite d'animation d'inactivité contient. |
+| NormalFrames                      | number  | 4           | Configure le nombre de frames que le sprite d'animation normal contient. |
+| CastFrames                        | number  | 4           | Configure le nombre de frames que le sprite d'animation d'incantation contient. |
+| AttackFrames                      | number  | 4           | Configure le nombre de frames que le sprite d'animation d'attaque contient. |
+| ShootFrames                       | number  | 4           | Configure le nombre de frames que le sprite d'animation de tir contient. |
+| WeaponFrames                      | number  | 4           | Configure le nombre de frames que le sprite d'animation d'attaque d'arme contient. |
+| NormalSheetAttackFrame            | number  | 3           | Configure l'animation à utiliser à partir du journal normal pour l'attaque quand aucun sprite d'animation n'est disponible. |
+| NormalSheetDashFrame              | number  | 1           | Configure l'animation à utiliser à partir du journal normal pour la charge quand aucun sprite d'animation n'est disponible. |
+| MovingFrameDuration               | number  | 200         | Configure le temps (en millisecondes) que chaque frame de mouvement est affichée avant de passer à la suivante. |
+| IdleFrameDuration                 | number  | 200         | Configure le temps (en millisecondes) que chaque frame d'animation d'inactivité est affichée avant de passer à la suivante. |
+| TimeBeforeIdle                    | number  | 4000        | Configure le temps (en millisecondes) que ça prend après la dernière action du joueur avant que l'animation d'inactivité ne débute quand elle est disponible. |
 
-## Passability
-| Name                              | Type    | Example     | Description |
+## Passabilité
+| Nom                               | Type    | Exemple     | Description |
 |-----------------------------------|---------|-------------|-------------|
-| Arena                             | boolean | false       | Configures whether players can walk through eachother in Arena map types. |
-| Normal                            | boolean | false       | Configures whether players can walk through eachother in Normal map types. |
-| Safe                              | boolean | true        | Configures whether players can walk through eachother in Safe map types. |
+| Arena                             | boolean | false       | Configure si les joueurs peuvent se traverser en marchant sur les cartes de type arêne. |
+| Normal                            | boolean | false       | Configure si les joueurs peuvent se traverser en marchant sur les cartes de type normal. |
+| Safe                              | boolean | true        | Configure si les joueurs peuvent se traverser en marchant sur les cartes de type sauf. |
