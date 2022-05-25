@@ -1,56 +1,56 @@
-# Merging
-At this point you should have created a branch, made some code modifications, committed those changes, tested that they work (hopefully), and are now ready to bring those changes back into one of your main branches (ie Master or Development).
+# Fusionner
+Arrivé à ce point vous devriez avoir créé une branche, fait quelques modifications de code, engagé ces changements, testé si ils fonctionnent (avec un peu de chance), et vous êtes maintenant prêt à ramener ces changements dans une de vos branches principales (dans Master ou Development).
 
-We call this process merging, and it is very simple, you can do it via the GitHub Desktop app or via the GitHub Pull Request interface online. I will show both methods below.
+Nous appelons ce processus fusion et c'est vraiment simple, vous pouvez le faire via l'application Bureau GitHub ou via l'interface en ligne de Demande d'Extraction GitHub. Je vais vous montrer ces deux méthode ci-dessous.
 
-## Merging with GitHub Desktop
-Before you try to merge it is important to make sure you switch to branch to the branch you are wanting to merge into. (Not the branch you have been working on!) Select that branch in the GitHub Desktop app.
+## Fusionner avec le Bureau GitHub
+Avant d'essayer de fusionner il est important que vous soyez passé sur la branche dans laquelle vous voulez effectuer la fusion. (Pas la branche où vous avez travaillé!) Sélectionnez cette branche dans l'application de Bureau GitHub.
 
-![selectbase](https://www.ascensiongamedev.com/resources/filehost/193129a8fb4dd77d1eec2c29b2583df3.png)
+![sélectionbase](https://www.ascensiongamedev.com/resources/filehost/193129a8fb4dd77d1eec2c29b2583df3.png)
 
-Next, click on Branch at the top and then Merge into Current Branch
+Ensuite, cliquez sur la branche en haut et fusionner dans la Branche Actuelle
 
-![startmerge](https://www.ascensiongamedev.com/resources/filehost/d22e9b7cbf41e3073217ad58a6597002.png)
+![commencerfusion](https://www.ascensiongamedev.com/resources/filehost/d22e9b7cbf41e3073217ad58a6597002.png)
 
-Select the branch that you've been working off of that you want to merge from. Then hit the merge button.
+Sélectionnez la branche sur laquelle vous avez travaillé et de laquelle vous voulez fusionner. Puis appuyez sur le bouton de fusion.
 
-![selectbranch](https://www.ascensiongamedev.com/resources/filehost/cbb1f1c35f427e1025d4036032203f27.png)
+![sélectionnerbranche](https://www.ascensiongamedev.com/resources/filehost/cbb1f1c35f427e1025d4036032203f27.png)
 
-GitHub Desktop will show that the merge was successful.
+Le Bureau GitHub vous montrera que la fusion à été effectuée avec succès.
 
-![successfulmerge](https://www.ascensiongamedev.com/resources/filehost/55464e25d7bc626f09db13a49229474b.png)
+![fusionréussie](https://www.ascensiongamedev.com/resources/filehost/55464e25d7bc626f09db13a49229474b.png)
 
-Finally push your branch with the merged changes to GitHub.
+Finalement mettez en avant votre branche avec les changements de fusion sur GitHub.
 
-![push](https://www.ascensiongamedev.com/resources/filehost/d068a4be230a1b9dd5160cdec27854dd.png)
+![miseenavant](https://www.ascensiongamedev.com/resources/filehost/d068a4be230a1b9dd5160cdec27854dd.png)
 
-## Merging with GitHub Online
-Alternatively you can use the GitHub online pull request interface to handle merging of branches. If you have branch protection setup, or if you want merges into your primary branches to require reviews then the above method using the desktop app won't work. Furthermore, the pull request interface is what you use in order to bring official updates into your private repo and submit code you've written to contribute to the official repo should you ever chose to do so. Creating pull requests are super easy.
+## Fusionner avec GitHub En Ligne
+Autrement vous pouvez utiliser l'interface de requête d'extraction en ligne de GitHub pour gérer la fusion de branches. Si vous avez un réglage de protection de branche, ou si vous voulez fusionner dans votre branche principale pour permettre les revues alors la méthode ci-dessus utilisant l'application de bureau ne fonctionnera pas. En oûtre, l'interface de requête d'extraction est ce qui doit être utilisé pour apporter des mises à jour officielles dans votre repo privé et soumettre du code que vous avez écris pour contribuer au repo officiel vous devriez toujours choisir de faire ainsi. Créer une requête d'extraction est très simple.
 
-Start by going to GitHub.com and browsing to your personal Intersect repo. Click on the Pull Requests tab and then the New Pull Request button.
+Commencer par vous rendre sur GitHub.com et naviguez jusqu'à votre repo personnel. Cliquez sur l'étiquette Requête Extraction puis sur le bouton Nouvelle Requête d'Extraction.
 
 ![repo](https://www.ascensiongamedev.com/resources/filehost/c2325ab7d146e6c14c8ee0b8fd55126e.png)
 
-We are merging code within our own repos right now so now make sure the base repository and head repository dropdowns point to your repo.
+Nous fusionnons le code à l'intérieur de nos propres repos actuellement donc assurez vous que le dépot de base et le dépôt de tête pointent vers votre repo.
 
-![selectbase](https://www.ascensiongamedev.com/resources/filehost/233438cb778047f05be3123090091b91.png)
+![sélectionnerbase](https://www.ascensiongamedev.com/resources/filehost/233438cb778047f05be3123090091b91.png)
 
-See the arrow? That means the selection on the right will be merged into the selection on the left. We want to merge the branch we were working on back into the original branch we started with. I am merging my cleaning-up branch back into development.
+Vous voyez la flêche? Cela signifie que la sélection de droite sera fusionner vers la sélection de gauche. Nous voulons fusionner la branche sur laquelle nous travaillons dans la branche originelle avec laquelle nous avons commencé. Je fusionne ma branche propre dans développement.
 
-![selectbranches](https://www.ascensiongamedev.com/resources/filehost/bd156fb7af53cdaf8d85815adc61a3d7.png)
+![sélectionnerbranches](https://www.ascensiongamedev.com/resources/filehost/bd156fb7af53cdaf8d85815adc61a3d7.png)
 
-Once the repos and branches are selected GitHub should tell you that you are able to merge and you can create the pull request.
+une fois que les repos et les branches sont sélectionnées GitHub devrait vous signifier qu'il vous est possible de fusionner et vous pouvez créer une requête d'extraction.
 
-![createpr](https://www.ascensiongamedev.com/resources/filehost/ec2f2f1b96426a6cf319204c69d0d11f.png)
+![créerpr](https://www.ascensiongamedev.com/resources/filehost/ec2f2f1b96426a6cf319204c69d0d11f.png)
 
-GitHub will take you to one final screen where you can provide a title and description for your pull request. Once ready you can hit the Create Pull Request button one last time.
+GitHub vous amènera à un écran final où vous pourrez fournir un titre et une description pour votre demande d'extraction. Une fois prêt vous devrez appuyer sur le bouton Créer Requête d'Extraction une dernière fois.
 
 ![submitpr](https://www.ascensiongamedev.com/resources/filehost/aad119f6989a96665daabbd920183621.png)
 
-With the pull request opened you can finally click the Merge pull request button to merge your code.
+Avec la Requête d'Extraction ouverte vous pouvez finalement cliquer sur le bouton Fusionner requête d'extraction pour fusionner votre code.
 
-![merge](https://www.ascensiongamedev.com/resources/filehost/906da6cf3ccd473900c5b30c6768266f.png)
+![fusion](https://www.ascensiongamedev.com/resources/filehost/906da6cf3ccd473900c5b30c6768266f.png)
 
-Once the merge is complete you can finally return to the GitHub Desktop app, select your base branch, and pull the changes from GitHub. (You might have to fetch first!)
+une fois la fusion complète vous pouvez finalement retourner à l'application de Bureau GitHub Desktop, sélectionner votre branche de base, et extraire les changements de GitHub. (Vous aurez peut être besoin de les chercher d'abord!)
 
-![pull](https://www.ascensiongamedev.com/resources/filehost/cfb1dc1b3d9c6cb5aef42d20eff0a3ed.png)
+![extraction](https://www.ascensiongamedev.com/resources/filehost/cfb1dc1b3d9c6cb5aef42d20eff0a3ed.png)
