@@ -6,15 +6,22 @@
     "url": "https://github.com/AscensionGameDev/Intersect-Documentation.git"
   },
   "devDependencies": {
-    "@shigma/stringify-object": "^3.3.0",
-    "@vuepress/plugin-back-to-top": "^1.9.7",
-    "@vuepress/plugin-nprogress": "^1.9.7",
-    "vuepress": "^1.9.7",
-    "vuepress-plugin-dehydrate": "^1.1.5",
-    "vuepress-theme-default-prefers-color-scheme": "^2.0.0"
+    "@shigma/stringify-object": "3.3.0",
+    "@vuepress/plugin-back-to-top": "1.9.7",
+    "@vuepress/plugin-nprogress": "1.9.7",
+    "vuepress": "1.9.7",
+    "vuepress-plugin-dehydrate": "1.1.5",
+    "vuepress-theme-default-prefers-color-scheme": "2.0.0"
   },
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": "16.17.0"
+  },
+  "volta": {
+    "node": "16.17.0"
   }
 }
