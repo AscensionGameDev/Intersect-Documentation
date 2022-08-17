@@ -27,14 +27,10 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.1.1
         with:
-          node-version: 14.x
+          node-version: 16.17.0
 
       - name: Install Dependencies
-        uses: Borales/actions-yarn@v3.0.0
-        with:
-          cmd: install
+        run: yarn install
 
       - name: Build Documentation
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: build
+        run: yarn build
