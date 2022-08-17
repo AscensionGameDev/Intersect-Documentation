@@ -1,15 +1,15 @@
-# Dealing with Conflicts
-A merge conflict occurs when you try to merge branches where the same lines or sections of code have been modified. Unfortunately in these instances Git requires a little help to sort things out.
+# Abordando conflictos
+Un conflicto de _fusión_ sucede cuando se intenta combinar ramas en las que se han modificado las mismas líneas o secciones de código. Desafortunadamente, en estos casos Git requiere un poco de ayuda para resolver las cosas.
 
-Whether you're working with pull requests or trying to merge branches locally you're eventually going to have to deal with a merge conflict.
+Tanto si trabajas con pull requests como si intentas fusionar ramas localmente, en algún momento tendrás que enfrentarte a un conflicto de fusión.
 
-In the event of a merge conflict Git will alert you of the files needing attention. Within each file you will find conflict blocks.
+En el caso de un conflicto de fusión, Git te alertará de los archivos que necesitan atención. Dentro de cada archivo encontrarás bloques conflictivos.
 
 ![conflictalert](https://www.ascensiongamedev.com/resources/filehost/46efc74d34c68ffe9a424b898f365cb8.png)
 
-Here is a conflict I dealt with recently.
+He aquí un conflicto con el que tuve que lidiar recientemente.
 
-The original code looked like the following:
+El código original tenía el siguiente aspecto:
 
 ```cs
 //Player Out of Range Or Offline
@@ -19,9 +19,9 @@ PacketSender.SendChatMsg(
 );
 ```
 
-We were working on refactoring our code in two different branches at the same time. In one branch we were replacing usages of client with player. In another branch we were refactoring colors.
+Estábamos trabajando en la refactorización de nuestro código en dos ramas diferentes al mismo tiempo. En una rama estábamos sustituyendo los usos de cliente por los de jugador. En otra rama estábamos refactorizando los colores.
 
-Upon merging the second branch I was left to solve the following conflict:
+Al fusionar la segunda rama, me quedaba por resolver el siguiente conflicto:
 
 ```cs
 //Player Out of Range Or Offline
@@ -36,9 +36,9 @@ PacketSender.SendChatMsg(
 );
 ```
 
-The ======= separates the code from both branches. In the top half we changed client to player. In the bottom half we changed CustomColors.NoTarget to CustomColors.Combat.NoTarget.
+El ======= separa el código de ambas ramas. En la mitad superior cambiamos cliente por jugador. En la mitad inferior cambiamos CustomColors.NoTarget por CustomColors.Combat.NoTarget.
 
-In some instances you will decide to keep the code above the divider in others you will keep the code below the divider. In this case we want to keep code from both so I manually updated the file to end up with the resulting code.
+En algunos casos decidirás mantener el código por encima del divisor, en otros mantendrás el código por debajo del divisor. En este caso queremos mantener el código de ambos, así que actualicé manualmente el archivo para terminar con el código resultante.
 
 ```cs
 //Player Out of Range Or Offline
@@ -48,8 +48,8 @@ PacketSender.SendChatMsg(
 );
 ```
 
-After resolving the conflcit, removing the conflict markers, and saving the file GitHub allowed the merge to proceed as planned.
+Tras resolver el conflicto, eliminar los marcadores de conflicto y guardar el archivo, GitHub permitió que la fusión se realizara según lo previsto.
 
 ![mergeable](https://www.ascensiongamedev.com/resources/filehost/98036a1ec4daea465a9526987444d8c7.png)
 
-In your programming endeavors you will eventually come across merge conflicts. Although annoying they are generally easy to work out. Hopefully this example and explaination helps in dealing with that process.
+En tus actividades de programación eventualmente acabarás encontrando conflictos de fusión. Aunque son molestos, generalmente son fáciles de resolver. Esperamos que este ejemplo y su explicación te ayuden a lidiar con este proceso.
