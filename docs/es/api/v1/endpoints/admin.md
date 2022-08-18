@@ -230,7 +230,7 @@ Warps a player to a specified map while retaining their current coordinates.
 }
 ```
 
-## Teletransportarse a un jugador a coordenadas específicas
+## Teletransportar un jugador a una ubicación específica
 
 Warps a player to specified coordinates on a specified map.
 
