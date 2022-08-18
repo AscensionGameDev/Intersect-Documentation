@@ -1,10 +1,10 @@
 # Acciones de Administrador
 
-**Todos los comandos abajo que usan el punto de conexión /users/ requiren el rol "Users.Query".**
+**Los siguientes comandos usan el punto de conexión /users/ y requiren el rol "Users.Query".**
 
 ## Banear
 
-Banea una cuenta.
+Prohíbe el acceso y utilización de una cuenta.
 
 ### Petición
 
@@ -22,12 +22,12 @@ Banea una cuenta.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| duration | int  | Number of days for the ban to last. | :heavy_check_mark: |
-| reason | string  | Reason for the ban. | :heavy_minus_sign: |
-| moderator | string  | Name of the banner. | :heavy_minus_sign: |
-| ip | boolean  | Whether o not to ban the users most recent ip address. | :heavy_minus_sign: |
+| Name      | Type    | Description                                             | Required           |
+|-----------|---------|---------------------------------------------------------|--------------------|
+| duration  | int     | Number of days for the ban to last.                     | :heavy_check_mark: |
+| reason    | string  | Reason for the ban.                                     | :heavy_minus_sign: |
+| moderator | string  | Name of the banner.                                     | :heavy_minus_sign: |
+| ip        | boolean | Whether or not to ban the users most recent ip address. | :heavy_minus_sign: |
 
 **Ejemplo**
 
@@ -76,12 +76,12 @@ Mutea una cuenta.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| duration | int  | Number of days for the mute to last. | :heavy_check_mark: |
-| reason | string  | Reason for the mute. | :heavy_minus_sign: |
-| moderator | string  | Name of the muter. | :heavy_minus_sign: |
-| ip | boolean  | Whether o not to mute the users most recent ip address. | :heavy_minus_sign: |
+| Name      | Type    | Description                                              | Required           |
+|-----------|---------|----------------------------------------------------------|--------------------|
+| duration  | int     | Number of days for the mute to last.                     | :heavy_check_mark: |
+| reason    | string  | Reason for the mute.                                     | :heavy_minus_sign: |
+| moderator | string  | Name of the muter.                                       | :heavy_minus_sign: |
+| ip        | boolean | Whether or not to mute the users most recent ip address. | :heavy_minus_sign: |
 
 **Ejemplo**
 
