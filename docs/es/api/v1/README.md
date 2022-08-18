@@ -1,6 +1,6 @@
-# Introduction
+# Introducción
 
-Intersect's server provides an optional REST API.   Our API allows third party environments such as websites, forums, and custom user applications to communicate with your game server. 
+Intersect's server provides an optional REST API.   Our API allows third party environments such as websites, forums, and custom user applications to communicate with your game server.
 
 We provide the ability to view live server info such as online players, validate passwords (for external login forms), send items to players, edit event variables, and more!
 

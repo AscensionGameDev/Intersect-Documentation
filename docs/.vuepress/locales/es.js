@@ -31,7 +31,7 @@ module.exports = {
         sidebar: {
             '/api/v1/': [
                 {
-                    title: '<<todo:es>>API Information',
+                    title: 'Información de la API',
                     collapsable: true,
                     children: [
                         '/api/v1/',
@@ -41,7 +41,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Endpoints',
+                    title: 'Puntos de Conexión',
                     collapsable: true,
                     children: [
                         '/api/v1/endpoints/authentication.md',
@@ -56,7 +56,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Advanced',
+                    title: 'Avanzado',
                     collapsable: true,
                     children: [
                         '/api/v1/advanced/securing.md',
@@ -65,7 +65,7 @@ module.exports = {
             ],
             '/developer/': [
                 {
-                    title: '<<todo:es>>Introduction',
+                    title: 'Introducción',
                     collapsable: true,
                     children: [
                         '/developer/',
@@ -116,7 +116,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Advanced',
+                    title: 'Avanzado',
                     collapsable: true,
                     children: [
                         '/developer/advanced/database.md',
@@ -127,7 +127,7 @@ module.exports = {
             ],
             '/': [
                 {
-                    title: '<<todo:es>>Project Information',
+                    title: 'Información del Proyecto',
                     collapsable: true,
                     children: [
                         '/',
@@ -145,7 +145,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Editors',
+                    title: 'Editores',
                     collapsable: true,
                     children: [
                         '/design/animations.md',
@@ -167,7 +167,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Events',
+                    title: 'Eventos',
                     collapsable: true,
                     children: [
                         '/events/introduction.md',
@@ -178,7 +178,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Configuration',
+                    title: 'Configuración',
                     collapsable: true,
                     children: [
                         '/configuration/client-editor.md',
@@ -187,7 +187,7 @@ module.exports = {
                         '/configuration/server-security.md',
                         '/configuration/equipment.md',
                         {
-                            title: '<<todo:es>>Advanced',
+                            title: 'Avanzado',
                             collapsable: true,
                             children: [
                                 '/advanced/assets.md',
@@ -213,7 +213,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Upgrading',
+                    title: 'Actualizando',
                     collapsable: true,
                     children: [
                         '/upgrade/upgrading.md',
