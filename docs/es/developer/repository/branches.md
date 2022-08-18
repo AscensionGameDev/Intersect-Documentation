@@ -1,38 +1,36 @@
-# Branches
+# Ramas
 
-The repository has multiple branches in order to separate multiple versions, and allow fixing bugs in both the older releases and the current release, rather than only putting bug fixes in the new release and telling people to "wait" until it reaches its release date.
+El repositorio tiene múltiples ramas para separar varias versiones y permitir la corrección de errores tanto en las versiones más antiguas como en la actual, en lugar de poner sólo las correcciones de errores en la nueva versión y decirle a la gente que "espere" hasta que llegue su fecha de lanzamiento.
 
-Currently, Intersect has 3 separate branches for different versions.
+Actualmente, Intersect tiene 2 ramas separadas para diferentes versiones.
 
-|        Name | Current Version | Notes                                                                         |
-|------------:|-----------------|-------------------------------------------------------------------------------|
-|      master | 0.6.1           | Receives only critical bug fixes, intended to not change often.               |
-|  prerelease | 0.6.2           | Receives all bug fixes with relatively minor solutions, as well as features with minor impact to the code. <br/><br/> **Only critical database schema changes are made in this branch.** |
-| development | 0.7.0           | Volatile. Can have major changes to both the codebase and database structure. |
+|      Nombre | Versión Actual | Notas                                                                                                                                      |
+|------------:|----------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+|        main | 0.7.1          | Recibe todas las correcciones de errores con soluciones relativamente menores, así como características con un impacto menor en el código. |
+| development | 0.8.0          | Volátil. Puede tener cambios importantes tanto en el código base como en la estructura de la base de datos.                                |
 
-When new versions are released, the **prerelease** branch replaces the **master** branch.
+Cuando se publican nuevas versiones, la rama **development** sustituye a la rama **main**.
 
-Milestone releases (Beta 6, Beta 7, Beta 8, 1.0) will remain in **development** until they are ready for the general public to begin user testing them.
+Las versiones de prueba (Beta 8+ actualmente) permanecerán en **desarrollo** hasta que estén listas para que el público en general comience a probarlas.
 
-When milestone releases reach **prerelease**, **development** will become the next milestone release. **prerelease** is essentially an active "release candidate" branch.
+Cuando las versiones de prueba se actualizan a **main** (listo para público general), la rama **development** se convierte en la siguiente versión de prueba.
 
-When milestone releases reach **master**, **prerelease** will be the next patch version, and **development** will be the next milestone release.
+Para las betas, las versiones de lanzamiento seguirán este patrón: `0.<número de la beta>.<número del parche>`.
 
-For betas, milestone release versions will follow this pattern: `0.<beta number>.<patch number>`.
-For releases post-1.0, milestone version numbers will fit this pattern: `<major>.<minor>.<patch/hotfix>`.
+Para las versiones posteriores a la 1.0, los números de versión se ajustarán a este patrón: `<principal>.<menor>.<parche/corrección>`.
 
-You can create and switch branches using the GitHub desktop app by clicking the branch dropdown:
+Puedes crear y cambiar de rama utilizando la aplicación de escritorio de GitHub haciendo click en el menu desplegable de la rama:
 
 ![GitHub desktop app branch dropdown](https://www.ascensiongamedev.com/resources/filehost/7cb30357ee4dd2a55bc24b20eeb63d78.png)
 
-When branching off you should always fetch the latest changes for that branch. When fixing a bug, you create a new branch based on the lowest version number branch that is affected by the bug.
+Cuando se bifurca una rama, siempre procura obtener los últimos cambios de ella (_fetch_). Cuando se corrige un error, se crea una nueva rama basada en la rama con el número de versión más bajo que se ve afectada por el error.
 
-One benefit to the commit and branching system is that we can merge changes into master, and then merge master's changes into prerelease, and then prerelease into development. That way we are not independently fixing the bug on each branch from scratch, and instead we only have to resolve conflicts due to changes between the versions if there are any.
+Una de las ventajas del sistema de commits y ramificaciones es que podemos fusionar los cambios en la rama _main_, y luego fusionar dichos cambios de _main_ en la rama _development_. De esta manera no estamos arreglando independientemente el error en cada rama desde cero, y en su lugar sólo tenemos que resolver el o los conflictos relacionados con los cambios entre versiones en caso de existir alguno.
 
-Branches to fix bugs are usually named with the following convention:
+Las ramas para corregir errores suelen nombrarse con la siguiente convención:
 
 `fix-<issue number>-<bug name>`
 
-Branches to implement new features are usually named with the following convention:
+Las ramas para implementar nuevas características suelen nombrarse con la siguiente convención:
 
-`feature-<issue number>-<feature name>`
+`feat-<issue number>-<feature name>`
