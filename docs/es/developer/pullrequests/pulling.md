@@ -1,7 +1,7 @@
-# Extracción de actualizaciones desde el repositorio oficial.
-Una vez que tengas tu propio repositorio en GitHub, podrás extraer manualmente las actualizaciones desde el repositorio oficial.
+# Extraer actualizaciones desde el repo oficial.
+Una vez que tengas tu propio repositorio en GitHub, podrás extraer manualmente las actualizaciones desde el repositorio oficial de Intersect.
 
-Empieza por ir a GitHub.com e ingresa a tu repositorio personal de Intersect. Luego dirigete a la pestaña de _Solicitudes de extracción_ ("Pull Requests") y presiona el botón _Nueva solicitud de extracción_ ("New Pull Request").
+Dirigete a GitHub.com e ingresa a tu repositorio personal de Intersect. Luego dirigete a la pestaña de _Solicitudes de extracción_ ("Pull Requests") y presiona el botón _Nueva solicitud de extracción_ ("New Pull Request").
 
 ![repo](https://www.ascensiongamedev.com/resources/filehost/c2325ab7d146e6c14c8ee0b8fd55126e.png)
 

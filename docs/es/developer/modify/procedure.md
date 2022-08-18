@@ -1,30 +1,31 @@
-# Basic Procedure
+# Procedimiento básico
 
-## Pull First
-Get into the habit of fetching and pulling first! Fetching and pulling is the process of grabbing any code changes that exist on GitHub that are not currently in your local repository. If you continue to branch and make changes to outdated or potentially modified code you may end up finding yourself in a world where you are dealing with unneccessary code conflcits down the line. You can fetch and pull by clicking the fetch button in the GitHub desktop app.
+## Inicia con Fetching y Pulling
+¡Habitúate a hacer _Fetching_ y _Pulling_ al inicio de tus jornadas de programación! _Fetching_ y _Pulling_ son los procesos de obtener cualquier cambio de código que exista remotamente en GitHub y que no esté actualmente en tu repositorio local. Si continúas bifurcando y haciendo cambios en código obsoleto o potencialmente modificado, puedes acabar encontrándote en un mundo en el que estás lidiando con conflictos de código innecesarios más adelante. Puedes hacer _Fetch_ y _Pull_ haciendo click en el botón de fetch en la aplicación para escritorio de GitHub.
 
 ![pull](https://www.ascensiongamedev.com/resources/filehost/1dc5c0a9a7bc2d5392be4e628e8d24f3.png)
 
-## Create a Branch
-When working on an edit or new feature you should always create a new branch first.
+## Crea una rama
+Cuando trabajes en una edición o en una nueva función, se recomienda siempre crear primero una nueva rama.
 
 ![newbranch](https://www.ascensiongamedev.com/resources/filehost/d06fcf06ae13fb387bd1f3bd1947972c.png)
 
-Give your branch a name, and select an existing branch to work from.
+Asigna un nombre a tu rama y selecciona una rama existente desde la cual se basará la nueva.
+
 ![newbranch1](https://www.ascensiongamedev.com/resources/filehost/0d992fa719eabdfdc3a3f6801b0242a8.png)
 
-## Commit Often
-Go ahead and open Intersect.sln and start coding! Try to split your code changes into small groups. After each step you should commit your changes to your branch.
+## Realiza commits frecuentemente
+¡Abre el archivo Intersect.sln y empieza a programar! Intenta dividir tus cambios de código en pequeños grupos. Después de cada cambio importante, procura realizar commits en tu rama.
 
-It's good practice to commit early, and commit often. Smaller commits are easier for developers to review and they are easier for Git to automatically merge without conflicts later.
+Es una buena práctica realizar commits de forma frecuente y temprano en las mañanas acompañado un buen café. Los commits más pequeños son más fáciles de revisar para los desarrolladores y son más fáciles de fusionar automáticamente por Git sin conflictos posteriores.
 
-After you've made code changes open the GitHub Desktop app again, make sure you're on the correct branch, select the files you'd like to commit, provide a short description, and click commit to branch.
+Una vez que hayas realizado los cambios en el código, abre de nuevo la aplicación de escritorio de GitHub, asegúrate de que estás en la rama correcta, selecciona los archivos que quieres utilizar para tu commit, proporciona una breve descripción y haz click en `Commit to <nombre de tu rama>`.
 
 ![committing](https://www.ascensiongamedev.com/resources/filehost/322122ce55210b93109fdf532f3d0875.png)
 
-Repeat to the coding and committing process until you've accomplished your task and are ready to merge your changes back into the base branch.
+Repite el proceso de programar y realizar commits hasta que hayas completado tu objetivo final y estés listo para fusionar tus cambios en la rama base.
 
-## Finally Push
-Nothing is worse than losing work. By pushing you send your modifications to GitHub so they are safely stored in the cloud. If you're working within a team pushing allows them to receive your code changes so they are less likely to run into conflicts by working on outdated code.
+## Finalmente: sube tus cambios
+No hay nada peor que perder el trabajo realizado en tu precioso código. Al hacer _push_ envías tus modificaciones a GitHub para que se almacenen de forma segura en la nube. Si trabajas con un equipo, el push les permite recibir tus cambios en el código, por lo que es menos probable que se encuentren con conflictos por trabajar en un código obsoleto.
 
 ![push](https://www.ascensiongamedev.com/resources/filehost/11c94b0feb31e78d70699df140d6d1a6.png)

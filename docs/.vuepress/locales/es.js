@@ -91,7 +91,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Making Changes',
+                    title: 'Realizar cambios',
                     collapsable: true,
                     children: [
                         '/developer/modify/procedure.md',
@@ -100,14 +100,14 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Staying up to Date',
+                    title: 'Mantenerse al día',
                     collapsable: true,
                     children: [
                         '/developer/pullrequests/pulling.md',
                     ]
                 },
                 {
-                    title: '<<todo:es>>Sharing & Contributions',
+                    title: 'Compartir y contribuir',
                     collapsable: true,
                     children: [
                         '/developer/sharing/creating.md',
@@ -135,7 +135,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Getting Started',
+                    title: 'Primeros pasos',
                     collapsable: true,
                     children: [
                         '/start/download.md',
@@ -203,7 +203,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Deployment',
+                    title: 'Despliegue',
                     collapsable: true,
                     children: [
                         '/deploy/forwarding.md',

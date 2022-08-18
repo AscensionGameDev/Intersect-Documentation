@@ -1,7 +1,7 @@
-# Abordando conflictos
+# Conflictos de fusión
 Un conflicto de _fusión_ sucede cuando se intenta combinar ramas en las que se han modificado las mismas líneas o secciones de código. Desafortunadamente, en estos casos Git requiere un poco de ayuda para resolver las cosas.
 
-Tanto si trabajas con pull requests como si intentas fusionar ramas localmente, en algún momento tendrás que enfrentarte a un conflicto de fusión.
+Tanto si trabajas con solicitudes de extracción o fusiones de ramas locales, en algún momento tendrás que enfrentarte a un conflicto de fusión.
 
 En el caso de un conflicto de fusión, Git te alertará de los archivos que necesitan atención. Dentro de cada archivo encontrarás bloques conflictivos.
 
@@ -48,8 +48,8 @@ PacketSender.SendChatMsg(
 );
 ```
 
-Tras resolver el conflicto, eliminar los marcadores de conflicto y guardar el archivo, GitHub permitió que la fusión se realizara según lo previsto.
+Tras resolver el conflicto, eliminar los marcadores de conflicto y guardar el archivo, GitHub permitió y realizó la fusión según lo previsto.
 
 ![mergeable](https://www.ascensiongamedev.com/resources/filehost/98036a1ec4daea465a9526987444d8c7.png)
 
-En tus actividades de programación eventualmente acabarás encontrando conflictos de fusión. Aunque son molestos, generalmente son fáciles de resolver. Esperamos que este ejemplo y su explicación te ayuden a lidiar con este proceso.
+En tus actividades de programación eventualmente acabarás encontrando conflictos de fusión. Aunque son molestos, generalmente son fáciles de resolver. Esperamos que este ejemplo y su explicación te ayuden a lidiar con este proceso en el futuro.
