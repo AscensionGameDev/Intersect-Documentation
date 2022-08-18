@@ -1,8 +1,8 @@
-# Users
+# Usuarios
 
 **These endpoints require the [users.query API Role](https://docs.freemmorpgmaker.com/api/v1/introduction/roles.html#users-query)!**
 
-## List Users
+## Listar Usuarios
 
 Retrieves users from the server along with their ids and stored information.
 
@@ -577,7 +577,7 @@ Change a users password without their existing password. **Requires the Users.Ma
 * Password must be a SHA256 hash of the plaintext password, with hyphens removed.
 * You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
 
-## List Users (`POST`) (_Deprecated_)
+## Listar Usuarios (`POST`) (_Deprecated_)
 
 Retrieves users from the server along with their ids and stored information.
 
