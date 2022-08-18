@@ -1,12 +1,12 @@
-# Repository
+# Repositorio
 
-Repository documentation is segmented into the following pages:
+La documentación del repositorio está segmentada en las siguientes páginas:
 
-## [Branches](./branches.md)
-Documentation of how the branches are organized and what versions they correspond to.
+## [Ramas](./branches.md)
+Documentación sobre cómo están organizadas las ramas y a qué versiones corresponden.
 
-## [File Structure](./file-structure.md)
-Documentation of the top-level organizational structure of the repository, detailing files and project folders.
+## [Estructura de archivos](./file-structure.md)
+Documentación de la estructura organizativa del repositorio, detallando los archivos y las carpetas principales del proyecto.
 
-## [Forking](./forking.md)
-Documentation of how forking works, what its purpose is, and how we use it.
+## [Bifurcación](./forking.md)
+Documentación sobre cómo funciona la bifurcación, cuál es su propósito y cómo la utilizamos.

@@ -3,7 +3,7 @@ module.exports = {
     locale: {
         lang: 'es',
         title: 'Documentación de Intersect',
-        description: '<<todo:es>>The free, open-source, modern 2d mmorpg maker.'
+        description: 'El creador moderno de MMORPG 2D gratuito y de código abierto.'
     },
     themeConfig: {
         selectText: 'Idiomas',
@@ -72,7 +72,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Getting Started',
+                    title: 'Primeros pasos',
                     collapsable: true,
                     children: [
                         '/developer/start/vs.md',
@@ -81,7 +81,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '<<todo:es>>Repository',
+                    title: 'Repositorio',
                     collapsable: true,
                     children: [
                         '/developer/repository/',
