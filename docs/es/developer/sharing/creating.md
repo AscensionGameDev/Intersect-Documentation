@@ -11,7 +11,7 @@ Abre el símbolo del sistema en el directorio de tu repositorio local. Esto se p
 ![commandprompt](https://www.ascensiongamedev.com/resources/filehost/62ed0b264c03f8d3b61c17195771c044.png)
 
 
-A continuación, escribe el siguiente comando. Asegúrate de que sigues en la rama donde hiciste tus modificaciones. En el comando reemplaza la rama ``main`` si originalmente creaste la rama desde ``development``.
+A continuación, escribe el siguiente comando y asegúrate de que sigues en la rama donde hiciste tus modificaciones. En el comando sustituye ``main`` si originalmente trabajaste desde la rama ``development``.
 
 ```
 git format-patch main --stdout > patchName.patch

@@ -22,7 +22,7 @@ Si hay algún problema con tus cambios propuestos, se discutirá en la sección 
 
 
 ## Pautas de contribución
-Antes de aportar tu propuestas de código, asegúrate de revisar las siguientes pautas:
+Antes de aportar tu propuesta de código, asegúrate de revisar las siguientes pautas:
 
  - [Contributing (English)](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CONTRIBUTING.md)
  - [Code Of Conduct (English)](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CODE_OF_CONDUCT.md)
