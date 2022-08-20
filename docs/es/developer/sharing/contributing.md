@@ -1,30 +1,31 @@
-# Contributing to the Official Repo
-We highly encourage the community to help by contributing to the official Intersect repo! We are happy to review and accept bug fixes and engine enhancements that you all come up with.
+# Contribuir a la Repo oficial
+Recomendamos enfáticamente a la comunidad en general que colabore con el repositorio oficial de Intersect. Estaremos encantados de revisar y aceptar las correcciones de errores y mejoras al motor que nos propongan.
 
-Contributions must be submitted via Pull Requests on GitHub. When creating the Pull Request you will indicate that you want to pull changes from one of your branches into either the Master or Development branches of the Ascension Game Dev Intersect Engine repository.
 
-Pull requests are expected to be based off the most recent Master or Development branches. In the following example I branched off the most recent version of Development, cleaned up some poorly written code, and pushed my changes to GitHub.
+Las contribuciones deben ser enviadas a través de solicitudes de extracción en GitHub. Al crear la solicitud de extracción, debes indicar que quieres introducir los cambios de una de tus ramas en la rama ``main`` o ``development`` de nuestro repositorio.
 
-In the GitHub PR interface I have configured the base as AscensionGameDev/Intersect-Engine:Development and selected my personal repo sniderjc/Intersect-Engine:cleaning-up-code as the branch to merge.
+Se recomienda que las solicitudes de extracción se basen en las ramas ``main`` o ``development`` más recientes. En el siguiente ejemplo, bifurqué de la versión más reciente de ``development``, limpié algo de código pobremente redactado, y subí mis cambios a GitHub.
 
-When creating pull requests please provide a descriptive tite and description if applicable. Once ready click Create Pull Request.
+En la interfaz de solicitud de extracción de GitHub he configurado la base como ``AscensionGameDev/Intersect-Engine:Development`` y he seleccionado mi repo personal ``sniderjc/Intersect-Engine:cleaning-up-code`` como la rama a fusionar.
+
+Al crear una solicitud de extracción, proporciona un título descriptivo y una descripción en caso de que sea necesario. Una vez que esté listo, haz click en ``Create Pull Request``.
 
 ![prsetup](https://www.ascensiongamedev.com/resources/filehost/f00528aa5a36b70d471c606e705ff9d4.png)
 
-Pull requests must follow the contribution guidelines below, and your edits will require review by someone on the development team before they go live.
+Las solicitudes de extracción deben seguir las pautas de contribución que se indican a continuación, y sus ediciones deberán ser revisadas por alguien del equipo de desarrollo antes de ser publicadas.
 
 ![submitted](https://www.ascensiongamedev.com/resources/filehost/2e344356516d135f9225edf094cede6d.png)
 
-If there are any issues with your changes they will be discussed in the comments section. After any neccessary changes are made we will then merge your code.
+Si hay algún problema con tus cambios propuestos, se discutirá en la sección de comentarios. Una vez realizados los cambios necesarios, fusionaremos tus cambios al repositorio oficial.
 
-Thanks for helping better Intersect for everyone!
+¡Gracias por contribuir y mejorar Intersect para todos!
 
 
-## Contribution Guidelines
-Before submitting code please review the following guidelines:
+## Pautas de contribución
+Antes de aportar tu propuestas de código, asegúrate de revisar las siguientes pautas:
 
- - [Contributing](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CONTRIBUTING.md)
- - [Code Of Conduct](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CODE_OF_CONDUCT.md)
+ - [Contributing (English)](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CONTRIBUTING.md)
+ - [Code Of Conduct (English)](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CODE_OF_CONDUCT.md)
  - Styling Rules
 
- Please note that we will only accept new features that we feel are suitable for a base engine, and that an overwhelming majority of games would utilize.
+Por favor, ten en cuenta que sólo aceptaremos nuevas características que consideremos adecuadas para el motor base, las cuales deben ser aprovechables por la gran mayoría de los juegos creados con Intersect.

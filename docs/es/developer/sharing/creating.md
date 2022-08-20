@@ -1,21 +1,24 @@
-# Creating Patches
+# Crear Parches
 
-A Git patch is a text file that contains one or more Git commits. Using GitHub you can very easily export your work into patches in order to distrbute outside of typical merging and pull requests. Using patches is the defacto method for sharing source edits on Ascension Game Dev.
+Un parche Git es un archivo de texto que contiene uno o más commits Git. Mediante GitHub puedes exportar muy fácilmente tu trabajo en parches para distribuirlo fuera de las típicas fusiones y solicitudes de extracción. El uso de parches es el método más común para compartir ediciones de código en Ascension Game Dev.
 
-The best practice is to branch off master or development, make your changes, commit, and then create the patch based off your branch.
 
-Open command prompt in your local repository directory. This can be done easily by clicking Repository -> Open In Command Prompt within GitHub Desktop.
+La mejor práctica a realizar para crear parches consiste en copiar la rama ``main`` o ``development``, hacer tus cambios en la rama copiada, realizar el commit, y luego crear el parche basado en tu rama.
+
+
+Abre el símbolo del sistema en el directorio de tu repositorio local. Esto se puede hacer fácilmente desde la aplicación de GitHub haciendo click en Repositorio -> Abrir en símbolo del sistema.
 
 ![commandprompt](https://www.ascensiongamedev.com/resources/filehost/62ed0b264c03f8d3b61c17195771c044.png)
 
-Next type in the following command. Make sure you are still on the branch where you made your modifications. In the command replace master if you originally branched off of development.
+
+A continuación, escribe el siguiente comando. Asegúrate de que sigues en la rama donde hiciste tus modificaciones. En el comando reemplaza la rama ``main`` si originalmente creaste la rama desde ``development``.
 
 ```
-git format-patch master --stdout > patchName.patch
+git format-patch main --stdout > patchName.patch
 ```
 
 ![createpatch](https://www.ascensiongamedev.com/resources/filehost/ad6434b2e74bb658b8565b6dd227d961.png)
 
-The patch file you've created can be found in the directory of your local repository.
+El archivo ``.patch`` que has creado se encontrará en el directorio de tu repositorio local.
 
-You can upload your patch to [Diffy](https://diffy.org) in order to view its contents.
+Puedes subir tu parche a [Diffy](https://diffy.org) para ver su contenido.

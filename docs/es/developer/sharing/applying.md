@@ -1,14 +1,15 @@
-# Applying Patches
+# Aplicar parches
 
-GitHub patches are very easy to apply, and they allow you to check compatibility before doing so.
+Los parches de GitHub son muy sencillos de aplicar y permiten comprobar su compatibilidad antes de proceder a ello.
 
-Please note, applying git patches modifies your engines source code. Patches can impact performance and introduce bugs into your game. Only install patches from trusted developers!
 
-Download your patch and move it to the root of your Intersect repository. Then open a command prompt window and navigate to your local Intersect repo. This can be done easily by clicking Repository -> Open In Command Prompt within GitHub Desktop.
+Ten en cuenta que aplicar parches git modifica el código fuente de Intersect, lo que puede afectar el rendimiento e introducir errores en tu juego. ¡Sólo instala parches procedentes de desarrolladores de confianza!
+
+Descarga tu parche y muévelo a la raíz de tu repositorio de Intersect. A continuación, abre una ventana de comandos y navega a tu repositorio local de Intersect. Esto se puede hacer fácilmente desde la aplicación de GitHub haciendo click en Repositorio -> Abrir en símbolo del sistema.
 
 ![commandprompt](https://www.ascensiongamedev.com/resources/filehost/62ed0b264c03f8d3b61c17195771c044.png)
 
-In order to check for compatibility enter the following command replacing the patch filename with the one you downloaded. If there are compatibility issues the patch author may need to remake the patch using your version of Intersect, or you maybe applying multiple patches that conflict and are not compatible with each other.
+Para comprobar la compatibilidad, introduce el siguiente comando (sustituyendo el nombre del parche por el que has descargado). Si hay problemas de compatibilidad, es posible que el autor del parche tenga que rehacer el parche utilizando su versión de Intersect, o tal vez estás tratando de aplicar varios parches que entran en conflicto y no son compatibles entre sí.
 
 ```
 git apply --check patchName.patch
@@ -16,7 +17,7 @@ git apply --check patchName.patch
 
 ![check](https://www.ascensiongamedev.com/resources/filehost/e3e6c8d588a49bd1ef2ebd69c67f115f.png)
 
-If no errors appear the patch is compatible, go ahead and run the following command to apply the patch. You might see some warnings, but as long as there are no errors you are good to go!
+Si no aparecen errores, quiere decir que el parche es compatible, por lo que puedes continuar y ejecutar el siguiente comando para aplicar el parche. Es posible que aparezcan algunas advertencias, pero mientras no haya errores, ¡ya puedes aplicar el parche sin miedo!
 
 ```
 git am --signoff < patchName.patch
@@ -25,7 +26,7 @@ git am --signoff < patchName.patch
 ![apply](https://www.ascensiongamedev.com/resources/filehost/7fb32c944b7147a3397c8a39e634af1f.png)
 
 
-If you need to remove a patch use the git apply -R command as shown below
+Si necesitas eliminar un parche, utiliza el comando ``git apply -R`` como se muestra a continuación
 
 ```
 git apply -R patchName.patch
