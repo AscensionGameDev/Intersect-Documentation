@@ -15,7 +15,7 @@ _For example_, you can use forks to propose changes related to fixing a bug. Rat
 
 
 
-## Forking a repository
+## Forking our official repository
 
 You might fork a project to propose changes to the upstream, or original, repository. In this case, it's good practice to regularly sync your fork with the upstream repository.
 
@@ -53,9 +53,7 @@ You might fork a project to propose changes to the upstream, or original, reposi
    ![](https://s3.us-east-2.amazonaws.com/ascensiongamedev/filehost/b8ac87ff48db5b6b34e23f86abfbce8b.png)
 
 
-```
-Note: If you want to copy additional branches from the parent repository, you can do so from the Branches page.
-```
+**Note:** _If you want to copy additional branches from the parent repository, you can do so from the Branches page._
 
 ## Forking with GitHub CLI
 
@@ -64,4 +62,4 @@ To create a fork of a repository, use the ``gh repo fork`` subcommand.
 gh repo fork repository
 ```
 
-To learn more about GitHub CLI, see ["About GitHub CLI." (Github Docs)](https://docs.github.com/en/github-cli/github-cli/about-github-cli)
+To learn more about GitHub CLI, see ["About GitHub CLI" (Github Docs)](https://docs.github.com/en/github-cli/github-cli/about-github-cli)
