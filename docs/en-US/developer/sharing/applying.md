@@ -2,13 +2,13 @@
 
 GitHub patches are very easy to apply, and they allow you to check compatibility before doing so.
 
-Please note, applying git patches modifies your engines source code. Patches can impact performance and introduce bugs into your game. Only install patches from trusted developers!
+Please note, applying git patches modifies your engine's source code. Patches can impact performance and introduce bugs into your game. Only install patches from trusted developers!
 
 Download your patch and move it to the root of your Intersect repository. Then open a command prompt window and navigate to your local Intersect repo. This can be done easily by clicking Repository -> Open In Command Prompt within GitHub Desktop.
 
 ![commandprompt](https://www.ascensiongamedev.com/resources/filehost/62ed0b264c03f8d3b61c17195771c044.png)
 
-In order to check for compatibility enter the following command replacing the patch filename with the one you downloaded. If there are compatibility issues the patch author may need to remake the patch using your version of Intersect, or you maybe applying multiple patches that conflict and are not compatible with each other.
+In order to check for compatibility enter the following command (replacing the patch filename with the one you downloaded). If there are compatibility issues the patch author may need to remake the patch using your version of Intersect, or you are maybe trying to apply multiple patches that conflict and are not compatible with each other.
 
 ```
 git apply --check patchName.patch
@@ -25,7 +25,7 @@ git am --signoff < patchName.patch
 ![apply](https://www.ascensiongamedev.com/resources/filehost/7fb32c944b7147a3397c8a39e634af1f.png)
 
 
-If you need to remove a patch use the git apply -R command as shown below
+If you need to remove a patch, use the ``git apply -R`` command as shown below
 
 ```
 git apply -R patchName.patch
