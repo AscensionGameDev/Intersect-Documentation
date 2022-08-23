@@ -1,26 +1,24 @@
-# Creating New Packets
+# Crear nuevos paquetes
 
-Data sent between the client, editor, and server are sent as packets. Packets are defined in Intersect.Core/Networking/Packets.
+Los datos enviados entre el cliente, el editor y el servidor se envían como paquetes. Los paquetes se definen en `Intersect (Core)/Network/Packets`.
 
-Packets are stored in the Client/Editor/Server folders based on sender. For example the login packet sent from the client will be in the client folder.
+Los paquetes se almacenan en las carpetas `Client/Editor/Server` en función del remitente. Por ejemplo, el paquete de inicio de sesión enviado desde el cliente estará en la carpeta del cliente.
 
-Creating new packets are as simple as creating new classes in those folders that inherit from CerasPacket and then writing some sending and handling code.
-
-
-## Sending Packets
-
-The client, editor, and server each have a PacketSender class in the Networking folder. 
-
-In short you need to create an instance of your packet class, and then pass that to the relevant SendPacket function.
+Crear nuevos paquetes es tan simple como crear nuevas clases en esas carpetas que hereden de **MessagePack** y luego escribir código para la gestión de envío de paquetes y el control de los paquetes entrantes.
 
 
-## Handling Packets
+## Enviar paquetes
 
-The client, editor, and server also each have a PacketHandler class in the Networking folder.
+El cliente, el editor y el servidor tienen cada uno su propia clase `PacketSender` en la carpeta Networking.
 
-You will need to create a HandlePacket function that accepts the new packet class you created.
+En resumen, necesitas crear una instancia de la clase de tu paquete, y luego pasarla a la función SendPacket correspondiente.
 
 
+## Controlador de paquetes entrantes
 
-Once you've created a new packet class, written the code to send the packet, and written the handler you're done! Easy right?
+El cliente, el editor y el servidor también tienen una clase `PacketHandler` en la carpeta Networking.
+
+Necesitarás crear una función HandlePacket que acepte la nueva clase de paquete que has creado.
+
+Una vez que hayas creado una nueva clase de paquete, escrito el código para enviar el paquete, y escrito el controlador de paquetes entrantes, ¡has terminado! ¿_Fácil_, verdad?
 
