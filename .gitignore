@@ -68,5 +68,9 @@ TODOs.md
 vuepress
 dist
 
-# editors
+# Visual Studio Code
 .vscode
+
+# Rider
+.idea
+/Folder.DotSettings.user
