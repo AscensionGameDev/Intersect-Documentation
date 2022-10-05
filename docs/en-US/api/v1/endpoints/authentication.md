@@ -37,7 +37,7 @@ Get an authorization token for api requests that require auth.
 
 * The grant type to receive an auth token is 'password'.
 * Password must be a SHA256 hash of the user's password, with hyphens removed.
-* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
+* You can generate a SHA256 hash of a plaintext password [here](https://tools.keycdn.com/sha256-online-generator).
 
 ---
 
