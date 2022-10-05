@@ -1,11 +1,11 @@
 # Server Database
 
-| Name                          | Type    | Example     | Description |
-|-------------------------------|---------|-------------|-------------|
-| Type                          | string  | sqlite      | Configures the type of database the server will connect to. Currently supports **sqlite** and **mysql**.|
-| Server                        | string  | localhost   | Configures the database server the server will connect to. (if applicable) |
-| Port                          | number  | 3306        | Configures the database port the server will connect to. (if applicable) |
-| Database                      | string  |             | Configures the database name the server will connect to. (if applicable) |
-| Username                      | string  |             | Configures the username the server will use to connect to the database. (if applicable) |
-| Password                      | string  |             | Configures the password the server will use to connect to the database. (if applicable) |
-| LogLevel                      | string  | Error       | Configures the log level to maintain regarding interactions with the database. (Error, Warning, Info) |
+| Name     | Type   | Example   | Description                                                                                                      |
+| -------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------- |
+| Type     | string | sqlite    | Configura o tipo de banco de dados ao qual o servidor se conectará. Atualmente suporta **sqlite** e **mysql**.   |
+| Server   | string | localhost | Configura o servidor de banco de dados ao qual o servidor se conectará. (se aplicável)                           |
+| Port     | number | 3306      | Configura a porta do banco de dados à qual o servidor se conectará. (se aplicável)                               |
+| Database | string |           | Configura o nome do banco de dados ao qual o servidor se conectará. (se aplicável)                               |
+| Username | string |           | Configura o nome de usuário que o servidor usará para se conectar ao banco de dados. (se aplicável)              |
+| Password | string |           | Configura a senha que o servidor usará para se conectar ao banco de dados. (se aplicável)                        |
+| LogLevel | string | Error     | Configura o nível de log a ser mantido em relação às interações com o banco de dados. (Erro, Aviso, Informações) |
