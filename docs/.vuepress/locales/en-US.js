@@ -37,7 +37,8 @@ module.exports = {
                         '/api/v1/',
                         '/api/v1/introduction/setup.md',
                         '/api/v1/introduction/configuration.md',
-                        '/api/v1/introduction/roles.md'
+                        '/api/v1/introduction/roles.md',
+                        '/api/v1/advanced/securing.md',
                     ]
                 },
                 {
@@ -54,14 +55,7 @@ module.exports = {
                         '/api/v1/endpoints/users.md',
                         '/api/v1/endpoints/variables.md',
                     ]
-                },
-                {
-                    title: 'Advanced',
-                    collapsable: true,
-                    children: [
-                        '/api/v1/advanced/securing.md',
-                    ]
-                },
+                }
             ],
             '/developer/': [
                 {
