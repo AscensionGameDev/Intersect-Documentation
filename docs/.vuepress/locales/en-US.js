@@ -36,7 +36,7 @@ module.exports = {
                     children: [
                         '/api/v1/',
                         '/api/v1/introduction/setup.md',
-                        '/api/v1/introduction/config.md',
+                        '/api/v1/introduction/configuration.md',
                         '/api/v1/introduction/roles.md'
                     ]
                 },
