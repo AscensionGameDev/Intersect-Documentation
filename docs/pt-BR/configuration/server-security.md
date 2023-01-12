@@ -1,34 +1,38 @@
 # Server Security
 
-| Name                          | Type    | Example     | Description                   |
-|-------------------------------|---------|-------------|-------------------------------|
-| PacketFlooding                | See [PacketFlooding](#packetflooding)                 |
-| IpBlacklist                   | array   | ["127.0.0.1, 192.168.100.4"] | Configures a blacklist of IP Addresses to not allow to connect to the server. |
+| Name           | Type                                   | Example                      | Description                                                                           |
+| -------------- | -------------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------- |
+| PacketFlooding | Veja [PacketFlooding](#packetflooding) |
+| IpBlacklist    | array                                  | ["127.0.0.1, 192.168.100.4"] | Configura uma lista negra de endereços IP para não permitir a conexão com o servidor. |
 
 ## PacketFlooding
-| Name                          | Type    | Example     | Description                   |
-|-------------------------------|---------|-------------|-------------------------------|
-| EditorFloodThreshholds                | See [EditorFloodThreshholds](#EditorFloodThreshholds) |
-| PlayerFloodThreshholds                | See [PlayerFloodThreshholds](#PlayerFloodThreshholds) |
-| FloodThreshholds                      | See [FloodThreshholds](#FloodThreshholds)             |
+
+| Name                   | Type                                                   | Example | Description |
+| ---------------------- | ------------------------------------------------------ | ------- | ----------- |
+| EditorFloodThreshholds | Veja [EditorFloodThreshholds](#EditorFloodThreshholds) |
+| PlayerFloodThreshholds | Veja [PlayerFloodThreshholds](#PlayerFloodThreshholds) |
+| FloodThreshholds       | Veja [FloodThreshholds](#FloodThreshholds)             |
 
 ## EditorFloodThreshholds
-| Name                          | Type    | Example     | Description                   |
-|-------------------------------|---------|-------------|-------------------------------|
-| MaxPacketSize                 | number  | 2147483647  | Configures the maximum size an editor networking packet is allowed to be before kicking the editor. |
-| MaxPacketPerSec               | number  | 2147483647  | Configures the maximum packets per second an editor is allowed to send before kicking the editor. |
-| KickAvgPacketPerSec           | number  | 2147483647  | Configures the maximum average packets per second an editor is allowed to send before kicking the editor. |
+
+| Name                | Type   | Example    | Description                                                                                   |
+| ------------------- | ------ | ---------- | --------------------------------------------------------------------------------------------- |
+| MaxPacketSize       | number | 2147483647 | Configura o tamanho máximo que um pacote de rede do editor pode ter antes de chutar o editor. |
+| MaxPacketPerSec     | number | 2147483647 | Configura o máximo de pacotes por segundo que um editor pode enviar antes de chutá-lo.        |
+| KickAvgPacketPerSec | number | 2147483647 | Configura a média máxima de pacotes por segundo que um editor pode enviar antes de chutá-lo.  |
 
 ## PlayerFloodThreshholds
-| Name                          | Type    | Example     | Description                   |
-|-------------------------------|---------|-------------|-------------------------------|
-| MaxPacketSize                 | number  | 2147483647  | Configures the maximum size a logged in player networking packet is allowed to be before kicking the player. |
-| MaxPacketPerSec               | number  | 2147483647  | Configures the maximum packets per second a logged in player is allowed to send before kicking the player. |
-| KickAvgPacketPerSec           | number  | 2147483647  | Configures the maximum average packets per second a logged in player is allowed to send before kicking the player. |
+
+| Name                | Type   | Example    | Description                                                                                                  |
+| ------------------- | ------ | ---------- | ------------------------------------------------------------------------------------------------------------ |
+| MaxPacketSize       | number | 2147483647 | Configura o tamanho máximo que um pacote de rede de jogador logado pode ter antes de chutar o jogador.       |
+| MaxPacketPerSec     | number | 2147483647 | Configura o máximo de pacotes por segundo que um jogador logado pode enviar antes de chutar o jogador.       |
+| KickAvgPacketPerSec | number | 2147483647 | Configura a média máxima de pacotes por segundo que um jogador logado pode enviar antes de chutar o jogador. |
 
 ## FloodThreshholds
-| Name                          | Type    | Example     | Description                   |
-|-------------------------------|---------|-------------|-------------------------------|
-| MaxPacketSize                 | number  | 2147483647  | Configures the maximum size a client networking packet is allowed to be before kicking the client. |
-| MaxPacketPerSec               | number  | 2147483647  | Configures the maximum packets per second a client is allowed to send before kicking the client. |
-| KickAvgPacketPerSec           | number  | 2147483647  | Configures the maximum average packets per second a client is allowed to send before kicking the client. |
+
+| Name                | Type   | Example    | Description                                                                                     |
+| ------------------- | ------ | ---------- | ----------------------------------------------------------------------------------------------- |
+| MaxPacketSize       | number | 2147483647 | Configura o tamanho máximo que um pacote de rede do cliente pode ter antes de chutar o cliente. |
+| MaxPacketPerSec     | number | 2147483647 | Configura o máximo de pacotes por segundo que um cliente pode enviar antes de chutá-lo.         |
+| KickAvgPacketPerSec | number | 2147483647 | Configura a média máxima de pacotes por segundo que um cliente pode enviar antes de chutá-lo.   |
