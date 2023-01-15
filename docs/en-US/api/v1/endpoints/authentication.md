@@ -21,7 +21,7 @@ Get an authorization token for api requests that require auth.
 | ----- | ---- |------------ | -------- |
 | grant_type | String  | Auth Type. | :heavy_check_mark: |
 | username | String  | Username of API Authorized Account | :heavy_check_mark: |
-| password | String  | SHA256 Hash of Account Password | :heavy_check_mark: |
+| password | String  | SHA-256 Hash of Account Password | :heavy_check_mark: |
 
 **Example**
 
@@ -36,8 +36,8 @@ Get an authorization token for api requests that require auth.
 **Notes**
 
 * The grant type to receive an auth token is 'password'.
-* Password must be a SHA256 hash of the user's password, with hyphens removed.
-* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
+* Password must be a SHA-256 hash of the user's password, with hyphens removed.
+* You can generate a SHA-256 hash of a plaintext password [here (on this site)](../../tools/hash-generators.md).
 
 ---
 
@@ -71,7 +71,7 @@ Get an authorization token for api requests that require auth.
 * The refresh_token is the token's id, it is used to refresh or delete the token using the routes below.
 * For all requests that require authentication you will need to supply the access token within the request header. The proper format can found below.
 
-| Header | Type | Value | 
+| Header | Type | Value |
 | ----- | ---- |------------ |
 | authorization | String  | Bearer [access_token] |
 

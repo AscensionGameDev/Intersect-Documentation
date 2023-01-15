@@ -29,7 +29,7 @@ module.exports = {
             }
         ],
         sidebar: {
-            '/api/v1/': [
+            '/api/': [
                 {
                     title: 'API Information',
                     collapsable: true,
@@ -54,6 +54,13 @@ module.exports = {
                         '/api/v1/endpoints/players.md',
                         '/api/v1/endpoints/users.md',
                         '/api/v1/endpoints/variables.md',
+                    ]
+                },
+                {
+                    title: 'Tools',
+                    collapsable: true,
+                    children: [
+                        '/api/tools/hash-generators.md'
                     ]
                 }
             ],
