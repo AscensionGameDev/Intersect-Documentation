@@ -98,7 +98,6 @@ span.output > svg {
     height: 1.5em;
     max-width: 1.5em;
     max-height: 1.5em;
-    scale: calc(1.5em / (0 + 48px));
     fill: #111;
     cursor: pointer;
 }
