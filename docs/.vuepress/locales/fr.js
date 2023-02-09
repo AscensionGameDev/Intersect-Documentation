@@ -29,7 +29,7 @@ module.exports = {
             }
         ],
         sidebar: {
-            '/api/v1/': [
+            '/api/': [
                 {
                     title: 'Information API',
                     collapsable: true,
@@ -62,6 +62,13 @@ module.exports = {
                         '/api/v1/advanced/securing.md',
                     ]
                 },
+                {
+                    title: 'Outils',
+                    collapsable: true,
+                    children: [
+                        '/api/tools/hash-generators.md'
+                    ]
+                }
             ],
             '/developer/': [
                 {
