@@ -110,16 +110,18 @@ export type SidebarSection = {
 export type SidebarItem = SidebarLink | SidebarSection;
 
 export interface LocalizedSidebar {
-    [partialUrl: string]: Array<SidebarItem>;
+    [partialUrl: string]: Array<SidebarItem> | LocalizedSidebar;
 }
+
+export type VersionedNavbar = Record<string, Array<NavbarItem>>;
 
 export interface LocalizedSite {
     disabled?: boolean;
     title: string;
     description: string;
     general: General;
-    navbar?: Array<NavbarItem>;
-    sidebar?: Partial<LocalizedSidebar>;
+    navbar?: VersionedNavbar;
+    sidebar?: LocalizedSidebar;
 }
 
 type BaseGitRepository = {

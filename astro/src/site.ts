@@ -78,24 +78,26 @@ export const SITE: Site = {
             EditThisPage: 'Edit this page',
             JoinOurCommunity: 'Join our Discord'
         },
-        navbar: [
-            {
-                title: 'User Docs',
-                link: '/',
-            },
-            {
-                title: 'API Reference',
-                link: '/api/v1/',
-            },
-            {
-                title: 'Developer Guides',
-                link: '/developer/',
-            },
-            {
-                title: 'Support Community',
-                link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
-            }
-        ],
+        navbar: {
+            latest: [
+                {
+                    title: 'User Docs',
+                    link: '/',
+                },
+                {
+                    title: 'API Reference',
+                    link: '/api/v1/',
+                },
+                {
+                    title: 'Developer Guides',
+                    link: '/developer/',
+                },
+                {
+                    title: 'Support Community',
+                    link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
+                }
+            ]
+        },
         sidebar: {
             '/api/v1/': [
                 {

@@ -1,5 +1,6 @@
 ---
-import { LANGUAGE_CODES, getLangCode } from "../../i18n";
+import type { KnownLanguageCode } from "../../i18n";
+import { LANGUAGE_CODES } from "../../i18n";
 import { SITE } from "../../site";
 import Logo from "./Logo.astro";
 import Search from "./Search.astro";
@@ -8,15 +9,16 @@ import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton";
 import LanguageSelect from "./LanguageSelect";
 import SearchButton from "./SearchButton";
 import LanguagePicker from "./LanguagePicker.astro";
+import { StringDecoder } from "string_decoder";
 
 type Props = {
-	currentPage: string;
+	langCode: KnownLanguageCode;
+	version?: string;
 };
 
-const { currentPage } = Astro.props;
-const langCode = getLangCode(currentPage);
+const { langCode, version = "latest" } = Astro.props;
 const site = SITE[langCode];
-const navbar = site?.navbar;
+const navbar = site?.navbar ? site.navbar[version] : undefined;
 const langRootUrl = new URL(`/${langCode}`, Astro.url.href);
 
 function resolveNavUrl(link: string) {
@@ -24,15 +26,17 @@ function resolveNavUrl(link: string) {
 		return new URL(link);
 	}
 
+	const versionSegment = version === "latest" ? "" : `/${version}`;
+
 	if (link.startsWith("/")) {
 		if (link.startsWith(`/${langRootUrl}`)) {
 			return new URL(link, langRootUrl);
 		}
 
-		return new URL(`${langRootUrl}${link}`);
+		return new URL(`${langRootUrl}${versionSegment}${link}`);
 	}
 
-	return new URL(link, langRootUrl);
+	return new URL(link, `${langRootUrl}${versionSegment}`);
 }
 ---
 

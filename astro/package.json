@@ -1,13 +1,14 @@
 {
 	"name": "astro",
 	"type": "module",
-	"version": "0.0.1",
+	"version": "0.7.1",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
-		"astro": "astro"
+		"astro": "astro",
+		"migrate-version": "ts-node --esm ./scripts/migrateVersion.ts"
 	},
 	"dependencies": {
 		"@algolia/client-search": "^4.13.1",
@@ -19,14 +20,21 @@
 		"@types/react": "^17.0.45",
 		"@types/react-dom": "^18.0.0",
 		"astro": "^2.0.15",
+		"commander": "^10.0.0",
 		"preact": "^10.7.3",
 		"react": "^18.1.0",
 		"react-dom": "^18.1.0",
 		"rehype-accessible-emojis": "^0.3.2",
 		"rehype-autolink-headings": "^6.1.1",
-		"remark-toc": "^8.0.1"
+		"remark-toc": "^8.0.1",
+		"yargs": "^17.7.1"
 	},
 	"devDependencies": {
-		"html-escaper": "^3.0.3"
+		"@types/semver": "^7.3.13",
+		"@types/yargs": "^17.0.22",
+		"html-escaper": "^3.0.3",
+		"semver": "^7.3.8",
+		"ts-node": "10.9.1",
+		"typescript": "4.9.5"
 	}
 }

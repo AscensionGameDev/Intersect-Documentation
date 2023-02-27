@@ -6,37 +6,55 @@ import { getLangCode } from "../i18n";
 export async function getStaticPaths() {
 	const docs = await getCollection("docs");
 
-	function getSlug({ id, slug }: { id: string; slug: string }) {
-		const slugParts = slug.split("/");
-		const langCode = getLangCode(id);
-		return slugParts
-			.map((part) => {
+	function transform(entry: CollectionEntry<"docs">) {
+		const slugParts = entry.slug.split("/");
+		const langCode = getLangCode(entry.id);
+		const [version] = entry.id
+			.split("/")
+			.filter((part) => /v\d+/.test(part));
+		const slugVersion = version && version.replaceAll(".", "");
+		const slug = slugParts
+			.map((part, index) => {
 				if (part === langCode.toLowerCase()) {
 					return langCode;
+				}
+
+				if (index < 2 && version && part === slugVersion) {
+					return version;
 				}
 
 				return part;
 			})
 			.join("/");
+
+		return {
+			params: {
+				slug,
+			},
+			props: {
+				...entry,
+				langCode,
+				slug,
+				version,
+			},
+		};
 	}
 
-	const mapped = docs.map((entry) => {
-		const doc = {
-			params: {
-				slug: getSlug(entry),
-			},
-			props: entry,
-		};
-		return doc;
-	});
+	const mapped = docs.map(transform);
 	return mapped;
 }
 type Props = CollectionEntry<"docs">;
 
 const post = Astro.props;
 const { Content, headings } = await post.render();
+const { langCode, version } = post;
 ---
 
-<MainLayout headings={headings} {...post.data}>
+<MainLayout
+	headings={headings}
+	{...post.data}
+	langCode={langCode}
+	version={version}
+>
 	<Content />
 </MainLayout>

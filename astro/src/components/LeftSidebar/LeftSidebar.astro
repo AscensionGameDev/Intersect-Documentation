@@ -1,30 +1,34 @@
 ---
+import type { KnownLanguageCode, SidebarItem } from "../../i18n";
+
 import { getCollection } from "astro:content";
-import { getLangCode, SidebarItem } from "../../i18n";
 import { SITE } from "../../site";
 
 type Props = {
 	currentPage: string;
+	langCode: KnownLanguageCode;
+	version?: string;
 };
 
-const { currentPage } = Astro.props;
+const { currentPage, langCode, version } = Astro.props;
 const currentPageMatch = currentPage.endsWith("/")
 	? currentPage.slice(1, -1)
 	: currentPage.slice(1);
-const langCode = getLangCode(currentPage);
 const slug = currentPage.slice(currentPage.indexOf(langCode) + langCode.length);
-const sidebar = SITE[langCode].sidebar ?? {};
+let sidebar = SITE[langCode].sidebar ?? {};
+if (typeof version === "string" && version in sidebar) {
+	const versionedSidebar = sidebar[version];
+	if (!Array.isArray(versionedSidebar) && versionedSidebar !== undefined) {
+		sidebar = versionedSidebar;
+	}
+}
+
 const sidebarSlug =
 	Object.keys(sidebar).find((sectionSlug) => slug.startsWith(sectionSlug)) ??
 	"";
 const activeSidebar = sidebar[sidebarSlug];
 
 const docs = await getCollection("docs");
-// console.log(
-// 	docs
-// 		.filter(({ id }) => id.includes("pt-BR"))
-// 		.map((doc) => ({ ...doc, body: undefined }))
-// );
 
 function resolveId(partialId: string) {
 	return [
@@ -51,15 +55,6 @@ function resolveSlug(slug?: string) {
 	slug = `/${slug}`;
 	return slug;
 }
-// console.log(
-// 	langCode,
-// 	// docs
-// 	// 	.filter(({ id }) => id.startsWith(langCode))
-// 	// 	.map((doc) => ({ ...doc, body: undefined }))
-// 	activeSidebar
-// 	// item,
-// 	// itemId
-// );
 ---
 
 <aside id="sidebar" class="sidebar" title="Site Navigation">
@@ -71,17 +66,9 @@ function resolveSlug(slug?: string) {
 						item: SidebarItem
 					) {
 						if (typeof item === "string") {
-							// const itemId = `${langCode}${item}`;
 							const entry = docs.find(
 								({ id }) => id === resolveId(item)
 							);
-							// console.log(
-							// 	// docs
-							// 	// 	.filter(({ id }) => id.startsWith(langCode))
-							// 	// 	.map((doc) => ({ ...doc, body: undefined })),
-							// 	// item,
-							// 	itemId
-							// );
 							return (
 								<li>
 									<a href={resolveSlug(entry?.slug)}>
