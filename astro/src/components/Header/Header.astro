@@ -1,0 +1,235 @@
+---
+import { LANGUAGE_CODES, getLangCode } from "../../i18n";
+import { SITE } from "../../site";
+import Logo from "./Logo.astro";
+import Search from "./Search.astro";
+import MenuToggle from "./MenuToggle";
+import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton";
+import LanguageSelect from "./LanguageSelect";
+import SearchButton from "./SearchButton";
+import LanguagePicker from "./LanguagePicker.astro";
+
+type Props = {
+	currentPage: string;
+};
+
+const { currentPage } = Astro.props;
+const langCode = getLangCode(currentPage);
+const site = SITE[langCode];
+const navbar = site?.navbar;
+const langRootUrl = new URL(`/${langCode}`, Astro.url.href);
+
+function resolveNavUrl(link: string) {
+	if (link.startsWith("http")) {
+		return new URL(link);
+	}
+
+	if (link.startsWith("/")) {
+		if (link.startsWith(`/${langRootUrl}`)) {
+			return new URL(link, langRootUrl);
+		}
+
+		return new URL(`${langRootUrl}${link}`);
+	}
+
+	return new URL(link, langRootUrl);
+}
+---
+
+<header>
+	<div class="container">
+		<div class="logo">
+			<a href="/">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					id="intersect-logo-2022"
+					data-name="intersect-logo-2022"
+					class="logo"
+					viewBox="0 0 512 512"
+				>
+					<path
+						id="logo"
+						data-name="logo"
+						d="M388.4,332.8h0a875.94,875.94,0,0,0-265.8,0h0A877.741,877.741,0,0,0,255.5,102.4h0A877.717,877.717,0,0,0,388.4,332.8ZM104.052,373.247L34,384,255.5,512,477,384l-70.052-10.753A998.191,998.191,0,0,0,104.052,373.247ZM78.329,328.654L34,384V128L255.5,0,229.778,66.1A1000.23,1000.23,0,0,1,78.329,328.654ZM281.223,66.1L255.5,0,477,128V384l-44.33-55.346A1000.192,1000.192,0,0,1,281.223,66.1Z"
+						transform="translate(0.5)"
+					>
+					</path>
+				</svg>
+				<span class="site-name">{site.title}</span>
+			</a>
+		</div>
+
+		<nav class="nav-wrapper" title="Top Navigation">
+			{
+				Array.isArray(navbar) && navbar.length > 0 && (
+					<ul class="horizontal">
+						{navbar.map((item) => {
+							return (
+								<li>
+									<a href={resolveNavUrl(item.link)}>
+										{item.title}
+									</a>
+								</li>
+							);
+						})}
+					</ul>
+				)
+			}
+			<div class="search-item">
+				<Search />
+				<!-- <SearchButton client:idle /> -->
+			</div>
+			{
+				LANGUAGE_CODES.length > 1 && (
+					// <LanguageSelect lang={langCode} client:idle />
+					<LanguagePicker langCode={langCode} />
+				)
+			}
+			<ThemeToggleButton client:visible />
+			<div class="menu-toggle">
+				<MenuToggle client:idle />
+			</div>
+		</nav>
+	</div>
+</header>
+
+<style>
+	header {
+		align-items: center;
+		background: var(--theme-bg-accent);
+		display: flex;
+		flex-direction: row;
+		font-size: 1rem;
+		gap: 1em;
+		height: var(--theme-navbar-height);
+		justify-content: space-between;
+		overflow: hidden;
+		padding: 0 var(--doc-padding);
+		position: sticky;
+		top: 0;
+		width: 100%;
+		z-index: var(--z-index-top);
+
+		--logo-font-size: 1.5em;
+	}
+
+	header,
+	header a,
+	header svg {
+		color: var(--theme-text);
+	}
+
+	.container {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		gap: 1em;
+		justify-content: space-between;
+		height: var(--logo-font-size);
+		width: 100%;
+	}
+
+	.container > nav {
+		align-items: center;
+		display: flex;
+		flex: 1;
+		justify-content: flex-end;
+		gap: 1em;
+	}
+
+	.search-item {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		transition: all 1s;
+	}
+
+	header a {
+		text-decoration: none;
+		transition: color 100ms ease-out;
+	}
+
+	nav {
+		align-self: baseline;
+	}
+
+	nav ul {
+		flex: 1;
+		justify-content: flex-start !important;
+	}
+
+	nav > ul > li > a {
+		display: inline-block;
+	}
+
+	.logo {
+		display: flex;
+		z-index: -1;
+	}
+
+	.logo svg {
+		color: inherit;
+		fill: currentColor;
+		font-size: inherit;
+		height: 1.5em;
+		margin: -0.25em 0;
+		max-height: 1.5em;
+		max-width: 1.5em;
+		width: 1.5em;
+	}
+
+	.logo {
+		line-height: var(--logo-font-size);
+		max-height: var(--logo-font-size);
+	}
+
+	.logo > a {
+		display: flex;
+		font-size: var(--logo-font-size);
+		font-weight: bold;
+		gap: 1rem;
+	}
+
+	a:hover,
+	a:focus {
+		color: var(--theme-text-accent);
+		text-decoration: none;
+	}
+
+	.menu-toggle {
+		display: none;
+	}
+
+	@media (max-width: 1440px) {
+		.logo .site-name {
+			display: none;
+		}
+
+		.menu-toggle {
+			/* display: none; */
+		}
+
+		.filler {
+			display: none;
+		}
+	}
+
+	@media (max-width: 1280px) {
+		.menu-toggle {
+			display: initial;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.menu-toggle {
+			display: initial;
+		}
+	}
+</style>
+
+<style is:global>
+	.search-item > * {
+		flex-grow: 1;
+	}
+</style>

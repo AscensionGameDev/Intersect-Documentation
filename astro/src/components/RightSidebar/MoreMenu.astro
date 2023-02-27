@@ -1,0 +1,48 @@
+---
+import type { KnownLanguageCode } from "../../i18n";
+import { SITE } from "../../site";
+import Discord from "../Icons/Discord.astro";
+import Pencil from "../Icons/Pencil.astro";
+
+type Props = {
+	editUrl: URL;
+	langCode: KnownLanguageCode;
+};
+
+const { editUrl, langCode } = Astro.props;
+const site = SITE[langCode];
+const showMoreSection = Boolean(SITE.communityUrl);
+---
+
+{showMoreSection && <h2 class="heading">More</h2>}
+<ul>
+	{
+		editUrl && (
+			<li class={`header-link depth-2`}>
+				<a class="edit-on-github" href={editUrl.href} target="_blank">
+					<Pencil />
+					<span>{site.general.EditThisPage}</span>
+				</a>
+			</li>
+		)
+	}
+	{
+		SITE.communityUrl && (
+			<li class={`header-link depth-2`}>
+				<a href={SITE.communityUrl} target="_blank">
+					<Discord />
+					<span>{site.general.JoinOurCommunity}</span>
+				</a>
+			</li>
+		)
+	}
+</ul>
+
+<style>
+	.edit-on-github {
+		text-decoration: none;
+		font: inherit;
+		color: inherit;
+		font-size: 1rem;
+	}
+</style>

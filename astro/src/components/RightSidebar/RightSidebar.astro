@@ -1,0 +1,40 @@
+---
+import type { MarkdownHeading } from "astro";
+import type { KnownLanguageCode } from "../../i18n";
+
+import TableOfContents from "./TableOfContents";
+import MoreMenu from "./MoreMenu.astro";
+
+type Props = {
+	editUrl: URL;
+	headings: MarkdownHeading[];
+	langCode: KnownLanguageCode;
+};
+
+const { editUrl, headings, langCode } = Astro.props;
+---
+
+<aside id="toc" class="toc" title="Table of Contents">
+	<nav class="sidebar-nav" aria-labelledby="toc">
+		<TableOfContents client:media="(min-width: 50em)" headings={headings} />
+		<MoreMenu editUrl={editUrl} langCode={langCode} />
+	</nav>
+</aside>
+
+<style>
+	.toc {
+		grid-area: toc;
+		height: fit-content;
+		max-height: calc(100vh - var(--theme-navbar-height));
+		padding: var(--doc-padding) 0;
+		position: sticky;
+		top: var(--theme-navbar-height);
+		width: fit-content;
+	}
+
+	@media (max-width: 1080px) {
+		aside.toc {
+			display: none;
+		}
+	}
+</style>

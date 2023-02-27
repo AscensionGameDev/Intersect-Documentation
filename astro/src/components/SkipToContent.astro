@@ -1,0 +1,43 @@
+---
+import { A11Y_NAV_LABELS } from "../a11y";
+import type { KnownLanguageCode } from "../i18n";
+
+type Props = {
+	langCode: KnownLanguageCode;
+};
+
+const { langCode } = Astro.props;
+
+const a11yNavLabels = A11Y_NAV_LABELS[langCode];
+---
+
+<ul id="nav-access" class="a11y-nav">
+	<li>
+		<a id="skip-page-content" href="#page-content">
+			{a11yNavLabels.SkipToPageContent}
+		</a>
+	</li>
+	<li>
+		<a id="skip-site-search" href="#site-search">
+			{a11yNavLabels.SkipToSearch}
+		</a>
+	</li>
+	<li>
+		<a id="skip-language-select" href="#language-select">
+			{a11yNavLabels.SkipToLanguageSelect}
+		</a>
+	</li>
+</ul>
+
+<a href="#article" class="sr-only focus:not-sr-only skiplink"
+	><span>Skip to Content</span></a
+>
+
+<style>
+	.a11y-nav {
+		position: absolute;
+		top: -20rem;
+		width: 100%;
+		z-index: var(--z-index-a11y);
+	}
+</style>

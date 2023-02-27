@@ -17,11 +17,5 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
   },
-  "engineStrict": true,
-  "engines": {
-    "node": "16.17.0"
-  },
-  "volta": {
-    "node": "16.17.0"
-  }
+  "engineStrict": true
 }

@@ -1,0 +1,140 @@
+---
+import type { MarkdownHeading } from "astro";
+import { CollectionEntry, getCollection } from "astro:content";
+import HeadCommon from "../components/HeadCommon.astro";
+import HeadSEO from "../components/HeadSEO.astro";
+import Header from "../components/Header/Header.astro";
+import PageContent from "../components/PageContent/PageContent.astro";
+import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
+import RightSidebar from "../components/RightSidebar/RightSidebar.astro";
+import Footer from "../components/Footer/Footer.astro";
+import { getLangCode } from "../i18n";
+import { getEditUrl, getPathInRepo, SITE } from "../site";
+import SkipToContent from "../components/SkipToContent.astro";
+
+type Props = CollectionEntry<"docs">["data"] & {
+	headings: MarkdownHeading[];
+};
+
+const { headings, ...data } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentPage = Astro.url.pathname;
+const langCode = getLangCode(currentPage);
+const site = SITE[langCode];
+
+const docs = await getCollection("docs");
+const currentSlug = currentPage.replace(/^\//, "");
+const currentId =
+	docs.find(
+		({ slug }) =>
+			slug === currentSlug ||
+			currentSlug === slug.replace(langCode.toLowerCase(), langCode)
+	)?.id ?? `${currentSlug.replace(/\/$/, "")}.md`;
+
+const editUrl = getEditUrl(currentId);
+const pathInRepo = getPathInRepo(currentId);
+---
+
+<html dir={data.dir} lang={data.lang} class="initial">
+	<head>
+		<HeadCommon />
+		<HeadSEO {...data} canonicalUrl={canonicalURL} />
+		<title>
+			{`${data.title} | ${site.title}`}
+		</title>
+		<style>
+			body {
+				width: 100%;
+				--gutter: 0.5rem;
+				--doc-padding: 2rem;
+			}
+
+			.page-wrapper {
+				display: grid;
+				flex: 1;
+				grid-template-columns: 100%;
+				grid-template-rows: auto 1fr auto;
+				position: relative;
+			}
+
+			.header-wrapper {
+				position: sticky;
+				top: 0;
+				z-index: var(--z-index-top);
+			}
+
+			.content-wrapper {
+				display: grid;
+				grid-gap: var(--gutter);
+				gap: var(--gutter);
+				grid-auto-flow: column;
+				grid-template-areas: "sidebar main toc";
+				grid-template-columns:
+					minmax(0, 1fr) minmax(0, 2.5fr)
+					minmax(0, 1fr);
+				height: fit-content;
+				margin: 0 auto;
+				padding: 0 calc(var(--gutter) * 2);
+				max-width: 1440px;
+			}
+
+			.footer-wrapper {
+				width: 100%;
+			}
+
+			@media (max-width: 1280px) {
+				.content-wrapper {
+					grid-template-areas: "main toc";
+					grid-template-columns:
+						minmax(0, var(--max-width))
+						minmax(var(--gutter), 1fr);
+				}
+			}
+
+			@media (max-width: 1080px) {
+				.content-wrapper {
+					grid-template-areas: "main";
+					grid-template-columns: minmax(0, var(--max-width));
+				}
+			}
+		</style>
+		<style is:global>
+			.mobile-sidebar-toggle {
+				overflow: hidden;
+			}
+
+			.mobile-sidebar-toggle #grid-left {
+				display: block;
+				top: 2rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<SkipToContent langCode={langCode} />
+		<div class="page-wrapper">
+			<div class="header-wrapper">
+				<Header currentPage={currentPage} />
+			</div>
+			<div class="content-wrapper">
+				<LeftSidebar currentPage={currentPage} />
+				<RightSidebar
+					editUrl={editUrl}
+					headings={headings}
+					langCode={langCode}
+				/>
+				<PageContent
+					title={data.title}
+					headings={headings}
+					editUrl={editUrl}
+					langCode={langCode}
+				>
+					<slot />
+				</PageContent>
+			</div>
+			<div class="footer-wrapper">
+				<Footer pathInRepo={pathInRepo} />
+			</div>
+		</div>
+	</body>
+</html>

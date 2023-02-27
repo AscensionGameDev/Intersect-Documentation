@@ -1,0 +1,53 @@
+---
+---
+
+<div class="search-container">
+    <input
+        aria-label="Search"
+        autocomplete="off"
+        onfocus={}
+        placeholder=""
+        spellcheck="false"
+        type="text"
+        value=""
+    />
+    <svg>
+        <path
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+    </svg>
+</div>
+
+<style>
+    .search-container {
+        align-items: center;
+        display: flex;
+        justify-content: end;
+    }
+
+    .search-container svg {
+        fill: none;
+        pointer-events: none;
+        position: absolute;
+        right: 1em;
+    }
+
+    .search-container input {
+        border: max(0.1vmin, 1px) solid #cfd4db;
+        border-radius: 2em;
+        cursor: text;
+        line-height: 2em;
+        outline: none;
+        padding: 0 2em;
+        transition: width 0.5s ease-in-out;
+        width: 1rem;
+    }
+
+    .search-container input:focus {
+        border-width: max(0.2vmin, 2px);
+        width: 100%;
+    }
+</style>
