@@ -125,7 +125,21 @@ export const SITE: Site = {
                         '/api/v1/endpoints/users.md',
                         '/api/v1/endpoints/variables.md',
                     ]
-                }
+                },
+                {
+                    title: 'Advanced',
+                    collapsable: true,
+                    children: [
+                        '/api/v1/advanced/securing.md',
+                    ]
+                },
+                {
+                    title: 'Tools',
+                    collapsable: true,
+                    children: [
+                        '/api/tools/hash-generators.md'
+                    ]
+                },
             ],
             '/developer/': [
                 {
@@ -327,6 +341,13 @@ export const SITE: Site = {
                         '/api/v1/advanced/securing.md',
                     ]
                 },
+                {
+                    title: 'Herramientas',
+                    collapsable: true,
+                    children: [
+                        '/api/tools/hash-generators.md'
+                    ]
+                },
             ],
             '/developer/': [
                 {
@@ -526,6 +547,13 @@ export const SITE: Site = {
                     collapsable: true,
                     children: [
                         '/api/v1/advanced/securing.md',
+                    ]
+                },
+                {
+                    title: 'Outils',
+                    collapsable: true,
+                    children: [
+                        '/api/tools/hash-generators.md'
                     ]
                 },
             ],
@@ -1131,6 +1159,13 @@ export const SITE: Site = {
                     collapsable: true,
                     children: [
                         '/api/v1/advanced/securing.md',
+                    ]
+                },
+                {
+                    title: 'Tools',
+                    collapsable: true,
+                    children: [
+                        '/api/tools/hash-generators.md'
                     ]
                 },
             ],
