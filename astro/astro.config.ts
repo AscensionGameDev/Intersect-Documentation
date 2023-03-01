@@ -10,8 +10,6 @@ export default defineConfig({
 		// Enable React for the Algolia search component.
 		react(),
 	],
-	markdown: {
-
-	},
-	site: `https://docs.freemmorpgmaker.com/`,
+	markdown: {},
+	site: 'https://docs.freemmorpgmaker.com/',
 });

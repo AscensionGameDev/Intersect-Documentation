@@ -1,0 +1,18 @@
+{
+	"plugins": {
+		"@textlint/markdown": {
+			"extensions": [
+				".md",
+				".mdx"
+			]
+		}
+	},
+	"rules": {
+		"max-comma": {
+			"max": 5
+		},
+		"no-start-duplicated-conjunction": {
+			"interval": 2
+		}
+	}
+}

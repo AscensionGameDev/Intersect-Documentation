@@ -3,7 +3,7 @@ title: Base de datos
 ---
 
 
-Intersect tiene dos bases de datos, una que almacena los datos del juego, como objetos, mapas, recursos, eventos, etc. y otra que almacena todos los datos relacionados con las cuentas de usuario.
+Intersect tiene dos bases de datos, una que almacena los datos del juego (como objetos, mapas, recursos, eventos) y otra que almacena todos los datos relacionados con las cuentas de usuario.
 
 Las tablas de ambas bases de datos se generan automáticamente en función de los contextos. El contexto del jugador (_PlayerContext_) y el contexto del juego (_GameContext_) se definen en los siguientes archivos de la solución:
 
@@ -18,7 +18,7 @@ Las clases de contexto también definen las relaciones entre las tablas. Puedes 
 
 Los campos se crean automáticamente a partir de propiedades públicas en una clase, al igual que las tablas se crean automáticamente a partir de clases dentro de los DBSets en un contexto.
 
-Si observas la clase `Users` en el proyecto del servidor `(Interect.Server/Database/PlayerData/User.cs)`, encontrarás campos para el id, el nombre, la contraseña, salt, el correo electrónico del usuario, y más.
+Si observas la clase `Users` en el proyecto del servidor (`Interect.Server/Database/PlayerData/User.cs`), encontrarás campos para el nombre, la contraseña, el correo electrónico, y más.
 
 Ten en cuenta que Entity Framework sólo puede controlar tipos básicos (enteros, cadenas, blobs y referencias a otras clases que existen como DBSet). Debido a estas limitaciones, hemos marcado algunos campos complejos con la etiqueta `[NotMapped]` y luego tenemos un campo de cadena secundaria que convierte ese campo complejo en json. Para un ejemplo de esto, revisa User.Power y User.PowerJson. Observa como la propiedad PowerJson tiene una propiedad de nombre de columna de manera que se almacena en la base de datos en el campo Power.
 

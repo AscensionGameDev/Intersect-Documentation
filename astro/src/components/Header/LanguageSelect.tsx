@@ -1,7 +1,9 @@
 /** @jsxImportSource react */
 import type { FunctionComponent } from 'react';
 import './LanguageSelect.css';
-import { LANGUAGES, LANGUAGE_CODES, PATTERN_LANGUAGE_CODE } from '../../i18n';
+import {
+	LANGUAGES, LANGUAGE_CODES, PATTERN_LANGUAGE_CODE 
+} from '../../i18n';
 import { SITE } from '../../site';
 
 const LanguageSelect: FunctionComponent<{ lang: string }> = ({ lang }) => {
@@ -32,7 +34,7 @@ const LanguageSelect: FunctionComponent<{ lang: string }> = ({ lang }) => {
 				onChange={(e) => {
 					const newLang = e.target.value;
 					let actualDest = window.location.pathname.replace(PATTERN_LANGUAGE_CODE, newLang);
-					if (actualDest == '/') actualDest = `/introduction`;
+					if (actualDest == '/') actualDest = '/introduction';
 					window.location.pathname = window.location.pathname.replace(PATTERN_LANGUAGE_CODE, newLang);
 				}}
 			>

@@ -1,0 +1,29 @@
+{
+	"plugins": {
+		"@textlint/markdown": {
+			"extensions": [
+				".md",
+				".mdx"
+			]
+		}
+	},
+	"rules": {
+		"spelling": {
+			"language": "en",
+			"skipPatterns": [
+				"DBSet",
+				"DLL",
+				"GameContext",
+				"GameData",
+				"JSON",
+				"NoFody",
+				"NuGet",
+				"PlayerContext",
+				"PlayerData",
+				"PowerJson",
+				"SQLite"
+			],
+			"suggestCorrections": true
+		}
+	}
+}

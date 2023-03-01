@@ -44,7 +44,7 @@ Sends a chat message to everyone currently logged into your game.
 
 **Notes**
 
-* Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open, and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quickly banning, muting, warping, etc.  In most cases Target should be omitted or left as null.
+* Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quick admin actions (e.g. banning, muting, warping). In most cases Target should be omitted or left as null.
 
 ---
 
@@ -112,7 +112,7 @@ Sends a chat message to everyone in the proximity of a given map.
 
 
 **Notes**
-* Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open, and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quickly banning, muting, warping, etc.  In most cases Target should be omitted or left as null.
+* Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quick admin actions (e.g. banning, muting, warping). In most cases Target should be omitted or left as null.
 
 ---
 
@@ -183,7 +183,7 @@ Sends a chat message to a specific player.
 
 
 **Notes**
-* Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open, and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quickly banning, muting, warping, etc.  In most cases Target should be omitted or left as null.
+* Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quick admin actions (e.g. banning, muting, warping). In most cases Target should be omitted or left as null.
 
 ---
 

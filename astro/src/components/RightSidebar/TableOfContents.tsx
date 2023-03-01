@@ -1,16 +1,16 @@
 import type { MarkdownHeading } from 'astro';
 import type { FunctionalComponent } from 'preact';
 import { unescape } from 'html-escaper';
-import { useState, useEffect, useRef } from 'preact/hooks';
+import {
+	useState, useEffect, useRef 
+} from 'preact/hooks';
 
 type ItemOffsets = {
 	id: string;
 	topOffset: number;
 };
 
-const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
-	headings = [],
-}) => {
+const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({headings = [],}) => {
 	const toc = useRef<HTMLUListElement>();
 	const onThisPageID = 'on-this-page-heading';
 	const itemOffsets = useRef<ItemOffsets[]>([]);

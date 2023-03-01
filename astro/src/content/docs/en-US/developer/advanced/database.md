@@ -3,7 +3,7 @@ title: Database
 ---
 
 
-Intersect has two databases, one that stores game data such as items, maps, resources, events, etc and another that stores all data related to player accounts.
+Intersect has two databases, one that stores game data (e.g. items, maps, resources, events) and another that stores all data related to player accounts.
 
 The tables in both databases are automatically generated based on contexts. The player context and game context are defined in the following source files:
  - Intersect.Server/Database/GameData/GameContext.cs
@@ -18,14 +18,14 @@ The context classes also define relationships between the tables. You can learn 
 
 Fields are automatically created from public properties in a class much like Tables are automatically created from Classes within DBSets in a context.
 
-If you look at the `Users` class in the server `(Interect.Server/Database/PlayerData/User.cs)` you will see fields for the user's id, name, password, salt, email, and more.
+If you look at the `Users` class in the server (`Interect.Server/Database/PlayerData/User.cs`) you will see fields for the user's name, password, e-mail, etc.
 
-Please note, Entity Framework can only handle basic types (integers, strings, blobs, and references to other classes that exist as a DBSet). Due to these limitations we mark some complex fields as `[NotMapped]` and then have a secondary string field that converts the complex field to json. For an example of this see User.Power and User.PowerJson. Notice how the PowerJson property has a column name property so it is stored in the database in the Power field.
+Please note, Entity Framework can only handle basic types (integers, strings, blobs, and references to other classes that exist as a DBSet). Due to these limitations we mark some complex fields as `[NotMapped]` and then have a secondary string field that converts the complex field to JSON. For an example of this see User.Power and User.PowerJson. Notice how the PowerJson property has a column name property so it is stored in the database in the Power field.
 
 
 ## Adding Fields
 
-In order to add a field to the database create a new public property in a class that is stored within `Entity Framework`. In this example I am going to add a field for each User that tracks their last used ip address.
+In order to add a field to the database create a new public property in a class that is stored within `Entity Framework`. In this example I am going to add a field for each User that tracks their last used IP address.
 
 I added the following property to the `User` class:
 ```
@@ -40,11 +40,11 @@ After making changes to Entity Framework classes you will need to create a migra
   ![](https://www.ascensiongamedev.com/resources/filehost/13a8de43d24b7595cacb37c5c99c65f1.png)
 
 
-2. Now build your server. Building with the NoFody configuration will generate a bunch of required dlls.
+2. Now build your server. Building with the NoFody configuration will generate a bunch of required DLLs.
   ![](https://www.ascensiongamedev.com/resources/filehost/73271e21395e697efb06cf7d28f0f14d.png)
 
 
-3. In VS open a Nuget Package Manager Console. (Tools -> Nuget Package Manager -> Package Manager Console).
+3. In VS open a NuGet Package Manager Console. (Tools -> NuGet Package Manager -> Package Manager Console).
   ![](https://www.ascensiongamedev.com/resources/filehost/c51298fbaf5e35a654b43c915ab5375f.png)
 
 

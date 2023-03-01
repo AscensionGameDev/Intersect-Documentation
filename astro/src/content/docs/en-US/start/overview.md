@@ -54,7 +54,7 @@ Map Properties
 ---------------------------
 ![Map Properties](https://www.ascensiongamedev.com/resources/filehost/6fa0203860907911f251ed13f174b7d2.png)
 
-The map properties pane allows you to customize various settings for your map such as background music, the map name, weather options, whether or not the map is a combat zone, lighting, and more.
+The map properties pane allows you to customize various settings for your map (e.g. BGM, name, weather, combat, lighting).
 
 &nbsp;
 
