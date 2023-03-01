@@ -1,4 +1,4 @@
-# Intersect Authors
+# Authors
 
 [JC Snider](https://github.com/jcsnider)
 
@@ -6,10 +6,30 @@
 
 [Robbie Lodico](https://github.com/lodicolo)
 
-# Intersect Documentation Contributors
+# Maintainers
+
+[Jocelyn Cobb](https://github.com/Cheshire92)
+
+# Developers
+
+[Alex Vild](https://github.com/AlexVild)
+
+[Fernando Arzola Lagos](https://github.com/Arufonsu)
+
+[Weylon Felinto Oliveira](https://github.com/WeylonSantana)
+
+# Contributors
+
+[Alexoune001](https://github.com/Alexoune001)
+
+[Arttroy](https://github.com/Arttroy)
 
 [Damian666](https://github.com/Damian666)
 
 [Erik](https://github.com/erjdev)
 
-[Jocelyn Cobb](https://github.com/Azurebeats)
+[Khaikaa](https://github.com/Khaikaa)
+
+[intersectFR](https://github.com/intersectFR)
+
+[Thomasfds](https://github.com/Thomasfds)

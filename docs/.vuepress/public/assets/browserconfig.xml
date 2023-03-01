@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<browserconfig>
-    <msapplication>
-        <tile>
-            <square128x128logo src="/assets/intersect-logo@128.png"/>
-            <TileColor>#2b5797</TileColor>
-        </tile>
-    </msapplication>
-</browserconfig>

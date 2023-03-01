@@ -1,0 +1,29 @@
+---
+import { SITE } from '../../site';
+import AvatarList from './AvatarList.astro';
+
+type Props = {
+	pathInRepo: string;
+};
+
+const { pathInRepo } = Astro.props;
+
+const year = new Date(Date.now()).getFullYear();
+---
+
+<footer>
+	{
+		'repository' in SITE && SITE.repository.type === 'github' && (
+			<AvatarList pathInRepo={pathInRepo} />
+		)
+	}
+	<div>Copyright &copy; 2018 - {year} AscensionGameDev and Contributors</div>
+</footer>
+
+<style>
+	footer {
+		background: var(--theme-bg-accent);
+		font-size: 0.9rem;
+		padding: calc(2 * var(--gutter)) var(--doc-padding);
+	}
+</style>

@@ -1,1 +1,0 @@
-# Añadir comandos de evento
