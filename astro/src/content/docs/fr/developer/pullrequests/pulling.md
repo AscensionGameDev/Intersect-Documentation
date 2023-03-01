@@ -29,7 +29,3 @@ En fonction des changements que vous avez effectués sur votre branche vous renc
 Après la fusion, assurez vous d'extraire les changements dans votre application Bureau GitHub. (Vous aurez besoin d'aller les chercher d'abord!)
 
 ![pull](https://www.ascensiongamedev.com/resources/filehost/cfb1dc1b3d9c6cb5aef42d20eff0a3ed.png)
-
-
-
-

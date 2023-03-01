@@ -2,7 +2,6 @@
 title: Creating Patches
 ---
 
-
 A Git patch is a text file that contains one or more Git commits. Using GitHub you can very easily export your work into patches in order to distrbute outside of typical merging and pull requests. Using patches is the defacto method for sharing source edits on Ascension Game Dev.
 
 The best practice is to branch off master or development, make your changes, commit, and then create the patch based off your branch.

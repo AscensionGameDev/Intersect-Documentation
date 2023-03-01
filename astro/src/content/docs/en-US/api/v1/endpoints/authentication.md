@@ -2,8 +2,6 @@
 title: Authentication
 ---
 
-
-
 ## Get Token
 
 Get an authorization token for api requests that require auth.
@@ -20,11 +18,11 @@ Get an authorization token for api requests that require auth.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| grant_type | String  | Auth Type. | :heavy_check_mark: |
-| username | String  | Username of API Authorized Account | :heavy_check_mark: |
-| password | String  | SHA-256 Hash of Account Password | :heavy_check_mark: |
+| Name       | Type   | Description                        | Required           |
+| ---------- | ------ | ---------------------------------- | ------------------ |
+| grant_type | String | Auth Type.                         | :heavy_check_mark: |
+| username   | String | Username of API Authorized Account | :heavy_check_mark: |
+| password   | String | SHA-256 Hash of Account Password   | :heavy_check_mark: |
 
 **Example**
 
@@ -32,15 +30,15 @@ Get an authorization token for api requests that require auth.
 {
 	"grant_type": "password",
 	"username": "jcsnider",
-	"password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8",
+	"password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
 }
 ```
 
 **Notes**
 
-* The grant type to receive an auth token is 'password'.
-* Password must be a SHA-256 hash of the user's password, with hyphens removed.
-* You can generate a SHA-256 hash of a plaintext password [here (on this site)](../../tools/hash-generators.md).
+- The grant type to receive an auth token is 'password'.
+- Password must be a SHA-256 hash of the user's password, with hyphens removed.
+- You can generate a SHA-256 hash of a plaintext password [here (on this site)](../../tools/hash-generators.md).
 
 ---
 
@@ -54,30 +52,28 @@ Get an authorization token for api requests that require auth.
 
 ```json
 {
-	"access_token":  "4RoC_BqVns0p7guzWe-Ah4C6SiVmNcBO0KnFNLtGCxuPZbfF9QJnGc5zbrhM-EQ8c_fajWk076pyI-bjaUPsfyd_c2u5XLCANc4khfpTmq87ksvjDpMI87NVIWOCy1QAUTQoszf-CSkweyw-At31UjBUBTQ6iuidQcG-eZqdnecjKDWQ5vOBZpjI-Xlz7m8UZBjuEWf4sFIqbAnIQl54F8VSIr26QtcUROkUWepLFPqSa8ZO110vg5xefTy-wJmEwbn1zOAuSMR6yKah39GBU_xtkuHw1WaiJ_iSQLRiF7z-v0Ct1DYbMrmqaVdFI1xUwsrFN3WWgwpxxsXEBajcFkL9Ou7MSQBwWlI5sU4WlYJbKAGlaMJU9sohK5I3Q3B34UTub0xNdiyhqzn9E0HIep_RUzzE1YZhGmV3bBoV-cYTxSTfpTXIFuH9f8tbv-FPhylWY__hqndUKVpq4ez2n9HqfCdDi6HdYd1mcTyDTABdy248VeMPqiwKUl-95w87",
+	"access_token": "4RoC_BqVns0p7guzWe-Ah4C6SiVmNcBO0KnFNLtGCxuPZbfF9QJnGc5zbrhM-EQ8c_fajWk076pyI-bjaUPsfyd_c2u5XLCANc4khfpTmq87ksvjDpMI87NVIWOCy1QAUTQoszf-CSkweyw-At31UjBUBTQ6iuidQcG-eZqdnecjKDWQ5vOBZpjI-Xlz7m8UZBjuEWf4sFIqbAnIQl54F8VSIr26QtcUROkUWepLFPqSa8ZO110vg5xefTy-wJmEwbn1zOAuSMR6yKah39GBU_xtkuHw1WaiJ_iSQLRiF7z-v0Ct1DYbMrmqaVdFI1xUwsrFN3WWgwpxxsXEBajcFkL9Ou7MSQBwWlI5sU4WlYJbKAGlaMJU9sohK5I3Q3B34UTub0xNdiyhqzn9E0HIep_RUzzE1YZhGmV3bBoV-cYTxSTfpTXIFuH9f8tbv-FPhylWY__hqndUKVpq4ez2n9HqfCdDi6HdYd1mcTyDTABdy248VeMPqiwKUl-95w87",
 
-	"token_type":  "bearer",
+	"token_type": "bearer",
 
-	"expires_in":  299,
+	"expires_in": 299,
 
-	"refresh_token":  "efd947fe-a874-4259-9b06-41a8a9505e35",
+	"refresh_token": "efd947fe-a874-4259-9b06-41a8a9505e35",
 
-	".issued":  "Mon, 29 Jul 2019 19:52:04 GMT",
+	".issued": "Mon, 29 Jul 2019 19:52:04 GMT",
 
-	".expires":  "Mon, 29 Jul 2019 19:57:04 GMT"
+	".expires": "Mon, 29 Jul 2019 19:57:04 GMT"
 }
 ```
 
-
 ### Notes
 
-* The refresh_token is the token's id, it is used to refresh or delete the token using the routes below.
-* For all requests that require authentication you will need to supply the access token within the request header. The proper format can found below.
+- The refresh_token is the token's id, it is used to refresh or delete the token using the routes below.
+- For all requests that require authentication you will need to supply the access token within the request header. The proper format can found below.
 
-| Header | Type | Value |
-| ----- | ---- |------------ |
-| authorization | String  | Bearer [access_token] |
-
+| Header        | Type   | Value                 |
+| ------------- | ------ | --------------------- |
+| authorization | String | Bearer [access_token] |
 
 **Example**
 
@@ -85,9 +81,8 @@ Get an authorization token for api requests that require auth.
 authorization: Bearer 4RoC_BqVns0p7guzWe-Ah4C6SiVmNcBO0KnFNLtGCxuPZbfF9QJnGc5zbrhM-EQ8c_fajWk076pyI-bjaUPsfyd_c2u5XLCANc4khfpTmq87ksvjDpMI87NVIWOCy1QAUTQoszf-CSkweyw-At31UjBUBTQ6iuidQcG-eZqdnecjKDWQ5vOBZpjI-Xlz7m8UZBjuEWf4sFIqbAnIQl54F8VSIr26QtcUROkUWepLFPqSa8ZO110vg5xefTy-wJmEwbn1zOAuSMR6yKah39GBU_xtkuHw1WaiJ_iSQLRiF7z-v0Ct1DYbMrmqaVdFI1xUwsrFN3WWgwpxxsXEBajcFkL9Ou7MSQBwWlI5sU4WlYJbKAGlaMJU9sohK5I3Q3B34UTub0xNdiyhqzn9E0HIep_RUzzE1YZhGmV3bBoV-cYTxSTfpTXIFuH9f8tbv-FPhylWY__hqndUKVpq4ez2n9HqfCdDi6HdYd1mcTyDTABdy248VeMPqiwKUl-95w87
 ```
 
-
-
 ## Refresh Token
+
 Refreshes an existing token delaying it's expiration.
 
 ### Request
@@ -102,24 +97,23 @@ Refreshes an existing token delaying it's expiration.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| grant_type | String  | Auth Type. | :heavy_check_mark: |
-| refresh_token | String  | Refresh Token Id | :heavy_check_mark: |
+| Name          | Type   | Description      | Required           |
+| ------------- | ------ | ---------------- | ------------------ |
+| grant_type    | String | Auth Type.       | :heavy_check_mark: |
+| refresh_token | String | Refresh Token Id | :heavy_check_mark: |
 
 **Example**
 
 ```json
 {
 	"grant_type": "refresh_token",
-	"refresh_token": "efd947fe-a874-4259-9b06-41a8a9505e35",
+	"refresh_token": "efd947fe-a874-4259-9b06-41a8a9505e35"
 }
 ```
 
-
 **Notes**
 
-* The grant type should be 'refresh_token'.
+- The grant type should be 'refresh_token'.
 
 ---
 
@@ -143,6 +137,7 @@ Refreshes an existing token delaying it's expiration.
 ```
 
 ## Delete Token
+
 Deletes the token associated with a given authorization header.
 
 ### Request
@@ -155,10 +150,9 @@ Deletes the token associated with a given authorization header.
 
 **Body** : `None`
 
-
 **Notes**
 
-* The tokenId within the request url is returned as the 'refresh_token' in the Get Token and Refresh Token responses.
+- The tokenId within the request url is returned as the 'refresh_token' in the Get Token and Refresh Token responses.
 
 ---
 
@@ -176,8 +170,8 @@ Deletes the token associated with a given authorization header.
 }
 ```
 
-
 ## Delete Token By Id
+
 Deletes an authorization token preventing further use.
 
 ### Request
@@ -190,10 +184,9 @@ Deletes an authorization token preventing further use.
 
 **Body** : `None`
 
-
 **Notes**
 
-* The tokenId within the request url is returned as the 'refresh_token' in the Get Token and Refresh Token responses.
+- The tokenId within the request url is returned as the 'refresh_token' in the Get Token and Refresh Token responses.
 
 ---
 

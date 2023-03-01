@@ -1,4 +1,3 @@
 ---
 title: Evènements Communs
 ---
-

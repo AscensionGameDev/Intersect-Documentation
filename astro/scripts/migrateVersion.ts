@@ -1,16 +1,21 @@
 import { Argument, program } from 'commander';
 import {
-	cp, mkdir, readdir, stat, unlink
+	cp, mkdir, readdir, stat, unlink 
 } from 'fs/promises';
 import {
-	join, relative, resolve
+	join, relative, resolve 
 } from 'path';
 import { valid } from 'semver';
 
-async function migrateLocale(cwd: string, version: string, collectionPath: string, locale: string) {
+async function migrateLocale(
+	cwd: string,
+	version: string,
+	collectionPath: string,
+	locale: string
+) {
 	const localePath = join(collectionPath, locale);
 	const versionPath = join(localePath, `v${version}`);
-	const versionStat = await stat(versionPath).catch(error => {
+	const versionStat = await stat(versionPath).catch((error) => {
 		if (error.code === 'ENOENT') {
 			return null;
 		}
@@ -19,14 +24,16 @@ async function migrateLocale(cwd: string, version: string, collectionPath: strin
 	});
 
 	if (versionStat !== null) {
-		console.error(`Skipping version '${version}' for ${locale} because it already exists in ${localePath}`);
+		console.error(
+			`Skipping version '${version}' for ${locale} because it already exists in ${localePath}`
+		);
 		return;
 	}
 
 	const names = await readdir(localePath);
 
 	// Omit pre-existing version directories
-	const nonVersionNames = names.filter(name => valid(name) === null);
+	const nonVersionNames = names.filter((name) => valid(name) === null);
 
 	// Create the new version directory
 	await mkdir(versionPath);
@@ -37,7 +44,12 @@ async function migrateLocale(cwd: string, version: string, collectionPath: strin
 			const sourcePath = join(localePath, name);
 			const targetPath = join(versionPath, name);
 
-			console.info(`Copying '${name}' from ${relative(cwd, sourcePath)} to '${relative(cwd, targetPath)}'`);
+			console.info(
+				`Copying '${name}' from ${relative(cwd, sourcePath)} to '${relative(
+					cwd,
+					targetPath
+				)}'`
+			);
 			await cp(sourcePath, targetPath, {
 				errorOnExist: true,
 				preserveTimestamps: true,
@@ -47,17 +59,26 @@ async function migrateLocale(cwd: string, version: string, collectionPath: strin
 			console.groupEnd();
 			console.error(error);
 
-			console.warn(`Failed to migrate version '${version}' because an error occurred while copying '${name}', reverting changes from this command...`);
+			console.warn(
+				`Failed to migrate version '${version}' because an error occurred while copying '${name}', reverting changes from this command...`
+			);
 			await unlink(versionPath);
 			return;
 		}
 	}
 
 	console.groupEnd();
-	console.info(`Finished creating a copy for version ${version} for ${locale}!`);
+	console.info(
+		`Finished creating a copy for version ${version} for ${locale}!`
+	);
 }
 
-async function migrateCollection(cwd: string, version: string, contentPath: string, collection: string) {
+async function migrateCollection(
+	cwd: string,
+	version: string,
+	contentPath: string,
+	collection: string
+) {
 	const collectionPath = join(contentPath, collection);
 
 	// Skip files (like config.ts)

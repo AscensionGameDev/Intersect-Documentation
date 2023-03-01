@@ -2,7 +2,6 @@
 title: Allowed Network Types
 ---
 
-
 Because of how Owin requires the usage of `netsh` in order to specify certificates, HTTPS is a rather complicated ordeal for the API, but unfortunately the API has credentials and authentication tokens being passed back-and-forth, meaning HTTP is not sufficient for internet traffic. It however _is_ sufficient for local development and setting up the API behind a reverse proxy (such as NGINX, which are _much_ simpler to set up the TLS certificates for).
 
 ## `NetworkTypes` Flags

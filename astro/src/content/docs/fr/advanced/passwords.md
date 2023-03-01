@@ -2,8 +2,8 @@
 title: Mots de Passe
 ---
 
-
 ## Réinitialisation Mot de Passe
+
 La réinitialisation de mot de passe est une nouvelle fonctionnalité offerte par la Beta 6. pour que la réinitialisation du mot de passe fonctionne le serveur doit être capable d'envoyer des emails.
 
 Mettre en place un compte email sur une plateforme qui permet d'envoyer des email via SMTP. Gmail est un choix évident pour ça.
@@ -26,15 +26,17 @@ Redémarrez votre serveur. Si les réglages SMTP sont effectués un bouton 'Mot 
 
 ![Réinitialisation mot de passe](https://www.ascensiongamedev.com/resources/filehost/c7e2072b2697c3462423bf1b7903a295.png)
 
-
 ## Hash du Mot de Passe
+
 Les mots de passe sont hashé avant d'être stockés dans la base de données. Chaque compte possède un SALT généré aléatoirement.
 
 Pour vérifier qu'un mot de passe en texte clair est correct, suivez ces étapes:
-* Hashez le mot de passe en clair avec SHA256 et enlevez tous les tirets résultant de cette production.
-* Enchaînez le salt au mot de passe et utilisez un hash SHA256 sur le résultat en retirant tous les tirets résultant de cette production à nouveau.
+
+- Hashez le mot de passe en clair avec SHA256 et enlevez tous les tirets résultant de cette production.
+- Enchaînez le salt au mot de passe et utilisez un hash SHA256 sur le résultat en retirant tous les tirets résultant de cette production à nouveau.
 
 C# Référence Code
+
 ```cs
 var sha = new SHA256Managed();
 string pass = BitConverter.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes("plaintext_password"))).Replace("-", "");

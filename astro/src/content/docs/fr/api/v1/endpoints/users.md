@@ -2,7 +2,6 @@
 title: Utilisateurs
 ---
 
-
 **Ces points de terminaison requièrent [users.query API Role](https://docs.freemmorpgmaker.com/api/v1/introduction/roles.html#users-query)!**
 
 ## Liste Utilisateurs
@@ -19,11 +18,11 @@ Récupère les utilisateurs du serveur avec leur id et les informations stockée
 
 **Paramêtres Requête**
 
-| Nom   | Type | Description | Requis | Par Défaut |
-| ----- | ---- |------------ | -------- | ------- |
-| page | int  | Décalage des utilisateurs en numéro de page | :heavy_minus_sign: | 0 |
-| pageSize | int  | Nombre d'utilisateurs par page | :heavy_minus_sign: | 5 |
-| limit | int  | Limite du nombre d'utilisateurs retournés | :heavy_minus_sign: | `pageSize` |
+| Nom      | Type | Description                                 | Requis             | Par Défaut |
+| -------- | ---- | ------------------------------------------- | ------------------ | ---------- |
+| page     | int  | Décalage des utilisateurs en numéro de page | :heavy_minus_sign: | 0          |
+| pageSize | int  | Nombre d'utilisateurs par page              | :heavy_minus_sign: | 5          |
+| limit    | int  | Limite du nombre d'utilisateurs retournés   | :heavy_minus_sign: | `pageSize` |
 
 **Exemple**
 
@@ -42,44 +41,44 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-    "Total": 162,
-    "Page": 32,
-    "PageSize": 5,
-    "Count": 2,
-    "Values": [
-        {
-            "Id": "f71a2f48-ce7b-4420-ae37-8802b8c4fb60",
-            "Name": "tester",
-            "Email": "testr@testr.com",
-            "Power":{
-                "Editor": false,
-                "Ban": false,
-                "Kick": false,
-                "Mute": false,
-                "Api": false,
-                "PersonalInformation": false
-            },
-            "PasswordResetCode": null,
-            "IsMuted": false,
-            "MuteReason": null
-        },
-        {
-            "Id": "fb19a81b-000f-4679-b30d-778dc8895594",
-            "Name": "jcsnider",
-            "Email": "test@test.com",
-            "Power":{
-                "Editor": false,
-                "Ban": false,
-                "Kick": false,
-                "Mute": false,
-                "Api": false,
-                "PersonalInformation": false
-            },
-            "PasswordResetCode": null,
-            "IsMuted": false,
-            "MuteReason": null
-        }
-    ]
+	"Total": 162,
+	"Page": 32,
+	"PageSize": 5,
+	"Count": 2,
+	"Values": [
+		{
+			"Id": "f71a2f48-ce7b-4420-ae37-8802b8c4fb60",
+			"Name": "tester",
+			"Email": "testr@testr.com",
+			"Power": {
+				"Editor": false,
+				"Ban": false,
+				"Kick": false,
+				"Mute": false,
+				"Api": false,
+				"PersonalInformation": false
+			},
+			"PasswordResetCode": null,
+			"IsMuted": false,
+			"MuteReason": null
+		},
+		{
+			"Id": "fb19a81b-000f-4679-b30d-778dc8895594",
+			"Name": "jcsnider",
+			"Email": "test@test.com",
+			"Power": {
+				"Editor": false,
+				"Ban": false,
+				"Kick": false,
+				"Mute": false,
+				"Api": false,
+				"PersonalInformation": false
+			},
+			"PasswordResetCode": null,
+			"IsMuted": false,
+			"MuteReason": null
+		}
+	]
 }
 ```
 
@@ -113,20 +112,20 @@ Récupère un utilisateur du serveur par recherche avec leur nom d'utilisateur o
 
 ```json
 {
-    "Id": "fb19a81b-000f-4679-b30d-778dc8895594",
-    "Name": "jcsnider",
-    "Email": "test@test.com",
-    "Power":{
-        "Editor": false,
-        "Ban": false,
-        "Kick": false,
-        "Mute": false,
-        "Api": false,
-        "PersonalInformation": false
-    },
-    "PasswordResetCode": null,
-    "IsMuted": false,
-    "MuteReason": null
+	"Id": "fb19a81b-000f-4679-b30d-778dc8895594",
+	"Name": "jcsnider",
+	"Email": "test@test.com",
+	"Power": {
+		"Editor": false,
+		"Ban": false,
+		"Kick": false,
+		"Mute": false,
+		"Api": false,
+		"PersonalInformation": false
+	},
+	"PasswordResetCode": null,
+	"IsMuted": false,
+	"MuteReason": null
 }
 ```
 
@@ -146,25 +145,26 @@ Créé un compte sur le serveur pour un joueur qui a donné son nom d'utilisateu
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| username | string  | Nom d'utilisateur pour le nouvel utilisateur. | :heavy_check_mark: |
-| password | string  | Hash sha256 du mot de passe du nouvel utilisateur. | :heavy_check_mark: |
-| email | string  | Adresse Email pour le nouvel utilisateur. | :heavy_check_mark: |
+| Nom      | Type   | Description                                        | Requis             |
+| -------- | ------ | -------------------------------------------------- | ------------------ |
+| username | string | Nom d'utilisateur pour le nouvel utilisateur.      | :heavy_check_mark: |
+| password | string | Hash sha256 du mot de passe du nouvel utilisateur. | :heavy_check_mark: |
+| email    | string | Adresse Email pour le nouvel utilisateur.          | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
-  "username": "jcsnider",
-  "password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8",
-  "email": "jcsnider@ascensiongamedev.com"
+	"username": "jcsnider",
+	"password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8",
+	"email": "jcsnider@ascensiongamedev.com"
 }
 ```
+
 **Notes**
 
-* Le mot de passe doit être un hash SHA256 du texte en clair du mot de passe, avec les traits d'union retirés.
-* Vous pouvez générer un hash SHA256 du texte en clair du mot de passe [ici](https://passwordsgenerator.net/sha256-hash-generator/).
+- Le mot de passe doit être un hash SHA256 du texte en clair du mot de passe, avec les traits d'union retirés.
+- Vous pouvez générer un hash SHA256 du texte en clair du mot de passe [ici](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ---
 
@@ -178,8 +178,8 @@ Créé un compte sur le serveur pour un joueur qui a donné son nom d'utilisateu
 
 ```json
 {
-    "Username": "jcsnider",
-    "Email": "jcsnider@ascensiongamedev.com"
+	"Username": "jcsnider",
+	"Email": "jcsnider@ascensiongamedev.com"
 }
 ```
 
@@ -201,15 +201,15 @@ Vérifie si un mot de passe utilisateur est valide.
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| password | string  | Hash SHA256 du mot de passe pour valider. | :heavy_check_mark: |
+| Nom      | Type   | Description                               | Requis             |
+| -------- | ------ | ----------------------------------------- | ------------------ |
+| password | string | Hash SHA256 du mot de passe pour valider. | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
-  "password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
+	"password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
 }
 ```
 
@@ -225,7 +225,7 @@ Vérifie si un mot de passe utilisateur est valide.
 
 ```json
 {
-    "Message": "Password Correct"
+	"Message": "Password Correct"
 }
 ```
 
@@ -247,17 +247,17 @@ Change l'adresse email associée à un utilisateur ayant donné le mot de passe 
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| new | string  | L'adresse email. | :heavy_check_mark: |
-| authorization | string  | Le hash sha256 du mot de passe actuel de l'utilisateur. | :heavy_check_mark: |
+| Nom           | Type   | Description                                             | Requis             |
+| ------------- | ------ | ------------------------------------------------------- | ------------------ |
+| new           | string | L'adresse email.                                        | :heavy_check_mark: |
+| authorization | string | Le hash sha256 du mot de passe actuel de l'utilisateur. | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
-  "new": "test100@test.com",
-  "authorization": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
+	"new": "test100@test.com",
+	"authorization": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
 }
 ```
 
@@ -273,24 +273,23 @@ Change l'adresse email associée à un utilisateur ayant donné le mot de passe 
 
 ```json
 {
-    "Id": "cf995c16-8c2e-4ab3-a5b8-a39d6051adc6",
-    "Name": "jcsnider",
-    "Email": "test100@test.com",
-    "Power":{
-        "Editor": true,
-        "Ban": true,
-        "Kick": true,
-        "Mute": true,
-        "Api": true,
-        "ApiPersonalInformation": true,
-        "ApiUserManagement": true
-    },
-    "PasswordResetCode": null,
-    "IsMuted": false,
-    "MuteReason": null
+	"Id": "cf995c16-8c2e-4ab3-a5b8-a39d6051adc6",
+	"Name": "jcsnider",
+	"Email": "test100@test.com",
+	"Power": {
+		"Editor": true,
+		"Ban": true,
+		"Kick": true,
+		"Mute": true,
+		"Api": true,
+		"ApiPersonalInformation": true,
+		"ApiUserManagement": true
+	},
+	"PasswordResetCode": null,
+	"IsMuted": false,
+	"MuteReason": null
 }
 ```
-
 
 ## Changer Mot de Passe
 
@@ -310,17 +309,17 @@ Change le mot de passe associé d'un utilisateur ayant donné le mot de passe ac
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| new | string  | Le hash sha256 du nouveau mot de passe de l'utilisateur. | :heavy_check_mark: |
-| authorization | string  | Le hash sha256 du mot de passe actuel de l'utilisateur. | :heavy_check_mark: |
+| Nom           | Type   | Description                                              | Requis             |
+| ------------- | ------ | -------------------------------------------------------- | ------------------ |
+| new           | string | Le hash sha256 du nouveau mot de passe de l'utilisateur. | :heavy_check_mark: |
+| authorization | string | Le hash sha256 du mot de passe actuel de l'utilisateur.  | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
-  "new": "1B4F0E9851971998E732078544C96B36C3D01CEDF7CAA332359D6F1D83567014",
-  "authorization": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
+	"new": "1B4F0E9851971998E732078544C96B36C3D01CEDF7CAA332359D6F1D83567014",
+	"authorization": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
 }
 ```
 
@@ -336,14 +335,14 @@ Change le mot de passe associé d'un utilisateur ayant donné le mot de passe ac
 
 ```json
 {
-    "Message": "Password Updated"
+	"Message": "Password Updated"
 }
 ```
 
 **Notes**
 
-* Le mot de passe doit être un hash SHA256 du texte en clair du mot de passe, avec les traits d'union retirés.
-* Vous pouvez générer un hash SHA256 du texte en clair du mot de passe [ici](https://passwordsgenerator.net/sha256-hash-generator/).
+- Le mot de passe doit être un hash SHA256 du texte en clair du mot de passe, avec les traits d'union retirés.
+- Vous pouvez générer un hash SHA256 du texte en clair du mot de passe [ici](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ## Requête Email Réinitialisation Mot de Passe
 
@@ -375,10 +374,9 @@ Envoie à l'utilisateur un code de réinitialisation de mot de passe. Cela requi
 
 ```json
 {
-    "Message": "Password reset email sent."
+	"Message": "Password reset email sent."
 }
 ```
-
 
 ## Obtenir Personnages
 
@@ -417,7 +415,6 @@ Retourne un tableau des personnages d'un utilisateur.
 ```
 
 L'exemple est tronqué, pour une réponse complète [cliquez ici](https://www.ascensiongamedev.com/resources/filehost/dd42d59003bcc6c387452f40832fb97f.json).
-
 
 ## Obtenir Personnage
 
@@ -482,15 +479,15 @@ Change l'adresse email d'un utilisateur sans son mot de passe. **Requiert le rô
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| new | string  | La nouvelle adresse email. | :heavy_check_mark: |
+| Nom | Type   | Description                | Requis             |
+| --- | ------ | -------------------------- | ------------------ |
+| new | string | La nouvelle adresse email. | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
-  "new": "test100@test.com"
+	"new": "test100@test.com"
 }
 ```
 
@@ -506,21 +503,21 @@ Change l'adresse email d'un utilisateur sans son mot de passe. **Requiert le rô
 
 ```json
 {
-    "Id": "cf995c16-8c2e-4ab3-a5b8-a39d6051adc6",
-    "Name": "jcsnider",
-    "Email": "test100@test.com",
-    "Power":{
-        "Editor": true,
-        "Ban": true,
-        "Kick": true,
-        "Mute": true,
-        "Api": true,
-        "ApiPersonalInformation": true,
-        "ApiUserManagement": true
-    },
-    "PasswordResetCode": null,
-    "IsMuted": false,
-    "MuteReason": null
+	"Id": "cf995c16-8c2e-4ab3-a5b8-a39d6051adc6",
+	"Name": "jcsnider",
+	"Email": "test100@test.com",
+	"Power": {
+		"Editor": true,
+		"Ban": true,
+		"Kick": true,
+		"Mute": true,
+		"Api": true,
+		"ApiPersonalInformation": true,
+		"ApiUserManagement": true
+	},
+	"PasswordResetCode": null,
+	"IsMuted": false,
+	"MuteReason": null
 }
 ```
 
@@ -542,22 +539,22 @@ Change le mot de passe d'un utilisateur sans son mot de passe existant. **Requie
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| new | string  | Le hash sha256 du nouveau mot de passe de l'utilisateur. | :heavy_check_mark: |
+| Nom | Type   | Description                                              | Requis             |
+| --- | ------ | -------------------------------------------------------- | ------------------ |
+| new | string | Le hash sha256 du nouveau mot de passe de l'utilisateur. | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
-  "new": "1B4F0E9851971998E732078544C96B36C3D01CEDF7CAA332359D6F1D83567014"
+	"new": "1B4F0E9851971998E732078544C96B36C3D01CEDF7CAA332359D6F1D83567014"
 }
 ```
 
 **Notes**
 
-* Le mot de passe doit être un hash SHA256 du texte en clair du mot de passe, avec les traits d'union retirés.
-* Vous pouvez générer un hash SHA256 du texte en clair du mot de passe [ici](https://passwordsgenerator.net/sha256-hash-generator/).
+- Le mot de passe doit être un hash SHA256 du texte en clair du mot de passe, avec les traits d'union retirés.
+- Vous pouvez générer un hash SHA256 du texte en clair du mot de passe [ici](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ---
 
@@ -571,14 +568,14 @@ Change le mot de passe d'un utilisateur sans son mot de passe existant. **Requie
 
 ```json
 {
-    "Message": "Password Correct"
+	"Message": "Password Correct"
 }
 ```
 
 **Notes**
 
-* Le mot de passe doit être un hash SHA256 du texte en clair du mot de passe, avec les traits d'union retirés.
-* Vous pouvez générer un hash SHA256 du texte en clair du mot de passe [ici](https://passwordsgenerator.net/sha256-hash-generator/).
+- Le mot de passe doit être un hash SHA256 du texte en clair du mot de passe, avec les traits d'union retirés.
+- Vous pouvez générer un hash SHA256 du texte en clair du mot de passe [ici](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ## Liste Utilisateurs (`POST`) (_Obsolète_)
 
@@ -596,17 +593,17 @@ Récupère des utilisateurs du serveur avec leur id et les informations stockée
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| page | int  | Page d'utilisateurs à récupérer. | :heavy_minus_sign: |
+| Nom   | Type | Description                        | Requis             |
+| ----- | ---- | ---------------------------------- | ------------------ |
+| page  | int  | Page d'utilisateurs à récupérer.   | :heavy_minus_sign: |
 | count | int  | Nombre d'utilisateurs à récupérer. | :heavy_minus_sign: |
 
 **Exemple**
 
 ```json
 {
-  "page": 32,
-  "count": 5
+	"page": 32,
+	"count": 5
 }
 ```
 
@@ -622,42 +619,42 @@ Récupère des utilisateurs du serveur avec leur id et les informations stockée
 
 ```json
 {
-    "total": 162,
-    "Page": 32,
-    "count": 2,
-    "entries":[
-        {
-            "Id": "f71a2f48-ce7b-4420-ae37-8802b8c4fb60",
-            "Name": "tester",
-            "Email": "testr@testr.com",
-            "Power":{
-                "Editor": false,
-                "Ban": false,
-                "Kick": false,
-                "Mute": false,
-                "Api": false,
-                "PersonalInformation": false
-            },
-            "PasswordResetCode": null,
-            "IsMuted": false,
-            "MuteReason": null
-        },
-        {
-            "Id": "fb19a81b-000f-4679-b30d-778dc8895594",
-            "Name": "jcsnider",
-            "Email": "test@test.com",
-            "Power":{
-                "Editor": false,
-                "Ban": false,
-                "Kick": false,
-                "Mute": false,
-                "Api": false,
-                "PersonalInformation": false
-            },
-            "PasswordResetCode": null,
-            "IsMuted": false,
-            "MuteReason": null
-        }
-    ]
+	"total": 162,
+	"Page": 32,
+	"count": 2,
+	"entries": [
+		{
+			"Id": "f71a2f48-ce7b-4420-ae37-8802b8c4fb60",
+			"Name": "tester",
+			"Email": "testr@testr.com",
+			"Power": {
+				"Editor": false,
+				"Ban": false,
+				"Kick": false,
+				"Mute": false,
+				"Api": false,
+				"PersonalInformation": false
+			},
+			"PasswordResetCode": null,
+			"IsMuted": false,
+			"MuteReason": null
+		},
+		{
+			"Id": "fb19a81b-000f-4679-b30d-778dc8895594",
+			"Name": "jcsnider",
+			"Email": "test@test.com",
+			"Power": {
+				"Editor": false,
+				"Ban": false,
+				"Kick": false,
+				"Mute": false,
+				"Api": false,
+				"PersonalInformation": false
+			},
+			"PasswordResetCode": null,
+			"IsMuted": false,
+			"MuteReason": null
+		}
+	]
 }
 ```

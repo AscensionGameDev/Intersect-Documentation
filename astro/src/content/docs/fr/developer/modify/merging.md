@@ -7,6 +7,7 @@ Arrivé à ce point vous devriez avoir créé une branche, fait quelques modific
 Nous appelons ce processus fusion et c'est vraiment simple, vous pouvez le faire via l'application Bureau GitHub ou via l'interface en ligne de Demande d'Extraction GitHub. Je vais vous montrer ces deux méthode ci-dessous.
 
 ## Fusionner avec le Bureau GitHub
+
 Avant d'essayer de fusionner il est important que vous soyez passé sur la branche dans laquelle vous voulez effectuer la fusion. (Pas la branche où vous avez travaillé!) Sélectionnez cette branche dans l'application de Bureau GitHub.
 
 ![sélectionbase](https://www.ascensiongamedev.com/resources/filehost/193129a8fb4dd77d1eec2c29b2583df3.png)
@@ -28,6 +29,7 @@ Finalement mettez en avant votre branche avec les changements de fusion sur GitH
 ![miseenavant](https://www.ascensiongamedev.com/resources/filehost/d068a4be230a1b9dd5160cdec27854dd.png)
 
 ## Fusionner avec GitHub En Ligne
+
 Autrement vous pouvez utiliser l'interface de requête d'extraction en ligne de GitHub pour gérer la fusion de branches. Si vous avez un réglage de protection de branche, ou si vous voulez fusionner dans votre branche principale pour permettre les revues alors la méthode ci-dessus utilisant l'application de bureau ne fonctionnera pas. En oûtre, l'interface de requête d'extraction est ce qui doit être utilisé pour apporter des mises à jour officielles dans votre repo privé et soumettre du code que vous avez écris pour contribuer au repo officiel vous devriez toujours choisir de faire ainsi. Créer une requête d'extraction est très simple.
 
 Commencer par vous rendre sur GitHub.com et naviguez jusqu'à votre repo personnel. Cliquez sur l'étiquette Requête Extraction puis sur le bouton Nouvelle Requête d'Extraction.

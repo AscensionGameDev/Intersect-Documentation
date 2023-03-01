@@ -1,6 +1,6 @@
 /** @jsxImportSource react */
 import {
-	useState, useCallback, useRef
+	useState, useCallback, useRef 
 } from 'react';
 import { ALGOLIA } from '../../consts';
 import '@docsearch/css';
@@ -8,7 +8,6 @@ import './SearchButton.css';
 
 import { createPortal } from 'react-dom';
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react';
-
 
 export default function Search() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +40,12 @@ export default function Search() {
 
 	return (
 		<>
-			<button type="button" ref={searchButtonRef} onClick={onOpen} className="search-input">
+			<button
+				type="button"
+				ref={searchButtonRef}
+				onClick={onOpen}
+				className="search-input"
+			>
 				<svg width="24" height="24" fill="none">
 					<path
 						d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"

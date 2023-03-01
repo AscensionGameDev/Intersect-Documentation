@@ -28,5 +28,4 @@ Podras encontrar la versión compilada de Intersect en el directorio Intersect-E
 
 ![output](https://www.ascensiongamedev.com/resources/filehost/5c0070679608ae4d663de3bc34c4527b.png)
 
-
 ** Ten en cuenta que si deseas ejecutar tu cliente o editor utilizando el depurador, deberás [Descargar y ubicar estos recursos ](https://github.com/AscensionGameDev/Intersect-Assets) en las carpetas /build/debug/client y /build/debug/editor . **

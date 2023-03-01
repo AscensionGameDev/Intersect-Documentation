@@ -2,16 +2,15 @@
 title: Branches
 ---
 
-
 Le dépôt possède de multiples branches pour pouvoir séparer les versions multiples et permet de réparer les bugs à la fois sur les anciennes parutions et les actuelles, plutôt que de seulement inclure les réparations de bug dans la nouvelle parution et de dire aux personnes d' "attendre" jusqu'à ce qu'elle atteigne sa date de parution.
 
 Actuellement, Intersect possède 3 branches séparées pour différentes versions.
 
-|        Nom  | Version Actuelle | Notes                                                                         |
-|------------:|-----------------|-------------------------------------------------------------------------------|
-|      master | 0.6.1           | Reçois seulement les réparations de bug critiques, il est attendu qu'il ne soit pas souvent modifié.               |
-|  prerelease | 0.6.2           | Reçois toutes les réparations de bug avec des alternatives relativement mineures, comme des fonctionnalités ayant un impact mineur sur le code. <br/><br/> **Seuls les changements de schéma de base de données critiques sont faits dans cette branche.** |
-| development | 0.7.0           | Volatile. Peut inclure des changements majeurs à la fois sur la structure codebase et la structure database. |
+|         Nom | Version Actuelle | Notes                                                                                                                                                                                                                                                      |
+| ----------: | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      master | 0.6.1            | Reçois seulement les réparations de bug critiques, il est attendu qu'il ne soit pas souvent modifié.                                                                                                                                                       |
+|  prerelease | 0.6.2            | Reçois toutes les réparations de bug avec des alternatives relativement mineures, comme des fonctionnalités ayant un impact mineur sur le code. <br/><br/> **Seuls les changements de schéma de base de données critiques sont faits dans cette branche.** |
+| development | 0.7.0            | Volatile. Peut inclure des changements majeurs à la fois sur la structure codebase et la structure database.                                                                                                                                               |
 
 Quand de nouvelles versions sont parues, la branche **prerelease** remplace la branche **master**.
 

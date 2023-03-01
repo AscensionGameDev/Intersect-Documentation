@@ -2,7 +2,6 @@
 title: Application de Patchs
 ---
 
-
 Les patchs GitHub sont très simples à appliquer et ils vous permettent de vérifier leur compatibilité avant de le faire.
 
 Veuillez noter, qu'appliquer des patchs git modifie le code source de votre moteur. Les Patchs peuvent impacter les performances et introduire des bugs dans votre jeu. Installez seulement des patchs provenant de développeurs certifiés!
@@ -26,7 +25,6 @@ git am --signoff < patchName.patch
 ```
 
 ![apply](https://www.ascensiongamedev.com/resources/filehost/7fb32c944b7147a3397c8a39e634af1f.png)
-
 
 Si vous avez besoin de retirer un patch utilisez la commande -R de l'application git apply comme montrer ci-dessous
 

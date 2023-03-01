@@ -2,8 +2,8 @@
 title: Forking & Cloning Intersect
 ---
 
-
 ## Downloading GitHub Desktop
+
 GitHub stores code repositories, keeps track of code changes, allows code history to be viewed, facilitates collaboration and more. It is a developers best friend and even if you're not familiar with git already we highly recommend diving in and learning what it's all about.
 
 To get started, [create a GitHub account](https://github.com/join).
@@ -12,8 +12,8 @@ Then download the [GitHub Desktop](https://desktop.github.com/) application.
 
 Once installed, the GitHub Desktop application will have you sign into your GitHub account, you should go ahead and do that now.
 
-
 ## Forking Intersect
+
 Forking is a term that basically means to copy a code repository. When you fork Intersect you will have a complete copy of the entire Intersect repo on your own GitHub account.
 
 To create your fork browse to our [GitHub repo](https://github.com/AscensionGameDev/Intersect-Engine) and hit the fork button.
@@ -23,6 +23,7 @@ To create your fork browse to our [GitHub repo](https://github.com/AscensionGame
 When done you will have your own copy of the Intersect repo that remains linked to the offical repo. Later you can pull official updates into your code base or even submit a pull request to contribute your code back to the base engine.
 
 ## Cloning Intersect
+
 The last step is to clone your Intersect code repository onto your computer. Now that you've installed GitHub desktop and forked the Intersect repo this is really easy.
 
 In GitHub desktop hit File -> Clone Respoitory

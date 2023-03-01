@@ -2,6 +2,6 @@
 title: Classes
 ---
 
-
 ## Configuration
-* Editor Fields & What they do
+
+- Editor Fields & What they do

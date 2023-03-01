@@ -2,7 +2,6 @@
 title: Client and Editor `config.json`
 ---
 
-
 | Name           | Type     | Example                           | Description                                                                                                              |
 | -------------- | -------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | Host           | string   | localhost                         | O endereço IP ou nome do host do servidor.                                                                               |

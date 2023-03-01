@@ -4,7 +4,7 @@ export enum KnownLanguageCodes {
 	fr,
 	it,
 	nl,
-	'pt-BR'
+	'pt-BR',
 }
 
 export type KnownLanguageCode = keyof typeof KnownLanguageCodes;
@@ -21,8 +21,8 @@ export const LANGUAGES: Record<KnownLanguageCode, Language> = {
 			fr: 'Anglais',
 			it: 'Inglese',
 			nl: 'Engels',
-			'pt-BR': 'Inglês'
-		}
+			'pt-BR': 'Inglês',
+		},
 	},
 	es: {
 		name: {
@@ -31,8 +31,8 @@ export const LANGUAGES: Record<KnownLanguageCode, Language> = {
 			fr: 'Espagnol',
 			it: 'Spagnolo',
 			nl: 'Spaans',
-			'pt-BR': 'Espanhol'
-		}
+			'pt-BR': 'Espanhol',
+		},
 	},
 	fr: {
 		name: {
@@ -41,8 +41,8 @@ export const LANGUAGES: Record<KnownLanguageCode, Language> = {
 			fr: 'Français',
 			it: 'Spagnolo',
 			nl: 'Frans',
-			'pt-BR': 'Francês'
-		}
+			'pt-BR': 'Francês',
+		},
 	},
 	it: {
 		name: {
@@ -51,8 +51,8 @@ export const LANGUAGES: Record<KnownLanguageCode, Language> = {
 			fr: 'Italien',
 			it: 'Italiano',
 			nl: 'Italiaans',
-			'pt-BR': 'Italiano'
-		}
+			'pt-BR': 'Italiano',
+		},
 	},
 	nl: {
 		name: {
@@ -61,8 +61,8 @@ export const LANGUAGES: Record<KnownLanguageCode, Language> = {
 			fr: 'Néerlandais',
 			it: 'Olandese',
 			nl: 'Nederlands',
-			'pt-BR': 'Neerlandês'
-		}
+			'pt-BR': 'Neerlandês',
+		},
 	},
 	'pt-BR': {
 		name: {
@@ -71,14 +71,16 @@ export const LANGUAGES: Record<KnownLanguageCode, Language> = {
 			fr: 'Portugais (BR)',
 			it: 'Portoghese (BR)',
 			nl: 'Portugees (BR)',
-			'pt-BR': 'Portugûes (BR)'
-		}
-	}
+			'pt-BR': 'Portugûes (BR)',
+		},
+	},
 };
 
 export const DEFAULT_LANGUAGE_CODE: KnownLanguageCode = 'en-US';
 
-export const LANGUAGE_CODES: readonly KnownLanguageCode[] = Object.keys(LANGUAGES).map(value => value as KnownLanguageCode);
+export const LANGUAGE_CODES: readonly KnownLanguageCode[] = Object.keys(
+	LANGUAGES
+).map((value) => value as KnownLanguageCode);
 
 export type Localizable<T> = Record<KnownLanguageCode, T>;
 
@@ -94,12 +96,14 @@ export type NavbarLink = {
 
 export type NavbarItem = NavbarLink;
 
-export type SidebarLink = string | {
+export type SidebarLink = {
 	link: string;
 	name?: string;
 	title: string;
 	type?: string;
 };
+
+export type SidebarLinkLike = string | SidebarLink;
 
 export type SidebarSection = {
 	children: Array<SidebarLink | SidebarSection>;
@@ -129,15 +133,17 @@ type BaseGitRepository = {
 	pathInRepository?: string;
 };
 
-type GitRepository = BaseGitRepository & {
+type GithubRepository = BaseGitRepository & {
 	type: 'github';
 	name: string;
-} | {
+};
+
+type GitRepository = BaseGitRepository & {
 	type: 'git';
 	baseUrl: URL;
 };
 
-export type Repository = GitRepository;
+export type Repository = GithubRepository | GitRepository;
 
 type EditUrlInfo = {
 	editUrl: URL;
@@ -145,14 +151,15 @@ type EditUrlInfo = {
 
 type RepositoryInfo = {
 	repository: Repository;
-}
+};
 
 export type EditInfo = EditUrlInfo | (Partial<EditUrlInfo> & RepositoryInfo);
 
-export type Site = Localizable<LocalizedSite> & EditInfo & {
-	communityUrl: URL;
-	defaultLanguage: KnownLanguageCode;
-};
+export type Site = Localizable<LocalizedSite> &
+	EditInfo & {
+		communityUrl: URL;
+		defaultLanguage: KnownLanguageCode;
+	};
 
 export const PATTERN_LANGUAGE_CODE = /([a-z]{2}(?:-[A-Z]{2})?)/;
 

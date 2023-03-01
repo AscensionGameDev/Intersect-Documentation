@@ -7,6 +7,7 @@ En este punto deberías haber creado una rama, hecho algunas modificaciones de c
 Llamamos a este proceso **_Fusión_**, es muy sencillo y puedes hacerlo a través de la aplicación de escritorio y/o interfaz web de GitHub. A continuación se muestran ambas formas de fusionar.
 
 ## Fusionando con GitHub Desktop
+
 Antes de intentar fusionar, es importante asegurarse de cambiar a la rama en la que quieres fusionar tus cambios. (¡No la rama en la que has estado trabajando!) Selecciona esa rama en la aplicación GitHub Desktop.
 
 ![selectbase](https://www.ascensiongamedev.com/resources/filehost/193129a8fb4dd77d1eec2c29b2583df3.png)
@@ -28,6 +29,7 @@ Por último, sube tu rama (_push_) con los cambios fusionados a GitHub.
 ![push](https://www.ascensiongamedev.com/resources/filehost/d068a4be230a1b9dd5160cdec27854dd.png)
 
 ## Fusionando con GitHub Online
+
 Alternativamente, puedes utilizar la interfaz de solicitudes de extracción (_pull requests_) en línea de GitHub para gestionar la fusión de ramas. Si tienes configurada la protección de ramas, o si quieres que las fusiones en tus ramas primarias requieran revisiones, entonces el método anterior usando la aplicación de escritorio no funcionará. Además, la interfaz de solicitud de extracción es lo que se utiliza con la finalidad de llevar las actualizaciones oficiales a tu repositorio privado y enviar el código que has escrito para contribuir al repositorio oficial si alguna vez decides hacerlo. Crear solicitudes de extracción es sumamente sencillo.
 
 Comienza por ir a GitHub.com y navegar hasta tu repo personal de Intersect. Haz click en la pestaña _Pull Requests_ y luego en el botón _New Pull Request_.

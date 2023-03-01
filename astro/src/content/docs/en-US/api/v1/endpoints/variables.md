@@ -2,7 +2,6 @@
 title: Variables
 ---
 
-
 ## Get Variables
 
 Retrieves global variables from the server along with their ids and values.
@@ -19,9 +18,9 @@ Retrieves global variables from the server along with their ids and values.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| page | int  | Page of variables to retrieve. | :heavy_minus_sign: |
+| Name  | Type | Description                      | Required           |
+| ----- | ---- | -------------------------------- | ------------------ |
+| page  | int  | Page of variables to retrieve.   | :heavy_minus_sign: |
 | count | int  | Number of variables to retrieve. | :heavy_minus_sign: |
 
 **Example**
@@ -45,20 +44,20 @@ Retrieves global variables from the server along with their ids and values.
 
 ```json
 {
-    "total": 1,
-    "Page": 0,
-    "count": 1,
-    "entries":[
-        {
-            "Name": "New Global Variable",
-            "TextId": "",
-            "Type": 2,
-            "Folder": "Globals 1",
-            "Value": 0,
-            "Id": "ed82a700-6ce7-4136-93c3-aeb4acea43fc",
-            "TimeCreated": -8586599203473051578
-        }
-    ]
+	"total": 1,
+	"Page": 0,
+	"count": 1,
+	"entries": [
+		{
+			"Name": "New Global Variable",
+			"TextId": "",
+			"Type": 2,
+			"Folder": "Globals 1",
+			"Value": 0,
+			"Id": "ed82a700-6ce7-4136-93c3-aeb4acea43fc",
+			"TimeCreated": -8586599203473051578
+		}
+	]
 }
 ```
 
@@ -90,13 +89,13 @@ Retrieves a variable and it's value from the server by id.
 
 ```json
 {
-    "Name": "New Global Variable",
-    "TextId": "",
-    "Type": 2,
-    "Folder": "Globals 1",
-    "Value": 0,
-    "Id": "ed82a700-6ce7-4136-93c3-aeb4acea43fc",
-    "TimeCreated": -8586599203473051578
+	"Name": "New Global Variable",
+	"TextId": "",
+	"Type": 2,
+	"Folder": "Globals 1",
+	"Value": 0,
+	"Id": "ed82a700-6ce7-4136-93c3-aeb4acea43fc",
+	"TimeCreated": -8586599203473051578
 }
 ```
 
@@ -128,11 +127,9 @@ Retrieves the stored value of a variable from the server by id.
 
 ```json
 {
-    "value": 0
+	"value": 0
 }
 ```
-
-
 
 ## Set Variable Value
 
@@ -150,15 +147,15 @@ Sets a specified variable's value given it's id.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
+| Name  | Type           | Description               | Required           |
+| ----- | -------------- | ------------------------- | ------------------ |
 | value | int or boolean | Variable's desired value. | :heavy_check_mark: |
 
 **Example**
 
 ```json
 {
-  "value": 10
+	"value": 10
 }
 ```
 
@@ -174,12 +171,12 @@ Sets a specified variable's value given it's id.
 
 ```json
 {
-    "Name": "New Global Variable",
-    "TextId": "",
-    "Type": 2,
-    "Folder": "Globals 1",
-    "Value": 10,
-    "Id": "ed82a700-6ce7-4136-93c3-aeb4acea43fc",
-    "TimeCreated": -8586599203473051578
+	"Name": "New Global Variable",
+	"TextId": "",
+	"Type": 2,
+	"Folder": "Globals 1",
+	"Value": 10,
+	"Id": "ed82a700-6ce7-4136-93c3-aeb4acea43fc",
+	"TimeCreated": -8586599203473051578
 }
 ```

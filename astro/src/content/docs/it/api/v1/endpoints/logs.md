@@ -2,7 +2,6 @@
 title: Logs
 ---
 
-
 ## Player Activity
 
 Retrieve player activity
@@ -158,4 +157,3 @@ Empty
   "Extra": null
 }
 ```
-

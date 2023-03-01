@@ -2,8 +2,6 @@
 title: Authentification
 ---
 
-
-
 ## Obtenir un jeton
 
 Obtenez un jeton d'autorisation pour les demandes d'API qui nécessitent une authentification.
@@ -20,11 +18,11 @@ Obtenez un jeton d'autorisation pour les demandes d'API qui nécessitent une aut
 
 **Body**
 
-| Nom  | Type | Description | Obligatoire |
-| ----- | ---- |------------ | -------- |
-| grant_type | String  | Type d'autorisation. | :heavy_check_mark: |
-| username | String  | Nom d'utilisateur du compte autorisé pour l'API | :heavy_check_mark: |
-| password | String  | SHA256 Hachage du mot de passe du compte | :heavy_check_mark: |
+| Nom        | Type   | Description                                     | Obligatoire        |
+| ---------- | ------ | ----------------------------------------------- | ------------------ |
+| grant_type | String | Type d'autorisation.                            | :heavy_check_mark: |
+| username   | String | Nom d'utilisateur du compte autorisé pour l'API | :heavy_check_mark: |
+| password   | String | SHA256 Hachage du mot de passe du compte        | :heavy_check_mark: |
 
 **Exemple**
 
@@ -32,15 +30,16 @@ Obtenez un jeton d'autorisation pour les demandes d'API qui nécessitent une aut
 {
 	"grant_type": "password",
 	"username": "jcsnider",
-	"password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8",
+	"password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
 }
 ```
 
 **Notes**
 
-* Le type d'autorisation pour recevoir un jeton d'authentification est 'password'.
-* Le mot de passe doit être un hachage SHA256 du mot de passe de l'utilisateur, sans les tirets.
-* Vous pouvez générer un hachage SHA256 d'un mot de passe en clair [here](https://passwordsgenerator.net/sha256-hash-generator/).
+- Le type d'autorisation pour recevoir un jeton d'authentification est 'password'.
+- Le mot de passe doit être un hachage SHA256 du mot de passe de l'utilisateur, sans les tirets.
+- Vous pouvez générer un hachage SHA256 d'un mot de passe en clair [here](https://passwordsgenerator.net/sha256-hash-generator/).
+
 ---
 
 ### Réponse
@@ -53,30 +52,28 @@ Obtenez un jeton d'autorisation pour les demandes d'API qui nécessitent une aut
 
 ```json
 {
-	"access_token":  "4RoC_BqVns0p7guzWe-Ah4C6SiVmNcBO0KnFNLtGCxuPZbfF9QJnGc5zbrhM-EQ8c_fajWk076pyI-bjaUPsfyd_c2u5XLCANc4khfpTmq87ksvjDpMI87NVIWOCy1QAUTQoszf-CSkweyw-At31UjBUBTQ6iuidQcG-eZqdnecjKDWQ5vOBZpjI-Xlz7m8UZBjuEWf4sFIqbAnIQl54F8VSIr26QtcUROkUWepLFPqSa8ZO110vg5xefTy-wJmEwbn1zOAuSMR6yKah39GBU_xtkuHw1WaiJ_iSQLRiF7z-v0Ct1DYbMrmqaVdFI1xUwsrFN3WWgwpxxsXEBajcFkL9Ou7MSQBwWlI5sU4WlYJbKAGlaMJU9sohK5I3Q3B34UTub0xNdiyhqzn9E0HIep_RUzzE1YZhGmV3bBoV-cYTxSTfpTXIFuH9f8tbv-FPhylWY__hqndUKVpq4ez2n9HqfCdDi6HdYd1mcTyDTABdy248VeMPqiwKUl-95w87",
+	"access_token": "4RoC_BqVns0p7guzWe-Ah4C6SiVmNcBO0KnFNLtGCxuPZbfF9QJnGc5zbrhM-EQ8c_fajWk076pyI-bjaUPsfyd_c2u5XLCANc4khfpTmq87ksvjDpMI87NVIWOCy1QAUTQoszf-CSkweyw-At31UjBUBTQ6iuidQcG-eZqdnecjKDWQ5vOBZpjI-Xlz7m8UZBjuEWf4sFIqbAnIQl54F8VSIr26QtcUROkUWepLFPqSa8ZO110vg5xefTy-wJmEwbn1zOAuSMR6yKah39GBU_xtkuHw1WaiJ_iSQLRiF7z-v0Ct1DYbMrmqaVdFI1xUwsrFN3WWgwpxxsXEBajcFkL9Ou7MSQBwWlI5sU4WlYJbKAGlaMJU9sohK5I3Q3B34UTub0xNdiyhqzn9E0HIep_RUzzE1YZhGmV3bBoV-cYTxSTfpTXIFuH9f8tbv-FPhylWY__hqndUKVpq4ez2n9HqfCdDi6HdYd1mcTyDTABdy248VeMPqiwKUl-95w87",
 
-	"token_type":  "bearer",
+	"token_type": "bearer",
 
-	"expires_in":  299,
+	"expires_in": 299,
 
-	"refresh_token":  "efd947fe-a874-4259-9b06-41a8a9505e35",
+	"refresh_token": "efd947fe-a874-4259-9b06-41a8a9505e35",
 
-	".issued":  "Mon, 29 Jul 2019 19:52:04 GMT",
+	".issued": "Mon, 29 Jul 2019 19:52:04 GMT",
 
-	".expires":  "Mon, 29 Jul 2019 19:57:04 GMT"
+	".expires": "Mon, 29 Jul 2019 19:57:04 GMT"
 }
 ```
 
-
 ### Notes
 
-* Le refresh_token est l'identifiant du token, il est utilisé pour rafraîchir ou supprimer le token en utilisant les routes ci-dessous.
-* Pour toutes les demandes nécessitant une authentification, vous devrez fournir le jeton d'accès dans l'en-tête de la demande. Le format approprié peut être trouvé ci-dessous.
+- Le refresh_token est l'identifiant du token, il est utilisé pour rafraîchir ou supprimer le token en utilisant les routes ci-dessous.
+- Pour toutes les demandes nécessitant une authentification, vous devrez fournir le jeton d'accès dans l'en-tête de la demande. Le format approprié peut être trouvé ci-dessous.
 
-| Header | Type | Valeur |
-| ----- | ---- |------------ |
-| authorization | String  | Bearer [access_token] |
-
+| Header        | Type   | Valeur                |
+| ------------- | ------ | --------------------- |
+| authorization | String | Bearer [access_token] |
 
 **Exemple**
 
@@ -84,9 +81,8 @@ Obtenez un jeton d'autorisation pour les demandes d'API qui nécessitent une aut
 authorization: Bearer 4RoC_BqVns0p7guzWe-Ah4C6SiVmNcBO0KnFNLtGCxuPZbfF9QJnGc5zbrhM-EQ8c_fajWk076pyI-bjaUPsfyd_c2u5XLCANc4khfpTmq87ksvjDpMI87NVIWOCy1QAUTQoszf-CSkweyw-At31UjBUBTQ6iuidQcG-eZqdnecjKDWQ5vOBZpjI-Xlz7m8UZBjuEWf4sFIqbAnIQl54F8VSIr26QtcUROkUWepLFPqSa8ZO110vg5xefTy-wJmEwbn1zOAuSMR6yKah39GBU_xtkuHw1WaiJ_iSQLRiF7z-v0Ct1DYbMrmqaVdFI1xUwsrFN3WWgwpxxsXEBajcFkL9Ou7MSQBwWlI5sU4WlYJbKAGlaMJU9sohK5I3Q3B34UTub0xNdiyhqzn9E0HIep_RUzzE1YZhGmV3bBoV-cYTxSTfpTXIFuH9f8tbv-FPhylWY__hqndUKVpq4ez2n9HqfCdDi6HdYd1mcTyDTABdy248VeMPqiwKUl-95w87
 ```
 
-
-
 ## Rafraichir le token
+
 Actualise un jeton existant en retardant son expiration.
 
 ### Requête
@@ -101,24 +97,23 @@ Actualise un jeton existant en retardant son expiration.
 
 **Body**
 
-| Nom  | Type | Description | Obligatoire |
-| ----- | ---- |------------ | -------- |
-| grant_type | String  | Type d'autorisation. | :heavy_check_mark: |
-| refresh_token | String  | L'identifiant du jeton d'actualisation | :heavy_check_mark: |
+| Nom           | Type   | Description                            | Obligatoire        |
+| ------------- | ------ | -------------------------------------- | ------------------ |
+| grant_type    | String | Type d'autorisation.                   | :heavy_check_mark: |
+| refresh_token | String | L'identifiant du jeton d'actualisation | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
 	"grant_type": "refresh_token",
-	"refresh_token": "efd947fe-a874-4259-9b06-41a8a9505e35",
+	"refresh_token": "efd947fe-a874-4259-9b06-41a8a9505e35"
 }
 ```
 
-
 **Notes**
 
-* Le type d'autorisation doit être 'refresh_token'.
+- Le type d'autorisation doit être 'refresh_token'.
 
 ---
 
@@ -142,6 +137,7 @@ Actualise un jeton existant en retardant son expiration.
 ```
 
 ## Supprimer le jeton
+
 Supprime le jeton associé à un en-tête d'autorisation.
 
 ### Requête
@@ -154,10 +150,9 @@ Supprime le jeton associé à un en-tête d'autorisation.
 
 **Body** : `None`
 
-
 **Notes**
 
-* Le `tokenId` dans l'url de la demande est renvoyé en tant que `refresh_token` dans les réponses Get Token et Refresh Token.
+- Le `tokenId` dans l'url de la demande est renvoyé en tant que `refresh_token` dans les réponses Get Token et Refresh Token.
 
 ---
 
@@ -175,8 +170,8 @@ Supprime le jeton associé à un en-tête d'autorisation.
 }
 ```
 
-
 ## Supprimer le jeton par identifiant
+
 Supprime un jeton d'autorisation empêchant toute utilisation ultérieure.
 
 ### Requête
@@ -189,10 +184,9 @@ Supprime un jeton d'autorisation empêchant toute utilisation ultérieure.
 
 **Body** : `None`
 
-
 **Notes**
 
-* Le `tokenId` dans l'url de la demande est renvoyé en tant que `refresh_token` dans les réponses Get Token et Refresh Token.
+- Le `tokenId` dans l'url de la demande est renvoyé en tant que `refresh_token` dans les réponses Get Token et Refresh Token.
 
 ---
 

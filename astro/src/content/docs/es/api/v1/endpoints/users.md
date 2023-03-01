@@ -2,7 +2,6 @@
 title: Usuarios
 ---
 
-
 **These endpoints require the [users.query API Role](https://docs.freemmorpgmaker.com/api/v1/introduction/roles.html#users-query)!**
 
 ## Listar Usuarios
@@ -19,11 +18,11 @@ Retrieves users from the server along with their ids and stored information.
 
 **Query Parameters**
 
-| Name  | Type | Description | Required | Default |
-| ----- | ---- |------------ | -------- | ------- |
-| page | int  | Offset of users as a page number | :heavy_minus_sign: | 0 |
-| pageSize | int  | Number of users per page | :heavy_minus_sign: | 5 |
-| limit | int  | Limit of how many users are returned | :heavy_minus_sign: | `pageSize` |
+| Name     | Type | Description                          | Required           | Default    |
+| -------- | ---- | ------------------------------------ | ------------------ | ---------- |
+| page     | int  | Offset of users as a page number     | :heavy_minus_sign: | 0          |
+| pageSize | int  | Number of users per page             | :heavy_minus_sign: | 5          |
+| limit    | int  | Limit of how many users are returned | :heavy_minus_sign: | `pageSize` |
 
 **Example**
 
@@ -42,44 +41,44 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-    "Total": 162,
-    "Page": 32,
-    "PageSize": 5,
-    "Count": 2,
-    "Values": [
-        {
-            "Id": "f71a2f48-ce7b-4420-ae37-8802b8c4fb60",
-            "Name": "tester",
-            "Email": "testr@testr.com",
-            "Power":{
-                "Editor": false,
-                "Ban": false,
-                "Kick": false,
-                "Mute": false,
-                "Api": false,
-                "PersonalInformation": false
-            },
-            "PasswordResetCode": null,
-            "IsMuted": false,
-            "MuteReason": null
-        },
-        {
-            "Id": "fb19a81b-000f-4679-b30d-778dc8895594",
-            "Name": "jcsnider",
-            "Email": "test@test.com",
-            "Power":{
-                "Editor": false,
-                "Ban": false,
-                "Kick": false,
-                "Mute": false,
-                "Api": false,
-                "PersonalInformation": false
-            },
-            "PasswordResetCode": null,
-            "IsMuted": false,
-            "MuteReason": null
-        }
-    ]
+	"Total": 162,
+	"Page": 32,
+	"PageSize": 5,
+	"Count": 2,
+	"Values": [
+		{
+			"Id": "f71a2f48-ce7b-4420-ae37-8802b8c4fb60",
+			"Name": "tester",
+			"Email": "testr@testr.com",
+			"Power": {
+				"Editor": false,
+				"Ban": false,
+				"Kick": false,
+				"Mute": false,
+				"Api": false,
+				"PersonalInformation": false
+			},
+			"PasswordResetCode": null,
+			"IsMuted": false,
+			"MuteReason": null
+		},
+		{
+			"Id": "fb19a81b-000f-4679-b30d-778dc8895594",
+			"Name": "jcsnider",
+			"Email": "test@test.com",
+			"Power": {
+				"Editor": false,
+				"Ban": false,
+				"Kick": false,
+				"Mute": false,
+				"Api": false,
+				"PersonalInformation": false
+			},
+			"PasswordResetCode": null,
+			"IsMuted": false,
+			"MuteReason": null
+		}
+	]
 }
 ```
 
@@ -113,20 +112,20 @@ Retrieves a user from the server by looking up their username or id.
 
 ```json
 {
-    "Id": "fb19a81b-000f-4679-b30d-778dc8895594",
-    "Name": "jcsnider",
-    "Email": "test@test.com",
-    "Power":{
-        "Editor": false,
-        "Ban": false,
-        "Kick": false,
-        "Mute": false,
-        "Api": false,
-        "PersonalInformation": false
-    },
-    "PasswordResetCode": null,
-    "IsMuted": false,
-    "MuteReason": null
+	"Id": "fb19a81b-000f-4679-b30d-778dc8895594",
+	"Name": "jcsnider",
+	"Email": "test@test.com",
+	"Power": {
+		"Editor": false,
+		"Ban": false,
+		"Kick": false,
+		"Mute": false,
+		"Api": false,
+		"PersonalInformation": false
+	},
+	"PasswordResetCode": null,
+	"IsMuted": false,
+	"MuteReason": null
 }
 ```
 
@@ -146,25 +145,26 @@ Creates an account on the server for a user given a username, password, and emai
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| username | string  | Username for the new user. | :heavy_check_mark: |
-| password | string  | Sha256 hash of the new user's password. | :heavy_check_mark: |
-| email | string  | Email address for the new user. | :heavy_check_mark: |
+| Name     | Type   | Description                             | Required           |
+| -------- | ------ | --------------------------------------- | ------------------ |
+| username | string | Username for the new user.              | :heavy_check_mark: |
+| password | string | Sha256 hash of the new user's password. | :heavy_check_mark: |
+| email    | string | Email address for the new user.         | :heavy_check_mark: |
 
 **Example**
 
 ```json
 {
-  "username": "jcsnider",
-  "password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8",
-  "email": "jcsnider@ascensiongamedev.com"
+	"username": "jcsnider",
+	"password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8",
+	"email": "jcsnider@ascensiongamedev.com"
 }
 ```
+
 **Notes**
 
-* Password must be a SHA256 hash of the plaintext password, with hyphens removed.
-* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
+- Password must be a SHA256 hash of the plaintext password, with hyphens removed.
+- You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ---
 
@@ -178,8 +178,8 @@ Creates an account on the server for a user given a username, password, and emai
 
 ```json
 {
-    "Username": "jcsnider",
-    "Email": "jcsnider@ascensiongamedev.com"
+	"Username": "jcsnider",
+	"Email": "jcsnider@ascensiongamedev.com"
 }
 ```
 
@@ -201,15 +201,15 @@ Checks whether a user provided password is valid.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| password | string  | SHA256 hash of password to validate. | :heavy_check_mark: |
+| Name     | Type   | Description                          | Required           |
+| -------- | ------ | ------------------------------------ | ------------------ |
+| password | string | SHA256 hash of password to validate. | :heavy_check_mark: |
 
 **Example**
 
 ```json
 {
-  "password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
+	"password": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
 }
 ```
 
@@ -225,7 +225,7 @@ Checks whether a user provided password is valid.
 
 ```json
 {
-    "Message": "Password Correct"
+	"Message": "Password Correct"
 }
 ```
 
@@ -247,17 +247,17 @@ Change the email address associated with a user given the users' password.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| new | string  | The new email address. | :heavy_check_mark: |
-| authorization | string  | The sha256 hash of the users' current password. | :heavy_check_mark: |
+| Name          | Type   | Description                                     | Required           |
+| ------------- | ------ | ----------------------------------------------- | ------------------ |
+| new           | string | The new email address.                          | :heavy_check_mark: |
+| authorization | string | The sha256 hash of the users' current password. | :heavy_check_mark: |
 
 **Example**
 
 ```json
 {
-  "new": "test100@test.com",
-  "authorization": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
+	"new": "test100@test.com",
+	"authorization": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
 }
 ```
 
@@ -273,24 +273,23 @@ Change the email address associated with a user given the users' password.
 
 ```json
 {
-    "Id": "cf995c16-8c2e-4ab3-a5b8-a39d6051adc6",
-    "Name": "jcsnider",
-    "Email": "test100@test.com",
-    "Power":{
-        "Editor": true,
-        "Ban": true,
-        "Kick": true,
-        "Mute": true,
-        "Api": true,
-        "ApiPersonalInformation": true,
-        "ApiUserManagement": true
-    },
-    "PasswordResetCode": null,
-    "IsMuted": false,
-    "MuteReason": null
+	"Id": "cf995c16-8c2e-4ab3-a5b8-a39d6051adc6",
+	"Name": "jcsnider",
+	"Email": "test100@test.com",
+	"Power": {
+		"Editor": true,
+		"Ban": true,
+		"Kick": true,
+		"Mute": true,
+		"Api": true,
+		"ApiPersonalInformation": true,
+		"ApiUserManagement": true
+	},
+	"PasswordResetCode": null,
+	"IsMuted": false,
+	"MuteReason": null
 }
 ```
-
 
 ## Change Password
 
@@ -310,17 +309,17 @@ Change the password associated with a user given the users' current password.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| new | string  | The sha256 hash of the users' new password. | :heavy_check_mark: |
-| authorization | string  | The sha256 hash of the users' current password. | :heavy_check_mark: |
+| Name          | Type   | Description                                     | Required           |
+| ------------- | ------ | ----------------------------------------------- | ------------------ |
+| new           | string | The sha256 hash of the users' new password.     | :heavy_check_mark: |
+| authorization | string | The sha256 hash of the users' current password. | :heavy_check_mark: |
 
 **Example**
 
 ```json
 {
-  "new": "1B4F0E9851971998E732078544C96B36C3D01CEDF7CAA332359D6F1D83567014",
-  "authorization": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
+	"new": "1B4F0E9851971998E732078544C96B36C3D01CEDF7CAA332359D6F1D83567014",
+	"authorization": "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"
 }
 ```
 
@@ -336,14 +335,14 @@ Change the password associated with a user given the users' current password.
 
 ```json
 {
-    "Message": "Password Updated"
+	"Message": "Password Updated"
 }
 ```
 
 **Notes**
 
-* Password must be a SHA256 hash of the plaintext password, with hyphens removed.
-* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
+- Password must be a SHA256 hash of the plaintext password, with hyphens removed.
+- You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ## Request Password Reset Email
 
@@ -375,10 +374,9 @@ Sends the user an email with a password reset code. This requires your server SM
 
 ```json
 {
-    "Message": "Password reset email sent."
+	"Message": "Password reset email sent."
 }
 ```
-
 
 ## Get Characters
 
@@ -417,7 +415,6 @@ Returns an array of a users characters.
 ```
 
 Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/dd42d59003bcc6c387452f40832fb97f.json).
-
 
 ## Get Character
 
@@ -482,15 +479,15 @@ Change a users email address without their password. **Requires the Users.Manage
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| new | string  | The new email address. | :heavy_check_mark: |
+| Name | Type   | Description            | Required           |
+| ---- | ------ | ---------------------- | ------------------ |
+| new  | string | The new email address. | :heavy_check_mark: |
 
 **Example**
 
 ```json
 {
-  "new": "test100@test.com"
+	"new": "test100@test.com"
 }
 ```
 
@@ -506,21 +503,21 @@ Change a users email address without their password. **Requires the Users.Manage
 
 ```json
 {
-    "Id": "cf995c16-8c2e-4ab3-a5b8-a39d6051adc6",
-    "Name": "jcsnider",
-    "Email": "test100@test.com",
-    "Power":{
-        "Editor": true,
-        "Ban": true,
-        "Kick": true,
-        "Mute": true,
-        "Api": true,
-        "ApiPersonalInformation": true,
-        "ApiUserManagement": true
-    },
-    "PasswordResetCode": null,
-    "IsMuted": false,
-    "MuteReason": null
+	"Id": "cf995c16-8c2e-4ab3-a5b8-a39d6051adc6",
+	"Name": "jcsnider",
+	"Email": "test100@test.com",
+	"Power": {
+		"Editor": true,
+		"Ban": true,
+		"Kick": true,
+		"Mute": true,
+		"Api": true,
+		"ApiPersonalInformation": true,
+		"ApiUserManagement": true
+	},
+	"PasswordResetCode": null,
+	"IsMuted": false,
+	"MuteReason": null
 }
 ```
 
@@ -542,22 +539,22 @@ Change a users password without their existing password. **Requires the Users.Ma
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| new | string  | The sha256 hash of the users' new password. | :heavy_check_mark: |
+| Name | Type   | Description                                 | Required           |
+| ---- | ------ | ------------------------------------------- | ------------------ |
+| new  | string | The sha256 hash of the users' new password. | :heavy_check_mark: |
 
 **Example**
 
 ```json
 {
-  "new": "1B4F0E9851971998E732078544C96B36C3D01CEDF7CAA332359D6F1D83567014"
+	"new": "1B4F0E9851971998E732078544C96B36C3D01CEDF7CAA332359D6F1D83567014"
 }
 ```
 
 **Notes**
 
-* Password must be a SHA256 hash of the plaintext password, with hyphens removed.
-* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
+- Password must be a SHA256 hash of the plaintext password, with hyphens removed.
+- You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ---
 
@@ -571,14 +568,14 @@ Change a users password without their existing password. **Requires the Users.Ma
 
 ```json
 {
-    "Message": "Password Correct"
+	"Message": "Password Correct"
 }
 ```
 
 **Notes**
 
-* Password must be a SHA256 hash of the plaintext password, with hyphens removed.
-* You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
+- Password must be a SHA256 hash of the plaintext password, with hyphens removed.
+- You can generate a SHA256 hash of a plaintext password [here](https://passwordsgenerator.net/sha256-hash-generator/).
 
 ## Listar Usuarios (`POST`) (_Deprecated_)
 
@@ -596,17 +593,17 @@ Retrieves users from the server along with their ids and stored information.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| page | int  | Page of users to retrieve. | :heavy_minus_sign: |
+| Name  | Type | Description                  | Required           |
+| ----- | ---- | ---------------------------- | ------------------ |
+| page  | int  | Page of users to retrieve.   | :heavy_minus_sign: |
 | count | int  | Number of users to retrieve. | :heavy_minus_sign: |
 
 **Example**
 
 ```json
 {
-  "page": 32,
-  "count": 5
+	"page": 32,
+	"count": 5
 }
 ```
 
@@ -622,43 +619,42 @@ Retrieves users from the server along with their ids and stored information.
 
 ```json
 {
-    "total": 162,
-    "Page": 32,
-    "count": 2,
-    "entries":[
-        {
-            "Id": "f71a2f48-ce7b-4420-ae37-8802b8c4fb60",
-            "Name": "tester",
-            "Email": "testr@testr.com",
-            "Power":{
-                "Editor": false,
-                "Ban": false,
-                "Kick": false,
-                "Mute": false,
-                "Api": false,
-                "PersonalInformation": false
-            },
-            "PasswordResetCode": null,
-            "IsMuted": false,
-            "MuteReason": null
-        },
-        {
-            "Id": "fb19a81b-000f-4679-b30d-778dc8895594",
-            "Name": "jcsnider",
-            "Email": "test@test.com",
-            "Power":{
-                "Editor": false,
-                "Ban": false,
-                "Kick": false,
-                "Mute": false,
-                "Api": false,
-                "PersonalInformation": false
-            },
-            "PasswordResetCode": null,
-            "IsMuted": false,
-            "MuteReason": null
-        }
-    ]
+	"total": 162,
+	"Page": 32,
+	"count": 2,
+	"entries": [
+		{
+			"Id": "f71a2f48-ce7b-4420-ae37-8802b8c4fb60",
+			"Name": "tester",
+			"Email": "testr@testr.com",
+			"Power": {
+				"Editor": false,
+				"Ban": false,
+				"Kick": false,
+				"Mute": false,
+				"Api": false,
+				"PersonalInformation": false
+			},
+			"PasswordResetCode": null,
+			"IsMuted": false,
+			"MuteReason": null
+		},
+		{
+			"Id": "fb19a81b-000f-4679-b30d-778dc8895594",
+			"Name": "jcsnider",
+			"Email": "test@test.com",
+			"Power": {
+				"Editor": false,
+				"Ban": false,
+				"Kick": false,
+				"Mute": false,
+				"Api": false,
+				"PersonalInformation": false
+			},
+			"PasswordResetCode": null,
+			"IsMuted": false,
+			"MuteReason": null
+		}
+	]
 }
 ```
-

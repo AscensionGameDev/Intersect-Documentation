@@ -2,8 +2,6 @@
 title: Chat
 ---
 
-
-
 ## Message Global
 
 Envoie un message chat à toutes les personnes actuellement connectées au jeu.
@@ -20,18 +18,18 @@ Envoie un message chat à toutes les personnes actuellement connectées au jeu.
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| Message | String  | Le message chat à envoyer. | :heavy_check_mark: |
-| Color | Object  | Objet Json avec valeurs RGBA du message chat. | :heavy_minus_sign: |
-| Target | String  | Nom de joueur associé au message, si il y en a un. | :heavy_minus_sign: |
+| Nom     | Type   | Description                                        | Requis             |
+| ------- | ------ | -------------------------------------------------- | ------------------ |
+| Message | String | Le message chat à envoyer.                         | :heavy_check_mark: |
+| Color   | Object | Objet Json avec valeurs RGBA du message chat.      | :heavy_minus_sign: |
+| Target  | String | Nom de joueur associé au message, si il y en a un. | :heavy_minus_sign: |
 
 **Exemple**
 
 ```json
 {
 	"Message": "Bonjour tout le monde!",
-	"Color":{
+	"Color": {
 		"A": 255,
 		"R": 255,
 		"G": 255,
@@ -41,10 +39,9 @@ Envoie un message chat à toutes les personnes actuellement connectées au jeu.
 }
 ```
 
-
 **Notes**
 
-* Target est utilisé pour ajouter rapidement des amis ou pour émettre des actions administratives. Par exemple, si le panneau d'administration est ouvert et qu'un message chat est cliqué, la cible (si elle est définie) apparaîtra automatiquement dans la fenêtre cible du panneau administrateur pour la bannir, mettre sous silence, téléporter rapidement, etc.  Dans la plupart des cas la cible est omise ou laissée nulle.
+- Target est utilisé pour ajouter rapidement des amis ou pour émettre des actions administratives. Par exemple, si le panneau d'administration est ouvert et qu'un message chat est cliqué, la cible (si elle est définie) apparaîtra automatiquement dans la fenêtre cible du panneau administrateur pour la bannir, mettre sous silence, téléporter rapidement, etc. Dans la plupart des cas la cible est omise ou laissée nulle.
 
 ---
 
@@ -59,9 +56,9 @@ Envoie un message chat à toutes les personnes actuellement connectées au jeu.
 ```json
 {
 	"success": true,
-	"chatMessage":{
+	"chatMessage": {
 		"Message": "Bonjour tout le monde!",
-		"Color":{
+		"Color": {
 			"A": 255,
 			"R": 255,
 			"G": 255,
@@ -71,7 +68,6 @@ Envoie un message chat à toutes les personnes actuellement connectées au jeu.
 	}
 }
 ```
-
 
 ## Message de Proximité
 
@@ -89,18 +85,18 @@ Envoie un message à tout ceux à proximité d'une carte donnée.
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| Message | String  | Le message chat à envoyer. | :heavy_check_mark: |
-| Color | Object  | Objet Json avec valeurs RGBA du message chat. | :heavy_minus_sign: |
-| Target | String  | Nom de joueur associé au message, si il y en a un. | :heavy_minus_sign: |
+| Nom     | Type   | Description                                        | Requis             |
+| ------- | ------ | -------------------------------------------------- | ------------------ |
+| Message | String | Le message chat à envoyer.                         | :heavy_check_mark: |
+| Color   | Object | Objet Json avec valeurs RGBA du message chat.      | :heavy_minus_sign: |
+| Target  | String | Nom de joueur associé au message, si il y en a un. | :heavy_minus_sign: |
 
 **Exemple**
 
 ```json
 {
 	"Message": "Bonjour tout le monde!",
-	"Color":{
+	"Color": {
 		"A": 255,
 		"R": 255,
 		"G": 255,
@@ -110,9 +106,9 @@ Envoie un message à tout ceux à proximité d'une carte donnée.
 }
 ```
 
-
 **Notes**
-* Target est utilisé pour ajouter rapidement des amis ou pour émettre des actions administratives. Par exemple, si le panneau d'administration est ouvert et qu'un message chat est cliqué, la cible (si elle est définie) apparaîtra automatiquement dans la fenêtre cible du panneau administrateur pour la bannir, mettre sous silence, téléporter rapidement, etc.  Dans la plupart des cas la cible est omise ou laissée nulle.
+
+- Target est utilisé pour ajouter rapidement des amis ou pour émettre des actions administratives. Par exemple, si le panneau d'administration est ouvert et qu'un message chat est cliqué, la cible (si elle est définie) apparaîtra automatiquement dans la fenêtre cible du panneau administrateur pour la bannir, mettre sous silence, téléporter rapidement, etc. Dans la plupart des cas la cible est omise ou laissée nulle.
 
 ---
 
@@ -128,9 +124,9 @@ Envoie un message à tout ceux à proximité d'une carte donnée.
 {
 	"success": true,
 	"mapId": "8102053e-28f9-4452-91d4-ee2a3ffb84cf",
-	"chatMessage":{
+	"chatMessage": {
 		"Message": "Bonjour tout le monde!",
-		"Color":{
+		"Color": {
 			"A": 255,
 			"R": 255,
 			"G": 255,
@@ -140,7 +136,6 @@ Envoie un message à tout ceux à proximité d'une carte donnée.
 	}
 }
 ```
-
 
 ## Message Direct
 
@@ -160,18 +155,18 @@ Envoie un message à un joueur spécifique.
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| Message | String  | Le message chat à envoyer. | :heavy_check_mark: |
-| Color | Object  | Objet Json avec valeurs RGBA du message chat. | :heavy_minus_sign: |
-| Target | String  | Nom de joueur associé au message, si il y en a un. | :heavy_minus_sign: |
+| Nom     | Type   | Description                                        | Requis             |
+| ------- | ------ | -------------------------------------------------- | ------------------ |
+| Message | String | Le message chat à envoyer.                         | :heavy_check_mark: |
+| Color   | Object | Objet Json avec valeurs RGBA du message chat.      | :heavy_minus_sign: |
+| Target  | String | Nom de joueur associé au message, si il y en a un. | :heavy_minus_sign: |
 
 **Exemple**
 
 ```json
 {
 	"Message": "Bonjour tout le monde!",
-	"Color":{
+	"Color": {
 		"A": 255,
 		"R": 255,
 		"G": 255,
@@ -181,9 +176,9 @@ Envoie un message à un joueur spécifique.
 }
 ```
 
-
 **Notes**
-* Target est utilisé pour ajouter rapidement des amis ou pour émettre des actions administratives. Par exemple, si le panneau d'administration est ouvert et qu'un message chat est cliqué, la cible (si elle est définie) apparaîtra automatiquement dans la fenêtre cible du panneau administrateur pour la bannir, mettre sous silence, téléporter rapidement, etc.  Dans la plupart des cas la cible est omise ou laissée nulle.
+
+- Target est utilisé pour ajouter rapidement des amis ou pour émettre des actions administratives. Par exemple, si le panneau d'administration est ouvert et qu'un message chat est cliqué, la cible (si elle est définie) apparaîtra automatiquement dans la fenêtre cible du panneau administrateur pour la bannir, mettre sous silence, téléporter rapidement, etc. Dans la plupart des cas la cible est omise ou laissée nulle.
 
 ---
 
@@ -199,9 +194,9 @@ Envoie un message à un joueur spécifique.
 {
 	"success": true,
 	"lookupKey": "jcsnider",
-	"chatMessage":{
+	"chatMessage": {
 		"Message": "Bonjour tout le monde!",
-		"Color":{
+		"Color": {
 			"A": 255,
 			"R": 255,
 			"G": 255,

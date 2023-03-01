@@ -2,7 +2,6 @@
 title: Informations Serveur
 ---
 
-
 ## Autorisé
 
 Vérifie les token et retourne si oui ou non vous êtes autorisé à accéder à des points de terminaison api protégés.
@@ -105,7 +104,6 @@ Vide
 	"onlineCount": 0
 }
 ```
-
 
 ## Configuration
 

@@ -2,7 +2,6 @@
 title: Mise à jour
 ---
 
-
 Mettre à jour Intersect est généralement aussi simple que de remplacer quelques fichiers et les appeler à jour, mais ce n'est pas toujours le cas. Cette page traitera de quelques scénarios de mise à jour et comment les gérer.
 
 ## Quoi Télécharger

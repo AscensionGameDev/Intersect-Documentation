@@ -2,9 +2,7 @@
 title: Distribution
 ---
 
-
 Once you have a game in the works the you're going to want to share with friends. This will give you an overview of how to prepare your game for distribution and tell you which files you should send to your players.
-
 
 ## Preparing
 
@@ -20,29 +18,27 @@ Enter the host and port in your clients configuration like so:
 
 If players are unable to connect to your server please [read this topic regarding firewalls and port fowarding](https://www.ascensiongamedev.com/topic/3432-read-first-getting-your-game-online/), it contains extra information on how to get help if necessary.
 
-
 ## Standalone
 
 If you are wanting to distrbute your game without any sort of updating capabilities you need to send all of the resources up front. Create a zip archive or installer with the following files:
 
 - Intersect Client.exe
 - Intersect Client.pdb
-- Resources/*.*
+- Resources/_._
 
 **Note:** Resources/mapcache.db is for editors, and can grow to be fairly big in size. It's safe to delete, and you should remove this file instead of sending it to your players.
-
 
 ## Auto Updater
 
 If you want to distrbute your game using Intersect's embedded updater then the files you can include far fewer files in your installer/zip archive. Click here for instructions on how to [setup and configure your updater](autoupdater.md).
 
 The files you will want to include are below:
+
 - Intersect Client.exe
 - Intersect Client.pdb
 - Resources/Config.json
 - Resources/Client_Strings.json
-- Resources/Updater/*.*
-
+- Resources/Updater/_._
 
 ## Important Notes
 

@@ -7,6 +7,7 @@ At this point you should have created a branch, made some code modifications, co
 We call this process merging, and it is very simple, you can do it via the GitHub Desktop app or via the GitHub Pull Request interface online. I will show both methods below.
 
 ## Merging with GitHub Desktop
+
 Before you try to merge it is important to make sure you switch to branch to the branch you are wanting to merge into. (Not the branch you have been working on!) Select that branch in the GitHub Desktop app.
 
 ![selectbase](https://www.ascensiongamedev.com/resources/filehost/193129a8fb4dd77d1eec2c29b2583df3.png)
@@ -28,6 +29,7 @@ Finally push your branch with the merged changes to GitHub.
 ![push](https://www.ascensiongamedev.com/resources/filehost/d068a4be230a1b9dd5160cdec27854dd.png)
 
 ## Merging with GitHub Online
+
 Alternatively you can use the GitHub online pull request interface to handle merging of branches. If you have branch protection setup, or if you want merges into your primary branches to require reviews then the above method using the desktop app won't work. Furthermore, the pull request interface is what you use in order to bring official updates into your private repo and submit code you've written to contribute to the official repo should you ever chose to do so. Creating pull requests are super easy.
 
 Start by going to GitHub.com and browsing to your personal Intersect repo. Click on the Pull Requests tab and then the New Pull Request button.

@@ -2,7 +2,6 @@
 title: CORS (Cross-Origin Resource Sharing)
 ---
 
-
 CORS is used to control from which websites requests can be made to the API. Permitting Origin, Headers, and Methods are **all** required for this to work, setting one is not sufficient.
 
 ## `Cors` key in the configuration `Array<CorsConfiguration>`
@@ -41,4 +40,3 @@ Typical headers that would be needed for the various API endpoints Intersect pro
 An array of strings denoting which request methods are permitted for cross-origin resource requests. `["*"]` can be used to allow all methods.
 
 A likely scenario is that all methods will be necessary, but at minimum `GET` will be for endpoints that do not require authorization, and `POST` will be required for the authorization endpoints (the ones that include `token` for example).
-

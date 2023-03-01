@@ -2,8 +2,6 @@
 title: Chat
 ---
 
-
-
 ## Global Message
 
 Sends a chat message to everyone currently logged into your game.
@@ -20,18 +18,18 @@ Sends a chat message to everyone currently logged into your game.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| Message | String  | The chat message to send. | :heavy_check_mark: |
-| Color | Object  | Json object with RGBA values of the chat message. | :heavy_minus_sign: |
-| Target | String  | Player name associated with the message, if any. | :heavy_minus_sign: |
+| Name    | Type   | Description                                       | Required           |
+| ------- | ------ | ------------------------------------------------- | ------------------ |
+| Message | String | The chat message to send.                         | :heavy_check_mark: |
+| Color   | Object | Json object with RGBA values of the chat message. | :heavy_minus_sign: |
+| Target  | String | Player name associated with the message, if any.  | :heavy_minus_sign: |
 
 **Example**
 
 ```json
 {
 	"Message": "Hello World!",
-	"Color":{
+	"Color": {
 		"A": 255,
 		"R": 255,
 		"G": 255,
@@ -41,10 +39,9 @@ Sends a chat message to everyone currently logged into your game.
 }
 ```
 
-
 **Notes**
 
-* Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quick admin actions (e.g. banning, muting, warping). In most cases Target should be omitted or left as null.
+- Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quick admin actions (e.g. banning, muting, warping). In most cases Target should be omitted or left as null.
 
 ---
 
@@ -59,9 +56,9 @@ Sends a chat message to everyone currently logged into your game.
 ```json
 {
 	"success": true,
-	"chatMessage":{
+	"chatMessage": {
 		"Message": "Hello World!",
-		"Color":{
+		"Color": {
 			"A": 255,
 			"R": 255,
 			"G": 255,
@@ -71,7 +68,6 @@ Sends a chat message to everyone currently logged into your game.
 	}
 }
 ```
-
 
 ## Proximity Message
 
@@ -89,18 +85,18 @@ Sends a chat message to everyone in the proximity of a given map.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| Message | String  | The chat message to send. | :heavy_check_mark: |
-| Color | Object  | Json object with RGBA values of the chat message. | :heavy_minus_sign: |
-| Target | String  | Player name associated with the message, if any. | :heavy_minus_sign: |
+| Name    | Type   | Description                                       | Required           |
+| ------- | ------ | ------------------------------------------------- | ------------------ |
+| Message | String | The chat message to send.                         | :heavy_check_mark: |
+| Color   | Object | Json object with RGBA values of the chat message. | :heavy_minus_sign: |
+| Target  | String | Player name associated with the message, if any.  | :heavy_minus_sign: |
 
 **Example**
 
 ```json
 {
 	"Message": "Hello World!",
-	"Color":{
+	"Color": {
 		"A": 255,
 		"R": 255,
 		"G": 255,
@@ -110,9 +106,9 @@ Sends a chat message to everyone in the proximity of a given map.
 }
 ```
 
-
 **Notes**
-* Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quick admin actions (e.g. banning, muting, warping). In most cases Target should be omitted or left as null.
+
+- Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quick admin actions (e.g. banning, muting, warping). In most cases Target should be omitted or left as null.
 
 ---
 
@@ -128,9 +124,9 @@ Sends a chat message to everyone in the proximity of a given map.
 {
 	"success": true,
 	"mapId": "8102053e-28f9-4452-91d4-ee2a3ffb84cf",
-	"chatMessage":{
+	"chatMessage": {
 		"Message": "Hello World!",
-		"Color":{
+		"Color": {
 			"A": 255,
 			"R": 255,
 			"G": 255,
@@ -140,7 +136,6 @@ Sends a chat message to everyone in the proximity of a given map.
 	}
 }
 ```
-
 
 ## Direct Message
 
@@ -160,18 +155,18 @@ Sends a chat message to a specific player.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| Message | String  | The chat message to send. | :heavy_check_mark: |
-| Color | Object  | Json object with RGBA values of the chat message. | :heavy_minus_sign: |
-| Target | String  | Player name associated with the message, if any. | :heavy_minus_sign: |
+| Name    | Type   | Description                                       | Required           |
+| ------- | ------ | ------------------------------------------------- | ------------------ |
+| Message | String | The chat message to send.                         | :heavy_check_mark: |
+| Color   | Object | Json object with RGBA values of the chat message. | :heavy_minus_sign: |
+| Target  | String | Player name associated with the message, if any.  | :heavy_minus_sign: |
 
 **Example**
 
 ```json
 {
 	"Message": "Hello World!",
-	"Color":{
+	"Color": {
 		"A": 255,
 		"R": 255,
 		"G": 255,
@@ -181,9 +176,9 @@ Sends a chat message to a specific player.
 }
 ```
 
-
 **Notes**
-* Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quick admin actions (e.g. banning, muting, warping). In most cases Target should be omitted or left as null.
+
+- Target is used for quickly adding friends or issuing administrative actions. For example, if the admin panel is open and a chat message is clicked, the target (if provided) will auto populate in the admin panel's target box for quick admin actions (e.g. banning, muting, warping). In most cases Target should be omitted or left as null.
 
 ---
 
@@ -199,9 +194,9 @@ Sends a chat message to a specific player.
 {
 	"success": true,
 	"lookupKey": "jcsnider",
-	"chatMessage":{
+	"chatMessage": {
 		"Message": "Hello World!",
-		"Color":{
+		"Color": {
 			"A": 255,
 			"R": 255,
 			"G": 255,

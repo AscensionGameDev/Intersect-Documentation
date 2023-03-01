@@ -2,7 +2,6 @@
 title: Senhas
 ---
 
-
 ## Redefinição de senha
 
 Redefinições de senha é um novo recurso oferecido no Beta 6. Para que a redefinição de senha funcione, o servidor deve ser capaz de enviar emails.

@@ -2,7 +2,6 @@
 title: Server Security
 ---
 
-
 | Name           | Type                                   | Example                      | Description                                                                           |
 | -------------- | -------------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------- |
 | PacketFlooding | Veja [PacketFlooding](#packetflooding) |

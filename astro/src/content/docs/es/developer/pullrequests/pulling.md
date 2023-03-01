@@ -29,7 +29,3 @@ Dependiendo de los cambios realizados en _tus ramas_, es posible que te encuentr
 Después de _realizar la fusión_ con exito, asegúrate de extraer los cambios en la aplicación Github Desktop. (¡Quizas debas realizar un _"fetch"_ antes! lo que descargará el contenido remoto, pero no actualizará el estado de trabajo del repositorio local, por lo que tu trabajo actual no se verá afectado sino hasta que realizes la extracción desde el origen remoto donde se encuentran tus cambios previamente realizados.)
 
 ![pull](https://www.ascensiongamedev.com/resources/filehost/cfb1dc1b3d9c6cb5aef42d20eff0a3ed.png)
-
-
-
-

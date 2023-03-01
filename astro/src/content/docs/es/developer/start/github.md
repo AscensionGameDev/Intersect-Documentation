@@ -2,8 +2,8 @@
 title: Bifurcar y Clonar Intersect
 ---
 
-
 ## Descargar GitHub Desktop
+
 GitHub almacena repositorios de código, realiza un seguimiento de los cambios de código, permite ver el historial del código, facilita la colaboración y más. Es el mejor amigo de los desarrolladores e incluso si no estás familiarizado con git, te recomendamos sumergirte y aprender de qué se trata el asunto.
 
 Para empezar, [crea una cuenta de GitHub](https://github.com/join).
@@ -12,8 +12,8 @@ Luego descarga la aplicación [GitHub Desktop](https://desktop.github.com/).
 
 Una vez instalada la aplicación, GitHub Desktop te solicitará iniciar sesión en tu cuenta de GitHub, lo cual harás para poder así poder continuar.
 
-
 ## Bifurcando Intersect
+
 Bifurcación (_"Fork"_ en inglés), en el ámbito del desarrollo de software es un término que básicamente significa copiar un repositorio de código. Cuando bifurques Intersect, tendrás una copia completa de todo el repositorio de Intersect en tu propia cuenta de GitHub.
 
 Para crear tu bifurcación, visita nuestro [repositorio en GitHub](https://github.com/AscensionGameDev/Intersect-Engine) y presiona el botón "Fork".
@@ -23,6 +23,7 @@ Para crear tu bifurcación, visita nuestro [repositorio en GitHub](https://githu
 Cuando termines, tendrás tu propia copia del repositorio de Intersect que permanecerá vinculada al repositorio oficial. Más tarde, puedes obtener actualizaciones oficiales hacia tu código base o incluso realizar una solicitud de extracción (_"Pull Request"_ en inglés) que te permitirá contribuir al código del motor base.
 
 ## Clonando Intersect
+
 El último paso es clonar tu repositorio de código Intersect en tu computador. Ahora que tienes Github Desktop instalado y lograste bifurcar el repositorio de Intersect, lo que se presenta a continuación será realmente fácil.
 
 En GitHub desktop, haz click en: Archivo (_"File"_) -> Clonar Repositorio (_"Clone Repository..."_)

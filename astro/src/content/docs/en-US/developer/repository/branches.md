@@ -2,13 +2,12 @@
 title: Branches
 ---
 
-
 The repository has multiple branches in order to separate multiple versions, and allow fixing bugs in both the older releases and the current release, rather than only putting bug fixes in the new release and telling people to "wait" until it reaches its release date.
 
 Currently, Intersect has 2 separate branches for different versions.
 
 |        Name | Current Version | Notes                                                                                                      |
-|------------:|-----------------|------------------------------------------------------------------------------------------------------------|
+| ----------: | --------------- | ---------------------------------------------------------------------------------------------------------- |
 |        main | 0.7.1           | Receives all bug fixes with relatively minor solutions, as well as features with minor impact to the code. |
 | development | 0.8.0           | Volatile. Can have major changes to both the codebase and database structure.                              |
 

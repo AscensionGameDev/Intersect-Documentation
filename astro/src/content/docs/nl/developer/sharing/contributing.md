@@ -22,12 +22,12 @@ If there are any issues with your changes they will be discussed in the comments
 
 Thanks for helping better Intersect for everyone!
 
-
 ## Contribution Guidelines
+
 Before submitting code please review the following guidelines:
 
- - [Contributing](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CONTRIBUTING.md)
- - [Code Of Conduct](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CODE_OF_CONDUCT.md)
- - Styling Rules
+- [Contributing](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CONTRIBUTING.md)
+- [Code Of Conduct](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CODE_OF_CONDUCT.md)
+- Styling Rules
 
- Please note that we will only accept new features that we feel are suitable for a base engine, and that an overwhelming majority of games would utilize.
+Please note that we will only accept new features that we feel are suitable for a base engine, and that an overwhelming majority of games would utilize.

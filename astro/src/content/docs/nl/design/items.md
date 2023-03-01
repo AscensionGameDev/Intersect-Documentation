@@ -2,8 +2,8 @@
 title: Items
 ---
 
-
 ## Configuration
-* Editor Fields & What they do
+
+- Editor Fields & What they do
 
 ## Item Types

@@ -1,5 +1,6 @@
 import type { MarkdownHeading } from 'astro';
 import type { FunctionalComponent } from 'preact';
+import type { MouseEvent } from 'react';
 import { unescape } from 'html-escaper';
 import {
 	useState, useEffect, useRef 
@@ -48,22 +49,32 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
 
 		const observerOptions: IntersectionObserverInit = {
 			// Negative top margin accounts for `scroll-margin`.
-			// Negative bottom margin means heading needs to be towards top of viewport to trigger intersection.
+			// Negative bottom margin means heading needs to be
+			// towards top of viewport to trigger intersection.
 			rootMargin: '-100px 0% -66%',
 			threshold: 1,
 		};
 
-		const headingsObserver = new IntersectionObserver(setCurrent, observerOptions);
+		const headingsObserver = new IntersectionObserver(
+			setCurrent,
+			observerOptions
+		);
 
 		// Observe all the headings in the main page content.
-		document.querySelectorAll('article :is(h1,h2,h3)').forEach((h) => headingsObserver.observe(h));
+		document
+			.querySelectorAll('article :is(h1,h2,h3)')
+			.forEach((h) => headingsObserver.observe(h));
 
 		// Stop observing when the component is unmounted.
 		return () => headingsObserver.disconnect();
 	}, [toc.current]);
 
-	const onLinkClick = (e) => {
-		setCurrentID(e.target.getAttribute('href').replace('#', ''));
+	const onLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
+		setCurrentID(
+			(event.target as HTMLAnchorElement)
+				?.getAttribute('href')
+				?.replace('#', '') ?? ''
+		);
 	};
 
 	return (
@@ -74,17 +85,22 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
 			<ul ref={toc}>
 				{headings
 					.filter(({ depth }) => depth > 1 && depth < 4)
-					.map((heading) => (
-						<li
-							className={`header-link depth-${heading.depth} ${
-								currentID === heading.slug ? 'current-header-link' : ''
-							}`.trim()}
-						>
-							<a href={`#${heading.slug}`} onClick={onLinkClick}>
-								{unescape(heading.text)}
-							</a>
-						</li>
-					))}
+					.map((heading) => {
+						const classes = [
+							'header-link',
+							`depth-${heading.depth}`,
+							currentID === heading.slug ? 'current-header-link' : '',
+						]
+							.join(' ')
+							.trim();
+						return (
+							<li className={classes}>
+								<a href={`#${heading.slug}`} onClick={onLinkClick}>
+									{unescape(heading.text)}
+								</a>
+							</li>
+						);
+					})}
 			</ul>
 		</>
 	);

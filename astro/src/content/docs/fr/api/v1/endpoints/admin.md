@@ -2,7 +2,6 @@
 title: Actions administrateurs
 ---
 
-
 **Toutes les commandes ci-dessous utilisant l'endpoint /users/ nécessitent le rôle Users.Query.**
 
 ## Bannir
@@ -25,21 +24,21 @@ Bannir un compte.
 
 **Body**
 
-| Nom  | Type | Description | Obligatoire |
-| ----- | ---- |------------ | -------- |
-| duration | int  | Nombre de jours pour le ban | :heavy_check_mark: |
-| reason | string  | La raison du ban. | :heavy_minus_sign: |
-| moderator | string  | Le nom du modérateur qui a banni. | :heavy_minus_sign: |
-| ip | boolean  | Interdire ou non l'adresse IP la plus récente des utilisateurs. | :heavy_minus_sign: |
+| Nom       | Type    | Description                                                     | Obligatoire        |
+| --------- | ------- | --------------------------------------------------------------- | ------------------ |
+| duration  | int     | Nombre de jours pour le ban                                     | :heavy_check_mark: |
+| reason    | string  | La raison du ban.                                               | :heavy_minus_sign: |
+| moderator | string  | Le nom du modérateur qui a banni.                               | :heavy_minus_sign: |
+| ip        | boolean | Interdire ou non l'adresse IP la plus récente des utilisateurs. | :heavy_minus_sign: |
 
 **Example**
 
 ```json
 {
-  "duration": 5,
-  "reason": "For breaking rule #4",
-  "moderator": "Damian666",
-  "ip": true
+	"duration": 5,
+	"reason": "For breaking rule #4",
+	"moderator": "Damian666",
+	"ip": true
 }
 ```
 
@@ -55,7 +54,7 @@ Bannir un compte.
 
 ```json
 {
-    "Message": "jcsnider has been banned!"
+	"Message": "jcsnider has been banned!"
 }
 ```
 
@@ -79,21 +78,21 @@ Mutes un compte.
 
 **Body**
 
-| Nom  | Type | Description | Obligatoire |
-| ----- | ---- |------------ | -------- |
-| duration | int  | Nombre de jours pour mute. | :heavy_check_mark: |
-| reason | string  | Raison du mute. | :heavy_minus_sign: |
-| moderator | string  | Le nom du modérateur qui a mute. | :heavy_minus_sign: |
-| ip | boolean  | Interdire ou non l'adresse IP la plus récente des utilisateurs. | :heavy_minus_sign: |
+| Nom       | Type    | Description                                                     | Obligatoire        |
+| --------- | ------- | --------------------------------------------------------------- | ------------------ |
+| duration  | int     | Nombre de jours pour mute.                                      | :heavy_check_mark: |
+| reason    | string  | Raison du mute.                                                 | :heavy_minus_sign: |
+| moderator | string  | Le nom du modérateur qui a mute.                                | :heavy_minus_sign: |
+| ip        | boolean | Interdire ou non l'adresse IP la plus récente des utilisateurs. | :heavy_minus_sign: |
 
 **Exemple**
 
 ```json
 {
-  "duration": 5,
-  "reason": "For breaking rule #4",
-  "moderator": "Damian666",
-  "ip": true
+	"duration": 5,
+	"reason": "For breaking rule #4",
+	"moderator": "Damian666",
+	"ip": true
 }
 ```
 
@@ -109,7 +108,7 @@ Mutes un compte.
 
 ```json
 {
-    "Message": "jcsnider has been muted!"
+	"Message": "jcsnider has been muted!"
 }
 ```
 
@@ -145,7 +144,7 @@ Débannir un compte.
 
 ```json
 {
-    "Message": "jcsnider has been unbanned!"
+	"Message": "jcsnider has been unbanned!"
 }
 ```
 
@@ -181,7 +180,7 @@ Démute un compte.
 
 ```json
 {
-    "Message": "jcsnider has been unmuted!"
+	"Message": "jcsnider has been unmuted!"
 }
 ```
 
@@ -205,15 +204,15 @@ Téléporter un joueur sur une carte spécifiée tout en conservant ses coordonn
 
 **Body**
 
-| Nom  | Type | Description | Obligatoire |
-| ----- | ---- |------------ | -------- |
-| mapid | guid  | Id de la carte vers laquelle téléporter le joueur. | :heavy_check_mark: |
+| Nom   | Type | Description                                        | Obligatoire        |
+| ----- | ---- | -------------------------------------------------- | ------------------ |
+| mapid | guid | Id de la carte vers laquelle téléporter le joueur. | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
-  "MapId": "693b7c8f-61ac-4517-b27c-f3b0a3b98542"
+	"MapId": "693b7c8f-61ac-4517-b27c-f3b0a3b98542"
 }
 ```
 
@@ -229,7 +228,7 @@ Téléporter un joueur sur une carte spécifiée tout en conservant ses coordonn
 
 ```json
 {
-    "Message": "Warped 'jcsnider' to 693b7c8f-61ac-4517-b27c-f3b0a3b98542 (13, 19)."
+	"Message": "Warped 'jcsnider' to 693b7c8f-61ac-4517-b27c-f3b0a3b98542 (13, 19)."
 }
 ```
 
@@ -253,19 +252,19 @@ Téléporter un joueur à des coordonnées spécifiées sur une carte spécifié
 
 **Body**
 
-| Nom  | Type | Description | Obligatoire |
-| ----- | ---- |------------ | -------- |
-| mapid | guid  |Id de la carte vers laquelle téléporter le joueur. | :heavy_check_mark: |
-| x | int  | Coordonnée X sur la carte pour téléporter le joueur. | :heavy_check_mark: |
-| y | int  | Coordonnée Y sur la carte pour téléporter le joueur vers. | :heavy_check_mark: |
+| Nom   | Type | Description                                               | Obligatoire        |
+| ----- | ---- | --------------------------------------------------------- | ------------------ |
+| mapid | guid | Id de la carte vers laquelle téléporter le joueur.        | :heavy_check_mark: |
+| x     | int  | Coordonnée X sur la carte pour téléporter le joueur.      | :heavy_check_mark: |
+| y     | int  | Coordonnée Y sur la carte pour téléporter le joueur vers. | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
-  "MapId": "693b7c8f-61ac-4517-b27c-f3b0a3b98542",
-  "X": 0,
-  "Y": 10
+	"MapId": "693b7c8f-61ac-4517-b27c-f3b0a3b98542",
+	"X": 0,
+	"Y": 10
 }
 ```
 
@@ -281,7 +280,7 @@ Téléporter un joueur à des coordonnées spécifiées sur une carte spécifié
 
 ```json
 {
-    "Message": "Warped 'jcsnider' to 693b7c8f-61ac-4517-b27c-f3b0a3b98542 (0, 10)."
+	"Message": "Warped 'jcsnider' to 693b7c8f-61ac-4517-b27c-f3b0a3b98542 (0, 10)."
 }
 ```
 
@@ -317,7 +316,7 @@ Expulse un joueur du jeu.
 
 ```json
 {
-    "Message": "jcsnider has been kicked by the server!"
+	"Message": "jcsnider has been kicked by the server!"
 }
 ```
 
@@ -353,6 +352,6 @@ Tuer un joueur dans le jeu.
 
 ```json
 {
-    "Message": "jcsnider has been killed!"
+	"Message": "jcsnider has been killed!"
 }
 ```

@@ -4,13 +4,13 @@ title: Contributing to the Official Repo
 
 We highly encourage the community to help by contributing to the official Intersect repo! We are happy to review and accept bug fixes and engine enhancements that you all come up with.
 
-Contributions must be submitted via Pull Requests on GitHub. When creating the Pull Request you will indicate that you want to pull changes from one of your branches into either the ``main`` or ``development`` branches of the Ascension Game Dev Intersect Engine repository.
+Contributions must be submitted via Pull Requests on GitHub. When creating the Pull Request you will indicate that you want to pull changes from one of your branches into either the `main` or `development` branches of the Ascension Game Dev Intersect Engine repository.
 
-Pull requests are expected to be based off the most recent ``main`` or ``development`` branches. In the following example I branched off the most recent version of ``development``, cleaned up some poorly written code, and pushed my changes to GitHub.
+Pull requests are expected to be based off the most recent `main` or `development` branches. In the following example I branched off the most recent version of `development`, cleaned up some poorly written code, and pushed my changes to GitHub.
 
-In the GitHub PR interface I have configured the base as ``AscensionGameDev/Intersect-Engine:Development`` and selected my personal repo ``sniderjc/Intersect-Engine:cleaning-up-code`` as the branch to merge.
+In the GitHub PR interface I have configured the base as `AscensionGameDev/Intersect-Engine:Development` and selected my personal repo `sniderjc/Intersect-Engine:cleaning-up-code` as the branch to merge.
 
-When creating pull requests please provide a descriptive title and description if applicable. Once ready click ``Create Pull Request``.
+When creating pull requests please provide a descriptive title and description if applicable. Once ready click `Create Pull Request`.
 
 ![prsetup](https://www.ascensiongamedev.com/resources/filehost/f00528aa5a36b70d471c606e705ff9d4.png)
 
@@ -22,12 +22,12 @@ If there are any issues with your changes they will be discussed in the comments
 
 Thank you for contributing and improving Intersect for everyone!
 
-
 ## Contribution Guidelines
+
 Before submitting code please review the following guidelines:
 
- - [Contributing](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CONTRIBUTING.md)
- - [Code Of Conduct](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CODE_OF_CONDUCT.md)
- - Styling Rules
+- [Contributing](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CONTRIBUTING.md)
+- [Code Of Conduct](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CODE_OF_CONDUCT.md)
+- Styling Rules
 
- Please note that we will only accept new features that we feel are suitable for a base engine, and that an overwhelming majority of games would utilize.
+Please note that we will only accept new features that we feel are suitable for a base engine, and that an overwhelming majority of games would utilize.

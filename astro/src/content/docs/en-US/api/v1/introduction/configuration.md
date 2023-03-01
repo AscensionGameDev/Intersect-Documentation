@@ -2,7 +2,6 @@
 title: Configuration
 ---
 
-
 ## [AllowedNetworkTypes](./configuration/allowednetworktypes.md)
 
 ## [CORS](./configuration/cors.md)

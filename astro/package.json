@@ -21,6 +21,7 @@
 		"yargs": "^17.7.1"
 	},
 	"devDependencies": {
+		"@types/html-escaper": "^3.0.0",
 		"@types/jest": "^29.4.0",
 		"@types/semver": "^7.3.13",
 		"@types/yargs": "^17.0.22",
@@ -56,7 +57,7 @@
 		"dev": "astro dev",
 		"lint": "eslint . && textlint . && prettier --check .",
 		"lint:eslint": "eslint",
-		"lint:fix": "eslint . --fix && textlint . --fix && prettier --write .",
+		"lint:fix": "prettier --write . && eslint . --fix && textlint . --fix",
 		"lint:prettier": "prettier",
 		"lint:text": "textlint",
 		"migrate-version": "ts-node --esm ./scripts/migrateVersion.ts",

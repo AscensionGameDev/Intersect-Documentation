@@ -2,7 +2,6 @@
 title: Server Info
 ---
 
-
 ## Authorized
 
 Checks token and returns whether or not you're authorized to access protected api endpoints.
@@ -105,7 +104,6 @@ Empty
 	"onlineCount": 0
 }
 ```
-
 
 ## Config
 

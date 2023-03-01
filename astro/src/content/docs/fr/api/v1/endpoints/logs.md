@@ -2,7 +2,6 @@
 title: Logs
 ---
 
-
 ## Activité Joueur
 
 Renvoie les informations d'activité d'un joueur

@@ -2,9 +2,7 @@
 title: Aplicar parches
 ---
 
-
 Los parches de GitHub son muy sencillos de aplicar y permiten comprobar su compatibilidad antes de proceder a ello.
-
 
 Ten en cuenta que aplicar parches git modifica el código fuente de Intersect, lo que puede afectar el rendimiento e introducir errores en tu juego. ¡Sólo instala parches procedentes de desarrolladores de confianza!
 
@@ -28,8 +26,7 @@ git am --signoff < patchName.patch
 
 ![apply](https://www.ascensiongamedev.com/resources/filehost/7fb32c944b7147a3397c8a39e634af1f.png)
 
-
-Si necesitas eliminar un parche, utiliza el comando ``git apply -R`` como se muestra a continuación
+Si necesitas eliminar un parche, utiliza el comando `git apply -R` como se muestra a continuación
 
 ```
 git apply -R patchName.patch

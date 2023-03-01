@@ -2,7 +2,6 @@
 title: Upgrading
 ---
 
-
 Upgrading Intersect is generally as easy as overwriting a few files and calling it a day, but that isn't always the case. This page will talk about a few upgrading scenarios and how to handle them.
 
 ## What to Download

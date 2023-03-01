@@ -3,22 +3,14 @@
 		"es2021": true,
 		"shared-node-browser": true
 	},
-	"extends": [
-		"eslint:recommended",
-		"plugin:@typescript-eslint/recommended"
-	],
-	"ignorePatterns": [
-		"dist/*",
-		"src-tauri"
-	],
+	"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+	"ignorePatterns": ["dist/*", "src-tauri"],
 	"overrides": [
 		{
 			"env": {
 				"jest": true
 			},
-			"files": [
-				"**/__tests__/*.(spec|test).(jsx?|tsx?)"
-			]
+			"files": ["**/__tests__/*.(spec|test).(jsx?|tsx?)"]
 		},
 		{
 			"env": {
@@ -26,9 +18,7 @@
 				"node": false,
 				"shared-node-browser": false
 			},
-			"files": [
-				"public/*.js"
-			]
+			"files": ["public/*.js"]
 		},
 		{
 			"env": {
@@ -36,20 +26,12 @@
 				"node": true,
 				"shared-node-browser": false
 			},
-			"files": [
-				"scripts/**"
-			]
+			"files": ["scripts/**"]
 		},
 		{
-			"extends": [
-				"plugin:markdown/recommended"
-			],
-			"files": [
-				"*.md"
-			],
-			"plugins": [
-				"markdown"
-			]
+			"extends": ["plugin:markdown/recommended"],
+			"files": ["*.md"],
+			"plugins": ["markdown"]
 		}
 	],
 	"parser": "@typescript-eslint/parser",
@@ -57,9 +39,7 @@
 		"ecmaVersion": "latest",
 		"sourceType": "module"
 	},
-	"plugins": [
-		"@typescript-eslint"
-	],
+	"plugins": ["@typescript-eslint"],
 	"rules": {
 		"@typescript-eslint/no-unused-vars": [
 			"error",
@@ -71,21 +51,17 @@
 			"error",
 			"tab",
 			{
-				"ignoredNodes": [
-					"SwitchCase > BlockStatement"
-				],
+				"ignoredNodes": ["SwitchCase > BlockStatement"],
 				"SwitchCase": 1
 			}
 		],
-		"linebreak-style": [
-			"error",
-			"unix"
-		],
+		"linebreak-style": ["error", "unix"],
 		"max-len": [
 			"error",
 			{
 				"code": 120,
 				"comments": 100,
+				"ignoreTemplateLiterals": true,
 				"tabWidth": 2
 			}
 		],
@@ -97,19 +73,10 @@
 			}
 		],
 		"object-property-newline": "error",
-		"quote-props": [
-			"error",
-			"as-needed"
-		],
-		"quotes": [
-			"error",
-			"single"
-		],
+		"quote-props": ["error", "as-needed"],
+		"quotes": ["error", "single"],
 		"no-unused-vars": "off",
-		"semi": [
-			"error",
-			"always"
-		]
+		"semi": ["error", "always"]
 	},
 	"root": true
 }

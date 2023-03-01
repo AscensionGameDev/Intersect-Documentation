@@ -4,30 +4,30 @@ title: Editor Overview
 
 ![Game Editor](https://www.ascensiongamedev.com/resources/filehost/c399bc35aad37d828ddda1986538e7bd.png)
 
-Our editor is very advanced and can be fairly daunting at first.  This page will quickly give name to each of the panels/areas and provide an overview for what they're for.
+Our editor is very advanced and can be fairly daunting at first. This page will quickly give name to each of the panels/areas and provide an overview for what they're for.
 
 &nbsp;
 
-Map Editor
----------------------------
+## Map Editor
+
 Let's start with the big area in the middle. This is the map editor. Unlike the image above, your map is probably empty.
 
 Working with the Map Layers panel on the left you can place tiles from tilesets on your map to start designing your game world.
 
 **Start Mapping:**
->- Click on the **Pen Tool** ![Pen Tool](https://www.ascensiongamedev.com/resources/filehost/a20847da4a43f52234ccda97b1125a88.png) in the menubar above your map.
->- Select **Tiles** in the **Map Layers** pane.
->- Use your mouse to select a tile or group of tiles to place in your empty map. <a href="http://www.ascensiongamedev.com/resources/filehost/03856cde2da1c67f07b0123b90b6b0dc.gif" data-lity><i class="fa fa-play-circle"></i></a>
->- Finally click and drag your mouse on the empty map to place your selected tiles. <a href="http://www.ascensiongamedev.com/resources/filehost/03856cde2da1c67f07b0123b90b6b0dc.gif" data-lity><i class="fa fa-play-circle"></i></a>
->- Congratulations, you're mapping! Don't forget to save your changes by hitting the save icon in the top left of your screen. ![](https://www.ascensiongamedev.com/resources/filehost/7f974a7fc91ef6666e3211c8622fe088.png)
 
+> - Click on the **Pen Tool** ![Pen Tool](https://www.ascensiongamedev.com/resources/filehost/a20847da4a43f52234ccda97b1125a88.png) in the menubar above your map.
+> - Select **Tiles** in the **Map Layers** pane.
+> - Use your mouse to select a tile or group of tiles to place in your empty map. <a href="http://www.ascensiongamedev.com/resources/filehost/03856cde2da1c67f07b0123b90b6b0dc.gif" data-lity><i class="fa fa-play-circle"></i></a>
+> - Finally click and drag your mouse on the empty map to place your selected tiles. <a href="http://www.ascensiongamedev.com/resources/filehost/03856cde2da1c67f07b0123b90b6b0dc.gif" data-lity><i class="fa fa-play-circle"></i></a>
+> - Congratulations, you're mapping! Don't forget to save your changes by hitting the save icon in the top left of your screen. ![](https://www.ascensiongamedev.com/resources/filehost/7f974a7fc91ef6666e3211c8622fe088.png)
 
 We won't go in depth about the map editor here, for more information see: World Design
 
 &nbsp;
 
-Map Layers
----------------------------
+## Map Layers
+
 This is the area where you select different tiles, attributes, lights, events, and npcs to place on the map.
 
 ![Map Layers](https://www.ascensiongamedev.com/resources/filehost/ffcf5ccf19de31db8389a08b9bafea3c.png)
@@ -40,8 +40,8 @@ This is the area where you select different tiles, attributes, lights, events, a
 
 &nbsp;
 
-Map List
----------------------------
+## Map List
+
 A large game may have dozens or hundreds of maps. The map list is where you can navigate to and organize the maps you have created.
 
 ![Map List](https://www.ascensiongamedev.com/resources/filehost/fd600e2516e3b6a54193c5ce5bfce958.png)
@@ -50,16 +50,16 @@ Double clicking a map on this list will open that map for you to edit. You can c
 
 &nbsp;
 
-Map Properties
----------------------------
+## Map Properties
+
 ![Map Properties](https://www.ascensiongamedev.com/resources/filehost/6fa0203860907911f251ed13f174b7d2.png)
 
 The map properties pane allows you to customize various settings for your map (e.g. BGM, name, weather, combat, lighting).
 
 &nbsp;
 
-Menu Bar
----------------------------
+## Menu Bar
+
 ![Menu Bar](https://www.ascensiongamedev.com/resources/filehost/f951597a65ac34164090c46e3a640680.png)
 
 The menu bar at the top of your editor is your gateway to everything else our engine has to offer. The bottom row consists of all sorts of mapping tools that are discussed in the World Design page. The **File**, **Edit**, and **View** drop downs all offer various mapping options that you don't need to worry about right now.
@@ -79,8 +79,8 @@ The rest of this documentation will go over how to use each of the editors above
 
 &nbsp;
 
-Extra Notes
----------------------------
+## Extra Notes
+
 Now is probably a good time to note a nifty feature we recently added to Intersect. Open your **File** -> **Options** menu. Here you can click the **Browse** button and select your **Intersect Client.exe**.
 
 After doing so, you will be able to hit the green play icon ![Play Icon](https://www.ascensiongamedev.com/resources/filehost/b793679bc50386069948727977d26ad5.png) in the menu bar to launch your client at any time!

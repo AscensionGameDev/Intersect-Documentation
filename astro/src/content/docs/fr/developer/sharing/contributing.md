@@ -22,12 +22,12 @@ Si il y a des défauts avec vos changements ils seront discutés dans la section
 
 Merci d'aider à créer un meilleur Intersect pour tout le monde!
 
-
 ## Lignes de Conduite de Contribution
+
 Avant de soumettre du code veuillez s'il vous plaît garder à l'esprit les lignes de conduite suivantes:
 
- - [Contribuer](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CONTRIBUTING.md)
- - [Code De Conduite](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CODE_OF_CONDUCT.md)
- - Règles de style
+- [Contribuer](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CONTRIBUTING.md)
+- [Code De Conduite](https://github.com/AscensionGameDev/Intersect-Engine/blob/development/CODE_OF_CONDUCT.md)
+- Règles de style
 
- Veuillez noter que nous n'accepterons que les nouvelles fonctionnalités que nous estimerons adaptées pour un moteur de base et qu'une écrasante majorité de jeux pourrait utiliser.
+Veuillez noter que nous n'accepterons que les nouvelles fonctionnalités que nous estimerons adaptées pour un moteur de base et qu'une écrasante majorité de jeux pourrait utiliser.

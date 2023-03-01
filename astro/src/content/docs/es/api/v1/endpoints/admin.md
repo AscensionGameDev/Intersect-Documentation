@@ -2,7 +2,6 @@
 title: Acciones de Administrador
 ---
 
-
 **Los siguientes comandos usan el punto de conexión /users/ y requiren el rol "Users.Query".**
 
 ## Banear
@@ -26,7 +25,7 @@ Prohíbe el acceso y utilización de una cuenta.
 **Body**
 
 | Name      | Type    | Description                                             | Required           |
-|-----------|---------|---------------------------------------------------------|--------------------|
+| --------- | ------- | ------------------------------------------------------- | ------------------ |
 | duration  | int     | Number of days for the ban to last.                     | :heavy_check_mark: |
 | reason    | string  | Reason for the ban.                                     | :heavy_minus_sign: |
 | moderator | string  | Name of the banner.                                     | :heavy_minus_sign: |
@@ -36,10 +35,10 @@ Prohíbe el acceso y utilización de una cuenta.
 
 ```json
 {
-  "duration": 5,
-  "reason": "For breaking rule #4",
-  "moderator": "Damian666",
-  "ip": true
+	"duration": 5,
+	"reason": "For breaking rule #4",
+	"moderator": "Damian666",
+	"ip": true
 }
 ```
 
@@ -55,7 +54,7 @@ Prohíbe el acceso y utilización de una cuenta.
 
 ```json
 {
-    "Message": "jcsnider has been banned!"
+	"Message": "jcsnider has been banned!"
 }
 ```
 
@@ -80,7 +79,7 @@ Mutea una cuenta.
 **Body**
 
 | Name      | Type    | Description                                              | Required           |
-|-----------|---------|----------------------------------------------------------|--------------------|
+| --------- | ------- | -------------------------------------------------------- | ------------------ |
 | duration  | int     | Number of days for the mute to last.                     | :heavy_check_mark: |
 | reason    | string  | Reason for the mute.                                     | :heavy_minus_sign: |
 | moderator | string  | Name of the muter.                                       | :heavy_minus_sign: |
@@ -90,10 +89,10 @@ Mutea una cuenta.
 
 ```json
 {
-  "duration": 5,
-  "reason": "For breaking rule #4",
-  "moderator": "Damian666",
-  "ip": true
+	"duration": 5,
+	"reason": "For breaking rule #4",
+	"moderator": "Damian666",
+	"ip": true
 }
 ```
 
@@ -109,7 +108,7 @@ Mutea una cuenta.
 
 ```json
 {
-    "Message": "jcsnider has been muted!"
+	"Message": "jcsnider has been muted!"
 }
 ```
 
@@ -145,7 +144,7 @@ Desbanea una cuenta.
 
 ```json
 {
-    "Message": "jcsnider has been unbanned!"
+	"Message": "jcsnider has been unbanned!"
 }
 ```
 
@@ -181,7 +180,7 @@ Desmutea una cuenta.
 
 ```json
 {
-    "Message": "jcsnider has been unmuted!"
+	"Message": "jcsnider has been unmuted!"
 }
 ```
 
@@ -205,15 +204,15 @@ Warps a player to a specified map while retaining their current coordinates.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| mapid | guid  | Id of the map to warp the player to. | :heavy_check_mark: |
+| Name  | Type | Description                          | Required           |
+| ----- | ---- | ------------------------------------ | ------------------ |
+| mapid | guid | Id of the map to warp the player to. | :heavy_check_mark: |
 
 **Ejemplo**
 
 ```json
 {
-  "MapId": "693b7c8f-61ac-4517-b27c-f3b0a3b98542"
+	"MapId": "693b7c8f-61ac-4517-b27c-f3b0a3b98542"
 }
 ```
 
@@ -229,7 +228,7 @@ Warps a player to a specified map while retaining their current coordinates.
 
 ```json
 {
-    "Message": "Warped 'jcsnider' to 693b7c8f-61ac-4517-b27c-f3b0a3b98542 (13, 19)."
+	"Message": "Warped 'jcsnider' to 693b7c8f-61ac-4517-b27c-f3b0a3b98542 (13, 19)."
 }
 ```
 
@@ -253,19 +252,19 @@ Warps a player to specified coordinates on a specified map.
 
 **Body**
 
-| Name  | Type | Description | Required |
-| ----- | ---- |------------ | -------- |
-| mapid | guid  | Id of the map to warp the player to. | :heavy_check_mark: |
-| x | int  | X coordinate on the map to warp the player to. | :heavy_check_mark: |
-| y | int  | Y coordinate on the map to warp the player to. | :heavy_check_mark: |
+| Name  | Type | Description                                    | Required           |
+| ----- | ---- | ---------------------------------------------- | ------------------ |
+| mapid | guid | Id of the map to warp the player to.           | :heavy_check_mark: |
+| x     | int  | X coordinate on the map to warp the player to. | :heavy_check_mark: |
+| y     | int  | Y coordinate on the map to warp the player to. | :heavy_check_mark: |
 
 **Ejemplo**
 
 ```json
 {
-  "MapId": "693b7c8f-61ac-4517-b27c-f3b0a3b98542",
-  "X": 0,
-  "Y": 10
+	"MapId": "693b7c8f-61ac-4517-b27c-f3b0a3b98542",
+	"X": 0,
+	"Y": 10
 }
 ```
 
@@ -281,7 +280,7 @@ Warps a player to specified coordinates on a specified map.
 
 ```json
 {
-    "Message": "Warped 'jcsnider' to 693b7c8f-61ac-4517-b27c-f3b0a3b98542 (0, 10)."
+	"Message": "Warped 'jcsnider' to 693b7c8f-61ac-4517-b27c-f3b0a3b98542 (0, 10)."
 }
 ```
 
@@ -317,7 +316,7 @@ Desconecta a un jugador del servidor.
 
 ```json
 {
-    "Message": "jcsnider has been kicked by the server!"
+	"Message": "jcsnider has been kicked by the server!"
 }
 ```
 
@@ -353,6 +352,6 @@ Mata a un jugador en el servidor.
 
 ```json
 {
-    "Message": "jcsnider has been killed!"
+	"Message": "jcsnider has been killed!"
 }
 ```

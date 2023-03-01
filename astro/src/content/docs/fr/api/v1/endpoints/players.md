@@ -2,7 +2,6 @@
 title: Joueurs
 ---
 
-
 ## Liste Joueurs
 
 Renvoie les personnages du serveur avec leur id et les informations stockées.
@@ -17,11 +16,11 @@ Renvoie les personnages du serveur avec leur id et les informations stockées.
 
 **Paramêtres de Requête**
 
-| Nom   | Type | Description | Requis | Par Défaut |
-| ----- | ---- |------------ | -------- | ------- |
-| page | int  | Décalage des joueurs en numéro de page | :heavy_minus_sign: | 0 |
-| pageSize | int  | Nombre de joueurs par page | :heavy_minus_sign: | 5 |
-| limit | int  | Limite du nombre de joueurs renvoyés | :heavy_minus_sign: | `pageSize` |
+| Nom      | Type | Description                            | Requis             | Par Défaut |
+| -------- | ---- | -------------------------------------- | ------------------ | ---------- |
+| page     | int  | Décalage des joueurs en numéro de page | :heavy_minus_sign: | 0          |
+| pageSize | int  | Nombre de joueurs par page             | :heavy_minus_sign: | 5          |
+| limit    | int  | Limite du nombre de joueurs renvoyés   | :heavy_minus_sign: | `pageSize` |
 
 **Exemple**
 
@@ -68,18 +67,19 @@ Renvoie les personnages du serveur avec leur id et les informations stockées, c
 
 **Paramêtres de Requête**
 
-| Nom   | Type | Description | Requis | Par Défaut |
-| ----- | ---- |------------ | -------- | ------- |
-| page | int  | Décalage des joueurs en numéro de page | :heavy_minus_sign: | 0 |
-| pageSize | int  | Nombre de joueurs par page | :heavy_minus_sign: | 5 |
-| limit | int  | Limite du nombre de joueurs renvoyés | :heavy_minus_sign: | `pageSize` |
-| sortDirection | `Ascending`/`Descending`  | direction de classement | :heavy_minus_sign: | `Descending` |
+| Nom           | Type                     | Description                            | Requis             | Par Défaut   |
+| ------------- | ------------------------ | -------------------------------------- | ------------------ | ------------ |
+| page          | int                      | Décalage des joueurs en numéro de page | :heavy_minus_sign: | 0            |
+| pageSize      | int                      | Nombre de joueurs par page             | :heavy_minus_sign: | 5            |
+| limit         | int                      | Limite du nombre de joueurs renvoyés   | :heavy_minus_sign: | `pageSize`   |
+| sortDirection | `Ascending`/`Descending` | direction de classement                | :heavy_minus_sign: | `Descending` |
 
 **Exemple**
 
 ```http
 GET /api/v1/players/rank?page=1&pageSize=5&sortDirection=Descending
 ```
+
 ---
 
 ### Réponse
@@ -121,17 +121,17 @@ Renvoie les personnages en ligne du serveur avec leur id et les informations sto
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| page | int  | Page de personnages à récupérer. | :heavy_minus_sign: |
+| Nom   | Type | Description                        | Requis             |
+| ----- | ---- | ---------------------------------- | ------------------ |
+| page  | int  | Page de personnages à récupérer.   | :heavy_minus_sign: |
 | count | int  | Nombre de personnages à récupérer. | :heavy_minus_sign: |
 
 **Exemple**
 
 ```json
 {
-  "page": 0,
-  "count": 5
+	"page": 0,
+	"count": 5
 }
 ```
 
@@ -186,7 +186,7 @@ Renvoie le nombre de joueurs en ligne.
 
 ```json
 {
-    "onlineCount": 1
+	"onlineCount": 1
 }
 ```
 
@@ -263,14 +263,14 @@ Renvoie les variables joueurs et leur valeur pour un personnage.
 
 ```json
 [
-    {
-    "VariableId": "d6f5b6b9-6de9-4893-b028-0c8c386ee05c",
-    "Value": true
-    },
-    {
-    "VariableId": "873270c0-924e-467b-b881-a97e2ab92858",
-    "Value": 5
-    }
+	{
+		"VariableId": "d6f5b6b9-6de9-4893-b028-0c8c386ee05c",
+		"Value": true
+	},
+	{
+		"VariableId": "873270c0-924e-467b-b881-a97e2ab92858",
+		"Value": 5
+	}
 ]
 ```
 
@@ -304,8 +304,8 @@ Renvoie une variable joueur et sa valeur pour l'id d'une variable joueur donnée
 
 ```json
 {
-    "VariableId": "d6f5b6b9-6de9-4893-b028-0c8c386ee05c",
-    "Value": true
+	"VariableId": "d6f5b6b9-6de9-4893-b028-0c8c386ee05c",
+	"Value": true
 }
 ```
 
@@ -339,7 +339,7 @@ Retrieves player variable value for a given player variable id.
 
 ```json
 {
-    "value": true
+	"value": true
 }
 ```
 
@@ -361,15 +361,15 @@ Défini la valeur d'une variable joueur.
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
+| Nom   | Type           | Description                    | Requis             |
+| ----- | -------------- | ------------------------------ | ------------------ |
 | value | int or boolean | Valeur désirée de la variable. | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
-  "value": 10
+	"value": 10
 }
 ```
 
@@ -383,8 +383,8 @@ Défini la valeur d'une variable joueur.
 
 ```json
 {
-    "VariableId": "d6f5b6b9-6de9-4893-b028-0c8c386ee05c",
-    "Value": 10
+	"VariableId": "d6f5b6b9-6de9-4893-b028-0c8c386ee05c",
+	"Value": 10
 }
 ```
 
@@ -418,38 +418,38 @@ Renvoie les objets d'inventaire et de banque pour un joueur.
 
 ```json
 {
-    "inventory":[
-        {
-            "Slot": 22,
-            "BagId": null,
-            "ItemId": "1b19803a-6c28-484f-95fe-9c99f967d73f",
-            "Quantity": 1,
-            "StatBuffs":[0, 0, 0, 0, 0]
-        },
-        {
-            "Slot": 15,
-            "BagId": "08d649a8-643f-1bde-0487-3175a8badde2",
-            "ItemId": "bda7b222-b549-4e95-982f-cc04e680471e",
-            "Quantity": 1,
-            "StatBuffs":[0, 0, 0, 0, 0]
-        }
-    ],
-    "bank": [
-        {
-            "Slot": 87,
-            "BagId": null,
-            "ItemId": "00000000-0000-0000-0000-000000000000",
-            "Quantity": 0,
-            "StatBuffs":[0, 0, 0, 0, 0]
-        },
-        {
-            "Slot": 91,
-            "BagId": null,
-            "ItemId": "00000000-0000-0000-0000-000000000000",
-            "Quantity": 0,
-            "StatBuffs":[0, 0, 0, 0, 0]
-        }
-    ]
+	"inventory": [
+		{
+			"Slot": 22,
+			"BagId": null,
+			"ItemId": "1b19803a-6c28-484f-95fe-9c99f967d73f",
+			"Quantity": 1,
+			"StatBuffs": [0, 0, 0, 0, 0]
+		},
+		{
+			"Slot": 15,
+			"BagId": "08d649a8-643f-1bde-0487-3175a8badde2",
+			"ItemId": "bda7b222-b549-4e95-982f-cc04e680471e",
+			"Quantity": 1,
+			"StatBuffs": [0, 0, 0, 0, 0]
+		}
+	],
+	"bank": [
+		{
+			"Slot": 87,
+			"BagId": null,
+			"ItemId": "00000000-0000-0000-0000-000000000000",
+			"Quantity": 0,
+			"StatBuffs": [0, 0, 0, 0, 0]
+		},
+		{
+			"Slot": 91,
+			"BagId": null,
+			"ItemId": "00000000-0000-0000-0000-000000000000",
+			"Quantity": 0,
+			"StatBuffs": [0, 0, 0, 0, 0]
+		}
+	]
 }
 ```
 
@@ -483,20 +483,20 @@ Renvoie les objets de l'inventaire pour un joueur.
 
 ```json
 [
-    {
-        "Slot": 22,
-        "BagId": null,
-        "ItemId": "1b19803a-6c28-484f-95fe-9c99f967d73f",
-        "Quantity": 1,
-        "StatBuffs":[0, 0, 0, 0, 0]
-    },
-    {
-        "Slot": 15,
-        "BagId": "08d649a8-643f-1bde-0487-3175a8badde2",
-        "ItemId": "bda7b222-b549-4e95-982f-cc04e680471e",
-        "Quantity": 1,
-        "StatBuffs":[0, 0, 0, 0, 0]
-    }
+	{
+		"Slot": 22,
+		"BagId": null,
+		"ItemId": "1b19803a-6c28-484f-95fe-9c99f967d73f",
+		"Quantity": 1,
+		"StatBuffs": [0, 0, 0, 0, 0]
+	},
+	{
+		"Slot": 15,
+		"BagId": "08d649a8-643f-1bde-0487-3175a8badde2",
+		"ItemId": "bda7b222-b549-4e95-982f-cc04e680471e",
+		"Quantity": 1,
+		"StatBuffs": [0, 0, 0, 0, 0]
+	}
 ]
 ```
 
@@ -530,20 +530,20 @@ Renvoie les objets en banque pour un joueur.
 
 ```json
 [
-    {
-        "Slot": 87,
-        "BagId": null,
-        "ItemId": "00000000-0000-0000-0000-000000000000",
-        "Quantity": 0,
-        "StatBuffs":[0, 0, 0, 0, 0]
-    },
-    {
-        "Slot": 91,
-        "BagId": null,
-        "ItemId": "00000000-0000-0000-0000-000000000000",
-        "Quantity": 0,
-        "StatBuffs":[0, 0, 0, 0, 0]
-    }
+	{
+		"Slot": 87,
+		"BagId": null,
+		"ItemId": "00000000-0000-0000-0000-000000000000",
+		"Quantity": 0,
+		"StatBuffs": [0, 0, 0, 0, 0]
+	},
+	{
+		"Slot": 91,
+		"BagId": null,
+		"ItemId": "00000000-0000-0000-0000-000000000000",
+		"Quantity": 0,
+		"StatBuffs": [0, 0, 0, 0, 0]
+	}
 ]
 ```
 
@@ -575,31 +575,31 @@ Renvoie objets stockées et données meta d'un sac.
 
 ```json
 {
-    "Id": "08d649a8-643f-1bde-0487-3175a8badde2",
-    "SlotCount": 3,
-    "Slots":[
-        {
-            "Slot": 0,
-            "BagId": null,
-            "ItemId": "be82ae1a-0c50-40c8-a929-7d55335467fc",
-            "Quantity": 10,
-            "StatBuffs":[0, 0, 0, 0, 0]
-        },
-        {
-            "Slot": 1,
-            "BagId": null,
-            "ItemId": "0d06aeef-b040-4048-8a85-2821144cc99b",
-            "Quantity": 1,
-            "StatBuffs":[0, 0, 0, 0, 0]
-        },
-        {
-            "Slot": 2,
-            "BagId": null,
-            "ItemId": "0d06aeef-b040-4048-8a85-2821144cc99b",
-            "Quantity": 1,
-            "StatBuffs":[0, 0, 0, 0, 0]
-        },
-    ]
+	"Id": "08d649a8-643f-1bde-0487-3175a8badde2",
+	"SlotCount": 3,
+	"Slots": [
+		{
+			"Slot": 0,
+			"BagId": null,
+			"ItemId": "be82ae1a-0c50-40c8-a929-7d55335467fc",
+			"Quantity": 10,
+			"StatBuffs": [0, 0, 0, 0, 0]
+		},
+		{
+			"Slot": 1,
+			"BagId": null,
+			"ItemId": "0d06aeef-b040-4048-8a85-2821144cc99b",
+			"Quantity": 1,
+			"StatBuffs": [0, 0, 0, 0, 0]
+		},
+		{
+			"Slot": 2,
+			"BagId": null,
+			"ItemId": "0d06aeef-b040-4048-8a85-2821144cc99b",
+			"Quantity": 1,
+			"StatBuffs": [0, 0, 0, 0, 0]
+		}
+	]
 }
 ```
 
@@ -621,19 +621,19 @@ Donne un objet à un joueur avec l'option de transposer à la banque de joueur s
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| itemid | guid | Id de l'objet à donner. | :heavy_check_mark: |
-| quantity | int | Quantité de l'objet à donner. | :heavy_check_mark: |
+| Nom          | Type    | Description                                                                   | Requis             |
+| ------------ | ------- | ----------------------------------------------------------------------------- | ------------------ |
+| itemid       | guid    | Id de l'objet à donner.                                                       | :heavy_check_mark: |
+| quantity     | int     | Quantité de l'objet à donner.                                                 | :heavy_check_mark: |
 | bankoverflow | boolean | si il faut tenter ou non de transposer à la banque si l'inventaire est plein. | :heavy_minus_sign: |
 
 **Exemple**
 
 ```json
 {
-  "itemid": "be82ae1a-0c50-40c8-a929-7d55335467fc",
-  "quantity": 5,
-  "bankoverflow": false
+	"itemid": "be82ae1a-0c50-40c8-a929-7d55335467fc",
+	"quantity": 5,
+	"bankoverflow": false
 }
 ```
 
@@ -647,12 +647,12 @@ Donne un objet à un joueur avec l'option de transposer à la banque de joueur s
 
 ```json
 {
-    "id": "be82ae1a-0c50-40c8-a929-7d55335467fc",
-    "quantity":{
-        "total": 311,
-        "bank": 5,
-        "inventory": 306
-    }
+	"id": "be82ae1a-0c50-40c8-a929-7d55335467fc",
+	"quantity": {
+		"total": 311,
+		"bank": 5,
+		"inventory": 306
+	}
 }
 ```
 
@@ -674,17 +674,17 @@ Prend un objet de l'inventaire d'un joueur.
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| itemid | guid | Id de l'objet à prendre. | :heavy_check_mark: |
-| quantity | int | Quantité de l'objet à prendre. | :heavy_check_mark: |
+| Nom      | Type | Description                    | Requis             |
+| -------- | ---- | ------------------------------ | ------------------ |
+| itemid   | guid | Id de l'objet à prendre.       | :heavy_check_mark: |
+| quantity | int  | Quantité de l'objet à prendre. | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
-  "itemid": "be82ae1a-0c50-40c8-a929-7d55335467fc",
-  "quantity": 5
+	"itemid": "be82ae1a-0c50-40c8-a929-7d55335467fc",
+	"quantity": 5
 }
 ```
 
@@ -698,8 +698,8 @@ Prend un objet de l'inventaire d'un joueur.
 
 ```json
 {
-    "ItemId": "be82ae1a-0c50-40c8-a929-7d55335467fc",
-    "Quantity": 5
+	"ItemId": "be82ae1a-0c50-40c8-a929-7d55335467fc",
+	"Quantity": 5
 }
 ```
 
@@ -733,10 +733,10 @@ Renvoie les sorts connus d'un joueur.
 
 ```json
 [
-    {
-        "Slot": 2,
-        "SpellId": "c54378ba-5632-4ad9-a7cf-6ec0b0264b4e"
-    }
+	{
+		"Slot": 2,
+		"SpellId": "c54378ba-5632-4ad9-a7cf-6ec0b0264b4e"
+	}
 ]
 ```
 
@@ -758,15 +758,15 @@ Enseigne un sort à un joueur.
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
+| Nom     | Type | Description             | Requis             |
+| ------- | ---- | ----------------------- | ------------------ |
 | spellid | guid | Id du sort à enseigner. | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
-  "spellid": "c54378ba-5632-4ad9-a7cf-6ec0b0264b4e"
+	"spellid": "c54378ba-5632-4ad9-a7cf-6ec0b0264b4e"
 }
 ```
 
@@ -780,7 +780,7 @@ Enseigne un sort à un joueur.
 
 ```json
 {
-    "SpellId": "c54378ba-5632-4ad9-a7cf-6ec0b0264b4e"
+	"SpellId": "c54378ba-5632-4ad9-a7cf-6ec0b0264b4e"
 }
 ```
 
@@ -802,15 +802,15 @@ Fait oublier un sort à un joueur.
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
+| Nom     | Type | Description           | Requis             |
+| ------- | ---- | --------------------- | ------------------ |
 | spellid | guid | Id du sort à oublier. | :heavy_check_mark: |
 
 **Exemple**
 
 ```json
 {
-  "spellid": "c54378ba-5632-4ad9-a7cf-6ec0b0264b4e"
+	"spellid": "c54378ba-5632-4ad9-a7cf-6ec0b0264b4e"
 }
 ```
 
@@ -824,7 +824,7 @@ Fait oublier un sort à un joueur.
 
 ```json
 {
-    "SpellId": "c54378ba-5632-4ad9-a7cf-6ec0b0264b4e"
+	"SpellId": "c54378ba-5632-4ad9-a7cf-6ec0b0264b4e"
 }
 ```
 
@@ -844,17 +844,17 @@ Renvoie les personnages du serveur avec leur id et les informations stockées.
 
 **Corps**
 
-| Nom   | Type | Description | Requis |
-| ----- | ---- |------------ | -------- |
-| page | int  | Page de personnages à récupérer. | :heavy_minus_sign: |
+| Nom   | Type | Description                        | Requis             |
+| ----- | ---- | ---------------------------------- | ------------------ |
+| page  | int  | Page de personnages à récupérer.   | :heavy_minus_sign: |
 | count | int  | Nombre de personnages à récupérer. | :heavy_minus_sign: |
 
 **Exemple**
 
 ```json
 {
-  "page": 0,
-  "count": 5
+	"page": 0,
+	"count": 5
 }
 ```
 

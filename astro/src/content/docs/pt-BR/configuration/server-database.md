@@ -2,7 +2,6 @@
 title: Server Database
 ---
 
-
 | Name     | Type   | Example   | Description                                                                                                      |
 | -------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------- |
 | Type     | string | sqlite    | Configura o tipo de banco de dados ao qual o servidor se conectará. Atualmente suporta **sqlite** e **mysql**.   |

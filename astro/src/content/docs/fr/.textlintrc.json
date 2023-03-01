@@ -1,10 +1,7 @@
 {
 	"plugins": {
 		"@textlint/markdown": {
-			"extensions": [
-				".md",
-				".mdx"
-			]
+			"extensions": [".md", ".mdx"]
 		}
 	},
 	"rules": {

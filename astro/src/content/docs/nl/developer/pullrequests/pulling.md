@@ -29,7 +29,3 @@ Depending on what changes you've made to your branches you might run into merge 
 After merging be sure to pull the changes in your GitHub Desktop app. (You might have to fetch first!)
 
 ![pull](https://www.ascensiongamedev.com/resources/filehost/cfb1dc1b3d9c6cb5aef42d20eff0a3ed.png)
-
-
-
-

@@ -28,5 +28,4 @@ La version compilée d'Intersect peut être trouvée dans votre annuaire Interse
 
 ![production](https://www.ascensiongamedev.com/resources/filehost/5c0070679608ae4d663de3bc34c4527b.png)
 
-
 ** Veuillez noter que si vous voulez faire fonctionner votre client ou votre éditeur en utilisant le debugger vous devrez [télécharger et inclure les actifs appropriés](https://github.com/AscensionGameDev/Intersect-Assets) dans les annuaires /build/debug/client and /build/debug/editor. **

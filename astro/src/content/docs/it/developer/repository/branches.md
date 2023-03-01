@@ -2,16 +2,15 @@
 title: Branches
 ---
 
-
 The repository has multiple branches in order to separate multiple versions, and allow fixing bugs in both the older releases and the current release, rather than only putting bug fixes in the new release and telling people to "wait" until it reaches its release date.
 
 Currently, Intersect has 3 separate branches for different versions.
 
-|        Name | Current Version | Notes                                                                         |
-|------------:|-----------------|-------------------------------------------------------------------------------|
-|      master | 0.6.1           | Receives only critical bug fixes, intended to not change often.               |
+|        Name | Current Version | Notes                                                                                                                                                                                    |
+| ----------: | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      master | 0.6.1           | Receives only critical bug fixes, intended to not change often.                                                                                                                          |
 |  prerelease | 0.6.2           | Receives all bug fixes with relatively minor solutions, as well as features with minor impact to the code. <br/><br/> **Only critical database schema changes are made in this branch.** |
-| development | 0.7.0           | Volatile. Can have major changes to both the codebase and database structure. |
+| development | 0.7.0           | Volatile. Can have major changes to both the codebase and database structure.                                                                                                            |
 
 When new versions are released, the **prerelease** branch replaces the **master** branch.
 

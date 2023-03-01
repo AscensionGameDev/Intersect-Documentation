@@ -6,5 +6,4 @@ Améliore votre jeu avec des effets de lumières et des glissements de teinte a 
 
 ## Configuration
 
-
 ## Aperçu de l'Editeur

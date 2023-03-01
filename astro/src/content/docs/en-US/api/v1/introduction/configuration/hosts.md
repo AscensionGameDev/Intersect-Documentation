@@ -2,7 +2,6 @@
 title: Hosts `Array<string>`
 ---
 
-
 The hosts array is used to determine which URI hosts the server will bind to.
 
 In theory it is possible to use the `netsh` (_on Windows_) to register certificates for HTTPS and the Intersect API can be bound directly to an `https://` host, but it's rather burdensome and convoluted. It is not known what would be used on Linux and MacOS and isn't recommended to be used. A reverse-proxy is a simpler solution that will also be portable across the different platforms that are supported by the reverse-proxy software (e.g. NGINX).
