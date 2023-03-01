@@ -2,7 +2,7 @@
 
 _Documentation for the [Intersect Engine](https://github.com/AscensionGameDev/Intersect-Engine) v0.7.1-beta_
 
-[![Build and Deploy Documentation](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/build.yml) [![pages-build-deployment](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/pages/pages-build-deployment)
+[![Build and Deploy Documentation](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/build.yml)
 
 ## Getting Started
 
@@ -27,19 +27,14 @@ You will be greeted with this Astro start-up console, which includes the link to
 
 ## Commands
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
+| Command                 | Action                                           |
+| :---------------------- | :----------------------------------------------- |
 | `pnpm install`          | Installs dependencies                            |
 | `pnpm run dev`          | Starts local dev server at `localhost:3000`      |
 | `pnpm run build`        | Build your production site to `./dist/`          |
 | `pnpm run preview`      | Preview your build locally, before deploying     |
 | `pnpm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `pnpm run astro --help` | Get help using the Astro CLI                     |
-
-
-
-
-
 
 ```bash
 npm create astro@latest -- --template docs
