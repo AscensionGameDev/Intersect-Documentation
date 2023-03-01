@@ -1,34 +1,34 @@
 ---
-import type { KnownLanguageCode } from "../../i18n";
-import { LANGUAGE_CODES } from "../../i18n";
-import { SITE } from "../../site";
-import Logo from "./Logo.astro";
-import Search from "./Search.astro";
-import MenuToggle from "./MenuToggle";
-import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton";
-import LanguageSelect from "./LanguageSelect";
-import SearchButton from "./SearchButton";
-import LanguagePicker from "./LanguagePicker.astro";
-import { StringDecoder } from "string_decoder";
+import type { KnownLanguageCode } from '../../i18n';
+import { LANGUAGE_CODES } from '../../i18n';
+import { SITE } from '../../site';
+import Logo from './Logo.astro';
+import Search from './Search.astro';
+import MenuToggle from './MenuToggle';
+import ThemeToggleButton from '../ThemeToggleButton/ThemeToggleButton';
+import LanguageSelect from './LanguageSelect';
+import SearchButton from './SearchButton';
+import LanguagePicker from './LanguagePicker.astro';
+import { StringDecoder } from 'string_decoder';
 
 type Props = {
 	langCode: KnownLanguageCode;
 	version?: string;
 };
 
-const { langCode, version = "latest" } = Astro.props;
+const { langCode, version = 'latest' } = Astro.props;
 const site = SITE[langCode];
 const navbar = site?.navbar ? site.navbar[version] : undefined;
 const langRootUrl = new URL(`/${langCode}`, Astro.url.href);
 
 function resolveNavUrl(link: string) {
-	if (link.startsWith("http")) {
+	if (link.startsWith('http')) {
 		return new URL(link);
 	}
 
-	const versionSegment = version === "latest" ? "" : `/${version}`;
+	const versionSegment = version === 'latest' ? '' : `/${version}`;
 
-	if (link.startsWith("/")) {
+	if (link.startsWith('/')) {
 		if (link.startsWith(`/${langRootUrl}`)) {
 			return new URL(link, langRootUrl);
 		}
@@ -71,9 +71,7 @@ function resolveNavUrl(link: string) {
 						{navbar.map((item) => {
 							return (
 								<li>
-									<a href={resolveNavUrl(item.link)}>
-										{item.title}
-									</a>
+									<a href={resolveNavUrl(item.link)}>{item.title}</a>
 								</li>
 							);
 						})}
@@ -169,7 +167,6 @@ function resolveNavUrl(link: string) {
 
 	.logo {
 		display: flex;
-		z-index: -1;
 	}
 
 	.logo svg {
