@@ -14,7 +14,7 @@
 	"overrides": [
 		{
 			"env": {
-				"jes": true
+				"jest": true
 			},
 			"files": [
 				"**/__tests__/*.(spec|test).(jsx?|tsx?)"
