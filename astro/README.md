@@ -4,11 +4,28 @@ _Documentation for the [Intersect Engine](https://github.com/AscensionGameDev/In
 
 [![Build and Deploy Documentation](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/build.yml) [![pages-build-deployment](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/pages/pages-build-deployment)
 
-## Prerequisites
+## Getting Started
+
+### Prerequisites
+
+- node (see [package.json](package.json) for specific version)
+- pnpm (see [package.json](package.json) for specific version)
+
+#### Recommended
+
+- [volta](https://volta.sh)
+
+### Running the development server
 
 ```bash
-pn
+pnpm dev
 ```
+
+You will be greeted with something like this:
+
+
+
+You can access the running server at [http://localhost:3000](http://localhost:3000).
 
 ```bash
 npm create astro@latest -- --template docs
