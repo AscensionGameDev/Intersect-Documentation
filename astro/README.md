@@ -1,9 +1,14 @@
 # Intersect Documentation
+
 _Documentation for the [Intersect Engine](https://github.com/AscensionGameDev/Intersect-Engine) v0.7.1-beta_
 
-[![Build and Deploy Documentation](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/build.yml)
+[![Build and Deploy Documentation](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/build.yml) [![pages-build-deployment](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/pages/pages-build-deployment)
 
-[![pages-build-deployment](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/AscensionGameDev/Intersect-Documentation/actions/workflows/pages/pages-build-deployment)
+## Prerequisites
+
+```bash
+pn
+```
 
 ```bash
 npm create astro@latest -- --template docs
