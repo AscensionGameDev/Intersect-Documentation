@@ -1,22 +1,22 @@
 ---
-import type { KnownLanguageCode, SidebarItem } from "../../i18n";
+import type { KnownLanguageCode, SidebarItem } from '../../i18n';
 
-import { getCollection } from "astro:content";
-import { SITE } from "../../site";
+import { getCollection } from 'astro:content';
+import { SITE } from '../../site';
 
 type Props = {
 	currentPage: string;
 	langCode: KnownLanguageCode;
-	version?: string;
+	version?: string | undefined;
 };
 
 const { currentPage, langCode, version } = Astro.props;
-const currentPageMatch = currentPage.endsWith("/")
+const currentPageMatch = currentPage.endsWith('/')
 	? currentPage.slice(1, -1)
 	: currentPage.slice(1);
 const slug = currentPage.slice(currentPage.indexOf(langCode) + langCode.length);
 let sidebar = SITE[langCode].sidebar ?? {};
-if (typeof version === "string" && version in sidebar) {
+if (typeof version === 'string' && version in sidebar) {
 	const versionedSidebar = sidebar[version];
 	if (!Array.isArray(versionedSidebar) && versionedSidebar !== undefined) {
 		sidebar = versionedSidebar;
@@ -25,22 +25,22 @@ if (typeof version === "string" && version in sidebar) {
 
 const sidebarSlug =
 	Object.keys(sidebar).find((sectionSlug) => slug.startsWith(sectionSlug)) ??
-	"";
+	'';
 const activeSidebar = sidebar[sidebarSlug];
 
-const docs = await getCollection("docs");
+const docs = await getCollection('docs');
 
 function resolveId(partialId: string) {
 	return [
 		langCode,
-		partialId.startsWith("/") ? "" : "/",
+		partialId.startsWith('/') ? '' : '/',
 		partialId,
-		partialId.endsWith("/") ? "index.md" : "",
-	].join("");
+		partialId.endsWith('/') ? 'index.md' : '',
+	].join('');
 }
 
 function resolveSlug(slug?: string) {
-	if (typeof slug !== "string") {
+	if (typeof slug !== 'string') {
 		return slug;
 	}
 
@@ -48,8 +48,8 @@ function resolveSlug(slug?: string) {
 		slug = slug.replace(langCode.toLowerCase(), langCode);
 	}
 
-	if (!slug.endsWith("/")) {
-		slug += "/";
+	if (!slug.endsWith('/')) {
+		slug += '/';
 	}
 
 	slug = `/${slug}`;
@@ -62,13 +62,9 @@ function resolveSlug(slug?: string) {
 		<ul class="nav-groups">
 			{
 				Array.isArray(activeSidebar) &&
-					activeSidebar.map(async function renderItem(
-						item: SidebarItem
-					) {
-						if (typeof item === "string") {
-							const entry = docs.find(
-								({ id }) => id === resolveId(item)
-							);
+					activeSidebar.map(async function renderItem(item: SidebarItem) {
+						if (typeof item === 'string') {
+							const entry = docs.find(({ id }) => id === resolveId(item));
 							return (
 								<li>
 									<a href={resolveSlug(entry?.slug)}>
@@ -78,7 +74,7 @@ function resolveSlug(slug?: string) {
 							);
 						}
 
-						if ("children" in item) {
+						if ('children' in item) {
 							const { children, title } = item;
 							return (
 								<li>
@@ -91,9 +87,8 @@ function resolveSlug(slug?: string) {
 						}
 
 						const { link, name, title, type } = item;
-						const isCurrentPage =
-							currentPageMatch === link ? "page" : false;
-						const className = isCurrentPage ? "current" : undefined;
+						const isCurrentPage = currentPageMatch === link ? 'page' : false;
+						const className = isCurrentPage ? 'current' : undefined;
 
 						return (
 							<li>
@@ -115,10 +110,10 @@ function resolveSlug(slug?: string) {
 </aside>
 
 <script is:inline>
-	window.addEventListener("DOMContentLoaded", () => {
+	window.addEventListener('DOMContentLoaded', () => {
 		var target = document.querySelector('[aria-current="page"]');
 		if (target && target.offsetTop > window.innerHeight - 100) {
-			document.querySelector(".nav-groups").scrollTop = target.offsetTop;
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
 		}
 	});
 </script>
@@ -152,19 +147,19 @@ function resolveSlug(slug?: string) {
 	.nav-group-title {
 		font-size: 1rem;
 		font-weight: 700;
-		padding: 0.1rem 1rem;
-		text-transform: uppercase;
 		margin-bottom: 0.5rem;
+		padding: 0.125rem 1rem;
+		text-transform: uppercase;
 	}
 
 	.nav-link a {
+		color: inherit;
+		display: block;
+		font: inherit;
 		font-size: 1rem;
 		margin: 1px;
-		padding: 0.3rem 1rem;
-		font: inherit;
-		color: inherit;
+		padding: 0.25rem 1rem;
 		text-decoration: none;
-		display: block;
 	}
 
 	.nav-link a:hover,
@@ -172,9 +167,9 @@ function resolveSlug(slug?: string) {
 		background-color: var(--theme-bg-hover);
 	}
 
-	.nav-link a[aria-current="page"] {
-		color: var(--theme-text-accent);
+	.nav-link a[aria-current='page'] {
 		background-color: var(--theme-bg-accent);
+		color: var(--theme-text-accent);
 		font-weight: 600;
 	}
 
@@ -190,7 +185,7 @@ function resolveSlug(slug?: string) {
 </style>
 
 <style is:global>
-	:root.theme-dark .nav-link a[aria-current="page"] {
+	:root.theme-dark .nav-link a[aria-current='page'] {
 		color: hsla(var(--color-base-white), 100%, 1);
 	}
 </style>

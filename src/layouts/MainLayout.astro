@@ -1,22 +1,22 @@
 ---
-import type { MarkdownHeading } from "astro";
-import type { KnownLanguageCode } from "../i18n";
+import type { MarkdownHeading } from 'astro';
+import type { KnownLanguageCode } from '../i18n';
 
-import { CollectionEntry, getCollection } from "astro:content";
-import HeadCommon from "../components/HeadCommon.astro";
-import HeadSEO from "../components/HeadSEO.astro";
-import Header from "../components/Header/Header.astro";
-import PageContent from "../components/PageContent/PageContent.astro";
-import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
-import RightSidebar from "../components/RightSidebar/RightSidebar.astro";
-import Footer from "../components/Footer/Footer.astro";
-import { getEditUrl, getPathInRepo, SITE } from "../site";
-import SkipToContent from "../components/SkipToContent.astro";
+import { CollectionEntry, getCollection } from 'astro:content';
+import HeadCommon from '../components/HeadCommon.astro';
+import HeadSEO from '../components/HeadSEO.astro';
+import Header from '../components/Header/Header.astro';
+import PageContent from '../components/PageContent/PageContent.astro';
+import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
+import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
+import Footer from '../components/Footer/Footer.astro';
+import { getEditUrl, getPathInRepo, SITE } from '../site';
+import SkipToContent from '../components/SkipToContent.astro';
 
-type Props = CollectionEntry<"docs">["data"] & {
+type Props = CollectionEntry<'docs'>['data'] & {
 	headings: MarkdownHeading[];
 	langCode: KnownLanguageCode;
-	version?: string;
+	version?: string | undefined;
 };
 
 const { headings, langCode, version, ...data } = Astro.props;
@@ -24,14 +24,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;
 const site = SITE[langCode];
 
-const docs = await getCollection("docs");
-const currentSlug = currentPage.replace(/^\//, "");
+const docs = await getCollection('docs');
+const currentSlug = currentPage.replace(/^\//, '');
 const currentId =
 	docs.find(
 		({ slug }) =>
 			slug === currentSlug ||
 			currentSlug === slug.replace(langCode.toLowerCase(), langCode)
-	)?.id ?? `${currentSlug.replace(/\/$/, "")}.md`;
+	)?.id ?? `${currentSlug.replace(/\/$/, '')}.md`;
 
 const editUrl = getEditUrl(currentId);
 const pathInRepo = getPathInRepo(currentId);
@@ -46,9 +46,10 @@ const pathInRepo = getPathInRepo(currentId);
 		</title>
 		<style>
 			body {
-				width: 100%;
 				--gutter: 0.5rem;
 				--doc-padding: 2rem;
+
+				width: 100%;
 			}
 
 			.page-wrapper {
@@ -67,17 +68,16 @@ const pathInRepo = getPathInRepo(currentId);
 
 			.content-wrapper {
 				display: grid;
-				grid-gap: var(--gutter);
 				gap: var(--gutter);
 				grid-auto-flow: column;
-				grid-template-areas: "sidebar main toc";
+				grid-template-areas: 'sidebar main toc';
 				grid-template-columns:
 					minmax(0, 1fr) minmax(0, 2.5fr)
 					minmax(0, 1fr);
 				height: fit-content;
 				margin: 0 auto;
+				max-width: 100rem;
 				padding: 0 calc(var(--gutter) * 2);
-				max-width: 1440px;
 			}
 
 			.footer-wrapper {
@@ -86,7 +86,7 @@ const pathInRepo = getPathInRepo(currentId);
 
 			@media (max-width: 1280px) {
 				.content-wrapper {
-					grid-template-areas: "main toc";
+					grid-template-areas: 'main toc';
 					grid-template-columns:
 						minmax(0, var(--max-width))
 						minmax(var(--gutter), 1fr);
@@ -95,7 +95,7 @@ const pathInRepo = getPathInRepo(currentId);
 
 			@media (max-width: 1080px) {
 				.content-wrapper {
-					grid-template-areas: "main";
+					grid-template-areas: 'main';
 					grid-template-columns: minmax(0, var(--max-width));
 				}
 			}

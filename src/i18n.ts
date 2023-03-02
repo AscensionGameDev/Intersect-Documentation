@@ -89,6 +89,15 @@ export type General = {
 	JoinOurCommunity: string;
 };
 
+export type HashGeneratorStrings = {
+	digestPlaceholder: string;
+	inputPlaceholder: string;
+};
+
+export type Components = {
+	HashGenerator: HashGeneratorStrings;
+};
+
 export type NavbarLink = {
 	link: string;
 	title: string;
@@ -123,22 +132,21 @@ export interface LocalizedSite {
 	disabled?: boolean;
 	title: string;
 	description: string;
+
+	components: Components;
 	general: General;
 	navbar?: VersionedNavbar;
 	sidebar?: LocalizedSidebar;
 }
 
-type BaseGitRepository = {
+type GithubRepository = {
+	type: 'github';
 	branchName: string;
 	pathInRepository?: string;
-};
-
-type GithubRepository = BaseGitRepository & {
-	type: 'github';
 	name: string;
 };
 
-type GitRepository = BaseGitRepository & {
+type GitRepository = {
 	type: 'git';
 	baseUrl: URL;
 };

@@ -1,12 +1,12 @@
 ---
-import { SITE } from "../../site";
+import { SITE } from '../../site';
 
 type Props = {
 	pathInRepo: string;
 };
 const { pathInRepo } = Astro.props;
 
-if (!("repository" in SITE) || SITE.repository.type !== "github") {
+if (!('repository' in SITE) || SITE.repository.type !== 'github') {
 	return undefined;
 }
 
@@ -24,20 +24,20 @@ type Commit = {
 
 async function getCommits(url: string) {
 	try {
-		const token = import.meta.env.GITHUB_TOKEN ?? "hello";
+		const token = import.meta.env.GITHUB_TOKEN ?? 'hello';
 		if (!token) {
 			throw new Error(
 				'Cannot find "GITHUB_TOKEN" used for escaping rate-limiting.'
 			);
 		}
 
-		const auth = `Basic ${Buffer.from(token, "binary").toString("base64")}`;
+		const auth = `Basic ${Buffer.from(token, 'binary').toString('base64')}`;
 
 		const res = await fetch(url, {
-			method: "GET",
+			method: 'GET',
 			headers: {
 				Authorization: auth,
-				"User-Agent": "astro-docs/1.0",
+				'User-Agent': 'astro-docs/1.0',
 			},
 		});
 
@@ -61,7 +61,7 @@ async function getCommits(url: string) {
 }
 
 function removeDups(arr: Commit[]) {
-	const map = new Map<string, Commit["author"]>();
+	const map = new Map<string, Commit['author']>();
 
 	for (let item of arr) {
 		const author = item.author;
@@ -106,7 +106,7 @@ const additionalContributors = unique.length - recentContributors.length; // lis
 				<a
 					href={commitsURL}
 				>{`and ${additionalContributors} additional contributor${
-					additionalContributors > 1 ? "s" : ""
+					additionalContributors > 1 ? 's' : ''
 				}.`}</a>
 			</span>
 		)
@@ -120,35 +120,43 @@ const additionalContributors = unique.length - recentContributors.length; // lis
 		--avatar-count: 3;
 
 		display: grid;
-		list-style: none;
+		font-size: var(--avatar-size);
+
 		/* Default to displaying most of the avatar to
   enable easier access on touch devices, ensuring
   the WCAG touch target size is met or exceeded */
 		grid-template-columns: repeat(
 			var(--avatar-count),
-			max(44px, calc(var(--avatar-size) / 1.15))
+			max(2.75rem, calc(var(--avatar-size) / 1.15))
 		);
+		list-style: none;
+
 		/* `padding` matches added visual dimensions of
   the `box-shadow` to help create a more accurate
   computed component size */
-		padding: 0.08em;
-		font-size: var(--avatar-size);
+		padding: 0.125em;
 	}
 
-	@media (any-hover: hover) and (any-pointer: fine) {
-		.avatar-list {
-			/* We create 1 extra cell to enable the computed
-    width to match the final visual width */
-			grid-template-columns: repeat(
-				calc(var(--avatar-count) + 1),
-				calc(var(--avatar-size) / 1.75)
-			);
-		}
+	.avatar-list a,
+	.avatar-list img {
+		border-radius: 50%;
+		display: block;
+	}
+
+	.avatar-list a {
+		transition: transform 180ms ease-in-out;
+	}
+
+	.avatar-list a:focus {
+		/* Double-layer trick to work for dark and light backgrounds */
+		box-shadow: 0 0 0 0.125em var(--theme-accent),
+			0 0 0 0.125em rgb(255, 255, 255);
+		outline: 0.125rem solid transparent;
 	}
 
 	.avatar-list li {
-		width: var(--avatar-size);
 		height: var(--avatar-size);
+		width: var(--avatar-size);
 	}
 
 	.avatar-list li:hover ~ li a,
@@ -156,36 +164,31 @@ const additionalContributors = unique.length - recentContributors.length; // lis
 		transform: translateX(33%);
 	}
 
-	.avatar-list img,
-	.avatar-list a {
-		display: block;
-		border-radius: 50%;
-	}
-
-	.avatar-list a {
-		transition: transform 180ms ease-in-out;
-	}
-
 	.avatar-list img {
-		width: 100%;
+		background-color: rgb(255, 255, 255);
+		box-shadow: 0 0 0 0 rgb(255, 255, 255), 0 0 0 0.125em rgba(0, 0, 0, 15%);
 		height: 100%;
 		object-fit: cover;
-		background-color: #fff;
-		box-shadow: 0 0 0 0.05em #fff, 0 0 0 0.08em rgba(0, 0, 0, 0.15);
-	}
-
-	.avatar-list a:focus {
-		outline: 2px solid transparent;
-		/* Double-layer trick to work for dark and light backgrounds */
-		box-shadow: 0 0 0 0.08em var(--theme-accent), 0 0 0 0.12em white;
+		width: 100%;
 	}
 
 	.contributors {
-		display: flex;
 		align-items: center;
+		display: flex;
 	}
 
 	.contributors > * + * {
 		margin-left: 0.75rem;
+	}
+
+	@media (any-hover: hover) and (any-pointer: fine) {
+		.avatar-list {
+			/* We create 1 extra cell to enable the computed
+width to match the final visual width */
+			grid-template-columns: repeat(
+				calc(var(--avatar-count) + 1),
+				calc(var(--avatar-size) / 1.75)
+			);
+		}
 	}
 </style>

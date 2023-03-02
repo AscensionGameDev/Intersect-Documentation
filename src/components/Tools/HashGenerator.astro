@@ -1,7 +1,164 @@
 ---
+import { getLangCode } from '../../i18n';
+import { SITE } from '../../site';
+
+export type HashAlgorithm = 'sha-1' | 'sha-256' | 'sha-384' | 'sha-512';
+export const HASH_ALGORITHMS: readonly HashAlgorithm[] = [
+	'sha-1',
+	'sha-256',
+	'sha-384',
+	'sha-512',
+];
+
 type Props = {
-	algorithm: 'sha-256';
+	algorithm: HashAlgorithm;
 };
+
+const { algorithm } = Astro.props;
+
+const langCode = getLangCode(Astro.url.pathname);
+
+const site = SITE[langCode];
+const { digestPlaceholder, inputPlaceholder } = site.components.HashGenerator;
 ---
 
-<span>TODO</span>
+<hash-generator
+	algorithm={algorithm}
+	supported-algorithms={JSON.stringify(HASH_ALGORITHMS)}
+	placeholder-digest={digestPlaceholder}
+	placeholder-input={inputPlaceholder}
+>
+	<input name="plaintext" type="password" placeholder={inputPlaceholder} />
+	<span class="output">
+		<code class="digest">{digestPlaceholder}</code>
+		<!-- https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Acontent_copy%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048 -->
+		<svg
+			class="icon-copy"
+			viewBox="0 0 48 48"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				d="M9 43.95q-1.2 0-2.1-.9-.9-.9-.9-2.1V10.8h3v30.15h23.7v3Zm6-6q-1.2 0-2.1-.9-.9-.9-.9-2.1v-28q0-1.2.9-2.1.9-.9 2.1-.9h22q1.2 0 2.1.9.9.9.9 2.1v28q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h22v-28H15v28Zm0 0v-28 28Z"
+			>
+			</path>
+		</svg>
+	</span>
+</hash-generator>
+
+<script>
+	import type { HashAlgorithm } from './HashGenerator.astro';
+
+	class HashGenerator extends HTMLElement {
+		constructor() {
+			super();
+
+			const algorithm = this.getAttribute('algorithm') as HashAlgorithm | null;
+
+			if (algorithm === null) {
+				throw new Error('The `algorithm` attribute must be specified!');
+			}
+
+			const supportedAlgorithms: readonly HashAlgorithm[] = JSON.parse(
+				this.getAttribute('supported-algorithms') ?? ''
+			);
+
+			if (!supportedAlgorithms.includes(algorithm as HashAlgorithm)) {
+				throw new Error(
+					`The \`algoritm\` attribute must be set to one of ${supportedAlgorithms
+						.map((algorithm) => `'${algorithm}'`)
+						.join(', ')}`
+				);
+			}
+
+			const placeholderDigest = this.getAttribute('placeholder-digest') ?? '';
+			const placeholderInput = this.getAttribute('placeholder-input') ?? '';
+
+			const elementInputPlaintext: HTMLInputElement = this.querySelector(
+				'input[name=plaintext]'
+			)!;
+			const elementCodeDigest = this.querySelector('code.digest')!;
+			const elementSvgIconCopy = this.querySelector('svg.icon-copy')!;
+
+			elementCodeDigest.textContent = placeholderDigest;
+			elementInputPlaintext.placeholder = placeholderInput;
+
+			const textEncoder = new TextEncoder();
+
+			let digest = '';
+
+			async function updateDigest() {
+				const input = elementInputPlaintext.value ?? '';
+				if (input.length < 1) {
+					console.log('no input');
+					elementCodeDigest.textContent = placeholderDigest;
+					return;
+				}
+
+				const encodedInput = textEncoder.encode(input);
+				const digestBuffer = await crypto.subtle.digest(
+					algorithm,
+					encodedInput
+				);
+				const digestArray = new Uint8Array(digestBuffer);
+				digest = [...digestArray]
+					.map((byte) => `00${byte.toString(16)}`.slice(-2))
+					.join('');
+				elementCodeDigest.textContent = digest;
+			}
+
+			elementInputPlaintext.addEventListener('input', updateDigest);
+
+			elementSvgIconCopy.addEventListener('click', () => {
+				console.log(digest);
+				navigator.clipboard.writeText(digest ?? '');
+			});
+		}
+	}
+
+	if (!customElements.get('hash-generator')) {
+		customElements.define('hash-generator', HashGenerator);
+	}
+</script>
+
+<style>
+	hash-generator {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	hash-generator > * {
+		flex: 1;
+		margin: 0.5em 0;
+		min-height: 1em;
+	}
+
+	input[name='input'] {
+		padding: 0.5em;
+	}
+
+	span.output {
+		display: flex;
+		flex-direction: row;
+	}
+
+	span.output > code {
+		flex: 1;
+		margin-right: 0.5em;
+	}
+
+	span.output > svg {
+		width: 1.5em;
+		height: 1.5em;
+		max-width: 1.5em;
+		max-height: 1.5em;
+		fill: #111;
+		cursor: pointer;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		span.output > svg {
+			fill: #eee;
+		}
+	}
+</style>

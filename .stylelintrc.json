@@ -1,0 +1,62 @@
+{
+	"extends": [
+		"stylelint-config-standard",
+		"stylelint-config-astro"
+	],
+	"plugins": [
+		"@isnotdefined/stylelint-plugin",
+		"stylelint-csstree-validator",
+		"stylelint-high-performance-animation",
+		"stylelint-order",
+		"stylelint-no-indistinguishable-colors",
+		"stylelint-no-unsupported-browser-features",
+		"stylelint-rem-over-px"
+	],
+	"rules": {
+		"@isnotdefined/no-disable": true,
+		"@isnotdefined/no-obsolete": true,
+		"@isnotdefined/unit-step": true,
+		"color-function-notation": "legacy",
+		"csstree/validator": true,
+		"order/order": [
+			"custom-properties",
+			"declarations"
+		],
+		"order/properties-alphabetical-order": true,
+		"plugin/no-low-performance-animation-properties": [
+			true,
+			{
+				"ignoreProperties": [
+					"background-color",
+					"border-color",
+					"border-width",
+					"color",
+					"width"
+				]
+			}
+		],
+		"plugin/no-unsupported-browser-features": [
+			true,
+			{
+				"browsers": [
+					"> 1%",
+					"Last 2 versions",
+					"not dead",
+					"not op_mini all"
+				],
+				"ignore": [],
+				"ignorePartialSupport": true
+			}
+		],
+		"plugin/stylelint-no-indistinguishable-colors": true,
+		"rem-over-px/rem-over-px": true,
+		"value-keyword-case": [
+			"lower",
+			{
+				"ignoreKeywords": [
+					"currentColor"
+				]
+			}
+		]
+	}
+}

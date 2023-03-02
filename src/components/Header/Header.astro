@@ -2,18 +2,14 @@
 import type { KnownLanguageCode } from '../../i18n';
 import { LANGUAGE_CODES } from '../../i18n';
 import { SITE } from '../../site';
-import Logo from './Logo.astro';
 import Search from './Search.astro';
 import MenuToggle from './MenuToggle';
 import ThemeToggleButton from '../ThemeToggleButton/ThemeToggleButton';
-import LanguageSelect from './LanguageSelect';
-import SearchButton from './SearchButton';
 import LanguagePicker from './LanguagePicker.astro';
-import { StringDecoder } from 'string_decoder';
 
 type Props = {
 	langCode: KnownLanguageCode;
-	version?: string;
+	version?: string | undefined;
 };
 
 const { langCode, version = 'latest' } = Astro.props;
@@ -80,14 +76,8 @@ function resolveNavUrl(link: string) {
 			}
 			<div class="search-item">
 				<Search />
-				<!-- <SearchButton client:idle /> -->
 			</div>
-			{
-				LANGUAGE_CODES.length > 1 && (
-					// <LanguageSelect lang={langCode} client:idle />
-					<LanguagePicker langCode={langCode} />
-				)
-			}
+			{LANGUAGE_CODES.length > 1 && <LanguagePicker langCode={langCode} />}
 			<ThemeToggleButton client:visible />
 			<div class="menu-toggle">
 				<MenuToggle client:idle />
@@ -98,6 +88,8 @@ function resolveNavUrl(link: string) {
 
 <style>
 	header {
+		--logo-font-size: 1.5em;
+
 		align-items: center;
 		background: var(--theme-bg-accent);
 		display: flex;
@@ -112,8 +104,11 @@ function resolveNavUrl(link: string) {
 		top: 0;
 		width: 100%;
 		z-index: var(--z-index-top);
+	}
 
-		--logo-font-size: 1.5em;
+	header a {
+		text-decoration: none;
+		transition: color 100ms ease-out;
 	}
 
 	header,
@@ -127,29 +122,9 @@ function resolveNavUrl(link: string) {
 		display: flex;
 		flex-direction: row;
 		gap: 1em;
-		justify-content: space-between;
 		height: var(--logo-font-size);
+		justify-content: space-between;
 		width: 100%;
-	}
-
-	.container > nav {
-		align-items: center;
-		display: flex;
-		flex: 1;
-		justify-content: flex-end;
-		gap: 1em;
-	}
-
-	.search-item {
-		display: flex;
-		justify-content: flex-end;
-		position: relative;
-		transition: all 1s;
-	}
-
-	header a {
-		text-decoration: none;
-		transition: color 100ms ease-out;
 	}
 
 	nav {
@@ -165,22 +140,28 @@ function resolveNavUrl(link: string) {
 		display: inline-block;
 	}
 
+	a:hover,
+	a:focus {
+		color: var(--theme-text-accent);
+		text-decoration: none;
+	}
+
+	.container > nav {
+		align-items: center;
+		display: flex;
+		flex: 1;
+		gap: 1em;
+		justify-content: flex-end;
+	}
+
+	.search-item {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+	}
+
 	.logo {
 		display: flex;
-	}
-
-	.logo svg {
-		color: inherit;
-		fill: currentColor;
-		font-size: inherit;
-		height: 1.5em;
-		margin: -0.25em 0;
-		max-height: 1.5em;
-		max-width: 1.5em;
-		width: 1.5em;
-	}
-
-	.logo {
 		line-height: var(--logo-font-size);
 		max-height: var(--logo-font-size);
 	}
@@ -192,10 +173,15 @@ function resolveNavUrl(link: string) {
 		gap: 1rem;
 	}
 
-	a:hover,
-	a:focus {
-		color: var(--theme-text-accent);
-		text-decoration: none;
+	.logo svg {
+		color: inherit;
+		fill: currentColor;
+		font-size: inherit;
+		height: 1.5em;
+		margin: -0.25em 0;
+		max-height: 1.5em;
+		max-width: 1.5em;
+		width: 1.5em;
 	}
 
 	.menu-toggle {
@@ -226,11 +212,5 @@ function resolveNavUrl(link: string) {
 		.menu-toggle {
 			display: initial;
 		}
-	}
-</style>
-
-<style is:global>
-	.search-item > * {
-		flex-grow: 1;
 	}
 </style>

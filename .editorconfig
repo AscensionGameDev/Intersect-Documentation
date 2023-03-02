@@ -4,13 +4,13 @@ root = true
 charset = utf-8
 end_of_line = lf
 
-[*.{c,cjs,cpp,cs,csv,cts,h,hpp,html,gradle,java,js,json,jsx,md,mdx,mjs,mts,py,sh,ts,tsx,txt,vb,xml,xsd,yml,yaml}]
+[*.{c,cjs,cpp,cs,css,csv,cts,h,hpp,html,gradle,java,js,json,jsx,md,mdx,mjs,mts,py,sh,ts,tsx,txt,vb,xml,xsd,yml,yaml}]
 charset = utf-8
 end_of_line = lf
 
-[*.{c,cjs,cpp,cs,cts,h,hpp,gradle,java,js,json,jsx,md,mdx,mjs,mts,py,sh,ts,tsx,vb,xml,xsd,yml,yaml}]
+[*.{c,cjs,cpp,cs,css,cts,h,hpp,gradle,java,js,json,jsx,md,mdx,mjs,mts,py,sh,ts,tsx,vb,xml,xsd,yml,yaml}]
 indent_size = 2
 insert_final_newline = true
 
-[*.{c,cjs,cpp,cs,cts,h,hpp,java,js,json,jsx,md,mdx,mjs,mts,sh,ts,tsx,vb,xml,xsd}]
+[*.{c,cjs,cpp,cs,css,cts,h,hpp,java,js,json,jsx,md,mdx,mjs,mts,sh,ts,tsx,vb,xml,xsd}]
 indent_style = tab

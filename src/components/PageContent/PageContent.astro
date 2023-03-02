@@ -1,8 +1,8 @@
 ---
-import type { MarkdownHeading } from "astro";
-import type { KnownLanguageCode } from "../../i18n";
-import MoreMenu from "../RightSidebar/MoreMenu.astro";
-import TableOfContents from "../RightSidebar/TableOfContents";
+import type { MarkdownHeading } from 'astro';
+import type { KnownLanguageCode } from '../../i18n';
+import MoreMenu from '../RightSidebar/MoreMenu.astro';
+import TableOfContents from '../RightSidebar/TableOfContents';
 
 type Props = {
 	title: string;
@@ -17,15 +17,12 @@ const { editUrl, headings, langCode, title } = Astro.props;
 <main class="content">
 	<section class="main-section">
 		<h1 class="content-title" id="overview">{title}</h1>
-		<nav class="block sm:hidden">
-			<TableOfContents
-				client:media="(max-width: 50em)"
-				headings={headings}
-			/>
+		<nav class="block sm-hidden">
+			<TableOfContents client:media="(max-width: 50em)" headings={headings} />
 		</nav>
 		<slot />
 	</section>
-	<nav class="block sm:hidden">
+	<nav class="block sm-hidden">
 		<MoreMenu editUrl={editUrl} langCode={langCode} />
 	</nav>
 </main>
@@ -35,8 +32,8 @@ const { editUrl, headings, langCode, title } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		grid-area: main;
-		padding: var(--doc-padding) 0;
 		min-height: 80vh;
+		padding: var(--doc-padding) var(--gutter);
 		width: 100%;
 	}
 
@@ -49,7 +46,7 @@ const { editUrl, headings, langCode, title } = Astro.props;
 	}
 
 	@media (min-width: 50em) {
-		.sm\:hidden {
+		.sm-hidden {
 			display: none;
 		}
 	}

@@ -76,6 +76,12 @@ export const SITE: Site = {
 	'en-US': {
 		title: 'Intersect Documentation',
 		description: 'The free, open-source, modern 2d mmorpg maker.',
+		components: {
+			HashGenerator: {
+				digestPlaceholder: 'This will update with the hash once input is provided',
+				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
+			}
+		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
@@ -101,7 +107,7 @@ export const SITE: Site = {
 			],
 		},
 		sidebar: {
-			'/api/v1/': [
+			'/api/': [
 				{
 					title: 'API Information',
 					collapsable: true,
@@ -293,6 +299,12 @@ export const SITE: Site = {
 		title: 'Documentación de Intersect',
 		description:
 			'El creador moderno de MMORPG 2D gratuito y de código abierto.',
+		components: {
+			HashGenerator: {
+				digestPlaceholder: 'This will update with the hash once input is provided',
+				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
+			}
+		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
@@ -489,6 +501,12 @@ export const SITE: Site = {
 		title: 'Documentation Intersect',
 		description:
 			'Le moteur moderne de création de mmorpg 2d, open source et gratuit.',
+		components: {
+			HashGenerator: {
+				digestPlaceholder: 'Cela sera mis à jour avec le hachage une fois l\'entrée fournie',
+				inputPlaceholder: 'Saisissez le texte à hacher (ceci est traité comme un mot de passe !)'
+			}
+		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
@@ -685,6 +703,12 @@ export const SITE: Site = {
 		disabled: true,
 		title: 'Documentazione di Intersect',
 		description: '<<todo:it>>The free, open-source, modern 2d mmorpg maker.',
+		components: {
+			HashGenerator: {
+				digestPlaceholder: 'This will update with the hash once input is provided',
+				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
+			}
+		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
@@ -876,6 +900,12 @@ export const SITE: Site = {
 		disabled: true,
 		title: 'Intersect Documentatie',
 		description: 'De gratis, open-source, moderne 2d mmorpg maker.',
+		components: {
+			HashGenerator: {
+				digestPlaceholder: 'This will update with the hash once input is provided',
+				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
+			}
+		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
@@ -1066,6 +1096,12 @@ export const SITE: Site = {
 	'pt-BR': {
 		title: 'Documentação do Intersect',
 		description: 'O criador de mmorpg 2d moderno, open-source, gratuito',
+		components: {
+			HashGenerator: {
+				digestPlaceholder: 'This will update with the hash once input is provided',
+				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
+			}
+		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
