@@ -3,7 +3,7 @@ import type { FunctionalComponent } from 'preact';
 import type { MouseEvent } from 'react';
 import { unescape } from 'html-escaper';
 import {
-	useState, useEffect, useRef
+	useState, useEffect, useRef 
 } from 'preact/hooks';
 
 import './TableOfContents.css';
@@ -13,8 +13,16 @@ type ItemOffsets = {
 	topOffset: number;
 };
 
-const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({ headings = [], }) => {
-	const toc = useRef<HTMLUListElement>(undefined!);
+type Props = {
+	headings: MarkdownHeading[];
+	onThisPage: string;
+};
+
+const TableOfContents: FunctionalComponent<Props> = ({
+	headings = [],
+	onThisPage,
+}) => {
+	const toc = useRef<HTMLUListElement>(null);
 	const onThisPageID = 'on-this-page-heading';
 	const itemOffsets = useRef<ItemOffsets[]>([]);
 	const [currentID, setCurrentID] = useState('overview');
@@ -82,7 +90,7 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
 	return (
 		<>
 			<h2 id={onThisPageID} className="heading">
-				On this page
+				{onThisPage}
 			</h2>
 			<ul ref={toc}>
 				{headings

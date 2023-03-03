@@ -87,6 +87,8 @@ export type Localizable<T> = Record<KnownLanguageCode, T>;
 export type General = {
 	EditThisPage: string;
 	JoinOurCommunity: string;
+	OnThisPage: string;
+	More: string;
 };
 
 export type HashGeneratorStrings = {

@@ -1,8 +1,5 @@
 {
-	"extends": [
-		"stylelint-config-standard",
-		"stylelint-config-astro"
-	],
+	"extends": ["stylelint-config-standard", "stylelint-config-astro"],
 	"plugins": [
 		"@isnotdefined/stylelint-plugin",
 		"stylelint-csstree-validator",
@@ -18,10 +15,7 @@
 		"@isnotdefined/unit-step": true,
 		"color-function-notation": "legacy",
 		"csstree/validator": true,
-		"order/order": [
-			"custom-properties",
-			"declarations"
-		],
+		"order/order": ["custom-properties", "declarations"],
 		"order/properties-alphabetical-order": true,
 		"plugin/no-low-performance-animation-properties": [
 			true,
@@ -39,12 +33,7 @@
 		"plugin/no-unsupported-browser-features": [
 			true,
 			{
-				"browsers": [
-					"> 1%",
-					"Last 2 versions",
-					"not dead",
-					"not op_mini all"
-				],
+				"browsers": ["> 1%", "Last 2 versions", "not dead", "not op_mini all"],
 				"ignore": [],
 				"ignorePartialSupport": true
 			}
@@ -54,17 +43,13 @@
 		"selector-pseudo-class-no-unknown": [
 			true,
 			{
-				"ignorePseudoClasses": [
-					"global"
-				]
+				"ignorePseudoClasses": ["global"]
 			}
 		],
 		"value-keyword-case": [
 			"lower",
 			{
-				"ignoreKeywords": [
-					"currentColor"
-				]
+				"ignoreKeywords": ["currentColor"]
 			}
 		]
 	}

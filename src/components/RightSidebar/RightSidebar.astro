@@ -4,6 +4,7 @@ import type { KnownLanguageCode } from '../../i18n';
 
 import TableOfContents from './TableOfContents';
 import MoreMenu from './MoreMenu.astro';
+import { SITE } from '../../site';
 
 type Props = {
 	editUrl: URL;
@@ -16,7 +17,11 @@ const { editUrl, headings, langCode } = Astro.props;
 
 <aside id="toc" class="toc" title="Table of Contents">
 	<nav class="sidebar-nav" aria-labelledby="toc">
-		<TableOfContents client:media="(min-width: 50em)" headings={headings} />
+		<TableOfContents
+			client:media="(min-width: 50em)"
+			headings={headings}
+			onThisPage={SITE[langCode].general.OnThisPage}
+		/>
 		<MoreMenu editUrl={editUrl} langCode={langCode} />
 	</nav>
 </aside>

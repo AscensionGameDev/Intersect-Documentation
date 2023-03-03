@@ -77,14 +77,14 @@
 		"build": "astro build",
 		"dev": "astro dev",
 		"eslint": "eslint",
-		"lint": "eslint . && textlint . && prettier --check .",
-		"lint:fix": "prettier --write . && eslint . --fix && textlint . --fix",
+		"lint": "eslint . && textlint . && stylelint . && prettier --check .",
+		"lint:fix": "prettier --write . && eslint . --fix && textlint . --fix && stylelint . --fix",
 		"migrate-version": "ts-node --esm ./scripts/migrateVersion.ts",
 		"prettier": "prettier",
 		"preview": "astro preview",
 		"start": "astro dev",
 		"stylelint": "stylelint",
-		"text": "textlint"
+		"textlint": "textlint"
 	},
 	"type": "module",
 	"version": "0.7.1",

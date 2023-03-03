@@ -14,7 +14,7 @@ const site = SITE[langCode];
 const showMoreSection = Boolean(SITE.communityUrl);
 ---
 
-{showMoreSection && <h2 class="heading">More</h2>}
+{showMoreSection && <h2 class="heading">{site.general.More}</h2>}
 <ul>
 	{
 		editUrl && (

@@ -78,14 +78,18 @@ export const SITE: Site = {
 		description: 'The free, open-source, modern 2d mmorpg maker.',
 		components: {
 			HashGenerator: {
-				digestPlaceholder: 'This will update with the hash once input is provided',
-				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
+				digestPlaceholder:
+					'This will update with the hash once input is provided',
+				inputPlaceholder:
+					'Input text to be hashed (this is treated like a password!)',
 			},
-			VersionPicker: { Latest: 'Latest' }
+			VersionPicker: { Latest: 'Latest' },
 		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
+			OnThisPage: 'On this page',
+			More: 'More',
 		},
 		navbar: {
 			latest: [
@@ -123,7 +127,7 @@ export const SITE: Site = {
 					title: 'Support Community',
 					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
 				},
-			]
+			],
 		},
 		sidebar: {
 			'v0.7.1-beta': {
@@ -506,14 +510,18 @@ export const SITE: Site = {
 			'El creador moderno de MMORPG 2D gratuito y de código abierto.',
 		components: {
 			HashGenerator: {
-				digestPlaceholder: 'This will update with the hash once input is provided',
-				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
+				digestPlaceholder:
+					'This will update with the hash once input is provided',
+				inputPlaceholder:
+					'Input text to be hashed (this is treated like a password!)',
 			},
-			VersionPicker: { Latest: 'Ultima' }
+			VersionPicker: { Latest: 'Ultima' },
 		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
+			OnThisPage: 'En esta página',
+			More: 'Más',
 		},
 		navbar: {
 			latest: [
@@ -531,8 +539,8 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Comunidad de soporte (Inglés)',
-					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
-				}
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
+				},
 			],
 			'v0.7.1-beta': [
 				{
@@ -549,9 +557,9 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Comunidad de soporte (Inglés)',
-					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
-				}
-			]
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
+				},
+			],
 		},
 		sidebar: {
 			'v0.7.1-beta': {
@@ -934,14 +942,18 @@ export const SITE: Site = {
 			'Le moteur moderne de création de mmorpg 2d, open source et gratuit.',
 		components: {
 			HashGenerator: {
-				digestPlaceholder: 'Cela sera mis à jour avec le hachage une fois l\'entrée fournie',
-				inputPlaceholder: 'Saisissez le texte à hacher (ceci est traité comme un mot de passe !)'
+				digestPlaceholder:
+					'Cela sera mis à jour avec le hachage une fois l\'entrée fournie',
+				inputPlaceholder:
+					'Saisissez le texte à hacher (ceci est traité comme un mot de passe !)',
 			},
-			VersionPicker: { Latest: 'Latest' }
+			VersionPicker: { Latest: 'Latest' },
 		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
+			OnThisPage: 'On this page',
+			More: 'More',
 		},
 		navbar: {
 			latest: [
@@ -959,8 +971,8 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Communauté de support (Anglais)',
-					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
-				}
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
+				},
 			],
 			'v0.7.1-beta': [
 				{
@@ -977,9 +989,9 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Communauté de support (Anglais)',
-					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
-				}
-			]
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
+				},
+			],
 		},
 		sidebar: {
 			'v0.7.1-beta': {
@@ -1362,14 +1374,18 @@ export const SITE: Site = {
 		description: '<<todo:it>>The free, open-source, modern 2d mmorpg maker.',
 		components: {
 			HashGenerator: {
-				digestPlaceholder: 'This will update with the hash once input is provided',
-				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
+				digestPlaceholder:
+					'This will update with the hash once input is provided',
+				inputPlaceholder:
+					'Input text to be hashed (this is treated like a password!)',
 			},
-			VersionPicker: { Latest: 'Latest' }
+			VersionPicker: { Latest: 'Latest' },
 		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
+			OnThisPage: 'On this page',
+			More: 'More',
 		},
 		navbar: {
 			latest: [
@@ -1387,8 +1403,8 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Comunità di supporto (Inglese)',
-					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
-				}
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
+				},
 			],
 			'v0.7.1-beta': [
 				{
@@ -1405,9 +1421,9 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Comunità di supporto (Inglese)',
-					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
-				}
-			]
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
+				},
+			],
 		},
 		sidebar: {
 			'v0.7.1-beta': {
@@ -1780,14 +1796,18 @@ export const SITE: Site = {
 		description: 'De gratis, open-source, moderne 2d mmorpg maker.',
 		components: {
 			HashGenerator: {
-				digestPlaceholder: 'This will update with the hash once input is provided',
-				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
+				digestPlaceholder:
+					'This will update with the hash once input is provided',
+				inputPlaceholder:
+					'Input text to be hashed (this is treated like a password!)',
 			},
-			VersionPicker: { Latest: 'Latest' }
+			VersionPicker: { Latest: 'Latest' },
 		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
+			OnThisPage: 'On this page',
+			More: 'More',
 		},
 		navbar: {
 			latest: [
@@ -1805,8 +1825,8 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Support Community',
-					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
-				}
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
+				},
 			],
 			'v0.7.1-beta': [
 				{
@@ -1823,9 +1843,9 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Support Community',
-					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
-				}
-			]
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
+				},
+			],
 		},
 		sidebar: {
 			'v0.7.1-beta': {
@@ -2197,14 +2217,18 @@ export const SITE: Site = {
 		description: 'O criador de mmorpg 2d moderno, open-source, gratuito',
 		components: {
 			HashGenerator: {
-				digestPlaceholder: 'This will update with the hash once input is provided',
-				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
+				digestPlaceholder:
+					'This will update with the hash once input is provided',
+				inputPlaceholder:
+					'Input text to be hashed (this is treated like a password!)',
 			},
-			VersionPicker: { Latest: 'Latest' }
+			VersionPicker: { Latest: 'Latest' },
 		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
+			OnThisPage: 'On this page',
+			More: 'More',
 		},
 		navbar: {
 			latest: [
@@ -2242,7 +2266,7 @@ export const SITE: Site = {
 					title: 'Comunidade de Apoio (Inglês)',
 					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
 				},
-			]
+			],
 		},
 		sidebar: {
 			'v0.7.1-beta': {
