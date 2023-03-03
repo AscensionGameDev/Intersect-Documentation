@@ -43,8 +43,6 @@ async function getCommits(url: string) {
 
 		const data = await res.json();
 
-		console.log(data);
-
 		if (!res.ok) {
 			throw new Error(
 				`Request to fetch commits failed. Reason: ${res.statusText}

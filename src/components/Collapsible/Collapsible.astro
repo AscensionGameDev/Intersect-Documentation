@@ -1,0 +1,42 @@
+---
+type Props = {
+	key: string;
+	open?: boolean;
+};
+
+const { key, open } = Astro.props;
+
+const triggerId = `collapsible-trigger-${key}`;
+---
+
+<section>
+	<input id={triggerId} class="trigger" type="checkbox" checked={open} />
+	<label for={triggerId} class="summary">
+		<slot name="summary" />
+	</label>
+	<div class="content">
+		<slot name="content" />
+	</div>
+</section>
+
+<style>
+	input[type='checkbox'].trigger {
+		display: none;
+	}
+
+	.summary {
+		cursor: pointer;
+		display: block;
+		user-select: none;
+	}
+
+	.content {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.25s ease-in-out;
+	}
+
+	.trigger:checked ~ .content {
+		max-height: 100vh;
+	}
+</style>

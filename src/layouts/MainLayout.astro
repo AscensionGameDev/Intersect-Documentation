@@ -1,6 +1,7 @@
 ---
 import type { MarkdownHeading } from 'astro';
 import type { KnownLanguageCode } from '../i18n';
+import type { Version } from '../components/Header/VersionPicker.astro';
 
 import { CollectionEntry, getCollection } from 'astro:content';
 import HeadCommon from '../components/HeadCommon.astro';
@@ -25,6 +26,41 @@ const currentPage = Astro.url.pathname;
 const site = SITE[langCode];
 
 const docs = await getCollection('docs');
+
+const PATTERN_VERSION = /^v\d+(.\d+(.\d+)?)?(-[^\+]+)?(\+.+)?$/;
+
+const VERSIONS: readonly Version[] = docs
+	.reduce(
+		(versions: Array<string>, { id }) => {
+			if (!id.includes(langCode)) {
+				return versions;
+			}
+
+			const [possibleVersion] = id.split('/').slice(1);
+			if (!possibleVersion) {
+				return versions;
+			}
+
+			if (versions.includes(possibleVersion)) {
+				return versions;
+			}
+
+			if (PATTERN_VERSION.test(possibleVersion)) {
+				versions.push(possibleVersion);
+			}
+
+			return versions;
+		},
+		['latest']
+	)
+	.map((version) => ({
+		label:
+			version === 'latest'
+				? site.components.VersionPicker?.Latest ?? 'Latest'
+				: version,
+		value: version,
+	}));
+
 const currentSlug = currentPage.replace(/^\//, '');
 const currentId =
 	docs.find(
@@ -116,7 +152,7 @@ const pathInRepo = getPathInRepo(currentId);
 		<SkipToContent langCode={langCode} />
 		<div class="page-wrapper">
 			<div class="header-wrapper">
-				<Header langCode={langCode} version={version} />
+				<Header langCode={langCode} version={version} versions={VERSIONS} />
 			</div>
 			<div class="content-wrapper">
 				<LeftSidebar

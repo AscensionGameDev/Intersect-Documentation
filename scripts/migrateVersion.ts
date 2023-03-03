@@ -1,9 +1,9 @@
 import { Argument, program } from 'commander';
 import {
-	cp, mkdir, readdir, stat, unlink 
+	cp, mkdir, readdir, stat, unlink
 } from 'fs/promises';
 import {
-	join, relative, resolve 
+	join, relative, resolve
 } from 'path';
 import { valid } from 'semver';
 
@@ -40,6 +40,11 @@ async function migrateLocale(
 
 	console.group('Copying files to new version directory...');
 	for (const name of nonVersionNames) {
+		if (name.startsWith('.')) {
+			// These are likely configuration files
+			continue;
+		}
+
 		try {
 			const sourcePath = join(localePath, name);
 			const targetPath = join(versionPath, name);

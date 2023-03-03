@@ -1,7 +1,13 @@
 ---
-import type { KnownLanguageCode, SidebarItem } from '../../i18n';
+import type {
+	KnownLanguageCode,
+	SidebarItem,
+	SidebarSection,
+} from '../../i18n';
 
 import { getCollection } from 'astro:content';
+import Collapsible from '../Collapsible/Collapsible.astro';
+import Chevron from '../Icons/Chevron.astro';
 import { SITE } from '../../site';
 
 type Props = {
@@ -11,16 +17,33 @@ type Props = {
 };
 
 const { currentPage, langCode, version } = Astro.props;
+
+function getSlug() {
+	let slug = resolveSlug(currentPage);
+	slug = slug.slice(1 + langCode.length);
+
+	if (version && slug.startsWith(`/${version}`)) {
+		slug = slug.slice(1 + version.length);
+	}
+
+	return slug;
+}
+
+const slug = getSlug();
 const currentPageMatch = currentPage.endsWith('/')
 	? currentPage.slice(1, -1)
 	: currentPage.slice(1);
-const slug = currentPage.slice(currentPage.indexOf(langCode) + langCode.length);
-let sidebar = SITE[langCode].sidebar ?? {};
-if (typeof version === 'string' && version in sidebar) {
+
+let sidebar = SITE[langCode].sidebar;
+if (sidebar && typeof version === 'string') {
 	const versionedSidebar = sidebar[version];
-	if (!Array.isArray(versionedSidebar) && versionedSidebar !== undefined) {
+	if (!Array.isArray(versionedSidebar)) {
 		sidebar = versionedSidebar;
 	}
+}
+
+if (!sidebar) {
+	sidebar = {};
 }
 
 const sidebarSlug =
@@ -33,12 +56,15 @@ const docs = await getCollection('docs');
 function resolveId(partialId: string) {
 	return [
 		langCode,
+		!version || version === 'latest' ? '' : `/${version}`,
 		partialId.startsWith('/') ? '' : '/',
 		partialId,
 		partialId.endsWith('/') ? 'index.md' : '',
 	].join('');
 }
 
+function resolveSlug(slug: string): string;
+function resolveSlug(slug?: string): string | undefined;
 function resolveSlug(slug?: string) {
 	if (typeof slug !== 'string') {
 		return slug;
@@ -48,62 +74,122 @@ function resolveSlug(slug?: string) {
 		slug = slug.replace(langCode.toLowerCase(), langCode);
 	}
 
+	if (version) {
+		slug = slug.replace(version.replaceAll('.', ''), version);
+	}
+
+	if (!slug.startsWith('/')) {
+		slug = `/${slug}`;
+	}
+
 	if (!slug.endsWith('/')) {
 		slug += '/';
 	}
 
-	slug = `/${slug}`;
 	return slug;
+}
+
+function findActiveSidebarItem({
+	children,
+}: SidebarSection): SidebarItem | undefined {
+	for (const child of children) {
+		if (typeof child === 'string') {
+			const entry = docs.find(({ id }) => id === resolveId(child));
+			const slug = resolveSlug(entry?.slug);
+			if (slug === currentPage) {
+				return child;
+			}
+		} else if ('children' in child) {
+			const activeItem = findActiveSidebarItem(child);
+			if (activeItem) {
+				return activeItem;
+			}
+		} else {
+			if (currentPageMatch == child.link) {
+				return child;
+			}
+		}
+	}
+
+	return undefined;
 }
 ---
 
-<aside id="sidebar" class="sidebar" title="Site Navigation">
+<aside id="sidebar" class="sidebar" aria-label="Site Navigation">
 	<nav aria-labelledby="sidebar">
 		<ul class="nav-groups">
 			{
 				Array.isArray(activeSidebar) &&
-					activeSidebar.map(async function renderItem(item: SidebarItem) {
-						if (typeof item === 'string') {
-							const entry = docs.find(({ id }) => id === resolveId(item));
+					activeSidebar.map((item) =>
+						(async function renderItem(item: SidebarItem, depth = 0) {
+							if (typeof item === 'string') {
+								const itemId = resolveId(item);
+								const entry = docs.find(({ id }) => id === itemId);
+								const slug = resolveSlug(entry?.slug);
+								const pageMatch = slug === currentPage;
+								const directoryMatch = slug?.includes(currentPage) ?? false;
+								const className = [
+									'header-link',
+									pageMatch ? 'page-match' : '',
+									directoryMatch ? 'directory-match' : '',
+								];
+
+								const ariaCurrent = pageMatch ? 'page' : undefined;
+								return (
+									<li class={className.join(' ').trim()}>
+										<a
+											aria-current={ariaCurrent}
+											href={resolveSlug(entry?.slug)}
+										>
+											{entry?.data.title ?? item}
+										</a>
+									</li>
+								);
+							}
+
+							if ('children' in item) {
+								const { children, collapsible, title } = item;
+								const collapsed =
+									collapsible === true &&
+									findActiveSidebarItem(item) !== undefined;
+								const titleClassList = ['title', `depth-${depth}`];
+
+								return (
+									<li class="section">
+										<Collapsible key={title} open={collapsed}>
+											<div slot="summary" class="summary">
+												<span class={titleClassList.join(' ').trim()}>
+													{title}
+												</span>
+												<Chevron animated direction="right" />
+											</div>
+											<ul slot="content">
+												{children.map((item) => renderItem(item, depth + 1))}
+											</ul>
+										</Collapsible>
+									</li>
+								);
+							}
+
+							const { link, name, title, type } = item;
+							const isCurrentPage = currentPageMatch === link ? 'page' : false;
+							const className = isCurrentPage ? 'current' : undefined;
+
 							return (
 								<li>
-									<a href={resolveSlug(entry?.slug)}>
-										{entry?.data.title ?? item}
+									<a
+										aria-current={isCurrentPage}
+										class={className}
+										href={`${langCode}${link}`}
+										id={name}
+										type={type}
+									>
+										{title}
 									</a>
 								</li>
 							);
-						}
-
-						if ('children' in item) {
-							const { children, title } = item;
-							return (
-								<li>
-									<div class="nav-group">
-										<h2>{title}</h2>
-										<ul>{children.map(renderItem)}</ul>
-									</div>
-								</li>
-							);
-						}
-
-						const { link, name, title, type } = item;
-						const isCurrentPage = currentPageMatch === link ? 'page' : false;
-						const className = isCurrentPage ? 'current' : undefined;
-
-						return (
-							<li>
-								<a
-									aria-current={isCurrentPage}
-									class={className}
-									href={`${langCode}${link}`}
-									id={name}
-									type={type}
-								>
-									{title}
-								</a>
-							</li>
-						);
-					})
+						})(item)
+					)
 			}
 		</ul>
 	</nav>
@@ -124,24 +210,97 @@ function resolveSlug(slug?: string) {
 		height: fit-content;
 		max-height: calc(100vh - var(--theme-navbar-height));
 		overflow-y: auto;
-		padding: var(--doc-padding);
+		padding: var(--doc-padding) var(--gutter);
 		position: sticky;
 		top: var(--theme-navbar-height);
-		width: fit-content;
+		width: 100%;
 	}
 
-	nav {
-		width: fit-content;
+	.page-match {
+		background-color: var(--theme-bg-accent);
+		color: var(--theme-text-accent);
+		font-weight: 600;
 	}
 
-	.nav-groups {
+	.summary {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		font-size: 1.5em;
+		font-weight: bold;
+		gap: 1rem;
 		height: 100%;
-		width: fit-content;
+		justify-content: space-between;
+		list-style-type: none;
+		margin-bottom: 1rem;
+		padding-right: 0.5rem;
+	}
+
+	.summary > .title {
+		color: var(--theme-text-light);
+		display: inline-block;
+		font-size: 1em;
+		margin: 0;
+	}
+
+	.summary > .title:hover,
+	.summary > .title:focus {
+		color: var(--theme-text);
+	}
+
+	:global(.trigger:checked + .summary) > * :global(svg.chevron) {
+		rotate: 0deg;
+	}
+
+	.summary > :global(svg.chevron) {
+		--chevron-padding: 0.5rem;
+		--chevron-size: calc(1rem + 2 * var(--chevron-padding));
+
+		max-height: var(--chevron-size);
+		max-width: var(--chevron-size);
+		padding: var(--chevron-padding);
+	}
+
+	.summary:hover > :global(svg.chevron) {
+		background-color: var(--theme-bg-accent);
+		border-radius: 100%;
+	}
+
+	.section .section {
+		font-size: 0.875em;
+		margin-top: 1em;
+	}
+
+	.section .section > :global(section > .summary > .title) {
+		padding-inline-start: 1rem;
+	}
+
+	.section .section > :global(section > .content) {
+		padding-inline-start: 1.25rem;
+	}
+
+	.section .section .summary {
+		border-left: 0.25rem solid var(--theme-divider);
+		color: inherit;
+		line-height: 1.3;
+		padding-inline-start: 1rem;
+		text-decoration: none;
+		unicode-bidi: plaintext;
+		width: 100%;
+	}
+
+	.section .section .summary:hover,
+	.section .section .summary:focus,
+	.section .section .summary:focus-within {
+		border-inline-start-color: var(--theme-accent-secondary);
+	}
+
+	li:not(.section) {
+		font-size: 1rem;
 	}
 
 	.nav-groups > li + li {
-		margin-top: 2rem;
-		width: fit-content;
+		margin-top: 1em;
 	}
 
 	.nav-group-title {
@@ -165,12 +324,6 @@ function resolveSlug(slug?: string) {
 	.nav-link a:hover,
 	.nav-link a:focus {
 		background-color: var(--theme-bg-hover);
-	}
-
-	.nav-link a[aria-current='page'] {
-		background-color: var(--theme-bg-accent);
-		color: var(--theme-text-accent);
-		font-weight: 600;
 	}
 
 	@media (max-width: 1280px) {

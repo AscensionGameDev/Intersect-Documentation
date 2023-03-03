@@ -89,14 +89,13 @@ const { digestPlaceholder, inputPlaceholder } = site.components.HashGenerator;
 			async function updateDigest() {
 				const input = elementInputPlaintext.value ?? '';
 				if (input.length < 1) {
-					console.log('no input');
 					elementCodeDigest.textContent = placeholderDigest;
 					return;
 				}
 
 				const encodedInput = textEncoder.encode(input);
 				const digestBuffer = await crypto.subtle.digest(
-					algorithm,
+					algorithm!,
 					encodedInput
 				);
 				const digestArray = new Uint8Array(digestBuffer);
@@ -109,7 +108,6 @@ const { digestPlaceholder, inputPlaceholder } = site.components.HashGenerator;
 			elementInputPlaintext.addEventListener('input', updateDigest);
 
 			elementSvgIconCopy.addEventListener('click', () => {
-				console.log(digest);
 				navigator.clipboard.writeText(digest ?? '');
 			});
 		}
@@ -122,9 +120,9 @@ const { digestPlaceholder, inputPlaceholder } = site.components.HashGenerator;
 
 <style>
 	hash-generator {
-		width: 100%;
 		display: flex;
 		flex-direction: column;
+		width: 100%;
 	}
 
 	hash-generator > * {
@@ -148,12 +146,12 @@ const { digestPlaceholder, inputPlaceholder } = site.components.HashGenerator;
 	}
 
 	span.output > svg {
-		width: 1.5em;
-		height: 1.5em;
-		max-width: 1.5em;
-		max-height: 1.5em;
-		fill: #111;
 		cursor: pointer;
+		fill: #111;
+		height: 1.5em;
+		max-height: 1.5em;
+		max-width: 1.5em;
+		width: 1.5em;
 	}
 
 	@media (prefers-color-scheme: dark) {

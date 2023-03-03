@@ -1,0 +1,50 @@
+---
+type Props = {
+	animated?: boolean;
+	className?: string;
+	direction?: 'down' | 'left' | 'right' | 'up';
+};
+
+const { animated, className, direction } = Astro.props;
+
+const classList = [
+	'chevron',
+	animated ? 'animated' : '',
+	className ?? '',
+	direction ?? '',
+];
+---
+
+<svg
+	class={classList.join(' ').trim()}
+	aria-hidden="true"
+	focusable="false"
+	role="img"
+	fill="currentColor"
+	version="1.1"
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 330.00 330.00"
+>
+	<path
+		d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+	>
+	</path>
+</svg>
+
+<style>
+	.animated {
+		transition: rotate 0.25s ease-in-out;
+	}
+
+	.left {
+		rotate: 90deg;
+	}
+
+	.right {
+		rotate: -90deg;
+	}
+
+	.up {
+		rotate: 180deg;
+	}
+</style>

@@ -1,9 +1,9 @@
 ---
-import type { MarkdownHeading } from "astro";
-import type { KnownLanguageCode } from "../../i18n";
+import type { MarkdownHeading } from 'astro';
+import type { KnownLanguageCode } from '../../i18n';
 
-import TableOfContents from "./TableOfContents";
-import MoreMenu from "./MoreMenu.astro";
+import TableOfContents from './TableOfContents';
+import MoreMenu from './MoreMenu.astro';
 
 type Props = {
 	editUrl: URL;
@@ -26,7 +26,7 @@ const { editUrl, headings, langCode } = Astro.props;
 		grid-area: toc;
 		height: fit-content;
 		max-height: calc(100vh - var(--theme-navbar-height));
-		padding: var(--doc-padding) 0;
+		padding: var(--doc-padding) var(--gutter);
 		position: sticky;
 		top: var(--theme-navbar-height);
 		width: fit-content;

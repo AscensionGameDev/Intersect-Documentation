@@ -94,8 +94,13 @@ export type HashGeneratorStrings = {
 	inputPlaceholder: string;
 };
 
+export type VersionPickerStrings = {
+	Latest: string;
+};
+
 export type Components = {
 	HashGenerator: HashGeneratorStrings;
+	VersionPicker: VersionPickerStrings;
 };
 
 export type NavbarLink = {
@@ -116,7 +121,7 @@ export type SidebarLinkLike = string | SidebarLink;
 
 export type SidebarSection = {
 	children: Array<SidebarLinkLike | SidebarSection>;
-	collapsable?: boolean;
+	collapsible?: boolean;
 	title: string;
 };
 

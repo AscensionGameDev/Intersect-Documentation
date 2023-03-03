@@ -80,7 +80,8 @@ export const SITE: Site = {
 			HashGenerator: {
 				digestPlaceholder: 'This will update with the hash once input is provided',
 				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
-			}
+			},
+			VersionPicker: { Latest: 'Latest' }
 		},
 		general: {
 			EditThisPage: 'Edit this page',
@@ -105,23 +106,227 @@ export const SITE: Site = {
 					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
 				},
 			],
+			'v0.7.1-beta': [
+				{
+					title: 'User Docs',
+					link: '/',
+				},
+				{
+					title: 'API Reference',
+					link: '/api/v1/',
+				},
+				{
+					title: 'Developer Guides',
+					link: '/developer/',
+				},
+				{
+					title: 'Support Community',
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
+				},
+			]
 		},
 		sidebar: {
+			'v0.7.1-beta': {
+				'/api/': [
+					{
+						title: 'API Information',
+						collapsible: true,
+						children: [
+							'/api/v1/',
+							'/api/v1/introduction/setup.md',
+							'/api/v1/introduction/configuration.md',
+							'/api/v1/introduction/roles.md',
+						],
+					},
+					{
+						title: 'Endpoints',
+						collapsible: true,
+						children: [
+							'/api/v1/endpoints/authentication.md',
+							'/api/v1/endpoints/admin.md',
+							'/api/v1/endpoints/chat.md',
+							'/api/v1/endpoints/gameobjects.md',
+							'/api/v1/endpoints/info.md',
+							'/api/v1/endpoints/logs.md',
+							'/api/v1/endpoints/players.md',
+							'/api/v1/endpoints/users.md',
+							'/api/v1/endpoints/variables.md',
+						],
+					},
+					{
+						title: 'Advanced',
+						collapsible: true,
+						children: ['/api/v1/advanced/securing.md'],
+					},
+					{
+						title: 'Tools',
+						collapsible: true,
+						children: ['/api/tools/hash-generators.mdx'],
+					},
+				],
+				'/developer/': [
+					{
+						title: 'Introduction',
+						collapsible: true,
+						children: ['/developer/'],
+					},
+					{
+						title: 'Getting Started',
+						collapsible: true,
+						children: [
+							'/developer/start/vs.md',
+							'/developer/start/github.md',
+							'/developer/start/compiling.md',
+						],
+					},
+					{
+						title: 'Repository',
+						collapsible: true,
+						children: [
+							'/developer/repository/',
+							'/developer/repository/branches.md',
+							'/developer/repository/file-structure.md',
+							'/developer/repository/forking.md',
+						],
+					},
+					{
+						title: 'Making Changes',
+						collapsible: true,
+						children: [
+							'/developer/modify/procedure.md',
+							'/developer/modify/merging.md',
+							'/developer/modify/conflicts.md',
+						],
+					},
+					{
+						title: 'Staying up to Date',
+						collapsible: true,
+						children: ['/developer/pullrequests/pulling.md'],
+					},
+					{
+						title: 'Sharing & Contributions',
+						collapsible: true,
+						children: [
+							'/developer/sharing/creating.md',
+							'/developer/sharing/applying.md',
+							'/developer/sharing/contributing.md',
+						],
+					},
+					{
+						title: 'Advanced',
+						collapsible: true,
+						children: [
+							'/developer/advanced/database.md',
+							'/developer/advanced/packets.md',
+							'/developer/advanced/eventcommands.md',
+						],
+					},
+				],
+				'/': [
+					{
+						title: 'Project Information',
+						collapsible: true,
+						children: ['/', '/project/about.md'],
+					},
+					{
+						title: 'Getting Started',
+						collapsible: true,
+						children: [
+							'/start/download.md',
+							'/start/setup.md',
+							'/start/login.md',
+							'/start/overview.md',
+						],
+					},
+					{
+						title: 'Editors',
+						collapsible: true,
+						children: [
+							'/design/animations.md',
+							'/design/classes.md',
+							'/design/conditions.md',
+							'/design/crafting.md',
+							'/design/items.md',
+							'/design/lighting.md',
+							'/design/mapping.md',
+							'/design/npcs.md',
+							'/design/projectiles.md',
+							'/design/quests.md',
+							'/design/resources.md',
+							'/design/shops.md',
+							'/design/spells.md',
+							'/design/resources.md',
+							'/design/time.md',
+							'/design/world.md',
+						],
+					},
+					{
+						title: 'Events',
+						collapsible: true,
+						children: [
+							'/events/introduction.md',
+							'/events/commands.md',
+							'/events/pages.md',
+							'/events/common.md',
+							'/events/examples.md',
+						],
+					},
+					{
+						title: 'Configuration',
+						collapsible: true,
+						children: [
+							'/configuration/client-editor.md',
+							'/configuration/server.md',
+							'/configuration/server-database.md',
+							'/configuration/server-security.md',
+							'/configuration/equipment.md',
+							{
+								title: 'Advanced',
+								collapsible: true,
+								children: [
+									'/advanced/assets.md',
+									'/advanced/fonts.md',
+									'/advanced/formulas.md',
+									'/advanced/translations.md',
+									'/advanced/interface.md',
+									'/advanced/zdimensions.md',
+									'/advanced/sizes.md',
+									'/advanced/passwords.md',
+								],
+							},
+						],
+					},
+					{
+						title: 'Deployment',
+						collapsible: true,
+						children: [
+							'/deploy/forwarding.md',
+							'/deploy/packing.md',
+							'/deploy/distributing.md',
+							'/deploy/autoupdater.md',
+						],
+					},
+					{
+						title: 'Upgrading',
+						collapsible: true,
+						children: ['/upgrade/upgrading.md'],
+					},
+				],
+			},
 			'/api/': [
 				{
 					title: 'API Information',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/api/v1/',
 						'/api/v1/introduction/setup.md',
 						'/api/v1/introduction/configuration.md',
 						'/api/v1/introduction/roles.md',
-						'/api/v1/advanced/securing.md',
 					],
 				},
 				{
 					title: 'Endpoints',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/api/v1/endpoints/authentication.md',
 						'/api/v1/endpoints/admin.md',
@@ -136,24 +341,24 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Advanced',
-					collapsable: true,
+					collapsible: true,
 					children: ['/api/v1/advanced/securing.md'],
 				},
 				{
 					title: 'Tools',
-					collapsable: true,
+					collapsible: true,
 					children: ['/api/tools/hash-generators.mdx'],
 				},
 			],
 			'/developer/': [
 				{
 					title: 'Introduction',
-					collapsable: true,
+					collapsible: true,
 					children: ['/developer/'],
 				},
 				{
 					title: 'Getting Started',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/start/vs.md',
 						'/developer/start/github.md',
@@ -162,7 +367,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Repository',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/repository/',
 						'/developer/repository/branches.md',
@@ -172,7 +377,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Making Changes',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/modify/procedure.md',
 						'/developer/modify/merging.md',
@@ -181,12 +386,12 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Staying up to Date',
-					collapsable: true,
+					collapsible: true,
 					children: ['/developer/pullrequests/pulling.md'],
 				},
 				{
 					title: 'Sharing & Contributions',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/sharing/creating.md',
 						'/developer/sharing/applying.md',
@@ -195,7 +400,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Advanced',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/advanced/database.md',
 						'/developer/advanced/packets.md',
@@ -206,12 +411,12 @@ export const SITE: Site = {
 			'/': [
 				{
 					title: 'Project Information',
-					collapsable: true,
+					collapsible: true,
 					children: ['/', '/project/about.md'],
 				},
 				{
 					title: 'Getting Started',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/start/download.md',
 						'/start/setup.md',
@@ -221,7 +426,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Editors',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/design/animations.md',
 						'/design/classes.md',
@@ -243,7 +448,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Events',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/events/introduction.md',
 						'/events/commands.md',
@@ -254,7 +459,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Configuration',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/configuration/client-editor.md',
 						'/configuration/server.md',
@@ -263,7 +468,7 @@ export const SITE: Site = {
 						'/configuration/equipment.md',
 						{
 							title: 'Advanced',
-							collapsable: true,
+							collapsible: true,
 							children: [
 								'/advanced/assets.md',
 								'/advanced/fonts.md',
@@ -279,7 +484,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Deployment',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/deploy/forwarding.md',
 						'/deploy/packing.md',
@@ -289,7 +494,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Upgrading',
-					collapsable: true,
+					collapsible: true,
 					children: ['/upgrade/upgrading.md'],
 				},
 			],
@@ -303,17 +508,243 @@ export const SITE: Site = {
 			HashGenerator: {
 				digestPlaceholder: 'This will update with the hash once input is provided',
 				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
-			}
+			},
+			VersionPicker: { Latest: 'Ultima' }
 		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
 		},
+		navbar: {
+			latest: [
+				{
+					title: 'Documentación de usuario',
+					link: '/',
+				},
+				{
+					title: 'Referencia para API Web',
+					link: '/api/v1/',
+				},
+				{
+					title: 'Guías de Desarrollador',
+					link: '/developer/',
+				},
+				{
+					title: 'Comunidad de soporte (Inglés)',
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
+				}
+			],
+			'v0.7.1-beta': [
+				{
+					title: 'Documentación de usuario',
+					link: '/',
+				},
+				{
+					title: 'Referencia para API Web',
+					link: '/api/v1/',
+				},
+				{
+					title: 'Guías de Desarrollador',
+					link: '/developer/',
+				},
+				{
+					title: 'Comunidad de soporte (Inglés)',
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
+				}
+			]
+		},
 		sidebar: {
+			'v0.7.1-beta': {
+				'/api/v1/': [
+					{
+						title: 'Información de la API',
+						collapsible: true,
+						children: [
+							'/api/v1/',
+							'/api/v1/introduction/setup.md',
+							'/api/v1/introduction/config.md',
+							'/api/v1/introduction/roles.md',
+						],
+					},
+					{
+						title: 'Puntos de Conexión',
+						collapsible: true,
+						children: [
+							'/api/v1/endpoints/authentication.md',
+							'/api/v1/endpoints/admin.md',
+							'/api/v1/endpoints/chat.md',
+							'/api/v1/endpoints/gameobjects.md',
+							'/api/v1/endpoints/info.md',
+							'/api/v1/endpoints/logs.md',
+							'/api/v1/endpoints/players.md',
+							'/api/v1/endpoints/users.md',
+							'/api/v1/endpoints/variables.md',
+						],
+					},
+					{
+						title: 'Avanzado',
+						collapsible: true,
+						children: ['/api/v1/advanced/securing.md'],
+					},
+					{
+						title: 'Herramientas',
+						collapsible: true,
+						children: ['/api/tools/hash-generators.mdx'],
+					},
+				],
+				'/developer/': [
+					{
+						title: 'Introducción',
+						collapsible: true,
+						children: ['/developer/'],
+					},
+					{
+						title: 'Primeros pasos',
+						collapsible: true,
+						children: [
+							'/developer/start/vs.md',
+							'/developer/start/github.md',
+							'/developer/start/compiling.md',
+						],
+					},
+					{
+						title: 'Repositorio',
+						collapsible: true,
+						children: [
+							'/developer/repository/',
+							'/developer/repository/branches.md',
+							'/developer/repository/file-structure.md',
+							'/developer/repository/forking.md',
+						],
+					},
+					{
+						title: 'Realizar cambios',
+						collapsible: true,
+						children: [
+							'/developer/modify/procedure.md',
+							'/developer/modify/merging.md',
+							'/developer/modify/conflicts.md',
+						],
+					},
+					{
+						title: 'Mantenerse al día',
+						collapsible: true,
+						children: ['/developer/pullrequests/pulling.md'],
+					},
+					{
+						title: 'Compartir y contribuir',
+						collapsible: true,
+						children: [
+							'/developer/sharing/creating.md',
+							'/developer/sharing/applying.md',
+							'/developer/sharing/contributing.md',
+						],
+					},
+					{
+						title: 'Avanzado',
+						collapsible: true,
+						children: [
+							'/developer/advanced/database.md',
+							'/developer/advanced/packets.md',
+							'/developer/advanced/eventcommands.md',
+						],
+					},
+				],
+				'/': [
+					{
+						title: 'Información del Proyecto',
+						collapsible: true,
+						children: ['/', '/project/about.md'],
+					},
+					{
+						title: 'Primeros pasos',
+						collapsible: true,
+						children: [
+							'/start/download.md',
+							'/start/setup.md',
+							'/start/login.md',
+							'/start/overview.md',
+						],
+					},
+					{
+						title: 'Editores',
+						collapsible: true,
+						children: [
+							'/design/animations.md',
+							'/design/classes.md',
+							'/design/conditions.md',
+							'/design/crafting.md',
+							'/design/items.md',
+							'/design/lighting.md',
+							'/design/mapping.md',
+							'/design/npcs.md',
+							'/design/projectiles.md',
+							'/design/quests.md',
+							'/design/resources.md',
+							'/design/shops.md',
+							'/design/spells.md',
+							'/design/resources.md',
+							'/design/time.md',
+							'/design/world.md',
+						],
+					},
+					{
+						title: 'Eventos',
+						collapsible: true,
+						children: [
+							'/events/introduction.md',
+							'/events/commands.md',
+							'/events/pages.md',
+							'/events/common.md',
+							'/events/examples.md',
+						],
+					},
+					{
+						title: 'Configuración',
+						collapsible: true,
+						children: [
+							'/configuration/client-editor.md',
+							'/configuration/server.md',
+							'/configuration/server-database.md',
+							'/configuration/server-security.md',
+							'/configuration/equipment.md',
+							{
+								title: 'Avanzado',
+								collapsible: true,
+								children: [
+									'/advanced/assets.md',
+									'/advanced/fonts.md',
+									'/advanced/formulas.md',
+									'/advanced/translations.md',
+									'/advanced/interface.md',
+									'/advanced/zdimensions.md',
+									'/advanced/sizes.md',
+									'/advanced/passwords.md',
+								],
+							},
+						],
+					},
+					{
+						title: 'Despliegue',
+						collapsible: true,
+						children: [
+							'/deploy/forwarding.md',
+							'/deploy/packing.md',
+							'/deploy/distributing.md',
+							'/deploy/autoupdater.md',
+						],
+					},
+					{
+						title: 'Actualizando',
+						collapsible: true,
+						children: ['/upgrade/upgrading.md'],
+					},
+				],
+			},
 			'/api/v1/': [
 				{
 					title: 'Información de la API',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/api/v1/',
 						'/api/v1/introduction/setup.md',
@@ -323,7 +754,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Puntos de Conexión',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/api/v1/endpoints/authentication.md',
 						'/api/v1/endpoints/admin.md',
@@ -338,24 +769,24 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Avanzado',
-					collapsable: true,
+					collapsible: true,
 					children: ['/api/v1/advanced/securing.md'],
 				},
 				{
 					title: 'Herramientas',
-					collapsable: true,
+					collapsible: true,
 					children: ['/api/tools/hash-generators.mdx'],
 				},
 			],
 			'/developer/': [
 				{
 					title: 'Introducción',
-					collapsable: true,
+					collapsible: true,
 					children: ['/developer/'],
 				},
 				{
 					title: 'Primeros pasos',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/start/vs.md',
 						'/developer/start/github.md',
@@ -364,7 +795,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Repositorio',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/repository/',
 						'/developer/repository/branches.md',
@@ -374,7 +805,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Realizar cambios',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/modify/procedure.md',
 						'/developer/modify/merging.md',
@@ -383,12 +814,12 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Mantenerse al día',
-					collapsable: true,
+					collapsible: true,
 					children: ['/developer/pullrequests/pulling.md'],
 				},
 				{
 					title: 'Compartir y contribuir',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/sharing/creating.md',
 						'/developer/sharing/applying.md',
@@ -397,7 +828,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Avanzado',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/advanced/database.md',
 						'/developer/advanced/packets.md',
@@ -408,12 +839,12 @@ export const SITE: Site = {
 			'/': [
 				{
 					title: 'Información del Proyecto',
-					collapsable: true,
+					collapsible: true,
 					children: ['/', '/project/about.md'],
 				},
 				{
 					title: 'Primeros pasos',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/start/download.md',
 						'/start/setup.md',
@@ -423,7 +854,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Editores',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/design/animations.md',
 						'/design/classes.md',
@@ -445,7 +876,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Eventos',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/events/introduction.md',
 						'/events/commands.md',
@@ -456,7 +887,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Configuración',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/configuration/client-editor.md',
 						'/configuration/server.md',
@@ -465,7 +896,7 @@ export const SITE: Site = {
 						'/configuration/equipment.md',
 						{
 							title: 'Avanzado',
-							collapsable: true,
+							collapsible: true,
 							children: [
 								'/advanced/assets.md',
 								'/advanced/fonts.md',
@@ -481,7 +912,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Despliegue',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/deploy/forwarding.md',
 						'/deploy/packing.md',
@@ -491,7 +922,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Actualizando',
-					collapsable: true,
+					collapsible: true,
 					children: ['/upgrade/upgrading.md'],
 				},
 			],
@@ -505,17 +936,243 @@ export const SITE: Site = {
 			HashGenerator: {
 				digestPlaceholder: 'Cela sera mis à jour avec le hachage une fois l\'entrée fournie',
 				inputPlaceholder: 'Saisissez le texte à hacher (ceci est traité comme un mot de passe !)'
-			}
+			},
+			VersionPicker: { Latest: 'Latest' }
 		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
 		},
+		navbar: {
+			latest: [
+				{
+					title: 'Documents utilisateur',
+					link: '/',
+				},
+				{
+					title: 'Référence de l\'API Web',
+					link: '/api/v1/',
+				},
+				{
+					title: 'Guides pour développeurs',
+					link: '/developer/',
+				},
+				{
+					title: 'Communauté de support (Anglais)',
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
+				}
+			],
+			'v0.7.1-beta': [
+				{
+					title: 'Documents utilisateur',
+					link: '/',
+				},
+				{
+					title: 'Référence de l\'API Web',
+					link: '/api/v1/',
+				},
+				{
+					title: 'Guides pour développeurs',
+					link: '/developer/',
+				},
+				{
+					title: 'Communauté de support (Anglais)',
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
+				}
+			]
+		},
 		sidebar: {
+			'v0.7.1-beta': {
+				'/api/v1/': [
+					{
+						title: 'Information API',
+						collapsible: true,
+						children: [
+							'/api/v1/',
+							'/api/v1/introduction/setup.md',
+							'/api/v1/introduction/config.md',
+							'/api/v1/introduction/roles.md',
+						],
+					},
+					{
+						title: 'Points de terminaison',
+						collapsible: true,
+						children: [
+							'/api/v1/endpoints/authentication.md',
+							'/api/v1/endpoints/admin.md',
+							'/api/v1/endpoints/chat.md',
+							'/api/v1/endpoints/gameobjects.md',
+							'/api/v1/endpoints/info.md',
+							'/api/v1/endpoints/logs.md',
+							'/api/v1/endpoints/players.md',
+							'/api/v1/endpoints/users.md',
+							'/api/v1/endpoints/variables.md',
+						],
+					},
+					{
+						title: 'Avancé',
+						collapsible: true,
+						children: ['/api/v1/advanced/securing.md'],
+					},
+					{
+						title: 'Outils',
+						collapsible: true,
+						children: ['/api/tools/hash-generators.mdx'],
+					},
+				],
+				'/developer/': [
+					{
+						title: 'Introduction',
+						collapsible: true,
+						children: ['/developer/'],
+					},
+					{
+						title: 'Commencer',
+						collapsible: true,
+						children: [
+							'/developer/start/vs.md',
+							'/developer/start/github.md',
+							'/developer/start/compiling.md',
+						],
+					},
+					{
+						title: 'Dépots',
+						collapsible: true,
+						children: [
+							'/developer/repository/',
+							'/developer/repository/branches.md',
+							'/developer/repository/file-structure.md',
+							'/developer/repository/forking.md',
+						],
+					},
+					{
+						title: 'Faire des Changements',
+						collapsible: true,
+						children: [
+							'/developer/modify/procedure.md',
+							'/developer/modify/merging.md',
+							'/developer/modify/conflicts.md',
+						],
+					},
+					{
+						title: 'Rester à Jour',
+						collapsible: true,
+						children: ['/developer/pullrequests/pulling.md'],
+					},
+					{
+						title: 'Partager & Contribuer',
+						collapsible: true,
+						children: [
+							'/developer/sharing/creating.md',
+							'/developer/sharing/applying.md',
+							'/developer/sharing/contributing.md',
+						],
+					},
+					{
+						title: 'Avancé',
+						collapsible: true,
+						children: [
+							'/developer/advanced/database.md',
+							'/developer/advanced/packets.md',
+							'/developer/advanced/eventcommands.md',
+						],
+					},
+				],
+				'/': [
+					{
+						title: 'Informations Projet',
+						collapsible: true,
+						children: ['/', '/project/about.md'],
+					},
+					{
+						title: 'Commencer',
+						collapsible: true,
+						children: [
+							'/start/download.md',
+							'/start/setup.md',
+							'/start/login.md',
+							'/start/overview.md',
+						],
+					},
+					{
+						title: 'Editeurs',
+						collapsible: true,
+						children: [
+							'/design/animations.md',
+							'/design/classes.md',
+							'/design/conditions.md',
+							'/design/crafting.md',
+							'/design/items.md',
+							'/design/lighting.md',
+							'/design/mapping.md',
+							'/design/npcs.md',
+							'/design/projectiles.md',
+							'/design/quests.md',
+							'/design/resources.md',
+							'/design/shops.md',
+							'/design/spells.md',
+							'/design/resources.md',
+							'/design/time.md',
+							'/design/world.md',
+						],
+					},
+					{
+						title: 'Evènement',
+						collapsible: true,
+						children: [
+							'/events/introduction.md',
+							'/events/commands.md',
+							'/events/pages.md',
+							'/events/common.md',
+							'/events/examples.md',
+						],
+					},
+					{
+						title: 'Configuration',
+						collapsible: true,
+						children: [
+							'/configuration/client-editor.md',
+							'/configuration/server.md',
+							'/configuration/server-database.md',
+							'/configuration/server-security.md',
+							'/configuration/equipment.md',
+							{
+								title: 'Avancé',
+								collapsible: true,
+								children: [
+									'/advanced/assets.md',
+									'/advanced/fonts.md',
+									'/advanced/formulas.md',
+									'/advanced/translations.md',
+									'/advanced/interface.md',
+									'/advanced/zdimensions.md',
+									'/advanced/sizes.md',
+									'/advanced/passwords.md',
+								],
+							},
+						],
+					},
+					{
+						title: 'Déploiement du Jeu',
+						collapsible: true,
+						children: [
+							'/deploy/forwarding.md',
+							'/deploy/packing.md',
+							'/deploy/distributing.md',
+							'/deploy/autoupdater.md',
+						],
+					},
+					{
+						title: 'Mise à jour',
+						collapsible: true,
+						children: ['/upgrade/upgrading.md'],
+					},
+				],
+			},
 			'/api/v1/': [
 				{
 					title: 'Information API',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/api/v1/',
 						'/api/v1/introduction/setup.md',
@@ -525,7 +1182,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Points de terminaison',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/api/v1/endpoints/authentication.md',
 						'/api/v1/endpoints/admin.md',
@@ -540,24 +1197,24 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Avancé',
-					collapsable: true,
+					collapsible: true,
 					children: ['/api/v1/advanced/securing.md'],
 				},
 				{
 					title: 'Outils',
-					collapsable: true,
+					collapsible: true,
 					children: ['/api/tools/hash-generators.mdx'],
 				},
 			],
 			'/developer/': [
 				{
 					title: 'Introduction',
-					collapsable: true,
+					collapsible: true,
 					children: ['/developer/'],
 				},
 				{
 					title: 'Commencer',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/start/vs.md',
 						'/developer/start/github.md',
@@ -566,7 +1223,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Dépots',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/repository/',
 						'/developer/repository/branches.md',
@@ -576,7 +1233,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Faire des Changements',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/modify/procedure.md',
 						'/developer/modify/merging.md',
@@ -585,12 +1242,12 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Rester à Jour',
-					collapsable: true,
+					collapsible: true,
 					children: ['/developer/pullrequests/pulling.md'],
 				},
 				{
 					title: 'Partager & Contribuer',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/sharing/creating.md',
 						'/developer/sharing/applying.md',
@@ -599,7 +1256,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Avancé',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/advanced/database.md',
 						'/developer/advanced/packets.md',
@@ -610,12 +1267,12 @@ export const SITE: Site = {
 			'/': [
 				{
 					title: 'Informations Projet',
-					collapsable: true,
+					collapsible: true,
 					children: ['/', '/project/about.md'],
 				},
 				{
 					title: 'Commencer',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/start/download.md',
 						'/start/setup.md',
@@ -625,7 +1282,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Editeurs',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/design/animations.md',
 						'/design/classes.md',
@@ -647,7 +1304,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Evènement',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/events/introduction.md',
 						'/events/commands.md',
@@ -658,7 +1315,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Configuration',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/configuration/client-editor.md',
 						'/configuration/server.md',
@@ -667,7 +1324,7 @@ export const SITE: Site = {
 						'/configuration/equipment.md',
 						{
 							title: 'Avancé',
-							collapsable: true,
+							collapsible: true,
 							children: [
 								'/advanced/assets.md',
 								'/advanced/fonts.md',
@@ -683,7 +1340,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Déploiement du Jeu',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/deploy/forwarding.md',
 						'/deploy/packing.md',
@@ -693,7 +1350,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Mise à jour',
-					collapsable: true,
+					collapsible: true,
 					children: ['/upgrade/upgrading.md'],
 				},
 			],
@@ -707,17 +1364,238 @@ export const SITE: Site = {
 			HashGenerator: {
 				digestPlaceholder: 'This will update with the hash once input is provided',
 				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
-			}
+			},
+			VersionPicker: { Latest: 'Latest' }
 		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
 		},
+		navbar: {
+			latest: [
+				{
+					title: 'Documentazione utente',
+					link: '/',
+				},
+				{
+					title: 'Referimento delle Web API',
+					link: '/api/v1/',
+				},
+				{
+					title: 'Guide per sviluppatori',
+					link: '/developer/',
+				},
+				{
+					title: 'Comunità di supporto (Inglese)',
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
+				}
+			],
+			'v0.7.1-beta': [
+				{
+					title: 'Documentazione utente',
+					link: '/',
+				},
+				{
+					title: 'Referimento delle Web API',
+					link: '/api/v1/',
+				},
+				{
+					title: 'Guide per sviluppatori',
+					link: '/developer/',
+				},
+				{
+					title: 'Comunità di supporto (Inglese)',
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
+				}
+			]
+		},
 		sidebar: {
+			'v0.7.1-beta': {
+				'/api/v1/': [
+					{
+						title: '<<todo:it>>API Information',
+						collapsible: true,
+						children: [
+							'/api/v1/',
+							'/api/v1/introduction/setup.md',
+							'/api/v1/introduction/config.md',
+							'/api/v1/introduction/roles.md',
+						],
+					},
+					{
+						title: '<<todo:it>>Endpoints',
+						collapsible: true,
+						children: [
+							'/api/v1/endpoints/authentication.md',
+							'/api/v1/endpoints/admin.md',
+							'/api/v1/endpoints/chat.md',
+							'/api/v1/endpoints/gameobjects.md',
+							'/api/v1/endpoints/info.md',
+							'/api/v1/endpoints/logs.md',
+							'/api/v1/endpoints/players.md',
+							'/api/v1/endpoints/users.md',
+							'/api/v1/endpoints/variables.md',
+						],
+					},
+					{
+						title: '<<todo:it>>Advanced',
+						collapsible: true,
+						children: ['/api/v1/advanced/securing.md'],
+					},
+				],
+				'/developer/': [
+					{
+						title: '<<todo:it>>Introduction',
+						collapsible: true,
+						children: ['/developer/'],
+					},
+					{
+						title: '<<todo:it>>Getting Started',
+						collapsible: true,
+						children: [
+							'/developer/start/vs.md',
+							'/developer/start/github.md',
+							'/developer/start/compiling.md',
+						],
+					},
+					{
+						title: '<<todo:it>>Repository',
+						collapsible: true,
+						children: [
+							'/developer/repository/',
+							'/developer/repository/branches.md',
+							'/developer/repository/file-structure.md',
+							'/developer/repository/forking.md',
+						],
+					},
+					{
+						title: '<<todo:it>>Making Changes',
+						collapsible: true,
+						children: [
+							'/developer/modify/procedure.md',
+							'/developer/modify/merging.md',
+							'/developer/modify/conflicts.md',
+						],
+					},
+					{
+						title: '<<todo:it>>Staying up to Date',
+						collapsible: true,
+						children: ['/developer/pullrequests/pulling.md'],
+					},
+					{
+						title: '<<todo:it>>Sharing & Contributions',
+						collapsible: true,
+						children: [
+							'/developer/sharing/creating.md',
+							'/developer/sharing/applying.md',
+							'/developer/sharing/contributing.md',
+						],
+					},
+					{
+						title: '<<todo:it>>Advanced',
+						collapsible: true,
+						children: [
+							'/developer/advanced/database.md',
+							'/developer/advanced/packets.md',
+							'/developer/advanced/eventcommands.md',
+						],
+					},
+				],
+				'/': [
+					{
+						title: '<<todo:it>>Project Information',
+						collapsible: true,
+						children: ['/', '/project/about.md'],
+					},
+					{
+						title: '<<todo:it>>Getting Started',
+						collapsible: true,
+						children: [
+							'/start/download.md',
+							'/start/setup.md',
+							'/start/login.md',
+							'/start/overview.md',
+						],
+					},
+					{
+						title: '<<todo:it>>Editors',
+						collapsible: true,
+						children: [
+							'/design/animations.md',
+							'/design/classes.md',
+							'/design/conditions.md',
+							'/design/crafting.md',
+							'/design/items.md',
+							'/design/lighting.md',
+							'/design/mapping.md',
+							'/design/npcs.md',
+							'/design/projectiles.md',
+							'/design/quests.md',
+							'/design/resources.md',
+							'/design/shops.md',
+							'/design/spells.md',
+							'/design/resources.md',
+							'/design/time.md',
+							'/design/world.md',
+						],
+					},
+					{
+						title: '<<todo:it>>Events',
+						collapsible: true,
+						children: [
+							'/events/introduction.md',
+							'/events/commands.md',
+							'/events/pages.md',
+							'/events/common.md',
+							'/events/examples.md',
+						],
+					},
+					{
+						title: '<<todo:it>>Configuration',
+						collapsible: true,
+						children: [
+							'/configuration/client-editor.md',
+							'/configuration/server.md',
+							'/configuration/server-database.md',
+							'/configuration/server-security.md',
+							'/configuration/equipment.md',
+							{
+								title: '<<todo:it>>Advanced',
+								collapsible: true,
+								children: [
+									'/advanced/assets.md',
+									'/advanced/fonts.md',
+									'/advanced/formulas.md',
+									'/advanced/translations.md',
+									'/advanced/interface.md',
+									'/advanced/zdimensions.md',
+									'/advanced/sizes.md',
+									'/advanced/passwords.md',
+								],
+							},
+						],
+					},
+					{
+						title: '<<todo:it>>Deployment',
+						collapsible: true,
+						children: [
+							'/deploy/forwarding.md',
+							'/deploy/packing.md',
+							'/deploy/distributing.md',
+							'/deploy/autoupdater.md',
+						],
+					},
+					{
+						title: '<<todo:it>>Upgrading',
+						collapsible: true,
+						children: ['/upgrade/upgrading.md'],
+					},
+				],
+			},
 			'/api/v1/': [
 				{
 					title: '<<todo:it>>API Information',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/api/v1/',
 						'/api/v1/introduction/setup.md',
@@ -727,7 +1605,7 @@ export const SITE: Site = {
 				},
 				{
 					title: '<<todo:it>>Endpoints',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/api/v1/endpoints/authentication.md',
 						'/api/v1/endpoints/admin.md',
@@ -742,19 +1620,19 @@ export const SITE: Site = {
 				},
 				{
 					title: '<<todo:it>>Advanced',
-					collapsable: true,
+					collapsible: true,
 					children: ['/api/v1/advanced/securing.md'],
 				},
 			],
 			'/developer/': [
 				{
 					title: '<<todo:it>>Introduction',
-					collapsable: true,
+					collapsible: true,
 					children: ['/developer/'],
 				},
 				{
 					title: '<<todo:it>>Getting Started',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/start/vs.md',
 						'/developer/start/github.md',
@@ -763,7 +1641,7 @@ export const SITE: Site = {
 				},
 				{
 					title: '<<todo:it>>Repository',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/repository/',
 						'/developer/repository/branches.md',
@@ -773,7 +1651,7 @@ export const SITE: Site = {
 				},
 				{
 					title: '<<todo:it>>Making Changes',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/modify/procedure.md',
 						'/developer/modify/merging.md',
@@ -782,12 +1660,12 @@ export const SITE: Site = {
 				},
 				{
 					title: '<<todo:it>>Staying up to Date',
-					collapsable: true,
+					collapsible: true,
 					children: ['/developer/pullrequests/pulling.md'],
 				},
 				{
 					title: '<<todo:it>>Sharing & Contributions',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/sharing/creating.md',
 						'/developer/sharing/applying.md',
@@ -796,7 +1674,7 @@ export const SITE: Site = {
 				},
 				{
 					title: '<<todo:it>>Advanced',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/advanced/database.md',
 						'/developer/advanced/packets.md',
@@ -807,12 +1685,12 @@ export const SITE: Site = {
 			'/': [
 				{
 					title: '<<todo:it>>Project Information',
-					collapsable: true,
+					collapsible: true,
 					children: ['/', '/project/about.md'],
 				},
 				{
 					title: '<<todo:it>>Getting Started',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/start/download.md',
 						'/start/setup.md',
@@ -822,7 +1700,7 @@ export const SITE: Site = {
 				},
 				{
 					title: '<<todo:it>>Editors',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/design/animations.md',
 						'/design/classes.md',
@@ -844,7 +1722,7 @@ export const SITE: Site = {
 				},
 				{
 					title: '<<todo:it>>Events',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/events/introduction.md',
 						'/events/commands.md',
@@ -855,7 +1733,7 @@ export const SITE: Site = {
 				},
 				{
 					title: '<<todo:it>>Configuration',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/configuration/client-editor.md',
 						'/configuration/server.md',
@@ -864,7 +1742,7 @@ export const SITE: Site = {
 						'/configuration/equipment.md',
 						{
 							title: '<<todo:it>>Advanced',
-							collapsable: true,
+							collapsible: true,
 							children: [
 								'/advanced/assets.md',
 								'/advanced/fonts.md',
@@ -880,7 +1758,7 @@ export const SITE: Site = {
 				},
 				{
 					title: '<<todo:it>>Deployment',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/deploy/forwarding.md',
 						'/deploy/packing.md',
@@ -890,7 +1768,7 @@ export const SITE: Site = {
 				},
 				{
 					title: '<<todo:it>>Upgrading',
-					collapsable: true,
+					collapsible: true,
 					children: ['/upgrade/upgrading.md'],
 				},
 			],
@@ -904,17 +1782,238 @@ export const SITE: Site = {
 			HashGenerator: {
 				digestPlaceholder: 'This will update with the hash once input is provided',
 				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
-			}
+			},
+			VersionPicker: { Latest: 'Latest' }
 		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
 		},
+		navbar: {
+			latest: [
+				{
+					title: 'Gebruikers Documenten',
+					link: '/',
+				},
+				{
+					title: 'API Referentie',
+					link: '/api/v1/',
+				},
+				{
+					title: 'Gidsen voor ontwikkelaars',
+					link: '/developer/',
+				},
+				{
+					title: 'Support Community',
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
+				}
+			],
+			'v0.7.1-beta': [
+				{
+					title: 'Gebruikers Documenten',
+					link: '/',
+				},
+				{
+					title: 'API Referentie',
+					link: '/api/v1/',
+				},
+				{
+					title: 'Gidsen voor ontwikkelaars',
+					link: '/developer/',
+				},
+				{
+					title: 'Support Community',
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/'
+				}
+			]
+		},
 		sidebar: {
+			'v0.7.1-beta': {
+				'/api/v1/': [
+					{
+						title: 'API Informatie',
+						collapsible: true,
+						children: [
+							'/api/v1/',
+							'/api/v1/introduction/setup.md',
+							'/api/v1/introduction/config.md',
+							'/api/v1/introduction/roles.md',
+						],
+					},
+					{
+						title: 'Eindpunten',
+						collapsible: true,
+						children: [
+							'/api/v1/endpoints/authentication.md',
+							'/api/v1/endpoints/admin.md',
+							'/api/v1/endpoints/chat.md',
+							'/api/v1/endpoints/gameobjects.md',
+							'/api/v1/endpoints/info.md',
+							'/api/v1/endpoints/logs.md',
+							'/api/v1/endpoints/players.md',
+							'/api/v1/endpoints/users.md',
+							'/api/v1/endpoints/variables.md',
+						],
+					},
+					{
+						title: 'Geavanceerd',
+						collapsible: true,
+						children: ['/api/v1/advanced/securing.md'],
+					},
+				],
+				'/developer/': [
+					{
+						title: 'Introductie',
+						collapsible: true,
+						children: ['/developer/'],
+					},
+					{
+						title: 'Aan de slag',
+						collapsible: true,
+						children: [
+							'/developer/start/vs.md',
+							'/developer/start/github.md',
+							'/developer/start/compiling.md',
+						],
+					},
+					{
+						title: 'Repository',
+						collapsible: true,
+						children: [
+							'/developer/repository/',
+							'/developer/repository/branches.md',
+							'/developer/repository/file-structure.md',
+							'/developer/repository/forking.md',
+						],
+					},
+					{
+						title: 'Veranderingen maken',
+						collapsible: true,
+						children: [
+							'/developer/modify/procedure.md',
+							'/developer/modify/merging.md',
+							'/developer/modify/conflicts.md',
+						],
+					},
+					{
+						title: 'Bijgewerkt blijven',
+						collapsible: true,
+						children: ['/developer/pullrequests/pulling.md'],
+					},
+					{
+						title: 'Delen en bijdragen',
+						collapsible: true,
+						children: [
+							'/developer/sharing/creating.md',
+							'/developer/sharing/applying.md',
+							'/developer/sharing/contributing.md',
+						],
+					},
+					{
+						title: 'Geavanceerd',
+						collapsible: true,
+						children: [
+							'/developer/advanced/database.md',
+							'/developer/advanced/packets.md',
+							'/developer/advanced/eventcommands.md',
+						],
+					},
+				],
+				'/': [
+					{
+						title: 'Project Informatie',
+						collapsible: true,
+						children: ['/', '/project/about.md'],
+					},
+					{
+						title: 'Aan de slag',
+						collapsible: true,
+						children: [
+							'/start/download.md',
+							'/start/setup.md',
+							'/start/login.md',
+							'/start/overview.md',
+						],
+					},
+					{
+						title: 'Editors',
+						collapsible: true,
+						children: [
+							'/design/animations.md',
+							'/design/classes.md',
+							'/design/conditions.md',
+							'/design/crafting.md',
+							'/design/items.md',
+							'/design/lighting.md',
+							'/design/mapping.md',
+							'/design/npcs.md',
+							'/design/projectiles.md',
+							'/design/quests.md',
+							'/design/resources.md',
+							'/design/shops.md',
+							'/design/spells.md',
+							'/design/resources.md',
+							'/design/time.md',
+							'/design/world.md',
+						],
+					},
+					{
+						title: 'Events',
+						collapsible: true,
+						children: [
+							'/events/introduction.md',
+							'/events/commands.md',
+							'/events/pages.md',
+							'/events/common.md',
+							'/events/examples.md',
+						],
+					},
+					{
+						title: 'Configuratie',
+						collapsible: true,
+						children: [
+							'/configuration/client-editor.md',
+							'/configuration/server.md',
+							'/configuration/server-database.md',
+							'/configuration/server-security.md',
+							'/configuration/equipment.md',
+							{
+								title: 'Geavanceerd',
+								collapsible: true,
+								children: [
+									'/advanced/assets.md',
+									'/advanced/fonts.md',
+									'/advanced/formulas.md',
+									'/advanced/translations.md',
+									'/advanced/interface.md',
+									'/advanced/zdimensions.md',
+									'/advanced/sizes.md',
+									'/advanced/passwords.md',
+								],
+							},
+						],
+					},
+					{
+						title: 'Deployment',
+						collapsible: true,
+						children: [
+							'/deploy/forwarding.md',
+							'/deploy/packing.md',
+							'/deploy/distributing.md',
+							'/deploy/autoupdater.md',
+						],
+					},
+					{
+						title: 'Upgraden',
+						collapsible: true,
+						children: ['/upgrade/upgrading.md'],
+					},
+				],
+			},
 			'/api/v1/': [
 				{
 					title: 'API Informatie',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/api/v1/',
 						'/api/v1/introduction/setup.md',
@@ -924,7 +2023,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Eindpunten',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/api/v1/endpoints/authentication.md',
 						'/api/v1/endpoints/admin.md',
@@ -939,19 +2038,19 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Geavanceerd',
-					collapsable: true,
+					collapsible: true,
 					children: ['/api/v1/advanced/securing.md'],
 				},
 			],
 			'/developer/': [
 				{
 					title: 'Introductie',
-					collapsable: true,
+					collapsible: true,
 					children: ['/developer/'],
 				},
 				{
 					title: 'Aan de slag',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/start/vs.md',
 						'/developer/start/github.md',
@@ -960,7 +2059,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Repository',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/repository/',
 						'/developer/repository/branches.md',
@@ -970,7 +2069,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Veranderingen maken',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/modify/procedure.md',
 						'/developer/modify/merging.md',
@@ -979,12 +2078,12 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Bijgewerkt blijven',
-					collapsable: true,
+					collapsible: true,
 					children: ['/developer/pullrequests/pulling.md'],
 				},
 				{
 					title: 'Delen en bijdragen',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/sharing/creating.md',
 						'/developer/sharing/applying.md',
@@ -993,7 +2092,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Geavanceerd',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/advanced/database.md',
 						'/developer/advanced/packets.md',
@@ -1004,12 +2103,12 @@ export const SITE: Site = {
 			'/': [
 				{
 					title: 'Project Informatie',
-					collapsable: true,
+					collapsible: true,
 					children: ['/', '/project/about.md'],
 				},
 				{
 					title: 'Aan de slag',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/start/download.md',
 						'/start/setup.md',
@@ -1019,7 +2118,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Editors',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/design/animations.md',
 						'/design/classes.md',
@@ -1041,7 +2140,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Events',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/events/introduction.md',
 						'/events/commands.md',
@@ -1052,7 +2151,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Configuratie',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/configuration/client-editor.md',
 						'/configuration/server.md',
@@ -1061,7 +2160,7 @@ export const SITE: Site = {
 						'/configuration/equipment.md',
 						{
 							title: 'Geavanceerd',
-							collapsable: true,
+							collapsible: true,
 							children: [
 								'/advanced/assets.md',
 								'/advanced/fonts.md',
@@ -1077,7 +2176,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Deployment',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/deploy/forwarding.md',
 						'/deploy/packing.md',
@@ -1087,7 +2186,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Upgraden',
-					collapsable: true,
+					collapsible: true,
 					children: ['/upgrade/upgrading.md'],
 				},
 			],
@@ -1100,17 +2199,243 @@ export const SITE: Site = {
 			HashGenerator: {
 				digestPlaceholder: 'This will update with the hash once input is provided',
 				inputPlaceholder: 'Input text to be hashed (this is treated like a password!)'
-			}
+			},
+			VersionPicker: { Latest: 'Latest' }
 		},
 		general: {
 			EditThisPage: 'Edit this page',
 			JoinOurCommunity: 'Join our Discord',
 		},
+		navbar: {
+			latest: [
+				{
+					title: 'Documentos do usuário',
+					link: '/',
+				},
+				{
+					title: 'Referência API',
+					link: '/api/v1/',
+				},
+				{
+					title: 'Guias do desenvolvedor',
+					link: '/developer/',
+				},
+				{
+					title: 'Comunidade de Apoio (Inglês)',
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
+				},
+			],
+			'v0.7.1-beta': [
+				{
+					title: 'Documentos do usuário',
+					link: '/',
+				},
+				{
+					title: 'Referência API',
+					link: '/api/v1/',
+				},
+				{
+					title: 'Guias do desenvolvedor',
+					link: '/developer/',
+				},
+				{
+					title: 'Comunidade de Apoio (Inglês)',
+					link: 'https://www.ascensiongamedev.com/forum/53-questions-and-answers/',
+				},
+			]
+		},
 		sidebar: {
+			'v0.7.1-beta': {
+				'/api/v1/': [
+					{
+						title: 'Informação API',
+						collapsible: true,
+						children: [
+							'/api/v1/',
+							'/api/v1/introduction/setup.md',
+							'/api/v1/introduction/config.md',
+							'/api/v1/introduction/roles.md',
+						],
+					},
+					{
+						title: 'Endpoints',
+						collapsible: true,
+						children: [
+							'/api/v1/endpoints/authentication.md',
+							'/api/v1/endpoints/admin.md',
+							'/api/v1/endpoints/chat.md',
+							'/api/v1/endpoints/gameobjects.md',
+							'/api/v1/endpoints/info.md',
+							'/api/v1/endpoints/logs.md',
+							'/api/v1/endpoints/players.md',
+							'/api/v1/endpoints/users.md',
+							'/api/v1/endpoints/variables.md',
+						],
+					},
+					{
+						title: 'Avançado',
+						collapsible: true,
+						children: ['/api/v1/advanced/securing.md'],
+					},
+					{
+						title: 'Tools',
+						collapsible: true,
+						children: ['/api/tools/hash-generators.mdx'],
+					},
+				],
+				'/developer/': [
+					{
+						title: '<<todo:pt-BR>>Introduction',
+						collapsible: true,
+						children: ['/developer/'],
+					},
+					{
+						title: 'Começando',
+						collapsible: true,
+						children: [
+							'/developer/start/vs.md',
+							'/developer/start/github.md',
+							'/developer/start/compiling.md',
+						],
+					},
+					{
+						title: '<<todo:pt-BR>>Repository',
+						collapsible: true,
+						children: [
+							'/developer/repository/',
+							'/developer/repository/branches.md',
+							'/developer/repository/file-structure.md',
+							'/developer/repository/forking.md',
+						],
+					},
+					{
+						title: 'Fazendo mudanças',
+						collapsible: true,
+						children: [
+							'/developer/modify/procedure.md',
+							'/developer/modify/merging.md',
+							'/developer/modify/conflicts.md',
+						],
+					},
+					{
+						title: 'Mantendo-se atualizado',
+						collapsible: true,
+						children: ['/developer/pullrequests/pulling.md'],
+					},
+					{
+						title: 'Compartilhamento e contribuições',
+						collapsible: true,
+						children: [
+							'/developer/sharing/creating.md',
+							'/developer/sharing/applying.md',
+							'/developer/sharing/contributing.md',
+						],
+					},
+					{
+						title: 'Avançado',
+						collapsible: true,
+						children: [
+							'/developer/advanced/database.md',
+							'/developer/advanced/packets.md',
+							'/developer/advanced/eventcommands.md',
+						],
+					},
+				],
+				'/': [
+					{
+						title: 'Informações do Projeto',
+						collapsible: true,
+						children: ['/', '/project/about.md'],
+					},
+					{
+						title: 'Começando',
+						collapsible: true,
+						children: [
+							'/start/download.md',
+							'/start/setup.md',
+							'/start/login.md',
+							'/start/overview.md',
+						],
+					},
+					{
+						title: 'Editores',
+						collapsible: true,
+						children: [
+							'/design/animations.md',
+							'/design/classes.md',
+							'/design/conditions.md',
+							'/design/crafting.md',
+							'/design/items.md',
+							'/design/lighting.md',
+							'/design/mapping.md',
+							'/design/npcs.md',
+							'/design/projectiles.md',
+							'/design/quests.md',
+							'/design/resources.md',
+							'/design/shops.md',
+							'/design/spells.md',
+							'/design/resources.md',
+							'/design/time.md',
+							'/design/world.md',
+						],
+					},
+					{
+						title: 'Eventos',
+						collapsible: true,
+						children: [
+							'/events/introduction.md',
+							'/events/commands.md',
+							'/events/pages.md',
+							'/events/common.md',
+							'/events/examples.md',
+						],
+					},
+					{
+						title: 'Configuração',
+						collapsible: true,
+						children: [
+							'/configuration/client-editor.md',
+							'/configuration/server.md',
+							'/configuration/server-database.md',
+							'/configuration/server-security.md',
+							'/configuration/equipment.md',
+							{
+								title: 'Avançado',
+								collapsible: true,
+								children: [
+									'/advanced/assets.md',
+									'/advanced/fonts.md',
+									'/advanced/formulas.md',
+									'/advanced/translations.md',
+									'/advanced/interface.md',
+									'/advanced/zdimensions.md',
+									'/advanced/sizes.md',
+									'/advanced/passwords.md',
+								],
+							},
+						],
+					},
+					{
+						title: 'Distribuição',
+						collapsible: true,
+						children: [
+							'/deploy/forwarding.md',
+							'/deploy/packing.md',
+							'/deploy/distributing.md',
+							'/deploy/autoupdater.md',
+						],
+					},
+					{
+						title: 'Atualizando',
+						collapsible: true,
+						children: ['/upgrade/upgrading.md'],
+					},
+				],
+			},
 			'/api/v1/': [
 				{
 					title: 'Informação API',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/api/v1/',
 						'/api/v1/introduction/setup.md',
@@ -1120,7 +2445,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Endpoints',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/api/v1/endpoints/authentication.md',
 						'/api/v1/endpoints/admin.md',
@@ -1135,24 +2460,24 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Avançado',
-					collapsable: true,
+					collapsible: true,
 					children: ['/api/v1/advanced/securing.md'],
 				},
 				{
 					title: 'Tools',
-					collapsable: true,
+					collapsible: true,
 					children: ['/api/tools/hash-generators.mdx'],
 				},
 			],
 			'/developer/': [
 				{
 					title: '<<todo:pt-BR>>Introduction',
-					collapsable: true,
+					collapsible: true,
 					children: ['/developer/'],
 				},
 				{
 					title: 'Começando',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/start/vs.md',
 						'/developer/start/github.md',
@@ -1161,7 +2486,7 @@ export const SITE: Site = {
 				},
 				{
 					title: '<<todo:pt-BR>>Repository',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/repository/',
 						'/developer/repository/branches.md',
@@ -1171,7 +2496,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Fazendo mudanças',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/modify/procedure.md',
 						'/developer/modify/merging.md',
@@ -1180,12 +2505,12 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Mantendo-se atualizado',
-					collapsable: true,
+					collapsible: true,
 					children: ['/developer/pullrequests/pulling.md'],
 				},
 				{
 					title: 'Compartilhamento e contribuições',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/sharing/creating.md',
 						'/developer/sharing/applying.md',
@@ -1194,7 +2519,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Avançado',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/developer/advanced/database.md',
 						'/developer/advanced/packets.md',
@@ -1205,12 +2530,12 @@ export const SITE: Site = {
 			'/': [
 				{
 					title: 'Informações do Projeto',
-					collapsable: true,
+					collapsible: true,
 					children: ['/', '/project/about.md'],
 				},
 				{
 					title: 'Começando',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/start/download.md',
 						'/start/setup.md',
@@ -1220,7 +2545,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Editores',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/design/animations.md',
 						'/design/classes.md',
@@ -1242,7 +2567,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Eventos',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/events/introduction.md',
 						'/events/commands.md',
@@ -1253,7 +2578,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Configuração',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/configuration/client-editor.md',
 						'/configuration/server.md',
@@ -1262,7 +2587,7 @@ export const SITE: Site = {
 						'/configuration/equipment.md',
 						{
 							title: 'Avançado',
-							collapsable: true,
+							collapsible: true,
 							children: [
 								'/advanced/assets.md',
 								'/advanced/fonts.md',
@@ -1278,7 +2603,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Distribuição',
-					collapsable: true,
+					collapsible: true,
 					children: [
 						'/deploy/forwarding.md',
 						'/deploy/packing.md',
@@ -1288,7 +2613,7 @@ export const SITE: Site = {
 				},
 				{
 					title: 'Atualizando',
-					collapsable: true,
+					collapsible: true,
 					children: ['/upgrade/upgrading.md'],
 				},
 			],

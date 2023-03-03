@@ -1,0 +1,160 @@
+---
+import type { KnownLanguageCode } from '../../i18n';
+
+export type Version = {
+	label: string;
+	value: string;
+};
+
+type Props = {
+	langCode: KnownLanguageCode;
+	version: string;
+	versions: readonly Version[];
+};
+
+const { version, versions } = Astro.props;
+---
+
+<div class="version-picker-wrapper">
+	<select class="version-picker">
+		{
+			versions.map(({ label, value }) => {
+				const selected = value === version;
+				return (
+					<option value={value} selected={selected}>
+						{label}
+					</option>
+				);
+			})
+		}
+	</select>
+	<svg
+		class="dropdown"
+		aria-hidden="true"
+		focusable="false"
+		role="img"
+		fill="currentColor"
+		version="1.1"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 330.00 330.00"
+	>
+		<path
+			d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+		>
+		</path>
+	</svg>
+</div>
+
+<script>
+	import { getLangCode } from '../../i18n';
+
+	const selectVersion: HTMLSelectElement | null = document.querySelector(
+		'select.version-picker'
+	);
+
+	function getActiveVersion() {
+		const [selectedOption] = selectVersion?.selectedOptions ?? [];
+		return selectedOption?.value;
+	}
+
+	const langCode = getLangCode(window.location.pathname);
+
+	let activeVersion = getActiveVersion();
+	selectVersion?.addEventListener('change', ({ target }) => {
+		const select = target as HTMLSelectElement;
+		if (!select) {
+			return;
+		}
+
+		const previousVersion = activeVersion;
+
+		activeVersion = getActiveVersion();
+
+		let toReplace = previousVersion ?? '',
+			replacement = activeVersion ?? '';
+		if (previousVersion === 'latest') {
+			toReplace = langCode;
+			replacement = `${langCode}/${activeVersion}`;
+		} else if (replacement === 'latest') {
+			toReplace = `/${toReplace}`;
+			replacement = '';
+		}
+
+		window.location.pathname = window.location.pathname.replace(
+			toReplace,
+			replacement
+		);
+	});
+</script>
+
+<style>
+	.version-picker {
+		appearance: none;
+		background-color: var(--theme-bg);
+		border: none;
+		border-bottom: 1px solid var(--theme-text-lighter);
+		box-sizing: border-box;
+		color: var(--theme-text-light);
+		cursor: pointer;
+		flex-grow: 1;
+		font-family: inherit;
+		font-size: 1rem;
+		-webkit-font-smoothing: antialiased;
+		font-weight: 500;
+		line-height: inherit;
+		margin: 0;
+		outline: 0;
+		overflow: visible;
+		padding: 0.125em 2em;
+		padding-left: 0.5em;
+		transition-duration: 0.5s;
+		transition-property: border-color, color;
+		transition-timing-function: ease-out;
+		width: 100%;
+	}
+
+	.version-picker-wrapper .version-picker:hover,
+	.version-picker-wrapper .version-picker:focus {
+		border-color: var(--theme-text-light);
+		color: var(--theme-text);
+	}
+
+	.version-picker-wrapper {
+		align-items: center;
+		color: var(--theme-text-light);
+		display: flex;
+		flex-direction: row;
+		position: relative;
+	}
+
+	.version-picker-wrapper > svg {
+		height: 1.25em;
+		margin: 0 0.5em;
+		pointer-events: none;
+		position: absolute;
+		width: 1.25em;
+		z-index: 9999;
+	}
+
+	.version-picker-wrapper svg.dropdown {
+		height: 0.75em;
+		width: 0.75em;
+	}
+
+	.dropdown {
+		position: absolute;
+		right: 0;
+	}
+
+	@media (max-width: 1440px) {
+		.version-picker {
+			color: transparent;
+			padding: 0.125em 1.125em;
+			width: 0;
+		}
+
+		.version-picker-wrapper svg.dropdown {
+			display: none;
+		}
+	}
+</style>

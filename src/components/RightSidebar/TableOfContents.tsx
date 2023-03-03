@@ -3,16 +3,18 @@ import type { FunctionalComponent } from 'preact';
 import type { MouseEvent } from 'react';
 import { unescape } from 'html-escaper';
 import {
-	useState, useEffect, useRef 
+	useState, useEffect, useRef
 } from 'preact/hooks';
+
+import './TableOfContents.css';
 
 type ItemOffsets = {
 	id: string;
 	topOffset: number;
 };
 
-const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({headings = [],}) => {
-	const toc = useRef<HTMLUListElement>();
+const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({ headings = [], }) => {
+	const toc = useRef<HTMLUListElement>(undefined!);
 	const onThisPageID = 'on-this-page-heading';
 	const itemOffsets = useRef<ItemOffsets[]>([]);
 	const [currentID, setCurrentID] = useState('overview');

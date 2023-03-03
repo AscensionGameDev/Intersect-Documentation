@@ -1,8 +1,8 @@
 ---
-import type { KnownLanguageCode } from "../../i18n";
-import { SITE } from "../../site";
-import Discord from "../Icons/Discord.astro";
-import Pencil from "../Icons/Pencil.astro";
+import type { KnownLanguageCode } from '../../i18n';
+import { SITE } from '../../site';
+import Discord from '../Icons/Discord.astro';
+import Pencil from '../Icons/Pencil.astro';
 
 type Props = {
 	editUrl: URL;
@@ -39,6 +39,10 @@ const showMoreSection = Boolean(SITE.communityUrl);
 </ul>
 
 <style>
+	:root h2 {
+		font-size: 1.125em;
+	}
+
 	.edit-on-github {
 		color: inherit;
 		font: inherit;

@@ -314,7 +314,8 @@ h2.heading {
 	padding-inline-start: 1rem;
 	transition:
 		background-color 200ms ease-out,
-		border-inline-start-color 100ms ease-out;
+		border-inline-start-color 100ms ease-out,
+		margin-inline-start 0.1s ease-in-out;
 }
 
 .header-link a {
@@ -339,6 +340,7 @@ h2.heading {
 .header-link:focus,
 .header-link:focus-within {
 	border-inline-start-color: var(--theme-accent-secondary);
+	margin-inline-start: 0.25rem;
 }
 
 /* Highlight TOC header link matching the current scroll position */
