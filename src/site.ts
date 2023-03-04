@@ -305,9 +305,8 @@ export const SITE: Site = {
 						collapsible: true,
 						children: [
 							'/deploy/forwarding.md',
-							'/deploy/packing.md',
 							'/deploy/distributing.md',
-							'/deploy/autoupdater.md',
+							'/deploy/updater.md',
 						],
 					},
 					{
@@ -491,9 +490,8 @@ export const SITE: Site = {
 					collapsible: true,
 					children: [
 						'/deploy/forwarding.md',
-						'/deploy/packing.md',
 						'/deploy/distributing.md',
-						'/deploy/autoupdater.md',
+						'/deploy/updater.md',
 					],
 				},
 				{
@@ -737,9 +735,8 @@ export const SITE: Site = {
 						collapsible: true,
 						children: [
 							'/deploy/forwarding.md',
-							'/deploy/packing.md',
 							'/deploy/distributing.md',
-							'/deploy/autoupdater.md',
+							'/deploy/updater.md',
 						],
 					},
 					{
@@ -923,9 +920,8 @@ export const SITE: Site = {
 					collapsible: true,
 					children: [
 						'/deploy/forwarding.md',
-						'/deploy/packing.md',
 						'/deploy/distributing.md',
-						'/deploy/autoupdater.md',
+						'/deploy/updater.md',
 					],
 				},
 				{
@@ -1169,9 +1165,8 @@ export const SITE: Site = {
 						collapsible: true,
 						children: [
 							'/deploy/forwarding.md',
-							'/deploy/packing.md',
 							'/deploy/distributing.md',
-							'/deploy/autoupdater.md',
+							'/deploy/updater.md',
 						],
 					},
 					{
@@ -1355,9 +1350,8 @@ export const SITE: Site = {
 					collapsible: true,
 					children: [
 						'/deploy/forwarding.md',
-						'/deploy/packing.md',
 						'/deploy/distributing.md',
-						'/deploy/autoupdater.md',
+						'/deploy/updater.md',
 					],
 				},
 				{
@@ -1596,9 +1590,8 @@ export const SITE: Site = {
 						collapsible: true,
 						children: [
 							'/deploy/forwarding.md',
-							'/deploy/packing.md',
 							'/deploy/distributing.md',
-							'/deploy/autoupdater.md',
+							'/deploy/updater.md',
 						],
 					},
 					{
@@ -1777,9 +1770,8 @@ export const SITE: Site = {
 					collapsible: true,
 					children: [
 						'/deploy/forwarding.md',
-						'/deploy/packing.md',
 						'/deploy/distributing.md',
-						'/deploy/autoupdater.md',
+						'/deploy/updater.md',
 					],
 				},
 				{
@@ -2018,9 +2010,8 @@ export const SITE: Site = {
 						collapsible: true,
 						children: [
 							'/deploy/forwarding.md',
-							'/deploy/packing.md',
 							'/deploy/distributing.md',
-							'/deploy/autoupdater.md',
+							'/deploy/updater.md',
 						],
 					},
 					{
@@ -2199,9 +2190,8 @@ export const SITE: Site = {
 					collapsible: true,
 					children: [
 						'/deploy/forwarding.md',
-						'/deploy/packing.md',
 						'/deploy/distributing.md',
-						'/deploy/autoupdater.md',
+						'/deploy/updater.md',
 					],
 				},
 				{
@@ -2444,9 +2434,8 @@ export const SITE: Site = {
 						collapsible: true,
 						children: [
 							'/deploy/forwarding.md',
-							'/deploy/packing.md',
 							'/deploy/distributing.md',
-							'/deploy/autoupdater.md',
+							'/deploy/updater.md',
 						],
 					},
 					{
@@ -2630,9 +2619,8 @@ export const SITE: Site = {
 					collapsible: true,
 					children: [
 						'/deploy/forwarding.md',
-						'/deploy/packing.md',
 						'/deploy/distributing.md',
-						'/deploy/autoupdater.md',
+						'/deploy/updater.md',
 					],
 				},
 				{
