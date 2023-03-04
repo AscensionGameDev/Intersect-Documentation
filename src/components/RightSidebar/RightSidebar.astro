@@ -17,11 +17,15 @@ const { editUrl, headings, langCode } = Astro.props;
 
 <aside id="toc" class="toc" title="Table of Contents">
 	<nav class="sidebar-nav" aria-labelledby="toc">
-		<TableOfContents
-			client:media="(min-width: 50em)"
-			headings={headings}
-			onThisPage={SITE[langCode].general.OnThisPage}
-		/>
+		{
+			headings.length > 0 && (
+				<TableOfContents
+					client:media="(min-width: 50em)"
+					headings={headings}
+					onThisPage={SITE[langCode].general.OnThisPage}
+				/>
+			)
+		}
 		<MoreMenu editUrl={editUrl} langCode={langCode} />
 	</nav>
 </aside>
