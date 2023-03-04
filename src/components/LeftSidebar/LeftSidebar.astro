@@ -9,6 +9,7 @@ import { getCollection } from 'astro:content';
 import Collapsible from '../Collapsible/Collapsible.astro';
 import Chevron from '../Icons/Chevron.astro';
 import { SITE } from '../../site';
+import { resolveSlug } from '../../slugs';
 
 type Props = {
 	currentPage: string;
@@ -19,7 +20,7 @@ type Props = {
 const { currentPage, langCode, version } = Astro.props;
 
 function getSlug() {
-	let slug = resolveSlug(currentPage);
+	let slug = resolveSlug(langCode, currentPage, version);
 	slug = slug.slice(1 + langCode.length);
 
 	if (version && slug.startsWith(`/${version}`)) {
@@ -63,39 +64,13 @@ function resolveId(partialId: string) {
 	].join('');
 }
 
-function resolveSlug(slug: string): string;
-function resolveSlug(slug?: string): string | undefined;
-function resolveSlug(slug?: string) {
-	if (typeof slug !== 'string') {
-		return slug;
-	}
-
-	if (slug.startsWith(langCode.toLowerCase())) {
-		slug = slug.replace(langCode.toLowerCase(), langCode);
-	}
-
-	if (version) {
-		slug = slug.replace(version.replaceAll('.', ''), version);
-	}
-
-	if (!slug.startsWith('/')) {
-		slug = `/${slug}`;
-	}
-
-	if (!slug.endsWith('/')) {
-		slug += '/';
-	}
-
-	return slug;
-}
-
 function findActiveSidebarItem({
 	children,
 }: SidebarSection): SidebarItem | undefined {
 	for (const child of children) {
 		if (typeof child === 'string') {
 			const entry = docs.find(({ id }) => id === resolveId(child));
-			const slug = resolveSlug(entry?.slug);
+			const slug = resolveSlug(langCode, entry?.slug, version);
 			if (slug === currentPage) {
 				return child;
 			}
@@ -125,7 +100,7 @@ function findActiveSidebarItem({
 							if (typeof item === 'string') {
 								const itemId = resolveId(item);
 								const entry = docs.find(({ id }) => id === itemId);
-								const slug = resolveSlug(entry?.slug);
+								const slug = resolveSlug(langCode, entry?.slug, version);
 								const pageMatch = slug === currentPage;
 								const directoryMatch = slug?.includes(currentPage) ?? false;
 								const className = [
@@ -139,7 +114,7 @@ function findActiveSidebarItem({
 									<li class={className.join(' ').trim()}>
 										<a
 											aria-current={ariaCurrent}
-											href={resolveSlug(entry?.slug)}
+											href={resolveSlug(langCode, entry?.slug, version)}
 										>
 											{entry?.data.title ?? item}
 										</a>
