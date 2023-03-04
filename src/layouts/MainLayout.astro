@@ -1,7 +1,6 @@
 ---
 import type { MarkdownHeading } from 'astro';
 import type { KnownLanguageCode } from '../i18n';
-import type { Version } from '../components/Header/VersionPicker.astro';
 
 import { CollectionEntry, getCollection } from 'astro:content';
 import HeadCommon from '../components/HeadCommon.astro';
@@ -13,11 +12,12 @@ import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
 import Footer from '../components/Footer/Footer.astro';
 import { getEditUrl, getPathInRepo, SITE } from '../site';
 import SkipToContent from '../components/SkipToContent.astro';
+import { getVersion, LabeledVersion, Version } from '../versioning';
 
 type Props = CollectionEntry<'docs'>['data'] & {
 	headings: MarkdownHeading[];
 	langCode: KnownLanguageCode;
-	version?: string | undefined;
+	version?: LabeledVersion | undefined;
 };
 
 const { headings, langCode, version, ...data } = Astro.props;
@@ -27,39 +27,31 @@ const site = SITE[langCode];
 
 const docs = await getCollection('docs');
 
-const PATTERN_VERSION = /^v\d+(.\d+(.\d+)?)?(-[^\+]+)?(\+.+)?$/;
-
-const VERSIONS: readonly Version[] = docs
-	.reduce(
-		(versions: Array<string>, { id }) => {
-			if (!id.includes(langCode)) {
-				return versions;
-			}
-
-			const [possibleVersion] = id.split('/').slice(1);
-			if (!possibleVersion) {
-				return versions;
-			}
-
-			if (versions.includes(possibleVersion)) {
-				return versions;
-			}
-
-			if (PATTERN_VERSION.test(possibleVersion)) {
-				versions.push(possibleVersion);
-			}
-
+const VERSIONS: readonly LabeledVersion[] = docs
+	.reduce((versions: Array<Version>, { id }) => {
+		if (!id.includes(langCode)) {
 			return versions;
-		},
-		['latest']
-	)
-	.map((version) => ({
-		label:
-			version === 'latest'
-				? site.components.VersionPicker?.Latest ?? 'Latest'
-				: version,
+		}
+
+		const version = getVersion(id);
+		if (!version) {
+			return versions;
+		}
+
+		if (versions.includes(version)) {
+			return versions;
+		}
+
+		return versions;
+	}, [])
+	.map<LabeledVersion>((version) => ({
+		label: version,
 		value: version,
-	}));
+	}))
+	.concat({
+		label: site.components.VersionPicker?.Latest ?? 'Latest',
+		value: 'latest',
+	});
 
 const currentSlug = currentPage.replace(/^\//, '');
 const currentId =

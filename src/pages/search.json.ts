@@ -1,14 +1,19 @@
 import { getCollection } from 'astro:content';
-import { getLangCode, KnownLanguageCode } from '../i18n';
+import { getLangCode } from '../i18n';
 import { SITE } from '../site';
 import { resolveSlug } from '../slugs';
+import {
+	VersionKey,
+	VersionedLookup,
+	getVersion
+} from '../versioning';
 
 export type IndexedDocument = {
-	body: string;
+	// body: string;
 	description?: string;
 	// dir: string;
 	pathname: string;
-	lang: string;
+	// lang: string;
 	ogLocale: string | undefined;
 	title: string;
 };
@@ -23,11 +28,11 @@ export async function get() {
 	const docs = await getCollection('docs');
 
 	const docsByLocale = docs
-		.reduce((localeMap, {
+		.reduce((versionedLocaleMap, {
 			body,
 			data: {
 				description,
-				lang,
+				// lang,
 				ogLocale,
 				title
 			},
@@ -35,16 +40,21 @@ export async function get() {
 			slug
 		}) => {
 			const langCode = getLangCode(id);
+			const version: VersionKey = getVersion(id) ?? 'latest';
 			const site = SITE[langCode];
+
+			if (site.disabled === true) {
+				return versionedLocaleMap;
+			}
 
 			const trimmedBody = body?.trim();
 			if (!trimmedBody) {
-				return localeMap;
+				return versionedLocaleMap;
 			}
 
 			const doc: IndexedDocument = {
-				body: trimmedBody,
-				lang,
+				// body: trimmedBody,
+				// lang,
 				ogLocale,
 				pathname: resolveSlug(langCode, slug).slice(langCode.length + 1),
 				title
@@ -54,16 +64,24 @@ export async function get() {
 				doc.description = description;
 			}
 
+			if (!(version in versionedLocaleMap)) {
+				versionedLocaleMap[version] = {} as any;
+			}
+
+			const localeMap = versionedLocaleMap[version];
+
+			if (!localeMap) {
+				throw new Error('Unreachable! Theoretically...');
+			}
+
 			if (!(langCode in localeMap)) {
 				localeMap[langCode] = [];
 			}
 
 			localeMap[langCode].push(doc);
 
-			return localeMap;
-		}, <Record<KnownLanguageCode, IndexedDocument[]>>{});
+			return versionedLocaleMap;
+		}, <VersionedLookup<IndexedDocument[]>>{});
 
-	return {
-		body: JSON.stringify(docsByLocale)
-	};
+	return { body: JSON.stringify(docsByLocale) };
 }

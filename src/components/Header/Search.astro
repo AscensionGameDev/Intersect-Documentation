@@ -1,57 +1,307 @@
 ---
+import type { KnownLanguageCode } from '../../i18n';
+import Intersect from '../Icons/Intersect.astro';
+
+type Props = {
+	langCode: KnownLanguageCode;
+};
+
+const { langCode } = Astro.props;
 ---
 
-<div class="search-container">
-	<input
-		aria-label="Search"
-		autocomplete="off"
-		onfocus={}
-		placeholder=""
-		spellcheck="false"
-		type="text"
-		value=""
-	/>
-	<svg>
-		<path
-			d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-			stroke="currentColor"
-			stroke-width="2"
-			stroke-linecap="round"
-			stroke-linejoin="round"></path>
-	</svg>
-</div>
+<template name="site-search">
+	<div class="search-container">
+		<input
+			aria-label="Search"
+			autocomplete="off"
+			placeholder=""
+			spellcheck="false"
+			type="text"
+			value=""
+		/>
+		<svg>
+			<path
+				d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"></path>
+		</svg>
+		<section class="search-dropdown">
+			<div class="error-message">
+				<slot name="error">An error occurred!</slot>
+			</div>
+			<div class="spinner">
+				<slot name="spinner">*</slot>
+			</div>
+			<div class="results"></div>
+		</section>
+	</div>
 
-<style>
-	.search-container {
-		align-items: center;
-		display: flex;
-		justify-content: end;
-		position: relative;
+	<style>
+		:host {
+			font-size: clamp(
+				0.875rem,
+				0.75rem + 0.375vw + var(--user-font-scale),
+				1rem
+			);
+		}
+
+		svg {
+			fill: currentColor;
+			height: 1.375em;
+			width: 1.375em;
+		}
+
+		.search-container {
+			align-items: center;
+			display: flex;
+			justify-content: end;
+			overflow: visible;
+			position: relative;
+		}
+
+		.search-container svg {
+			color: var(--theme-text);
+			fill: none;
+			pointer-events: none;
+			position: absolute;
+			right: 1em;
+		}
+
+		.search-container input {
+			background-color: var(--theme-bg);
+			border: calc(max(0.125vmin, 1px)) solid var(--theme-text-lighter);
+			border-radius: 2em;
+			cursor: text;
+			line-height: 2em;
+			outline: none;
+			padding: 0 2em;
+			transition-duration: 0.25s;
+			transition-property: border-color, width;
+			transition-timing-function: ease-in-out;
+			width: 0rem;
+		}
+
+		.search-container input:not(:placeholder-shown),
+		.search-container input:focus {
+			border-color: var(--theme-text-light);
+			width: 100%;
+		}
+
+		.search-dropdown {
+			background-color: var(--theme-bg);
+			border: 1px solid var(--theme-text-light);
+			border-top: none;
+			display: none;
+			min-height: 2em;
+			position: absolute;
+			right: 1em;
+			top: calc(1.75em);
+			transition-duration: 0.25s;
+			transition-property: width;
+			transition-timing-function: ease-in-out;
+			width: 0;
+			z-index: 1;
+		}
+
+		.search-dropdown > * > * {
+			padding: 0.25em 1em;
+		}
+
+		input:not(:placeholder-shown) ~ .search-dropdown,
+		input:focus ~ .search-dropdown {
+			display: block;
+			min-width: calc(100% - 2em);
+			width: 100%;
+		}
+
+		.search-dropdown .error-message {
+			display: none;
+		}
+
+		.has-error .error-message {
+			display: initial;
+		}
+
+		.search-container:not(.loading) .spinner {
+			display: none;
+		}
+
+		.results {
+			max-height: calc(15 * 2.5em);
+			overflow-x: hidden;
+			overflow-y: scroll;
+			padding: 0.25em;
+			padding-right: 0.5em;
+			position: relative;
+			width: fit-content;
+		}
+
+		.results > a {
+			display: block;
+			min-width: calc(100% - 0.75em);
+			position: relative;
+			width: fit-content;
+		}
+
+		.results > a:not(:first-child) {
+		}
+
+		.results > a:nth-child(odd) {
+			background-color: var(--theme-bg-accent);
+		}
+	</style>
+</template>
+
+<site-search lang-code={langCode}>
+	<div slot="spinner">abc</div>
+	<Intersect slot="spinner" animation="inner-spin" />
+</site-search>
+
+<script>
+	import type { KnownLanguageCode } from '../../i18n';
+	import type { IndexedDocument } from '../../pages/search.json';
+
+	import { get } from '../../pages/search.json';
+
+	import { VersionKey, VersionedLookup, getVersion } from '../../versioning';
+
+	class SiteSearch extends HTMLElement {
+		private readonly _langCode: KnownLanguageCode;
+		private readonly _loading: Promise<VersionedLookup<IndexedDocument[]>>;
+		private readonly _version: VersionKey;
+
+		constructor() {
+			super();
+
+			this._langCode =
+				(this.getAttribute('lang-code') as KnownLanguageCode) ?? 'en-US';
+			this._version = getVersion(location.pathname) ?? 'latest';
+
+			const template = document.querySelector(
+				'template[name="site-search"]'
+			) as HTMLTemplateElement;
+
+			const shadowRoot = this.attachShadow({ mode: 'closed' });
+			shadowRoot.appendChild(template.content.cloneNode(true));
+
+			const searchContainer =
+				this.shadowRoot?.querySelector('.search-container');
+
+			if (searchContainer) {
+				searchContainer.classList.add('loading');
+			}
+
+			const shadowProxy = new Proxy<Record<string | number | symbol, any>>(
+				this,
+				{
+					get: (target, key) =>
+						key === 'shadowRoot' ? shadowRoot : target[key],
+					set: (target, key, value) => (target[key] = value),
+				}
+			);
+
+			this.loadData = this.loadData.bind(shadowProxy);
+			this.updateResults = this.updateResults.bind(shadowProxy);
+
+			shadowRoot
+				.querySelector('input')
+				?.addEventListener('input', (event) =>
+					this.updateResults(event as InputEvent)
+				);
+
+			this._loading = this.loadData();
+		}
+
+		private async loadData() {
+			const searchContainer =
+				this.shadowRoot?.querySelector('.search-container');
+			if (!searchContainer) {
+				throw new Error('Invalid container!');
+			}
+
+			// const searchResponse = await fetch('/search.json');
+
+			// if (!searchResponse.ok) {
+			// 	searchContainer.classList.add('has-error');
+			// 	return {} as any;
+			// }
+
+			try {
+				// return (await searchResponse.json()) as Record<
+				// 	KnownLanguageCode,
+				// 	IndexedDocument[]
+				// >;
+				const { body } = await get();
+				const values = JSON.parse(body) as Record<
+					KnownLanguageCode,
+					IndexedDocument[]
+				>;
+				return values;
+			} catch (error) {
+				console.error(error);
+				searchContainer.classList.add('has-error');
+				return {} as any;
+			} finally {
+				searchContainer.classList.remove('loading');
+			}
+		}
+
+		private async updateResults(event: InputEvent) {
+			if (!this.shadowRoot) {
+				throw new Error('Missing shadow root!');
+			}
+
+			const target = event.target as HTMLInputElement;
+
+			const data = await this._loading;
+
+			const { value: query } = target;
+
+			const versionSpace = data[this._version];
+			if (!versionSpace) {
+				return;
+			}
+
+			const searchSpace = versionSpace[this._langCode];
+
+			const results = searchSpace.filter(
+				(entry) =>
+					entry.title.includes(query) ||
+					entry.description?.includes(query) ||
+					entry.pathname.includes(query)
+			);
+
+			const resultsContainer = this.shadowRoot?.querySelector('.results');
+			if (!resultsContainer) {
+				throw new Error('Missing results container!');
+			}
+
+			const resultElements = results.map((result) => {
+				const resultLink = document.createElement('a');
+				resultLink.href = result.pathname;
+				console.log(resultLink.innerHTML);
+				resultLink.innerHTML = result.title.replaceAll(
+					query,
+					`<strong>${query}</strong>`
+				);
+				return resultLink;
+			});
+
+			while (resultsContainer.lastChild) {
+				resultsContainer.removeChild(resultsContainer.lastChild);
+			}
+
+			for (const resultElement of resultElements) {
+				resultsContainer.appendChild(resultElement);
+			}
+
+			console.log({ data, searchSpace, query, results });
+		}
 	}
 
-	.search-container svg {
-		fill: none;
-		pointer-events: none;
-		position: absolute;
-		right: 1em;
+	if (!customElements.get('site-search')) {
+		customElements.define('site-search', SiteSearch);
 	}
-
-	.search-container input {
-		background-color: var(--theme-bg);
-		border: calc(max(0.125vmin, 1px)) solid var(--theme-text-lighter);
-		border-radius: 2em;
-		cursor: text;
-		line-height: 2em;
-		outline: none;
-		padding: 0 2em;
-		transition-duration: 0.5s;
-		transition-property: border-color, width;
-		transition-timing-function: ease-in-out;
-		width: 1rem;
-	}
-
-	.search-container input:focus {
-		border-color: var(--theme-text-light);
-		width: 100%;
-	}
-</style>
+</script>

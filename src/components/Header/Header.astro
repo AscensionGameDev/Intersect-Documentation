@@ -77,7 +77,8 @@ function resolveNavUrl(link: string) {
 				)
 			}
 
-			<Search />
+			<Search langCode={langCode} />
+
 			{
 				versions.length > 1 && (
 					<VersionPicker
@@ -108,7 +109,6 @@ function resolveNavUrl(link: string) {
 		gap: 1em;
 		height: var(--theme-navbar-height);
 		justify-content: space-between;
-		overflow: hidden;
 		padding: 0 var(--doc-padding);
 		position: sticky;
 		top: 0;

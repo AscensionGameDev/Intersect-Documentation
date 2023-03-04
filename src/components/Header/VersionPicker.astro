@@ -1,15 +1,11 @@
 ---
 import type { KnownLanguageCode } from '../../i18n';
-
-export type Version = {
-	label: string;
-	value: string;
-};
+import type { LabeledVersion } from '../../versioning';
 
 type Props = {
 	langCode: KnownLanguageCode;
 	version: string;
-	versions: readonly Version[];
+	versions: readonly LabeledVersion[];
 };
 
 const { version, versions } = Astro.props;
