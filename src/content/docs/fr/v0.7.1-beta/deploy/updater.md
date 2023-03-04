@@ -6,11 +6,32 @@ le stockage de fichier et la bande passante ont un coût! Nous n'avons pas les c
 
 Des sites statiques d'hébergement comme les pages Amazon S3 et GitHub fonctionneront bien, mais un hébergeur web avec la possibilité d'utiliser le php est à préférer pour [des mises à jour rapides et d'autre bénéfices](#advancedconfiguration) sur lesquels vous pouvez en apprendre d'avantage plus tard.
 
-## Création
+## Créer une mise à jour
 
-Pour créer une mise à jour rien de plus simple, ouvrez votre éditeur et cliquez le bouton `Outils > Packer Mise à Jour`. Il vous sera demandé de sélectionner un dossier vide, et après quelques traitements les fichiers de mise à jour apparaîtront dedans.
+La création d'une mise à jour se fait depuis le menu `Outils > Packer Mise à Jour` en haut de l'éditeur.
 
-![Packer](https://www.ascensiongamedev.com/resources/filehost/04a7eded08d3e90c55ca21e8e5fabedd.png)
+![Package](https://www.ascensiongamedev.com/resources/filehost/04a7eded08d3e90c55ca21e8e5fabedd.png)
+
+You can follow along with the instructions in this clip, or follow the [packaging instructions below](#instructions-demballage)
+
+https://user-images.githubusercontent.com/1476550/222871468-e0a0c1ef-c4ba-44f9-a685-a9037b3cc0c8.mp4
+
+### Instructions d'emballage
+
+1. Create 3 directories
+  - one that is your "live" development environment that you will be using to generate this update
+    - this will be the directory that contains the client and editor that you use to modify and test your game
+    - this directory **does not contain the update URL in the configuration file**
+  - one that is a _clean_ "source" copy of the client and editor with their assets, but it does not contain any cache, temporary, log files, etc.
+    - this directory **will contain the a config.json with the update URL**
+    - it should contain the Client.exe, Client.pdb, Editor.exe, Editor.pdb, and your resources directory (which should not have mapcache.db)
+  - one that is the "update" of the update generation process
+    - the first time you run the updater this will be _empty_
+    - NOTE: when you run the updater a second time, do _not_ clear it out first, it will clear out unchanged files and leave only what you need to upload to your file host
+2. Click on `Outils > Packer Mise à Jour`
+3. On the first window, select the "source" directory that you created in step 1 that **does** contain the config.json with the update URL
+4. On the second window, select the "update" directory that you created (or already had) in step 1
+5. Once the update is complete, [upload all of the files in your "update" directory to your file host](#mise-à-jour)
 
 ## Mise à jour
 

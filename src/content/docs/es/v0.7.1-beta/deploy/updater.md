@@ -6,11 +6,32 @@ File storage and bandwidth costs! We do not have the capacity or funding to host
 
 Static site hosts like Amazon S3 and GitHub pages will work well, but a webhost with the ability to run php is preferred for [faster updates and other benefits](#advancedconfiguration) that you might want to learn about later on.
 
-## Creating
+## Creating an Update
 
-Creating an update is as simple as opening your editor and clicking the `Tools > Package Update` button. You will be prompted to select an empty folder, and after some processing the update files will appear within.
+Creating an update is done from the `Tools > Package Update` menu at the top of the editor.
 
 ![Package](https://www.ascensiongamedev.com/resources/filehost/04a7eded08d3e90c55ca21e8e5fabedd.png)
+
+You can follow along with the instructions in this clip, or follow the [packaging instructions below](#packaging-instructions)
+
+https://user-images.githubusercontent.com/1476550/222871468-e0a0c1ef-c4ba-44f9-a685-a9037b3cc0c8.mp4
+
+### Packaging Instructions
+
+1. Create 3 directories
+  - one that is your "live" development environment that you will be using to generate this update
+    - this will be the directory that contains the client and editor that you use to modify and test your game
+    - this directory **does not contain the update URL in the configuration file**
+  - one that is a _clean_ "source" copy of the client and editor with their assets, but it does not contain any cache, temporary, log files, etc.
+    - this directory **will contain the a config.json with the update URL**
+    - it should contain the Client.exe, Client.pdb, Editor.exe, Editor.pdb, and your resources directory (which should not have mapcache.db)
+  - one that is the "update" of the update generation process
+    - the first time you run the updater this will be _empty_
+    - NOTE: when you run the updater a second time, do _not_ clear it out first, it will clear out unchanged files and leave only what you need to upload to your file host
+2. Click on `Tools > Package Update`
+3. On the first window, select the "source" directory that you created in step 1 that **does** contain the config.json with the update URL
+4. On the second window, select the "update" directory that you created (or already had) in step 1
+5. Once the update is complete, [upload all of the files in your "update" directory to your file host](#uploading)
 
 ## Uploading
 
