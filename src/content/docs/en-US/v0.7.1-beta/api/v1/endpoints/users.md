@@ -2,7 +2,7 @@
 title: Users
 ---
 
-**These endpoints require the [users.query API Role](https://docs.freemmorpgmaker.com/api/v1/introduction/roles.html#users-query)!**
+**These endpoints require the [users.query API Role](/en-US/api/v1/introduction/roles.html#users-query)!**
 
 ## List Users
 

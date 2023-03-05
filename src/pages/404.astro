@@ -1,0 +1,17 @@
+---
+const shouldAppendTrailingSlash =
+	!Astro.url.pathname.endsWith("/") &&
+	!/\/?[^.]\.[^.]+$/.test(Astro.url.pathname);
+---
+
+{
+	shouldAppendTrailingSlash ? (
+		<script is:inline>window.location.pathname += '/';</script>
+	) : (
+		<script is:inline>
+			/* Redirect your homepage to the first page of documentation. If you
+			have a landing page, remove this script and add it here! */
+			window.location.pathname = `/en-US/`;
+		</script>
+	)
+}

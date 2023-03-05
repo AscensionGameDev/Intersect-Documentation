@@ -4,7 +4,7 @@ title: Mise à Jour Automatique
 
 le stockage de fichier et la bande passante ont un coût! Nous n'avons pas les capacités ou les fonds nécessaires pour héberger vos données de jeu et les mises à jour pour vous. Vous devrez investir dans un plan d'hébergement web de votre choix pour pouvoir distribuer les mises à jour de votre jeu à vos joueurs.
 
-Des sites statiques d'hébergement comme les pages Amazon S3 et GitHub fonctionneront bien, mais un hébergeur web avec la possibilité d'utiliser le php est à préférer pour [des mises à jour rapides et d'autre bénéfices](#advancedconfiguration) sur lesquels vous pouvez en apprendre d'avantage plus tard.
+Des sites statiques d'hébergement comme les pages Amazon S3 et GitHub fonctionneront bien, mais un hébergeur web avec la possibilité d'utiliser le php est à préférer pour [des mises à jour rapides et d'autre bénéfices](#advanced-configuration) sur lesquels vous pouvez en apprendre d'avantage plus tard.
 
 ## Créer une mise à jour
 

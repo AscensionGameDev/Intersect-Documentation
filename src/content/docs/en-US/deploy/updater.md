@@ -4,7 +4,7 @@ title: Auto Updater
 
 File storage and bandwidth costs! We do not have the capacity or funding to host your game data and updates for you. You will need to purchase a web hosting plan of your choice in order to distribute your game updates to your players.
 
-Static site hosts like Amazon S3 and GitHub pages will work well, but a webhost with the ability to run php is preferred for [faster updates and other benefits](#advancedconfiguration) that you might want to learn about later on.
+Static site hosts like Amazon S3 and GitHub pages will work well, but a webhost with the ability to run php is preferred for [faster updates and other benefits](#advanced-configuration) that you might want to learn about later on.
 
 ## Creating an Update
 
@@ -14,7 +14,7 @@ Creating an update is done from the `Tools > Package Update` menu at the top of 
 
 You can follow along with the instructions in this clip, or follow the [packaging instructions below](#packaging-instructions)
 
-https://user-images.githubusercontent.com/1476550/222871468-e0a0c1ef-c4ba-44f9-a685-a9037b3cc0c8.mp4
+https://user-images.githubusercontent.com/1476550/222871468-e0a0c1ef-c4ba-44f9-a685-a9037b3cc0c8.mp4#title=Packaging%20Video%20Instructions
 
 ### Packaging Instructions
 
@@ -39,7 +39,9 @@ https://user-images.githubusercontent.com/1476550/222871468-e0a0c1ef-c4ba-44f9-a
 
 Use FTP or your file transfer program of choice to upload the contents in your update folder to your web host.
 
-**Note:** If you are using FileZilla you need to make sure you are using binary uploads. Go to `Edit > Settings > File transfer settings > ASCII/Binary`. [Set it to always binary](https://www.ascensiongamedev.com/resources/filehost/ff040970742cd777a2c5a0b546fd7231.png).
+**Note:** If you are using FileZilla you need to make sure you are using binary uploads. Go to `Edit > Settings > File transfer settings > ASCII/Binary`. Set it to always binary:
+
+![Set it to always binary](https://www.ascensiongamedev.com/resources/filehost/ff040970742cd777a2c5a0b546fd7231.png).
 
 ## Configuring
 

@@ -30,7 +30,7 @@ Si vous voulez distribuer votre jeu sans aucune sorte de possibilité de mise à
 
 ## Outil de Mise à Jour Automatique
 
-Si vous voulez distribuer votre jeu en utilisant l'outil de mise à jour Intersect alors les fichiers à inclure dans votre archive installateur/zip sont un peu plus nombreux. Cliquez ici pour les instructions sur comment [régler et configurer votre outil de mise à jour](autoupdater.md).
+Si vous voulez distribuer votre jeu en utilisant l'outil de mise à jour Intersect alors les fichiers à inclure dans votre archive installateur/zip sont un peu plus nombreux. Cliquez ici pour les instructions sur comment [régler et configurer votre outil de mise à jour](updater.md).
 
 Les fichiers que vous devrez inclure sont les suivants:
 
