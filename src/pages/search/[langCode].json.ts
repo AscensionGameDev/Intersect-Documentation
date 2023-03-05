@@ -64,7 +64,9 @@ export const get: APIRoute = async ({ params }: APIContext) => {
 			}
 
 			let pathname = resolveSlug(langCode, slug).slice(langCode.length + 1);
-			pathname = pathname.slice(pathname.indexOf('/', 1));
+			if (version !== 'latest') {
+				pathname = pathname.slice(pathname.indexOf('/', 1));
+			}
 
 			const doc: IndexedDocument = {
 				// body: trimmedBody,
