@@ -2,7 +2,7 @@
 title: Utilisateurs
 ---
 
-**Ces points de terminaison requièrent [users.query API Role](https://docs.freemmorpgmaker.com/api/v1/introduction/roles.html#users-query)!**
+**Ces points de terminaison requièrent [users.query API Role](/en-US/api/v1/introduction/roles.html#users-query)!**
 
 ## Liste Utilisateurs
 

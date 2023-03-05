@@ -415,3 +415,8 @@ ul.horizontal {
 	flex-direction: row;
 	justify-content: space-around;
 }
+
+video {
+	max-height: initial !important;
+	max-width: 100%;
+}

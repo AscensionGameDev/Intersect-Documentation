@@ -26,7 +26,11 @@ async function getCommits(url: string) {
 	try {
 		const token = import.meta.env.GITHUB_TOKEN;
 		if (!token) {
-			console.log("Skipping fetch");
+			if (import.meta.env.MODE.toLowerCase() === "debug") {
+				console.warn(
+					"Skipping fetch because `GITHUB_TOKEN` is not set in the .env file at the root of this repository!"
+				);
+			}
 			return [] as Commit[];
 		}
 

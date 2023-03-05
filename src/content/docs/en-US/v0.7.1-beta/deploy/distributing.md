@@ -30,7 +30,7 @@ If you are wanting to distrbute your game without any sort of updating capabilit
 
 ## Auto Updater
 
-If you want to distrbute your game using Intersect's embedded updater then the files you can include far fewer files in your installer/zip archive. Click here for instructions on how to [setup and configure your updater](autoupdater.md).
+If you want to distrbute your game using Intersect's embedded updater then the files you can include far fewer files in your installer/zip archive. Click here for instructions on how to [setup and configure your updater](updater.md).
 
 The files you will want to include are below:
 
