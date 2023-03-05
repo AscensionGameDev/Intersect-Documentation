@@ -1,3 +1,5 @@
+import type { VersionKey } from './versioning';
+
 export enum KnownLanguageCodes {
 	'en-US',
 	es,
@@ -99,9 +101,12 @@ export type HashGeneratorStrings = {
 };
 
 export type SearchStrings = {
+	DisplayError: string;
 	Empty: string;
+	FailedToLoadSearchIndex: string;
+	NoSearchIndexForLanguage: string,
+	NoSearchIndexForVersion: string;
 	OpenSearch: string;
-	PlaceholderInput: string;
 };
 
 export type VersionPickerStrings = {
@@ -142,7 +147,9 @@ export interface LocalizedSidebar {
 	[partialUrl: string]: Array<SidebarItem> | LocalizedSidebar;
 }
 
-export type VersionedNavbar = Record<string, Array<NavbarItem>>;
+export type LocalizedNavbar = Array<NavbarItem>;
+
+export type VersionedNavbar = Record<VersionKey, LocalizedNavbar>;
 
 export interface LocalizedSite {
 	disabled?: boolean;
