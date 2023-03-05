@@ -1,4 +1,4 @@
-import type { KnownLanguageCode } from './i18n';
+import type { LocalizedLookup } from './i18n';
 
 export type Version = `v${string}`;
 
@@ -9,7 +9,7 @@ export type LabeledVersion = {
 	value: VersionKey;
 };
 
-export type VersionedLookup<TValue> = Record<VersionKey, Record<KnownLanguageCode, TValue>>;
+export type VersionedLookup<TValue> = Record<VersionKey, LocalizedLookup<TValue>>;
 
 const PATTERN_VERSION = /^v\d+(.\d+(.\d+)?)?(-[^+]+)?(\+.+)?$/;
 

@@ -5,7 +5,9 @@ import { getCacheStrategy } from '../../caching';
 import { buildSlug } from '../../slugs';
 import { emphasizeMarked, markCaseInsensitive } from '../../utils';
 import {
-	VersionKey, VersionedLookup, getVersion
+	VersionKey,
+	VersionedLookup,
+	getVersion
 } from '../../versioning';
 
 type SearchStatus = 'empty' | 'has-error' | 'has-results' | 'loading';
@@ -19,7 +21,7 @@ const SEARCH_STATUSES: readonly [...SearchStatus[]] = [
 
 class SiteSearch extends HTMLElement {
 	private readonly _langCode: KnownLanguageCode;
-	private readonly _loading: Promise<VersionedLookup<IndexedDocument[]>>;
+	private readonly _loading: Promise<VersionedLookup<IndexedDocument[]> | void>;
 	private readonly _sha: string;
 	private readonly _version: VersionKey;
 
@@ -45,6 +47,7 @@ class SiteSearch extends HTMLElement {
 
 		const shadowRoot = this.attachShadow({ mode: 'closed' });
 		const shadowProxy = new Proxy<
+			/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 			Record<string | number | symbol, any>
 		>(this, {
 			get: (target, key) =>
@@ -67,9 +70,6 @@ class SiteSearch extends HTMLElement {
 			if (target === modalContainer) {
 				modalContainer.classList.remove('open');
 			}
-		});
-		modalContainer.addEventListener('keypress', (event) => {
-			console.log(event);
 		});
 
 		const dummyTrigger = searchContainer.querySelector(
@@ -95,7 +95,7 @@ class SiteSearch extends HTMLElement {
 			this.updateResults(event as InputEvent)
 		);
 
-		this._loading = this.loadData();
+		this._loading = this.loadData().catch(reason => console.error(reason));
 	}
 
 	private async loadData() {
@@ -114,19 +114,18 @@ class SiteSearch extends HTMLElement {
 
 		if (!searchResponse.ok) {
 			searchContainer.classList.add('has-error');
-			console.log('error');
-			return {} as any;
+			this.setStatus('has-error', 'Failed to load search index');
+			throw new Error(`Failed to load search index for ${this._langCode}/${this._version}: ${searchResponse.status}: ${searchResponse.statusText}`);
 		}
 
 		try {
-			return (await searchResponse.json()) as Record<
-				KnownLanguageCode,
-				IndexedDocument[]
-			>;
+			return (await searchResponse.json()) as VersionedLookup<IndexedDocument[]>;
 		} catch (error) {
-			console.error(error);
 			searchContainer.classList.add('has-error');
-			return {} as any;
+			this.setStatus('has-error', 'Failed to load search index');
+			throw new Error(`Failed to parse search index for ${this._langCode}/${this._version}: ${error}`, {
+				cause: error
+			});
 		} finally {
 			searchContainer.classList.remove('loading');
 		}
@@ -173,6 +172,10 @@ class SiteSearch extends HTMLElement {
 		const target = event.target as HTMLInputElement;
 
 		const data = await this._loading;
+		if (!data) {
+			// Handles the case where it failed
+			return;
+		}
 
 		const { value: query } = target;
 

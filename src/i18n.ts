@@ -9,6 +9,8 @@ export enum KnownLanguageCodes {
 
 export type KnownLanguageCode = keyof typeof KnownLanguageCodes;
 
+export type LocalizedLookup<TValue> = Record<KnownLanguageCode, TValue>;
+
 export interface Language {
 	name: Record<KnownLanguageCode, string>;
 }
