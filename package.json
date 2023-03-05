@@ -44,7 +44,7 @@
 		"postcss-html": "^1.5.0",
 		"rehype-autolink-headings": "^6.1.1",
 		"rehype-slug": "^5.1.0",
-		"rehype-video": "^1.2.2",
+		"rehype-video": "github:AscensionGameDev/Intersect-Documentation#rehype-video/main",
 		"remark-lint": "^9.1.1",
 		"remark-reference-links": "^6.0.1",
 		"remark-validate-links": "^12.1.0",
