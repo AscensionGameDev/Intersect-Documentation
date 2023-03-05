@@ -182,16 +182,6 @@ const metadata = await getMetadata();
 			flex-direction: column;
 		}
 
-		.has-error section.error,
-		.has-results section.results {
-			display: initial;
-		}
-
-		.empty section.empty,
-		.loading section.loading {
-			display: flex;
-		}
-
 		section.empty,
 		section.loading,
 		section.results {
@@ -200,6 +190,16 @@ const metadata = await getMetadata();
 			justify-content: center;
 			max-height: calc(100% - 3em);
 			overflow-y: scroll;
+		}
+
+		.has-error section.error,
+		.has-results section.results {
+			display: initial;
+		}
+
+		.empty section.empty,
+		.loading section.loading {
+			display: flex;
 		}
 
 		section.empty ::slotted(*),
