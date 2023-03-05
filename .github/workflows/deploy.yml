@@ -42,7 +42,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
         with:
-          token: ${{ secrets.INTERSECTBOT_ACCESS_TOKEN }}
+          token: ${{ secrets.INTERSECTBOT_PAGES_TOKEN }}
 
       # - name: Setup Node.js environment
       #   uses: actions/setup-node@v3.1.1
