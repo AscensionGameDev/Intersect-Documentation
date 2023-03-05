@@ -3,7 +3,7 @@ import type { FunctionalComponent } from 'preact';
 import type { MouseEvent } from 'react';
 import { unescape } from 'html-escaper';
 import {
-	useState, useEffect, useRef 
+	useEffect, useRef, useState 
 } from 'preact/hooks';
 
 import './TableOfContents.css';

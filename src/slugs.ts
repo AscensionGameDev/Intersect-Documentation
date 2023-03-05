@@ -1,8 +1,40 @@
 import type { KnownLanguageCode } from './i18n';
 
-export function resolveSlug(langCode: KnownLanguageCode, slug: string, version?: string): string;
-export function resolveSlug(langCode: KnownLanguageCode, slug?: string, version?: string): string | undefined;
-export function resolveSlug(langCode: KnownLanguageCode, slug?: string, version?: string) {
+export function buildSlug(
+	langCode: KnownLanguageCode,
+	pathname: string,
+	version: string
+) {
+	try {
+		/* fully qualified URL */
+		new URL(pathname);
+		return pathname;
+	} catch {
+		/* ignore */
+	}
+
+	const parts = [langCode, version === 'latest' ? '' : version, pathname];
+
+	const dirty = `/${parts.join('/')}`;
+	const sanitized = dirty.replace(/\/+/g, '/');
+	return sanitized;
+}
+
+export function resolveSlug(
+	langCode: KnownLanguageCode,
+	slug: string,
+	version?: string
+): string;
+export function resolveSlug(
+	langCode: KnownLanguageCode,
+	slug?: string,
+	version?: string
+): string | undefined;
+export function resolveSlug(
+	langCode: KnownLanguageCode,
+	slug?: string,
+	version?: string
+) {
 	if (typeof slug !== 'string') {
 		return slug;
 	}

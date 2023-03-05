@@ -1,24 +1,45 @@
 ---
 import type { KnownLanguageCode } from '../../i18n';
 import Intersect from '../Icons/Intersect.astro';
+import { getMetadata } from '../../metadata';
+import { SITE } from '../../site';
 
 type Props = {
 	langCode: KnownLanguageCode;
 };
 
 const { langCode } = Astro.props;
+const site = SITE[langCode];
+const { Search } = site.components;
+const metadata = await getMetadata();
 ---
 
 <template name="site-search">
-	<div class="search-container">
-		<input
-			aria-label="Search"
-			autocomplete="off"
-			placeholder=""
-			spellcheck="false"
-			type="text"
-			value=""
-		/>
+	<div class="search-container" aria-role="search">
+		<section class="modal container">
+			<section class="search modal">
+				<input
+					aria-role="searchbox"
+					aria-label="Search"
+					autocomplete="off"
+					placeholder={Search.PlaceholderInput}
+					spellcheck="true"
+					type="text"
+				/>
+				<section class="error"></section>
+				<section class="loading">
+					<slot is:inline name="loading" />
+				</section>
+				<section class="empty">
+					<slot is:inline name="empty-state" />
+				</section>
+				<section class="results"></section>
+			</section>
+		</section>
+		<button
+			class="dummy trigger"
+			aria-label={Search.OpenSearch}
+			title={Search.OpenSearch}></button>
 		<svg>
 			<path
 				d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
@@ -27,15 +48,6 @@ const { langCode } = Astro.props;
 				stroke-linecap="round"
 				stroke-linejoin="round"></path>
 		</svg>
-		<section class="search-dropdown">
-			<div class="error-message">
-				<slot name="error">An error occurred!</slot>
-			</div>
-			<div class="spinner">
-				<slot name="spinner">*</slot>
-			</div>
-			<div class="results"></div>
-		</section>
 	</div>
 
 	<style>
@@ -48,9 +60,36 @@ const { langCode } = Astro.props;
 		}
 
 		svg {
-			fill: currentColor;
-			height: 1.375em;
-			width: 1.375em;
+			--search-icon-size: 1.25em;
+
+			color: var(--theme-text);
+			fill: none;
+			height: var(--search-icon-size);
+			pointer-events: none;
+			position: absolute;
+			right: 1rem;
+			width: var(--search-icon-size);
+		}
+
+		input {
+			background-color: var(--theme-bg);
+			border: none;
+			border-bottom: calc(max(0.125vmin, 1px)) solid var(--theme-text-lighter);
+			cursor: text;
+			line-height: 2em;
+			margin-bottom: 1em;
+			outline: none;
+			padding: 0.25em 1em;
+			position: sticky;
+			transition-duration: 0.25s;
+			transition-property: border-color;
+			transition-timing-function: ease-in-out;
+			width: calc(100% - 2em);
+		}
+
+		input:hover,
+		input:focus {
+			border-color: var(--theme-text-light);
 		}
 
 		.search-container {
@@ -61,122 +100,214 @@ const { langCode } = Astro.props;
 			position: relative;
 		}
 
-		.search-container svg {
-			color: var(--theme-text);
-			fill: none;
-			pointer-events: none;
-			position: absolute;
-			right: 1em;
-		}
-
-		.search-container input {
+		.dummy {
+			align-items: center;
 			background-color: var(--theme-bg);
 			border: calc(max(0.125vmin, 1px)) solid var(--theme-text-lighter);
 			border-radius: 2em;
-			cursor: text;
+			cursor: pointer;
+			display: flex;
+			flex-direction: column;
+			height: 2em;
+			justify-content: center;
 			line-height: 2em;
 			outline: none;
-			padding: 0 2em;
+			padding: 0;
+			position: relative;
 			transition-duration: 0.25s;
-			transition-property: border-color, width;
+			transition-property: border-color, border-radius;
 			transition-timing-function: ease-in-out;
-			width: 0rem;
+			width: 4em;
 		}
 
-		.search-container input:not(:placeholder-shown),
-		.search-container input:focus {
+		.dummy:hover {
+			border-radius: 0;
+		}
+
+		.dummy:hover,
+		.modal.container.open + .dummy {
 			border-color: var(--theme-text-light);
-			width: 100%;
 		}
 
-		.search-dropdown {
-			background-color: var(--theme-bg);
-			border: 1px solid var(--theme-text-light);
-			border-top: none;
-			display: none;
-			min-height: 2em;
-			position: absolute;
-			right: 1em;
-			top: calc(1.75em);
-			transition-duration: 0.25s;
-			transition-property: width;
-			transition-timing-function: ease-in-out;
-			width: 0;
-			z-index: 1;
+		.search-container input:hover,
+		.search-container:focus-within input {
+			border-radius: 0;
 		}
 
-		.search-dropdown > * > * {
-			padding: 0.25em 1em;
+		.modal.container {
+			background-color: rgba(0, 0, 0, 50%);
+			bottom: 0;
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+			left: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
+			width: 100vw;
+			z-index: 1000;
 		}
 
-		input:not(:placeholder-shown) ~ .search-dropdown,
-		input:focus ~ .search-dropdown {
-			display: block;
-			min-width: calc(100% - 2em);
-			width: 100%;
-		}
-
-		.search-dropdown .error-message {
+		.modal.container:not(.open) {
 			display: none;
 		}
 
-		.has-error .error-message {
-			display: initial;
-		}
-
-		.search-container:not(.loading) .spinner {
-			display: none;
-		}
-
-		.results {
-			max-height: calc(15 * 2.5em);
-			overflow-x: hidden;
-			overflow-y: scroll;
-			padding: 0.25em;
-			padding-right: 0.5em;
-			position: relative;
-			width: fit-content;
-		}
-
-		.results > a {
-			display: block;
-			min-width: calc(100% - 0.75em);
-			position: relative;
-			width: fit-content;
-		}
-
-		.results > a:not(:first-child) {
-		}
-
-		.results > a:nth-child(odd) {
+		.search.modal {
 			background-color: var(--theme-bg-accent);
+			border: 0.125rem solid var(--theme-text-lighter);
+			border-radius: 0.5rem;
+			display: block;
+			flex: 1 1 1px;
+			height: calc(100vh - 16rem);
+			margin: 8rem auto;
+			max-height: calc(100vh - 16rem);
+			max-width: 90vw;
+			min-width: calc(max(37.5rem, 50vw));
+			overflow: hidden;
+			padding: 1rem;
+			position: relative;
+		}
+
+		section.loading,
+		section.empty {
+			display: flex;
+			flex-direction: column;
+		}
+
+		section.loading,
+		section.empty,
+		section.results {
+			align-items: center;
+			height: calc(100% - 3em);
+			justify-content: center;
+			max-height: calc(100% - 3em);
+			overflow-y: scroll;
+		}
+
+		.search-container:not(.has-error) section.error {
+			display: none;
+		}
+
+		.search-container:not(.loading) section.loading {
+			display: none;
+		}
+
+		.search-container:not(.has-results) section.results {
+			display: none;
+		}
+
+		.search-container.has-results section.empty {
+			display: none;
+		}
+
+		section.loading ::slotted(*),
+		section.empty ::slotted(*) {
+			flex: 1;
+			width: 100%;
+		}
+
+		.results > * {
+			color: var(--theme-text-light);
+			display: block;
+			padding: 0.5em 1em;
+			position: relative;
+		}
+
+		.results a {
+			color: inherit;
+		}
+
+		.results strong {
+			color: var(--theme-text-accent);
+		}
+
+		.results > :nth-child(odd) {
+			background-color: var(--theme-bg);
+		}
+
+		.modal svg,
+		.modal ::slotted(svg) {
+			fill: currentColor;
 		}
 	</style>
 </template>
 
-<site-search lang-code={langCode}>
-	<div slot="spinner">abc</div>
-	<Intersect slot="spinner" animation="inner-spin" />
+<site-search lang-code={langCode} sha={metadata.sha}>
+	<div slot="loading" class="fill">
+		<Intersect animation="inner-spin" />
+	</div>
+	<div slot="empty-state" class="fill">
+		<span class="details">{Search.Empty}</span>
+		<Intersect animation="none" />
+	</div>
 </site-search>
+
+<style>
+	.fill,
+	.fill > :global(:not(svg)) {
+		align-items: center;
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		height: 100%;
+		justify-content: center;
+		position: relative;
+		width: 100%;
+	}
+
+	.fill > .details {
+		justify-content: flex-start;
+		padding-top: 2em;
+		position: absolute;
+		top: 0;
+	}
+
+	.fill :global(svg) {
+		height: 62.5%;
+		opacity: 0.05;
+		width: 62.5%;
+	}
+</style>
 
 <script>
 	import type { KnownLanguageCode } from '../../i18n';
-	import type { IndexedDocument } from '../../pages/search.json';
+	import type { IndexedDocument } from '../../pages/search/[langCode].json';
 
-	import { get } from '../../pages/search.json';
+	import { getCacheStrategy } from '../../caching';
 
 	import { VersionKey, VersionedLookup, getVersion } from '../../versioning';
+
+	import { buildSlug } from '../../slugs';
+
+	type SearchStatus = 'empty' | 'has-error' | 'has-results' | 'loading';
+
+	const SEARCH_STATUSES: readonly [...SearchStatus[]] = [
+		'empty',
+		'has-error',
+		'has-results',
+		'loading',
+	];
 
 	class SiteSearch extends HTMLElement {
 		private readonly _langCode: KnownLanguageCode;
 		private readonly _loading: Promise<VersionedLookup<IndexedDocument[]>>;
+		private readonly _sha: string;
 		private readonly _version: VersionKey;
 
 		constructor() {
 			super();
 
-			this._langCode =
-				(this.getAttribute('lang-code') as KnownLanguageCode) ?? 'en-US';
+			const langCode = this.getAttribute('lang-code') ?? 'en-US';
+			this._langCode = langCode as KnownLanguageCode;
+
+			const sha = this.getAttribute('sha');
+			if (sha === null) {
+				throw new Error(
+					'This needs to be in a git repository, failed to get current commit SHA.'
+				);
+			}
+			this._sha = sha;
+
 			this._version = getVersion(location.pathname) ?? 'latest';
 
 			const template = document.querySelector(
@@ -184,15 +315,6 @@ const { langCode } = Astro.props;
 			) as HTMLTemplateElement;
 
 			const shadowRoot = this.attachShadow({ mode: 'closed' });
-			shadowRoot.appendChild(template.content.cloneNode(true));
-
-			const searchContainer =
-				this.shadowRoot?.querySelector('.search-container');
-
-			if (searchContainer) {
-				searchContainer.classList.add('loading');
-			}
-
 			const shadowProxy = new Proxy<Record<string | number | symbol, any>>(
 				this,
 				{
@@ -202,14 +324,46 @@ const { langCode } = Astro.props;
 				}
 			);
 
+			shadowRoot.appendChild(template.content.cloneNode(true));
+
+			const searchContainer = shadowRoot.querySelector(
+				'.search-container'
+			) as HTMLDivElement;
+
+			searchContainer.classList.add('loading');
+
+			const modalContainer = searchContainer.querySelector(
+				'.modal.container'
+			) as HTMLElement;
+			modalContainer.addEventListener('click', ({ target }) => {
+				if (target === modalContainer) {
+					modalContainer.classList.remove('open');
+				}
+			});
+			modalContainer.addEventListener('keypress', (event) => {
+				console.log(event);
+			});
+
+			const dummyTrigger = searchContainer.querySelector(
+				'button.dummy.trigger'
+			) as HTMLButtonElement;
+
+			const input = searchContainer.querySelector('input') as HTMLInputElement;
+
+			if (dummyTrigger) {
+				dummyTrigger.addEventListener('click', () => {
+					modalContainer.classList.add('open');
+					input.focus();
+				});
+			}
+
 			this.loadData = this.loadData.bind(shadowProxy);
+			this.setStatus = this.setStatus.bind(shadowProxy);
 			this.updateResults = this.updateResults.bind(shadowProxy);
 
-			shadowRoot
-				.querySelector('input')
-				?.addEventListener('input', (event) =>
-					this.updateResults(event as InputEvent)
-				);
+			input?.addEventListener('input', (event) =>
+				this.updateResults(event as InputEvent)
+			);
 
 			this._loading = this.loadData();
 		}
@@ -221,24 +375,24 @@ const { langCode } = Astro.props;
 				throw new Error('Invalid container!');
 			}
 
-			// const searchResponse = await fetch('/search.json');
+			const url = `/search/${this._langCode}.json`;
+			const cache = getCacheStrategy(url, this._sha);
 
-			// if (!searchResponse.ok) {
-			// 	searchContainer.classList.add('has-error');
-			// 	return {} as any;
-			// }
+			const searchResponse = await fetch(url, {
+				cache,
+			});
+
+			if (!searchResponse.ok) {
+				searchContainer.classList.add('has-error');
+				console.log('error');
+				return {} as any;
+			}
 
 			try {
-				// return (await searchResponse.json()) as Record<
-				// 	KnownLanguageCode,
-				// 	IndexedDocument[]
-				// >;
-				const { body } = await get();
-				const values = JSON.parse(body) as Record<
+				return (await searchResponse.json()) as Record<
 					KnownLanguageCode,
 					IndexedDocument[]
 				>;
-				return values;
 			} catch (error) {
 				console.error(error);
 				searchContainer.classList.add('has-error');
@@ -248,9 +402,42 @@ const { langCode } = Astro.props;
 			}
 		}
 
+		private setStatus(status: SearchStatus): void;
+		private setStatus(status: 'has-error', message: string): void;
+		private setStatus(status: SearchStatus, message?: string) {
+			const searchContainer =
+				this.shadowRoot?.querySelector('.search-container');
+			if (!searchContainer) {
+				return;
+			}
+
+			if (message) {
+				const errorContainer = searchContainer.querySelector('.error');
+				if (errorContainer) {
+					errorContainer.textContent = message;
+				} else {
+					console.error(
+						`Failed to get error container, unable to show message: ${message}`
+					);
+				}
+			}
+
+			const toDisable = SEARCH_STATUSES.filter((name) => name !== status);
+			for (const name of toDisable) {
+				searchContainer.classList.remove(name);
+			}
+
+			searchContainer.classList.add(status);
+		}
+
 		private async updateResults(event: InputEvent) {
 			if (!this.shadowRoot) {
-				throw new Error('Missing shadow root!');
+				this.setStatus(
+					'has-error',
+					'Display error, please try refreshing the page!'
+				);
+				console.error(new Error('Missing shadow root!'));
+				return;
 			}
 
 			const target = event.target as HTMLInputElement;
@@ -266,27 +453,40 @@ const { langCode } = Astro.props;
 
 			const searchSpace = versionSpace[this._langCode];
 
-			const results = searchSpace.filter(
-				(entry) =>
-					entry.title.includes(query) ||
-					entry.description?.includes(query) ||
-					entry.pathname.includes(query)
-			);
+			const results = !query
+				? []
+				: searchSpace.filter(
+						(entry) =>
+							entry.title.includes(query) ||
+							entry.description?.includes(query) ||
+							entry.pathname.includes(query)
+				  );
 
 			const resultsContainer = this.shadowRoot?.querySelector('.results');
 			if (!resultsContainer) {
-				throw new Error('Missing results container!');
+				this.setStatus(
+					'has-error',
+					'Display error, please try refreshing the page!'
+				);
+				console.error(new Error('Missing results container!'));
+				return;
 			}
 
-			const resultElements = results.map((result) => {
+			const resultElements = results.map(({ pathname, title }) => {
+				const result = document.createElement('span');
+
 				const resultLink = document.createElement('a');
-				resultLink.href = result.pathname;
-				console.log(resultLink.innerHTML);
-				resultLink.innerHTML = result.title.replaceAll(
-					query,
+				const slug = buildSlug(this._langCode, pathname, this._version);
+				resultLink.href = slug;
+
+				resultLink.textContent = title.replaceAll(query, '\0');
+				resultLink.innerHTML = resultLink.innerHTML.replaceAll(
+					'\0',
 					`<strong>${query}</strong>`
 				);
-				return resultLink;
+
+				result.appendChild(resultLink);
+				return result;
 			});
 
 			while (resultsContainer.lastChild) {
@@ -297,7 +497,11 @@ const { langCode } = Astro.props;
 				resultsContainer.appendChild(resultElement);
 			}
 
-			console.log({ data, searchSpace, query, results });
+			if (resultElements.length > 0) {
+				this.setStatus('has-results');
+			} else {
+				this.setStatus('empty');
+			}
 		}
 	}
 

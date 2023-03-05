@@ -19,8 +19,8 @@ export default defineConfig({
 					it: 'it',
 					nl: 'nl',
 					'pt-BR': 'pt-BR',
-				}
-			}
+				},
+			},
 		}),
 	],
 	markdown: {},

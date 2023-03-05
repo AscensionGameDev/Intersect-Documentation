@@ -19,15 +19,17 @@ https://user-images.githubusercontent.com/1476550/222871468-e0a0c1ef-c4ba-44f9-a
 ### Packaging Instructions
 
 1. Create 3 directories
-  - one that is your "live" development environment that you will be using to generate this update
-    - this will be the directory that contains the client and editor that you use to modify and test your game
-    - this directory **does not contain the update URL in the configuration file**
-  - one that is a _clean_ "source" copy of the client and editor with their assets, but it does not contain any cache, temporary, log files, etc.
-    - this directory **will contain the a config.json with the update URL**
-    - it should contain the Client.exe, Client.pdb, Editor.exe, Editor.pdb, and your resources directory (which should not have mapcache.db)
-  - one that is the "update" of the update generation process
-    - the first time you run the updater this will be _empty_
-    - NOTE: when you run the updater a second time, do _not_ clear it out first, it will clear out unchanged files and leave only what you need to upload to your file host
+
+- one that is your "live" development environment that you will be using to generate this update
+  - this will be the directory that contains the client and editor that you use to modify and test your game
+  - this directory **does not contain the update URL in the configuration file**
+- one that is a _clean_ "source" copy of the client and editor with their assets, but it does not contain any cache, temporary, log files, etc.
+  - this directory **will contain the a config.json with the update URL**
+  - it should contain the Client.exe, Client.pdb, Editor.exe, Editor.pdb, and your resources directory (which should not have mapcache.db)
+- one that is the "update" of the update generation process
+  - the first time you run the updater this will be _empty_
+  - NOTE: when you run the updater a second time, do _not_ clear it out first, it will clear out unchanged files and leave only what you need to upload to your file host
+
 2. Click on `Tools > Package Update`
 3. On the first window, select the "source" directory that you created in step 1 that **does** contain the config.json with the update URL
 4. On the second window, select the "update" directory that you created (or already had) in step 1

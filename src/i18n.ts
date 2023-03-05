@@ -96,12 +96,19 @@ export type HashGeneratorStrings = {
 	inputPlaceholder: string;
 };
 
+export type SearchStrings = {
+	Empty: string;
+	OpenSearch: string;
+	PlaceholderInput: string;
+};
+
 export type VersionPickerStrings = {
 	Latest: string;
 };
 
 export type Components = {
 	HashGenerator: HashGeneratorStrings;
+	Search: SearchStrings;
 	VersionPicker: VersionPickerStrings;
 };
 

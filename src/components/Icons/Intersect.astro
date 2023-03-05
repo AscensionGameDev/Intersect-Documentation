@@ -9,7 +9,7 @@ const containerClassName = ['logo intersect parts', animation].join(' ').trim();
 ---
 
 {
-	animation && (
+	animation && animation !== 'none' && (
 		<div class={containerClassName}>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -63,12 +63,6 @@ const containerClassName = ['logo intersect parts', animation].join(' ').trim();
 }
 
 <style>
-	.logo.intersect {
-		/* --size: 16em;
-		width: var(--size);
-		height: var(--size); */
-	}
-
 	.parts {
 		position: relative;
 	}
@@ -79,8 +73,6 @@ const containerClassName = ['logo intersect parts', animation].join(' ').trim();
 
 	.inner-spin .inner {
 		animation: rotate-and-scale 6s infinite linear;
-		/* background-color: red; */
-		/* transform-origin: calc(var(--size) / 2); */
 	}
 
 	@keyframes rotate-and-scale {
@@ -111,6 +103,7 @@ const containerClassName = ['logo intersect parts', animation].join(' ').trim();
 		100% {
 			transform: rotate(360deg);
 		}
+
 		/* 0% {
 			transform: rotate(0deg);
 		}

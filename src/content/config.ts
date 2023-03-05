@@ -1,6 +1,6 @@
 // import type { Primitive, ZodLiteral } from 'astro/zod';
 import { defineCollection, z } from 'astro:content';
-import { DEFAULT_LANGUAGE_CODE/*, LANGUAGE_CODES*/ } from '../i18n';
+import { DEFAULT_LANGUAGE_CODE /*, LANGUAGE_CODES*/ } from '../i18n';
 import { SITE } from '../site';
 
 const defaultSite = SITE[DEFAULT_LANGUAGE_CODE];

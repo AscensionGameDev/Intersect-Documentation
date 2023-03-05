@@ -43,6 +43,7 @@ specifiers:
   remark-toc: ^8.0.1
   rollup: ^3.17.3
   semver: ^7.3.8
+  simple-git: ^3.17.0
   stylelint: ^15.2.0
   stylelint-config-astro: ^1.0.4
   stylelint-config-standard: ^30.0.1
@@ -79,6 +80,7 @@ dependencies:
   rehype-accessible-emojis: 0.3.2
   rehype-autolink-headings: 6.1.1
   remark-toc: 8.0.1
+  simple-git: 3.17.0
   yargs: 17.7.1
 
 devDependencies:
@@ -1757,6 +1759,24 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
+
+  /@kwsites/file-exists/1.1.1:
+    resolution:
+      {
+        integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==,
+      }
+    dependencies:
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@kwsites/promise-deferred/1.1.1:
+    resolution:
+      {
+        integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==,
+      }
+    dev: false
 
   /@ljharb/has-package-exports-patterns/0.0.2:
     resolution:
@@ -9984,6 +10004,19 @@ packages:
       {
         integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==,
       }
+
+  /simple-git/3.17.0:
+    resolution:
+      {
+        integrity: sha512-JozI/s8jr3nvLd9yn2jzPVHnhVzt7t7QWfcIoDcqRIGN+f1IINGv52xoZti2kkYfoRhhRvzMSNPfogHMp97rlw==,
+      }
+    dependencies:
+      '@kwsites/file-exists': 1.1.1
+      '@kwsites/promise-deferred': 1.1.1
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /sisteransi/1.0.5:
     resolution:
