@@ -77,7 +77,7 @@
 		"build": "astro build",
 		"dev": "astro dev",
 		"eslint": "eslint",
-		"lint": "eslint . && textlint . && stylelint .",
+		"lint": "eslint . ; textlint . ; stylelint .",
 		"lint:fix": "eslint . --fix && textlint . --fix && stylelint . --fix",
 		"migrate-version": "ts-node --esm ./scripts/migrateVersion.ts",
 		"preview": "astro preview",
