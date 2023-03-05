@@ -24,11 +24,10 @@ type Commit = {
 
 async function getCommits(url: string) {
 	try {
-		const token = import.meta.env.GITHUB_TOKEN ?? "hello";
+		const token = import.meta.env.GITHUB_TOKEN;
 		if (!token) {
-			throw new Error(
-				'Cannot find "GITHUB_TOKEN" used for escaping rate-limiting.'
-			);
+			console.log("Skipping fetch");
+			return [] as Commit[];
 		}
 
 		const auth = `Basic ${Buffer.from(token, "binary").toString("base64")}`;
@@ -76,41 +75,40 @@ const recentContributors = unique.slice(0, 3); // only show avatars for the 3 mo
 const additionalContributors = unique.length - recentContributors.length; // list the rest of them as # of extra contributors
 ---
 
-<!-- Thanks to @5t3ph for https://smolcss.dev/#smol-avatar-list! -->
-<div class="contributors">
-	<ul
-		class="avatar-list"
-		style={`--avatar-count: ${recentContributors.length}`}
-	>
-		{
-			recentContributors.map((item) => (
-				<li>
-					<a href={`https://github.com/${item.login}`}>
-						<img
-							alt={`Contributor ${item.login}`}
-							title={`Contributor ${item.login}`}
-							width="64"
-							height="64"
-							src={`https://avatars.githubusercontent.com/u/${item.id}`}
-						/>
-					</a>
-				</li>
-			))
-		}
-	</ul>
-	{
-		additionalContributors > 0 && (
-			<span>
-				<a
-					href={commitsURL}
-				>{`and ${additionalContributors} additional contributor${
-					additionalContributors > 1 ? "s" : ""
-				}.`}</a>
-			</span>
-		)
-	}
-	{unique.length === 0 && <a href={commitsURL}>Contributors</a>}
-</div>
+<!-- Thanks to @5t3ph for https://smolcss.dev/#smol-avatar-list! -->{
+	unique.length > 0 && (
+		<div class="contributors">
+			<ul
+				class="avatar-list"
+				style={`--avatar-count: ${recentContributors.length}`}
+			>
+				{recentContributors.map((item) => (
+					<li>
+						<a href={`https://github.com/${item.login}`}>
+							<img
+								alt={`Contributor ${item.login}`}
+								title={`Contributor ${item.login}`}
+								width="64"
+								height="64"
+								src={`https://avatars.githubusercontent.com/u/${item.id}`}
+							/>
+						</a>
+					</li>
+				))}
+			</ul>
+			{additionalContributors > 0 && (
+				<span>
+					<a
+						href={commitsURL}
+					>{`and ${additionalContributors} additional contributor${
+						additionalContributors > 1 ? "s" : ""
+					}.`}</a>
+				</span>
+			)}
+			{unique.length === 0 && <a href={commitsURL}>Contributors</a>}
+		</div>
+	)
+}
 
 <style>
 	.avatar-list {
