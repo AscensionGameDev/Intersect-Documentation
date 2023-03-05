@@ -3,58 +3,191 @@ import { Root, Element } from 'hast';
 import { visit } from 'unist-util-visit';
 import { detailsNode } from './detailsNode';
 
+export type Size = '0' | `${number}%` | `${number}em` | `${number}px` | `${number}rem`;
+
 export type RehypeVideoOptions = {
+  /**
+   * If controls should be displayed on the video.
+   *
+   * @default true
+   */
+  controls?: boolean;
+
+  /**
+   * Support `<details>` tag to wrap <video>.
+   * @default false
+   */
+  details?: boolean;
+
+  /**
+   * The maximum height to constraint the <video> element to.
+   *
+   * @default undefined
+   */
+  maxHeight?: Size;
+
+  /**
+   * The maximum height to constraint the <video> element to.
+   *
+   * @default '100%'
+   */
+  maxWidth?: Size;
+
+  /**
+   * If the video should be muted.
+   *
+   * @default true
+   */
+  muted?: boolean;
+
   /**
    * URL suffix verification.
    * @default /\/(.*)(.mp4|.mov)$/
    */
   test?: RegExp;
-  /**
-   * Support `<details>` tag to wrap <video>.
-   * @default true
-   */
-  details?: boolean;
 }
 
-const properties = { muted: 'muted', controls: 'controls', style: 'max-height:640px;' };
-const queryStringToObject = (url: string) =>
-  [...new URLSearchParams(url.split('?!#')[1])].reduce(
+const properties = { muted: 'muted', controls: 'controls' };
+const queryStringToObject = (url: string) => {
+  return [...new URLSearchParams(url.split('?!#')[1])].reduce(
     (a: Record<string, string>, [k, v]) => ((a[k] = v), a),
     {}
   );
+}
 
-function reElement(node: Element, details: boolean, href: string) {
-  const filename = href.split('/').pop()?.replace(/(\?|!|\#|$).+/, '');
-  node.properties = { ...properties, src: href };
-  node.tagName = 'video';
+function reElement(node: Element, options: RehypeVideoOptions, url: URL) {
+  const properties = new Map<string, string>();
+
+  if (options.controls) {
+    properties.set('controls', 'true');
+  }
+
+  const styleParts = [];
+  if (options.maxHeight) {
+    styleParts.push(`max-height: ${options.maxHeight};`);
+  }
+
+  if (options.maxWidth) {
+    styleParts.push(`max-width: ${options.maxWidth};`);
+  }
+
+  if (options.muted) {
+    properties.set('muted', 'true');
+  }
+
+  if (styleParts.length > 0) {
+    properties.set('style', styleParts.join(' '));
+  }
+
+  const attributes = new URLSearchParams(url.hash.slice(1));
+  for (const [name, value] of attributes.entries()) {
+    properties.set(name, value);
+  }
+
+  const title = properties.get('title');
+  if (title && !properties.has('aria-label')) {
+    properties.set('aria-label', title);
+  }
+
+  if (!properties.has('aria-role')) {
+    properties.set('aria-role', 'figure');
+  }
+
+  const urlToEmit = new URL(url);
+  urlToEmit.hash = '';
+  properties.set('src', urlToEmit.href.replace(/http:\/\/localhost/, ''));
+
   node.children = [];
-  const { title = filename }= queryStringToObject(href);
-  if (details) {
-    const reNode = detailsNode(title);
-    reNode.children.push({ ...node });
-    node.children = reNode.children;
-    node.tagName = reNode.tagName;
-    node.properties = reNode.properties;
+
+  node.properties = node.properties ?? {};
+  for (const [name, value] of properties.entries()) {
+    node.properties[name] = value;
+  }
+
+  node.tagName = 'video';
+
+  if (options.details) {
+    const newNode = detailsNode(properties.get('title') ?? urlToEmit.pathname);
+    newNode.children.push({ ...node });
+    Object.assign(node, newNode);
   }
 }
 
+function parseUrl(href: string | URL, base?: string | URL): URL | null {
+  if (href instanceof URL) {
+    return href;
+  }
+
+  if (typeof href !== 'string') {
+    return null;
+  }
+
+  const resolvedBase = base ?? new URL('http://localhost');
+  try {
+    return new URL(href, resolvedBase);
+  } catch {
+    return null;
+  }
+}
+
+const defaultOptions: RehypeVideoOptions = {
+  controls: true,
+  details: false,
+  maxWidth: '100%',
+  muted: true,
+  test: /\/(.*)(.mp4|.mov)$/
+};
+
+export const legacyPreset: RehypeVideoOptions = {
+  controls: true,
+  details: true,
+  maxHeight: '640px',
+  muted: true,
+  test: /\/(.*)(.mp4|.mov)$/
+};
+
 const RehypeVideo: Plugin<[RehypeVideoOptions?], Root> = (options) => {
-  const { test = /\/(.*)(.mp4|.mov)$/, details = true } = options || {};
+  const sanitizedOptions = Object.assign(
+    typeof options === 'object' && options !== null ? options : {},
+    defaultOptions
+  );
+
+  const { test = defaultOptions.test! } = sanitizedOptions;
   return (tree) => {
     visit(tree, 'element', (node, index, parent) => {
-      const isChecked = (str: string) => test.test(str.replace(/(\?|!|\#|$).+/g, '').toLocaleLowerCase())
       const child = node.children[0];
-      const delimiter = /((?:https?:\/\/)(?:(?:[a-z0-9]?(?:[a-z0-9\-]{1,61}[a-z0-9])?\.[^\.|\s])+[a-z\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\d{1,5})*[a-z0-9.,_\/~#&=;%+?\-\\(\\)]*)/g;
-      // const delimiter = /((?:https?:\/\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\-]{1,61}[a-z0-9])?\.[^\.|\s])+[a-z\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\d{1,5})*[a-z0-9.,_\/~#&=;%+?\-\\(\\)]*)/g;
 
-      if (node.tagName === 'p' && node.children.length === 1) {
-        if (child.type === 'text' && delimiter.test(child.value) && isChecked(child.value)) {
-          reElement(node, details, child.value);
-        }
-        if (child.type === 'element' && child.tagName === 'a' && child.properties && typeof child.properties.href === 'string' && isChecked(child.properties.href)) {
-          reElement(node, details, child.properties.href);
-        }
+      if (node.tagName !== 'p' || node.children.length !== 1) {
+        return;
       }
+
+      let possibleUrl: string | undefined;
+      switch (child.type) {
+        case 'text':
+          possibleUrl = child.value;
+          break;
+
+        case 'element':
+          if (child.tagName === 'a' && typeof child.properties?.href === 'string') {
+            possibleUrl = child.properties.href;
+          }
+          break;
+      }
+
+      if (possibleUrl === undefined) {
+        return;
+      }
+
+      const url = parseUrl(possibleUrl);
+      if (url === null) {
+        return;
+      }
+
+      if (!test.test(url.pathname)) {
+        return;
+      }
+
+      reElement(node, sanitizedOptions, url);
     });
   }
 }
