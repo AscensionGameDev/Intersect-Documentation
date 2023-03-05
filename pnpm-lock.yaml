@@ -40,7 +40,7 @@ specifiers:
   react-dom: ^18.1.0
   rehype-autolink-headings: ^6.1.1
   rehype-slug: ^5.1.0
-  rehype-video: ^1.2.2
+  rehype-video: github:AscensionGameDev/Intersect-Documentation#rehype-video/main
   remark-lint: ^9.1.1
   remark-reference-links: ^6.0.1
   remark-toc: ^8.0.1
@@ -112,7 +112,7 @@ devDependencies:
   postcss-html: 1.5.0
   rehype-autolink-headings: 6.1.1
   rehype-slug: 5.1.0
-  rehype-video: 1.2.2
+  rehype-video: github.com/AscensionGameDev/Intersect-Documentation/dafe87662c7a0048b8ebec136f3ce3712e106d00
   remark-lint: 9.1.1
   remark-reference-links: 6.0.1
   remark-validate-links: 12.1.0
@@ -6956,14 +6956,6 @@ packages:
       unified: 10.1.2
     dev: false
 
-  /rehype-video/1.2.2:
-    resolution: {integrity: sha512-p18JzIZiFSUqk21RHeJTU/7/7n9Moy0aQzFzbujVWb4vPrRZHQAN0ZfzTV8J32yDsZE5d6JDGWOzmMdvJrHq0w==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-    dependencies:
-      unified: 10.1.2
-      unist-util-visit: 4.1.2
-    dev: true
-
   /rehype/12.0.1:
     resolution: {integrity: sha512-ey6kAqwLM3X6QnMDILJthGvG1m1ULROS9NT4uG9IDCuv08SFyLlreSuvOa//DgEvbXx62DS6elGVqusWhRUbgw==}
     dependencies:
@@ -8752,6 +8744,17 @@ packages:
 
   /zwitch/2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
+
+  github.com/AscensionGameDev/Intersect-Documentation/dafe87662c7a0048b8ebec136f3ce3712e106d00:
+    resolution: {tarball: https://codeload.github.com/AscensionGameDev/Intersect-Documentation/tar.gz/dafe87662c7a0048b8ebec136f3ce3712e106d00}
+    name: rehype-video
+    version: 1.2.2
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      '@types/hast': 2.3.4
+      unified: 10.1.2
+      unist-util-visit: 4.1.2
+    dev: true
 
   github.com/csstree/stylelint-validator/d3a16e2d4f8ef76efe422b5111cff237e1470635_stylelint@15.2.0:
     resolution: {tarball: https://codeload.github.com/csstree/stylelint-validator/tar.gz/d3a16e2d4f8ef76efe422b5111cff237e1470635}

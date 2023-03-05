@@ -45,10 +45,7 @@ export default defineConfig({
 			rehypeAutolinkHeadings,
 			rehypeRewriteUrls,
 			rehypeSlug,
-			[
-				rehypeVideo,
-				{ details: false }
-			],
+			rehypeVideo,
 		],
 		remarkPlugins: [
 			remarkLint,
