@@ -1,14 +1,10 @@
 import type { KnownLanguageCode, SearchStrings } from '../../i18n';
 import type { IndexedDocument } from '../../pages/search/[langCode].json';
+import type { VersionKey, VersionedLookup } from '../../versioning';
 
 import { getCacheStrategy } from '../../caching';
 import { buildSlug } from '../../slugs';
 import { emphasizeMarked, markCaseInsensitive } from '../../utils';
-import {
-	VersionKey,
-	VersionedLookup,
-	getVersion
-} from '../../versioning';
 import { SITE } from '../../site';
 
 type SearchStatus = 'empty' | 'has-error' | 'has-results' | 'loading';
