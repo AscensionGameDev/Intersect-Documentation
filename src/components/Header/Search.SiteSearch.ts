@@ -42,7 +42,7 @@ class SiteSearch extends HTMLElement {
 		}
 		this._sha = sha;
 
-		this._version = getVersion(location.pathname) ?? 'latest';
+		this._version = (this.getAttribute('version') ?? 'latest') as VersionKey;
 
 		const template = document.querySelector(
 			'template[name="site-search"]'

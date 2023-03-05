@@ -63,11 +63,14 @@ export const get: APIRoute = async ({ params }: APIContext) => {
 				return versionedLocaleMap;
 			}
 
+			let pathname = resolveSlug(langCode, slug).slice(langCode.length + 1);
+			pathname = pathname.slice(pathname.indexOf('/', 1));
+
 			const doc: IndexedDocument = {
 				// body: trimmedBody,
 				// lang,
 				ogLocale,
-				pathname: resolveSlug(langCode, slug).slice(langCode.length + 1),
+				pathname,
 				title,
 			};
 

@@ -3,12 +3,14 @@ import type { KnownLanguageCode } from "../../i18n";
 import Intersect from "../Icons/Intersect.astro";
 import { getMetadata } from "../../metadata";
 import { SITE } from "../../site";
+import type { VersionKey } from "../../versioning";
 
 type Props = {
 	langCode: KnownLanguageCode;
+	version: VersionKey;
 };
 
-const { langCode } = Astro.props;
+const { langCode, version } = Astro.props;
 const site = SITE[langCode];
 const { Search } = site.components;
 const metadata = await getMetadata();
@@ -232,7 +234,7 @@ const metadata = await getMetadata();
 	</style>
 </template>
 
-<site-search lang-code={langCode} sha={metadata.sha} hidden>
+<site-search lang-code={langCode} sha={metadata.sha} version={version} hidden>
 	<div slot="loading" class="fill">
 		<Intersect animation="inner-spin" />
 	</div>
