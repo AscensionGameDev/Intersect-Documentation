@@ -22,7 +22,6 @@ const metadata = await getMetadata();
 					aria-role="searchbox"
 					aria-label="Search"
 					autocomplete="off"
-					placeholder={Search.PlaceholderInput}
 					spellcheck="true"
 					type="text"
 				/>
@@ -57,6 +56,24 @@ const metadata = await getMetadata();
 				0.75rem + 0.375vw + var(--user-font-scale),
 				1rem
 			);
+		}
+
+		.modal.container {
+			background-color: rgba(0, 0, 0, 50%);
+			bottom: 0;
+			display: none;
+			flex-direction: column;
+			height: 100vh;
+			left: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
+			width: 100vw;
+			z-index: 1000;
+		}
+
+		.modal.container.open {
+			display: flex;
 		}
 
 		svg {
@@ -135,24 +152,6 @@ const metadata = await getMetadata();
 			border-radius: 0;
 		}
 
-		.modal.container {
-			background-color: rgba(0, 0, 0, 50%);
-			bottom: 0;
-			display: flex;
-			flex-direction: column;
-			height: 100vh;
-			left: 0;
-			position: fixed;
-			right: 0;
-			top: 0;
-			width: 100vw;
-			z-index: 1000;
-		}
-
-		.modal.container:not(.open) {
-			display: none;
-		}
-
 		.search.modal {
 			background-color: var(--theme-bg-accent);
 			border: 0.125rem solid var(--theme-text-lighter);
@@ -169,14 +168,30 @@ const metadata = await getMetadata();
 			position: relative;
 		}
 
+		section.empty,
+		section.error,
 		section.loading,
-		section.empty {
-			display: flex;
+		section.results {
+			display: none;
+		}
+
+		section.empty,
+		section.loading {
 			flex-direction: column;
 		}
 
-		section.loading,
+		.has-error section.error,
+		.has-results section.results {
+			display: initial;
+		}
+
+		.empty section.empty,
+		.loading section.loading {
+			display: flex;
+		}
+
 		section.empty,
+		section.loading,
 		section.results {
 			align-items: center;
 			height: calc(100% - 3em);
@@ -185,24 +200,8 @@ const metadata = await getMetadata();
 			overflow-y: scroll;
 		}
 
-		.search-container:not(.has-error) section.error {
-			display: none;
-		}
-
-		.search-container:not(.loading) section.loading {
-			display: none;
-		}
-
-		.search-container:not(.has-results) section.results {
-			display: none;
-		}
-
-		.search-container.has-results section.empty {
-			display: none;
-		}
-
-		section.loading ::slotted(*),
-		section.empty ::slotted(*) {
+		section.empty ::slotted(*),
+		section.loading ::slotted(*) {
 			flex: 1;
 			width: 100%;
 		}
@@ -233,7 +232,7 @@ const metadata = await getMetadata();
 	</style>
 </template>
 
-<site-search lang-code={langCode} sha={metadata.sha}>
+<site-search lang-code={langCode} sha={metadata.sha} hidden>
 	<div slot="loading" class="fill">
 		<Intersect animation="inner-spin" />
 	</div>

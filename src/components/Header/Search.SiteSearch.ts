@@ -1,4 +1,4 @@
-import type { KnownLanguageCode } from '../../i18n';
+import type { KnownLanguageCode, SearchStrings } from '../../i18n';
 import type { IndexedDocument } from '../../pages/search/[langCode].json';
 
 import { getCacheStrategy } from '../../caching';
@@ -9,6 +9,7 @@ import {
 	VersionedLookup,
 	getVersion
 } from '../../versioning';
+import { SITE } from '../../site';
 
 type SearchStatus = 'empty' | 'has-error' | 'has-results' | 'loading';
 
@@ -20,6 +21,7 @@ const SEARCH_STATUSES: readonly [...SearchStatus[]] = [
 ];
 
 class SiteSearch extends HTMLElement {
+	private readonly _i18n: SearchStrings;
 	private readonly _langCode: KnownLanguageCode;
 	private readonly _loading: Promise<VersionedLookup<IndexedDocument[]> | void>;
 	private readonly _sha: string;
@@ -30,6 +32,7 @@ class SiteSearch extends HTMLElement {
 
 		const langCode = this.getAttribute('lang-code') ?? 'en-US';
 		this._langCode = langCode as KnownLanguageCode;
+		this._i18n = SITE[this._langCode].components.Search;
 
 		const sha = this.getAttribute('sha');
 		if (sha === null) {
@@ -61,7 +64,8 @@ class SiteSearch extends HTMLElement {
 			},
 		});
 
-		shadowRoot.appendChild(template.content.cloneNode(true));
+		const clone = template.content.cloneNode(true) as DocumentFragment;
+		shadowRoot.appendChild(clone);
 
 		const searchContainer = shadowRoot.querySelector(
 			'.search-container'
@@ -102,6 +106,7 @@ class SiteSearch extends HTMLElement {
 		);
 
 		this._loading = this.loadData().catch(reason => console.error(reason));
+		this.attributes.removeNamedItem('hidden');
 	}
 
 	private async loadData() {
@@ -120,20 +125,20 @@ class SiteSearch extends HTMLElement {
 
 		if (!searchResponse.ok) {
 			searchContainer.classList.add('has-error');
-			this.setStatus('has-error', 'Failed to load search index');
+			this.setStatus('has-error', this._i18n.FailedToLoadSearchIndex);
 			throw new Error(`Failed to load search index for ${this._langCode}/${this._version}: ${searchResponse.status}: ${searchResponse.statusText}`);
 		}
 
 		try {
-			return (await searchResponse.json()) as VersionedLookup<IndexedDocument[]>;
+			const data = (await searchResponse.json()) as VersionedLookup<IndexedDocument[]>;
+			this.setStatus('empty');
+			return data;
 		} catch (error) {
 			searchContainer.classList.add('has-error');
-			this.setStatus('has-error', 'Failed to load search index');
+			this.setStatus('has-error', this._i18n.FailedToLoadSearchIndex);
 			throw new Error(`Failed to parse search index for ${this._langCode}/${this._version}: ${error}`, {
 				cause: error
 			});
-		} finally {
-			searchContainer.classList.remove('loading');
 		}
 	}
 
@@ -167,10 +172,7 @@ class SiteSearch extends HTMLElement {
 
 	private async updateResults(event: InputEvent) {
 		if (!this.shadowRoot) {
-			this.setStatus(
-				'has-error',
-				'Display error, please try refreshing the page!'
-			);
+			this.setStatus('has-error', this._i18n.DisplayError);
 			console.error(new Error('Missing shadow root!'));
 			return;
 		}
@@ -180,6 +182,7 @@ class SiteSearch extends HTMLElement {
 		const data = await this._loading;
 		if (!data) {
 			// Handles the case where it failed
+			// The error was already displayed for this
 			return;
 		}
 
@@ -187,10 +190,15 @@ class SiteSearch extends HTMLElement {
 
 		const versionSpace = data[this._version];
 		if (!versionSpace) {
+			this.setStatus('has-error', this._i18n.NoSearchIndexForVersion);
 			return;
 		}
 
 		const searchSpace = versionSpace[this._langCode];
+		if (!searchSpace) {
+			this.setStatus('has-error', this._i18n.NoSearchIndexForLanguage);
+			return;
+		}
 
 		const results = !query
 			? []
@@ -203,10 +211,7 @@ class SiteSearch extends HTMLElement {
 
 		const resultsContainer = this.shadowRoot?.querySelector('.results');
 		if (!resultsContainer) {
-			this.setStatus(
-				'has-error',
-				'Display error, please try refreshing the page!'
-			);
+			this.setStatus('has-error', this._i18n.DisplayError);
 			console.error(new Error('Missing results container!'));
 			return;
 		}
