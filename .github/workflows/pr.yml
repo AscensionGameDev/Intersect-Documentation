@@ -29,6 +29,10 @@ jobs:
         with:
           node-version: 18.12.1
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.28.0
+
       - name: Install Dependencies
         run: pnpm install
 
