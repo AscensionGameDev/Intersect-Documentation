@@ -2,10 +2,10 @@
 	--font-fallback: -apple-system, blinkmacsystemfont, segoe ui, helvetica, arial,
 		sans-serif, apple color emoji, segoe ui emoji;
 	--font-body: system-ui, var(--font-fallback);
-	--font-mono: 'IBM Plex Mono', consolas, 'Andale Mono WT', 'Andale Mono',
-		'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
-		'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', monaco,
-		'Courier New', courier, monospace;
+	--font-mono: 'Courier New', courier, 'IBM Plex Mono', consolas,
+		'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter',
+		'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono',
+		'Nimbus Mono L', monaco, monospace;
 
 	/*
    * Variables with --color-base prefix define
@@ -44,7 +44,9 @@
 	--color-gray-50: var(--color-base-gray), 50%;
 	--color-gray-60: var(--color-base-gray), 60%;
 	--color-gray-70: var(--color-base-gray), 70%;
+	--color-gray-75: var(--color-base-gray), 75%;
 	--color-gray-80: var(--color-base-gray), 80%;
+	--color-gray-85: var(--color-base-gray), 85%;
 	--color-gray-90: var(--color-base-gray), 90%;
 	--color-gray-95: var(--color-base-gray), 95%;
 	--color-blue: var(--color-base-blue), 61%;
@@ -57,19 +59,20 @@
 	--base-font-size: 100%;
 	--z-index-top: 9999;
 	--z-index-a11y: 10000;
-	--theme-accent: hsla(var(--color-blue), 1);
-	--theme-text-accent: hsla(var(--color-blue), 1);
-	--theme-accent-opacity: 0.15;
+	--theme-accent: hsl(206deg, 47%, 27%);
+	--theme-accent-secondary: hsl(206deg, 47%, 54%);
+	--theme-text-accent: hsla(var(--color-base-blue), 40%, 1);
+	--theme-accent-opacity: 1;
 	--theme-divider: hsla(var(--color-gray-95), 1);
 	--theme-text: hsla(var(--color-gray-10), 1);
-	--theme-text-light: hsla(var(--color-gray-40), 1);
+	--theme-text-light: hsla(var(--color-gray-20), 1);
 
 	/* @@@: not used anywhere */
-	--theme-text-lighter: hsla(var(--color-gray-80), 1);
+	--theme-text-lighter: hsla(var(--color-gray-40), 1);
 	--theme-bg: hsla(var(--color-base-white), 100%, 1);
-	--theme-bg-hover: hsla(var(--color-gray-95), 1);
-	--theme-bg-offset: hsla(var(--color-gray-90), 1);
-	--theme-bg-accent: hsla(var(--color-blue), var(--theme-accent-opacity));
+	--theme-bg-hover: hsla(var(--color-gray-90), 1);
+	--theme-bg-offset: hsla(var(--color-gray-70), 1);
+	--theme-bg-accent: hsl(0deg, 0%, 95%);
 	--theme-code-inline-bg: hsla(var(--color-gray-95), 1);
 	--theme-code-inline-text: var(--theme-text);
 	--theme-code-bg: hsla(217deg, 19%, 27%, 100%);
@@ -85,19 +88,20 @@
 :root.theme-dark {
 	--theme-primary: rgb(22, 45, 61);
 	--theme-accent: rgb(36, 72, 100);
+	--theme-accent-secondary: hsl(206deg, 47%, 54%);
 	--theme-accent-opacity: 0.15;
 	--theme-divider: hsla(var(--color-gray-90), 0.25);
 	--theme-text-accent: hsla(var(--color-blue), 1);
 	--theme-text-accent-dark: hsla(var(--color-blue-dark), 1);
-	--theme-text: hsla(var(--color-gray-90), 1);
-	--theme-text-light: hsla(var(--color-gray-80), 1);
+	--theme-text: hsla(var(--color-gray-85), 1);
+	--theme-text-light: hsla(var(--color-gray-75), 1);
 
 	/* @@@: not used anywhere */
-	--theme-text-lighter: hsla(var(--color-gray-40), 1);
+	--theme-text-lighter: hsla(var(--color-gray-50), 1);
 	--theme-bg: rgb(26, 26, 26);
 	--theme-bg-accent: rgb(38, 38, 38);
-	--theme-bg-hover: hsla(var(--color-gray-40), 1);
-	--theme-bg-offset: hsla(var(--color-gray-5), 1);
+	--theme-bg-hover: hsla(var(--color-gray-20), 1);
+	--theme-bg-offset: hsla(var(--color-gray-10), 1);
 	--theme-code-inline-bg: hsla(var(--color-gray-10), 1);
 	--theme-code-inline-text: hsla(var(--color-base-white), 100%, 1);
 	--theme-code-bg: hsla(var(--color-gray-5), 1);

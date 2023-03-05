@@ -1,6 +1,6 @@
 ---
-import { SITE } from '../../site';
-import AvatarList from './AvatarList.astro';
+import { SITE } from "../../site";
+import AvatarList from "./AvatarList.astro";
 
 type Props = {
 	pathInRepo: string;
@@ -13,7 +13,7 @@ const year = new Date(Date.now()).getFullYear();
 
 <footer>
 	{
-		'repository' in SITE && SITE.repository.type === 'github' && (
+		"repository" in SITE && SITE.repository.type === "github" && (
 			<AvatarList pathInRepo={pathInRepo} />
 		)
 	}
