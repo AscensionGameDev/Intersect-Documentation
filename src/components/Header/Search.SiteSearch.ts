@@ -46,13 +46,19 @@ class SiteSearch extends HTMLElement {
 		) as HTMLTemplateElement;
 
 		const shadowRoot = this.attachShadow({ mode: 'closed' });
-		const shadowProxy = new Proxy<
-			/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-			Record<string | number | symbol, any>
-		>(this, {
-			get: (target, key) =>
-				key === 'shadowRoot' ? shadowRoot : target[key],
-			set: (target, key, value) => (target[key] = value),
+		const shadowProxy = new Proxy(this, {
+			get: (target, key: keyof SiteSearch) => key === 'shadowRoot' ? shadowRoot : target[key],
+			set: (target, key: keyof SiteSearch, value) => {
+				if (key in target) {
+					const descriptor = Object.getOwnPropertyDescriptor(target, key);
+					if (descriptor?.writable) {
+						Object.assign(target, { [key]: value });
+						return true;
+					}
+				}
+
+				return false;
+			},
 		});
 
 		shadowRoot.appendChild(template.content.cloneNode(true));
