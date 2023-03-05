@@ -1,12 +1,12 @@
 ---
-import { SITE } from '../../site';
+import { SITE } from "../../site";
 
 type Props = {
 	pathInRepo: string;
 };
 const { pathInRepo } = Astro.props;
 
-if (!('repository' in SITE) || SITE.repository.type !== 'github') {
+if (!("repository" in SITE) || SITE.repository.type !== "github") {
 	return undefined;
 }
 
@@ -24,20 +24,20 @@ type Commit = {
 
 async function getCommits(url: string) {
 	try {
-		const token = import.meta.env.GITHUB_TOKEN ?? 'hello';
+		const token = import.meta.env.GITHUB_TOKEN ?? "hello";
 		if (!token) {
 			throw new Error(
 				'Cannot find "GITHUB_TOKEN" used for escaping rate-limiting.'
 			);
 		}
 
-		const auth = `Basic ${Buffer.from(token, 'binary').toString('base64')}`;
+		const auth = `Basic ${Buffer.from(token, "binary").toString("base64")}`;
 
 		const res = await fetch(url, {
-			method: 'GET',
+			method: "GET",
 			headers: {
 				Authorization: auth,
-				'User-Agent': 'astro-docs/1.0',
+				"User-Agent": "astro-docs/1.0",
 			},
 		});
 
@@ -59,7 +59,7 @@ async function getCommits(url: string) {
 }
 
 function removeDups(arr: Commit[]) {
-	const map = new Map<string, Commit['author']>();
+	const map = new Map<string, Commit["author"]>();
 
 	for (let item of arr) {
 		const author = item.author;
@@ -104,7 +104,7 @@ const additionalContributors = unique.length - recentContributors.length; // lis
 				<a
 					href={commitsURL}
 				>{`and ${additionalContributors} additional contributor${
-					additionalContributors > 1 ? 's' : ''
+					additionalContributors > 1 ? "s" : ""
 				}.`}</a>
 			</span>
 		)

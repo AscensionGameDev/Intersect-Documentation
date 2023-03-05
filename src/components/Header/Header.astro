@@ -6,12 +6,13 @@ import Search from "./Search.astro";
 import MenuToggle from "./MenuToggle";
 import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton";
 import LanguagePicker from "./LanguagePicker.astro";
-import VersionPicker, { Version } from "./VersionPicker.astro";
+import VersionPicker from "./VersionPicker.astro";
+import type { LabeledVersion, VersionKey } from "../../versioning";
 
 type Props = {
 	langCode: KnownLanguageCode;
-	version?: string | undefined;
-	versions: readonly Version[];
+	version?: VersionKey | undefined;
+	versions: readonly LabeledVersion[];
 };
 
 const { langCode, version = "latest", versions } = Astro.props;

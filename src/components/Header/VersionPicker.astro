@@ -1,6 +1,6 @@
 ---
-import type { KnownLanguageCode } from '../../i18n';
-import type { LabeledVersion } from '../../versioning';
+import type { KnownLanguageCode } from "../../i18n";
+import type { LabeledVersion } from "../../versioning";
 
 type Props = {
 	langCode: KnownLanguageCode;
@@ -42,10 +42,10 @@ const { version, versions } = Astro.props;
 </div>
 
 <script>
-	import { getLangCode } from '../../i18n';
+	import { getLangCode } from "../../i18n";
 
 	const selectVersion: HTMLSelectElement | null = document.querySelector(
-		'select.version-picker'
+		"select.version-picker"
 	);
 
 	function getActiveVersion() {
@@ -56,7 +56,7 @@ const { version, versions } = Astro.props;
 	const langCode = getLangCode(window.location.pathname);
 
 	let activeVersion = getActiveVersion();
-	selectVersion?.addEventListener('change', ({ target }) => {
+	selectVersion?.addEventListener("change", ({ target }) => {
 		const select = target as HTMLSelectElement;
 		if (!select) {
 			return;
@@ -66,14 +66,14 @@ const { version, versions } = Astro.props;
 
 		activeVersion = getActiveVersion();
 
-		let toReplace = previousVersion ?? '',
-			replacement = activeVersion ?? '';
-		if (previousVersion === 'latest') {
+		let toReplace = previousVersion ?? "",
+			replacement = activeVersion ?? "";
+		if (previousVersion === "latest") {
 			toReplace = langCode;
 			replacement = `${langCode}/${activeVersion}`;
-		} else if (replacement === 'latest') {
+		} else if (replacement === "latest") {
 			toReplace = `/${toReplace}`;
-			replacement = '';
+			replacement = "";
 		}
 
 		window.location.pathname = window.location.pathname.replace(
