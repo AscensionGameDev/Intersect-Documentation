@@ -1,7 +1,7 @@
 ---
-import type { KnownLanguageCode } from '../../i18n';
-import { LANGUAGE_CODES, LANGUAGES } from '../../i18n';
-import { SITE } from '../../site';
+import type { KnownLanguageCode } from "../../i18n";
+import { LANGUAGE_CODES, LANGUAGES } from "../../i18n";
+import { SITE } from "../../site";
 
 type Props = {
 	langCode: KnownLanguageCode;
@@ -31,7 +31,8 @@ const { langCode: activeLangCode } = Astro.props;
 	<select class="language-select">
 		{
 			LANGUAGE_CODES.filter(
-				(langCode) => langCode in SITE && !(SITE[langCode].disabled ?? false)
+				(langCode) =>
+					langCode in SITE && !(SITE[langCode].disabled ?? false)
 			).map((langCode) => {
 				const language = LANGUAGES[langCode];
 				const selected = activeLangCode === langCode;
@@ -61,11 +62,11 @@ const { langCode: activeLangCode } = Astro.props;
 </div>
 
 <script>
-	import { PATTERN_LANGUAGE_CODE } from '../../i18n';
+	import { PATTERN_LANGUAGE_CODE } from "../../i18n";
 	const selectLanguage: HTMLSelectElement | null = document.querySelector(
-		'select.language-select'
+		"select.language-select"
 	);
-	selectLanguage?.addEventListener('change', ({ target }) => {
+	selectLanguage?.addEventListener("change", ({ target }) => {
 		const newLangCode = (target as HTMLSelectElement)?.value;
 		window.location.pathname = window.location.pathname.replace(
 			PATTERN_LANGUAGE_CODE,
@@ -140,13 +141,15 @@ const { langCode: activeLangCode } = Astro.props;
 	}
 
 	@media (max-width: 1440px) {
-		.language-select {
+		:global(body:not(.mobile-sidebar-toggle)) .language-select {
 			color: transparent;
 			padding: 0.125em 1.125em;
 			width: 0;
 		}
 
-		.language-select-wrapper svg.dropdown {
+		:global(body:not(.mobile-sidebar-toggle))
+			.language-select-wrapper
+			svg.dropdown {
 			display: none;
 		}
 	}

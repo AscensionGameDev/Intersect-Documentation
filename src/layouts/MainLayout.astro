@@ -89,6 +89,12 @@ const pathInRepo = getPathInRepo(currentId);
 				position: relative;
 			}
 
+			body.search-open .page-wrapper,
+			body.mobile-sidebar-toggle .page-wrapper {
+				max-height: 100vh;
+				overflow: hidden !important;
+			}
+
 			.header-wrapper {
 				position: sticky;
 				top: 0;
@@ -156,6 +162,7 @@ const pathInRepo = getPathInRepo(currentId);
 					currentPage={currentPage}
 					langCode={langCode}
 					version={version}
+					versions={VERSIONS}
 				/>
 				<RightSidebar
 					editUrl={editUrl}

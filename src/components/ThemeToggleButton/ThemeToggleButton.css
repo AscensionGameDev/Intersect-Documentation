@@ -8,7 +8,11 @@
 	padding: 0.25em 0.75em;
 }
 
-.theme-toggle > label {
+aside.sidebar .theme-toggle {
+	background-color: var(--theme-bg-accent);
+}
+
+.theme-toggle>label {
 	align-items: center;
 	border-radius: 2.75em;
 	color: var(--theme-code-inline-text);
@@ -24,12 +28,12 @@
 	width: 1.375em;
 }
 
-.theme-toggle > label:hover {
+.theme-toggle>label:hover {
 	filter: brightness(125%);
 	opacity: 1;
 }
 
-.theme-dark .theme-toggle > label:hover {
+.theme-dark .theme-toggle>label:hover {
 	filter: brightness(300%);
 }
 
