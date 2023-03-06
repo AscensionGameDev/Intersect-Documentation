@@ -9,6 +9,16 @@ import { SITE } from '../../site';
 
 type SearchStatus = 'empty' | 'has-error' | 'has-results' | 'loading';
 
+type SiteSearchStateEventInit = {
+	state: 'closed' | 'open';
+};
+
+export class SiteSearchStateEvent extends CustomEvent<SiteSearchStateEventInit> {
+	constructor(init?: CustomEventInit<SiteSearchStateEventInit>) {
+		super('sitesearchstate', init);
+	}
+}
+
 const SEARCH_STATUSES: readonly [...SearchStatus[]] = [
 	'empty',
 	'has-error',
@@ -75,6 +85,7 @@ class SiteSearch extends HTMLElement {
 		modalContainer.addEventListener('click', ({ target }) => {
 			if (target === modalContainer) {
 				modalContainer.classList.remove('open');
+				this.dispatchEvent(new SiteSearchStateEvent({ detail: { state: 'closed' } }));
 			}
 		});
 
@@ -89,6 +100,7 @@ class SiteSearch extends HTMLElement {
 		if (dummyTrigger) {
 			dummyTrigger.addEventListener('click', () => {
 				modalContainer.classList.add('open');
+				this.dispatchEvent(new SiteSearchStateEvent({ detail: { state: 'open' } }));
 				input.focus();
 			});
 		}

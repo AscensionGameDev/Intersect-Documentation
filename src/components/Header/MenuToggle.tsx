@@ -2,14 +2,16 @@
 import type { FunctionalComponent } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 
+const CLASS_MOBILE_SIDEBAR_TOGGLE = 'mobile-sidebar-toggle';
+
 const MenuToggle: FunctionalComponent = () => {
 	const [sidebarShown, setSidebarShown] = useState(false);
 
 	useEffect(() => {
 		if (sidebarShown) {
-			document.body.classList.add('mobile-sidebar-toggle');
+			document.body.classList.add(CLASS_MOBILE_SIDEBAR_TOGGLE);
 		} else {
-			document.body.classList.remove('mobile-sidebar-toggle');
+			document.body.classList.remove(CLASS_MOBILE_SIDEBAR_TOGGLE);
 		}
 	}, [sidebarShown]);
 

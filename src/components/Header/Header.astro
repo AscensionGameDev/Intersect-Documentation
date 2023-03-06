@@ -66,7 +66,7 @@ function resolveNavUrl(link: string) {
 		<nav class="nav-wrapper">
 			{
 				Array.isArray(navbar) && navbar.length > 0 && (
-					<ul class="horizontal">
+					<ul class="horizontal hide-on-mobile">
 						{navbar.map((item) => {
 							return (
 								<li>
@@ -84,23 +84,30 @@ function resolveNavUrl(link: string) {
 
 			{
 				versions.length > 1 && (
-					<VersionPicker
-						langCode={langCode}
-						version={version}
-						versions={versions}
-					/>
+					<div class="hide-on-mobile">
+						<VersionPicker
+							langCode={langCode}
+							version={version}
+							versions={versions}
+						/>
+					</div>
 				)
 			}
 			{
 				LANGUAGE_CODES.length > 1 && (
-					<LanguagePicker langCode={langCode} />
+					<div class="hide-on-mobile">
+						<LanguagePicker langCode={langCode} />
+					</div>
 				)
 			}
-			<ThemeToggleButton client:visible />
-			<div class="menu-toggle">
-				<MenuToggle client:idle />
+			<div class="hide-on-mobile">
+				<ThemeToggleButton client:visible />
 			</div>
 		</nav>
+
+		<div class="menu-toggle">
+			<MenuToggle client:idle />
+		</div>
 	</div>
 </header>
 
@@ -209,6 +216,11 @@ function resolveNavUrl(link: string) {
 		display: none;
 	}
 
+	.menu-toggle:hover :global(button#menu-toggle),
+	.menu-toggle :global(button#menu-toggle:active) {
+		background-color: var(--theme-bg-accent-hover);
+	}
+
 	@media (max-width: 1440px) {
 		.logo .site-name {
 			display: none;
@@ -230,6 +242,22 @@ function resolveNavUrl(link: string) {
 	}
 
 	@media (max-width: 900px) {
+		header {
+			padding: 0 calc(var(--doc-padding) / 2);
+		}
+
+		header > .container {
+			justify-content: space-between;
+		}
+
+		header > .container > nav {
+			flex: 0;
+		}
+
+		.hide-on-mobile {
+			display: none !important;
+		}
+
 		.menu-toggle {
 			display: initial;
 		}

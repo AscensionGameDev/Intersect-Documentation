@@ -11,6 +11,11 @@
 	}
 }
 
+::selection {
+	background-color: var(--theme-selection-bg);
+	color: var(--theme-selection-color);
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -34,6 +39,10 @@ article>section nav :is(ul, ol)>*+* {
 }
 
 body {
+	--header-height: 4rem;
+
+	background: var(--theme-bg);
+	color: var(--theme-text);
 	display: flex;
 	flex-direction: column;
 	font-family: var(--font-body);

@@ -81,6 +81,12 @@ const pathInRepo = getPathInRepo(currentId);
 				width: 100%;
 			}
 
+			body.search-open .page-wrapper,
+			body.mobile-sidebar-toggle .page-wrapper {
+				max-height: 100vh;
+				overflow: hidden !important;
+			}
+
 			.page-wrapper {
 				display: grid;
 				flex: 1;
