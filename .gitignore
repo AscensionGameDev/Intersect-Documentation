@@ -1,8 +1,10 @@
 # Created by https://www.gitignore.io/api/node
 # Edit at https://www.gitignore.io/?templates=node
 
-lib
-package-lock.json
+/dist
+
+node_modules
+
 __snapshots__
 
 ### Node ###

@@ -1,18 +1,18 @@
 {
-  "name": "rehype-video",
+  "name": "@ascensiongamedev/rehype-video",
   "version": "1.2.2",
   "description": "Markdown supports video play with `.mp4` and `.mov` URLs.",
-  "homepage": "https://jaywcjlove.github.io/rehype-video",
+  "homepage": "https://github.com/AscensionGameDev/Intersect-Documentation/tree/rehype-video/main",
   "sideEffects": false,
   "type": "module",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "author": "jaywcjlove",
   "license": "MIT",
   "scripts": {
-    "prepack": "npm run build",
+    "prepack": "pnpm run build",
     "watch": "tsbb watch --disable-babel",
-    "build": "tsbb build --disable-babel && npm run fix",
+    "build": "tsbb build --disable-babel && pnpm run fix",
     "fix": "tsc-esm-fix --target='lib' --ext='.js'",
     "type-check": "tsc --noEmit",
     "test": "tsbb test",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaywcjlove/rehype-video"
+    "url": "https://github.com/AscensionGameDev/Intersect-Documentation/tree/rehype-video/main"
   },
   "files": [
     "src",
@@ -45,18 +45,18 @@
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "dependencies": {
-    "@types/hast": "^2.3.4",
-    "unified": "~10.1.1",
-    "unist-util-visit": "~4.1.0"
+    "unified": "~10.1.2",
+    "unist-util-visit": "~4.1.2"
   },
   "devDependencies": {
-    "rehype": "~12.0.0",
-    "rehype-stringify": "~9.0.2",
-    "remark": "~14.0.1",
-    "remark-gfm": "~3.0.0",
-    "remark-parse": "~10.0.0",
+    "@types/hast": "^2.3.4",
+    "rehype": "~12.0.1",
+    "rehype-stringify": "~9.0.3",
+    "remark": "~14.0.2",
+    "remark-gfm": "~3.0.1",
+    "remark-parse": "~10.0.1",
     "remark-rehype": "~10.1.0",
-    "tsbb": "~3.7.1",
+    "tsbb": "~3.7.9",
     "tsc-esm-fix": "~2.18.0"
   }
 }

@@ -2,23 +2,23 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/hast': ^2.3.4
-  rehype: ~12.0.0
-  rehype-stringify: ~9.0.2
-  remark: ~14.0.1
-  remark-gfm: ~3.0.0
-  remark-parse: ~10.0.0
+  rehype: ~12.0.1
+  rehype-stringify: ~9.0.3
+  remark: ~14.0.2
+  remark-gfm: ~3.0.1
+  remark-parse: ~10.0.1
   remark-rehype: ~10.1.0
-  tsbb: ~3.7.1
+  tsbb: ~3.7.9
   tsc-esm-fix: ~2.18.0
-  unified: ~10.1.1
-  unist-util-visit: ~4.1.0
+  unified: ~10.1.2
+  unist-util-visit: ~4.1.2
 
 dependencies:
-  '@types/hast': 2.3.4
   unified: 10.1.2
   unist-util-visit: 4.1.2
 
 devDependencies:
+  '@types/hast': 2.3.4
   rehype: 12.0.1
   rehype-stringify: 9.0.3
   remark: 14.0.2
@@ -1748,7 +1748,7 @@ packages:
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
-      '@types/node': 18.14.6
+      '@types/node': 16.11.68
     dev: true
 
   /@types/graceful-fs/4.1.6:
@@ -1761,6 +1761,7 @@ packages:
     resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==}
     dependencies:
       '@types/unist': 2.0.6
+    dev: true
 
   /@types/istanbul-lib-coverage/2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
@@ -1807,10 +1808,6 @@ packages:
 
   /@types/node/16.11.68:
     resolution: {integrity: sha512-JkRpuVz3xCNCWaeQ5EHLR/6woMbHZz/jZ7Kmc63AkU+1HxnoUugzSWMck7dsR4DvNYX8jp9wTi9K7WvnxOIQZQ==}
-    dev: true
-
-  /@types/node/18.14.6:
-    resolution: {integrity: sha512-93+VvleD3mXwlLI/xASjw0FzKcwzl3OdTCzm1LaRfqgS21gfFtK3zDXM5Op9TeeMsJVOaJ2VRDpT9q4Y3d0AvA==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
