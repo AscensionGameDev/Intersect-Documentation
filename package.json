@@ -8,6 +8,12 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "author": "jaywcjlove",
+  "contributors": [
+    {
+      "name": "lodicolo",
+      "url": "https://github.com/lodicolo"
+    }
+  ],
   "license": "MIT",
   "scripts": {
     "prepack": "pnpm run build",
