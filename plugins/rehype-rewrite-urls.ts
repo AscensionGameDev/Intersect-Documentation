@@ -32,6 +32,12 @@ const rewriteUrls: Plugin<[RewriteUrlsOptions?], Root> = (options) => {
 
 	return (root) => {
 		visit(root, 'element', (node) => {
+			if (node.type !== 'element') {
+				// This is because node for some reason is not just Element in
+				// this case, and typescript doesn't appreciate the ambiguity
+				return;
+			}
+
 			if (node.tagName !== 'a') {
 				// Not an <a>? Skip.
 				return;

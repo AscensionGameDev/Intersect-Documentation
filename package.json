@@ -17,7 +17,7 @@
 		"yargs": "^17.7.1"
 	},
 	"devDependencies": {
-		"@ascensiongamedev/rehype-video": "^1.2.5",
+		"@ascensiongamedev/rehype-video": "^1.2.6",
 		"@isnotdefined/stylelint-plugin": "^3.0.0",
 		"@types/hast": "^2.3.4",
 		"@types/html-escaper": "^3.0.0",

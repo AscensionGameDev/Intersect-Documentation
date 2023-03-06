@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@ascensiongamedev/rehype-video': ^1.2.5
+  '@ascensiongamedev/rehype-video': ^1.2.6
   '@astrojs/mdx': ^0.17.2
   '@astrojs/preact': ^2.0.3
   '@astrojs/react': ^2.0.2
@@ -82,7 +82,7 @@ dependencies:
   yargs: 17.7.1
 
 devDependencies:
-  '@ascensiongamedev/rehype-video': 1.2.5
+  '@ascensiongamedev/rehype-video': 1.2.6
   '@isnotdefined/stylelint-plugin': 3.0.0_stylelint@15.2.0
   '@types/hast': 2.3.4
   '@types/html-escaper': 3.0.0
@@ -139,8 +139,8 @@ packages:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.17
 
-  /@ascensiongamedev/rehype-video/1.2.5:
-    resolution: {integrity: sha512-8xSBxztXAOiw2/DdWfbJqDi4/rRCxGccb5JqGhsfFy01eDTKBSX4I4OcmWs9Ht4qb2wg43vcPbC6CQmWUoR71A==}
+  /@ascensiongamedev/rehype-video/1.2.6:
+    resolution: {integrity: sha512-x5u/WeUf5nsOwMLNiEdPSL+qsnNWInSFObsO5Ta/xN49erF8BAv3oRrHLGAqtZbw1fNb2Xer4aAl9BviNU160w==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       unified: 10.1.2
@@ -269,7 +269,7 @@ packages:
     resolution: {integrity: sha512-JnKZcbD0WdFxw2VAj3qXb0cYKuvk6nwBYPfUy+plSa9TC9hikQrDFpd7yapOPTRf3AdmUittzFckoTw/nUilCw==}
     dependencies:
       sitemap: 7.1.1
-      zod: 3.21.0
+      zod: 3.21.1
     dev: false
 
   /@astrojs/telemetry/2.0.1:
@@ -2192,7 +2192,7 @@ packages:
       vite: 4.1.4_@types+node@18.14.6
       vitefu: 0.2.4_vite@4.1.4
       yargs-parser: 21.1.1
-      zod: 3.21.0
+      zod: 3.21.1
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -8572,8 +8572,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  /zod/3.21.0:
-    resolution: {integrity: sha512-UYdykTcVxB6lfdyLzAqLyyYAlOcpoluECvjsdoaqfQmz9p+3LRaIqYcNiL/J2kFYp66fBM8wwBvIGVEjq7KtZw==}
+  /zod/3.21.1:
+    resolution: {integrity: sha512-+dTu2m6gmCbO9Ahm4ZBDapx2O6ZY9QSPXst2WXjcznPMwf2YNpn3RevLx4KkZp1OPW/ouFcoBtBzFz/LeY69oA==}
     dev: false
 
   /zwitch/1.0.5:
