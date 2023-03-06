@@ -1,14 +1,14 @@
 ---
 import type { KnownLanguageCode } from "../../i18n";
-import type { LabeledVersion } from "../../versioning";
+import type { LabeledVersion, VersionKey } from "../../versioning";
 
 type Props = {
 	langCode: KnownLanguageCode;
-	version: string;
+	version?: VersionKey | undefined;
 	versions: readonly LabeledVersion[];
 };
 
-const { version, versions } = Astro.props;
+const { version = "latest", versions } = Astro.props;
 ---
 
 <div class="version-picker-wrapper">
@@ -143,13 +143,15 @@ const { version, versions } = Astro.props;
 	}
 
 	@media (max-width: 1440px) {
-		.version-picker {
+		:global(body:not(.mobile-sidebar-toggle)) .version-picker {
 			color: transparent;
 			padding: 0.125em 1.125em;
 			width: 0;
 		}
 
-		.version-picker-wrapper svg.dropdown {
+		:global(body:not(.mobile-sidebar-toggle))
+			.version-picker-wrapper
+			svg.dropdown {
 			display: none;
 		}
 	}

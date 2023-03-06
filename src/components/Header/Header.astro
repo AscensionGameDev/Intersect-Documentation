@@ -84,7 +84,7 @@ function resolveNavUrl(link: string) {
 
 			{
 				versions.length > 1 && (
-					<div class="hide-on-mobile">
+					<div class="hide-on-mobile hide-on-tablet">
 						<VersionPicker
 							langCode={langCode}
 							version={version}
@@ -95,12 +95,12 @@ function resolveNavUrl(link: string) {
 			}
 			{
 				LANGUAGE_CODES.length > 1 && (
-					<div class="hide-on-mobile">
+					<div class="hide-on-mobile hide-on-tablet">
 						<LanguagePicker langCode={langCode} />
 					</div>
 				)
 			}
-			<div class="hide-on-mobile">
+			<div class="hide-on-mobile hide-on-tablet">
 				<ThemeToggleButton client:visible />
 			</div>
 		</nav>
@@ -239,6 +239,10 @@ function resolveNavUrl(link: string) {
 		.menu-toggle {
 			display: initial;
 		}
+
+		.hide-on-tablet {
+			display: none !important;
+		}
 	}
 
 	@media (max-width: 900px) {
@@ -256,10 +260,6 @@ function resolveNavUrl(link: string) {
 
 		.hide-on-mobile {
 			display: none !important;
-		}
-
-		.menu-toggle {
-			display: initial;
 		}
 	}
 </style>

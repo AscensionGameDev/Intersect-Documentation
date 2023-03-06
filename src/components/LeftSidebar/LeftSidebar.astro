@@ -1,23 +1,29 @@
 ---
-import type {
+import {
 	KnownLanguageCode,
+	LANGUAGE_CODES,
 	SidebarItem,
 	SidebarSection,
 } from "../../i18n";
+import type { LabeledVersion, VersionKey } from "../../versioning";
 
 import { getCollection } from "astro:content";
 import Collapsible from "../Collapsible/Collapsible.astro";
 import Chevron from "../Icons/Chevron.astro";
 import { SITE } from "../../site";
 import { resolveSlug } from "../../slugs";
+import VersionPicker from "../Header/VersionPicker.astro";
+import LanguagePicker from "../Header/LanguagePicker.astro";
+import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton";
 
 type Props = {
 	currentPage: string;
 	langCode: KnownLanguageCode;
-	version?: string | undefined;
+	version?: VersionKey | undefined;
+	versions: readonly LabeledVersion[];
 };
 
-const { currentPage, langCode, version } = Astro.props;
+const { currentPage, langCode, version, versions } = Astro.props;
 
 function getSlug() {
 	let slug = resolveSlug(langCode, currentPage, version);
@@ -91,6 +97,25 @@ function findActiveSidebarItem({
 ---
 
 <aside id="sidebar" class="sidebar" aria-label="Site Navigation">
+	<div class="show-on-mobile">
+		<ThemeToggleButton client:visible />
+		<div class="joined">
+			{
+				versions.length > 1 && (
+					<VersionPicker
+						langCode={langCode}
+						version={version}
+						versions={versions}
+					/>
+				)
+			}
+			{
+				LANGUAGE_CODES.length > 1 && (
+					<LanguagePicker langCode={langCode} />
+				)
+			}
+		</div>
+	</div>
 	<nav aria-labelledby="sidebar">
 		<ul class="nav-groups">
 			{
@@ -302,6 +327,36 @@ function findActiveSidebarItem({
 	.section .section .summary:focus,
 	.section .section .summary:focus-within {
 		border-inline-start-color: var(--theme-accent-secondary);
+	}
+
+	.show-on-mobile {
+		align-items: center;
+		border-bottom: min(1px, 0.01vh) solid var(--theme-divider);
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		margin-bottom: 2rem;
+	}
+
+	:global(body.mobile-sidebar-toggle) .show-on-mobile {
+		display: flex;
+	}
+
+	.show-on-mobile > .joined {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 1rem 0;
+		width: 100%;
+	}
+
+	.show-on-mobile > .joined > :global(*) {
+		flex: 1;
+	}
+
+	.show-on-mobile > .joined > :global(:not(:last-child)) {
+		margin-right: 1rem;
 	}
 
 	li:not(.section) {
