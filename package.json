@@ -1,12 +1,9 @@
 {
 	"dependencies": {
-		"@algolia/client-search": "^4.13.1",
 		"@astrojs/mdx": "^0.17.2",
 		"@astrojs/preact": "^2.0.3",
 		"@astrojs/react": "^2.0.2",
 		"@astrojs/sitemap": "^1.1.0",
-		"@docsearch/css": "^3.1.0",
-		"@docsearch/react": "^3.1.0",
 		"@types/node": "^18.0.0",
 		"@types/react": "^17.0.45",
 		"@types/react-dom": "^18.0.0",
@@ -20,6 +17,7 @@
 		"yargs": "^17.7.1"
 	},
 	"devDependencies": {
+		"@ascensiongamedev/rehype-video": "^1.2.4",
 		"@isnotdefined/stylelint-plugin": "^3.0.0",
 		"@types/hast": "^2.3.4",
 		"@types/html-escaper": "^3.0.0",
@@ -44,7 +42,6 @@
 		"postcss-html": "^1.5.0",
 		"rehype-autolink-headings": "^6.1.1",
 		"rehype-slug": "^5.1.0",
-		"rehype-video": "github:AscensionGameDev/Intersect-Documentation#rehype-video/main",
 		"remark-lint": "^9.1.1",
 		"remark-reference-links": "^6.0.1",
 		"remark-validate-links": "^12.1.0",

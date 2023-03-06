@@ -4,7 +4,7 @@ import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
-import rehypeVideo from 'rehype-video';
+import rehypeVideo from '@ascensiongamedev/rehype-video';
 import remarkLint from 'remark-lint';
 import remarkReferenceLinks from 'remark-reference-links';
 import remarkValidateLinks from 'remark-validate-links';

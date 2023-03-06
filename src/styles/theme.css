@@ -110,17 +110,6 @@
 	--theme-selection-color: hsla(var(--color-base-white), 100%, 1);
 	--theme-selection-bg: hsla(var(--color-purple), var(--theme-accent-opacity));
 
-	/* DocSearch [Algolia] */
-	--docsearch-footer-background: var(--theme-divider);
-	--docsearch-footer-shadow: inset 0 0.125rem 0.625rem #000;
-	--docsearch-hit-background: var(--theme-divider);
-	--docsearch-hit-shadow: none;
-	--docsearch-hit-color: var(--theme-text);
-	--docsearch-modal-background: var(--theme-bg);
-	--docsearch-modal-shadow: inset 0 0 0.5rem #000;
-	--docsearch-searchbox-focus-background: var(--theme-divider);
-	--docsearch-text-color: var(--theme-text);
-
 	color-scheme: dark;
 }
 
