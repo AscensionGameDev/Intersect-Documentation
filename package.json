@@ -1,6 +1,6 @@
 {
   "name": "@ascensiongamedev/rehype-video",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Markdown supports video play with `.mp4` and `.mov` URLs.",
   "homepage": "https://github.com/AscensionGameDev/Intersect-Documentation/tree/rehype-video/main",
   "sideEffects": false,
@@ -22,7 +22,7 @@
     "prepack": "pnpm run build",
     "watch": "tsbb watch --disable-babel",
     "build": "tsbb build --disable-babel && pnpm run fix",
-    "fix": "tsc-esm-fix --target='lib' --ext='.js'",
+    "fix": "tsc-esm-fix --target='dist' --ext='.js'",
     "type-check": "tsc --noEmit",
     "test": "tsbb test",
     "coverage": "tsbb test --coverage --bail"
