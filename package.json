@@ -1,6 +1,6 @@
 {
   "name": "@ascensiongamedev/rehype-video",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Markdown supports video play with `.mp4` and `.mov` URLs.",
   "homepage": "https://github.com/AscensionGameDev/Intersect-Documentation/tree/rehype-video/main",
   "sideEffects": false,
