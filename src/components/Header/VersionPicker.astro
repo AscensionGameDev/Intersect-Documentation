@@ -42,44 +42,45 @@ const { version = "latest", versions } = Astro.props;
 </div>
 
 <script>
+	import type { VersionKey } from "../../versioning";
+
+	import { listenToEventFromAll } from "../../elements";
 	import { getLangCode } from "../../i18n";
-
-	const selectVersion: HTMLSelectElement | null = document.querySelector(
-		"select.version-picker"
-	);
-
-	function getActiveVersion() {
-		const [selectedOption] = selectVersion?.selectedOptions ?? [];
-		return selectedOption?.value;
-	}
 
 	const langCode = getLangCode(window.location.pathname);
 
-	let activeVersion = getActiveVersion();
-	selectVersion?.addEventListener("change", ({ target }) => {
+	listenToEventFromAll("select.version-picker", "change", ({ target }) => {
 		const select = target as HTMLSelectElement;
 		if (!select) {
 			return;
 		}
 
-		const previousVersion = activeVersion;
+		const previous = select.getAttribute(
+			"__value_previous"
+		) as VersionKey | null;
+		const value = select.value as VersionKey;
+		select.setAttribute("__value_previous", value);
 
-		activeVersion = getActiveVersion();
+		if (previous === null) {
+			return;
+		}
 
-		let toReplace = previousVersion ?? "",
-			replacement = activeVersion ?? "";
-		if (previousVersion === "latest") {
+		let toReplace: string = previous;
+		let replacement: string = value ?? "";
+		if (previous === "latest") {
 			toReplace = langCode;
-			replacement = `${langCode}/${activeVersion}`;
+			replacement = `${langCode}/${value}`;
 		} else if (replacement === "latest") {
 			toReplace = `/${toReplace}`;
 			replacement = "";
 		}
 
-		window.location.pathname = window.location.pathname.replace(
+		const newPathname = window.location.pathname.replace(
 			toReplace,
 			replacement
 		);
+
+		window.location.pathname = newPathname;
 	});
 </script>
 

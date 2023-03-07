@@ -59,18 +59,41 @@ const { langCode: activeLangCode } = Astro.props;
 		>
 		</path>
 	</svg>
+	<script is:inline>
+		console.info("dispatching");
+		document.dispatchEvent(
+			new CustomEvent("astrocomponent", {
+				detail: {
+					name: "LanguagePicker",
+				},
+			})
+		);
+	</script>
 </div>
 
 <script>
-	import { PATTERN_LANGUAGE_CODE } from "../../i18n";
-	const selectLanguage: HTMLSelectElement | null = document.querySelector(
-		"select.language-select"
-	);
-	selectLanguage?.addEventListener("change", ({ target }) => {
-		const newLangCode = (target as HTMLSelectElement)?.value;
+	import { listenToEventFromAll } from "../../elements";
+	import { PATTERN_LANGUAGE_CODE, KnownLanguageCode } from "../../i18n";
+
+	listenToEventFromAll("select.language-select", "change", ({ target }) => {
+		const select = target as HTMLSelectElement;
+		if (!select) {
+			return;
+		}
+
+		const previous = select.getAttribute(
+			"__value_previous"
+		) as KnownLanguageCode | null;
+		const value = select.value as KnownLanguageCode;
+		select.setAttribute("__value_previous", value);
+
+		if (previous === null) {
+			return;
+		}
+
 		window.location.pathname = window.location.pathname.replace(
 			PATTERN_LANGUAGE_CODE,
-			newLangCode
+			value
 		);
 	});
 </script>
