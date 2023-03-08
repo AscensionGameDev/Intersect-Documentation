@@ -9,7 +9,7 @@ import remarkLint from 'remark-lint';
 import remarkReferenceLinks from 'remark-reference-links';
 import remarkValidateLinks from 'remark-validate-links';
 
-import rehypeRewriteUrls from './plugins/rehype-rewrite-urls';
+import rehypeRewriteUrls, { RewriteUrlsOptions } from './plugins/rehype-rewrite-urls';
 
 // Would like to add but are "unmaintained":
 // rehype-minify-url	https://github.com/rehypejs/rehype-minify/tree/main/packages/rehype-minify-url
@@ -43,7 +43,12 @@ export default defineConfig({
 		gfm: true,
 		rehypePlugins: [
 			rehypeAutolinkHeadings,
-			rehypeRewriteUrls,
+			[
+				rehypeRewriteUrls,
+				<RewriteUrlsOptions>{
+
+				}
+			],
 			rehypeSlug,
 			rehypeVideo,
 		],

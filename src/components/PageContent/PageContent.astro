@@ -1,8 +1,9 @@
 ---
-import type { MarkdownHeading } from 'astro';
-import type { KnownLanguageCode } from '../../i18n';
-import MoreMenu from '../RightSidebar/MoreMenu.astro';
-import TableOfContents from '../RightSidebar/TableOfContents';
+import type { MarkdownHeading } from "astro";
+import type { KnownLanguageCode } from "../../i18n";
+import { SITE } from "../../site";
+import MoreMenu from "../RightSidebar/MoreMenu.astro";
+import TableOfContents from "../RightSidebar/TableOfContents";
 
 type Props = {
 	title: string;
@@ -12,13 +13,19 @@ type Props = {
 };
 
 const { editUrl, headings, langCode, title } = Astro.props;
+
+const site = SITE[langCode];
 ---
 
 <main class="content">
 	<section class="main-section">
 		<h1 class="content-title" id="overview">{title}</h1>
 		<nav class="block sm-hidden">
-			<TableOfContents client:media="(max-width: 50em)" headings={headings} />
+			<TableOfContents
+				client:media="(max-width: 50em)"
+				headings={headings}
+				onThisPage={site.general.OnThisPage}
+			/>
 		</nav>
 		<slot />
 	</section>

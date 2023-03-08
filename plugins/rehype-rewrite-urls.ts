@@ -1,10 +1,21 @@
 import type { Root } from 'hast';
 import type { Plugin } from 'unified';
+
+import {
+	dirname,
+	extname,
+	join,
+	posix,
+	relative,
+	resolve,
+	sep,
+} from 'path';
 import { visit } from 'unist-util-visit';
 
 
 export type RewriteUrlsOptions = {
 	appendTrailingSlash?: boolean;
+	contentRoot?: string;
 	trimExtensions?: Array<string>;
 };
 
@@ -13,6 +24,7 @@ type SanitizedRewriteUrlsOptions = Required<RewriteUrlsOptions>;
 function sanitize(options?: RewriteUrlsOptions): SanitizedRewriteUrlsOptions {
 	const sanitized: SanitizedRewriteUrlsOptions = {
 		appendTrailingSlash: true,
+		contentRoot: 'src/content/docs',
 		trimExtensions: ['md']
 	};
 
@@ -25,12 +37,23 @@ function sanitize(options?: RewriteUrlsOptions): SanitizedRewriteUrlsOptions {
 }
 
 const PATTERN_STARTS_WITH_RELATIVE = /^(\.{1,2}\/?)+/;
-const PATTERN_STARTS_WITH_HTTP_LOCALHOST = /^http:\/\/localhost\//;
 
 const rewriteUrls: Plugin<[RewriteUrlsOptions?], Root> = (options) => {
-	const { appendTrailingSlash, trimExtensions } = sanitize(options);
+	const {
+		appendTrailingSlash,
+		contentRoot,
+		trimExtensions
+	} = sanitize(options);
 
-	return (root) => {
+	return (root, file) => {
+		const [currentFile] = file.history;
+
+		if (currentFile === undefined) {
+			throw new Error('Current file is unknown.');
+		}
+
+		const resolvedContentRoot = resolve(join(file.cwd, contentRoot));
+
 		visit(root, 'element', (node) => {
 			if (node.type !== 'element') {
 				// This is because node for some reason is not just Element in
@@ -53,40 +76,36 @@ const rewriteUrls: Plugin<[RewriteUrlsOptions?], Root> = (options) => {
 				return;
 			}
 
-			// We need to add *something* to be the base URL if the href is relative
-			const url = new URL(node.properties.href, 'http://localhost');
-			for (const extension of trimExtensions) {
-				if (url.pathname.endsWith(`.${extension}`)) {
-					url.pathname = url.pathname.slice(0, -(1 + extension.length));
+			const originalHref = node.properties.href;
 
-					if (appendTrailingSlash) {
-						url.pathname += '/';
-					}
+			// We need to account for URL trimming relative paths
+			const matchesRelative = PATTERN_STARTS_WITH_RELATIVE.exec(node.properties.href);
+
+			if (!matchesRelative) {
+				// Make no changes
+				return;
+			}
+
+			const currentDir = dirname(currentFile);
+			const resolvedTargetPath = resolve(currentDir, originalHref);
+			const relativeToRoot = relative(resolvedContentRoot, resolvedTargetPath);
+			let dirtyHref = `/${relativeToRoot.replace(/^\.\//, '')}`;
+
+			for (const extension of trimExtensions) {
+				if (dirtyHref.endsWith(`.${extension}`)) {
+					dirtyHref = dirtyHref.slice(0, -(1 + extension.length));
 
 					// Only replace once, we are not going to handle x.html.md and turn it into x
 					break;
 				}
 			}
 
-			// We need to account for URL trimming relative paths
-			const matchesRelative = PATTERN_STARTS_WITH_RELATIVE.exec(node.properties.href);
-
-			// If the HREF *already* started with http://localhost, don't remove it
-			if (!PATTERN_STARTS_WITH_HTTP_LOCALHOST.test(node.properties.href) && !matchesRelative) {
-				node.properties.href = url.href;
-				return;
+			if (appendTrailingSlash && extname(dirtyHref) == '') {
+				dirtyHref += '/';
 			}
 
-			// Remove the http://localhost we added to the start when validating the URL
-			node.properties.href = url.href.replace(PATTERN_STARTS_WITH_HTTP_LOCALHOST, '');
-
-			// If we had a relative path
-			if (matchesRelative) {
-				const [match] = matchesRelative;
-				// TODO: Figure out a way to know the URL so that we can
-				//   resolve it correctly instead of just assuming trailing slash
-				node.properties.href = '../' + match + node.properties.href;
-			}
+			const href = sep !== posix.sep ? dirtyHref.replace(sep, posix.sep) : dirtyHref;
+			node.properties.href = href;
 		});
 	};
 };
