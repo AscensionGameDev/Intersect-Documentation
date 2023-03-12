@@ -2,14 +2,24 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeAutolinkHeadings, {
+	Options as RehypeAutolinkHeadingsOptions
+} from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import rehypeVideo from '@ascensiongamedev/rehype-video';
 import remarkLint from 'remark-lint';
 import remarkReferenceLinks from 'remark-reference-links';
 import remarkValidateLinks from 'remark-validate-links';
 
-import rehypeRewriteUrls, { RewriteUrlsOptions } from './plugins/rehype-rewrite-urls';
+import rehypeRewriteUrls from './plugins/rehype-rewrite-urls';
+
+import { h } from 'hastscript';
+import { fromHtml } from 'hast-util-from-html';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+const linkIconSvgPath = join(process.cwd(), 'public', 'link.svg');
+const linkIcon = readFileSync(linkIconSvgPath, 'utf-8');
 
 // Would like to add but are "unmaintained":
 // rehype-minify-url	https://github.com/rehypejs/rehype-minify/tree/main/packages/rehype-minify-url
@@ -42,15 +52,23 @@ export default defineConfig({
 	markdown: {
 		gfm: true,
 		rehypePlugins: [
-			rehypeAutolinkHeadings,
-			[
-				rehypeRewriteUrls,
-				<RewriteUrlsOptions>{
-
-				}
-			],
+			rehypeRewriteUrls,
 			rehypeSlug,
 			rehypeVideo,
+			[
+				/* this order matters, it must come after rehypeSlug */
+				rehypeAutolinkHeadings,
+				<RehypeAutolinkHeadingsOptions>{
+					behavior: 'append',
+					content() {
+						return h(
+							'span',
+							{ class: 'icon icon-link' },
+							fromHtml(linkIcon).children.filter(({ type }) => type === 'element')
+						);
+					}
+				}
+			]
 		],
 		remarkPlugins: [
 			remarkLint,
