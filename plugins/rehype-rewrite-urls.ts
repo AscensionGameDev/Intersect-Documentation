@@ -25,7 +25,7 @@ function sanitize(options?: RewriteUrlsOptions): SanitizedRewriteUrlsOptions {
 	const sanitized: SanitizedRewriteUrlsOptions = {
 		appendTrailingSlash: true,
 		contentRoot: 'src/content/docs',
-		trimExtensions: ['md']
+		trimExtensions: ['md', 'mdx']
 	};
 
 	const trimExtensions = options?.trimExtensions;
