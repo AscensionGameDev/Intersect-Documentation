@@ -54,13 +54,15 @@ const VERSIONS: readonly LabeledVersion[] = docs
 		value: "latest",
 	});
 
-const currentSlug = currentPage.replace(/^\//, "");
-const currentId =
-	docs.find(
-		({ slug }) =>
-			slug === currentSlug ||
-			currentSlug === slug.replace(langCode.toLowerCase(), langCode)
-	)?.id ?? `${currentSlug.replace(/\/$/, "")}.md`;
+const currentSlug = currentPage.replace(/^\/|\/$/g, "");
+const searchLangCode = langCode.toLowerCase();
+const currentDoc = docs.find(({ slug }) => {
+	const matches =
+		slug === currentSlug ||
+		currentSlug === slug.replace(searchLangCode, langCode);
+	return matches;
+});
+const currentId = currentDoc?.id ?? `${currentSlug.replace(/\/$/, "")}.md`;
 
 const editUrl = getEditUrl(currentId);
 const pathInRepo = getPathInRepo(currentId);
