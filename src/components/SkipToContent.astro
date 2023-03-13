@@ -1,6 +1,6 @@
 ---
-import { A11Y_NAV_LABELS } from '../a11y';
-import type { KnownLanguageCode } from '../i18n';
+import { A11Y_NAV_LABELS } from "../a11y";
+import type { KnownLanguageCode } from "../i18n";
 
 type Props = {
 	langCode: KnownLanguageCode;
@@ -29,9 +29,9 @@ const a11yNavLabels = A11Y_NAV_LABELS[langCode];
 	</li>
 </ul>
 
-<a href="#article" class="sr-only focus-not-sr-only skiplink"
-	><span>Skip to Content</span></a
->
+<a href="#article" class="sr-only focus-not-sr-only skiplink">
+	<span>Skip to Content</span>
+</a>
 
 <style>
 	.a11y-nav {
