@@ -55,12 +55,26 @@ const VERSIONS: readonly LabeledVersion[] = docs
 	});
 
 const currentSlug = currentPage.replace(/^\/|\/$/g, "");
+
 const searchLangCode = langCode.toLowerCase();
+const searchVersion = version?.replaceAll(".", "");
+
 const currentDoc = docs.find(({ slug }) => {
-	const matches =
-		slug === currentSlug ||
-		currentSlug === slug.replace(searchLangCode, langCode);
-	return matches;
+	if (currentSlug === slug) {
+		return true;
+	}
+
+	const correctedSlugLangCode = slug.replace(searchLangCode, langCode);
+	if (currentSlug === correctedSlugLangCode) {
+		return true;
+	}
+
+	if (!searchVersion || !version || version === "latest") {
+		return false;
+	}
+
+	const correctedSlug = correctedSlugLangCode.replace(searchVersion, version);
+	return currentSlug === correctedSlug;
 });
 const currentId = currentDoc?.id ?? `${currentSlug.replace(/\/$/, "")}.md`;
 
