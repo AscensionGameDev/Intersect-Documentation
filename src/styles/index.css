@@ -2,6 +2,7 @@
 	--user-font-scale: 1rem - 1rem;
 	--max-width: calc(100% - 1rem);
 
+	scrollbar-width: thin;
 	text-rendering: optimizespeed;
 }
 
