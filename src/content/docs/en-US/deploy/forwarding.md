@@ -2,10 +2,6 @@
 title: Port Forwarding
 ---
 
----
-title: Port Forwarding
----
-
 > _Please note that the process of configuring port forwarding may vary depending on the specific router you are using and its configuration. Therefore, it is recommended to consult the router's documentation or contact your internet service provider for assistance._
 
 To configure port forwarding, follow these steps:
