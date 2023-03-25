@@ -4,7 +4,7 @@ title: Compiling
 
 The first step before making changes to the source code is getting it to compile. Intersect relies on dozens of external libraries and tools (ie MonoGame, Newtonsoft Json.Net, etc) and our project is designed to fetch those dependencies automatically from Nuget.
 
-In order to get started open the Intersect.sln file in the Intersect-Engine folder. The solution should open in Visual Studio 2019.
+In order to get started open the Intersect.sln file in the Intersect-Engine folder. The solution should open in Visual Studio 2022.
 
 ![solution](https://www.ascensiongamedev.com/resources/filehost/bb694eabb570f22d541f87d1db2fc68f.png)
 

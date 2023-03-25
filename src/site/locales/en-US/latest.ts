@@ -67,7 +67,9 @@ export const sidebar: LocalizedSidebar = {
 			title: 'Getting Started',
 			collapsible: true,
 			children: [
+				'/developer/start/prerequisites.md',
 				'/developer/start/vs.md',
+				'/developer/start/rider.md',
 				'/developer/start/github.md',
 				'/developer/start/compiling.md',
 			],
