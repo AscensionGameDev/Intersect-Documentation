@@ -162,6 +162,10 @@ a:focus {
 	display: inline-block;
 }
 
+.header-link svg {
+	opacity: 0.6;
+}
+
 .icon.icon-link>svg {
 	height: 100%;
 	width: 100%;
@@ -399,10 +403,6 @@ h2.heading {
 .header-link a:focus {
 	color: var(--theme-text);
 	text-decoration: underline;
-}
-
-.header-link svg {
-	opacity: 0.6;
 }
 
 .header-link:hover svg {
