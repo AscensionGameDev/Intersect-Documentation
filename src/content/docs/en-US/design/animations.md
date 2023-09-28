@@ -2,12 +2,6 @@
 title: Animations
 ---
 
-- Enhancing Maps via Attributes
-- Attacks/Spells
-- Projectiles
-- Weather
-- More?
-
 ## Configuration
 
 First to create an Animation, we go to the Animation Editor under the 'Game Editors' tab.
