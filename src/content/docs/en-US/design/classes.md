@@ -87,7 +87,7 @@ Creating classes is done via the Class Editor under the 'Game Editors' menu.
 - *Damage Type*: Setting this will allow you to select whether the damage is Physical, Magic or True. True damage negates resistance.
 - *Scaling Stat*: Setting this will link the base damage with the class stat selected here.
 - *Scaling Amount (%)*: Setting this will scale the scaling stat based on percentage. Example, if the class has 10 Attack and its scaled amount is set at 50%. The base damage will include 5 Attack as base damage before resistances.
-- *Sprite Attack Animation*: You can select an attack animation here. If you don't have any animations created, refer to the Animation Editor in the 'Game Editors' tab on the main interface.
+- *Sprite Attack Animation*: You can select a sprite attack animation here. The sprite needs to be located in your clients `resources/entities` folder and they must be in `.png` format with the naming convention, `spritename_attack_customname.png`. This option will override the engine default sprite animation named, `spritename_attack.png`.
 - *Extra Attack Animation*: You can select an extra attack animation here. If you don't have any animations created, refer to the Animation Editor in the 'Game Editors' tab on the main interface.
 
 ### Attack Speed
