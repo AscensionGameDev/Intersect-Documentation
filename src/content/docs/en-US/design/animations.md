@@ -2,10 +2,9 @@
 title: Animations
 ---
 
-## Configuration
+Creating animations is done via the Animation Editor under the 'Game Editors' menu.
 
-First to create an Animation, we go to the Animation Editor under the 'Game Editors' tab.
-We will examine the menu tabs and go over what they do here.
+## Managing Animations
 
 ![CRUD and Sorting Menu](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/618685af-4820-4490-a647-7d05230cbf1f)
 
@@ -16,7 +15,7 @@ We will examine the menu tabs and go over what they do here.
 - You can paste the copy inside a New Animation or overwrite another by clicking on that Animation in the list and then click on the top left fifth icon or use the key shortcut Ctrl+V.
 - You can undo a change by clicking the top left sixth icon (This does not revert changes to Animation deletion). 
 
-After knowing the menu tab functions, we'll now focus on the main editor. 
+## Editing Animations
 
 ![Animation Editor](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/8037f701-6366-4746-a903-9fe4360de917)
 
