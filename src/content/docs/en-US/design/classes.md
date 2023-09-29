@@ -2,7 +2,11 @@
 title: Classes
 ---
 
-Creating classes is done via the `Class Editor` under the `Game Editors` menu.
+## Overview
+Creating classes is done via the `Class Editor` under the `Game Editors` tab on the main interface.
+
+![Class Editor](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/34209309-3973-4965-9fc8-86c8d5a36e86)
+![Scrolled](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/0aaba85d-70ce-4a31-b8d1-0646aecbb131)
 
 ## Managing Classes
 
@@ -16,8 +20,6 @@ Creating classes is done via the `Class Editor` under the `Game Editors` menu.
 - Clicking on the sixth icon will revert your last change to a class (Does not revert deletion).
 
 ## Editing Classes
-
-![Class Editor](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/34209309-3973-4965-9fc8-86c8d5a36e86)
 
 ### General
 
