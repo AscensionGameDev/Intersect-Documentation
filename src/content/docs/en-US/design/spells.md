@@ -138,7 +138,7 @@ title: Spells
 - *Z-Dimension Blocks*: With this ticked, it will ignore collisions with Z-Dimension blocks on the map.
 
 ### Event
->Selecting this type will open this contain window on the spell editor. Upon casting, it will process an event selected. Refer to the `Event` section of the page for more information on how to create events!
+>Selecting this type will open this contain window on the spell editor. Upon casting, it will process an event selected. Refer to the [Events](https://docs.freemmorpgmaker.com/en-US/events/introduction/) documentation for more information on how to create events!
 
 ![Event](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/4522beac-6c92-41b2-afdb-6f4f081b22ac)
 
