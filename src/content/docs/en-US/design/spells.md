@@ -3,7 +3,8 @@ title: Spells
 ---
 
 ## Overview
-Spells can be created by clicking `Spell Editor` inside the `Game Editors` tab on the main interface.
+>Spells can be created by clicking `Spell Editor` inside the `Game Editors` tab on the main interface.
+
 ![Editor](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/2bc7b67c-f188-43b4-860e-1fcdaa40bd71)
 
 ## Managing Spells
@@ -29,7 +30,7 @@ Spells can be created by clicking `Spell Editor` inside the `Game Editors` tab o
 - *Bound*: Toggling this will make your spell bound to a character which disables the character from unlearning it.
 - *Sprite Cast Anim*: You can select a sprite cast animation here. The sprite needs to be located in your clients `resources/entities` folder and they must be in `.png` format with the naming convention, `spritename_cast_customname.png`. This option will override the engine default sprite animation named, `spritename_cast.png`.
 - *Extra Cast Anim*: You can select an extra cast animation here. If you don't have any animations created, refer to the `Animation Editor` in the `Game Editors` tab on the main interface.
-- *Casting Requirements*: Clicking this will open another window which is used for `Conditions`. Refer to the `Conditions` documentation section for more information about this.
+- *Casting Requirements*: Clicking this will open another window which is used for `Conditions`. Refer to the [Conditions](https://docs.freemmorpgmaker.com/en-US/design/conditions/) documentation section for more information about this.
 - *Cannot Cast Message*: Allows you to set a message as to why the spell can't cast.
 
 ### Spell Costs
@@ -63,7 +64,7 @@ Spells can be created by clicking `Spell Editor` inside the `Game Editors` tab o
 ### Heal/Damage Over Time
 ![HOT](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/8edeaeca-b4ca-4929-8671-22fa5497dad9)
 
-- *HOT/DOT*: Toggling this will enable/disable `Heal/Damage Over Time`.
+- *HOT/DOT?*: Toggling this will enable/disable `Heal/Damage Over Time`.
 - *Tick (ms)*: Allows you to set the tick timer in milliseconds, this will tick until the `Duration (ms)` expires. 1000 (ms) = 1 second.
 - *Tick Animation*: Allows you to set an animation that will play per tick. Refer to the `Animation Editor` in the `Game Editors` tab on the main interface.
 
@@ -74,7 +75,7 @@ Spells can be created by clicking `Spell Editor` inside the `Game Editors` tab o
 - *Ability Pwr*: Allows you to set an ability power stat modifier that will last until the `Duration (ms)` expires.
 - *Defense*: Allows you to set a defense stat modifier that will last until the `Duration (ms)` expires.
 - *Magic Resist*: Allows you to set a magic resist stat modifier that will last until the `Duration (ms)` expires.
-- *Speed*: Allows you to set a speed stat modifier that will last until the `Duration (ms)` expires
+- *Speed*: Allows you to set a speed stat modifier that will last until the `Duration (ms)` expires.
 
 ### Stat Boost/Effect Duration
 ![Duration](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/4cb567b2-ef98-4528-8cab-4c43b509024c)
@@ -82,15 +83,105 @@ Spells can be created by clicking `Spell Editor` inside the `Game Editors` tab o
 - *Duration (ms)*: Allows you to set the duration of the buffs/debuffs and HOT/DOT effects in milliseconds. 1000 (ms) = 1 second.
 
 ### Effect
-![Effect](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/7a2efe64-1136-4f47-a3cd-fe4e66821985)![Effect Options](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/2a847639-c825-49eb-bf0a-bcfa36a080bc)
+![Effect Options](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/2a847639-c825-49eb-bf0a-bcfa36a080bc)![Transform](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/85fa9ed0-8cf8-410d-ad20-eeda52b9e57c)
 
-- *Extra Effect*: Allows you to add buffs/debuff effects. Please go [here](#extra-effects) for more information on each of the effects.
+
+- *Silence*: Makes the target unable to spell cast until the `Duration (ms)` expires.
+- *Stun*: Makes the target unable to move or attack until the `Duration (ms)` expires.
+- *Snare*: Makes the target unable to move until the `Duration (ms)` expires.
+- *Blind*: Makes the target unable to melee hit until the `Duration (ms)` expires.
+- *Stealth*: Makes the target invisible until the `Duration (ms)` expires.
+- *Transform*: Allows you to change the characters sprite until the `Duration (ms)` expires. Refer to the second screenshot above.
+- *Cleanse*: Removes all debuffs from the target.
+- *Invulnerable*: Makes the target unabled to be damaged until the `Duration (ms)` expires.
+- *Shield*: Grants the target a shield based on HP setting until the `Duration (ms)` expires.
+- *Sleep*: Makes the target go to sleep until the `Duration (ms)` expires.
+- *OnHit*: Adds an onhit effect to the target until the `Duration (ms)` expires.
+- *Taunt*: Makes the target turn berserk until the `Duration (ms)` expires.
 
 ## Spell Types
-- TODO
+>You can select a spell type from this drop down menu.
+
+![Spell Types](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/c3dac624-eb60-4471-b590-5a431d8a7207)
+
+### Combat Spell
+>This is the default type which we've covered above.
+
+### Warp To Map
+>Selecting this type will open this container window on the spell editor. Upon casting, it will warp the character to a defined Map/X/Y.
+
+![Warp To Map](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/4aa858ab-bb35-4536-b5d6-93ac9dddf747)
+
+- *Map*: Allows you to set a map to warp to.
+- *X*: Allows you to set the maps X position to warp to.
+- *Y*: Allows you to set the maps Y position to warp to.
+- *Dir*: Allows you to set the position which the character will be facing.
+- *Open Visual Interface*: This opens an interface which you can click to define the warp Map/X/Y automatically.
+
+### Warp To Target
+>Selecting this type will automatically set the targetting type. Upon casting, it will warp the character to the target.
+
+![Warp To Target](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/e17f40f9-2761-4a2b-b0c0-91ac94650ab9)
+
+- *Target Type*: This type is automatically set when selecting the spell type and can not be changed.
+- *Cast Range (tiles)*: Allows you to set a range in tiles for which this spell can be cast.
+
+### Dash
+>Selecting this type will open this container window on the spell editor. Upon casting, it will create a dash effect based on the options defined.
+
+![Dash](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/555735f5-1caa-4611-a5c1-3c362c89f85a)
+
+- *Dash Range (tiles)*: Allows you to set a dash range in tiles.
+- *Map Blocks*: With this ticked, it will ignore collisions with map block attributes.
+- *Active Resources*: With this ticked, it will ignore collisions with active resources on the map.
+- *Inactive Resources*: With this ticked, it will ignore collisions with inactive resources on the map.
+- *Z-Dimension Blocks*: With this ticked, it will ignore collisions with Z-Dimension blocks on the map.
+
+### Event
+>Selecting this type will open this contain window on the spell editor. Upon casting, it will process an event selected. Refer to the `Event` section of the page for more information on how to create events!
+
+![Event](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/4522beac-6c92-41b2-afdb-6f4f081b22ac)
 
 ## Targetting Types
-- TODO
+>You can select a targetting type from this drop down menu.
 
-## Extra Effect
-- TODO
+![Targetting Options](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/4b7f9cdb-279c-480c-a6f3-f584ae48232d)
+
+### Self
+>Selecting this type will only allow the spell to be cast on themselves.
+
+### Single Target (includes self)
+>Selecting this type will allow the spell to be cast on a single target, including self.
+
+![Single Target](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/a5cf2cd8-663e-4f76-9180-367386f08072)
+
+- *Cast Range (tiles)*: Allows you to set a cast range in tiles.
+- *Hit Radius*: Allows you to set a hit radius.
+
+### AOE
+>Selecting this type will allow the spell to affect all within the hit radius defined.
+
+![AOE](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/1ac2c7de-4955-4a32-8d64-84dfe79566d8)
+
+- *Hit Radius*: Allows you to set a hit radius.
+
+### Linear (projectile)
+>Selecting this type will allow the spell to be a linear projectile selected from the projectile list.
+
+![Projectile](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/546bf857-1cd9-478b-a505-a40247647c87)
+
+- *Projectile*: Allows you to choose from a list of projectiles. If you have no projectiles created, refer to the `Projectile Editor` from the `Game Editors` tab on the main interface.
+
+### On Hit
+>Selecting this type will allow the spell to be an On Hit effect.
+
+![On Hit](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/554b9ce9-05dc-45c3-8969-1297f86dbe09)
+
+- *Duration (ms)*: Allows you to set the duration of the effect in milliseconds. 1000 (ms) = 1 second.
+
+### Trap
+>Selecting this type will allow the spell to act as a trap.
+
+![Trap](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/234a90cd-fafc-4e70-afb1-30c90712e80a)
+
+- *Duration (ms)*: Allows you to set the duration of the effect in milliseconds. 1000 (ms) = 1 second.
