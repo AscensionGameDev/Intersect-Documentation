@@ -35,13 +35,13 @@ Spells can be created by clicking `Spell Editor` inside the `Game Editors` tab o
 ### Spell Costs
 ![Spell Cost](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/07d3aa4d-4a9d-40ff-ba38-6b779eb32d04)
 
--*HP Cost*: Allows you to set an HP cost for casting the spell.
--*MP Cost*: Allows you to set an MP cost for casting the spell.
--*Cast Time (ms)*: Allows you to set a cast time for casting the spell in milliseconds. 1000 (ms) = 1 second.
--*Cooldown (ms)*: Allows you to set a cooldown timer in milliseconds. 1000 (ms) = 1 second. This disables the spell from being cast until the timer ends.
--*Cooldown Group*: Clicking the X next to this field allows you to create a group which you can place multiple spells in a cooldown catagory, which disables all those spells in the group from being cast until the cooldown timer ends.
--*Ignore Global Cooldown?*: Toggling this will ignore the global cooldown of spells. The `server config` has global cooldowns disabled by default.
--*Ignore Cooldown Reduction?*: Toggling this will disable/enable the players cooldown reduction percentage effect.
+- *HP Cost*: Allows you to set an HP cost for casting the spell.
+- *MP Cost*: Allows you to set an MP cost for casting the spell.
+- *Cast Time (ms)*: Allows you to set a cast time for casting the spell in milliseconds. 1000 (ms) = 1 second.
+- *Cooldown (ms)*: Allows you to set a cooldown timer in milliseconds. 1000 (ms) = 1 second. This disables the spell from being cast until the timer ends.
+- *Cooldown Group*: Clicking the X next to this field allows you to create a group which you can place multiple spells in a cooldown catagory, which disables all those spells in the group from being cast until the cooldown timer ends.
+- *Ignore Global Cooldown?*: Toggling this will ignore the global cooldown of spells. The `server config` has global cooldowns disabled by default.
+- *Ignore Cooldown Reduction?*: Toggling this will disable/enable the players cooldown reduction percentage effect.
 
 ### Targetting Info
 ![Targetting](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/8fea8781-e9f3-44d1-9666-6581e9e2b367)![Targetting Options](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/342947c3-efb1-4ff2-9d21-02bed40088f9)
