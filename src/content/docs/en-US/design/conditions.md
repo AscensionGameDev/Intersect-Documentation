@@ -56,7 +56,7 @@ title: Conditions
 ![String](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/cd71765a-07a3-4852-a0aa-8290502d5db2)
 
 - *Conparator*: Allows you to select a comparator to check strings. The options are (`Equal To`, `Contains`).
-- *Static Value*: Allows you to set a string to use the comparator on. `Equal To` is case sensitive. Text variables work in this field! Click [here](https://www.ascensiongamedev.com/topic/749-event-text-variables/) for more information about them.
+- *Static Value*: Allows you to set a string to use the comparator on. `Equal To` is case sensitive. Text variables work in this field! Click [here](./chatcommands.md) for more information about them.
 
 ### Has Item
 
