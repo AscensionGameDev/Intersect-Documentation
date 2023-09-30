@@ -30,7 +30,7 @@ title: Spells
 - *Bound*: Toggling this will make your spell bound to a character which disables the character from unlearning it.
 - *Sprite Cast Anim*: You can select a sprite cast animation here. The sprite needs to be located in your clients `resources/entities` folder and they must be in `.png` format with the naming convention, `spritename_cast_customname.png`. This option will override the engine default sprite animation named, `spritename_cast.png`.
 - *Extra Cast Anim*: You can select an extra cast animation here. If you don't have any animations created, refer to the `Animation Editor` in the `Game Editors` tab on the main interface.
-- *Casting Requirements*: Clicking this will open another window which is used for `Conditions`. Refer to the [Conditions](https://docs.freemmorpgmaker.com/en-US/design/conditions/) documentation section for more information about this.
+- *Casting Requirements*: Clicking this will open another window which is used for `Conditions`. Refer to the [Conditions](./conditions.md) documentation section for more information about this.
 - *Cannot Cast Message*: Allows you to set a message as to why the spell can't cast.
 
 ### Spell Costs
@@ -138,7 +138,7 @@ title: Spells
 - *Z-Dimension Blocks*: With this ticked, it will ignore collisions with Z-Dimension blocks on the map.
 
 ### Event
->Selecting this type will open this contain window on the spell editor. Upon casting, it will process an event selected. Refer to the [Events](https://docs.freemmorpgmaker.com/en-US/events/introduction/) documentation for more information on how to create events!
+>Selecting this type will open this contain window on the spell editor. Upon casting, it will process an event selected. Refer to the [Events](..events/introduction.md) documentation for more information on how to create events!
 
 ![Event](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/4522beac-6c92-41b2-afdb-6f4f081b22ac)
 
