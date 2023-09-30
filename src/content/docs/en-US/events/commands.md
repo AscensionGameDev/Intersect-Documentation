@@ -1,6 +1,10 @@
 ---
 title: Commands
 ---
+Commands are sorted into various categories and allow you instruct and manipulate your events in various ways.
+
+---
+
 ## Dialogue
 These commands allow you to display text in various ways to players
 
@@ -49,6 +53,8 @@ Displays text in the chat window.
 - *Color*: The color the text will appear in the chat window.
 - *Channel*: This decides what chat channel the text will appear in.
 - *Show Chat Bubble*: This allows the event to display the text as a chat bubble like you would see from players.
+
+---
 
 ## Logic Flow
 These commands allow you to control the flow of the event and edit variables.
