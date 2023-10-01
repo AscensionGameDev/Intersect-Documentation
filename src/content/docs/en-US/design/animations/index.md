@@ -1,6 +1,10 @@
 ---
 title: Animations
 ---
+
+## Guides
+- [Telegraphed Animations Guide](./telegraphing.md)
+
 ## Overview
 Creating animations is done via the `Animation Editor` under the `Game Editors` tab on the main interface.
 ![Animation Editor](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/8037f701-6366-4746-a903-9fe4360de917)
