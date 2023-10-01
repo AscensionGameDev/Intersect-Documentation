@@ -137,7 +137,14 @@ export const sidebar: LocalizedSidebar = {
 			title: 'Editors',
 			collapsible: true,
 			children: [
-				'/design/animations/index.md',
+				{
+					title: 'Animations',
+					collapsible: true,
+					children: [
+						'/design/animations/index.md',
+						'/design/animations/telegraphing.md',
+					],
+				},
 				'/design/classes.md',
 				'/design/conditions.md',
 				'/design/crafting.md',

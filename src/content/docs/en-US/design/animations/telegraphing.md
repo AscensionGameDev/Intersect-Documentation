@@ -1,4 +1,7 @@
-# Telegraphed Animations Guide
+---
+title: Telegraphed Animations Guide
+---
+
 [_Authored by Mcadams_](https://www.ascensiongamedev.com/topic/6934-telegraph-spell-animations/)
 
 Hello! This is a guide for how to add telegraphs for spell animations in your game. If you're unfamiliar with what this means, when you have an enemy cast a spell that is going to fire out projectiles, you can give the spell a casting animation that alerts the player that a projectile spell is about to be cast and that they can dodge it.
@@ -33,7 +36,7 @@ Make sure you also create a projectile for a spell that properly reflects the sp
 
 Other telegraphs available in the download:
 
-  ![Telegraph animation 2](https://github.com/Mcadams/Intersect-Documentation/assets/1476550/d3d183f8-7fda-4e21-819d-dcc4f4b61172) 
+  ![Telegraph animation 2](https://github.com/Mcadams/Intersect-Documentation/assets/1476550/d3d183f8-7fda-4e21-819d-dcc4f4b61172)
 	![Telegraph animation 3](https://github.com/Mcadams/Intersect-Documentation/assets/1476550/edfdcf95-157c-41a2-bb67-069a73048ff7)
  ![Telegraph animation 4](https://github.com/Mcadams/Intersect-Documentation/assets/1476550/3cad2812-55fc-487b-85cc-75758d8a5ea8)
 
