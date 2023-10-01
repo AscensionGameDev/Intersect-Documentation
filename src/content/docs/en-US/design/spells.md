@@ -3,7 +3,7 @@ title: Spells
 ---
 
 ## Overview
->Spells can be created by clicking `Spell Editor` inside the `Game Editors` tab on the main interface.
+Spells can be created by clicking `Spell Editor` inside the `Game Editors` tab on the main interface.
 
 ![Editor](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/2bc7b67c-f188-43b4-860e-1fcdaa40bd71)
 
@@ -25,7 +25,7 @@ title: Spells
 - *Name*: Gives a name to the spell.
 - *Folder*: Clicking on the X next to this field allows you to create a folder for spell organization.
 - *Type*: Sets a type of spell. Please go [here](#spell-types) for more information on spell types.
-- *Icon*: Allows you to set an icon to the clients spell slot. Icons are located in your clients sub folder `resources\spells`.
+- *Icon*: Allows you to set an icon to the clients spell slot. Icons are located in your clients sub folder `resources/spells`.
 - *Desc*: Allows you to add a description to your spell.
 - *Bound*: Toggling this will make your spell bound to a character which disables the character from unlearning it.
 - *Sprite Cast Anim*: You can select a sprite cast animation here. The sprite needs to be located in your clients `resources/entities` folder and they must be in `.png` format with the naming convention, `spritename_cast_customname.png`. This option will override the engine default sprite animation named, `spritename_cast.png`.
@@ -100,15 +100,15 @@ title: Spells
 - *Taunt*: Makes the target turn berserk until the `Duration (ms)` expires.
 
 ## Spell Types
->You can select a spell type from this drop down menu.
+You can select a spell type from this drop down menu.
 
 ![Spell Types](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/c3dac624-eb60-4471-b590-5a431d8a7207)
 
 ### Combat Spell
->This is the default type which we've covered above.
+This is the default type which we've covered above.
 
 ### Warp To Map
->Selecting this type will open this container window on the spell editor. Upon casting, it will warp the character to a defined Map/X/Y.
+Selecting this type will open this container window on the spell editor. Upon casting, it will warp the character to a defined Map/X/Y.
 
 ![Warp To Map](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/4aa858ab-bb35-4536-b5d6-93ac9dddf747)
 
@@ -119,7 +119,7 @@ title: Spells
 - *Open Visual Interface*: This opens an interface which you can click to define the warp Map/X/Y automatically.
 
 ### Warp To Target
->Selecting this type will automatically set the targetting type. Upon casting, it will warp the character to the target.
+Selecting this type will automatically set the targetting type. Upon casting, it will warp the character to the target.
 
 ![Warp To Target](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/e17f40f9-2761-4a2b-b0c0-91ac94650ab9)
 
@@ -127,7 +127,7 @@ title: Spells
 - *Cast Range (tiles)*: Allows you to set a range in tiles for which this spell can be cast.
 
 ### Dash
->Selecting this type will open this container window on the spell editor. Upon casting, it will create a dash effect based on the options defined.
+Selecting this type will open this container window on the spell editor. Upon casting, it will create a dash effect based on the options defined.
 
 ![Dash](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/555735f5-1caa-4611-a5c1-3c362c89f85a)
 
@@ -138,20 +138,20 @@ title: Spells
 - *Z-Dimension Blocks*: With this ticked, it will ignore collisions with Z-Dimension blocks on the map.
 
 ### Event
->Selecting this type will open this contain window on the spell editor. Upon casting, it will process an event selected. Refer to the [Events](../events/introduction.md) documentation for more information on how to create events!
+Selecting this type will open this contain window on the spell editor. Upon casting, it will process an event selected. Refer to the [Events](../events/introduction.md) documentation for more information on how to create events!
 
 ![Event](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/4522beac-6c92-41b2-afdb-6f4f081b22ac)
 
 ## Targetting Types
->You can select a targetting type from this drop down menu.
+You can select a targetting type from this drop down menu.
 
 ![Targetting Options](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/4b7f9cdb-279c-480c-a6f3-f584ae48232d)
 
 ### Self
->Selecting this type will only allow the spell to be cast on themselves.
+Selecting this type will only allow the spell to be cast on themselves.
 
 ### Single Target (includes self)
->Selecting this type will allow the spell to be cast on a single target, including self.
+Selecting this type will allow the spell to be cast on a single target, including self.
 
 ![Single Target](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/a5cf2cd8-663e-4f76-9180-367386f08072)
 
@@ -159,28 +159,28 @@ title: Spells
 - *Hit Radius*: Allows you to set a hit radius.
 
 ### AOE
->Selecting this type will allow the spell to affect all within the hit radius defined.
+Selecting this type will allow the spell to affect all within the hit radius defined.
 
 ![AOE](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/1ac2c7de-4955-4a32-8d64-84dfe79566d8)
 
 - *Hit Radius*: Allows you to set a hit radius.
 
 ### Linear (projectile)
->Selecting this type will allow the spell to be a linear projectile selected from the projectile list.
+Selecting this type will allow the spell to be a linear projectile selected from the projectile list.
 
 ![Projectile](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/546bf857-1cd9-478b-a505-a40247647c87)
 
 - *Projectile*: Allows you to choose from a list of projectiles. If you have no projectiles created, refer to the `Projectile Editor` from the `Game Editors` tab on the main interface.
 
 ### On Hit
->Selecting this type will allow the spell to be an On Hit effect.
+Selecting this type will allow the spell to be an On Hit effect.
 
 ![On Hit](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/554b9ce9-05dc-45c3-8969-1297f86dbe09)
 
 - *Duration (ms)*: Allows you to set the duration of the effect in milliseconds. 1000 (ms) = 1 second.
 
 ### Trap
->Selecting this type will allow the spell to act as a trap.
+Selecting this type will allow the spell to act as a trap.
 
 ![Trap](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/234a90cd-fafc-4e70-afb1-30c90712e80a)
 
