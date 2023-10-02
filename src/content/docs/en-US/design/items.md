@@ -22,6 +22,25 @@ Creating items are done via the `Item Editor` under the `Game Editors` tab on th
 ### General
 ![General](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/f4fbdac4-92a8-4b1f-9704-28072e7efbcd)
 
+- *Name*: Allows you to set a name for your item.
+- *Folder*: Clicking on the X next to this field allows you to create a folder for item organization.
+- *Type*: Please click [here](#item-types) for more information on each item type.
+- *Rarity*: Allows you to set a rarity to your items which will change the color of the item name in the description window and when mouse hovering the items on the map.
+- *Desc*: Allows you to write a description of the item which will show in the description window.
+- *Can Drop?*: Ticking this off will disable the item from being dropped.
+- *Can Trade?*: Ticking this off will disable the item from being traded.
+- *Can Sell?*: Ticking this off will disable the item from being sold.
+- *Can Bank?*: Ticking this off will disable the item from being banked.
+- *Can Guild Bank?*: Ticking this off will disable the item from being guild banked.
+- *Can Bag?*: Ticking this off will disable the item from being bagged.
+- *Drop chance on Death (%)*: Allows you to set a percentage value of whether you want the item to be dropped upon death.
+- *Item Despawn Time (ms)*: Allows you to set a despawn timer on the dropped item in milliseconds. 1000 (ms) = 1 second.
+- *Pic*: Allows you to set a pic for the item that will be shown in the game. The location for these images would be in the clients `resources\items` folder.
+- *Hue*: `Red, Green, Blue, Alpha` adds a hue color and alpha change to your items image in the game.
+- *Price*: Allows you to set a price at which the item can be sold.
+- *Animation On Use*: Todo
+- *Equipment Animation*: Todo
+
 ### Usage Requirements
 ![Requirements](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/706a3b3e-2631-441d-aa50-90fa9291a31c)
 
@@ -34,7 +53,7 @@ Creating items are done via the `Item Editor` under the `Game Editors` tab on th
 ## Item Types
 
 ### None
-When this type is selected, it's an item that has no interaction with the character.
+When this type is selected, it is an item that has no click interaction with the character.
 
 ### Equipment
 When this type is selected, it shows you another container window on the bottom where you can select which equipment type your item is.
@@ -48,7 +67,7 @@ When this type is selected, it shows you another container window on the bottom 
 #### Boot Type
 
 ### Consumable
-When this type is selected, it shows you another container window which allows you to set the vitals upon consumption.
+When this type is selected, it shows you another container window which allows you to set the vitals upon use.
 
 ![Consumable](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/315a661e-ee56-4b43-aba6-48afbe1f5661)
 
