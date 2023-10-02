@@ -84,6 +84,7 @@ When this type is selected, it shows you another container window on the bottom 
 
 - *HP (%)*: Setting this allows you to set the equipments HP regen percentage per tick. Tick timer for regen can be modified inside the `servers config` file. Under `Combat`, `RegenTime`. Default is 3000 (ms) = 3 seconds.
 - *MP (%)*: Setting this allows you to set the equipments MP regen percentage per tick.
+
 ### Bonus Effects
 ![Bonus Effects](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/b9103475-6c19-43ff-9807-e8f5b0c7c5e7)
 
