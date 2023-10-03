@@ -109,7 +109,7 @@ title: Conditions
 ![Time is Between](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/057d26dd-fb16-49c6-b275-ea555f955843)
 
 - *Start Range*: Allows you to set the start range, the range is defined in `Time Editor` from the `Game Editors` tab on the main interface, as per day/night cycles.
-- *End Range*: Allows you to set the end range, the range is defined in `Time Editor` from the `Game Editors` tab on the main interface, as per day/night cycles.
+- *End Range*: Allows you to set the end range.
 
 ### Can Start Quest
 
@@ -129,7 +129,7 @@ title: Conditions
 
 ![Quest Complete](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/5dd5ee80-3761-4261-bec6-d531e515948c)
 
-- *Quest*: Allows you to select a quest from the `Quest Editor` to use the comparator to. You can go to `Quest Editor` from the `Game Editors` tab on the main interface to create a quest!
+- *Quest*: Allows you to select a quest from the `Quest Editor` to use the comparator to.
 
 ### No NPCs On Map
 
