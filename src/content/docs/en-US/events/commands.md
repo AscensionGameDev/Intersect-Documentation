@@ -241,7 +241,7 @@ Checks the player's access level.
 - *Power Dropdown*: Select if you want Mod and Admin or just Admin power level checked.
 
 ##### Condition: Time is between...
-Allows you to check against the in-game time frame. To use this properly, you will need to have configured your time ranges within the [Time Editor](https://docs.freemmorpgmaker.com/en-US/design/time/)
+Allows you to check against the in-game time frame. To use this properly, you will need to have configured your time ranges within the [Time Editor](../design/time.md)
 
 ![Intersect_Editor_UUdzg0i4ty](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/46f3fbe7-d436-46ad-86b0-b6aa4b4d638d)
 
@@ -249,14 +249,14 @@ Allows you to check against the in-game time frame. To use this properly, you wi
 - *End Range Dropdown*: The end of your range
 
 ##### Condition: Can Start Quest...
-Checks if the player can start a selected quest. To use this you will need to have at least one quest in the [Quest Editor](https://docs.freemmorpgmaker.com/en-US/design/quests/)
+Checks if the player can start a selected quest. To use this you will need to have at least one quest in the [Quest Editor](../design/quests.md)
 
 ![Intersect_Editor_UV8oOsLUOp](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/d2ff9693-8054-4f85-a2c8-ebca818d8ff4)
 
 - *Quest Dropdown*: Select the quest you want to check if they can start.
 
 ##### Condition: Quest Completed...
-Checks if the player has completed the selected quest. To use this you will need to have at least one quest in the [Quest Editor](https://docs.freemmorpgmaker.com/en-US/design/quests/)
+Checks if the player has completed the selected quest. To use this you will need to have at least one quest in the [Quest Editor](../design/quests.md)
 
 ![Intersect_Editor_gVZWNKo60q](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/4f5d0ed6-6bb0-463d-b664-bb64e63768f8)
 
@@ -343,3 +343,228 @@ Allows you to trigger a common event.
 ![Intersect_Editor_r4tXg7Sk1E](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/3cf8881f-659f-44a4-9033-c1ed1cb7ad44)
 
 - *Common Event Dropdown*: Select the common event you wish to trigger.
+
+---
+
+## Player Control
+The following commands allow you to manipulate various aspects of the player character.
+
+### Restore HP
+Allows you to add to the health (HP) of a player character.  Negative numbers will subtract from the HP Value.
+
+![Intersect_Editor_ereex6B0VU](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/f48c5eb9-1e10-43db-ae13-ab1cf395030c)
+
+- *Set Health*: Enter the numerical value you wish to increase or decrease the health vital.
+
+### Restore MP
+Allows you to add to the Mana (MP) of a player character. Negative numbers will subtract from the MP value.
+
+![Intersect_Editor_HrxJeEPJlA](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/f6ddef42-d1bb-40d8-94a6-a022d4dcce28)
+
+- *Set Mana*: Enter the numerical value you wish to increase or decrese the mana vital.
+
+### Level Up Player
+Increases the player level by 1.
+
+### Give Experience
+Allows you to give expericne to the player character.
+
+*Amount Type*: Select whether the type of experience is to be entered manually or from a variable.
+
+Manual Experience
+
+![Intersect_Editor_HrxJeEPJlA](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/b6f34295-0e59-4a41-8a73-706793a3eb8d)
+
+- *Give Experience*: Enter the value of experience you wish to give.
+
+Variable Experience
+
+![Intersect_Editor_ArAwpUzjdP](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/77e9a972-b586-4e21-9c73-95abd76cb09b)
+
+- *Variable Type Radio*: Select whether you are using a Player, Guild, or Global Variable. Must be Integer type.
+- *Variable Dropdown Box*: Select the variable you wish to use to give experience.
+
+Note: You can give negative experience via a variable type.
+
+### Change Level
+
+Allows you to specifically set the level of the player character.
+
+![Intersect_Editor_ArAwpUzjdP](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/e3e3d20b-dca6-4de9-88df-acafea1dab0c)
+
+- *Set Level*: Set the specific level you wish to have the player character made into.
+
+### Change Spells
+Allows you to add or remove spells from a player character's spellbook.
+
+![Intersect_Editor_4DL2dQPpHZ](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/e3462c9a-e0dd-4f11-b2bf-4bc2e676d241)
+
+- *Action*: Select whether you add or remove a spell.
+- *Spell*: Select the spell you wish to add or remove.
+- *Remove Bound Spell Checkbox*: Allows you to remove a spell that has been declared as "[bound](../design/spells.md/#general)".
+
+### Change Items
+Allows you to Give or take items from the player's inventory.
+
+![Intersect_Editor_4DL2dQPpHZ](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/7fd79fdb-1ba7-4b1f-978d-458af1c0f7d4)
+
+- *Action*: Select whether you are to Take or Give an item.
+- *Item*: The item you are giving or taking.
+- *Method*: If giving an item, select the method to handle it.
+  - *Normal*: Will give the item if there is room to do so. Fails if the player does not have room in inventory.
+  - *Allow Overflow*: Will give the item even if the user does not have room in their inventory.
+  - *Up to Amount*: Will give the item to the player only if they have room in their inventory until the quantity selected is reached, or their inventory is full.
+- *Amount Type*: Select method for deciding the amount you are giving. Manual you declare a given quantity, Variable you select the variable to use. Variable must be an integer to work.
+- *Amount*: When manual amount type is selected, you will select the quantity you wish to give.
+
+### Change Sprite
+Allows you to change the sprite of the player's character. Sprites are found in your `resources\entities` folder and should be .png format.
+
+![Intersect_Editor_4DL2dQPpHZ](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/8351776c-7c53-49b3-bcf2-c3e12bcdea56)
+
+- *Sprite*: Select the sprite you wish to change them to.
+- *Preview Box*: Allows you to see a preview of the sprite you have selected.
+
+### Change Player Color
+Allows you to change the color of the player sprite.
+
+![Intersect_Editor_4DL2dQPpHZ](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/b89061e4-4cf9-41f7-beb2-c95c64d1d1f8)
+
+- *Red*: Set's the Value of the red color channel. Range from 0-255.
+- *Blue*: Set's the Value of the blue color channel. Range from 0-255.
+- *Green*: Set's the Value of the green color channel. Range from 0-255.
+- *Alpha*: Set's the Value of the alpha transparancy color channel. Range from 0-255.
+
+Example:
+
+![Intersect_Client_JnkfMLDdmP](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/cf76c129-4cde-457f-a594-d8b309a0e394)
+
+### Change Face
+Allows you to change the face used for the player character. Faces are found in your `resources\faces` folder and should be .png format.
+
+![Intersect_Editor_uZddHfCntQ](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/3249eae1-7e03-4c23-8815-511c23a4085c)
+
+- *Face*: Select the face you wish to use.  
+- *Preview Box*: Allows you to see a preview of the face you have selected.
+
+### Change Gender
+Changes the player character's gender to the desired value.
+
+![Intersect_Editor_89srv4D7sW](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/0a2c847e-4c8c-43aa-a292-543d7495963b)
+
+- *Gender*: Select whether to set to Male or Female gender.
+
+### Set Access
+Allows you to set a player to have elevated access.  BE CAREFUL USING THIS!!!
+
+![Intersect_Editor_51wuJmfvIw](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/2c812024-14d2-4415-b6e3-c02609f55c92)
+
+- *Access*: Select the access level you wish to give to the player.
+  - *Regular User*: This is a standard access level for players.
+  - *In-Game Moderator*: This gives moderator access to the player.  BE CAREFUL USING THIS!!!!
+  - *Owner/Designer (Allows editor access)*: This gives full admin access to the user.  BE CAREFUL USING THIS!!!!
+
+Note:  Be aware that using this event command can compramise the security of your game project and you should only give such access to those you trust.  Moderator will have access to anything you have placed a check on for access level Mod.  Owner/Designer however will have all the same access rights that you do. So....
+
+BE. CAREFUL. USING. THIS. PLEASE!!!!!!!
+
+### Change Class
+Allows you to change the class of a character.
+
+![Intersect_Editor_V5E19nq1sG](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/0f104e90-f3f8-4003-9186-e4fd9a4e9d68)
+
+- *Class*: Select the class you wish to change the character to.
+
+### Equip/Unequip Item
+Allows you to force equip or unequip an item from a character.
+
+![Intersect_Editor_JkwdgdIEWa](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/d37e860c-b530-4470-9837-e93e59159d1b)
+
+- *Item*: Select the item you wish to equip.
+- *Unequip? Checkbox*: If selected, will unequip the item listed above instead.
+
+### Change Name Color
+Allows you to set the display color of a character name.
+
+![Intersect_Editor_F8ztCUKgKh](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/713815d4-367a-4a40-8743-a41fee11f271)
+
+- *Select Color*: Allows you to select the color you want to change the player name to.
+- *Override Admin Name Color?*: If selected, will override the default admin color given to admin access levels.
+- *Remove Name Color?*: If selected, will clear any name color edits done previously.
+
+### Change Player Label
+Allows you to apply a label to a character that is visible beside their name.
+
+![Intersect_Editor_nXSq7CfxZp](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/6751aca4-3e5e-4928-a7c6-f1fdb117c01e)
+
+- *Label Position*: Select whether you want the label to be above or below the player name.
+- *Value*: Enter the text, [chat commands](..design/chatcommands.md) or string type variable you wish to set the label to.
+- *Select Color*: Allows you to set the color of the label.
+- *Copy Player Name Color?*: If selected, color will copy the player name instead of what is selected above.
+
+Example
+![Intersect_Client_vFmzran69r](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/f92aabfe-68d7-4ecc-87f3-bdec2e72231d)
+
+### Change Player Name
+Set's the player name to the selected variable.
+
+![Intersect_Editor_bB1gtr0X7M](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/3e1ab175-ada0-402d-8b87-b324a936e9dd)
+
+- *Player Variable*: Select variable to use as the new player name.
+
+### Reset Stat Point Allocations
+Resets the character at current level as if they have not spent any stat points, allowing them to redistribute their points.
+
+---
+
+## Movement
+These commands allow the manipulation of movement of the player or event.
+
+### Warp Player
+Allows you to warp the player to a specific map and location.
+
+![Intersect_Editor_trSQiXmTB9](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/09b913a5-8de8-4416-b968-2c0e26c80663)
+
+- *Map*: Select the map you wish to move to.
+- *X Slider*: Select the 'X' value you wish to place the player on the selected map.
+- *Y Slider*: Select the 'Y' value you wish to place the player on the selected map.
+- *Dir*: Select the facing you wish to place the player, or if they will retain the direction they had prior to the warp.
+- *Open Visual Interface*: Open's the map in question, allowing you to click exactly where you want the player to appear.
+- *Change Instance Checkbox*: When checked, will allow you to set which instance category the new map will be in.
+
+### Set Move Route
+Allows you to setup a move route for the event or player.
+
+![Intersect_Editor_JTegW46oi5](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/de3ef983-afe8-4a11-9c2e-9253e13b1e9d)
+
+- *Entity Selection Box (Green)*: Select whether this move action will apply to the player or to the event itself.
+- *Movement List (Red)*: Shows the list of currently applied move commands and the order they will be applied.
+- *Command Box (Blue)*: List of commands that can be applied. Each move command is applied once.
+  - *Move Up/Down/Left/Right*: Moves the entity in the desired cardinal direction.
+  - *Move Up Left/Up Right/Down Right/Down Left*: Moves the entity in the desired diagonal direction.
+  - *Move Randomly*: Moves the entity in any random directon.
+  - *Step Forward*: Moves the entity one step forward in current facing direction.
+  - *Step Backward*: Moves the entity one step backard while maintaining facing.
+  - *Face Up/Down/Left/Right*: Faces the entity in the desired direction without leaving the current tile.
+  - *Turn 90° Clockwise*: Turns the entity right/clockwise one facing.
+  - *Turn 90° Counter Clockwise*: Turns the entity left/counter clockwise one facing.
+  - *Turn 180°*: Turns the entity to face the opposite direction of it's current facing.
+  - *Turn Randomly*: Turns the entity to a random facing.
+  - *Wait 100ms/500ms/1000ms*: Pauses the movement route for the selected amount of time.
+- *Ignore if Blocked*: If checked, the entity will follow the movement route even if it's path is blocked.
+- *Repeat Route*: If checked, the route will repeat once it's reached the end of the route.
+
+### Wait for Route Completion
+Allows you to command an event to wait for a route completion declared using [Set Move Route](#set-move-route)
+
+![Intersect_Editor_CItEFj2vKt](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/6ab07bdf-6b6e-4ae9-8e7e-6ec15787b0bc)
+
+- *Entity*: Select whether you are waiting for the player or the event to complete.
+
+### Hold and Release Player
+Allows you to block inpute from the player or release control back to them.
+
+### Spawn NPC
+Allows you to spawn an NPC in relation to the event.
+
+![Intersect_Editor_naQzgyLTV4](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/2d502090-3d90-43b8-a9ed-057f7323741a)
