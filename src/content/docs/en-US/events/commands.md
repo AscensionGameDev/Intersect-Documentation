@@ -518,7 +518,7 @@ Resets the character at current level as if they have not spent any stat points,
 ---
 
 ## Movement
-These commands allow the manipulation of movement of the player or event.
+These commands allow the manipulation of movement of the player or event. Many of these are useful to create scripted events such as an in-game cutscene.
 
 ### Warp Player
 Allows you to warp the player to a specific map and location.
@@ -567,4 +567,177 @@ Allows you to block inpute from the player or release control back to them.
 ### Spawn NPC
 Allows you to spawn an NPC in relation to the event.
 
-![Intersect_Editor_naQzgyLTV4](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/2d502090-3d90-43b8-a9ed-057f7323741a)
+![Intersect_Editor_naQzgyLTV4](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/319af1bb-75e6-4c68-9222-207553aa86d4)![Intersect_Editor_ZzpnZkCwTF](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/cde2acfc-a4e6-46af-bc93-0c66e5efdb9f)
+
+- *Spawn Type*: Select whether the entity will spawn on or around the entity or select a specific tile you wish it to spawn.
+
+#### Specific Tile
+- *Map*: Select the map it will spawn on.
+- *X*: Select the 'X' coordinate for the spawn.
+- *Y*: Select the 'Y' coordinate for the spawn.
+- *Dir*: Select the directon the NPC will spawn facing.
+- *Open Visual Interface*: Opens a window of the map, allowing you to click the spot for the spawn.
+
+#### On/Around Entity
+- *Entity*: Select if the spawn will be around the player or the event itself.
+- *Relative Location Grid*: Use the 5x5 grid to select the position of the spawn relative to the entity, which is displayed as the 'E' at the center.
+- *Relative to Entity Direction*: If checked, the spawn will take the direction of the entity in question with UP being the default facing.  If a square is selected in the upper region and the character is facing right, then the NPC will spawn to the right as to keep the entity in front.
+
+### Despawn NPC
+Will despawn NPC's associated with the event. This will not despawn NPC's spawned from other events or the map editor.
+
+### Hide/Show Player
+Will hide the player or show the player.
+
+---
+
+## Special Effects
+These commands allow you to manipulate the change the presentation in some way.
+
+### Play Animation
+Plays a specified animation at a location designated.
+
+![Intersect_Editor_aFRwopdhBB](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/0424e3ac-736b-4c26-a825-c1f75b7afe3c)![Intersect_Editor_9cOyfrVqcv](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/fdd6cd0b-b060-467c-a1f9-12b37c5bb948)
+
+- *Animation*: Select the animation you wish to play. These must first be created in the [Animation Editor](../design/animation.md).
+- *Spawn Type*: Select whether this animation will be on a Specific Tile, or On/Around Entity
+
+#### Specific Tile
+- *Map*: Select the map the animation will spawn on.
+- *X*: Select the 'X' coordinate for the spawn.
+- *Y*: Select the 'Y' coordinate for the spawn.
+- *Dir*: Select the directon the animation will spawn facing.
+- *Open Visual Interface*: Opens a window of the map, allowing you to click the spot for the spawn.
+
+#### On/Around Entity
+- *Entity*: Select if the spawn will be around the player or the event itself.
+- *Relative Location Grid*: Use the 5x5 grid to select the position of the spawn relative to the entity, which is displayed as the 'E' at the center.
+- *Relative to Entity Direction*: If checked, the spawn will take the direction of the entity in question with UP being the default facing.  If a square is selected in the upper region and the character is facing right, then the animation will spawn to the right as to keep the entity in front.
+- *Rotate Relative to Direction*: If checked, the animation will rotate relative to the entity's facing.
+
+### Play BGM
+This will play a background music track, overriding the one currently being played in the map.
+
+![Intersect_Editor_DiprKNgyZi](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/66976043-c394-479d-b54e-15aca4d79b97)
+
+- *BGM*: Select the track you wish to play. These must be in `resources\music` and must be in the .ogg file format.
+
+### Fadeout BGM
+This will perform a slow fade on any background music currently playing.
+
+### Play Sound
+Allows you to play a specific sound file.
+
+![Intersect_Editor_MnsLOGSUJx](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/cba5894d-f81d-47fd-938f-6c308e8a4f13)
+
+- *Sound*: Select the sound you wish to play. These must be in `resources\sounds` and must be in the .wav format.
+
+### Stop Sounds
+This stops all sounds currently playing.
+
+### Show Picture
+This will allow you to display a picture over the client.
+
+![Intersect_Editor_lD8btEhXH4](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/1aad65af-5c75-4f7e-b96a-ddc69421eacf)
+
+- *Picture*: Select the image you wish to display. Image files are located in `resources\images` and can be .bmp, .png, or .jpg format.
+- *Size*: Select the aspect ratio for the imate being displayed.
+  - *Original*: Shows the image as is.
+  - *Full Screen*: Stretches the image to fit the screen.
+  - *Half Screen*: Stretches the image to fit half the screen.
+  - *Stretch to Fit*: Stretches image to the nearest dimension to make the image fit the screen.
+- *Hide After (ms)*: Hides the image automatically after the selected milliseconds. 
+- *Click to close Image*: If checked, overrides the *Hide After* option and waits for the player to click the image to close it.
+- *Wait until Closed*: IF checked, will pause the event process until after the image is closed.
+
+### Hide Picture
+Hides a picture that has already been displayed by the event.
+
+---
+
+## Quest Control
+These commands allow you to control the starting, stopping, and overall flow of quests. To make use of any of these commands you will need to have configured at least one quest in the [Quest Editor](..\design\quests.md)
+
+### Start Quest
+Allows you to start or offer a quest to the player.
+
+![Intersect_Editor_HgAkxuS2pP](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/12ad0c5f-6102-4572-b690-0b1d6b2503a3)
+
+- *Quest*: Select the quest you wish to start.
+- *Show Offer Window*: If checked, will display the offer window where the user can accept or reject a quest.
+
+### Complete Quest Task
+Allows you to complete a task on event driven quests tasks.
+
+![Intersect_Editor_e9qg56UzqC](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/c63bd2bb-7116-413c-abd4-26ea7e3f0e3c)
+
+- *Quest*: Select the quest you wish to complete a task for.
+- *Task*: Select the task that is to be completed.
+
+### End Quest
+Commands the event to declare a quest as ended.
+
+![Intersect_Editor_BggGcEIhU7](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/6e3aef91-1814-456f-be10-258c1aca2653)
+
+- *Quest*: Select the quest you wish to complete.
+- *Do not run completion event?*: If checked, will not run the completion events as setup in the quest editor.
+
+---
+
+## Etc
+These commands are extra commands that do not fit elsewhere.
+
+### Wait
+Allows you to force the event process to wait a desired amount of time.
+
+![Intersect_Editor_2OHF9tfZyy](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/31b18f4a-e8bc-4301-9e10-f7fa62017d0e)
+
+- *Wait (ms)*: Enter the number of milliseconds you wish to wait.
+
+---
+
+## Shop and Bank
+These commands allow you to open the various shop and bank windows.
+
+### Open Bank
+Allows the player to open their personal bank.
+
+### Open Shop
+Allows the player to open a given shop interface. To use this you must have at least one shop configured in the [Shops Editor](..\design\shops.md).
+
+![Intersect_Editor_4E1aLbxI9d](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/edeb6bb4-72e5-45ce-a020-61fea5a5f409)
+
+- *Shop*: Select the shop interface you wish to display to the player.
+
+## Open Crafting Station
+Allows the player to craft at a configured crafting table. To use, you will need to configure at least one crafting table in the [Crafting Table Editor](..\design\crafting.md).
+
+![Intersect_Editor_vivXXl1NFR](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/bbbfbe18-9bf1-40c5-89ff-f6b2d783ac6a)
+
+- *Table*: Select the crafting table you wish to display to the player.
+
+---
+
+## Guilds
+Allows the various guild functions for creating or disbanding and managment.
+
+### Create Guild
+Allows the creation of a guild.
+
+![Intersect_Editor_vivXXl1NFR](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/4e75983a-dfe0-4794-bbf3-f828ac128d4b)
+
+- *Player Variable containing Guild Name*: This variable will be made into the guild name.
+
+### Disband Guild
+Allows the disbanding of the players guild.
+
+### Open Guild Bank
+Allows the plaeyr to open the guild bank.
+
+### Set Guild Bank Slots Count
+Allows to set the amount of bank slots the guild has. Requires the use of an integer variable from the variable editor.
+
+![Intersect_Editor_PVhnmDq7ZS](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/b7535253-1ed7-407e-ba4b-5b9a3876c4cc)
+
+- *Variable Selection Radio*: Selects the type of variable from Player, Global, or Guild.
+- *Variable Dropdown Box*: Selects the variable to use.
