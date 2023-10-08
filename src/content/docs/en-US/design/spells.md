@@ -30,6 +30,7 @@ Spells can be created by clicking `Spell Editor` inside the `Game Editors` tab o
 - *Bound*: Toggling this will make your spell bound to a character which disables the character from unlearning it.
 - *Sprite Cast Anim*: You can select a sprite cast animation here. The sprite needs to be located in your clients `resources/entities` folder and they must be in `.png` format with the naming convention, `spritename_cast_customname.png`. This option will override the engine default sprite animation named, `spritename_cast.png`.
 - *Extra Cast Anim*: You can select an extra cast animation here. If you don't have any animations created, refer to the `Animation Editor` in the `Game Editors` tab on the main interface.
+- *Hit Animation*: You can select a hit animation that will play on the target.
 - *Casting Requirements*: Clicking this will open another window which is used for `Conditions`. Refer to the [Conditions](./conditions.md) documentation section for more information about this.
 - *Cannot Cast Message*: Allows you to set a message as to why the spell can't cast.
 
