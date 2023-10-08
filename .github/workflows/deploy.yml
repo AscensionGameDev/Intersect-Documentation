@@ -25,9 +25,9 @@ jobs:
 
       - name: Install, build, and upload your site output
         uses: withastro/action@v1
-        with:
-          node-version: 20.3.0
-          package-manager: pnpm
+        # with:
+        #   node-version: 20.3.0
+        #   package-manager: pnpm
   deploy:
     needs: build
     runs-on: ubuntu-latest
