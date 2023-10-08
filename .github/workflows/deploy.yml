@@ -21,10 +21,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install, build, and upload your site output
-        uses: withastro/action@v0
+        uses: withastro/action@v1
         with:
           node-version: 20.3.0
           package-manager: pnpm
@@ -43,23 +43,3 @@ jobs:
         uses: actions/deploy-pages@v1
         with:
           token: ${{ secrets.INTERSECTBOT_PAGES_TOKEN }}
-
-      # - name: Setup Node.js environment
-      #   uses: actions/setup-node@v3.1.1
-      #   with:
-      #     node-version: 16.17.0
-
-      # - name: Install Dependencies
-      #   run: pnpm install
-
-      # - name: Build Documentation
-      #   run: pnpm build
-
-      # - name: Deploy
-      #   uses: JamesIves/github-pages-deploy-action@v4.3.3
-      #   with:
-      #     branch: gh-pages
-      #     folder: docs/.vuepress/dist
-      #     token: ${{ secrets.INTERSECTBOT_ACCESS_TOKEN }}
-      #     git-config-name: Intersect Bot
-      #     git-config-email: bot@ascension.dev
