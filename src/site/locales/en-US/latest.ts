@@ -167,7 +167,8 @@ export const sidebar: LocalizedSidebar = {
 			collapsible: true,
 			children: [
 				'/events/introduction.md',
-				'/events/commands.md',
+				'/events/eventcommands.md',
+				'/events/chatcommands.md',
 				'/events/pages.md',
 				'/events/common.md',
 				'/events/examples.md',
