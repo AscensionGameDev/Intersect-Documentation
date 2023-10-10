@@ -6,6 +6,6 @@ Below is a list of examples and guides for using Intersect's Event Editor. Guide
 
 ## Guides
 
-[Intersect Event System Tutorial](../events/guides/IEST) by Agoraphobic - A great resource for explaining the basics of the event system.
+[Intersect Event System Tutorial](../events/guides/intersecteventsystemtutorial.md) by Agoraphobic - A great resource for explaining the basics of the event system.
 
 ## Examples
