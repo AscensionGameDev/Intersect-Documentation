@@ -1,5 +1,5 @@
 ---
-title: Commands
+title: Event Commands
 ---
 Commands are sorted into various categories and allow you instruct and manipulate your events in various ways.
 
