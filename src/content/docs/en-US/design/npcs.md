@@ -84,7 +84,7 @@ Creating NPC's are done via the `Npc Editor` under the `Game Editors` tab on the
 
 ![Combat](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/daa42766-b0e1-464d-a263-52eb34420788)
 
-- Base Damage: Setting this will give the class a raw base damage value.
+- Base Damage: Setting this will give the Npc a raw base damage value.
 - Crit Chance (%): Setting this will increase the crit chance percentage.
 - Crit Multiplier (Default 1.5x): Setting this will increase the crit damage based on a multiplier of the base damage.
 - Damage Type: Setting this will allow you to select whether the damage is Physical, Magic or True. True damage negates resistance.
