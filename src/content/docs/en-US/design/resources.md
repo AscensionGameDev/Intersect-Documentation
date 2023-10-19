@@ -24,7 +24,7 @@ Creating resources are done via the `Resource Editor` under the `Game Editors` t
 
 ### General
 
-![Graphic](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/359932aa-4014-4013-b35a-f7205f826720)
+![Screenshot_1](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/74522b59-d707-4bc3-8416-d653c2ff8e70)
 
 - *Name*: Allows you to give your resource a name.
 - *Folder*: Clicking on the + will allow you to create a folder for resource organization in the list.
