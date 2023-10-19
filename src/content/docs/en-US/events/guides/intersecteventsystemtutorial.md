@@ -7,6 +7,10 @@ title: Intersect Event System Tutorial
 
 ---
 
+> Editor's Note: This guide was originally presented in a PDF format.  It is being copied over mostly as is to preserve it within the doc's. Though it is outdated, it's presentation largely still holds great value to anyone wanting to learn the event system.  If you wish to view the original PDF as written, you can find it [here](../events/guides/IntersectEventSystemTutorialbyAgoraphobic.pdf)
+
+---
+
 Welcome, to the Intersect: Event System Tutorial! Intersect uses an advanced Event System
 that you might find similar in other game creation engines; however, Intersect’s Event
 System has some core differences that are tailored-made for an ORPG game creation
@@ -376,6 +380,8 @@ discussing here, and we have not gone through everything yet to tackle this topi
 into [Event Commands](../events/eventcommands.md) first, then tackle Switches, Variables, Conditional Branches, and
 [Conditions](../design/conditions.md) after we gone through all the [Event Commands](../events/eventcommands.md)
 
+---
+
 ## Event Commands
 [Event Commands](../events/eventcommands.md) can be simple or complex as the developer needs them to be. Before we can
 discuss **Complex** [Event Commands](../events/eventcommands.md), we need to understand the **Simple** [Event Commands](../events/eventcommands.md) and
@@ -397,6 +403,260 @@ Commands, we need to go through each Event Command. Afterwards we are going to g
 Complex Events, Conditional Branches, Switches, and Variables. Do not worry, we will get
 through this.
 
-EDITOR: The original guide has a breakdown of all the [Event Commands](../events/eventcommands.md) and how they are used.  As they are already linked, I will not be duplicating that here. However you can see the original pdf [here](https://s3.us-east-2.amazonaws.com/ascensiongamedev/filehost/4032b79f3abdaaee4aad4bffb0304de5.pdf) on pages 20-40. 
+> **Editor's Note**: The original guide has a breakdown of all the [Event Commands](../events/eventcommands.md) and how they are used.  As they are already listed in the docs, I will not be duplicating that here. However you can see the original pdf [here](../events/guides/IntersectEventSystemTutorialbyAgoraphobic.pdf) on pages 20-40. 
+
+---
 
 ## Advanced Event System Tutorial
+
+> **Editor's Note**: Player and Global switches are no longer a thing. The functionallity of these are handled via a Boolean Variable. The text here is as written originally by Agoraphobic for consistiency's sake and should substitute as neccessary.  This does not apply to self-switches.
+
+**Player Switches**, **Player Variables**, **Global Switches**, and **Global Variables**! Oh, my!
+It is time for the complicated stuff now. This might be completely new to you or just a refresher, 
+but do not worry. We got this! We will just break it down piece by piece, as we have been doing 
+this entire tutorial. This is where the fun begins as we become more familiar with the **Event 
+System**, the more cool and fun stuff we can do to make our game even better! Trust me, once 
+you learn how to use **Conditional Branches**, **Variables**, and **Switches**, your game development 
+skills will evolve to a higher level of game creation
+
+![Intersect_Editor_yXzlQNbuK2](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/cf478cb1-1778-4fc6-bc43-09a06b55edbb)
+
+## Switches
+
+**What is a Player Switch**?
+
+**Player Switches** are light switches. This is the easiest way to think about **Player Switches**. A 
+standard lightbulb can be turned on (True) and turned off (False) by the flicking of a light switch. 
+A **Player Switch** operates in the same way, and by flicking it on (True) or off (False) can
+manipulate any number of **Events** in different ways. By turning the light Switch on/off, you are 
+sending an electrical current to activate/deactivate one or more **Events** in your game that rely on 
+the Switch being on or off. 
+
+**What is a Self-Switch**?
+
+**Self-Switches** are the special kind of Switches we need to talk about. Generally speaking, **Self switches** operate in the same way as **Player Switches**, except in two major ways. The first being 
+**Player Switches** can affect other **Events**, no matter their location; however, **Self-Switches** can 
+only affect **Event Commands** within its **Event**. Also, **Self-Switches** reset upon re-entering the 
+map, while **Player Switches** remain toggled on or off until changed. 
+
+**Why even use a Self-Switch**?
+
+There are two primary reasons to use a **Self-Switches** in your game. The first is is to reduce 
+clutter in your game by not wasting resources on **Player** or **Global Switches** on **Event Commands** 
+that only run within a specific **Event**. The second is to use **Events** that you want to have reset 
+when you enter the map again (see note). An Event can only contain four Self Switches
+
+> Note: If you are familiar with Rpgmaker’s Event System, Self-Switches do not reset on that 
+program, but they do reset within Intersect.
+
+## Variables
+
+**What is a Player Variable**?
+
+A **Player Variable** is like an empty box. You place objects in both boxes and **Variables** to be used 
+at a later date. Like a box, we should write something to let you know what’s in the box. One 
+such example is writing “Kitchen Stuff” on a box that has kitchen stuff in it. It is important that 
+like all good boxes, we can always put more stuff in or take stuff out. What is also really cool is 
+we can place boxes within boxes! This of course means we can place smaller boxes (**Variables**
+and **Switches**) into bigger boxes (**Events**). We will get more into that when we get into 
+conditions a few paragraphs down.
+
+**Why use a Player Variable**?
+
+I have been waiting for you to ask! I can assure you once you start using **Variables**, just like 
+**Switches** and **Conditional branches**, you will wonder how we ever lived without them! Let’s say 
+we are wanting to create a Romance System with different NPCs as options. We created all our 
+dialogue and choices within our **Events**; however, how do we check if they love (or dare say 
+hate!) our character? That is right: **Variables**.
+
+How is a **Variable** different than a **Switch**?
+
+This is an incredibly important question we must address. **Variables** are able to only store 
+numerical values, while **Switches** can only store True or False values.
+
+Wait, what? 
+
+Let’s look at it like this: all **Variables** are containers for liquids. You may put different amounts 
+of liquid within the **Variable** container; however, you still can only place liquid within the
+container (numbers). Cramming anything else into our containers (**Variables**) is bad and breaks 
+the containers, so we don’t do it. 
+
+As we discussed earlier, **Switches** are like light switches. They can only go on (True) or off 
+(False). Putting liquid (numbers) into them is bad, so we don’t do it.
+
+This means:
+
+**Variables** – Numbers Only!
+
+**Switches** = On (True) or Off (False) Only!
+
+**What are Global Variables and Global Switches**?
+
+We talked about the term Player and Global meant earlier, right? It means the same thing here. 
+**Player Switches** and **Player Variables** only affect the player themselves because those values are 
+exclusive to each person and can different from person to person. *Global* means that it affects 
+every player in the game! So, if we set a **Global Variable** to 2 and a **Global Switch** to True, that 
+means for every player that **Variable** is 2 and that **Switch** is True! This is helpful for grand scale 
+**Events** happening within the game or other global type quests or features. Use the Player ones 
+for personal quests and dialogue
+
+---
+
+## Conditional Branches
+
+**What is a Conditional Branch**?
+
+A **Conditional Branch** can be thought of as an indestructible lock we place our boxes to lock 
+them and keep them safe. All our locked chests require a key to open it and only that one key can 
+open it. A **Conditional Branch** checks to see if the conditions are met for it to open, it simply 
+asks “Is this the key that opens me?” If the answer is yes it unlocks and runs the **Event 
+Commands**. If the answer is no, it skips over the locked chest doing something else entirely.
+
+**Wait, I Do Not Understand**
+
+Let’s break it down then. My box (**Event**) now has a lock (**Conditional Branch**) now placed on it.
+When the **Event** activates it checks the **Conditional Branch** for an Iron Key. The locked on the 
+box asks, “Do you have the Iron Key to open me?” If the answer is yes, the box opens and the 
+**Event Commands** within the blue box are activated. If the answer is no, the box remains locked 
+and the **Event Commands** in the orange box activate instead. It is important only the blue or 
+orange color **Event Commands** will run, not both
+
+![msedge_cQKWJ3Vgc8](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/94db678f-8843-433d-8ecc-ade5c4f0d72f)
+
+Note: The colored boxes are not actually in the engine, I just added them to highlight how they 
+function.
+
+## It is time… Let us bring it all together!
+
+Now we have looked at everything, it is time to put it all together to create **Complex Events**. In 
+most instances we will want an **Event** to have more than 1 page, because it will be doing multiple 
+things and as a Game Developer we will need to learn to work with this. This may look a bit 
+complicated at first, but all we are doing is applying the concepts we have discussed through the 
+entire document. We will get through this. The most efficient way is to jump right in with an 
+example. We will start with something simple: a movable rock. 
+Note: We will look at two different, but effective ways to use the box, lock, and key together
+
+## Multiple Page Example:
+
+So, we first set up our **Event**. It is pretty straightforward, you click the rock and it activates Page 
+1 and tells us the boulder is too heavy to push. We want the boulder to be moved only by a 
+fighter; thus, we create a second page!
+
+![msedge_jPMrIEXv39](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/6984624b-d55c-4bba-b7a4-fc4965c0df8f)
+
+Here is our Page 2. Now we need to create our lock (Condition) to keep our box nice and locked. 
+Because we only want a Warrior to be able to push the lock, no one else!
+
+![msedge_f5WAGOzXUa](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/f5f89e24-c2e6-4632-8be3-3d8e58ba1db2)
+
+This is the **Condition** box that we just opened. It is 
+Important to note each **Condition** we place in here 
+acts as a lock for our box. Only a specific key will 
+fit the lock, and each lock we have must have a 
+different key before it will open!
+
+![msedge_2Z3epQMEGg](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/19d5093d-6971-437e-a862-4d9c2ec21032)
+
+Now, it is time for us to lock our boxes. This will make Page 2 locked until the certain 
+**Conditions** are met (the keys that fit the lock). To clarify, when we activate the **Event**, Page 2 
+will check if we are a Warrior. If we are, it will open run the **Event** Commands there, if not, it 
+will keep to the previous page.
+So, let’s click “*Add List*.”
+
+![msedge_py0AKMktRU](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/1cceac51-fba4-4776-9989-c71efbd79f43)
+
+Now need to name our lock, and add as many **Conditions** as we need. 
+As you can see, there are so many different locks we can
+Craft, and can place multiple locks on one chest. 
+Remember **Switches** and **Variables**? BAM, this is 
+Where we use it at. Does Marie love of us? Use the 
+Player Variable is equal or greater than 3. If it is,
+The page loads and we get more dialogue! If not, she
+Ignores us. In our case though we are checking the class.
+
+![msedge_xIYZs3bgim](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/9bf96543-9e9c-4b75-a336-119061a5700e)
+
+We named our **Condition** and chose our key: “Player’s Class is Fighter.”
+
+![msedge_vRrfAsXCg2](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/1f271180-30e3-4d34-a7ba-8601e3d5e9b3)
+
+Now the **Event** has two pages. The first page will run if we are not a Warrior; however, if we are 
+of the Warrior class, Page 2 will run for us. 
+
+To open the box, we must have the key to the lock. The Engine simply asks:
+- Are you a warrior?
+ - No = Page 1 activates and tells you the Rock is too heavy to push.
+ - Yes = Page 2 activates and the Rock moves to the side for us.
+ - 
+The best part is we can keep adding more pages, and **Conditions**! We can keep going and have 
+the rock explode if your class is a Spell Caster on page 3, or on page 4 you can destroy the rock 
+if you have a pickaxe, or have it check the position of the **Switch** to see if you talked to a person 
+yet. The possibilities are nearly endless.
+
+---
+
+## Single Page Event Example
+
+So, let’s create our **Event** like our previous one; however, there are a few key differences. Notice 
+we are only using 1 Page, instead of 2. I used the **Event Command: Conditional Branch**. What 
+this does is take the Page Conditions we were looking at and puts it in the **Event Command**. 
+Take a look: 
+
+![msedge_TMQ3t2e9sN](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/535fe675-32c7-4f46-961b-3d7938d1680c)
+
+We set up the Conditional Branch in similar fashion: When we activate the **Event**, the 
+Conditional Branch checks if we are a Fighter or not. Reference our earlier conversation on 
+Conditional Branches if you need a reference how this is read. It works exactly the same way as 
+our previous example, but was done in half the time, so that brings me to our next point. Choose 
+the best tool for the job. Do you need to have multiple pages or can you simply use one page and
+create a complex **Conditional Branch** Tree? Why use a sledgehammer to pound a nail in, when a 
+simple hammer would suffice? 
+
+Like the lists we can made in our previous example, we can actually put Conditional Branches 
+Inside Conditional Branches. This is essentially putting a locked box, inside a locked boxed, 
+within a locked box or placing more locks or keyholes on the box.
+
+---
+
+## Multiple Locks and Keyholes
+
+![msedge_PHoiF8d4t9](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/9fe8b6c0-1b5a-45d2-b23c-3061aedbde1e)
+
+Are you a Warrior, no? What about your level? Yes!? Then let’s open!
+
+---
+
+##Locked Boxes Inside Locked Boxes
+
+Are we a fighter? No? say it is too heavy.
+
+Are we a fighter? Yes! then check if we drank the Strength Potion.
+
+Did we drink? No? say we need to be stronger.
+
+Did we drink? Yes! Move the rock!
+
+![msedge_W94UWu8ACv](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/ae7f49bc-34b4-4fab-a3b8-2d56ef94e6d4)
+
+As we have seen, there are multiple ways to do different things. Your job as a Game Developer 
+is to utilize the best tool for the job and make it not only work, but understandable when you or 
+someone else looks at the **Event**/**Event Commands**.
+
+---
+
+## In Closing…
+
+Whew, we got through it! I know there was quite a bit in this document; however, we have gone 
+through almost everything (the basics, all the way up to more complex concepts of the editor). 
+Be sure to keep practicing and do not be afraid to try something new to see how it works. 
+Working in the **Event Editor** will become second nature to you! Keep this document close to you 
+as a reference guide when you are working on your game within the Intersect Engine. I hope it 
+helps you become a better game developer and look forward to future tutorials!
+
+Thank you,
+
+Agoraphobic (Jamie Hornsby)
+
+Labyrinthhearts84@gmail.com
+
+http://ascensiongamedev.com
