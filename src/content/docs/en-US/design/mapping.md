@@ -70,7 +70,7 @@ Under the Layer properties. Are the tilesets and tile types. The tilesets can be
 
 ![Attributes](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/9a227959-89d4-4b63-ad18-1130b4e410cd)
 
-If you followed the steps above you probably noticed a big flaw in our game right now. You can walk **through** the tree! <a href="http://www.ascensiongamedev.com/resources/filehost/194f6d759286418f42910c9aafca0962.gif" data-lity><i class="fa fa-play-circle"></i></a>
+You probably noticed a big flaw in our game right now. You can walk **through** the tree! <a href="http://www.ascensiongamedev.com/resources/filehost/194f6d759286418f42910c9aafca0962.gif" data-lity><i class="fa fa-play-circle"></i></a>
 
 No worries though, this section will help fix that! Attributes are like a sixth layer of the map. Attributes allow you to place tiles with special properties such as being blocks that players cannot pass.
 
@@ -99,18 +99,91 @@ You won't use any attribute more than the **Block** attribute. That being said h
 
 ![Lights](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/ec818323-88c4-49d4-baa4-28a98acc4b8f)
 
+Clicking the **Lights** tab will show this window above. Double click on the map to set your light and open the options window.
+
+- *Select Color*: Allows you to set a color for your light.
+- *Offset X*: Allows you to set a horizontal offset in pixels, a negative number offsets to the left, a positive number offsets to the right.
+- *Offset Y*: Allows you to set a vertical offset in pixels, a negative number offsets to the top, a positive number offsets to the bottom.
+- *Intensity*: Allows you to set your lights intensity, this strengthens the color at 255 while 0 would be alpha.
+- *Size*: Allows you to set your lights size.
+- *Expand Amt*: Allows you to expand your radius.
+
+When you're finished setting your options, click 'Save' to save the light (Make sure to also save your map!). Clicking 'Revert' will reset the lights options.
+
 ## Events
 
 ![Events](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/dbc82bc0-4c0d-4ce6-a046-771f0f4fdaac)
+
+Clicking the **Events** tab will show this window above. Double click on the map to set your event and the event editor will show. Click [here](../events/introduction.md) for more information on how to set up events!
 
 ## NPC's
 
 ![Npcs](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/b23db3d8-79f4-446b-b8f3-89dfdf27d83f)
 
+Clicking the **Npcs** tab will show this window above. We'll go over what all of the settings are for.
+
+- *Declared*: Clicking on this will allow you to set a spawn on your map that declares where your Npc will spawn. Double click on the map after you've added your Npc.
+- *Random*: Clicking on this will randomize the Npc spawn point.
+- *Direction*: Allows you to set a facing direction for the Npc when it spawns.
+- *Add/Remove Map Npcs*: Allows you to select an Npc to add/remove. Click on the Npc in the list and then click on 'Remove' to remove the Npc. Click 'Add' to add the Npc to the list for the map.
+
 ## Map Properties
 
 ![Properties](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/4342f1e9-6080-49c0-97fa-557bc6510550)
 
+On the bottom right of the map editor, you'll see a window named 'Map Properties'. We will go over what all the setting are.
+
+### Audio
+
+- *Music*: Allows you to set music to your map. Music is located in your client subfolder `resources\music` and they are in the `.ogg` format.
+- *Sound*: Allows you to set sound to your map. Sounds are located in your clients subfolder `resources\sounds` and they are in the `.wav` format.
+
+### Fog
+
+- *Fog*: Allows you to set fog to your map. Fogs would be located in your clients subfolder `resources\fogs`.
+- *Fog Alpha*: Allows you to set your fogs alpha, 255 being solid while 0 is invisible.
+- *Fog X Speed*: Allows you to set a fogs horizontal movement speed. 0 being no movement, 5 being the strongest movement.
+- *Fog Y Speed*: Allows you to set a fogs vertical movement speed. 0 being no movement, 5 being the strongest movement.
+
+### General
+
+- *Name*: Allows you to set a name for your map.
+- *Zone Type*: Allows you to set a zone type, those options are (`Normal`, `Safe`, `Arena`). Normal and Arena are PvP enabled.
+
+### Lighting
+
+- *Brightness*: Allows you to set the brightness of indoor maps. 100 being the brightest while 0 is darkness.
+- *Is Indoors*: Allows you to set your map as an interior map. Interiors are not affected by day/night settings, nor fog or weather settings.
+- *Player Light Color*: Allows you to give players a color light source for when it is dark.
+- *Player Light Expand*: Allows you to set a fade around the players light, 0.00 to 1.00.
+- *Player Light Intensity*: Allows you to set the players light intensity. 255 being the strongest while 0 being invisible.
+- *Player Light Size*: Allows you to set the players light size.
+
+### Misc
+
+- *Overlay Graphic*: Allows you to set a graphic that will appear above the map, images would be found inside your clients subfolder, `resources\images`.
+- *Panorama*: Allows you to set a graphic that will appear below the map. Also in the same subfolder.
+
+### Overlay
+
+- *AHue*: Allows you to set an alpha color hue. 0 being invisible, 255 being solid.
+- *BHue*: Allows you to set a blue hue. 255 being the strongest color.
+- *GHue*: Allows you to set a green hue. 255 being the strongest color.
+- *RHue*: Allows you to set a red hue. 255 being the strongest color.
+
+### Player
+
+- *Hide Equipment*: Allows you to stop rendering paperdoll equipment on this map.
+
+### Weather
+
+- *Weather*: Allows you to set weather particles on this map. It will show you a list of animations from the animation editor.
+- *Weather Imtemsity*: Allows you to set the weathers intensity. 255 being the strongest while 0 is invisible.
+- *Weather X Speed*: Allows you to set the weathers horizontal movement. 5 being the strongest, 0 being no movement.
+- *Weather Y Speed*: Allows you to set the weathers vertical movement. 5 being the strongest, 0 being no movement.
+
 ## Toolbar
 
 ![Toolbox](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/c2cb7981-72fa-4af9-bf4f-800d3c2318c5)
+
+TODO
