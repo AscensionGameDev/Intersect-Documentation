@@ -186,4 +186,23 @@ On the bottom right of the map editor, you'll see a window named 'Map Properties
 
 ![Toolbox](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/c2cb7981-72fa-4af9-bf4f-800d3c2318c5)
 
-TODO
+- Clicking ![New](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/08cb6470-ee6f-44ed-83fb-ceba6237d98d) will create a new map.
+- Clicking ![Save](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/9ce7858d-28b8-4362-993c-0bd17ea06ee0) will allow you to save the current map you're on. Shortcut = (Ctrl+S)
+- Clicking ![Cut](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/a033e928-7677-46ad-8bd2-24d94c13e425) will allow you to cut tiles. Shortcut = (Ctrl+X)
+- Clicking ![Copy](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/0b31a6dd-0dba-49da-90c3-52969ff81fa7) will allow you to copy tiles. Shortcut = (Ctrl+C)
+- Clicking ![Paste](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/ceb38220-946a-4ae7-b4e5-6724f532fd26) will allow you to paste tiles. Shortcut = (Ctrl+V)
+- Clicking ![Undo](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/0a8e2083-1b93-42cc-af33-bfef97bb7c00) will allow you to undo an action. Shortcut = (Ctrl+Z)
+- Clicking ![Redo](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/42ccc2c4-ec4f-4ddc-bb5b-8b291b982c05) will allow you to redo an action. Shortcut = (Ctrl+Y)
+- Clicking ![Brush](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/a19f4919-ec53-4a45-830e-8ea36a3454fd) will allow you to lay single tiles. Shortcut = (B)
+- Clicking ![Selection](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/96404e36-e55d-4ce7-803f-3612270a95d7) will allow you to select tiles in a map by clicking and dragging from top/left to bottom/right. Shortcut = (M)
+- Clicking ![Rectangle](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/3bacadf7-b4c6-4e41-888b-e69fb6afd4e8) will allow you to drop multiple tiles in a rectangular fill. Shortcut = (R)
+- Clicking ![Flip H](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/77971fb1-4b5f-4bc5-abce-569970572714) will flip your selection horizontally. Shortcut = (PageUp)
+- Clicking ![Flip V](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/b6fa6df9-9497-4e61-8aae-55740bbfcf6f) will flip your selection vertically. Shortcut = (PageDown)
+- Clicking ![Fill](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/522e4255-4df0-4b9c-acd0-9ff5d9745f72) will allow you to fill the entire map with a tile selected on any layer selected. Shortcut = (F)
+- Clicking ![Erase](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/22f4a026-b40a-4393-9821-7ba45fd50e04) will allow you to erase any layer selected. Shortcut (E)
+- Clicking ![Eyes](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/b49e9119-2b4f-4d63-bd37-44592a0a46f0) will allow you to click on a tile to duplicate it. Shortcut = (I)
+- Clicking ![Sim Day Night](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/5a14f1e1-964e-4968-8a4d-b24a56d6f19e) will allow you to simulate day/night within the editor.
+- Clicking ![Screenshot](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/4f024576-364d-4ad4-8852-1e0c2835b1ac) will allow you to screenshot your map.
+- Clicking ![Start Client](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/715c2a6c-e963-4c52-8f5d-c5e8ff5bc2ea) will allow you to run the client after the path setting is set in (`File`, `Options`)
+
+> Please go to [World Design](./world.md) for information on how to connect / unconnect maps!
