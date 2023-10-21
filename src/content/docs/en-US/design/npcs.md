@@ -129,3 +129,10 @@ Creating NPC's are done via the `Npc Editor` under the `Game Editors` tab on the
 - *NPC*: Allows you to set an Npc from the Npc Editor list.
 - *Add*: Allows you to add the Npc to the list.
 - *Remove*: Clicking on an Npc in the list and then clicking remove will remove the Npc from the list.
+
+### Setting Npcs
+
+![Screenshot_4](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/3856c27a-a5df-47aa-bc82-3e1c4f7e177c)
+
+Clicking on the NPC tab within the map editor will allow you to set your NPC's. You can declare their spawn location or have it randomized. Make sure to save your map after you've added them to the map.
+
