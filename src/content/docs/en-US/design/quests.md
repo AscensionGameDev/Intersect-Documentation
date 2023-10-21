@@ -65,3 +65,6 @@ Creating quests are done via the `Quest Editor` under the `Game Editors` tab on 
 - *Edit Quest Start Event*: Allows you to add event commands when the quest is accepted.
 - *Edit Quest Completion Event*: Allows you to add event commands when the quest is completed.
 
+### Setting the Quest
+
+We have to use the event system to set up the quest. This is more advanced to detail in text. Please refer to the [Events](../events/introduction.md) documentation for more information on how to set up quests.
