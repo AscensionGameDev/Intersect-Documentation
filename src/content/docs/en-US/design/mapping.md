@@ -10,7 +10,7 @@ A large majority of your time creating a 2D ORPG will be spent designing maps in
 
 ## Creating or Editing Maps
 
-> - To begin mapping. Click on the **Pen Tool** ![Pen Tool](https://www.ascensiongamedev.com/resources/filehost/a20847da4a43f52234ccda97b1125a88.png) in the menubar above your map.
+> - To begin mapping. Click on the **Brush**![Screenshot_1](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/c9f78ae9-b4f6-4d5b-8fae-6674df8d2d2a) in the menubar above your map.
 > - Select **Tiles** in the **Map Layers** pane.
 > - Use your mouse to select a tile or group of tiles to place in your empty map. <a href="http://www.ascensiongamedev.com/resources/filehost/03856cde2da1c67f07b0123b90b6b0dc.gif" data-lity><i class="fa fa-play-circle"></i></a>
 > - Finally click and drag your mouse on the empty map to place your selected tiles. <a href="http://www.ascensiongamedev.com/resources/filehost/03856cde2da1c67f07b0123b90b6b0dc.gif" data-lity><i class="fa fa-play-circle"></i></a>
@@ -58,13 +58,13 @@ Under the Layer properties. Are the tilesets and tile types. The tilesets can be
 
 - The list of tile types are described below.
 	- *Normal*: Allows you to set normal tiles on the map. You can select multiple tiles by clicking and dragging the selection across the tileset.
- 	- *Autotile (VX Format)*: Allows you to select a 3x2 tile autotile.
+ 	- *Autotile (VX Format)*: Allows you to select a 2x3 tile autotile.
   - *Fake (VX Format)*: Allows you to fake an autotile by using 1 tile.
-  - *Animated {VX Format)*: Allows you to select a 3x6 animated tile.
+  - *Animated {VX Format)*: Allows you to select a 6x3 animated tile.
   - *Cliff (VX Format)*: Allows you to select a 2x2 tile.
-  - *Waterfall (VX Format)*: Allows you to select a 3x2 animated waterfall tile.
-  - *Autotile (XP Format)*: Allows you to select a 4x3 tile autotile.
-  - *Animated (XP Format)*: Allows you to select a 4x9 animated tile.
+  - *Waterfall (VX Format)*: Allows you to select a 2x3 animated waterfall tile.
+  - *Autotile (XP Format)*: Allows you to select a 3x4 tile autotile.
+  - *Animated (XP Format)*: Allows you to select a 9x4 animated tile.
 
 ## Attributes
 
