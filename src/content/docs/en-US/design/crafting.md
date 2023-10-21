@@ -2,14 +2,25 @@
 title: Crafting
 ---
 
-## Crafts Editor
+## Overview
 
-### Accessing the Editors
-You can access the `Crafts Editor` and the `Crafting Table Editor` from the `Game Editors` tab in the *Intersect Editor*. These are the two main editors you will need to use to set up a crafting system in your game.
+You can access the `Crafts Editor` from the `Game Editors` tab in the *Intersect Editor*. 
 
-![1](https://user-images.githubusercontent.com/6025436/230551569-6aae6d99-1416-4dbd-8eb2-fe86069df07e.png)
+![Editor](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/75291cb2-ade4-4ae9-bc13-84d44ff59f79)
 
-### Getting Started
+## Managing Crafts
+
+![Manage](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/ae74a6dd-00ba-47f6-9dac-4055f86a2d52)
+
+- Clicking on the first icon here will create a new craft. Shortcut = Ctrl+N
+- Clicking on a craft in the list and clicking the second icon will delete that craft.
+- Clicking the third icon will catagorize your crafts in alphabetical order.
+- Clicking on a craft in the list and clicking the fourth icon will copy that craft. Shortcut = Ctrl+C
+- Clicking on a craft in the list and clicking the fifth icon will paste your copied craft. Shortcut = Ctrl+V
+- Clicking on the sixth icon will revert your last change to a craft (Does not revert deletion).
+
+## Adding/Editing Crafts
+
 When you initially open the Crafts Editor, the list will be empty. Click the `New Craft` button to get started.
 
 ![Screenshot 2023-04-17 125802](https://user-images.githubusercontent.com/6025436/232596781-cff0b5ef-5a89-4684-b78c-379c13024924.png)
@@ -20,7 +31,7 @@ When clicking the `New Craft` button, it will create a new crafting recipe that 
 
 Click on the `New Craft` that was just created; this will open up the editor for that individual craft.
 
-![Screenshot 2023-04-06 225303](https://user-images.githubusercontent.com/6025436/230551645-caabfedf-5413-4ff2-89bc-8a1288c4fb03.png)
+![Editor](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/f7c59966-97fd-4564-a9d2-249145747641)
 
 - *Name*: the in-game name of the crafting recipe.
 - *Folder*: used to organize your crafts in the editor.
@@ -29,9 +40,9 @@ Click on the `New Craft` that was just created; this will open up the editor for
 - *Time (ms)*: the delay in milliseconds before the crafting process is completed after a user starts the process.
 - *Failure (%)*: the whole-number percentage chance that a crafting operation will fail.
 - *Item Loss (%)*: the whole-number percentage chance that a failed crafting operation will consume the ingredients despite failing.
-- *Craft Requirements*: a requirements editor that is used to configure what conditions a player must meet before they are able to use this specific crafting recipe.
+- *Craft Requirements*: a requirements editor that is used to configure what conditions a player must meet before they are able to use this specific crafting recipe. Click [here](./conditions.md) for more information on conditions.
 - *Ingredients*: the ingredients necessary to use this crafting recipe.
-- *Common Event*: a global event that will run after the crafting process is completed. The common event is only ran *AFTER* the crafting processing is completed.
+- *Common Event*: a global event that will run after the crafting process is completed. The common event is only ran *AFTER* the crafting processing is completed. Click [here](../events/common.md) for more information about common events!
 
 ![Screenshot 2023-04-17 131408](https://user-images.githubusercontent.com/6025436/232599864-8b5ebb37-59ed-4930-81e8-1c946d6a8430.png)
 
@@ -52,6 +63,44 @@ Note: the *item* and *quantity* data fields will change the *currently selected*
 
 ## Crafting Tables Editor
 
-`TODO`
+## Overview
 
-![Screenshot 2023-04-06 225409](https://user-images.githubusercontent.com/6025436/230551671-a3b1e422-8e44-484c-9413-c72cbeb4380e.png)
+You can access the `Craft Tables Editor` from the `Game Editors` tab in the *Intersect Editor*.
+
+![Editor](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/885abc9f-187c-4b75-ad30-d0534b1e41a8)
+
+## Managing Crafting Tables
+
+![Manage](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/fc0dd1ee-953b-4883-9702-00e8a8bdbcd0)
+
+- Clicking on the first icon here will create a new crafting table. Shortcut = Ctrl+N
+- Clicking on a crafting table in the list and clicking the second icon will delete that crafting table.
+- Clicking the third icon will catagorize your crafting tables in alphabetical order.
+- Clicking on a crafting table in the list and clicking the fourth icon will copy that crafting table. Shortcut = Ctrl+C
+- Clicking on a crafting table in the list and clicking the fifth icon will paste your copied crafting table. Shortcut = Ctrl+V
+- Clicking on the sixth icon will revert your last change to a crafting table (Does not revert deletion).
+
+## Adding/Editing Crafting Tables
+
+### General
+
+![General](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/5b009978-d318-4cf3-aac5-52e11de6e1e5)
+
+- *Name*: Allows you to set a name to your crafting table.
+- *Folder*: Clicking the + next to this field allows you to create a folder for organization.
+
+### Crafts
+
+![Crafts](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/08dad00b-dc83-4ed8-ac23-c29b85d89212)
+
+- *Add Item To Be Crafted*: Allows you to select an item from the `Craft Editor` to add to this craft table.
+- *Add Selected*: Adds the current item to the craft table.
+- *Remove Selected*: Select a craft item from the list and click this to remove the craft.
+
+### Opening Craft Table
+
+![Event](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/b91cb083-910a-4822-8f0c-439e00c77730)![Screenshot_1](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/00b9a26a-fa91-4b1d-96e8-8f494962b7c0)
+
+We use the event system to open craft tables which allows the player to craft items. Click [here](../events/introduction.md) for more information on how to use events.
+
+
