@@ -74,3 +74,9 @@ Creating resources are done via the `Resource Editor` under the `Game Editors` t
 - *Exhausted Graphic*: Allows you to select a graphic from the same clients subfolder.
 - *Below Entities*: Ticking this box will render the resource under the player.
 - *From Tileset*: Ticking this box will allow you to select a graphic from the tilesets found in your clients subfolder, `resources\tilesets`.
+
+### Setting Resources
+
+![Screenshot_1](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/9ededdb2-1b74-4c97-ae7f-0b2bfb6ff38d)
+
+Within the map editor, we can click on the attribute tab and set a resource attribute.
