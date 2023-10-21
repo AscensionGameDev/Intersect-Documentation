@@ -52,3 +52,10 @@ Creating shops are done via the `Shop Editor` under the `Game Editors` tab on th
 - *Sell Amount*: Allows you to set a price of the item.
 - *Add Item*: Allows you to add the item to the shop when you've set the options.
 - *Remove Selected*: Allows you to remove an item from the list when selected.
+
+### Opening Shop
+
+![Screenshot_2](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/5eb7e14e-bd6e-4075-a387-8afa450bf7fd)![Screenshot_3](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/9d6be5dc-38d1-4a2f-8d71-f5e7b96a06f1)
+
+
+We use the event system to open shops which allows the player to buy/sell items. Click [here](../events/introduction.md) for more information on how to use events.
