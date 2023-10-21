@@ -68,7 +68,7 @@ Under the Layer properties. Are the tilesets and tile types. The tilesets can be
 
 ## Attributes
 
-![Attributes](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/9a227959-89d4-4b63-ad18-1130b4e410cd)
+![attribute](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/0211e7ae-da7f-47ba-839b-9844f557f510)
 
 You probably noticed a big flaw in our game right now. You can walk **through** the tree! <a href="http://www.ascensiongamedev.com/resources/filehost/194f6d759286418f42910c9aafca0962.gif" data-lity><i class="fa fa-play-circle"></i></a>
 
@@ -97,7 +97,7 @@ You won't use any attribute more than the **Block** attribute. That being said h
 
 ## Lights
 
-![Lights](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/ec818323-88c4-49d4-baa4-28a98acc4b8f)
+![light](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/573ea6be-bfe5-4e35-ae25-c40569506d6c)
 
 Clicking the **Lights** tab will show this window above. Double click on the map to set your light and open the options window.
 
@@ -112,13 +112,13 @@ When you're finished setting your options, click 'Save' to save the light (Make 
 
 ## Events
 
-![Events](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/dbc82bc0-4c0d-4ce6-a046-771f0f4fdaac)
+![event](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/822d6a85-bfe5-4979-bac4-0ad742f3df2b)
 
 Clicking the **Events** tab will show this window above. Double click on the map to set your event and the event editor will show. Click [here](../events/introduction.md) for more information on how to set up events!
 
 ## NPC's
 
-![Npcs](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/b23db3d8-79f4-446b-b8f3-89dfdf27d83f)
+![npc](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/bbce0279-7ee7-4b1b-8685-83fd2099e693)
 
 Clicking the **Npcs** tab will show this window above. We'll go over what all of the settings are for.
 
