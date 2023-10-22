@@ -75,7 +75,7 @@ Creating resources are done via the `Resource Editor` under the `Game Editors` t
 - *Below Entities*: Ticking this box will render the resource under the player.
 - *From Tileset*: Ticking this box will allow you to select a graphic from the tilesets found in your clients subfolder, `resources\tilesets`.
 
-### Setting Resources
+### Placing Resources
 
 ![Screenshot_1](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/9ededdb2-1b74-4c97-ae7f-0b2bfb6ff38d)
 
