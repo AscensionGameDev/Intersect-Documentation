@@ -5,7 +5,7 @@ title: Classes
 ## Overview
 Creating classes is done via the `Class Editor` under the `Game Editors` tab on the main interface.
 
-![Class Editor](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/34209309-3973-4965-9fc8-86c8d5a36e86)
+![Screenshot_1](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/71d0b2e9-057e-480d-9a40-b8c217d0f969)
 ![Scrolled](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/0aaba85d-70ce-4a31-b8d1-0646aecbb131)
 
 ## Managing Classes
@@ -31,7 +31,7 @@ Creating classes is done via the `Class Editor` under the `Game Editors` tab on 
   
 ### Sprite & Face
 
-![Sprite and Face](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/ec59884a-82cf-4a7a-a41b-2e173e1f4295)
+![Screenshot_2](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/ccac8f48-65cf-4be4-9b3f-f6448bc42759)
 
 - *Gender*: Selects the gender which you want to add.
 - *Add Sprite*: You can view your sprite and face selection on the right of this. Your sprites will be located in your clients `resources\entities` folder. Your faces will be located in your clients `resources\faces` folder.
