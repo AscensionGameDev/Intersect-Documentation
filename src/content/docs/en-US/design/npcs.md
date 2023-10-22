@@ -130,7 +130,7 @@ Creating NPC's are done via the `Npc Editor` under the `Game Editors` tab on the
 - *Add*: Allows you to add the Npc to the list.
 - *Remove*: Clicking on an Npc in the list and then clicking remove will remove the Npc from the list.
 
-### Setting Npcs
+### Spawning Npcs
 
 ![Screenshot_4](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/3856c27a-a5df-47aa-bc82-3e1c4f7e177c)
 
