@@ -6,7 +6,7 @@ title: Npcs
 
 Creating NPC's are done via the `Npc Editor` under the `Game Editors` tab on the main interface.
 
-![Editor](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/7848642e-095d-4791-b80d-1ed974518ec1)
+![Screenshot_1](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/853bc6a1-838e-40b0-83a7-be456e919f8d)
 
 ## Managing Npcs
 
@@ -24,7 +24,7 @@ Creating NPC's are done via the `Npc Editor` under the `Game Editors` tab on the
 
 ### General
 
-![General](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/f7d0c209-8f8a-487d-bda2-99d083e6363e)
+![Screenshot_2](https://github.com/Richy1111/Intersect-Documentation/assets/72468758/6c6e9ade-dbf0-49ac-9d34-ade9c8fb8de8)
 
 - *Name*: Allows you to give your Npc a name.
 - *Folder*: Clicking the + next to this field allows you to create a folder in the Npc list for organization.
