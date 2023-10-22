@@ -26,8 +26,8 @@ Creating projectiles are done via the `Projectile Editor` under the `Game Editor
 
 - *Name*: Allows you to give your projectile a name.
 - *Folder*: Clicking on the + next to this field will allow you to create a folder in the projectile list for organization
-- *Speed (ms)*: Allows you to set the speed of the projectile in milliseconds. 1000 (ms) = 1 second.
-- *Spawn Delay (ms)*: Allows you to set a spawn delay between the interaction and animation.
+- *Speed (ms)*: Allows you to set the speed of the projectile in milliseconds which is the time it takes the projectile to travel the range specified. 1000 (ms) = 1 second.
+- *Spawn Delay (ms)*: Allows you to set a spawn delay which is the time between each 'wave' which is defined by quantity.
 - *Quantity*: Allows you to set a quantity of how many projectile shot waves are being used.
 - *Range*: Allows you to set a range in tiles for how far the projectile will travel.
 - *Knockback*: Allows you to set a knockback by tile. When a projectile hits an opponent, it can knock them backward.
@@ -38,7 +38,8 @@ Creating projectiles are done via the `Projectile Editor` under the `Game Editor
 ![Projectile Spawn](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/44d761e2-1357-4593-b7c3-d8f1ef6fed7a)
 
 > This allows you to set a projectiles path. Clicking on the red arrows will make them green in which the projectile will be shot in.
-> This current screen shot only enabled a one side shot. If all of the arrows in the square is green, it will shoot in all directions.
+> This current screen shot orientation will rotate based on where the player is facing. You configure the projectile assuming the player is facing north/up.
+> When selecting more projectile spawns, it allows the player to shoot in multiple directions.
 
 ### Animations
 
@@ -46,7 +47,7 @@ Creating projectiles are done via the `Projectile Editor` under the `Game Editor
 
 
 - *Animation*: Allows you to select an animation for the projectile.
-- *Spawn Range*: When you change the quantity of projectiles, you can have different projectiles spawn on different sets. For example, you can have a projectile with Quantity: 3 that fires the same projectile 3 times. However, if you add another Animation to the animation list, you can set the spawn range of each animation, indicating on which set those projectiles will fire. For example, have a projectile with Quantity: 5, with the animation "Arcane Missile" set to spawn range 1-3, and the animation "Fire Missile" set to 4-5. So the first 3 waves will be Arcane Missiles, and the 4th and 5th will be Fire Missiles. (Shout to Mcadams for explanation.)
+- *Spawn Range*: When you change the quantity of projectiles, you can have different projectiles spawn on different sets. You can have a projectile with Quantity: 3 that fires the same projectile 3 times. However, if you add another animation to the animation list, you can set the spawn range of each animation which indicates on the setting that those projectiles will fire. For example, have a projectile with Quantity: 5, with the animation "Arcane Missile" set to spawn range 1-3, and the animation "Fire Missile" set to 4-5. So the first 3 waves will be Arcane Missiles, and the 4th and 5th will be Fire Missiles. (Shout to Mcadams for explanation.)
 - *Auto Rotate Animation*: Ticking this box will automatically rotate the animation.
 
 ### Grapple Options
