@@ -26,7 +26,7 @@ Creating projectiles are done via the `Projectile Editor` under the `Game Editor
 
 - *Name*: Allows you to give your projectile a name.
 - *Folder*: Clicking on the + next to this field will allow you to create a folder in the projectile list for organization
-- *Speed (ms)*: Allows you to set the speed of the projectile in milliseconds which is the time it takes the projectile to travel the range specified. 1000 (ms) = 1 second.
+- *Speed (ms)*: Is actually the time it takes the projectile to travel the number of tiles specified by "Range". 1000 (ms) = 1 second.
 - *Spawn Delay (ms)*: Allows you to set a spawn delay which is the time between each 'wave' which is defined by quantity.
 - *Quantity*: Allows you to set a quantity of how many projectile shot waves are being used.
 - *Range*: Allows you to set a range in tiles for how far the projectile will travel.
