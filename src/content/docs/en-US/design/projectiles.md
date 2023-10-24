@@ -47,7 +47,9 @@ Creating projectiles are done via the `Projectile Editor` under the `Game Editor
 
 
 - *Animation*: Allows you to select an animation for the projectile.
-- *Spawn Range*: When you change the quantity of projectiles, you can have different projectiles spawn on different sets. You can have a projectile with Quantity: 3 that fires the same projectile 3 times. However, if you add another animation to the animation list, you can set the spawn range of each animation which indicates on the setting that those projectiles will fire. For example, have a projectile with Quantity: 5, with the animation "Arcane Missile" set to spawn range 1-3, and the animation "Fire Missile" set to 4-5. So the first 3 waves will be Arcane Missiles, and the 4th and 5th will be Fire Missiles. (Shout to Mcadams for explanation.)
+- *Spawn Range*: When you change the quantity of projectiles, you can have different projectiles spawn on different sets. You can have a projectile with Quantity: 3 that fires the same projectile 3 times. However, if you add another animation to the animation list, you can set the spawn range of each animation which indicates in which wave those projectiles will fire.
+-
+- For example, have a projectile with Quantity: 5, with the animation "Arcane Missile" set to spawn range 1-3, and the animation "Fire Missile" set to 4-5. So the first 3 waves will be Arcane Missiles, and the 4th and 5th will be Fire Missiles. (Shout to Mcadams for explanation.)
 - *Auto Rotate Animation*: Ticking this box will automatically rotate the animation.
 
 ### Grapple Options
