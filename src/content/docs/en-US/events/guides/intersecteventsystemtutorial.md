@@ -111,7 +111,7 @@ nature suggests. Let us jump right in at looking at how to even create an **Even
 
 <p align="center">Open the Intersect Editor
 	
-![Intersect_Editor_JQAk6nnDxq](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/514e2184-25e6-493a-ad8a-f8d6dd466ea3)
+![Intersect Editor Main View](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/514e2184-25e6-493a-ad8a-f8d6dd466ea3)
 
 Click the “Events” tab, and double click on the map to place an Event down. Double clicking a
 New Event or double clicking a previously placed Event will open the Event Editor for us.
@@ -121,7 +121,7 @@ This is what our empty box looks like before we choose anything. Stop, breathe, 
 This may look a bit overwhelming, but we will get through this. The best way to tackle this
 monster is to divide it up via color coding it!
 
-![firefox_I2avNyoyy9](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/bda35c41-1ba8-4e3e-abdd-5b528d05a7c1)
+![Event Editor Main Window](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/bda35c41-1ba8-4e3e-abdd-5b528d05a7c1)
 
 Note that your editor will only show 1 page, not 2-21. Clicking **Add Page** will add more.
 
@@ -130,11 +130,11 @@ Note that your editor will only show 1 page, not 2-21. Clicking **Add Page** wil
 Now, that is much better. Let’s go through each colored box and see how each part works within
 the **Event**, and examine which color represents the analogy of the box and clay.
 
-![firefox_tBXEkZbVUi](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/505480bf-d923-42f6-807d-c57494b3229e)
+![Event Editor Color Coded](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/505480bf-d923-42f6-807d-c57494b3229e)
 
 ### General
 
-![firefox_OjqUOwIloZ](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/06310704-ec87-48bb-9dce-150bf9a94389)
+![General Box (Green)](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/06310704-ec87-48bb-9dce-150bf9a94389)
 
 **Name**
 
@@ -199,7 +199,7 @@ on the map when Cecil uses his key, so now Cecil and Sara both can walk through 
 
 ### Page Numbers
 
-![firefox_vdu8YnI5no](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/86ee1072-2c0a-4bad-956a-c7aa7e152fc2)
+![Page Numbers (Yellow)](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/86ee1072-2c0a-4bad-956a-c7aa7e152fc2)
 
 **Page Numbers: 1+**
 Remember the rule that every new box (**Event**) we create is empty? This is another rule: every
@@ -213,7 +213,7 @@ advanced section: [Event Pages and Conditions](#event-pages-and-conditions).
 
 ### Page Options
 
-![firefox_WRVXSGQ35M](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/58e475e0-6bb6-4217-b99b-467f3c237262)
+![Page Options (Blue)](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/58e475e0-6bb6-4217-b99b-467f3c237262)
 
 **New Page**
 Each time you press the “New Page” button, it adds a divider (page) to our box (Event). Create
@@ -251,7 +251,7 @@ button, all the data within the selected page is blanked out as if it were a new
 
 ### Entity Options
 
-![firefox_hpXIm0bQhZ](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/5a5122ee-af25-4691-b0ac-fd169ec8e74e)
+![Entity Options (Pale Blue)](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/5a5122ee-af25-4691-b0ac-fd169ec8e74e)
 
 **Preview**
 This is where we set the decoration of our box (The graphic the player sees on the map). Without
@@ -266,7 +266,7 @@ can set our box to also become a music box. it could play a smiley face with a s
 
 ### Entity Options: Movement
 
-![firefox_7ko9NN2xtb](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/068a1b27-f091-49a4-b552-9ece64a4231c)
+![Entity Options (Light Green)](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/068a1b27-f091-49a4-b552-9ece64a4231c)
 
 **Type**:
 **None**
@@ -319,7 +319,7 @@ experiment with the layers and do creative things with them.
 
 ### Entity Inspector Options
 
-![firefox_Jr0gI1Ko9R](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/dd8c4212-bb2d-41a0-b853-7b7116d4214f)
+![Entity Inspector Options (Brown)](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/dd8c4212-bb2d-41a0-b853-7b7116d4214f)
 
 **Face**
 This is where we put a picture over the keyhole, also known as assigning the Event a face when
@@ -333,7 +333,7 @@ Selecting the Event (Inspecting), will make a window popup with this description
 
 ### Extras
 
-![firefox_vn5yMrcifb](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/4471c8f2-d8ad-47d7-a5cc-e048158f8ec9)
+![Extras (Pale Purple)](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/4471c8f2-d8ad-47d7-a5cc-e048158f8ec9)
 
 **Passable**
 Ow! You just walked into your box and it hurt. Likewise, in your game the player cannot walk
@@ -359,7 +359,7 @@ to us, else they just wander away while chat boxes still appear.
 
 ### Triggers
 
-![firefox_7IO1JHmLEs](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/1ac8086b-1b80-4c90-b8b2-8a8bbce7ec7f)
+![Triggers (Black)](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/1ac8086b-1b80-4c90-b8b2-8a8bbce7ec7f)
 
 There are three ways for the **Event** to be activated.
 **Action Button**
@@ -372,7 +372,7 @@ This **Event** activates automatically when the player loads on the map. (EDITOR
 
 ### Conditions
 
-![firefox_LvvHeciMW9](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/f96aa54c-1e1a-463a-8929-296e55f3d494)
+![Conditions (Hot Pink)](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/f96aa54c-1e1a-463a-8929-296e55f3d494)
 
 **Spawn/Execution Conditions**
 Okay... We are going to have to come back to this. This is some advanced stuff we will be
@@ -419,7 +419,7 @@ System**, the more cool and fun stuff we can do to make our game even better! Tr
 you learn how to use **Conditional Branches**, **Variables**, and **Switches**, your game development 
 skills will evolve to a higher level of game creation
 
-![Intersect_Editor_yXzlQNbuK2](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/cf478cb1-1778-4fc6-bc43-09a06b55edbb)
+![Variable Editor](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/cf478cb1-1778-4fc6-bc43-09a06b55edbb)
 
 ## Switches
 
@@ -521,7 +521,7 @@ box asks, “Do you have the Iron Key to open me?” If the answer is yes, the b
 and the **Event Commands** in the orange box activate instead. It is important only the blue or 
 orange color **Event Commands** will run, not both
 
-![msedge_cQKWJ3Vgc8](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/94db678f-8843-433d-8ecc-ade5c4f0d72f)
+![Command Box Colored Indicators](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/94db678f-8843-433d-8ecc-ade5c4f0d72f)
 
 Note: The colored boxes are not actually in the engine, I just added them to highlight how they 
 function.
@@ -542,12 +542,12 @@ So, we first set up our **Event**. It is pretty straightforward, you click the r
 1 and tells us the boulder is too heavy to push. We want the boulder to be moved only by a 
 fighter; thus, we create a second page!
 
-![msedge_jPMrIEXv39](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/6984624b-d55c-4bba-b7a4-fc4965c0df8f)
+![Event Editor Page 1 of 2](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/6984624b-d55c-4bba-b7a4-fc4965c0df8f)
 
 Here is our Page 2. Now we need to create our lock (Condition) to keep our box nice and locked. 
 Because we only want a Warrior to be able to push the lock, no one else!
 
-![msedge_f5WAGOzXUa](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/f5f89e24-c2e6-4632-8be3-3d8e58ba1db2)
+![Event Editor Page 2 of 2](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/f5f89e24-c2e6-4632-8be3-3d8e58ba1db2)
 
 This is the **Condition** box that we just opened. It is 
 Important to note each **Condition** we place in here 
@@ -555,7 +555,7 @@ acts as a lock for our box. Only a specific key will
 fit the lock, and each lock we have must have a 
 different key before it will open!
 
-![msedge_2Z3epQMEGg](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/19d5093d-6971-437e-a862-4d9c2ec21032)
+![Condition List](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/19d5093d-6971-437e-a862-4d9c2ec21032)
 
 Now, it is time for us to lock our boxes. This will make Page 2 locked until the certain 
 **Conditions** are met (the keys that fit the lock). To clarify, when we activate the **Event**, Page 2 
@@ -563,7 +563,7 @@ will check if we are a Warrior. If we are, it will open run the **Event** Comman
 will keep to the previous page.
 So, let’s click “*Add List*.”
 
-![msedge_py0AKMktRU](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/1cceac51-fba4-4776-9989-c71efbd79f43)
+![Condition List Creation](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/1cceac51-fba4-4776-9989-c71efbd79f43)
 
 Now need to name our lock, and add as many **Conditions** as we need. 
 As you can see, there are so many different locks we can
@@ -574,11 +574,11 @@ Player Variable is equal or greater than 3. If it is,
 The page loads and we get more dialogue! If not, she
 Ignores us. In our case though we are checking the class.
 
-![msedge_xIYZs3bgim](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/9bf96543-9e9c-4b75-a336-119061a5700e)
+![Condition List Selection](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/9bf96543-9e9c-4b75-a336-119061a5700e)
 
 We named our **Condition** and chose our key: “Player’s Class is Fighter.”
 
-![msedge_vRrfAsXCg2](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/1f271180-30e3-4d34-a7ba-8601e3d5e9b3)
+![Final Condition List](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/1f271180-30e3-4d34-a7ba-8601e3d5e9b3)
 
 Now the **Event** has two pages. The first page will run if we are not a Warrior; however, if we are 
 of the Warrior class, Page 2 will run for us. 
@@ -602,7 +602,7 @@ we are only using 1 Page, instead of 2. I used the **Event Command: Conditional 
 this does is take the Page Conditions we were looking at and puts it in the **Event Command**. 
 Take a look: 
 
-![msedge_TMQ3t2e9sN](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/535fe675-32c7-4f46-961b-3d7938d1680c)
+![Event Editor Single Page Example](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/535fe675-32c7-4f46-961b-3d7938d1680c)
 
 We set up the Conditional Branch in similar fashion: When we activate the **Event**, the 
 Conditional Branch checks if we are a Fighter or not. Reference our earlier conversation on 
@@ -620,7 +620,7 @@ within a locked box or placing more locks or keyholes on the box.
 
 ## Multiple Locks and Keyholes
 
-![msedge_PHoiF8d4t9](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/9fe8b6c0-1b5a-45d2-b23c-3061aedbde1e)
+![Event Editor Showing a Conditional Branch](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/9fe8b6c0-1b5a-45d2-b23c-3061aedbde1e)
 
 Are you a Warrior, no? What about your level? Yes!? Then let’s open!
 
@@ -636,7 +636,7 @@ Did we drink? No? say we need to be stronger.
 
 Did we drink? Yes! Move the rock!
 
-![msedge_W94UWu8ACv](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/ae7f49bc-34b4-4fab-a3b8-2d56ef94e6d4)
+![Event Editor Conditional Branch Final](https://github.com/PyroTech03/Intersect-Documentation/assets/13249558/ae7f49bc-34b4-4fab-a3b8-2d56ef94e6d4)
 
 As we have seen, there are multiple ways to do different things. Your job as a Game Developer 
 is to utilize the best tool for the job and make it not only work, but understandable when you or 
