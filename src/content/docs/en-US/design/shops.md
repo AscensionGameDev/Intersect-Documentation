@@ -45,8 +45,8 @@ Creating shops are done via the `Shop Editor` under the `Game Editors` tab on th
 
 ![Items Bought](https://github.com/AscensionGameDev/Intersect-Documentation/assets/72468758/7f7a9b53-8915-43e1-8de1-475cd0ab4a56)
 
-- *Whitelist*: Ticking this box will allow you to add items that will only be bought by this shop. If no items are added, this shop will buy any item.
-- *Blacklist*: Ticking this box will allow you to add items that will be blocked from being bought by this shop. If no items are added, this shop will buy any item.
+- *Whitelist*: Ticking this box will allow you to add items that will only be bought by this shop. The shop will buy all items if none are added to the list.
+- *Blacklist*: Ticking this box will allow you to add items that will be blocked from being bought by this shop.
 - *Add Item*: Allows you to select an item from the item editor that you wish to be bought or blocked from this shop.
 - *Buy for*: Allows you to select a currency item that the shop will buy for.
 - *Sell Amount*: Allows you to set a price of the item.
