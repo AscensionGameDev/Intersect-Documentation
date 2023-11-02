@@ -142,8 +142,7 @@ On the bottom right of the map editor, you'll see a window named 'Map Properties
 
 - *Fog*: Allows you to set fog to your map. Fogs would be located in your clients subfolder `resources\fogs`.
 - *Fog Alpha*: Allows you to set your fogs alpha, 255 being solid while 0 is invisible.
-- *Fog X Speed*: Allows you to set a fogs horizontal movement speed. 0 being no movement, 5 being the strongest movement.
-- *Fog Y Speed*: Allows you to set a fogs vertical movement speed. 0 being no movement, 5 being the strongest movement.
+- *Fog X Speed*/*Fog Y Speed*: Allows you to set a fogs horizontal/vertical movement speed (0 being no movement, 5 being the strongest)
 
 ### General
 
