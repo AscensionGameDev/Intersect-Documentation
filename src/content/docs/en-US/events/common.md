@@ -65,28 +65,29 @@ In the dropdown, you have the following options:
 - *Login*: Will trigger for each player on login.
 - *Level Up*: Will trigger on each player level up.
 - *On Respawn*: Will trigger when a player respawns.
-- */command*: Allows you to configure the event as a chat slash command. Will have text entry to enter desired command.
-- *Autorun*: Event is constantly running for every player. Considered resource intensive. **WARNING! THIS IS THE WORST OPTION YOU CAN DO! ONLY DO THIS IF YOU HAVE NO OTHER OPTION**
+- */command*: Allows you to configure the event as a chat slash command and will have text entry to enter desired command.
+- *Autorun*: Event is constantly running for every player. Considered resource intensive.
+	**WARNING! THIS IS THE WORST OPTION YOU CAN DO! ONLY DO THIS IF YOU HAVE NO OTHER OPTION**
 - *PVP Kill*: Will trigger when a player kills in PvP.
 - *PVP Death*: Will trigger when a player dies in PvP.
 - *Player Interact*: Will trigger when interacting with a player.
 - *Equipment Changed*: Will trigger any time the player's equipment has changed.
-- *Player Variable Changed*: Will trigger when a player variable has changed. Will have text entry to enter desired command.
-- *Server Variable Changed*: Will trigger when a global variable has changed. Will have text entry to enter desired command.
+- *Player Variable Changed*: Will trigger when a player variable has changed and will have text entry to enter desired command.
+- *Server Variable Changed*: Will trigger when a global variable has changed and will have text entry to enter desired command.
 - *Guild Member Joined*: Will trigger when a guild member has joined a guild.
 - *Guild Member Left*: Will trigger when a guild member has left the guild.
 - *Guild Member Kicked*: Will trigger when a member has been kicked from the guild.
-- *Guild Variable Changed*: Will trigger when a guild variable has changed. Will have text entry to enter desired command.
+- *Guild Variable Changed*: Will trigger when a guild variable has changed and will have text entry to enter desired command.
 - *Inventtory Changed*: Will trigger when a player's inventory has changed.
 - *Map Changed*: Will trigger when a player changes map.
-- *User Variable Changed*: Will trigger when a user variable has changed.  Will have text entry to enter desired command.
+- *User Variable Changed*: Will trigger when a user variable has changed and will have text entry to enter desired command.
 
 ### Commands
 This is where all the magic for events happens and where you will tell your event what it actually does using [Event Commands](../events/eventcommands.md).
 
 ![Event Command Window](https://github.com/AscensionGameDev/Intersect-Documentation/assets/13249558/f29b37cd-212b-4f69-922b-ed493132e264)
 
-- To add a command, **DOUBLE CLICK** anywhere you see a `@` symbol. 
+- To add a command, **double click** anywhere you see a `@` symbol. 
 - If you double click a command that you already have placed, it will ask you to add a command and insert it in place, pushing the previous command down.
 
 You will be presented with the Add Command window.
