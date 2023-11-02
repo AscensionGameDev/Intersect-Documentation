@@ -149,7 +149,6 @@ export const sidebar: LocalizedSidebar = {
 				'/design/conditions.md',
 				'/design/crafting.md',
 				'/design/items.md',
-				'/design/lighting.md',
 				'/design/mapping.md',
 				'/design/npcs.md',
 				'/design/projectiles.md',
@@ -157,7 +156,7 @@ export const sidebar: LocalizedSidebar = {
 				'/design/resources.md',
 				'/design/shops.md',
 				'/design/spells.md',
-				'/design/resources.md',
+				'/design/variables.md',
 				'/design/time.md',
 				'/design/world.md',
 			],
@@ -167,11 +166,12 @@ export const sidebar: LocalizedSidebar = {
 			collapsible: true,
 			children: [
 				'/events/introduction.md',
+				'/events/common.md',
 				'/events/eventcommands.md',
 				'/events/chatcommands.md',
 				'/events/pages.md',
-				'/events/common.md',
 				'/events/examples.md',
+				
 			],
 		},
 		{

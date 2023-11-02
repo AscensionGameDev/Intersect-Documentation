@@ -2,9 +2,19 @@
 title: Introduction
 ---
 
-Events are the backbone of the interactivity in your game. They are what you use to give players their quests, browse shops, environmental puzzles, chests, doors, cutscenes, and just about anything you would want to do outside of combat.
+Events are the backbone of the interactivity in your game. 
 
 Events can be created directly on maps, but global events can also be made with the common events editor. Each event acts as a container for what you are wanting to do in your game so multiple events may be running or accessible globally or on a specific map at any given time.
+
+Below are a handful of interactions that you can accomplish with events:
+ - Give quests
+ - Open shops
+ - Environmental puzzles
+ - Chests
+ - Doors animations
+ - Cutscenes
+ - Conversations and dialog prompts
+ - And just about anything you would want to do outside of combat.
 
 In this section, we will do our best to explain anything you need to get started. If you're new and need to start from the beginning, continue reading. Or you can see an exhaustive list of the [Event Commands](../events/eventcommands.md), or if you just need to see how things work in practice, you can check out our [Examples](../events/examples.md) page.
 
