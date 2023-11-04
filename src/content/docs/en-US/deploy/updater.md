@@ -4,7 +4,7 @@ title: Auto Updater
 
 File storage and bandwidth costs! We do not have the capacity or funding to host your game data and updates for you. You will need to purchase a web hosting plan of your choice in order to distribute your game updates to your players.
 
-Static site hosts like Amazon S3 and GitHub pages will work well, but a webhost with the ability to run php is preferred for [faster updates and other benefits](#advanced-configuration) that you might want to learn about later on.
+Static site hosts like Amazon S3 will work well, but a webhost with the ability to run php is preferred for [faster updates and other benefits](#advanced-configuration) that you might want to learn about later on.
 
 ## Creating an Update
 
