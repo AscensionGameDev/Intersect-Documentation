@@ -367,7 +367,7 @@ Allows you to add to the Mana (MP) of a player character. Negative numbers will 
 Increases the player level by 1.
 
 ### Give Experience
-Allows you to give expericne to the player character.
+Allows you to give experience to the player character.
 
 *Amount Type*: Select whether the type of experience is to be entered manually or from a variable.
 
