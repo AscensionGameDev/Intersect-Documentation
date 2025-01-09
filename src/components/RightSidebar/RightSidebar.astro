@@ -12,7 +12,8 @@ type Props = {
 	langCode: KnownLanguageCode;
 };
 
-const { editUrl, headings, langCode } = Astro.props;
+const { editUrl, headings, langCode } = Astro.props as Props;
+const site = SITE[langCode];
 ---
 
 <aside id="toc" class="toc" title="Table of Contents">
@@ -22,7 +23,7 @@ const { editUrl, headings, langCode } = Astro.props;
 				<TableOfContents
 					client:media="(min-width: 50em)"
 					headings={headings}
-					onThisPage={SITE[langCode].general.OnThisPage}
+					onThisPage={site.general.OnThisPage}
 				/>
 			)
 		}

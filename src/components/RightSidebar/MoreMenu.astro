@@ -9,7 +9,7 @@ type Props = {
 	langCode: KnownLanguageCode;
 };
 
-const { editUrl, langCode } = Astro.props;
+const { editUrl, langCode } = Astro.props as Props;
 const site = SITE[langCode];
 const showMoreSection = Boolean(SITE.communityUrl);
 ---

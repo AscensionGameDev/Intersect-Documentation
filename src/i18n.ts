@@ -151,6 +151,8 @@ export type LocalizedNavbar = Array<NavbarItem>;
 
 export type VersionedNavbar = Record<VersionKey, LocalizedNavbar>;
 
+export type VersionedSidebar = Record<VersionKey, LocalizedSidebar>;
+
 export interface LocalizedSite {
 	disabled?: boolean;
 	title: string;
@@ -159,7 +161,7 @@ export interface LocalizedSite {
 	components: Components;
 	general: General;
 	navbar?: VersionedNavbar;
-	sidebar?: LocalizedSidebar;
+	sidebar?: VersionedSidebar;
 }
 
 type GithubRepository = {

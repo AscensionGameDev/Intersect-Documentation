@@ -35,7 +35,7 @@ export default <LocalizedSite>{
 		'v0.7.1-beta': v071beta.navbar,
 	},
 	sidebar: {
+		latest: latest.sidebar,
 		'v0.7.1-beta': v071beta.sidebar,
-		...latest.sidebar,
 	},
 };

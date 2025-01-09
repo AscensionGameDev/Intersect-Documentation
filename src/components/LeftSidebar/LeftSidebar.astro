@@ -23,7 +23,7 @@ type Props = {
 	versions: readonly LabeledVersion[];
 };
 
-const { currentPage, langCode, version, versions } = Astro.props;
+const { currentPage, langCode, version = "latest", versions } = Astro.props as Props;
 
 function getSlug() {
 	let slug = resolveSlug(langCode, currentPage, version);
@@ -41,17 +41,12 @@ const currentPageMatch = currentPage.endsWith("/")
 	? currentPage.slice(1, -1)
 	: currentPage.slice(1);
 
-let sidebar = SITE[langCode].sidebar;
-if (sidebar && typeof version === "string") {
-	const versionedSidebar = sidebar[version];
-	if (!Array.isArray(versionedSidebar)) {
-		sidebar = versionedSidebar;
-	}
-}
+const site = SITE[langCode];
 
-if (!sidebar) {
-	sidebar = {};
-}
+const navbar = site?.navbar ? site.navbar[version] : undefined;
+
+const sidebar = (site?.sidebar ? site.sidebar[version] : undefined) ?? {};
+
 
 const sidebarSlug =
 	Object.keys(sidebar).find((sectionSlug) => slug.startsWith(sectionSlug)) ??
@@ -94,6 +89,25 @@ function findActiveSidebarItem({
 
 	return undefined;
 }
+
+const langRootUrl = new URL(`/${langCode}`, Astro.url.href);
+function resolveNavUrl(link: string) {
+	if (link.startsWith("http")) {
+		return new URL(link);
+	}
+
+	const versionSegment = version === "latest" ? "" : `/${version}`;
+
+	if (link.startsWith("/")) {
+		if (link.startsWith(`/${langRootUrl}`)) {
+			return new URL(link, langRootUrl);
+		}
+
+		return new URL(`${langRootUrl}${versionSegment}${link}`);
+	}
+
+	return new URL(link, `${langRootUrl}${versionSegment}`);
+}
 ---
 
 <aside id="sidebar" class="sidebar" aria-label="Site Navigation">
@@ -115,6 +129,23 @@ function findActiveSidebarItem({
 				)
 			}
 		</div>
+		{
+			Array.isArray(navbar) && navbar.length > 0 && (
+				<nav class="site-sections">
+					<ul class="horizontal hide-on-mobile">
+						{navbar.map((item) => {
+							return (
+								<li>
+									<a href={resolveNavUrl(item.link)}>
+										{item.title}
+									</a>
+								</li>
+							);
+						})}
+					</ul>
+				</nav>
+			)
+		}
 	</div>
 	<nav aria-labelledby="sidebar">
 		<ul class="nav-groups">
@@ -390,6 +421,42 @@ function findActiveSidebarItem({
 		background-color: var(--theme-bg-hover);
 	}
 
+	nav.site-sections {
+		border-top: 1px solid var(--theme-divider);
+		padding: 1em 0.5em;
+		text-align: left;
+		width: 100%;
+	}
+
+	@media (min-width: 900px) {
+		nav.site-sections {
+			display: none;
+		}
+	}
+
+	nav.site-sections ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	nav.site-sections li {
+		padding: 0.5em 0em;
+	}
+
+	nav.site-sections a {
+		color: var(--theme-text);
+		font-size: 1.25em;
+		font-weight: 500;
+		text-decoration: none;
+	}
+
+	nav.site-sections a:hover,
+	nav.site-sections a:focus {
+		color: var(--theme-text-accent);
+		text-decoration: none;
+	}
+
 	@media (max-width: 1280px) {
 		.menu-toggle {
 			display: initial;
@@ -411,6 +478,7 @@ function findActiveSidebarItem({
 		right: 0;
 		top: var(--header-height);
 		width: 100vw;
+		z-index: 1;
 	}
 </style>
 
