@@ -3,7 +3,7 @@ import type { FunctionalComponent } from 'preact';
 import type { MouseEvent } from 'react';
 import { unescape } from 'html-escaper';
 import {
-	useEffect, useRef, useState 
+	useEffect, useRef, useState
 } from 'preact/hooks';
 
 import './TableOfContents.css';
@@ -92,7 +92,7 @@ const TableOfContents: FunctionalComponent<Props> = ({
 			<h2 id={onThisPageID} className="heading">
 				{onThisPage}
 			</h2>
-			<ul ref={toc}>
+			<ul className="table-of-contents" ref={toc}>
 				{headings
 					.filter(({ depth }) => depth > 1 && depth < 4)
 					.map((heading) => {
