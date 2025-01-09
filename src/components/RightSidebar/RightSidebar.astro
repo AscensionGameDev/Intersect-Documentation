@@ -32,6 +32,7 @@ const { editUrl, headings, langCode } = Astro.props;
 
 <style>
 	.toc {
+		display: flex;
 		grid-area: toc;
 		height: fit-content;
 		max-height: calc(100vh - var(--theme-navbar-height));
@@ -39,6 +40,11 @@ const { editUrl, headings, langCode } = Astro.props;
 		position: sticky;
 		top: var(--theme-navbar-height);
 		width: fit-content;
+	}
+
+	.sidebar-nav {
+		display: flex;
+		flex-direction: column;
 	}
 
 	@media (max-width: 1080px) {
