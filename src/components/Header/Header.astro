@@ -15,7 +15,7 @@ type Props = {
 	versions: readonly LabeledVersion[];
 };
 
-const { langCode, version = "latest", versions } = Astro.props;
+const { langCode, version = "latest", versions } = Astro.props as Props;
 const site = SITE[langCode];
 const navbar = site?.navbar ? site.navbar[version] : undefined;
 const langRootUrl = new URL(`/${langCode}`, Astro.url.href);

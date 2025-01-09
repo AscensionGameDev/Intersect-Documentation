@@ -6,7 +6,7 @@ type Props = {
 	langCode: KnownLanguageCode;
 };
 
-const { langCode } = Astro.props;
+const { langCode } = Astro.props as Props;
 
 const a11yNavLabels = A11Y_NAV_LABELS[langCode];
 ---

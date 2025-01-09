@@ -10,9 +10,9 @@ type Props = {
 	version: VersionKey;
 };
 
-const { langCode, version } = Astro.props;
+const { langCode, version } = Astro.props as Props;
 const site = SITE[langCode];
-const { Search } = site.components;
+const { Search: search } = site.components;
 const metadata = await getMetadata();
 ---
 
@@ -39,8 +39,8 @@ const metadata = await getMetadata();
 		</section>
 		<button
 			class="dummy trigger"
-			aria-label={Search.OpenSearch}
-			title={Search.OpenSearch}></button>
+			aria-label={search.OpenSearch}
+			title={search.OpenSearch}></button>
 		<svg>
 			<path
 				d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
@@ -269,7 +269,7 @@ const metadata = await getMetadata();
 		<Intersect animation="inner-spin" />
 	</div>
 	<div slot="empty-state" class="fill">
-		<span class="details">{Search.Empty}</span>
+		<span class="details">{search.Empty}</span>
 		<Intersect animation="none" />
 	</div>
 </site-search>

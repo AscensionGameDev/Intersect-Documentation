@@ -8,7 +8,7 @@ type Props = {
 	versions: readonly LabeledVersion[];
 };
 
-const { version = "latest", versions } = Astro.props;
+const { version = "latest", versions } = Astro.props as Props;
 ---
 
 <div class="version-picker-wrapper">

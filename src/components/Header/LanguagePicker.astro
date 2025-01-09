@@ -7,7 +7,7 @@ type Props = {
 	langCode: KnownLanguageCode;
 };
 
-const { langCode: activeLangCode } = Astro.props;
+const { langCode: activeLangCode } = Astro.props as Props;
 ---
 
 <div class="language-select-wrapper">
