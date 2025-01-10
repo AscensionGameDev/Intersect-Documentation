@@ -1,7 +1,6 @@
 import type { LocalizedSite } from '../../../i18n';
 
-import * as latest from './latest';
-import * as v071beta from './v0.7.1-beta';
+import { versions } from './versions';
 
 export default <LocalizedSite>{
 	title: 'Documentación de Intersect',
@@ -31,11 +30,9 @@ export default <LocalizedSite>{
 		More: 'Más',
 	},
 	navbar: {
-		latest: latest.navbar,
-		'v0.7.1-beta': v071beta.navbar,
+		...versions.navbar,
 	},
 	sidebar: {
-		latest: latest.sidebar,
-		'v0.7.1-beta': v071beta.sidebar,
+		...versions.sidebar,
 	},
 };

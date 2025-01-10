@@ -45,11 +45,12 @@ const VERSIONS: readonly LabeledVersion[] = docs
 		versions.push(version);
 		return versions;
 	}, [])
+	.toSorted((a, b) => b.localeCompare(a))
 	.map<LabeledVersion>((version) => ({
 		label: version,
 		value: version,
 	}))
-	.concat({
+	.toSpliced(0, 0, {
 		label: site.components.VersionPicker?.Latest ?? "Latest",
 		value: "latest",
 	});

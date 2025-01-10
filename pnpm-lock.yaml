@@ -23,21 +23,15 @@ importers:
       '@astrojs/ts-plugin':
         specifier: ^1.10.4
         version: 1.10.4
-      '@types/node':
-        specifier: ^22.10.5
-        version: 22.10.5
-      '@types/react':
-        specifier: ^19.0.4
-        version: 19.0.4
-      '@types/react-dom':
-        specifier: ^19.0.2
-        version: 19.0.2(@types/react@19.0.4)
       astro:
         specifier: 5.1.4
         version: 5.1.4(@types/node@22.10.5)(rollup@4.30.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
       commander:
         specifier: ^13.0.0
         version: 13.0.0
+      openapi-types:
+        specifier: ^12.1.3
+        version: 12.1.3
       preact:
         specifier: ^10.25.4
         version: 10.25.4
@@ -72,6 +66,15 @@ importers:
       '@types/jest':
         specifier: ^29.5.14
         version: 29.5.14
+      '@types/node':
+        specifier: ^22.10.5
+        version: 22.10.5
+      '@types/react':
+        specifier: ^19.0.4
+        version: 19.0.4
+      '@types/react-dom':
+        specifier: ^19.0.2
+        version: 19.0.2(@types/react@19.0.4)
       '@types/semver':
         specifier: ^7.5.8
         version: 7.5.8
@@ -3901,6 +3904,9 @@ packages:
 
   oniguruma-to-es@0.10.0:
     resolution: {integrity: sha512-zapyOUOCJxt+xhiNRPPMtfJkHGsZ98HHB9qJEkdT8BGytO/+kpe4m1Ngf0MzbzTmhacn11w9yGeDP6tzDhnCdg==}
+
+  openapi-types@12.1.3:
+    resolution: {integrity: sha512-N4YtSYJqghVu4iek2ZUvcN/0aqH1kRDuNqzcycDxhOUpg7GdvLa2F3DgS6yBNhInhv2r/6I0Flkn7CqL8+nIcw==}
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -10069,6 +10075,8 @@ snapshots:
       emoji-regex-xs: 1.0.0
       regex: 5.1.1
       regex-recursion: 5.1.1
+
+  openapi-types@12.1.3: {}
 
   optionator@0.9.4:
     dependencies:

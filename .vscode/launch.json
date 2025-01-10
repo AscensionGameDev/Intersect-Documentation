@@ -2,6 +2,38 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "Generate API Endpoints (Intersect-Documentation)",
+			"request": "launch",
+			"runtimeExecutable": "tsx",
+			"console": "integratedTerminal",
+			"type": "node",
+			"internalConsoleOptions": "neverOpen",
+			"program": "${workspaceFolder}/scripts/generateApiEndpoints",
+			"skipFiles": [
+				"<node_internals>/**",
+				"${workspaceFolder}/node_modules/**"
+			],
+			"args": [
+				"http://localhost:5400"
+			]
+		},
+		{
+			"name": "Test Migrate Version (Intersect-Documentation)",
+			"request": "launch",
+			"runtimeExecutable": "tsx",
+			"console": "integratedTerminal",
+			"type": "node",
+			"internalConsoleOptions": "neverOpen",
+			"program": "${workspaceFolder}/scripts/migrateVersion",
+			"skipFiles": [
+				"<node_internals>/**",
+				"${workspaceFolder}/node_modules/**"
+			],
+			"args": [
+				"0.8.0-beta.121"
+			]
+		},
+		{
 			"command": "./node_modules/.bin/astro dev",
 			"name": "astro dev (Intersect-Documentation)",
 			"request": "launch",
