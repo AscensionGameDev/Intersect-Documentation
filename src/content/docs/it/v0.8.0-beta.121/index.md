@@ -1,0 +1,7 @@
+---
+title: Introduction
+---
+
+Intersect is free and modern 2D MMORPG Maker. This engine was designed by developers active with similar engines of the past including Eclipse, Elysium, Mirage, and Xtremeworlds. Those engines have stopped receiving updates, their framework is nearly 2 decades old, and their support communities have died out. Intersect is our attempt to bring back the classic online role-playing game elements from those engines with a modern code base and an extremely user friendly environment. More information about Intersect is listed below. If you're ready to give Intersect a try then [click here to get started!](./start/download.md)
+
+If you are looking for documentation on using the source code available on [the GitHub repository](https://github.com/AscensionGameDev/Intersect-Engine), please refer the [Developer Guides](./developer/).
