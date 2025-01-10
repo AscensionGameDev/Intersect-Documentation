@@ -32,7 +32,7 @@ const linkIcon = readFileSync(linkIconSvgPath, 'utf-8');
 
 // https://astro.build/config
 export default defineConfig({
-	output: 'server',
+	output: 'static',
 	adapter: nodeAdapter({
 		mode: 'standalone'
 	}),

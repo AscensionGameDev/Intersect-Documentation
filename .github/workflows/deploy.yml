@@ -28,7 +28,6 @@ jobs:
         with:
           node-version: 22.13.0
           package-manager: pnpm@9.7.0
-          path: ./client
   deploy:
     needs: build
     runs-on: ubuntu-latest
