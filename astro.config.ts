@@ -12,8 +12,6 @@ import remarkValidateLinks from 'remark-validate-links';
 
 import rehypeRewriteUrls from './plugins/rehype-rewrite-urls';
 
-import nodeAdapter from '@astrojs/node';
-
 import { h } from 'hastscript';
 import { fromHtml } from 'hast-util-from-html';
 import { readFileSync } from 'fs';
@@ -33,9 +31,9 @@ const linkIcon = readFileSync(linkIconSvgPath, 'utf-8');
 // https://astro.build/config
 export default defineConfig({
 	output: 'static',
-	adapter: nodeAdapter({
-		mode: 'standalone'
-	}),
+	// adapter: nodeAdapter({
+	// 	mode: 'standalone'
+	// }),
 	integrations: [
 		mdx(),
 		// Enable Preact to support Preact JSX components.
