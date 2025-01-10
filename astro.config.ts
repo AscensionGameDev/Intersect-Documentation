@@ -2,9 +2,8 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
-import rehypeAutolinkHeadings, {
-	Options as RehypeAutolinkHeadingsOptions
-} from 'rehype-autolink-headings';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import type { Options as RehypeAutolinkHeadingsOptions } from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import rehypeVideo from '@ascensiongamedev/rehype-video';
 import remarkLint from 'remark-lint';
@@ -12,6 +11,8 @@ import remarkReferenceLinks from 'remark-reference-links';
 import remarkValidateLinks from 'remark-validate-links';
 
 import rehypeRewriteUrls from './plugins/rehype-rewrite-urls';
+
+import nodeAdapter from '@astrojs/node';
 
 import { h } from 'hastscript';
 import { fromHtml } from 'hast-util-from-html';
@@ -31,6 +32,10 @@ const linkIcon = readFileSync(linkIconSvgPath, 'utf-8');
 
 // https://astro.build/config
 export default defineConfig({
+	output: 'server',
+	adapter: nodeAdapter({
+		mode: 'standalone'
+	}),
 	integrations: [
 		mdx(),
 		// Enable Preact to support Preact JSX components.
@@ -77,5 +82,5 @@ export default defineConfig({
 		],
 	},
 	site: 'https://docs.freemmorpgmaker.com/',
-	trailingSlash: 'always',
+	trailingSlash: 'ignore'
 });

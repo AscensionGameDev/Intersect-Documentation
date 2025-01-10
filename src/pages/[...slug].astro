@@ -1,7 +1,10 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import MainLayout from "../layouts/MainLayout.astro";
-import { getLangCode } from "../i18n";
+import { getLangCode, type KnownLanguageCode } from "../i18n";
+import type { VersionKey } from "../versioning";
+
+export const prerender = true;
 
 export async function getStaticPaths() {
 	const docs = await getCollection("docs");
@@ -44,9 +47,12 @@ export async function getStaticPaths() {
 	const mapped = docs.map(transform);
 	return mapped;
 }
-type Props = CollectionEntry<"docs">;
+type Props = CollectionEntry<"docs"> & {
+	langCode: KnownLanguageCode,
+	version: VersionKey,
+};
 
-const post = Astro.props;
+const post = Astro.props as Props;
 const { Content, headings } = await post.render();
 const { langCode, version } = post;
 ---

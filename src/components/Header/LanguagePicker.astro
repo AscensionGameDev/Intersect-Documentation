@@ -1,6 +1,5 @@
 ---
-import type { KnownLanguageCode } from "../../i18n";
-import { LANGUAGE_CODES, LANGUAGES } from "../../i18n";
+import { type KnownLanguageCode, LANGUAGE_CODES, LANGUAGES } from "../../i18n";
 import { SITE } from "../../site";
 
 type Props = {
@@ -73,7 +72,7 @@ const { langCode: activeLangCode } = Astro.props as Props;
 
 <script>
 	import { listenToEventFromAll } from "../../elements";
-	import { PATTERN_LANGUAGE_CODE, KnownLanguageCode } from "../../i18n";
+	import { PATTERN_LANGUAGE_CODE, type KnownLanguageCode } from "../../i18n";
 
 	listenToEventFromAll("select.language-select", "change", ({ target }) => {
 		const select = target as HTMLSelectElement;

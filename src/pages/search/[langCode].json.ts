@@ -1,15 +1,19 @@
 import type { APIContext, APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import type {
+	KnownLanguageCode
+} from '../../i18n';
 import {
-	KnownLanguageCode,
 	LANGUAGE_CODES,
 	getLangCode
 } from '../../i18n';
 import { SITE } from '../../site';
 import { resolveSlug } from '../../slugs';
-import {
+import type {
 	VersionKey,
-	VersionedLookup,
+	VersionedLookup
+} from '../../versioning';
+import {
 	getVersion,
 } from '../../versioning';
 
@@ -27,7 +31,7 @@ export type IndexParams = {
 	langCode: KnownLanguageCode;
 };
 
-export const get: APIRoute = async ({ params }: APIContext) => {
+export const GET: APIRoute = async ({ params }: APIContext) => {
 	const { langCode } = params;
 
 	const docs = await getCollection(
@@ -101,8 +105,14 @@ export const get: APIRoute = async ({ params }: APIContext) => {
 		<VersionedLookup<IndexedDocument[]>>{}
 	);
 
-	return { body: JSON.stringify(indexed) };
+	return new Response(JSON.stringify(indexed), {
+		headers: {
+			'content-type': 'application/json',
+		},
+	});
 };
+
+export const prerender = true;
 
 export function getStaticPaths(): Array<{ params: IndexParams }> {
 	return LANGUAGE_CODES.map((langCode) => ({ params: { langCode } }));

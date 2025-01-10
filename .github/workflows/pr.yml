@@ -22,16 +22,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.1.1
+        uses: actions/setup-node@v4
         with:
-          node-version: 20.3.0
+          node-version: 22.13.0
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
-          version: 8.6.6
+          version: 9.7.0
 
       - name: Install Dependencies
         run: pnpm install

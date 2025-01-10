@@ -1,27 +1,39 @@
 {
-	"extends": "astro/tsconfigs/strictest",
 	"compilerOptions": {
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"esModuleInterop": true,
+		"exactOptionalPropertyTypes": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
 		"jsx": "preserve",
-		"skipLibCheck": true,
-		"target": "ESNext",
 		"module": "ESNext",
 		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
 		"noEmit": true,
-		"forceConsistentCasingInFileNames": true,
-		"esModuleInterop": true,
-		"strict": true,
-		"importsNotUsedAsValues": "error",
-		"strictNullChecks": true,
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitOverride": true,
 		"noImplicitReturns": true,
+		"noUncheckedIndexedAccess": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"noUncheckedIndexedAccess": true,
-		"exactOptionalPropertyTypes": true,
-		"allowUnreachableCode": false,
-		"allowUnusedLabels": false
-	}
+		"plugins": [
+			{
+				"name": "@astrojs/ts-plugin"
+			}
+		],
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"strictNullChecks": true,
+		"target": "ESNext",
+		"verbatimModuleSyntax": true
+	},
+	"exclude": [
+		"dist"
+	],
+	"extends": "astro/tsconfigs/strictest",
+	"include": [
+		".astro/types.d.ts",
+		"**/*"
+	]
 }
