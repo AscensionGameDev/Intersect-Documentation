@@ -1,5 +1,5 @@
 import { Argument, Command, Option, program } from 'commander';
-import { mkdir, readdir, rmdir, unlink } from 'fs/promises';
+import { mkdir, readdir, readFile, rmdir, unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { OpenAPIV3, type OpenAPIV3_1 } from 'openapi-types';
 import { type TitleKey } from './localizedTitles';
@@ -291,11 +291,18 @@ async function generateAPI(...args: Args) {
 	const pathToDocs = join(cwd, 'src', 'content', 'docs');
 	const locales = await readdir(pathToDocs);
 	
-	const routeNameSet = new Set<string>(routeSets.map(rs => `${rs.titleKey.replace(/_/g, '-')}`).flatMap(n => [n, `${n}.md`]));
+	const routeSetNames = routeSets.map(rs => rs.titleKey.replace(/_/g, '-'));
+	const routeNameSet = new Set<string>(routeSetNames.flatMap(n => [n, `${n}.md`]));
+	const endpointOrder = routeSetNames.map(n => `${n}.md`);
 
 	for (const locale of locales) {
 		const pathToEndpoints = join(cwd, 'src', 'content', 'docs', locale, 'api', options.apiVersion, 'endpoints');
-		
+		const pathToLocalization = join(cwd, 'src', 'site', 'locales', locale, 'latest.ts');
+
+		if (!await exists(pathToLocalization)) {
+			throw new Error(`Missing src/site/locales/${locale}/latest.ts`);
+		}
+
 		if (!await exists(pathToEndpoints)) {
 			await mkdir(pathToEndpoints);
 		}
@@ -314,6 +321,15 @@ async function generateAPI(...args: Args) {
 				}
 			}
 		}
+
+		const localizationContents = await readFile(pathToLocalization, 'utf-8');
+		const patternEndpointOrder = /const endpointOrder: string\[\] = \[(\n|[^\]])+\];/gm;
+		if (!patternEndpointOrder.test(localizationContents)) {
+			throw new Error(`Localization file for ${locale}/latest missing \`endpointOrder\` section`);
+		}
+		const updatedEndpointOrder = `const endpointOrder: string[] = [\n${endpointOrder.map(l => `\t'${l}',`).join('\n')}\n];`;
+		const updatedLocalizationContents = localizationContents.replace(patternEndpointOrder, updatedEndpointOrder);
+		await writeFile(pathToLocalization, updatedLocalizationContents, 'utf-8');
 
 		debugger;
 	}

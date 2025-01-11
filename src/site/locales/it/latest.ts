@@ -1,4 +1,71 @@
 import type { LocalizedNavbar, LocalizedSidebar } from '../../../i18n';
+import type { VersionedEndpoints } from '../../../versioning';
+import { basename, join, resolve } from 'node:path';
+import { readdir } from 'node:fs/promises';
+import { exists } from '../../../lib/fs';
+
+const __version = basename(import.meta.filename, '.ts');
+const __locale = basename(import.meta.dirname);
+const __dirnameContent = resolve(import.meta.dirname, '..', '..', '..', 'content', 'docs', __locale);
+const __dirnameVersionedContent = __version === 'latest' ? __dirnameContent : join(__dirnameContent, __version);
+const __dirnameContentApi = resolve(__dirnameVersionedContent, 'api');
+
+const apiVersions = (await readdir(__dirnameContentApi)).filter(n => n.startsWith('v'));
+
+const endpointOrder: string[] = [
+	'authentication.md',
+	'server-info.md',
+	'users.md',
+	'players.md',
+	'guilds.md',
+	'server-variables.md',
+	'chat.md',
+	'logging.md',
+	'admin-actions.md',
+	'game-objects.md',
+];
+
+const endpointsByVersion = await Promise.all(apiVersions.map(async (versionName) => {
+	const dirnameVersionEndpoints = resolve(__dirnameContentApi, versionName, 'endpoints');
+	if (!await exists(dirnameVersionEndpoints)) {
+		console.warn(`[apigen] Endpoints do not exist for ${__locale} ${versionName}`);
+		return <VersionedEndpoints>[versionName, []];
+	}
+
+	const endpointFiles = await readdir(dirnameVersionEndpoints);
+	const sortedEndpointFiles = endpointFiles.toSorted(
+		(a, b) => {
+			const aIndex = endpointOrder.indexOf(a);
+			const bIndex = endpointOrder.indexOf(b);
+			if (aIndex < 0) {
+				if (bIndex < 0) {
+					return a.localeCompare(b);
+				}
+
+				return 1;
+			}
+
+			if (bIndex < 0) {
+				return -1;
+			}
+
+			if (aIndex !== bIndex) {
+				return aIndex - bIndex;
+			}
+
+			return a.localeCompare(b);
+		}
+	);
+
+	const endpointsForVersion: VersionedEndpoints = [versionName, sortedEndpointFiles];
+	return endpointsForVersion;
+}));
+
+const apiEndpointsSidebarSection = endpointsByVersion.flatMap(
+	([versionName, endpointFiles]) => endpointFiles.map(
+		endpointFileName => `/api/${versionName}/endpoints/${endpointFileName}`
+	)
+);
 
 export const navbar: LocalizedNavbar = [
 	{
@@ -34,17 +101,7 @@ export const sidebar: LocalizedSidebar = {
 		{
 			title: '<<todo:it>>Endpoints',
 			collapsible: true,
-			children: [
-				'/api/v1/endpoints/authentication.md',
-				'/api/v1/endpoints/admin.md',
-				'/api/v1/endpoints/chat.md',
-				'/api/v1/endpoints/gameobjects.md',
-				'/api/v1/endpoints/info.md',
-				'/api/v1/endpoints/logs.md',
-				'/api/v1/endpoints/players.md',
-				'/api/v1/endpoints/users.md',
-				'/api/v1/endpoints/variables.md',
-			],
+			children: apiEndpointsSidebarSection,
 		},
 		{
 			title: '<<todo:it>>Advanced',

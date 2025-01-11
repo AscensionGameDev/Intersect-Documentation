@@ -4,6 +4,8 @@ export type Version = `v${string}`;
 
 export type VersionKey = Version | 'latest';
 
+export type VersionedEndpoints = [string, string[]];
+
 export type LabeledVersion = {
 	label: Version | string;
 	value: VersionKey;
