@@ -8,17 +8,7 @@ import {
 	join, relative, resolve 
 } from 'path';
 import { valid } from 'semver';
-
-async function exists(fileSystemPath: string): Promise<boolean> {
-	const stats = await stat(fileSystemPath).catch((error) => {
-		if (error.code === 'ENOENT') {
-			return null;
-		}
-
-		throw new Error(error);
-	});
-	return stats !== null;
-}
+import { exists } from '../src/lib/fs';
 
 async function migrateLocale(
 	cwd: string,
