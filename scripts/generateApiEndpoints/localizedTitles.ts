@@ -29,6 +29,7 @@ const SampleTitles = {
 };
 
 export type TitleKey = keyof typeof SampleTitles;
+export const TitleKeys = Object.keys(SampleTitles) as TitleKey[];
 
 export const LocalizedTitles: Record<KnownLanguageCode, Record<TitleKey, string>> = {
     "en-US": SampleTitles,

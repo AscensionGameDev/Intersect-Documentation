@@ -273,9 +273,9 @@ const pathPriorities: PathPriority[] = [
 	{ group: 'controller', key: 'Logs', titleKey: 'logging' },
 	{ group: 'controller', key: 'RootInfo', ignore: true },
 	{ group: 'controller', key: 'Demo', ignore: true },
-	{ group: 'controller', titleKey: (g, k) => (k ? `${g}_${k}` : g).toLocaleLowerCase() as TitleKey },
 	{ group: 'enum', key: 'AdminAction', titleKey: 'admin_actions' },
 	{ group: 'controller', key: 'GameObject', titleKey: 'game_objects' },
+	{ group: 'controller', titleKey: (g, k) => (k ? `${g}_${k}` : g).toLocaleLowerCase() as TitleKey },
 ];
 
 const methodPriorities: Array<OpenAPIV3_1.HttpMethods> = [
@@ -304,12 +304,12 @@ function compareMethod(a: TaggedPath, b: TaggedPath): number {
 	return aIndex - bIndex;
 }
 
-type GroupedTaggedPath = TaggedPath & { group: Group, key?: string, titleKey: TitleKeyOrProvider };
+type GroupedTaggedPath = TaggedPath & { group: Group, key?: string, titleKey: TitleKey };
 
 type RouteSet = {
 	group: Group;
 	key?: string;
-	titleKey: TitleKeyOrProvider;
+	titleKey: TitleKey;
 	routes: GroupedTaggedPath[];
 };
 
@@ -371,7 +371,7 @@ async function generateAPI(...args: Args) {
 					...taggedPath,
 					group,
 					key: keyToVisit,
-					titleKey,
+					titleKey: typeof titleKey === 'string' ? titleKey : titleKey(group, keyToVisit),
 				});
 			}
 		}
@@ -397,13 +397,30 @@ async function generateAPI(...args: Args) {
 	const pathToDocs = join(cwd, 'src', 'content', 'docs');
 	const locales = await readdir(pathToDocs);
 	
+	const routeNameSet = new Set<string>(routeSets.map(rs => `${rs.titleKey.replace(/_/g, '-')}`).flatMap(n => [n, `${n}.md`]));
+
 	for (const locale of locales) {
 		const pathToEndpoints = join(cwd, 'src', 'content', 'docs', locale, 'api', options.apiVersion, 'endpoints');
-		if (await exists(pathToEndpoints)) {
-			await rmdir(pathToEndpoints, { recursive: true });
+		
+		if (!await exists(pathToEndpoints)) {
+			await mkdir(pathToEndpoints);
 		}
 
-		await mkdir(pathToEndpoints);
+		const existingEndpointNames = await readdir(pathToEndpoints);
+		const namesToDelete = existingEndpointNames.filter(f => !routeNameSet.has(f));
+		for (const nameToDelete of namesToDelete) {
+			const pathToDelete = join(pathToEndpoints, nameToDelete);
+			try {
+				await unlink(pathToDelete);
+			} catch {
+				try {
+					await rmdir(pathToDelete, { recursive: true });
+				} catch {
+					console.warn(`Failed to delete endpoint: ${nameToDelete}`);
+				}
+			}
+		}
+
 		debugger;
 	}
 }
