@@ -127,7 +127,18 @@ function organizePathsByTag(document: OpenAPIV3_1.Document): TaggedPathLookup {
 		for (const method of Object.values(OpenAPIV3.HttpMethods)) {
 			const operationObject = pathObject[method];
 
-			for (const tag of operationObject?.tags ?? []) {
+			if (!operationObject) {
+				continue;
+			}
+
+			if (!('x-generator-tags' in operationObject)) {
+				console.warn(`No generator tags (x-generator-tags) found for ${method} ${route}`);
+				continue;
+			}
+
+			const generatorTags = operationObject['x-generator-tags'] as string[];
+
+			for (const tag of generatorTags) {
 				const parts = split(tag, ':', 2);
 				const [tagGroup, tagKey] = parts;
 
@@ -151,26 +162,16 @@ function organizePathsByTag(document: OpenAPIV3_1.Document): TaggedPathLookup {
 type TitleKeyProvider = (group: Group, key?: string) => TitleKey;
 type TitleKeyOrProvider = TitleKey | TitleKeyProvider;
 
-type PathPriority = { group: Group, key?: string } & (
+type GroupFallbackTitleKeyGenerators = Partial<Record<Group, TitleKeyOrProvider>>;
+
+type RoutePriority = { group: Group, key?: string } & (
 	{ ignore?: never, titleKey: TitleKeyOrProvider }
 	| { ignore: true, titleKey?: never }
 );
 
-const pathPriorities: PathPriority[] = [
-	{ group: 'controller', key: 'OAuth', titleKey: 'authentication' },
-	{ group: 'controller', key: 'Info', titleKey: 'server_info' },
-	{ group: 'controller', key: 'User', titleKey: 'users' },
-	{ group: 'controller', key: 'Player', titleKey: 'players' },
-	{ group: 'controller', key: 'Guild', titleKey: 'guilds' },
-	{ group: 'controller', key: 'Variables', titleKey: 'server_variables' },
-	{ group: 'controller', key: 'Chat', titleKey: 'chat' },
-	{ group: 'controller', key: 'Logs', titleKey: 'logging' },
-	{ group: 'controller', key: 'RootInfo', ignore: true },
-	{ group: 'controller', key: 'Demo', ignore: true },
-	{ group: 'enum', key: 'AdminAction', titleKey: 'admin_actions' },
-	{ group: 'controller', key: 'GameObject', titleKey: 'game_objects' },
-	{ group: 'controller', titleKey: (g, k) => (k ? `${g}_${k}` : g).toLocaleLowerCase() as TitleKey },
-];
+const fallbackGenerators: GroupFallbackTitleKeyGenerators = {
+	controller: (g, k) => (k ? `${g}_${k}` : g).toLocaleLowerCase() as TitleKey,
+};
 
 const methodPriorities: Array<OpenAPIV3_1.HttpMethods> = [
 	OpenAPIV3.HttpMethods.GET,
@@ -207,6 +208,18 @@ type RouteSet = {
 	routes: GroupedTaggedPath[];
 };
 
+type GeneratorMetadata = {
+	route_priority: Partial<RoutePriority>[];
+};
+
+function getPriorityGroup(partialPriority: Partial<RoutePriority>) {
+	if (!partialPriority.group) {
+		throw new Error(`'group' missing on ${JSON.stringify(partialPriority, null, 2)}`);
+	}
+
+	return partialPriority.group;
+}
+
 async function generateAPI(...args: Args) {
 	const [host, options] = args;
 
@@ -222,11 +235,21 @@ async function generateAPI(...args: Args) {
 		return;
 	}
 
+	if (!('x-generator-metadata' in openApiSpec)) {
+		throw new Error(`'x-generator-metadata' not present in spec loaded from ${swaggerJsonUrl}`);
+	}
+
+	const generatorMetadata = openApiSpec['x-generator-metadata'] as GeneratorMetadata;
+	const routePriorities = generatorMetadata.route_priority.map(priority => priority.ignore || priority.titleKey ? (priority as RoutePriority) : <RoutePriority>{
+		...priority,
+		titleKey: fallbackGenerators[getPriorityGroup(priority)],
+	});
+
 	const taggedPathLookup = organizePathsByTag(openApiSpec);
 
 	const taggedPathsToGenerate: GroupedTaggedPath[] = [];
 	const visitedKeysByGroup: Map<Group, Set<string>> = new Map<Group, Set<string>>();
-	for (const { group, key, ignore, titleKey } of pathPriorities) {
+	for (const { group, key, ignore, titleKey } of routePriorities) {
 		const keysToVisit: string[] = [];
 
 		let set = visitedKeysByGroup.get(group);
