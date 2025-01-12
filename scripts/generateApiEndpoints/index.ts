@@ -2,8 +2,9 @@ import { Argument, Command, Option, program } from 'commander';
 import { mkdir, readdir, readFile, rmdir, unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { OpenAPIV3, type OpenAPIV3_1 } from 'openapi-types';
-import { type TitleKey } from './localizedTitles';
+import { LocalizedTitles, type TitleKey } from './localizedTitles';
 import { exists } from '../../src/lib/fs';
+import type { KnownLanguageCode } from '../../src/i18n';
 
 type Options = {
 	apiVersion: string;
@@ -212,12 +213,88 @@ type GeneratorMetadata = {
 	route_priority: Partial<RoutePriority>[];
 };
 
+type LocaleTemplates = {
+	authorization: string;
+	authorizationAnonymous: string;
+	authorizationRole: string;
+	authorizationRolesNone: string;
+	authorizationSchemeBearer: string;
+	endpoint: string;
+	request: string;
+	response: string;
+	routeset: string;
+};
+
+const LocaleTemplateFileNameLookup: Record<keyof LocaleTemplates, string> = (() => {
+	const dummyLocaleTemplates: LocaleTemplates = {
+		authorization: '',
+		authorizationAnonymous: '',
+		authorizationRole: '',
+		authorizationRolesNone: '',
+		authorizationSchemeBearer: '',
+		endpoint: '',
+		request: '',
+		response: '',
+		routeset: ''
+	};
+	return Object.assign(
+		{},
+		...Object.keys(dummyLocaleTemplates).map(
+			key => ({
+				[key]: `${key.replace(/[A-Z]/g, match => `.${match.toLocaleLowerCase()}`)}.md`,
+			})
+		)
+	);
+})();
+
+async function loadTemplateForLocale(locale: string, templateName: keyof LocaleTemplates, fileName: string): Promise<string> {
+	const pathToLocaleTemplate = join(import.meta.dirname, 'templates', locale, fileName);
+	if (!await exists(pathToLocaleTemplate)) {
+		if (locale === 'en-US') {
+			throw new Error(`Template ${templateName} is missing for en-US? Expected to be at ${pathToLocaleTemplate}`);
+		}
+
+		console.warn(`Falling back to en-US for the ${templateName} template for ${locale}`);
+		return loadTemplateForLocale('en-US', templateName, fileName);
+	}
+
+	return readFile(pathToLocaleTemplate, 'utf-8');
+}
+
+async function loadTemplatesForLocale(locale: string): Promise<LocaleTemplates> {
+	const pathToLocaleTemplates = join(import.meta.dirname, 'templates', locale);
+	if (!await exists(pathToLocaleTemplates)) {
+		if (locale === 'en-US') {
+			throw new Error('Templates are missing for en-US?');
+		}
+
+		console.warn(`Falling back to en-US for all templates for ${locale}`);
+		return loadTemplatesForLocale('en-US');
+	}
+
+	const templates: Partial<LocaleTemplates> = {};
+	for (const [templateName, fileName] of Object.entries(LocaleTemplateFileNameLookup) as [keyof LocaleTemplates, string][]) {
+		templates[templateName] = await loadTemplateForLocale(locale, templateName, fileName);
+	}
+	return templates as LocaleTemplates;
+}
+
 function getPriorityGroup(partialPriority: Partial<RoutePriority>) {
 	if (!partialPriority.group) {
 		throw new Error(`'group' missing on ${JSON.stringify(partialPriority, null, 2)}`);
 	}
 
 	return partialPriority.group;
+}
+
+async function populateTemplate(template: string, params: Record<string, unknown>, hydrators: Record<string, (value: any) => Promise<string>>): Promise<string> {
+	let populatedTemplate = template;
+	for (const [key, value] of Object.entries(params)) {
+		const hydrator = hydrators[key] ?? (() => value as string);
+		const hydratedValue = await hydrator(value);
+		populatedTemplate = populatedTemplate.replace(new RegExp(`\\$\\$${key}\\$\\$`, 'g'), hydratedValue);
+	}
+	return populatedTemplate;
 }
 
 async function generateAPI(...args: Args) {
@@ -318,7 +395,7 @@ async function generateAPI(...args: Args) {
 	const routeNameSet = new Set<string>(routeSetNames.flatMap(n => [n, `${n}.md`]));
 	const endpointOrder = routeSetNames.map(n => `${n}.md`);
 
-	for (const locale of locales) {
+	for (const locale of locales as KnownLanguageCode[]) {
 		const pathToEndpoints = join(cwd, 'src', 'content', 'docs', locale, 'api', options.apiVersion, 'endpoints');
 		const pathToLocalization = join(cwd, 'src', 'site', 'locales', locale, 'latest.ts');
 
@@ -354,6 +431,42 @@ async function generateAPI(...args: Args) {
 		const updatedLocalizationContents = localizationContents.replace(patternEndpointOrder, updatedEndpointOrder);
 		await writeFile(pathToLocalization, updatedLocalizationContents, 'utf-8');
 
+		const localizedTitles = LocalizedTitles[locale];
+		const localeTemplates = await loadTemplatesForLocale(locale);
+		for (const routeSet of routeSets) {
+			const pathToEndpoint = join(pathToEndpoints, `${routeSet.titleKey}.md`);
+			const routesetTemplateParams = {
+				title: localizedTitles[routeSet.titleKey],
+				endpoints: routeSet.routes,
+			};
+
+			const populatedTemplate = await populateTemplate(
+				localeTemplates.routeset,
+				routesetTemplateParams,
+				{
+					endpoints: async (routes: GroupedTaggedPath[]) => {
+						const formattedEndpoints: string[] = [];
+						for (const route of routes) {
+							const endpointTemplateParams = {
+								name: route.summary,
+								method: route.method,
+								path: route.route,
+								description: route.description ?? '',
+								authorization: 'TODO',
+								request: 'TODO',
+								response: 'TODO',
+							};
+							formattedEndpoints.push(await populateTemplate(localeTemplates.endpoint, endpointTemplateParams, {
+								method: async (value) => (value as string).toLocaleUpperCase(),
+							}));
+						}
+						return formattedEndpoints.join('\n\n---\n\n');
+					}
+				}
+			);
+
+			await writeFile(pathToEndpoint, populatedTemplate, 'utf-8');
+		}
 		debugger;
 	}
 }
