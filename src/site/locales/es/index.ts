@@ -24,6 +24,7 @@ export default <LocalizedSite>{
 		VersionPicker: { Latest: 'Ultima' },
 	},
 	general: {
+		Deprecated: 'Deprecated',
 		EditThisPage: 'Edit this page',
 		JoinOurCommunity: 'Join our Discord',
 		OnThisPage: 'En esta página',

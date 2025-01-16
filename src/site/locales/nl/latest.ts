@@ -1,16 +1,19 @@
-import type { LocalizedNavbar, LocalizedSidebar } from '../../../i18n';
-import type { VersionedEndpoints } from '../../../versioning';
-import { basename, join, resolve } from 'node:path';
+import { getCollection } from "astro:content";
+import type { LocalizedNavbar, LocalizedSidebar, SidebarItem } from '../../../i18n';
+import type { VersionedNamedDocument } from '../../../versioning';
+import { basename, join } from 'node:path';
 import { readdir } from 'node:fs/promises';
-import { exists } from '../../../lib/fs';
+import { existsTree, readdirTree, treeFromPaths } from "../../../utils";
 
-const __version = basename(import.meta.filename, '.ts');
-const __locale = basename(import.meta.dirname);
-const __dirnameContent = resolve(import.meta.dirname, '..', '..', '..', 'content', 'docs', __locale);
-const __dirnameVersionedContent = __version === 'latest' ? __dirnameContent : join(__dirnameContent, __version);
-const __dirnameContentApi = resolve(__dirnameVersionedContent, 'api');
-
-const apiVersions = (await readdir(__dirnameContentApi)).filter(n => n.startsWith('v'));
+const version = basename(__filename, '.ts');
+const locale = basename(__dirname);
+const dirnameContent = join(locale);
+const dirnameVersionedContent = version === 'latest' ? dirnameContent : join(dirnameContent, version);
+const dirnameContentApi = join(dirnameVersionedContent, 'api');
+const docs = await getCollection("docs");
+const docIds = docs.map(({ id }) => id);
+const docTree = treeFromPaths(docIds);
+const apiVersions = readdirTree(docTree, dirnameContentApi).filter(n => n.startsWith('v') && n !== 'versions.ts');
 
 const endpointOrder: string[] = [
 	'authentication.md',
@@ -23,17 +26,18 @@ const endpointOrder: string[] = [
 	'logging.md',
 	'admin-actions.md',
 	'game-objects.md',
+	'Avatar.md',
 ];
 
 const endpointsByVersion = await Promise.all(apiVersions.map(async (versionName) => {
-	const dirnameVersionEndpoints = resolve(__dirnameContentApi, versionName, 'endpoints');
-	if (!await exists(dirnameVersionEndpoints)) {
-		console.warn(`[apigen] Endpoints do not exist for ${__locale} ${versionName}`);
-		return <VersionedEndpoints>[versionName, []];
+	const dirnameVersionEndpoints = join(dirnameContentApi, versionName, 'endpoints');
+	if (!existsTree(docTree, dirnameVersionEndpoints)) {
+		console.warn(`[apigen] Endpoints do not exist for ${locale} ${versionName}`);
+		return <VersionedNamedDocument>[versionName, []];
 	}
 
-	const endpointFiles = await readdir(dirnameVersionEndpoints);
-	const sortedEndpointFiles = endpointFiles.toSorted(
+	const endpointFiles = readdirTree(docTree, dirnameVersionEndpoints);
+		const sortedEndpointFiles = endpointFiles.toSorted(
 		(a, b) => {
 			const aIndex = endpointOrder.indexOf(a);
 			const bIndex = endpointOrder.indexOf(b);
@@ -57,7 +61,7 @@ const endpointsByVersion = await Promise.all(apiVersions.map(async (versionName)
 		}
 	);
 
-	const endpointsForVersion: VersionedEndpoints = [versionName, sortedEndpointFiles];
+	const endpointsForVersion: VersionedNamedDocument = [versionName, sortedEndpointFiles];
 	return endpointsForVersion;
 }));
 
@@ -66,6 +70,35 @@ const apiEndpointsSidebarSection = endpointsByVersion.flatMap(
 		endpointFileName => `/api/${versionName}/endpoints/${endpointFileName}`
 	)
 );
+
+const typesByVersion = await Promise.all(apiVersions.map(async (versionName) => {
+	const dirnameVersionTypes = join(dirnameContentApi, versionName, 'types');
+	if (!existsTree(docTree, dirnameVersionTypes)) {
+		console.warn(`[apigen] Types do not exist for ${locale} ${versionName}`);
+		return <VersionedNamedDocument>[versionName, []];
+	}
+
+	const typeFiles = await readdir(dirnameVersionTypes);
+	const sortedTypeFiles = typeFiles.toSorted((a, b) => a.localeCompare(b));
+
+	const typesForVersion: VersionedNamedDocument = [versionName, sortedTypeFiles];
+	return typesForVersion;
+}));
+
+const apiTypesSidebarSection = typesByVersion.flatMap(
+	([versionName, typeFiles]) => typeFiles.map(
+		typeFileName => `/api/${versionName}/types/${typeFileName}`
+	)
+);
+
+const apiSidebarItems: SidebarItem[] = [];
+if (apiTypesSidebarSection.length > 0) {
+	apiSidebarItems.push({
+		title: 'Types',
+		collapsible: true,
+		children: apiTypesSidebarSection,
+	});
+}
 
 export const navbar: LocalizedNavbar = [
 	{

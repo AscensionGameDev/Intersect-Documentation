@@ -89,6 +89,7 @@ export const LANGUAGE_CODES: readonly KnownLanguageCode[] = Object.keys(
 export type Localizable<T> = Record<KnownLanguageCode, T>;
 
 export type General = {
+	Deprecated: string;
 	EditThisPage: string;
 	JoinOurCommunity: string;
 	OnThisPage: string;

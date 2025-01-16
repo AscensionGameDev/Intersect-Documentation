@@ -15,7 +15,7 @@ import rehypeRewriteUrls from './plugins/rehype-rewrite-urls';
 import { h } from 'hastscript';
 import { fromHtml } from 'hast-util-from-html';
 import { readFileSync } from 'fs';
-import { join } from 'path';
+import {  dirname, join } from 'path';
 
 const linkIconSvgPath = join(process.cwd(), 'public', 'link.svg');
 const linkIcon = readFileSync(linkIconSvgPath, 'utf-8');
@@ -80,5 +80,40 @@ export default defineConfig({
 		],
 	},
 	site: 'https://docs.freemmorpgmaker.com/',
-	trailingSlash: 'ignore'
+	trailingSlash: 'ignore',
+	vite: {
+		build: {
+			rollupOptions: {
+				external: [
+					'node:fs/promises',
+					'node:path',
+				]
+			},
+		},
+		plugins: [
+			{
+				name: 'inject-file-metadata',
+				transform: (src: string, id: string) => {
+					const match = /src\/site\/locales\/(?<locale>[^/]+)\/(?<fileName>[^/]+\.ts)$/.exec(id);
+					if (!match) {
+						return;
+					}
+
+					const { fileName } = (match.groups ?? {}) as {
+						locale: string;
+						fileName: string;
+					};
+
+					if (fileName !== 'latest.ts' && !fileName.startsWith('v') || fileName === 'versions.ts') {
+						return;
+					}
+
+					const updatedSrc = src
+						.replace(/__filename/g, `'${id}'`)
+						.replace(/__dirname/g, `'${dirname(id)}'`);
+					return updatedSrc;
+				},
+			},
+		],
+	},
 });
