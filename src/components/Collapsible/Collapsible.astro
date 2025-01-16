@@ -32,11 +32,12 @@ const triggerId = `collapsible-trigger-${key}`;
 
 	.content {
 		max-height: 0;
-		overflow: hidden;
+		overflow-x: hidden;
+		overflow-y: visible;
 		transition: max-height 0.25s ease-in-out;
 	}
 
 	.trigger:checked ~ .content {
-		max-height: 100vh;
+		max-height: initial;
 	}
 </style>
