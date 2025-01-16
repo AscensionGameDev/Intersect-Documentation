@@ -6,13 +6,11 @@ title: Getting Started
 
 For security purposes the API is disabled by default and must be enabled before you can start issuing commands.
 
-Open the API configuration (located at `server/resources/config/api.config.json`)
+Open the API configuration (located at `server/appsettings.Production.json`)
 
-Set the `Enabled` field to `true` as shown below:
+Set the `Api`.`Enabled` field to `true` as shown below:
 
-```
-  "Enabled": true,
-```
+![API Enablement](api-enabled.png)
 
 Optionally change the `Hosts` field to listen on your desired network ports.
 
