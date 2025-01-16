@@ -1,11 +1,5 @@
-### Authorization
-
-Required for this endpoint
+Required for this endpoint.
 
 #### Roles
 
 $$roles$$
-
-#### Schemes
-
-$$type$$

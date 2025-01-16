@@ -5,6 +5,7 @@ import { OpenAPIV3, type OpenAPIV3_1 } from 'openapi-types';
 import { LocalizedTitles, type TitleKey } from './localizedTitles';
 import { exists } from '../../src/lib/fs';
 import type { KnownLanguageCode } from '../../src/i18n';
+import { SITE } from '../../src/site';
 
 type Options = {
 	apiVersion: string;
@@ -37,8 +38,13 @@ function resolveSwaggerJsonUrl(host: URL, apiVersion: string, swaggerJsonUrl: UR
 	return new URL(`/swagger/${apiVersion}/swagger.json`, host);
 }
 
-async function loadSwaggerJson(swaggerJsonUrl: URL): Promise<OpenAPIV3_1.Document | null> {
-	const response = await fetch(swaggerJsonUrl);
+async function loadSwaggerJson(swaggerJsonUrl: URL, locale: KnownLanguageCode): Promise<OpenAPIV3_1.Document | null> {
+	const response = await fetch(swaggerJsonUrl, {
+		headers: {
+			'Accept-Language': `${locale},en-US;q=0.8`,
+		},
+	});
+
 	if (!response.ok) {
 		console.error(`Failed to fetch OpenAPI spec from ${swaggerJsonUrl}, ${response.status} ${response.statusText}`);
 		if (response.headers.get('content-type')?.startsWith('application/json')) {
@@ -171,7 +177,7 @@ type RoutePriority = { group: Group, key?: string } & (
 );
 
 const fallbackGenerators: GroupFallbackTitleKeyGenerators = {
-	controller: (g, k) => (k ? `${g}_${k}` : g).toLocaleLowerCase() as TitleKey,
+	controller: (_, k) => k as TitleKey,
 };
 
 const methodPriorities: Array<OpenAPIV3_1.HttpMethods> = [
@@ -216,7 +222,8 @@ type GeneratorMetadata = {
 type LocaleTemplates = {
 	authorization: string;
 	authorizationAnonymous: string;
-	authorizationRole: string;
+	authorizationRolesMultiple: string;
+	authorizationRolesMultipleRoleset: string;
 	authorizationRolesNone: string;
 	authorizationSchemeBearer: string;
 	endpoint: string;
@@ -229,7 +236,8 @@ const LocaleTemplateFileNameLookup: Record<keyof LocaleTemplates, string> = (() 
 	const dummyLocaleTemplates: LocaleTemplates = {
 		authorization: '',
 		authorizationAnonymous: '',
-		authorizationRole: '',
+		authorizationRolesMultiple: '',
+		authorizationRolesMultipleRoleset: '',
 		authorizationRolesNone: '',
 		authorizationSchemeBearer: '',
 		endpoint: '',
@@ -303,113 +311,162 @@ async function generateAPI(...args: Args) {
 	const cwd = process.cwd();
 	console.info(`Running API endpoint documentation generation in: ${cwd}`);
 
-	const swaggerJsonUrl = resolveSwaggerJsonUrl(host, options.apiVersion, options.swaggerJson);
-	const openApiSpec = await loadSwaggerJson(swaggerJsonUrl);
-
-	if (openApiSpec === null) {
-		console.error('Unable to load the API spec, nothing generated.')
-		process.exitCode = 1;
-		return;
-	}
-
-	if (!('x-generator-metadata' in openApiSpec)) {
-		throw new Error(`'x-generator-metadata' not present in spec loaded from ${swaggerJsonUrl}`);
-	}
-
-	const generatorMetadata = openApiSpec['x-generator-metadata'] as GeneratorMetadata;
-	const routePriorities = generatorMetadata.route_priority.map(priority => priority.ignore || priority.titleKey ? (priority as RoutePriority) : <RoutePriority>{
-		...priority,
-		titleKey: fallbackGenerators[getPriorityGroup(priority)],
-	});
-
-	const taggedPathLookup = organizePathsByTag(openApiSpec);
-
-	const taggedPathsToGenerate: GroupedTaggedPath[] = [];
-	const visitedKeysByGroup: Map<Group, Set<string>> = new Map<Group, Set<string>>();
-	for (const { group, key, ignore, titleKey } of routePriorities) {
-		const keysToVisit: string[] = [];
-
-		let set = visitedKeysByGroup.get(group);
-		if (set === undefined) {
-			set = new Set<string>();
-			visitedKeysByGroup.set(group, set);
-		}
-
-		if (key !== undefined) {
-			keysToVisit.push(key);
-			set.add(key);
-		} else {
-			for (const groupKey of taggedPathLookup[group].keys()) {
-				if (set.has(groupKey)) {
-					continue;
-				}
-
-				keysToVisit.push(groupKey);
-			}
-		}
-
-		if (ignore === true) {
-			continue;
-		}
-
-		for (const keyToVisit of keysToVisit) {
-			set.add(keyToVisit);
-			const pathsForKey = taggedPathLookup[group].get(keyToVisit);
-			if (pathsForKey === undefined) {
-				continue;
-			}
-
-			const sortedPaths = pathsForKey.toSorted(compareMethod);
-			for (const taggedPath of sortedPaths) {
-				taggedPathsToGenerate.push(<GroupedTaggedPath>{
-					...taggedPath,
-					group,
-					key: keyToVisit,
-					titleKey: typeof titleKey === 'string' ? titleKey : titleKey(group, keyToVisit),
-				});
-			}
-		}
-	}
-
-	const routeSets: RouteSet[] = [];
-	let currentRouteSet: RouteSet | undefined;
-	for (const gtp of taggedPathsToGenerate) {
-		if (!currentRouteSet || currentRouteSet.group !== gtp.group || currentRouteSet.key !== gtp.key || currentRouteSet.titleKey !== gtp.titleKey) {
-			currentRouteSet = <RouteSet>{
-				group: gtp.group,
-				key: gtp.key,
-				titleKey: gtp.titleKey,
-				routes: [gtp],
-			};
-			routeSets.push(currentRouteSet);
-			continue;
-		}
-		
-		currentRouteSet.routes.push(gtp);
-	}
-
 	const pathToDocs = join(cwd, 'src', 'content', 'docs');
 	const locales = await readdir(pathToDocs);
-	
-	const routeSetNames = routeSets.map(rs => rs.titleKey.replace(/_/g, '-'));
-	const routeNameSet = new Set<string>(routeSetNames.flatMap(n => [n, `${n}.md`]));
-	const endpointOrder = routeSetNames.map(n => `${n}.md`);
 
 	for (const locale of locales as KnownLanguageCode[]) {
-		const pathToEndpoints = join(cwd, 'src', 'content', 'docs', locale, 'api', options.apiVersion, 'endpoints');
-		const pathToLocalization = join(cwd, 'src', 'site', 'locales', locale, 'latest.ts');
+		const pathToLocale = join(cwd, 'src', 'site', 'locales', locale);
+		const pathToLocaleContent = join(cwd, 'src', 'content', 'docs', locale);
+		const pathToApiVersion = join(pathToLocaleContent, 'api', options.apiVersion);
+
+		const swaggerJsonUrl = resolveSwaggerJsonUrl(host, options.apiVersion, options.swaggerJson);
+		const openApiSpec = await loadSwaggerJson(swaggerJsonUrl, locale);
+	
+		if (openApiSpec === null) {
+			console.error('Unable to load the API spec, nothing generated.')
+			process.exitCode = 1;
+			return;
+		}
+
+		const typeLookup = new Map<string, OpenAPIV3_1.SchemaObject>(
+			Object.entries(openApiSpec.components?.schemas ?? {}).map(
+				([name, value]) => {
+					const slugName = name.replace(/_/g, '-').replace(/`/g, '_').replace(
+						/[A-Z]+/g,
+						(match, offset) => `${(offset > 0 ? '-' : '')}${match.toLocaleLowerCase()}`
+					);
+					const title = value?.title ?? name.replace(/\`(\d+)/, (_, rawParameterCount) => `<${new Array(parseInt(rawParameterCount)).fill(null).map((_, index) => `T${index}`)}>`);
+					return [slugName, {
+						...value,
+						title,
+					}];
+				}
+			)
+		);
+		const typeFileNameSet = new Set<string>(typeLookup.keys().flatMap(slugName => [slugName, `${slugName}.md`]));
+	
+		if (!('x-generator-metadata' in openApiSpec)) {
+			throw new Error(`'x-generator-metadata' not present in spec loaded from ${swaggerJsonUrl}`);
+		}
+	
+		const generatorMetadata = openApiSpec['x-generator-metadata'] as GeneratorMetadata;
+		const routePriorities = generatorMetadata.route_priority.map(priority => priority.ignore || priority.titleKey ? (priority as RoutePriority) : <RoutePriority>{
+			...priority,
+			titleKey: fallbackGenerators[getPriorityGroup(priority)],
+		});
+	
+		const taggedPathLookup = organizePathsByTag(openApiSpec);
+	
+		const taggedPathsToGenerate: GroupedTaggedPath[] = [];
+		const visitedKeysByGroup: Map<Group, Set<string>> = new Map<Group, Set<string>>();
+		for (const { group, key, ignore, titleKey } of routePriorities) {
+			const keysToVisit: string[] = [];
+	
+			let set = visitedKeysByGroup.get(group);
+			if (set === undefined) {
+				set = new Set<string>();
+				visitedKeysByGroup.set(group, set);
+			}
+	
+			if (key !== undefined) {
+				keysToVisit.push(key);
+				set.add(key);
+			} else {
+				for (const groupKey of taggedPathLookup[group].keys()) {
+					if (set.has(groupKey)) {
+						continue;
+					}
+	
+					keysToVisit.push(groupKey);
+				}
+			}
+	
+			if (ignore === true) {
+				continue;
+			}
+	
+			for (const keyToVisit of keysToVisit) {
+				set.add(keyToVisit);
+				const pathsForKey = taggedPathLookup[group].get(keyToVisit);
+				if (pathsForKey === undefined) {
+					continue;
+				}
+	
+				const sortedPaths = pathsForKey.toSorted(compareMethod);
+				for (const taggedPath of sortedPaths) {
+					taggedPathsToGenerate.push(<GroupedTaggedPath>{
+						...taggedPath,
+						group,
+						key: keyToVisit,
+						titleKey: typeof titleKey === 'string' ? titleKey : titleKey(group, keyToVisit),
+					});
+				}
+			}
+		}
+	
+		const routeSets: RouteSet[] = [];
+		let currentRouteSet: RouteSet | undefined;
+		for (const gtp of taggedPathsToGenerate) {
+			if (!currentRouteSet || currentRouteSet.group !== gtp.group || currentRouteSet.key !== gtp.key || currentRouteSet.titleKey !== gtp.titleKey) {
+				currentRouteSet = <RouteSet>{
+					group: gtp.group,
+					key: gtp.key,
+					titleKey: gtp.titleKey,
+					routes: [gtp],
+				};
+				routeSets.push(currentRouteSet);
+				continue;
+			}
+			
+			currentRouteSet.routes.push(gtp);
+		}
+		
+		const routeSetNames = routeSets.map(rs => rs.titleKey.replace(/_/g, '-'));
+		const routeFileNameSet = new Set<string>(routeSetNames.flatMap(n => [n, `${n}.md`]));
+		const endpointOrder = routeSetNames.map(n => `${n}.md`);
+		const pathToLocalization = join(pathToLocale, 'latest.ts');
 
 		if (!await exists(pathToLocalization)) {
 			throw new Error(`Missing src/site/locales/${locale}/latest.ts`);
 		}
 
+		const pathToTypes = join(pathToApiVersion, 'types');
+		if (!await exists(pathToTypes)) {
+			await mkdir(pathToTypes);
+		}
+
+		const existingTypeNames = await readdir(pathToTypes);
+		const typeNamesToDelete = existingTypeNames.filter(f => !typeFileNameSet.has(f));
+		for (const nameToDelete of typeNamesToDelete) {
+			const pathToDelete = join(pathToTypes, nameToDelete);
+			try {
+				await unlink(pathToDelete);
+			} catch {
+				try {
+					await rmdir(pathToDelete, { recursive: true });
+				} catch {
+					console.warn(`Failed to delete endpoint: ${nameToDelete}`);
+				}
+			}
+		}
+
+		const localizedSite = SITE[locale];
+
+		for (const [slugName, type] of typeLookup) {
+			const pathToType = join(pathToTypes, `${slugName}.md`);
+			await writeFile(pathToType, `---
+title: ${type.title}
+---`, 'utf-8');
+		}
+
+		const pathToEndpoints = join(pathToApiVersion, 'endpoints');
 		if (!await exists(pathToEndpoints)) {
 			await mkdir(pathToEndpoints);
 		}
 
 		const existingEndpointNames = await readdir(pathToEndpoints);
-		const namesToDelete = existingEndpointNames.filter(f => !routeNameSet.has(f));
-		for (const nameToDelete of namesToDelete) {
+		const endpointNamesToDelete = existingEndpointNames.filter(f => !routeFileNameSet.has(f));
+		for (const nameToDelete of endpointNamesToDelete) {
 			const pathToDelete = join(pathToEndpoints, nameToDelete);
 			try {
 				await unlink(pathToDelete);
@@ -433,10 +490,11 @@ async function generateAPI(...args: Args) {
 
 		const localizedTitles = LocalizedTitles[locale];
 		const localeTemplates = await loadTemplatesForLocale(locale);
+
 		for (const routeSet of routeSets) {
-			const pathToEndpoint = join(pathToEndpoints, `${routeSet.titleKey}.md`);
+			const pathToEndpoint = join(pathToEndpoints, `${routeSet.titleKey.replace(/_/g, '-')}.md`);
 			const routesetTemplateParams = {
-				title: localizedTitles[routeSet.titleKey],
+				title: routeSet.titleKey in localizedTitles ? localizedTitles[routeSet.titleKey] : routeSet.titleKey,
 				endpoints: routeSet.routes,
 			};
 
@@ -447,15 +505,76 @@ async function generateAPI(...args: Args) {
 					endpoints: async (routes: GroupedTaggedPath[]) => {
 						const formattedEndpoints: string[] = [];
 						for (const route of routes) {
+							let authorization = localeTemplates.authorizationAnonymous;
+							if (route.security?.length) {
+								if (route.security.length > 1) {
+									throw new Error(`Multiple requirements are not implemented: ${route.method} ${route.route}`);
+								}
+
+								const rolesByRequirement = route.security.map(requirement => {
+									const schemesForRequirement = Object.keys(requirement);
+									if (schemesForRequirement.length < 1) {
+										return [];
+									}
+
+									const unsupportedSchemes = schemesForRequirement.filter(scheme => scheme !== 'Bearer');
+									if (unsupportedSchemes.length > 0) {
+										console.warn(`Unsupported security schemes for ${route.method} ${route.route}:\n\t${unsupportedSchemes.join(', ')}`);
+									}
+
+									const bearerRoles = requirement['Bearer'];
+									if (!bearerRoles) {
+										console.error(`Missing Bearer scheme for ${route.method} ${route.route}`);
+										return [];
+									}
+
+									return bearerRoles;
+								}).filter(roles => roles.length > 0);
+
+								const [requirement] = route.security;
+								if (!requirement) {
+									throw new Error(`Undefined requirement: ${route.method} ${route.route}`);
+								}
+
+								let roles = localeTemplates.authorizationRolesNone;
+								if (rolesByRequirement.length === 1) {
+									roles = rolesByRequirement.flat().map(role => `\`${role}\``).join(', ');
+								} else if (rolesByRequirement.length > 1) {
+									const rolesets: string[] = [];
+									for (const roleset of rolesByRequirement) {
+										rolesets.push(await populateTemplate(
+											localeTemplates.authorizationRolesMultipleRoleset,
+											{
+												roles: roleset.map(role => `\`${role}\``).join(', ')
+											},
+											{}
+										));
+									}
+
+									roles = await populateTemplate(localeTemplates.authorizationRolesMultiple, { rolesets: rolesets.join('\n') }, {});
+								}
+
+								authorization = await populateTemplate(localeTemplates.authorization, {
+									roles,
+								}, {});
+							}
+							const generatorTags = ('x-generator-tags' in route) ? route['x-generator-tags'] as string[] : [];
+							const action = generatorTags.find(t => t.startsWith('action:'))?.replace(/^action:/, '');
+							const controller = generatorTags.find(t => t.startsWith('controller:'))?.replace(/^controller:/, '');
 							const endpointTemplateParams = {
-								name: route.summary,
+								name: route.summary ?? `${action} (${controller})`,
 								method: route.method,
 								path: route.route,
 								description: route.description ?? '',
-								authorization: 'TODO',
+								authorization,
 								request: 'TODO',
 								response: 'TODO',
 							};
+
+							if (route.deprecated === true) {
+								endpointTemplateParams.name += ` (${localizedSite.general.Deprecated})`;
+							}
+
 							formattedEndpoints.push(await populateTemplate(localeTemplates.endpoint, endpointTemplateParams, {
 								method: async (value) => (value as string).toLocaleUpperCase(),
 							}));
@@ -466,8 +585,9 @@ async function generateAPI(...args: Args) {
 			);
 
 			await writeFile(pathToEndpoint, populatedTemplate, 'utf-8');
+			// process.exit(0);
 		}
-		debugger;
+		// debugger;
 	}
 }
 
