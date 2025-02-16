@@ -16,6 +16,41 @@ Allows you to display a textbox that will pop up for the player.
 - *Text*: This is the text to be displayed. Allows the use of Chat commands.
 - *Face*: This allows you to select a face that will appear in the chatbox. These are in your "\resources\faces\" folder. You can see a preview of the face in the box to the side.
 
+#### **Text Formatting**
+The **Show Text** and **Show Options** commands allow you to format text using special commands. One of the supported formatting options is **colorizing text**.
+
+##### **Text Color**
+You can change the color of displayed text using the `\c{}` tag. This supports:
+
+- **Named colors:**
+  - `black`
+  - `red`
+  - `green`
+  - `blue`
+  - `yellow`
+  - `orange`
+  - `gray`
+  - `cyan`
+  - `pink`
+  - `magenta`
+  - `lightcoral`
+  - `forestgreen`
+  - `orangered`
+
+**Example:**  
+`\c{red}This is red text\c{}`  
+
+- **Hex color codes:**  
+
+**Example:**  
+`\c{#87CEEB}This is sky blue text\c{}`  
+
+**Example usage:**
+
+![image](https://github.com/user-attachments/assets/511d5389-befb-43fa-b029-8fbbdd76122f)
+
+
+
 ### Show Options
 Allows you to give options to the player.
 
