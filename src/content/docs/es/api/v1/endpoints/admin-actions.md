@@ -2,7 +2,7 @@
 title: Acciones de Administrador
 ---
 
-**Los siguientes comandos usan el punto de conexión /users/ y requiren el rol "Users.Query".**
+**Los siguientes comandos usan el punto de conexión /users/ y requiren el rol "UserQuery".**
 
 ## Banear
 

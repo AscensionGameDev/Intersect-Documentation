@@ -15,10 +15,10 @@ Revoking an api role:
 List api roles for an account:
 `apiroles [username]`
 
-## users.query
+## UserQuery
 
 Grants read-access to the Users endpoints.
 
-## users.manage
+## UserManage
 
 Allows access to the Change Email/Password endpoints for Users without needing to know the users' existing password.

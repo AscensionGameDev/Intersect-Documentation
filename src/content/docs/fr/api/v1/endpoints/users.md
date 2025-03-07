@@ -2,7 +2,7 @@
 title: Utilisateurs
 ---
 
-**Ces points de terminaison requièrent [users.query API Role](/en-US/api/v1/introduction/roles.html#users-query)!**
+**Ces points de terminaison requièrent [UserQuery API Role](/en-US/api/v1/introduction/roles.html#users-query)!**
 
 ## Liste Utilisateurs
 
@@ -461,9 +461,9 @@ Retourne un des personnages de cet utilisateur
 
 L'exemple est tronqué, pour une réponse complète [cliquez ici](https://www.ascensiongamedev.com/resources/filehost/4abdebecac07d35de4a66ef4dbbe4124.json).
 
-## Changer l'Email (w/ Rôle Users.Manage)
+## Changer l'Email (w/ Rôle UserManage)
 
-Change l'adresse email d'un utilisateur sans son mot de passe. **Requiert le rôle Users.Manage .**
+Change l'adresse email d'un utilisateur sans son mot de passe. **Requiert le rôle UserManage .**
 
 ### Requête
 
@@ -521,9 +521,9 @@ Change l'adresse email d'un utilisateur sans son mot de passe. **Requiert le rô
 }
 ```
 
-## Changer Mot de Passe (w/ Rôle Users.Manage)
+## Changer Mot de Passe (w/ Rôle UserManage)
 
-Change le mot de passe d'un utilisateur sans son mot de passe existant. **Requiert le rôle the Users.Manage .**
+Change le mot de passe d'un utilisateur sans son mot de passe existant. **Requiert le rôle the UserManage .**
 
 ### Requête
 

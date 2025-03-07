@@ -2,7 +2,7 @@
 title: Admin Actions
 ---
 
-**All commands below using the /users/ endpoint requires the Users.Query role.**
+**All commands below using the /users/ endpoint requires the UserQuery role.**
 
 ## Ban
 

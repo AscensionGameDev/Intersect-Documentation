@@ -2,7 +2,7 @@
 title: Usuarios
 ---
 
-**These endpoints require the [users.query API Role](/en-US/api/v1/introduction/roles.html#users-query)!**
+**These endpoints require the [UserQuery API Role](/en-US/api/v1/introduction/roles.html#users-query)!**
 
 ## Listar Usuarios
 
@@ -461,9 +461,9 @@ Returns one of this users characters
 
 Example is truncated, for full response [click here](https://www.ascensiongamedev.com/resources/filehost/4abdebecac07d35de4a66ef4dbbe4124.json).
 
-## Change Email (w/ Users.Manage Role)
+## Change Email (w/ UserManage Role)
 
-Change a users email address without their password. **Requires the Users.Manage role.**
+Change a users email address without their password. **Requires the UserManage role.**
 
 ### Request
 
@@ -521,9 +521,9 @@ Change a users email address without their password. **Requires the Users.Manage
 }
 ```
 
-## Change Password (w/ Users.Manage Role)
+## Change Password (w/ UserManage Role)
 
-Change a users password without their existing password. **Requires the Users.Manage role.**
+Change a users password without their existing password. **Requires the UserManage role.**
 
 ### Request
 
