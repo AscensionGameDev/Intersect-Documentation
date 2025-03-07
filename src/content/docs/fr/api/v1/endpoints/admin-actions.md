@@ -2,7 +2,7 @@
 title: Actions administrateurs
 ---
 
-**Toutes les commandes ci-dessous utilisant l'endpoint /users/ nécessitent le rôle Users.Query.**
+**Toutes les commandes ci-dessous utilisant l'endpoint /users/ nécessitent le rôle UserQuery.**
 
 ## Bannir
 
