@@ -1,14 +1,13 @@
 ---
-title: Animations
+title: Animaciones
 ---
-# <p align="Center" style="color: gray; bold;"> ANIMACIONES:</p>
 
-## Descripción general:
+## Descripción general
 
 _Las animaciones se realizan a través del_ `Editor de animaciones` en la pestaña `Editores`.
 ![Editor de animaciones](https://ascensiongamedev.com/resources/filehost/7807f961172692c40d1a715cbe115d2d.png)
 
-## Administrar animaciones:
+## Administrar animaciones
 
 ![principal](https://ascensiongamedev.com/resources/filehost/42a98db0ca69ae6d39efc2f64b35a06a.png)
 
