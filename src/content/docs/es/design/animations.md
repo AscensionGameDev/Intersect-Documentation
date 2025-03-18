@@ -37,7 +37,8 @@ _Las animaciones se realizan a través del_ `Editor de animaciones` en la pesta�
 
 - **Reproducción:** Con este botón reproduciremos la vista previa de la animación
 	- **Opciones de frame:**
-	- **Frames:** Acá se hará un conteo de frames, el valor no puede superar el número de tiles "horizontal / vertical" _ejemplo: En la imagen de abajo se aprecia que solo hay 4 Frames en total (4 horizontales y 0 Verticales)_![](https://ascensiongamedev.com/resources/filehost/807976e4b7c5bb1443ea45da95ea51ce.png)
+	- **Frames:** Acá se hará un conteo de frames, el valor no puede superar el número de tiles "horizontal / vertical" _ejemplo: En la imagen de abajo se aprecia que solo hay 4 Frames en total (4 horizontal y solo 1 Vertical)_
+![](https://ascensiongamedev.com/resources/filehost/160468da267c0cc3f4c42cca6570efd0.png)
 	- **Duración de Frame (ms):** Aquí se establecerá la duración de cada frame en milisegundos (1 segundo = 1000 milisegundos o **ms**)
 	- **Conteo vueltas:** aquí irá la cantidad de veces que debe repetirse una animación (por defecto es **o**, no se repetirá).
 - **Opciones extra:**
