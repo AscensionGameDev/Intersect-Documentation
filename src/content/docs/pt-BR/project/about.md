@@ -1,46 +1,51 @@
 ---
-title: About
+title: Sobre
 ---
 
-Intersect is an open source 2D MMORPG Game Engine developed in C# with MonoGame.
+O Intersect é um motor de jogos MMORPG 2D de código aberto, desenvolvido em C# com MonoGame.
 
-## Requirements
+## Requisitos mínimos
 
-### Client
+### Cliente
 
-- OS: Windows 7+ (.Net Framework 4.6.2), OSX 10.10+ (w/Mono), Various Linux Distros (w/Mono)
-- Processor: Intel i3 or Better
-- Memory: 1 GB RAM
-- Graphics: 1 GB VRAM
-- OpenGL: Version 2.1+ & ARB Extensions
-- Storage: 1 GB available space
+- Sistema operacional: Windows 7(com o .NET Framework 4.6.2); macOS 10.10+ (com Mono); Linux(com Mono).
+- Processor: Intel i3
+- Memória: 1 GB RAM
+- Processador gráfico: 1 GB VRAM
+- OpenGL: Versão 2.1+ e extensões ARB
+- Armazenamento: 1 GB de espaço disponível
 
 ### Editor
 
-- OS: Windows 7+ (.Net Framework 4.6.2) -- No Cross Platform Support
-- Processor: Intel i3 or Better
-- Memory: 1 GB RAM
-- Graphics: 1 GB VRAM
-- DirectX: 9.0c+ Shader Support
-- Storage: 1 GB available space
+- Sistema operacional: Windows 7+ (.NET Framework 4.6.2) — sem suporte multiplataforma
+- Processor: Intel i3
+- Memória: 1 GB de RAM
+- Processador gráfico: 1 GB VRAM
+- DirectX: 9.0c+ com suporte a shaders
+- Armazenamento: 1 GB de espaço disponível
 
-### Server
+### Servidor
 
-- OS: Windows 7+ (.Net Framework 4.6.2), OSX 10.10+ (w/Mono), Various Linux Distros (w/Mono)
-- Processor: Intel i3 or Better
-- Memory: 2 GB RAM
-- Network: Broadband Internet connection
+- Sistema operacional: Windows 7(com o .NET Framework 4.6.2); macOS 10.10+ (com Mono); Linux(com Mono).
+- Processor: Intel i3
+- Memória: 2 GB RAM
+- Rede: Conexão de internet banda larga
 
-## Cross Platform Compatibility
+## Compatibilidade Multiplataforma
 
-- Windows (100% Compatible)
-- Linux (Server & Client Compatible)
-- OSX (Server & Client Compatible)
+- Windows: (100% compatível)
+- Linux: Compatível (Servidor e Cliente)
+- macOS: Compatível (Servidor e Cliente)
 
-Intersects editor uses various 3rd party libraries including DockPanelSuite with dozens of Win32 API calls which does not allow it to be ran on other operating systems. These libraries play a key role in making Intersect user friendly which is why we are not and likely never will pursue cross platform compatability with the editor program.
+O Editor do Intersect utiliza várias bibliotecas de terceiros, incluindo DockPanelSuite, que fazem diversas chamadas à API Win32. Por causa disso, o editor não pode ser executado em outros sistemas operacionais.
+Essas bibliotecas desempenham um papel fundamental em tornar o Intersect amigável e fácil de usar — por esse motivo, não pretendemos (e provavelmente nunca iremos) oferecer compatibilidade multiplataforma para o programa do editor.
 
-## Licensing & Cost (100% Free!)
+## Licença e Custo (100% Gratuito!)
 
-You are allowed to create games with Intersect and distribute, sell, or otherwise make money off your games for free. Intersect is split into 3 major components which are the Game Client (MIT), the Editor (GPL) and the Server (GPL).
+Você pode criar jogos com o Intersect e distribuí-los, vendê-los ou lucrar com eles livremente.
+O Intersect é dividido em três componentes principais:
+- Cliente do Jogo (licença MIT)
+- Editor (licença GPL)
+- Servidor (licença GPL)
 
-The only reason we have slightly more restrictive licensing on our Editor and Server components is so that we can dissuade other developers from selling our engine without disclosing their source changes.
+A única razão pela qual aplicamos licenças um pouco mais restritivas ao Editor e ao Servidor é para impedir que outros desenvolvedores vendam o motor sem divulgar as modificações feitas no código-fonte.
