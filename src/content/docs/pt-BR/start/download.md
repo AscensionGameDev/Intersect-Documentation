@@ -1,22 +1,26 @@
 ---
-title: Downloading Intersect
+title: Baixando o Intersect
 ---
 
-Intersect can be downloaded from Ascension Game Dev's download hub. [Download the latest version of Intersect from our site.](https://www.freemmorpgmaker.com/downloads/)
+O Intersect pode ser baixado pelo portal de downloads da Ascension Game Dev. [Baixe a versão mais recente do Intersect em nosso site.](https://www.freemmorpgmaker.com/downloads/)
 
-If you're just now getting started with Intersect you will want to download the Full archive. Save this file somewhere you can find it.
+Se você está começando agora com o Intersect, o ideal é baixar o pacote completo (Full archive). Salve o arquivo em um local fácil de encontrar.
 
-## Extracting Intersect
+## Extraindo o Intersect
 
-Intersect is contained within a zip archive. Any version of Windows can extract Intersect so you can begin using it. Navigate to the Intersect archive, right click on it, and select the Extract All option.
-**We recommend you extract onto your Desktop or within your Documents folder.**
+O Intersect vem compactado em um arquivo .zip.
+Qualquer versão do Windows pode extrair o conteúdo, permitindo que você comece a usá-lo rapidamente.
 
-![ExtractIntersect](https://www.ascensiongamedev.com/resources/filehost/db59c62b62d5d1611fce19338f4c40b9.gif)
+Localize o arquivo compactado do Intersect, clique com o botão direito sobre ele e selecione a opção “Extrair tudo” (Extract All).
+**Recomendamos que você extraia o conteúdo na sua área de trabalho ou dentro da pasta Documentos.**
 
-## File Structure Overview
+![ExtracaoDoIntersect](https://www.ascensiongamedev.com/resources/filehost/db59c62b62d5d1611fce19338f4c40b9.gif)
 
-Once you extract your files, you can you’re your file and should see three folders:
+## Visão Geral da Estrutura de Arquivos
 
-- Client and Editor: The client-side of the engine, which is the “game” component you and others will use to play your MMO.
-- Documentation: Various documents and ReadMe files. We encourage you browse these before starting.
-- Server: The server-side of the engine which you alone will run on a host machine, allowing others to connect via the client.
+Depois de extrair os arquivos, você verá três pastas principais:
+
+- Clinete: é o lado jogável — o componente do jogo que você e outros usarão para jogar seu MMO.
+- Editor: É a ferramenta que você usará para editar o mundo e os demais sistemas que nele existem ou serão criados.(Apenas para Administradores)
+- Documentation(Documentação): Contém diversos documentos e arquivos ReadMe(Leia-me). Recomendamos que você dê uma olhada neles antes de começar.
+- Server(Servidor): É o lado do Intersect(desta Engine) que apenas você executará em uma máquina hospedeira, permitindo que outros jogadores se conectem através do cliente.
