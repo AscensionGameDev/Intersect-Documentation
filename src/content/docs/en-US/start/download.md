@@ -15,7 +15,7 @@ Intersect is contained within a zip archive. Any version of Windows can extract 
 
 ## File Structure Overview
 
-Once you extract your files, you can you’re your file and should see three folders:
+Once you extract your files, you can open the file and should see three folders:
 
 - Client and Editor: The client-side of the engine, which is the “game” component you and others will use to play your MMO.
 - Documentation: Various documents and ReadMe files. We encourage you browse these before starting.
