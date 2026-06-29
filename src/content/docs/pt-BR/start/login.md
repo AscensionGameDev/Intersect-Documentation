@@ -1,21 +1,30 @@
 ---
-title: Editor Login
+title: Logando no Editor
 ---
 
-## Launching the Editor
+## Iniciando no Editor
 
-Minimize or close the client. Go to your Client and Editor folder and open Intersect Editor.exe. Sign in using the account you just made.
+Minimize ou feche o Cliente.
+Em seguida, vá até a pasta Client e Editor, e abra o arquivo Intersect Editor.exe.
+Faça login usando a conta que você acabou de criar.
 
-![LaunchEditor](https://www.ascensiongamedev.com/resources/filehost/fc6381fd6502a540dbdb4791893920c4.png)
+![IniciandoOEditor](https://s3.us-east-2.amazonaws.com/ascensiongamedev/filehost/94be350f304fc1c5123ee08ecc41c23b.png)
 
-## Start Creating!
+## Comece a Criar!
 
-Welcome to Intersect! You now have the power in your hands to begin sculpting a world every bit as wild as your imagination.
+Bem-vindo ao Intersect! 🎉
+Agora você tem o poder em suas mãos para começar a moldar um mundo tão incrível quanto a sua imaginação.
 
-You are looking at our map editor now, you can place the tiles from tilesets on the left onto the map. Clicking the save button will make those changes appear in your game.
+Você está vendo o editor de mapas — nele, é possível posicionar os blocos (tiles) dos tilesets à esquerda diretamente sobre o mapa.
+Ao clicar no botão Salvar, as alterações serão aplicadas e aparecerão no seu jogo.
 
-Double clicking the bordering area surrounding your map will allow you to expand your world and create more maps that appear seamless in-game.
+![EditandoESalvando](https://s3.us-east-2.amazonaws.com/ascensiongamedev/filehost/5b83136cd534c04783a5262609cc1b31.gif)
 
-![EditorOpen](https://www.ascensiongamedev.com/resources/filehost/c399bc35aad37d828ddda1986538e7bd.png)
+Se você der um duplo clique na área ao redor do mapa, poderá expandir o mundo e criar novos mapas que se conectam perfeitamente dentro do jogo.
 
-Clicking next below will go over the various windows and components in our editor. We encourage you mess around with the editor on your own and then come back and refer to the documentation whenever you come across something that isn't intuitive or clear. Learning to use new software and creating a game takes time and can be very challenging. Don't forget to have some fun!
+![NovoMapa](https://s3.us-east-2.amazonaws.com/ascensiongamedev/filehost/b83ca0c60a837b7178de9b3966abd550.gif)
+
+Ao clicar em “Next” (Próximo) abaixo(aqui na documentação), você verá uma explicação sobre as diversas janelas e componentes do editor.
+Recomendamos que você explore o editor por conta própria e, quando encontrar algo que não seja intuitivo ou claro, retorne à documentação.
+
+Aprender a usar um novo software e criar um jogo leva tempo e pode ser desafiador — mas não se esqueça de se divertir durante enquanto cria! 😄
