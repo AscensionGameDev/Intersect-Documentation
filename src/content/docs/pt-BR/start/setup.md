@@ -1,38 +1,54 @@
 ---
-title: Setup
+title: Configuração
 ---
 
-## Starting the Server
+## Iniciando o Servidor
 
-In order for Intersect to run, you will need to have the server running, first. This is the “backbone” of the engine and is necessary to be up and running for your game to be working.
-Start by going into the Server folder, and opening Intersect Server.exe.
+Para que o Intersect funcione, primeiro é necessário iniciar o servidor.
+Ele é a “espinha dorsal” do motor e precisa estar em execução para que o seu jogo funcione corretamente.
 
-![ServerStarted](https://www.ascensiongamedev.com/resources/filehost/a65f2516e77a8dbcca43e2239a194cad.png)
+Comece abrindo a pasta Server e execute o arquivo Intersect Server.exe.
 
-A terminal (black window with white text) should appear. Once the terminal states “Server Started” you are ready to go. Do NOT close the server.
+![ServidorIniciado](https://s3.us-east-2.amazonaws.com/ascensiongamedev/filehost/fbb2f9440cc54fc6a2405548f574329e.png)
 
-## Starting the Client
+Uma janela de terminal (fundo preto com texto branco) deverá aparecer.
+Assim que o terminal exibir a mensagem “Server Started”(Server Iniciado), tudo estará pronto para prosseguir.
+⚠️ Não feche o servidor! ⚠️
 
-Next, you will open the Client, which is the actual game component of Intersect.
-Go to your Client and Editor folder and open Intersect Client.exe.
+## Iniciando o Cliente
 
-![ClientStarted](https://www.ascensiongamedev.com/resources/filehost/7d6fb88ed7da7c68317e8f4e427c56ba.png)
+Em seguida, abra o Client, que é o componente do jogo propriamente dito do Intersect.(Cliente é o jogo em si!)
+Vá até a pasta Client e Editor, e execute o arquivo Intersect Client.exe.
 
-The game’s default main menu will appear. You are now ready to create your first character, who will also be your first admin.
+![ClienteIniciado](https://s3.us-east-2.amazonaws.com/ascensiongamedev/filehost/07b043629deb5f02b1e2862a3e15fef7.png)
 
-## Creating an Account.
+O menu principal padrão do jogo será exibido.
+Agora você está pronto para criar o seu primeiro personagem, que também será o primeiro administrador do seu jogo.
 
-Click on the “Register” button.
+## Criando uma Conta
 
-![ClickRegister](https://www.ascensiongamedev.com/resources/filehost/fe965e58f48769784b5408936c2b0f70.png)
+Clique no botão “Register”(Registrar).
 
-You will be asked to fill in account information. Use a name that will not be associated with your character for extra security. Type in your password and click “Register”.
+![CliqueEmRegistrar](https://s3.us-east-2.amazonaws.com/ascensiongamedev/filehost/ab2a15546234b0ab8ca478569b70f42f.png)
 
-![CreateAccount](https://www.ascensiongamedev.com/resources/filehost/fc9db6f3fc12e0f70e1530dbe9b75bed.png)
+Você será solicitado a preencher as informações da conta.
+Escolha um nome de usuário que não esteja associado ao seu personagem, para maior segurança.
+Digite uma senha e clique em “Register”.
 
-You will then be asked to create your character. Pick a name, a class, and don’t worry about getting too attached – you will likely be changing all of these things, later.
-Click “Login” and you will enter the game!
+![CriandoConta](https://s3.us-east-2.amazonaws.com/ascensiongamedev/filehost/d29308fe85601f0b303a7c89a9abcbab.png)
 
-## In-Game
+Em seguida, será solicitado que você crie seu personagem.
+Escolha um nome e uma classe — e não se preocupe muito com isso agora, pois você provavelmente irá alterar tudo isso depois.
+(Se na sua versão não houver classes, tudo bem! Logo criaremos uma juntos.)
 
-Congratulations! Your character is now logged into the game. You won’t see much, yet, but you are now ready to start changing all of that by editing your game!
+![CriandoPersonagem](https://s3.us-east-2.amazonaws.com/ascensiongamedev/filehost/9fb732fdd1d1edf1871fd59e597c099d.png)
+
+## Dentro do Jogo
+
+🎉 Parabéns!
+Seu personagem agora está conectado ao jogo.
+Ainda não há muito para ver, mas você já está pronto para começar a editar e transformar o jogo da forma que quiser!
+(Use as setas no teclado para mover teu personagem.)
+(Se ele não estiver a vista, pode estar no canto superior esquerdo atrás de alguma janela do sistema.)
+
+![NoJogo](https://s3.us-east-2.amazonaws.com/ascensiongamedev/filehost/5717d9b3241c1fdec0b108db095e1d6e.png)
