@@ -20,7 +20,7 @@ Localize o arquivo compactado do Intersect, clique com o botão direito sobre el
 
 Depois de extrair os arquivos, você verá três pastas principais:
 
-- Clinete: é o lado jogável — o componente do jogo que você e outros usarão para jogar seu MMO.
+- Cliente: é o lado jogável — o componente do jogo que você e outros usarão para jogar seu MMO.
 - Editor: É a ferramenta que você usará para editar o mundo e os demais sistemas que nele existem ou serão criados.(Apenas para Administradores)
 - Documentation(Documentação): Contém diversos documentos e arquivos ReadMe(Leia-me). Recomendamos que você dê uma olhada neles antes de começar.
 - Server(Servidor): É o lado do Intersect(desta Engine) que apenas você executará em uma máquina hospedeira, permitindo que outros jogadores se conectem através do cliente.
